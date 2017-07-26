@@ -1,0 +1,812 @@
+<html lang="en">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>Rebuilding a Digital Frankenstein by 2018</title>
+      <link rel="stylesheet" href="balisage-proceedings.css" type="text/css">
+      <meta name="keywords" content="up-translation, up-transformation, early HTML, hypertext edition, web 1.0, TEI P5, collation, Frankenstein, Mary Shelley, Bicentennial Frankenstein Project">
+   </head>
+   <body>
+      <div id="balisage-header">
+         <h1 style="text-align: right; font-family: serif; margin:0.25em"><i>Balisage:</i>&nbsp;<small>The Markup Conference</small></h1>
+      </div>
+      <div lang="en" class="article">
+         <div class="titlepage">
+            <h2 class="article-title" id="d1e4">Rebuilding a Digital Frankenstein by 2018</h2>
+            <h3 class="subtitle"><i>Reflections toward a Theory of Losses and Gains in Up-Translation</i></h3>
+            <div class="author">
+               <h3 class="author">Elisa Eileen Beshero-Bondar</h3>
+               <div class="affiliation">
+                  <p class="jobtitle">Associate Professor of English</p>
+                  <p class="jobtitle">Director, <a href="http://www.greensburg.pitt.edu/digital-humanities/center-digital-text" class="link" target="_new">Center for the Digital Text</a></p>
+                  <p class="orgname">University of Pittsburgh at Greensburg</p>
+               </div>
+               <h5 class="author-email"><code class="email">&lt;<a class="email" href="mailto:ebb8@pitt.edu">ebb8@pitt.edu</a>&gt;</code></h5>
+            </div>
+            <div class="abstract">
+               <p class="title"><b>Abstract</b></p>
+               <p>Digital editions were young in the 1990s, and the expansive possibilities of hypertext
+                  in that decade sharply distinguish early digital editions from the productions of
+                  our moment. The accessibility and simplicity of early HTML code made for innovative
+                  experiments with the size of a <q>page</q> and the way one might handle displays of variants, before <q>diffing</q> tools like the Versioning Machine and Juxta came to define how we usually imagine
+                  the digital comparison of texts.
+               </p>
+               <p>This paper investigates the serious problems and vexing potentialities of <q>up-translation</q> when standards change, concentrating on work underway on a Bicentennial Frankenstein
+                  project. Our project is to produce a new, freshly collated digital edition in TEI
+                  based on the <span class="ital">Frankenstein</span> texts digitized by Romantic Circles, and incorporating a little-known publication
+                  of 1823 together with 1818 and 1831 versions currently represented. Readers in the
+                  past century are likely to have encountered either the 1818 or the 1831 edition but
+                  not the 1823, and we think that folding this text into our collation may help us to
+                  understand more about when and about how gradually some of the major alterations in
+                  the 1831 text (for example, to Victor Frankenstein's family members and the compression
+                  and reduction of a chapter in part I) occurred. The three print editions will be compared
+                  in parallel, and we will incorporate pointers to the Shelley-Godwin Archive’s edition
+                  of the MS Notebooks.
+               </p>
+               <p>To prepare the collation we returned to the simplest original form of the current
+                  edition, the Pennsylvania Electronic Edition prepared by Stuart Curran and Jack Lynch
+                  in the 1990s. Exploring that edition exposes the ambitious intellectual scope of early
+                  web editions and raises important questions about how we built editions then vs. now.
+                  We do not build a new edition to replace the earlier work, which yet <q>lives</q> and is available on the web. But our work is a fresh start, not a seamless integration.
+                  This particular project’s encounter with an impressive early hypertext edition raises
+                  more general questions worthy of reflection towards theorizing the up-transformation
+                  process: 
+                  
+                  <div class="itemizedlist" id="d1e31">
+                     <ul>
+                        <li id="d1e32">
+                           <p>How do we understand the relationships among generations of digital editions?</p>
+                        </li>
+                        <li id="d1e35">
+                           <p>What aspects of the old hypertext editions (or editions in formats not consistent
+                              with our own) transcend or exceed the structures we currently consider sustainable?
+                              What perspective might a thorough review of the first still extant hypertext editions
+                              contribute to our scholarly editing practice now?
+                           </p>
+                        </li>
+                     </ul>
+                  </div>
+               </p>
+            </div>
+            <hr>
+         </div>
+         <div class="toc">
+            <p><b>Table of Contents</b></p>
+            <dl>
+               <dt><span class="section"><a href="#d1e118" class="toc">Overview of the Bicentennial Frankenstein Project</a></span></dt>
+               <dt><span class="section"><a href="#d1e164" class="toc">The Dream of 90s Hypertext: The Pennsylvania Electronic Edition</a></span></dt>
+               <dt><span class="section"><a href="#d1e239" class="toc">Stages in Up-Translating the Pennsylvania Electronic Edition</a></span></dt>
+               <dd>
+                  <dl>
+                     <dt><span class="section"><a href="#d1e281" class="toc">Decisions for preserving and eliminating markup in plain text versions</a></span></dt>
+                     <dt><span class="section"><a href="#d1e339" class="toc">Stages for processing the altered PA EE HTML to produce plain text editions</a></span></dt>
+                     <dt><span class="section"><a href="#d1e391" class="toc">XSLT for Translation of <q>Up-Translated</q> HTML to Pseudo-Marked Text</a></span></dt>
+                  </dl>
+               </dd>
+               <dt><span class="section"><a href="#d1e401" class="toc">Collation Discoveries: Flattening and Chunking Again</a></span></dt>
+               <dt><span class="section"><a href="#d1e447" class="toc">Reflections toward a theory of up-translation</a></span></dt>
+            </dl>
+         </div>
+         <div class="section" id="d1e118">
+            <h2 class="title" style="clear: both">Overview of the Bicentennial Frankenstein Project</h2>
+            <p>In the fall of 2016, a team of researchers from Carnegie Mellon University, the University
+               of Pittsburgh, and Maryland Institute for Technology in the Humanities (MITH) joined
+               together with a goal to prepare an updated and improved digital edition of Mary Shelley's
+               <span class="ital">Frankenstein</span>, conformant with current TEI P5 standard. In October 2016, Elisa Beshero-Bondar met
+               with Raffaele Viglianti and Rikk Mulligan to discuss a strategy for updating <a href="http://www.rc.umd.edu/editions/frankenstein" class="link" target="_new">the Frankenstein edition on Romantic Circles</a>. Viglianti and Beshero-Bondar subsequently met over Skype with Neil Fraistat and
+               Dave Rettenmaier and agreed that by May of 2018 we would prepare a new edition to
+               update the one currently published on <a href="https://www.rc.umd.edu" class="link" target="_new">Romantic Circles</a>, MITH’s refereed website on scholarly editions from the British Romantic era. Romantic
+               Circles. Fraistat indicated that currently Frankenstein is by far the most clicked-on
+               text in the Romantic Circles archive, so this is a site of high visibility. We initially
+               agreed to improve the existing edition by collating the 1818 and 1831 editions, which
+               are currently saved in two separate files and compared by viewing in Juxta Commons.
+               We aimed to improve the precision of the collation by processing with <a href="https://collatex.net" class="link" target="_new">CollateX</a> software, which automates the location of alignments and deltas in multiple versions
+               of a document. Processing plain text versions of the separate 1818 and 1831 edition
+               files with Collatex would provide the basis for a thorough overhaul of the TEI encoding
+               in the Romantic Circle's edition, because it would output a single document holding
+               variations tagged according to the TEI P5 critical apparatus markup. The document
+               output by Collatex is plain text that holds critical apparatus tagging, and represents
+               a first phase of up-translation to a new and improved TEI document. The next stage
+               would be to apply auto-tagging with regular expressions to reconstruct the <q>body</q> of the edition in TEI as a single document from which multiple editions can be generated
+               for reading and for genetic studying of textual variation over time.
+            </p>
+            <p>Though our initial goal was to revise and improve the existing edition on Romantic
+               Circles, we realized that we had an opportunity to produce a much richer edition,
+               if we could incorporate a rarely studied 1823 edition of the novel into our collation.
+               Incorporating this edition requires OCR of a Google Books scanned edition and careful
+               correction to prepare a text file formatted consistently with the files representing
+               the 1818 and 1831 editions. Finally, we would include pointers into <a href="http://shelleygodwinarchive.org/contents/ms_abinger_c56/" class="link" target="_new">the Shelley-Godwin Archive edition of the manuscript notebook drafts</a> of the novel.
+            </p>
+            <p>As we began analyzing the XML code underlying the Romantic Circles edition, we discovered
+               inconsistencies with the semantic standard of TEI. List elements were used to hold
+               paragraphs, for example, and we learned that the TEI had been generated from an XSLT
+               process of translation from a previous digital edition, the Pennsylvania Electronic
+               hypertext edition produced in the 1990s. TEI elements appeared to have been selected
+               for their correlation to HTML presentational elements, but we were mystified about
+               the decisions to organize chapters of a novel thus:
+               <pre class="programlisting">
+            &lt;p rend="emph"&gt;Chapter 18&lt;/p&gt;
+&lt;p&gt;&nbsp;&lt;/p&gt;
+&lt;list type="simple"&gt;
+&lt;item&gt;
+&lt;p&gt;DAY after day, week after week, passed away on my
+              return to Geneva; and I
+              could not collect the courage to recommence my
+              work. I feared the vengeance of the disappointed
+              fiend,
+              yet I was unable to overcome my repugnance to the
+              task which was enjoined me. I found that I could not
+              compose a female without again devoting several
+              months to profound study and laborious disquisition.
+              I had heard of some discoveries having been made by
+              an English
+              philosopher, the knowledge of which was material
+              to my success, and I sometimes thought of obtaining
+              my father's consent to visit England for this
+              purpose; but I clung to every pretence of delay, and
+              shrunk from taking the first step in an undertaking
+              whose immediate necessity began to appear less
+              absolute to me. A change indeed had taken place in
+              me: my health, which had hitherto declined, was now
+              much restored; and my spirits, when unchecked by the
+              memory of my unhappy promise, rose proportionably. My
+              father saw this change with pleasure, and he turned
+              his thoughts towards the best method of eradicating
+              the remains of my melancholy, which every now and
+              then would return by fits, and with a devouring
+              blackness overcast the approaching sunshine. At these
+              moments I took refuge in the most perfect
+              solitude. I
+              passed whole days on the lake alone in a little
+              boat, watching the clouds, and listening to the
+              rippling of the waves, silent and listless. But the
+              fresh air and bright sun seldom failed to restore me
+              to some degree of composure; and, on my return, I met
+              the salutations of my friends with a readier smile
+              and a more cheerful heart.&lt;/p&gt;
+&lt;/item&gt;
+&lt;item&gt;
+&lt;p&gt;It was after my return from one of these rambles
+              that my father, calling me aside, thus addressed
+              me:—&lt;/p&gt;
+&lt;/item&gt;
+
+
+&lt;item&gt; I remembered also the
+            necessity imposed upon me of either journeying to
+            England, or entering into a long correspondence with
+            those philosophers of that country, whose knowledge and
+            discoveries were of indispensable use to me in my
+            present undertaking. The latter method of obtaining the
+            desired intelligence was dilatory and unsatisfactory:
+            besides, I had an insurmountable aversion to the idea
+            of engaging myself in my loathsome task in my father's
+            house, while in habits of familiar intercourse with
+            those I loved. I knew that a thousand fearful accidents
+            might occur, the slightest of which would disclose a
+            tale to thrill all connected with me with horror. I was
+            aware also that I should often lose all self-command,
+            all capacity of hiding the harrowing sensations that
+            would possess me during the progress of my unearthly
+            occupation. I must absent myself from all I loved while
+            thus employed. Once commenced, it would quickly be
+            achieved, and I might be restored to my family in peace
+            and happiness. My promise fulfilled, the monster would
+            depart for ever. Or (so my fond fancy imaged) some
+            accident might meanwhile occur to destroy him, and put
+            an end to my
+            slavery for ever.&lt;/item&gt;
+        </pre>
+               Occasionally multiple <code class="code">p</code> elements representating paragraphs in the novel might appear inside a list item,
+               and occasionally the p element was missing within the item. More strange was the markup
+               of poetry:
+               <pre class="programlisting">
+             &lt;lg&gt;
+&lt;l&gt;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"The
+                sounding cataract&lt;lb/&gt;
+                Haunted him like a passion: the tall rock,&lt;lb/&gt;
+                The mountain, and the deep and gloomy wood,&lt;lb/&gt;
+                Their colours and their forms, were then to
+                him&lt;lb/&gt;
+                An appetite; a feeling, and a love,&lt;lb/&gt;
+                That had no need of a remoter charm,&lt;lb/&gt;
+                By thought supplied, or any interest&lt;lb/&gt;
+                Unborrow'd from the eye"*
+&lt;/l&gt;
+&lt;/lg&gt;
+         </pre>   
+               On inquiry, we learned something of the history of the TEI preparation of the file,
+               that the problem was posed by a need to convert a web 1.0 hypertext edition into TEI
+               as a curatorial decision, designed to be readily published in the numbered segments
+               we see visible on the Romantic Circles site. Numbering must have been accomplished
+               by transformation from these hybrid <q>faux-TEI</q> list elements into HTML.          
+               
+            </p>
+            <p>In October 2016 we experimented with text extracted directly from the Romantic Circles
+               1818 and 1831 editions, and processed these with CollateX. The experience showed us
+               worrisome problems at the level of the text, angle brackets poised in the text and
+               other anomalies such as misnumbering and missing italics. We decided that perhaps
+               the transformation that the digital Frankenstein had undergone in 2009 for Romantic
+               Circles republication was not kind to the text and that to work with a reliable foundation
+               for our bicentennial edition, we should return to its origin in the early 1990s hypertext
+               Pennsylvania Electronic Edition. We also determined that we had better proof check
+               the texts of all documents against originals. What we may have considered an <q>up-transformation</q> to meet new web standards in 2009 appears to us on close inspection to have potentially
+               damaged a cleaner earlier encoding.
+            </p>
+         </div>
+         <div class="section" id="d1e164">
+            <h2 class="title" style="clear: both">The Dream of 90s Hypertext: The Pennsylvania Electronic Edition</h2>
+            <p>The Pennyslvania Electronic Edition (PAEE) represents a much more extensive scholarly
+               effort than what is rendered of it on its supposedly updated version on Romantic Circles.
+               While neither edition renders the 1823 text, whose publication was supervised by William
+               Godwin, the PAEE prepared a table of hand-collected variants indicating how the 1823
+               edition differs from the 1818 and 1831. Meanwhile, what appears of the better-known
+               early (1818) and late (1831) publications is rendered side-by-side in old-fashioned
+               (long since deprecated) HTML frames built from 238 separate HTML files (each usually
+               representing a few paragraphs) of the 1818 and 249 files of the longer 1831 novel.
+               The particulation of files represents an editorial method of juxtaposition of tiny
+               pieces, in keeping with the hypercard format of early hypertext books. The early editors
+               (Stuart Curran and Jack Lynch of the University of Pennsyvlania), took care to produce
+               a highly legible, color-coded collation in hypertext, and while dates of preparation
+               or publication are not clear in the files, <a href="http://www.upenn.edu/computing/printout/archive/v11/3/creature.html" class="link" target="_new">a short web publication about the edition by Curran from November 1994 in <span class="ital">Penn Magazine</span></a> indicates the production was well underway at that moment, with plans for release
+               of a CD-ROM edition and non-profit production on the web. The goal appears to have
+               been to reach high school and college students, and to place before them (in Curran’s
+               words) <q>a convenient repository of otherwise widely scattered scholarly and critical materials</q> through which they are given an opportunities to browse, to read in a non-linear
+               fashion and discover for themselves a rich store of contexts and, effectively, a way
+               to read the 1818 and 1831 editions together rather than just one or the other. Curran
+               described his aim as an <q>assault</q> on print-bound habits of reading: 
+               
+               
+               <div class="blockquote">
+                  <blockquote class="blockquote">
+                     <p>Multiply these possibilities by the large number of ancillary texts, and you have
+                        a sense of what an assault this technology portends on a normative, atomistic conception
+                        of the act of reading. One doesn’t, it is true, exactly curl up with a good book here.
+                        Rather, one is faced with dozens of possibilities at once, literally replicating the
+                        ways intertextual allusions play against and within any literary work of dimension
+                        and intellectual ambition.
+                     </p>
+                  </blockquote>
+               </div>
+               Curran clearly had an idea that his edition was breaking new ground: <q>We are hoping to create here for the first time an electronic variorum</q>, and perhaps he did not at that moment realize that the work he and Jack Lynch were
+               putting to the project to encode variants with HTML was being replicated by the Text
+               Encoding Initiative, which in the same year (1994), released a draft of its P3 Guidelines,
+               a draft which contained its first modeling of apparatus criticus markup with the elements
+               app and rdg and their corresponding attributes. The first half of the 1990s saw intense
+               drafting for the TEI in defining a standard tagset in SGML, and the irony of Curran’s
+               venture with HTML seems to have placed his effort in a parallel universe, perhaps
+               due to its emphasis on immediate sharing and distribution. Duplicating the efforts
+               of the TEI in SGML, and bound by the semantic limitations of another specific instantiation
+               of SGML in HTML 1.0 to represent descriptively the variations between two texts, the
+               PAEE Frankenstein editors pioneered their own system of pseudomarkup that appears
+               in a third frame running beneath the 1818 and 1831 windows, as visible on <a href="http://knarf.english.upenn.edu/Colv1/f1101.html" class="link" target="_new">a representative page</a>. The pseudomarkup applies a system of square brackets and angle brackets to render
+               variants inline together in the document.
+            </p>
+            <p>What is immediately evident is the precision and care taken in the first edition,
+               even in its apparent lack of awareness of the TEI as it was developing an alternate
+               SGML form in the mid 1990s. Also evident, ironically, is the net loss of information
+               in the translation of the PAEE into TEI for Romantic Circles in 2009, where the difficulty
+               of negotiating between HTML 1.0 and the XML standard of TEI appears to have been strained
+               in favor of expressing the presentation view of the texts while removing the more
+               adventurous aspects of pseudomarkup. The editorial annotations were transferred from
+               the HTML to the XML syntax, no effort was made in the conversion of 2009 to apply
+               the apparatus criticus of TEI to curate the handiwork in pseudomarkup of the original
+               PAEE editors.
+            </p>
+            <p>Looking back on origins of our electronic Frankenstein monster, we see something of
+               a history of strained relations between <q>chunky</q> hypertext books and <q>creamy</q> TEI which in those days applied SGML in favor of the semantics of document hierarchies
+               to show interrelationships.<sup class="fn-label"><a href="#d1e201" class="footnoteref" id="d1e201-ref">[1]</a></sup> The PAEE attempted an apparatus criticus in preparing tiny hypercard <q>chunks</q> in HTML 1.0 frames as an interface that prioritized a study of variation, and even
+               coded that variation in markup of their own that used angle brackets, square brackets,
+               boldface, and italics to provide through the web browser interface a synoptic view
+               of a variorum edition. Fortunately the edition is still served from its original University
+               of Pennsyvlania URL, apparently unchanged over the years, but in a time of generational
+               transference marked by rapid aging of electronic texts prepared in non-standard ways,
+               the old edition’s fragility and ambition are worth contemplating now. In 2017-2018,
+               we preparers of a new edition (just like our predecessors) are standing on the proverbial
+               shoulders of giants, and if we are single-minded about preparing the documents in
+               a format we can readily process and publish, we stand potentially to lose the scholarship
+               and the impressive mass of paratext surrounding that first edition. We underestimate
+               these early editions to our peril (or to our potential cultural impoverishment). Indeed,
+               the PAEE contains hundreds of paratext documents, including an impressive corpus of
+               other literary texts in its <a href="http://knarf.english.upenn.edu/Indexes/works.html" class="link" target="_new"><q>Works Included in this Edition</q></a> bordering on and relevant to <span class="ital">Frankenstein</span>, as well an impressive array of <a href="http://knarf.english.upenn.edu/Contexts/index.html" class="link" target="_new"><q>Contexts</q> pages</a> covering religious, mythical, geographic, scientific topics. Whether we can help
+               preserve the vision of the first editors in interlinking contextual materials with
+               their critical variorum edition, or whether we should try to do so, are open questions
+               at this stage in our work on the Bicentennial Frankenstein project. Our own team,
+               itself pressed for time and finding a need to invent a new expression of <span class="ital">Frankenstein</span>’s contexts, is not likely to curate the paratextual assemblage of documents in the
+               PAEE, as we have prioritized for the bicentennial moment to reconstruct the electronic
+               variorum and add more to it than available in the original.
+            </p>
+         </div>
+         <div class="section" id="d1e239">
+            <h2 class="title" style="clear: both">Stages in Up-Translating the Pennsylvania Electronic Edition</h2>
+            <p>In December 2016, I harvested the nearly 500 individual HTML files of the PAEE representing
+               the 1818 and 1831 editions and began a painstaking process of up-translation, with
+               the following major stages in view:
+               
+               <div class="orderedlist" id="d1e244">
+                  <ol start="NaN" style="list-style-type: decimal;">
+                     <li id="d1e245">
+                        <p>converting the hundreds of hypercard documents  of the PAEE from HTML 1.0 into two
+                           separate plain text documents representing the 1818 and 1831 editions;
+                        </p>
+                     </li>
+                     <li id="d1e248">
+                        <p>up-converting these to a simple form of XML to prepare them for automated collation
+                           with collateX, software designed to compare multiple documents and locate and mark
+                           their points of deviance and output them tagged according to TEI’s critical apparatus
+                           markup;
+                        </p>
+                     </li>
+                     <li id="d1e251">
+                        <p>preparing from carefully proofed OCR a digitized 1823 text, formatted in XML for collation
+                           with the 1818 and 1831 editions;
+                        </p>
+                     </li>
+                     <li id="d1e254">
+                        <p>processing the three XML documents with collateX to produce an XML text, to be up-converted
+                           into TEI;
+                        </p>
+                     </li>
+                     <li id="d1e257">
+                        <p>maintaining the three separate documents to process with an additional set of witnesses
+                           prepared from the Shelley-Godwin Archive edition of the 1816-1818 manuscript notebooks
+                           of <span class="ital">Frankenstein</span>.
+                        </p>
+                     </li>
+                  </ol>
+               </div>
+               At the time of this writing in July 2017, we are beginning work on the last two stages
+               of this. That is, we have successfully prepared a fresh automated collation of the
+               1818, 1823, and 1831 printed editions of Frankenstein, and we are planning how to:
+               
+               <div class="orderedlist" id="d1e264">
+                  <ol start="NaN" style="list-style-type: decimal;">
+                     <li id="d1e265">
+                        <p>re-process the collation after we prepare a similarly formatted unified file of the
+                           thousands of manuscript notebook files from the Shelley-Godwin Archive
+                        </p>
+                     </li>
+                     <li id="d1e268">
+                        <p>build a complete TEI edition from the collation</p>
+                     </li>
+                  </ol>
+               </div>
+               Beyond these goals of moving from chunks to large unified files for our base texts,
+               we of course also face the challenge of how to share the edition with readers, not
+               only scholars of the novel and its time period but also enthusiasts of the Frankenstein
+               narrative, who may, if we are successful, learn something new about its textual genetics:
+               how this text transformed over time. That last goal is out of scope of this paper,
+               as our current project is basically to create a tractable semantically meaningful
+               TEI markup building anew with a start in the PAEE files.
+            </p>
+            <p>My concentration for this paper is on a stage of what is completed already, and my
+               sustained interaction with the PAEE hypertext edition. We first decided to process
+               a predictable plain text with pseudomarkup to preserve information from the markup,
+               and we decided that each stage of our up-conversion would produce a distinct and re-usable
+               edition in its own right, whether in plain text, or a preliminary stage of XML for
+               collation, or ultimately the collated edition in TEI P5. In this context, the PAEE
+               files take on multiple <q>afterlives</q> in plain text and XML forms.
+            </p>
+            <p>At the time of preparation, we were uncertain whether plain text of simple XML formatting
+               was best suited for collation processing, and in the course of that processing we
+               discovered indeed that XML was preferable since the collation software could be programmed
+               to read and process and ignore particular elements. The pseudomarkup in our plain
+               text, however, served (and continues potentially to serve) as a viable intermediary
+               format, trivally easy to up-translate into XML, and co-existing alongside its hierarchially
+               organized kin.
+            </p>
+            <p>We began, then, by producing plain text from the old PAEE hypercards. The following
+               documents my decisions and actions taken on the 1990s files to prepare them as plain
+               text editions, prior to collation. 
+            </p>
+            <div class="section" id="d1e281">
+               <h3 class="title" style="clear: both">Decisions for preserving and eliminating markup in plain text versions</h3>
+               <div class="orderedlist" id="d1e284">
+                  <ol start="NaN" style="list-style-type: decimal;">
+                     <li id="d1e285">
+                        <p>Using regex find-and-replace strategies, we prepared altered versions of the PA EE
+                           HTML files to reproduce simpler forms consistent with current XHTML 5 standards.
+                        </p>
+                     </li>
+                     <li id="d1e288">
+                        <p>In the PA EE some elements (like <code class="code">&lt;p&gt;</code> and <code class="code">&lt;br&gt;</code>) were not given close tags, while others were, making the code difficult to process
+                           with XSLT. Close tags were applied and the files were simplified to carry only the
+                           title page, prefacing material, and text of the novel.
+                        </p>
+                     </li>
+                     <li id="d1e297">
+                        <p>The elements holding navigational information in the PA EE were excluded. This is
+                           because the PA EE texts were prepared as 238 and 250 separate HTML files (for the
+                           1818 and 1831 editions) in order to manually align them in small <q>chunks</q> as a means to compare them visually in HTML frames. Since our edition is uniting
+                           these hundreds of chunks into a single document, we will prepare new navigational
+                           elements at a later stage after we have prepared our new TEI edition and are ready
+                           to produce a new reading view.
+                        </p>
+                     </li>
+                     <li id="d1e303">
+                        <p>Renaming files and directories: The PA EE files were stored in three separate directories
+                           for each edition, associated with volumes 1, 2, and 3 of the 1818 edition, and the
+                           1831 files were given names to assist with pairing them with associated chunks of
+                           the 1818 edition inside HTML frames. Since we need to process the files all together
+                           to output a single text of the 1818 and of the 1831 novel, we flattened the hierarchy:
+                           We removed the volume directories and held each edition’s set of 238 and 250 files
+                           respectively in its own directory. The files were renamed carefully to number their
+                           sequence in assembling the text, and to simplify their association with the text’s
+                           structural layers: the opening material, the Walton letters that frame the text at
+                           its beginning and end, and the internal chapters.
+                        </p>
+                     </li>
+                     <li id="d1e306">
+                        <p>Eliminating hyperlinked editorial annotations: We decided we must simply represent
+                           the nineteenth-century editions and that we cannot at this time properly curate the
+                           PAEE edition itself, so we did not port the links to editorial annotations coded in
+                           the PA EE. For easing the collation and up-conversion process later, we are preserving
+                           information from the presentation markup of the PA EE texts: its rendering of italics,
+                           square brackets, and centered text.
+                        </p>
+                     </li>
+                     <li id="d1e309">
+                        <p>In the PA EE there is no distinction between italics for titles and italics for emphasized
+                           words. Because the asterisk is used to signal footnotes in the text, we use the underscore
+                           (<code class="code">_</code>) instead to mark off italicized text of any kind.
+                        </p>
+                     </li>
+                     <li id="d1e315">
+                        <p>Square brackets (<code class="code">[ ]</code>) are placed around text marked as small caps. (We have commented out the one instance
+                           in the 1831 PA EE HTML in which square brackets were used to hold a normalized variant
+                           of a word, to suppress that from the output.)
+                        </p>
+                     </li>
+                     <li id="d1e321">
+                        <p>Centered text is marked between curly braces: <code class="code">{ }</code> Note: some center tagging, such as in header tags, was lost in the conversion process
+                           and should be restored as we proof the texts.
+                        </p>
+                     </li>
+                     <li id="d1e327">
+                        <p>Each unit of PA EE HTML texts marked with a structural element to indicate line break
+                           (<code class="code">&lt;br&gt;</code>) or paragraph (<code class="code">&lt;p&gt;</code>) is produced as a unit line in the plain text. Thus, an entire paragraph appears
+                           as a single line. Every unit line is followed by two newline characters.
+                        </p>
+                     </li>
+                     <li id="d1e336">
+                        <p>Documentation is generated at the head of the text files inside commented text marked
+                           with hashes (`# `), to indicate the derivation of the documents from the PA EE and
+                           to document the rendering decisions above.
+                        </p>
+                     </li>
+                  </ol>
+               </div>
+            </div>
+            <div class="section" id="d1e339">
+               <h3 class="title" style="clear: both">Stages for processing the altered PA EE HTML to produce plain text editions</h3>
+               <p>The following processing stages would certainly have been better accomplished entirely
+                  with XSLT, because after the first step, they rely on a complex series of find and
+                  replace operations that might have been better accomplished and documented if all
+                  handled with XSLT string-processing functions. The basic idea, though, is to prepare
+                  a consistently formatted set of documents that can reliably be compared with collation
+                  software.
+               </p>
+               <p>The conversion process relies on an XSLT transformation to prepare plain text from
+                  the updated HTML, running it over directories of the hundreds of files. Prepared to
+                  process from a collection organized unambiguously by filename and output a single
+                  file. Filenames were prefaced by a number to process in sequential order The XSLT
+                  is featured in the following section and <a href="https://raw.githubusercontent.com/ebeshero/Pittsburgh_Frankenstein/master/XSLT/PlainText_Prep.xsl" class="link" target="_new">linked here in our GitHub repository</a>.<sup class="fn-label"><a href="#d1e349" class="footnoteref" id="d1e349-ref">[2]</a></sup></p>
+               <p> Open the output in Text Wrangler (recently superseded by BBEdit) and in oXygen, and
+                  work on the following:
+               </p>
+               <div class="orderedlist" id="d1e357">
+                  <ol start="NaN" style="list-style-type: decimal;">
+                     <li id="d1e358">
+                        <p>In Text Wrangler (or BBEdit), remove line breaks (option in the Text menu). This ensures
+                           that any text preceded by just one newline character is pulled into the preceding
+                           line, which unites the content of each paragraph inside a single line.
+                        </p>
+                     </li>
+                     <li id="d1e361">
+                        <p>In oXygen, with regex find and replace, eliminate instances of more than two newline
+                           characters `\n`, but ensure that two newlines appear between each line.
+                        </p>
+                     </li>
+                     <li id="d1e364">
+                        <p>Add <code class="code">\n\n</code> after VOLUME, LETTER, PREFACE, and CHAPTER headings and the Introduction heading
+                           in the 1831 edition. Search for <code class="code">(PREFACE|VOLUME|LETTER|CHAPTER)\s+[IVXLC]+\.*</code> . Also check and restore newlines in letter headings.
+                        </p>
+                     </li>
+                     <li id="d1e373">
+                        <p>In Text Wrangler (or BBEdit), <q>educate</q> the quotes: This produces curly apostrophes and quotes from the straight quotes of
+                           the PA EE.
+                        </p>
+                     </li>
+                     <li id="d1e379">
+                        <p>Regularize white spaces using Find &amp; Replace in oXygen, using the <code class="code">\h</code> regex to indicate white space inside a line. Replace any instances of <code class="code">\h\h</code> with a regular space. 
+                        </p>
+                     </li>
+                     <li id="d1e388">
+                        <p>Convert double hyphens (--) to em dashes (—).</p>
+                     </li>
+                  </ol>
+               </div>
+            </div>
+            <div class="section" id="d1e391">
+               <h3 class="title" style="clear: both">XSLT for Translation of <q>Up-Translated</q> HTML to Pseudo-Marked Text
+               </h3>
+               <p>Our translation of the PAEE into XML involves a significant intermediary step that
+                  might be considered a destination in its own right: a not-so-plain text file featuring
+                  pseudo-markup that preserves information from the markup. Our XSLT produces a header
+                  of meta-information about the edition we are preparing, with an explanation of symbols.
+                  This edition of the 1818 and 1831 text files might well be a valuable output in its
+                  own right, prior to their collation. Preparing this text format and its pseudomarkup
+                  establishes the basis for our new preparation of a plain text edition for the OCR'd
+                  1823 edition. All three editions must be prepared in the same plain text format to
+                  ensure a precise and accurate machine collation into a single file.
+               </p><pre class="programlisting">
+            &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
+version="3.0"&gt;
+
+   &lt;!--2016-12-28 ebb: Prepared to process from a collection organized unambiguously by filename and output a single file. Filenames were prefaced by a number to process in sequential order.--&gt;  
+  &lt;xsl:strip-space elements="*"/&gt;
+    &lt;xsl:output method="text" encoding="UTF-8"/&gt;
+
+   &lt;!--ebb: Uncomment one of the following lines to process the appropriate edition, either 1818 or 1831.--&gt; 
+  &lt;!--&lt;xsl:variable name="paEdition" select="collection('../frankenTexts_HTML/PA_Electronic_Ed/1818_ed')"/&gt;--&gt;
+   
+ &lt;xsl:variable name="paEdition" select="collection('../frankenTexts_HTML/PA_Electronic_Ed/1831_ed')"/&gt;
+   
+   &lt;xsl:template match="/"&gt;
+     &lt;xsl:text&gt;********************************************************************************
+        # FRANKENSTEIN; OR, THE MODERN PROMETHEUS
+        
+        ## The Pittsburgh Bicentennial Edition
+        
+        ### INTRODUCTORY NOTE ON THE TEXT: 
+        
+This is a plain text edition of the &lt;/xsl:text&gt;&lt;xsl:value-of select="($paEdition//head[1]/tokenize(title, ', ')[2])[1]"/&gt; edition of _Frankenstein; or, the Modern Prometheus_ by Mary Shelley &lt;xsl:text&gt;prepared for the Frankenstein Bicentennial project, which commemorates the 200th anniversary of the first published edition of this novel in 1818.
+     &lt;/xsl:text&gt; 
+      
+      &lt;xsl:text&gt;Frankenstein; or, the Modern Prometheus: Pittsburgh Bicentennial Edition is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. &lt;!--ebb: Check with project team. Do we want this to be a free culture license, meaning we permit commercial uses of this work? If so, change this to read:
+     
+Frankenstein; or, the Modern Prometheus: Pittsburgh Bicentennial Edition is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
+      --&gt;
+      &lt;/xsl:text&gt;
+      &lt;xsl:text&gt;Date this text was produced: &lt;/xsl:text&gt;&lt;xsl:value-of select="current-dateTime()"/&gt;&lt;xsl:text&gt;. 
+      &lt;/xsl:text&gt; 
+      &lt;xsl:text&gt;This edition is part of the Pittsburgh research team's contribution to the Bicentennial Frankenstein Project, and is prepared by Elisa Beshero-Bondar of the University of Pittsburgh at Greensburg with assistance from Rikk Mulligan of Carnegie Mellon University. We are grateful for consultation from Wendell Piez, David J. Birnbaum, and Raffaele Viglianti, as well as Neil Fraistat and Dave Rettenmaier. This edition's stages of development are stored and documented in the Pittsburgh_Frankenstein GitHub repository: https://github.com/ebeshero/Pittsburgh_Frankenstein/ .
+
+We have produced this plain text edition for two purposes:
+
+1) To prepare for automated collation of the 1818, 1823, and 1831 editions of _Frankenstein_ using CollateX, in order to generate a TEI XML document that stores the variations of these texts.
+
+2) To provide a reliable digital base text of each edition tractable for future projects.
+
+      &lt;/xsl:text&gt;
+     
+     &lt;xsl:text&gt;This plain text edition is one of two, representing the 1818 and 1831 editions of the novel. This pair of editions is based on the Pennsylvania Electronic Edition of _Frankenstein; or, the Modern Prometheus_ by Mary Shelley, edited by Stuart Curran and assisted by Jack Lynch, located at http://knarf.english.upenn.edu/ and hereafter referred to as PA EE. Elisa Beshero-Bondar and Rikk Mulligan *are correcting* these texts against photo facsimiles of the 1818 and 1831 texts. 
+        * We will alter the previous sentence in this header when this phase of proof-checking is completed.
+     &lt;/xsl:text&gt;
+      &lt;xsl:text&gt;Our plain text edition preserves the rendering of italics, square brackets, and centered text from the PA EE HTML texts. 
+
+* In the PA EE there is no distinction between italics for titles and italics for emphasized words. Because the asterisk is used to signal footnotes in the text, we use the underscore (`_`) instead to mark off italicized text of any kind. 
+
+* Square brackets (`[ ]`) are placed around text marked as small caps. (We have commented out the one instance in the 1831 PA EE HTML in which square brackets were used to hold a normalized variant of a word, to suppress that from the output.) 
+
+* Centered text is marked between percent symbols: `% %`.
+
+* Each unit of PA EE HTML texts marked with a structural element to indicate line break (`&lt;br&gt;`) or paragraph (`&lt;p&gt;`) is produced as a unit line in the plain text. Thus, an entire paragraph appears as a single line. Every unit line is followed by two newline characters. 
+      &lt;/xsl:text&gt;
+      &lt;xsl:text&gt;Note for later processing: In the PA EE of this text, there are &lt;/xsl:text&gt;&lt;xsl:value-of select="count(distinct-values($paEdition//body//a/@href))"/&gt; encoded links, each pointing to an editorial annotation.
+      &lt;xsl:text&gt;********************************************************************************&lt;/xsl:text&gt;
+      &lt;xsl:apply-templates select="$paEdition//body"/&gt;
+   &lt;/xsl:template&gt;
+   
+&lt;xsl:template match="br"&gt;
+   &lt;xsl:text&gt;
+      
+   &lt;/xsl:text&gt;
+&lt;/xsl:template&gt;
+   &lt;xsl:template match="p"&gt;
+      &lt;xsl:apply-templates/&gt;&lt;xsl:text&gt;
+         
+      &lt;/xsl:text&gt;
+&lt;/xsl:template&gt; 
+  &lt;!-- &lt;xsl:template match="text()"&gt;
+      &lt;xsl:apply-templates select="normalize-space(.)"/&gt;
+     2016-12-28 ebb: normalize-space() causes problems: too much tightening up of the output so words are run together, also when applied at &lt;p&gt; template, child nodes aren't processed. 
+  Using regex and Text-Wrangler on the output file to remove its excess lines.
+   &lt;/xsl:template&gt;--&gt;
+   
+&lt;xsl:template match="i"&gt;
+   &lt;xsl:text&gt;_&lt;/xsl:text&gt;&lt;xsl:apply-templates/&gt;&lt;xsl:text&gt;_&lt;/xsl:text&gt;
+&lt;/xsl:template&gt; 
+
+   &lt;xsl:template match="small"&gt;
+      &lt;xsl:text&gt;[&lt;/xsl:text&gt;&lt;xsl:apply-templates/&gt;&lt;xsl:text&gt;]&lt;/xsl:text&gt;
+   &lt;/xsl:template&gt; 
+   
+   &lt;xsl:template match="center"&gt;
+      &lt;xsl:text&gt;%&lt;/xsl:text&gt;&lt;xsl:apply-templates/&gt;&lt;xsl:text&gt;%&lt;/xsl:text&gt;
+   &lt;/xsl:template&gt;
+       
+&lt;/xsl:stylesheet&gt;
+        </pre></div>
+         </div>
+         <div class="section" id="d1e401">
+            <h2 class="title" style="clear: both">Collation Discoveries: Flattening and Chunking Again</h2>
+            <p>At the time of this writing, two members of our team completed proof-checking the
+               plain text files generated by the above stages of processing against photofacsimiles
+               of the nineteenth-century editions. We have undone the normalized spellings of the
+               PAEE to restore the original spellings of the nineteenth-century texts, and have corrected
+               transcription errors, improving what we can. We also painstakingly labored on correcting
+               a plain text file generated by OCR from ABBYY Finereader of the 1823 text. We discovered
+               it was best to convert these to XML (easily done with a series of Find and Replace
+               operations from pseudomarkup to angle brackets). In May 2017, we processed our first
+               collation of the documents, and discovered in the process that we could output plain
+               text tables to align the outputs side by side, as well as XML output, both of which
+               are useful. We also discovered two things that have caused us to return to revise
+               substantially the documents we had prepared:
+               
+               <div class="orderedlist" id="d1e406">
+                  <ol start="NaN" style="list-style-type: decimal;">
+                     <li id="d1e407">
+                        <p>Collating multiple versions of a novel is highly demanding of processing power, and
+                           lags considerably and may not properly locate alignments and deviations if the the
+                           entire novel is processed at once. I had to prepare my XML for chunking again, with
+                           larger roughly chapter-sized chunks rather than the one or two paragraphs of hypercard
+                           chunking from the PAEE. That meant dispensing with structuring an elaborately hierarchical
+                           document prior to machine collation: the highest level of hierachical organization
+                           below the document node is a paragraph, and the structural components of the novel
+                           (chapter and volume and letter divs) are signalled with milestone style elements.
+                           Milestone elements are used to signal the boundaries of the pieces to be processed
+                           by collateX.
+                        </p>
+                     </li>
+                     <li id="d1e410">
+                        <p>Once we had processed the collations, we easily saw in collateX's plain text output
+                           tables many more errors to check and correct against our photofacsimiles.
+                        </p>
+                     </li>
+                  </ol>
+               </div> 
+               The irony of this is, just as we thought we might be finished with <q>stitching up</q> the body of the <span class="ital">Frankenstein</span> Creature, we discovered a necessity to break it into pieces again in order to faciliate
+               collation. Collation outputs are necessarily multiple now, and must be processed again
+               to stitch them together. Collation is now a recurring process, helping us to note
+               corrections still to be made in our base texts. The plain text and simple XML files
+               we have prepared now serve as a sort of <q>ur-text</q> still leading to our goal of preparing a new synoptic TEI document combining the
+               three texts. From the process, we begin to see some new flexibility and value in flattened,
+               <span class="ital">chunkable</span> XML documents.
+            </p>
+            <p>The need to work on the collation in small units is further exacerberated by analysis
+               of the work ahead on working the manuscript notebooks into the collation with the
+               print editions. At first we thought that <q>ur-text</q> file would be an XML document containing angle bracket markup in the form of critical
+               apparatus tags, thus:
+               <pre class="programlisting">
+            &lt;p&gt;I am by birth a
+&lt;app&gt;
+    &lt;rdg wit="#c56"&gt;&lt;ptr target="http://url.shelley-godwin"/&gt;&lt;/rdg&gt;
+     &lt;rdg wit="#p1818"&gt;Genevese&lt;/rdg&gt;
+      &lt;rdg wit="#p1823"&gt;Scotsman&lt;/rdg&gt;
+      &lt;rdg wit="#p1831"&gt;Martian&lt;/rdg&gt;
+&lt;/app&gt;.
+&lt;/p&gt;
+        </pre>
+               This encoding (of a nonsensical and nonexistent sample passage) demonstrates our first
+               plan of 2016 for interweaving three text files together with pointers into the Shelley-Godwin
+               Notebooks, which combine text and image and cannot be rendered as text documents.
+               Our team member at MITH and my colleague on the TEI Technical Council, Raffaele Viglianti,
+               first planned to encode linkages to associated mansucript notebook facsimile pages
+               in the Shelley-Godwin Archive. The pointers would lead in a published edition to links
+               from our edition into related passages of the draft notebooks. However, we discovered
+               a major problem with this plan on examining the output of our collation of the 1818,
+               1823, and 1831 editions:
+               <div class="orderedlist" id="d1e434">
+                  <ol start="NaN" style="list-style-type: decimal;">
+                     <li id="d1e435">
+                        <p>First, the collation output is much too complicated to make processing by hand particularly
+                           easy.
+                        </p>
+                     </li>
+                     <li id="d1e438">
+                        <p>Perhaps more significantly, the notebooks are themselves a variant edition in their
+                           own right, and it would perhaps be more efficient to process their texts with automatic
+                           collation in parallel with the print editions we have been preparing.
+                        </p>
+                     </li>
+                  </ol>
+               </div>
+               This raises a fresh set of challenges for our project. The notebook XML chunked quite
+               finely, with a separate file for each page, using diplomatic TEI markup that prioritizes
+               the description of each page. Line-breaks are particularly vexing because where words
+               in the notebooks break at the end of the lines, there are no consistent reliable symbols
+               to indicate how they are joined on the next line.  
+               
+            </p>
+            <p>Our plan is to pull out the line elements, use the existing markup to locate paragraph,
+               and preserve information about insertions and deletions in the TEI of the Shelley-Godwin
+               Notebooks. The new version of XML we produce would then be more or less compatible
+               with the editions we prepared of the 1818, 1823, and 1831 texts for the purposes of
+               collation, working in some additional information from the diplomatic edition and
+               finding a way to signal that information in the critical apparatus output. We would
+               need to <q>stitch</q> the thousands of notebook pieces into the larger chunks at alignment points we can
+               identify across all of the documents. This will undoubtedly prove the most challenging
+               stage of our work so far.
+            </p>
+         </div>
+         <div class="section" id="d1e447">
+            <h2 class="title" style="clear: both">Reflections toward a theory of up-translation</h2>
+            <p>The Bicentennial Frankenstein project’s encounter with an impressive early hypertext
+               edition raises more general questions worthy of reflection towards theorizing the
+               up-transformation process: 
+               
+               
+               <div class="itemizedlist" id="d1e452">
+                  <ul>
+                     <li id="d1e453">
+                        <p>How do we understand the relationships among generations of digital editions?</p>
+                        <p>Our experience urges caution with hasty reappropriation or automated methods in up-translating
+                           dated documents. Careful document analysis and an assessment of the vision of the
+                           original edition will challenge the would be up-translator to find some way to respect
+                           the vision and scope of a dated electronic edition.
+                        </p>
+                     </li>
+                     <li id="d1e458">
+                        <p>What aspects of the old hypertext editions (or editions in formats not consistent
+                           with our own) transcend or exceed the structures we currently consider sustainable?
+                           What perspective might a thorough review of the first still extant hypertext editions
+                           contribute to our scholarly editing practice now?
+                        </p>
+                     </li>
+                  </ul>
+               </div>
+            </p>
+            <p>The fragmentation of the early Frankenstein into nearly 500 pieces represents a particulated
+               vision of collation that made difficulties for our up-translation process, and we
+               did not anticipate that we would need to <q>chunk</q> the documents yet again, and yet once more (for the manuscript notebooks) in our
+               own software-assisted collation.  
+               
+            </p>
+            <p>The survival of a particulated, chunky <span class="ital">Frankenstein</span> edition is the most remarkably persistent feature of our work thus far. We have been
+               discovering that large documents with entrenched hierarchies are difficult process
+               in portions. When we prepare chunks or segments of text for collation, we need to
+               make sure their start and end points are aligned in some way, so we look for those
+               moments of alignment and set milestone units as signal posts. But to produce tractable
+               files, cutting through volume divs (for example) raises problems, particularly when
+               those structural units of hierarchy are not consistent in the editions being compared.
+            </p>
+            <p>What have we learned? We discover that deep-nested hierachies create problems when
+               we need to compare different editions of the same text whose hierarchies are not aligned.
+               We discover that readily fragmentable output may be preferable for indicating points
+               of intersection. We consider that the process of up-conversion and up-translation
+               might best produce multiple formats of output, where plain text and XML co-exist.
+               We find on the path of our goal in producing a synoptic TEI edition, a desirability
+               in sharing both a hierarchic document that stores information about comparison as
+               well as separate edition files of each document. The imposition of structural and
+               crit-apparatus hierarchy represents one interpretation of our documents, but that
+               will not be the only one worth preserving over generations. Apparently, we need simple,
+               granular documents, too.
+            </p>
+         </div>
+         <div class="footnotes"><br><hr width="100" align="left">
+            <div id="d1e201" class="footnote">
+               <p><sup class="fn-label"><a href="#d1e201-ref" class="footnoteref">[1]</a></sup> Here I am referring to Steven DeRose and David Durand’s contrast of atomized or <q>chunky</q> hypercards vs. <q>creamy</q> or supposedly <q>more flexible</q> text representation in hierarchies of the TEI from a timely article of 1995, in which
+                  they write: <q>A number of popular hypertext systems use a data model deemed inadequate for all but
+                     a few scholarly reference needs: this is the card-based or ‘chunky’ hypertext model,
+                     in which documents must be fragmented into data atoms of uniform size and minimal
+                     internal structure. Since few documents have historically been structured in this
+                     manner, the TEl hypertext guidelines use the more flexible text-based or ‘creamy’
+                     approach to hypertext</q>. See <a href="https://link.springer.com/content/pdf/10.1007/BF01830615.pdf" class="link" target="_new">Steven J. DeRose and David G. Durand, The TEI Hypertext Guidelines, Computers and
+                     the Humanities 29, 1995, pages 181-190</a>.
+               </p>
+            </div>
+            <div id="d1e349" class="footnote">
+               <p><sup class="fn-label"><a href="#d1e349-ref" class="footnoteref">[2]</a></sup> In oXygen, we processed the transformations in two batches, by uncommenting the appropriate
+                  variable pointing to either the 1818 or 1831 directory, commenting out the other,
+                  and running it over any <q>dummy</q> XML file since oXygen requires an XML file be associated with the transformation).
+               </p>
+            </div>
+         </div>
+      </div>
+      <div id="balisage-footer">
+         <h3 style="font-family: serif; margin:0.25em"><i>Balisage:</i>&nbsp;<small>The Markup Conference</small></h3>
+      </div>
+   </body>
+</html>
