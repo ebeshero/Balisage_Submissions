@@ -55,15 +55,22 @@
                 <keyword>variorum</keyword>
             </keywordset>
         </info>
+    <section><title>TEI Ecosystems for Digital Editions: Why Can’t They Be More Interchangeable?</title>
+        <para>In her keynote address at the 2016 conference meeting of the Text Encoding Initiative in Vienna, Tara Andrews broached the issue of whether TEI can really be considered a <quote>de facto standard</quote> for the encoding and interchange of digital texts.<footnote><para>View Andrews’s keynote <link xlink:href="http://tei2016.acdh.oeaw.ac.at/keynote"><quote>Freeing Our Texts from their (Digital Tool)chains</quote></link>.</para></footnote> Her talk broached a long-recognized issue that the TEI Guidelines permit too many choices, so that for practical purposes there is very little that can be practically interoperable via simple programmatic mapping from one TEI project’s markup ecosystem to another. The TEI might well be seen as a garden of too many forking paths, too richly labyrinthine because too entertaining of multiple modes of expression. Though Andrews’s talk specifically addressed the lack of interoperability in scholarly editions built with TEI and a consequent lack of available software tools to process all TEI documents, we might take this as a more fundamental concern that the TEI has not fulfilled a more basic promise of its origins, to be a format of interchange. Beyond its difficulties in achieving interoperability, perhaps the TEI as a wild ecosystem fails to live up to the ideal vaunted in their title as <quote>Guidelines for Electronic Text Encoding and Interchange</quote>. Perhaps, too, it might be said that those of us who work with TEI do not sufficiently prioritize interchangeability in our projects: do we think beyond the end of a project horizon or grant funding cycle? The lack of interchangeability in the TEI is a problem we exemplify and aim to address in the case study presented in this paper.</para>
+   <para>Here, review the differences between interoperability and interchange, via Martin Holmes and Syd.</para>
+        <para>Why interchange is specifically important for collation.</para>
+    
+    </section>
+   
+    
+    
     <section>
         <title>Building a Variorum Edition from Multiple Sources</title>
         <para>We aimed to improve the precision of the collation by processing with <link xlink:href="https://collatex.net">CollateX</link> software, which automates the location of alignments and deltas in multiple versions of a document. The document output by CollateX is plain text that holds critical apparatus tagging, and represents a first phase of up-translation to a new and improved TEI document. The next stage would be to apply auto-tagging with regular expressions to reconstruct the <quote>body</quote> of the edition in TEI as a single document from which multiple editions can be generated for reading and for genetic studying of textual variation over time.</para>
         <para> We would include pointers into <link xlink:href="http://shelleygodwinarchive.org/contents/ms_abinger_c56/">the Shelley-Godwin Archive edition of the manuscript notebook drafts</link> of the novel.</para>
         
     </section>
-    <section><title></title>
-        <para></para>
-    </section>
+   
     <section><title></title>
         
    
