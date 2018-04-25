@@ -17,18 +17,7 @@
                   <surname>Beshero-Bondar</surname>
               </personname>
               <personblurb>
-                  <para>A scholar of British Romanticism and hybrid literary genres, Dr. Beshero-Bondar earned a PhD in English Literature from Penn State University in 2003, and afterwards took a post teaching literature at the University of Pittsburgh at Greensburg. Her publications include a book about women Romantic epoists, titled <emphasis role="ital">Women, Epic, and Transition in British Romanticism</emphasis>, published by the University of Delaware Press in 2011, and articles in <emphasis role="ital">Literature Compass</emphasis>, <emphasis role="ital">ELH</emphasis> (English Literary History), <emphasis role="ital">Genre</emphasis>, and <emphasis role="ital">Philological Quarterly</emphasis> on the poetry of Robert Southey, Mary Russell Mitford, and Lord Byron in context with 18th- and 19th-century views of revolution, world empires, natural sciences, and theater productions.</para>            
-                      <para>Since earning tenure in 2011, she has applied herself adventurously to the building of digital editions and digital research projects, such as studying studying associations among physical and mythical locations in epic poetry, and teaching undergraduates the XML family of languages in the context of designing research projects. She is the director of the <link xlink:href="http://digitalmitford.org">Digital Mitford project</link>, whose two-fold mission is:
-                      <orderedlist>
-                          <listitem>
-                              <para>to produce the first comprehensive scholarly edition of the works and letters of Mary Russell Mitford, and
-                                  </para>
-                          </listitem>
-                          <listitem>
-                              <para>to share knowledge of TEI XML and other related humanities computing practices with all serious scholars interested in contributing to the project.</para>
-                          </listitem>
-                      </orderedlist>
-                          In keeping with the second goal, she hosts an annual coding school at Pitt-Greensburg each May or June to teach TEI, regular expression up-conversion of documents, XPath, schema design, and XSLT or XQuery, based on the interests and background of registrants. Other digital projects in which she is enmeshed include <link xlink:href="https://github.com/ebeshero/Pittsburgh_Frankenstein/tree/Text_Processing">a Bicentennial Frankenstein project</link> to up-convert the 1990s electronic Frankenstein edition by 2018, and <link xlink:href="http://amadis.newtfire.org/">Amadis In Translation</link>, which applies XML to quantify, categorize, and study alterations made by Robert Southey in translating an early modern Spanish text of Amadis de Gaule. She was elected to serve on <link xlink:href="http://www.tei-c.org/Activities/Council/">the TEI Technical Council</link> from 2016-2017, and 2018-2019.</para>
+                  <para>Elisa Beshero-Bondar is a member of the TEI Technical Council, as well as an Associate Professor of English and Director of the Center for the Digital Text at the University of Pittsburgh at Greensburg. Her projects investigate complex texts such as epics, plays, and multi-volume voyage logs, and she is the founder and organizer of the <link xlink:href="http://digitalmitford.org">Digital Mitford project</link> and its annual coding school.</para>                 
               </personblurb>
               <affiliation>
                   <jobtitle>Associate Professor of English</jobtitle>
@@ -37,6 +26,19 @@
               </affiliation>
               <email>ebb8@pitt.edu</email>
           </author>
+            <author>
+                <personname>
+                    <firstname>Raffaele</firstname>
+                    <surname>Viglianti</surname>
+                </personname>
+                <personblurb>
+                    <para>Raffaele Viglianti is a TEI Technical Council member and Research Programmer at the Maryland Institute for Technology in the Humanities (MITH) at the University of Maryland, where he works on a number of digital humanities projects and is the Technical Editor for <link xlink:href="http://shelleygodwinarchive.org/">the Shelley-Godwin Archive</link>. Raffaele’s research revolves around digital editions and textual scholarship, with a focus on editions of music scores.</para>
+                </personblurb>
+                <affiliation>
+                    <jobtitle>Research Programmer</jobtitle>
+                    <orgname>Maryland Institute for Technology in the Humanities (MITH) at the University of Maryland</orgname>
+                </affiliation>
+            </author>
             <keywordset role="author">
                 <keyword>markup ecosystems</keyword>
                 <keyword>interchange</keyword>
