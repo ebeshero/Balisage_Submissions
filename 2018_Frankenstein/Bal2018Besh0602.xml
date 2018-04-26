@@ -77,13 +77,13 @@
     
     <section>
         <title>Building a Variorum Edition from Multiple Sources</title>
-        <para>We aimed to improve the precision of the collation by processing with <link xlink:href="https://collatex.net">CollateX</link> software, which automates the location of alignments and deltas in multiple versions of a document. The document output by CollateX is plain text that holds critical apparatus tagging, and represents a first phase of up-translation to a new and improved TEI document. The next stage would be to apply auto-tagging with regular expressions to reconstruct the <quote>body</quote> of the edition in TEI as a single document from which multiple editions can be generated for reading and for genetic studying of textual variation over time.</para>
-        <para> We would include pointers into <link xlink:href="http://shelleygodwinarchive.org/contents/ms_abinger_c56/">the Shelley-Godwin Archive edition of the manuscript notebook drafts</link> of the novel.</para>
+        <para>We aimed to improve the precision of the collation by processing with <link xlink:href="https://collatex.net">CollateX</link> software, which automates the location of alignments and deltas in multiple versions of a document. The document output by CollateX is plain text that holds critical apparatus tagging, and represents a first phase of up-translation to a new and improved TEI document. <!--Develop, pull in material from ADHO prop, new material from this spring, and examples --></para>
+       
         
     </section>
    
     <section><title></title>
-      <para>CALL IT STAND-OFF PARALLEL SEGMENTATION</para>  
+        <para>CALL IT STAND-OFF PARALLEL SEGMENTATION. Designed to include pointers into <link xlink:href="http://shelleygodwinarchive.org/contents/ms_abinger_c56/">the Shelley-Godwin Archive edition of the manuscript notebook drafts</link> of the novel. As well, pointers to all editions that are part of the project. </para>  
    
         
                
