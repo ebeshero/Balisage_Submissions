@@ -62,7 +62,7 @@
         <para>Bauman represents these goals as at odds with one another, stressing the point that interoperability is a matter of machine interpretation without human intervention: <quote>interoperability and expressiveness are competing goals constantly in tension with each other. While the analogy is far from exact, interoperationality is akin to equality, and expressiveness is akin to liberty.</quote> The equality Bauman ascribes to interoperable would seem to raze the complexity of a project, levelling all projects to simple terms common to a convenient universal application. Perhaps, though, enhancing the interchangeability of documents could create better conditions for interoperation that do not sacrifice the complex ontologies and research questions of data-driven TEI markup. Much depends on how we conceive of machine interoperation, our awareness of the suitability (and limits) of the tools we apply, and the constructions we develop to <quote>ramp up</quote> interchange.</para> 
         <para>Traditionally, the TEI has cared about both pursuits. As Elli Mylonas and Allen Renear discussed in 1999, TEI’s development of a language for data description and interchange helped to build and support an international research community with a tool for scholarship while also intervening in the <quote>proliferation of systems for representing textual material on computers. These systems were almost always incompatible, often poorly designed, and growing in number at nearly the same rapid rate as the electronic text projects themselves.</quote><footnote><para><link xlink:href="https://link.springer.com/content/pdf/10.1023%2FA%3A1001832310939.pdf">Elli Mylonas, Allen Renear, <quote>The Text Encoding Initiative at 10: Not Just an Interchange Format Anymore – But a New Research Community</quote> <emphasis>Computers and the Humanities</emphasis> 33:1-2 (April 1999) 1-9; 3.</link></para></footnote>. While promoting blind interchange, TEI projects support development of specialized tools for constructing digital editions in particular, and of course this is where we run amok with the interoperability challenge. Optimally developers working with TEI approach software tools with the caveat that some customization might be necessary to adapt the tool to respond to the distinctiveness of the data rather than the other way around, and that puts us into experimental territory as <quote>tinkerers</quote> or refiners of tools. We describe one such effort here, involving work with <link xlink:href="https://collatex.net">CollateX</link> software, which automates the location of alignments and deltas in multiple versions of a document. 
 </para>          
-            
+  <para></para>          
             
             
             
@@ -73,8 +73,7 @@
         
    <para>
        <!--Syd uses the case of end-of-line soft vs. hard hyphenation as a serious issue of interoperability  -->
-       <quote>The TEI currently (P5 v. 1.9.1) provides at least five different methods for encoding soft hyphens at end-of-line, three of which might use different characters for the representation of the hyphen itself (which is displayed as a hyphen (U+002D) in the listing below), and some previous releases of TEI allowed even more. This may strike some as silly or even excessive, but in most cases these choices make sense. For example, the TEI cannot prescribe to scholars who are not remotely interested in original lineation or soft hyphens that they record these features.</quote><quote>The good news is that TEI does actually provide a specific construct[6] for encoding how end-of-line hyphens are handled. The bad news is that the vocabulary available to describe the different encodings is insufficient to the task; furthermore, it is optional, and many, if not most, projects do not use it</quote>
-       
+       <quote>The TEI currently (P5 v. 1.9.1) provides at least five different methods for encoding soft hyphens at end-of-line, three of which might use different characters for the representation of the hyphen itself (which is displayed as a hyphen (U+002D) in the listing below), and some previous releases of TEI allowed even more. This may strike some as silly or even excessive, but in most cases these choices make sense. For example, the TEI cannot prescribe to scholars who are not remotely interested in original lineation or soft hyphens that they record these features.</quote><quote>The good news is that TEI does actually provide a specific construct[6] for encoding how end-of-line hyphens are handled. The bad news is that the vocabulary available to describe the different encodings is insufficient to the task; furthermore, it is optional, and many, if not most, projects do not use it</quote>    
    </para>
         <para><!--Why interchange is specifically important for collation.--></para>
     
@@ -84,7 +83,7 @@
     
     <section>
         <title>Building a Variorum Edition from Multiple Sources</title>
-        <para>We aimed to improve the precision of the collation by processing with <link xlink:href="https://collatex.net">CollateX</link> software, which automates the location of alignments and deltas in multiple versions of a document. The document output by CollateX is plain text that holds critical apparatus tagging, and represents a first phase of up-translation to a new and improved TEI document. <!--Develop, pull in material from ADHO prop, new material from this spring, and examples --></para>
+       
        
         
     </section>
