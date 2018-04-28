@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="balisage-1-3.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="balisage-1-3.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<article xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink"
+    version="5.0-subset Balisage-1.3">
+    
+    <title>Standoff Bridges in the Frankenstein Variorum Project</title>
+    <subtitle>Interchange and Interoperability within TEI Markup Ecosystems</subtitle>
+    <info>
+        <abstract>
+            <para>Developing the Frankenstein Variorum Project has necessitated a reconciliation of
+                extremely divergent markup ecosystems supporting multiple editions of a single
+                novel. The reconciliation process involves breaking or flattening the original
+                hierarchies to prioritize units of low-level lateral intersection, points shared in
+                common to construct <quote>bridge</quote> or intermediary formats for processing
+                with automated collation via collateX. The output from the automated collation
+                process also serves as an intermediary format that we transform into a TEI form of
+                <emphasis>standoff parallel segmentation</emphasis>, in which
+                standoff pointing mechanisms operate like a switchboard for connecting the individual editions
+                which can remain (for the most part) undisturbed or unmarked from the collation
+                process. The TEI <quote>standoff bridge</quote> negotiates the distinct markup
+                ecosystems in ways that can break the <quote>silo</quote> effect of isolating
+                specially encoded editions. Far from an ephemeral support structure, the standoff
+                bridge upholds the whole as the <quote>backbone</quote> of the variorum project
+                because it improves the interoperability and interchangeability of all the markup
+                ecosystems involved. Building the standoff bridge effectively reconstitutes the
+                hierarchies in a way that expresses intersections essentially as a graph structure
+                of nodes with edge pointers to comparable nodes.</para>
+            <para>Our experience on the Frankenstein Variorum is consistent with other TEI projects
+                that involve curating divergence, variance, and forking in text streams. Taken
+                together, such projects illuminate how the TEI can work in other ways besides an
+                ordered hierarchy of content objects, that indeed, the TEI can be turned to express
+                unordered <quote>lateral</quote> intersections in ways that serve long-standing
+                goals of the TEI community: interchangeability and interoperability of electronic
+                texts. As Syd Bauman in particular has discussed, where interchangeability reflects
+                the capacity for humans to negotiate and adapt to markup ecosystems from systematic
+                navigation and documentation without needing to contact the encoder for help,
+                interoperability reflects the capacity of software tools to process the markup
+                without needing to change the markup (or the tool). Although we usually consider the
+                needs of software interoperability as at odds with the richly expressive capacity of
+                human-readable semantic interchange, this paper demonstrates that the TEI can be
+                designed to prioritize the interests of both, from facilitating automated collation
+                to generating an interlinking web interface that gives the user means to choose and
+                change directions in navigating multiple editions as desired.</para>
+        </abstract>
+        <author>
+            <personname>
+                <firstname>Elisa</firstname>
+                <othername>Eileen</othername>
+                <surname>Beshero-Bondar</surname>
+            </personname>
+            <personblurb>
+                <para>Elisa Beshero-Bondar is a member of the TEI Technical Council, as well as an
+                    Associate Professor of English and Director of the Center for the Digital Text
+                    at the University of Pittsburgh at Greensburg. Her projects investigate complex
+                    texts such as epics, plays, and multi-volume voyage logs, and she is the founder
+                    and organizer of the <link xlink:href="http://digitalmitford.org">Digital
+                        Mitford project</link> and its annual coding school.</para>
+            </personblurb>
+            <affiliation>
+                <jobtitle>Associate Professor of English</jobtitle>
+                <jobtitle>Director, <link
+                    xlink:href="http://www.greensburg.pitt.edu/digital-humanities/center-digital-text"
+                    >Center for the Digital Text</link></jobtitle>
+                <orgname>University of Pittsburgh at Greensburg</orgname>
+            </affiliation>
+            <email>ebb8@pitt.edu</email>
+        </author>
+        <author>
+            <personname>
+                <firstname>Raffaele</firstname>
+                <surname>Viglianti</surname>
+            </personname>
+            <personblurb>
+                <para>Raffaele Viglianti is a TEI Technical Council member and Research Associate at
+                    the Maryland Institute for Technology in the Humanities (MITH) at the University
+                    of Maryland, where he works on a number of digital humanities projects and is
+                    the Technical Editor for <link xlink:href="http://shelleygodwinarchive.org/">the
+                        Shelley-Godwin Archive</link>. Raffaele’s research revolves around digital
+                    editions and textual scholarship, with a focus on editions of music
+                    scores.</para>
+            </personblurb>
+            <affiliation>
+                <jobtitle>Research Associate</jobtitle>
+                <orgname>Maryland Institute for Technology in the Humanities (MITH) at the
+                    University of Maryland</orgname>
+            </affiliation>
+        </author>
+        <keywordset role="author">
+            <keyword>markup ecosystems</keyword>
+            <keyword>interchange</keyword>
+            <keyword>interoperable</keyword>
+            <keyword>interoperational</keyword>
+            <keyword>intersectional</keyword>
+            <keyword>interface</keyword>
+            <keyword>OHCO</keyword>
+            <keyword>hierarchy</keyword>
+            <keyword>text stream</keyword>
+            <keyword>forking</keyword>
+            <keyword>divergence</keyword>
+            <keyword>standoff</keyword>
+            <keyword>graph</keyword>
+            <keyword>graph model</keyword>
+            <keyword>TEI P5</keyword>
+            <keyword>collation</keyword>
+            <keyword>variorum</keyword>
+            <keyword>Frankenstein</keyword>
+            <keyword>Mary Wollstonecraft Godwin Shelley</keyword>
+            <keyword>Percy Bysshe Shelley</keyword>
+            <keyword>Bicentennial Frankenstein Project</keyword>
+            <keyword>Frankenstein Variorum Edition</keyword>
+        </keywordset>
+    </info>
+</article>
