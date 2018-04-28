@@ -6,10 +6,10 @@
 
     <title>Standoff Bridges in the Frankenstein Variorum Project</title>
     <subtitle>Interchange and Interoperability within TEI Markup Ecosystems</subtitle>
-    <!--let's keep rethinking this title and return to it with more drafted. -->
         <info>
           <abstract>
-              <para><!--Don't forget to fill out the abstract! Doing this once we've got more drafted.--></para>
+              <para>Developing the Frankenstein Variorum Project has necessitated a reconciliation of extremely divergent markup ecosystems supporting multiple editions of a single novel. The reconciliation process involves breaking or flattening the original hierarchies to prioritize units of low-level lateral intersection, points shared in common to construct <quote>bridge</quote> or intermediary formats for processing with automated collation via collateX. The output from the automated collation process also serves as an intermediar format that we develop into a new form of <emphasis>standoff parallel segmentation in the TEI</emphasis>, in which standoff pointing mechanisms operate like a switchboard to the individual editions which can remain (for the most part) undisturbed or unmarked from the collation process. The <quote>standoff bridge</quote> negotiates the distinct markup ecosystems in ways that can break the <quote>silo</quote> effect of isolating specially encoded editions. Far from an ephemeral support structure, the standoff bridge upholds the whole as the <quote>backbone</quote> of the variorum project because it improves the interoperability and interchangeability of all the markup ecosystems involved. Building the standoff bridge effectively reconstitutes the hierarchies in a way that expresses intersections essentially as a graph structure of nodes with edge pointers to comparable nodes.</para>
+              <para>Building standoff bridges in this and related projects that involve curating divergence, variance, and forking in text streams illuminates how the TEI can work in other ways besides an ordered hierarchy of content objects. The TEI can be turned to express unordered <quote>lateral</quote> intersections in ways that serve long-standing goals of the TEI community: interchangeability and interoperability of electronic texts. As Syd Bauman in particular has discussed, where interchangeability reflects the capacity for humans to negotiate and adapt to markup ecosystems from systematic navigation and documentation without needing to contact the encoder for help, interoperability reflects the capacity of software tools to process the markup without needing to change the markup (or the tool). Although we usually consider the needs of software interoperability as at odds with the richly expressive capacity of human-readable semantic interchange, this paper demonstrates that the TEI can be designed to prioritize the interests of both, from facilitating automated collation to generating an interlinking web interface that gives the user means to choose and change directions in navigating multiple editions as desired.</para>
           </abstract>  
           <author>
               <personname>
@@ -191,8 +191,7 @@ For us to write processes that <quote>read around</quote> conficting hierarchies
             would be able to 1) see the variant readings and 2) change their current view and pivot
             to a different text. The software building this view follows links from the stand-off
             parallel segmentation to highlight text and retrieve bits of text from the other
-            documents to be shown at he right place. This mode of publication adhers to well
-            established user experiences for digital editions; the fundamental difference, however,
+            documents to be shown at he right place. This mode of publication adheres to well-established user experiences for digital editions; the fundamental difference, however,
             is in the integrity of each source document: the stand-off collation allows us to show
             were the differences are, and retrieve them, without having to modify or control the
             source documents. One can imagine an even more distributed application of this paradigm,
