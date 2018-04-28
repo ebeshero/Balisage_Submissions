@@ -14,11 +14,11 @@
                 hierarchies to prioritize units of low-level lateral intersection, points shared in
                 common to construct <quote>bridge</quote> or intermediary formats for processing
                 with automated collation via collateX. The output from the automated collation
-                process also serves as an intermediar format that we develop into a new form of
-                    <emphasis>standoff parallel segmentation in the TEI</emphasis>, in which
-                standoff pointing mechanisms operate like a switchboard to the individual editions
+                process also serves as an intermediary format that we transform into a TEI form of
+                    <emphasis>standoff parallel segmentation</emphasis>, in which
+                standoff pointing mechanisms operate like a switchboard for connecting the individual editions
                 which can remain (for the most part) undisturbed or unmarked from the collation
-                process. The <quote>standoff bridge</quote> negotiates the distinct markup
+                process. The TEI <quote>standoff bridge</quote> negotiates the distinct markup
                 ecosystems in ways that can break the <quote>silo</quote> effect of isolating
                 specially encoded editions. Far from an ephemeral support structure, the standoff
                 bridge upholds the whole as the <quote>backbone</quote> of the variorum project
