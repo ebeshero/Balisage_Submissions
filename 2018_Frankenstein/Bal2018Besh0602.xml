@@ -15,17 +15,17 @@
                 common to construct <quote>bridge</quote> or intermediary formats for processing
                 with automated collation via collateX. The output from the automated collation
                 process also serves as an intermediary format that we transform into a TEI form of
-                    <emphasis>standoff parallel segmentation</emphasis>, in which
-                standoff pointing mechanisms operate like a switchboard for connecting the individual editions
-                which can remain (for the most part) undisturbed or unmarked from the collation
-                process. The TEI <quote>standoff bridge</quote> negotiates the distinct markup
-                ecosystems in ways that can break the <quote>silo</quote> effect of isolating
-                specially encoded editions. Far from an ephemeral support structure, the standoff
-                bridge upholds the whole as the <quote>backbone</quote> of the variorum project
-                because it improves the interoperability and interchangeability of all the markup
-                ecosystems involved. Building the standoff bridge effectively reconstitutes the
-                hierarchies in a way that expresses intersections essentially as a graph structure
-                of nodes with edge pointers to comparable nodes.</para>
+                    <emphasis>standoff parallel segmentation</emphasis>, in which standoff pointing
+                mechanisms operate like a switchboard for connecting the individual editions which
+                can remain (for the most part) undisturbed or unmarked from the collation process.
+                The TEI <quote>standoff bridge</quote> negotiates the distinct markup ecosystems in
+                ways that can break the <quote>silo</quote> effect of isolating specially encoded
+                editions. Far from an ephemeral support structure, the standoff bridge upholds the
+                whole as the <quote>backbone</quote> of the variorum project because it improves the
+                interoperability and interchangeability of all the markup ecosystems involved.
+                Building the standoff bridge effectively reconstitutes the hierarchies in a way that
+                expresses intersections essentially as a graph structure of nodes with edge pointers
+                to comparable nodes.</para>
             <para>Our experience on the Frankenstein Variorum is consistent with other TEI projects
                 that involve curating divergence, variance, and forking in text streams. Taken
                 together, such projects illuminate how the TEI can work in other ways besides an
@@ -202,15 +202,41 @@
                 <listitem>
                     <para>the need to prioritize a single document hierarchy in the interests of
                         machine-readability, while permitting signposts of overlapping or
-                        conflicting hierarchies as of secondary importance.<footnote><para>See for example, <link xlink:href="https://doi.org/10.1093/llc/4.2.99">P. M. W. Robinson, <quote>The Collation and Textual Criticism of Icelandic Manuscripts</quote> <emphasis>Literary and Linguistic Computing</emphasis>, Volume 4, Issue 2, 1 January 1989, 99–105, https://doi.org/10.1093/llc/4.2.99</link>; <link xlink:href="https://doi.org/10.1093/llc/fqu007">Dekker, Ronald Haentjens, Dirk van Hulle, Gregor Middell, Vincent Neyt, and Joris van Zundert, <quote>Computer-supported collation of modern manuscripts: CollateX and the Beckett Digital Manuscript Project</quote> <emphasis>DSH: Digital Scholarship in the Humanities</emphasis> Volume 30, Issue 3, 1 September 2015, 452–470, https://doi.org/10.1093/llc/fqu007</link>; <link xlink:href="https://doi.org/10.1093/llc/fqw043">Eggert, Paul, <quote>The reader-oriented scholarly edition</quote> <emphasis>Digital Scholarship in the Humanities</emphasis>, Volume 31, Issue 4, 1 December 2016, 797–810, https://doi.org/10.1093/llc/fqw043</link>; and <link xlink:href="https://doi.org/10.1093/llc/fqw048">Holmes, Martin, <quote>Whatever happened to interchange?</quote> <emphasis>Digital Scholarship in the Humanities</emphasis>, Volume 32, Issue suppl_1, 1 April 2017, 163–168, https://doi.org/10.1093/llc/fqw048</link>.</para></footnote></para>
+                        conflicting hierarchies as of secondary importance.<footnote>
+                            <para>See for example, <link
+                                    xlink:href="https://doi.org/10.1093/llc/4.2.99">P. M. W.
+                                    Robinson, <quote>The Collation and Textual Criticism of
+                                        Icelandic Manuscripts</quote>
+                                    <emphasis>Literary and Linguistic Computing</emphasis>, Volume
+                                    4, Issue 2, 1 January 1989, 99–105,
+                                    https://doi.org/10.1093/llc/4.2.99</link>; <link
+                                    xlink:href="https://doi.org/10.1093/llc/fqu007">Dekker, Ronald
+                                    Haentjens, Dirk van Hulle, Gregor Middell, Vincent Neyt, and
+                                    Joris van Zundert, <quote>Computer-supported collation of modern
+                                        manuscripts: CollateX and the Beckett Digital Manuscript
+                                        Project</quote>
+                                    <emphasis>DSH: Digital Scholarship in the Humanities</emphasis>
+                                    Volume 30, Issue 3, 1 September 2015, 452–470,
+                                    https://doi.org/10.1093/llc/fqu007</link>; <link
+                                    xlink:href="https://doi.org/10.1093/llc/fqw043">Eggert, Paul,
+                                        <quote>The reader-oriented scholarly edition</quote>
+                                    <emphasis>Digital Scholarship in the Humanities</emphasis>,
+                                    Volume 31, Issue 4, 1 December 2016, 797–810,
+                                    https://doi.org/10.1093/llc/fqw043</link>; and <link
+                                    xlink:href="https://doi.org/10.1093/llc/fqw048">Holmes, Martin,
+                                        <quote>Whatever happened to interchange?</quote>
+                                    <emphasis>Digital Scholarship in the Humanities</emphasis>,
+                                    Volume 32, Issue suppl_1, 1 April 2017, 163–168,
+                                    https://doi.org/10.1093/llc/fqw048</link>.</para>
+                        </footnote></para>
                 </listitem>
             </orderedlist> For us to write processes that <quote>read around</quote> conficting
             hierarchies, we require a third alternative that does not place coexistence in an
             oppositional camp, but rather prioritizes lateral intersections without sacrificing data
             curated in distinctly different structures. Makers of genetic editions (as for example
                 <link xlink:href="http://beta.faustedition.net/">the genetic Faust edition</link>)
-            find ourselves in this intermediary third position, when multiple
-            encoding structures must co-exist and correlate to achieve a meaningful comparison of editions.<footnote>
+            find ourselves in this intermediary third position, when multiple encoding structures
+            must co-exist and correlate to achieve a meaningful comparison of editions.<footnote>
                 <para>See <link xlink:href="https://journals.openedition.org/jtei/697">Gerrit
                         Brüning, Katrin Henzel, and Dietmar Pravida, <quote>Multiple Encoding in
                             Genetic Editions: The Case of ‘Faust’</quote>, Journal of the Text
@@ -246,10 +272,7 @@
         <para>In turn, the XML output generated by collateX, too, serves as an intermediary format,
             not in TEI, but containing its components in the form of critical apparatus tagging, to
             hold information about the deltas of variance among the editions.
-            
-            <!--CODE BLOCK EXAMPLE(S) HERE --> 
-            
-            Pulling from this <quote>pre-TEI</quote> output from
+            <!--CODE BLOCK EXAMPLE(S) HERE --> Pulling from this <quote>pre-TEI</quote> output from
             the collation process, we then apply XSLT to build the TEI <quote>spinal column</quote>
             of our Variorum edition, an edition that applies stand-off pointers in a new method we
             are calling <quote>stand-off parallel segmentation</quote>. Our method enhances the
@@ -263,7 +286,22 @@
             what we can build for it and from it, the perspective on enhancing interchange for the
             purposes of interoperation has larger ramifications in the ongoing discussion of
             graph-based models and their application to the TEI.<footnote>
-                <para>For reflection on pertinent examples, see Hugh A. Cayless, <link xlink:href="http://journals.openedition.org/jtei/907"><quote>Rebooting TEI Pointers</quote>, Journal of the Text Encoding Initiative, Issue 6, December 2013</link> and his blog posting, <link xlink:href="https://blogs.library.duke.edu/dcthree/2013/08/26/graphs-trees-and-streams-the-tei-data-model/"><quote>Graphs, Trees, and Streams: The TEI Data Model</quote>, Duke Collaboratory for Classics Computing (DC3), 26 August 2013</link>. Cayless’s work on developing pointer specifications to enhance TEI expression beyond inline embedded markup is now part of the <link xlink:href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/SA.html#SATS">TEI Guidelines Chapter 16: Linking, Segmentation, and Alignment</link>, <link xlink:href="http://www.balisage.net/Proceedings/vol5/html/Cayless01/BalisageVol5-Cayless01.html">Cayless, Hugh A., and Adam Soroka. “On Implementing string-range() for TEI.” Proceedings of Balisage: The Markup Conference 2010. Balisage Series on Markup Technologies, vol. 5 (2010)</link>.</para>
+                <para>For reflection on pertinent examples, see Hugh A. Cayless, <link
+                        xlink:href="http://journals.openedition.org/jtei/907"><quote>Rebooting TEI
+                            Pointers</quote>, Journal of the Text Encoding Initiative, Issue 6,
+                        December 2013</link> and his blog posting, <link
+                        xlink:href="https://blogs.library.duke.edu/dcthree/2013/08/26/graphs-trees-and-streams-the-tei-data-model/"
+                            ><quote>Graphs, Trees, and Streams: The TEI Data Model</quote>, Duke
+                        Collaboratory for Classics Computing (DC3), 26 August 2013</link>. Cayless’s
+                    work on developing pointer specifications to enhance TEI expression beyond
+                    inline embedded markup is now part of the <link
+                        xlink:href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/SA.html#SATS"
+                        >TEI Guidelines Chapter 16: Linking, Segmentation, and Alignment</link>,
+                        <link
+                        xlink:href="http://www.balisage.net/Proceedings/vol5/html/Cayless01/BalisageVol5-Cayless01.html"
+                        >Cayless, Hugh A., and Adam Soroka. “On Implementing string-range() for
+                        TEI.” Proceedings of Balisage: The Markup Conference 2010. Balisage Series
+                        on Markup Technologies, vol. 5 (2010)</link>.</para>
             </footnote> For much the same reasons that motivate us, Jeffrey C. Witt designed the
             Scholarly Commentaries and Texts Archive, to transform digital <quote>silo</quote>
             projects into a network of data and while that project seeks a definitive language of
@@ -302,47 +340,85 @@
                 <para>See the documentation, <link xlink:href="https://collatex.net/doc/"
                             ><quote>CollateX – Software for Collating Textual
                     Sources</quote></link>. Another inspiration for the bridging concept are the
-                    visualizations in <link                   xlink:href="https://www.balisage.net/Proceedings/vol19/html/Dekker01/BalisageVol19-Dekker01.html#d11284e1180"
-                        >Haentjens Dekker, Ronald, and David J. Birnbaum. “It’s more than just overlap: Text As Graph.” In <emphasis>Proceedings of Balisage: The Markup Conference 2017. Balisage Series on Markup Technologies</emphasis>, vol. 19 (2017).</link>. The authors conceptualize an ideal model of texts in a graph structure organized primarily
-                    by their semantic sequencing and in which structural features are a matter of
-                    descriptive annotation rather than elemental hierarchy.</para>
+                    visualizations in <link
+                        xlink:href="https://www.balisage.net/Proceedings/vol19/html/Dekker01/BalisageVol19-Dekker01.html#d11284e1180"
+                        >Haentjens Dekker, Ronald, and David J. Birnbaum. “It’s more than just
+                        overlap: Text As Graph.” In <emphasis>Proceedings of Balisage: The Markup
+                            Conference 2017. Balisage Series on Markup Technologies</emphasis>, vol.
+                        19 (2017).</link>. The authors conceptualize an ideal model of texts in a
+                    graph structure organized primarily by their semantic sequencing and in which
+                    structural features are a matter of descriptive annotation rather than elemental
+                    hierarchy.</para>
             </footnote>.</para>
 
         <para>We have had to contend with the challenge of collating digital editions made at
             different times by different editors in order to prepare a variorum edition of
-            Frankenstein in TEI P5. Our collation source documents are adapted from the 1990s
-            web 1.0 HTML encoding of the Pennsylvania Electronic Edition of <emphasis>Frankenstein</emphasis> (otherwise referenced as the PAEE) for the 1818 and 1831 editions<footnote><para>Curran, Stuart and Jack Lynch. <link xlink:href="http://knarf.english.upenn.edu/">Frankenstein; or, the Modern Prometheus. The Pennsylvania Electronic Edition</link>. Est. 1994. See a representative page at <link xlink:href="http://knarf.english.upenn.edu/Colv1/f1101.html">http://knarf.english.upenn.edu/Colv1/f1101.html</link>.</para></footnote>, and the Shelley-Godwin Archive’s
-            diplomatic edition of the manuscript notebooks of 1816, the only known existing drafts of the novel.<footnote><para>The Shelley-Godwin Archive's edition of the manuscript notebooks of Frankenstein builds on decades of intensive scholarly research to create TEI diplomatic encoding: <link xlink:href="http://shelleygodwinarchive.org/contents/frankenstein/">http://shelleygodwinarchive.org/contents/frankenstein</link>/. </para></footnote> We are also newly incorporating a little-known edition of the novel’s 1823 publication produced from corrected OCR of a Google Books facsimile, together with transcription of Mary Shelley’s handwritten revision notes on a copy of the 1818 publication known as <quote>the Thomas
-                copy</quote> held at the Morgan Library and Museum. Our collation should yield a meta-narrative of how <emphasis>Frankenstein</emphasis>
-            changed over time in four versions that passed through multiple editorial hands. It is
-            widely understood that the 1831 edition diverges sharply from the first print edition of
-            1818, adding new material and changing the relationships of characters. Less known is
-            how the notebook material compares with the print editions, and how much we can identify
-            of the persistence of various hands involved in composing, amending, and substantially
-            revising the novel over the three editions. For example, to build on Charlie Robinson’s
-            identification of Percy Bysshe Shelley’s hand in the notebooks, our collation can reveal
-            how much of Percy’s insertions and deletions survive in the later print editions. Our
-            work should permit us to survey when and how the major changes of the 1831 text (for
-            example, to Victor Frankenstein’s family members and the compression and reduction of a
-            chapter in part I) occurred. We preserve information about hands, insertions, and
-            deletions in the output collation, to serve as the basis for better quantifying,
-            characterizing, and surveying the contexts of collaboration and revision in textual
-            scholarship.</para>
+            Frankenstein in TEI P5. Our collation source documents are adapted from the 1990s web
+            1.0 HTML encoding of the Pennsylvania Electronic Edition of
+                <emphasis>Frankenstein</emphasis> for the 1818 and 1831 editions<footnote>
+                <para>Curran, Stuart and Jack Lynch. <link
+                        xlink:href="http://knarf.english.upenn.edu/">Frankenstein; or, the Modern
+                        Prometheus. The Pennsylvania Electronic Edition</link>. Est. 1994. See a
+                    representative page at <link
+                        xlink:href="http://knarf.english.upenn.edu/Colv1/f1101.html"
+                        >http://knarf.english.upenn.edu/Colv1/f1101.html</link>.</para>
+            </footnote>, and the Shelley-Godwin Archive’s diplomatic edition of the manuscript
+            notebooks of 1816, the only known existing drafts of the novel.<footnote>
+                <para>The Shelley-Godwin Archive's edition of the manuscript notebooks of
+                    Frankenstein builds on decades of intensive scholarly research to create TEI
+                    diplomatic encoding: <link
+                        xlink:href="http://shelleygodwinarchive.org/contents/frankenstein/"
+                        >http://shelleygodwinarchive.org/contents/frankenstein</link>/. </para>
+            </footnote> We are also newly incorporating a little-known edition of the novel’s 1823
+            publication produced from corrected OCR of a Google Books facsimile, together with
+            transcription of Mary Shelley’s handwritten revision notes on a copy of the 1818
+            publication known as <quote>the Thomas copy</quote> held at the Morgan Library and
+            Museum. Our collation should yield a meta-narrative of how
+                <emphasis>Frankenstein</emphasis> changed over time in four versions that passed
+            through multiple editorial hands. It is widely understood that the 1831 edition diverges
+            sharply from the first print edition of 1818, adding new material and changing the
+            relationships of characters. Less known is how the notebook material compares with the
+            print editions, and how much we can identify of the persistence of various hands
+            involved in composing, amending, and substantially revising the novel over the three
+            editions. For example, to build on Charlie Robinson’s identification of Percy Bysshe
+            Shelley’s hand in the notebooks, our collation can reveal how much of Percy’s insertions
+            and deletions survive in the later print editions. Our work should permit us to survey
+            when and how the major changes of the 1831 text (for example, to Victor Frankenstein’s
+            family members and the compression and reduction of a chapter in part I) occurred. We
+            preserve information about hands, insertions, and deletions in the output collation, to
+            serve as the basis for better quantifying, characterizing, and surveying the contexts of
+            collaboration and revision in textual scholarship.</para>
 
         <para>The three print editions and extant material from three manuscripts are compared in
             parallel, to indicate the presence of variants in the other texts and to be able to
             highlight them based on intensity of variance, to be displayed like the highlighted
-            passages in each visible edition of <emphasis>The Origin of Species</emphasis> in Darwin Online.<footnote><para>Barbara Bordalejo, ed. Darwin Online. See for example the illumination of variant passages in The Origin of Species here: <link xlink:href="http://darwin-online.org.uk/Variorum/1859/1859-1-dns.html">http://darwin-online.org.uk/Variorum/1859/1859-1-dns.html</link></para></footnote> Rather than
-            any edition serving as the lemma or grounds for collation comparison, we hold the
-            collation information in stand-off markup, in its own XML hierarchy. That XML <quote>bridge</quote>
-            expresses relationships among the distinct encodings of diplomatic manuscript markup in
-            which the highest level of hierarchy is a unit leaf of the notebook, with the structural
-            encoding of print editions organized in chapters, letters, and volumes. While the
-            apparently nested structure of these divisions might seem the most meaningful way to
-            model <emphasis>Frankenstein</emphasis>, these pose a challenge to textual scholarship in their own right. As Wendell Piez has discussed, <emphasis>Frankenstein</emphasis>’s overlapping hierarchies of framing letters
-            and chapters have led to inconsistencies in the novel's print production. Piez deploys a
-            non-hierarchical encoding of the novel on which he constructs an SVG modeling (in
-            ordered XML syntax) of the overlap itself.<footnote><para>These hierarchical issues provided an application for Piez’s invented LMNL <quote>sawtooth</quote> syntax to highlight overlap as semantically important to the novel; see <link xlink:href="https://www.balisage.net/Proceedings/vol13/html/Piez01/BalisageVol13-Piez01.html">Wendell Piez, <quote>Hierarchies within range space: From LMNL to OHCO</quote> Balisage: The Markup Conference Proceedings (2014): https://www.balisage.net/Proceedings/vol13/html/Piez01/BalisageVol13-Piez01.html</link> </para></footnote> Our work with collation depends on a similar interdependency of structurally inconsistent encoding.</para>
+            passages in each visible edition of <emphasis>The Origin of Species</emphasis> in Darwin Online.<footnote>
+                <para>Barbara Bordalejo, ed. Darwin Online. See for example the illumination of
+                    variant passages in The Origin of Species here: <link
+                        xlink:href="http://darwin-online.org.uk/Variorum/1859/1859-1-dns.html"
+                        >http://darwin-online.org.uk/Variorum/1859/1859-1-dns.html</link></para>
+            </footnote> Rather than any edition serving as the lemma or grounds for collation
+            comparison, we hold the collation information in stand-off markup, in its own XML
+            hierarchy. That XML <quote>bridge</quote> expresses relationships among the distinct
+            encodings of diplomatic manuscript markup in which the highest level of hierarchy is a
+            unit leaf of the notebook, with the structural encoding of print editions organized in
+            chapters, letters, and volumes. While the apparently nested structure of these divisions
+            might seem the most meaningful way to model <emphasis>Frankenstein</emphasis>, these
+            pose a challenge to textual scholarship in their own right. As Wendell Piez has
+            discussed, <emphasis>Frankenstein</emphasis>’s overlapping hierarchies of framing
+            letters and chapters have led to inconsistencies in the novel's print production. Piez
+            deploys a non-hierarchical encoding of the novel on which he constructs an SVG modeling
+            (in ordered XML syntax) of the overlap itself.<footnote>
+                <para>These hierarchical issues provided an application for Piez’s invented LMNL
+                        <quote>sawtooth</quote> syntax to highlight overlap as semantically
+                    important to the novel; see <link
+                        xlink:href="https://www.balisage.net/Proceedings/vol13/html/Piez01/BalisageVol13-Piez01.html"
+                        >Wendell Piez, <quote>Hierarchies within range space: From LMNL to
+                            OHCO</quote> Balisage: The Markup Conference Proceedings (2014):
+                        https://www.balisage.net/Proceedings/vol13/html/Piez01/BalisageVol13-Piez01.html</link>
+                </para>
+            </footnote> Our work with collation depends on a similar interdependency of structurally
+            inconsistent encoding.</para>
 
         <para>Our method involves three stages of structural transformation, each of which disrupts
             the hierarchies of its source documents: <orderedlist>
@@ -360,28 +436,56 @@
             </orderedlist>
         </para>
 
-        <para>In the first stage, we adapt the original code from the Shelley-Godwin Archive and
-            from the PA-EE to create new forms of XML to carry predictable markers to assist in
+        <para>In the first stage, we adapt the source code from the Shelley-Godwin Archive
+            (specialized TEI for manuscript encoding of page surfaces) and from the Pennsylvania
+            Electronic Edition (PAEE) (HTML 1.0 from the mid 1990s marking paragraphs and sectional
+            headings) to create new forms of XML to carry predictable markers to assist in
             alignment. These new, pre-collation editions are resequenced (as when we move marginal
             annotations from the end of the XML document into their marked places as they would be
-            read in the manuscript notebook). They are also differently <quote>chunked</quote> than their source
-            texts, resizing the unit file so that each represents an equivalent portion small enough
-            to collate meaningfully and large enough that each document demonstrably aligns with the
-            others at its start and end points.</para>
+            read in the manuscript notebook). The texts from the PAEE are corrected against
+            photofacsimiles of first publications of the novel in 1818 and 1831. They are also
+            differently <quote>chunked</quote> than their source texts, resizing the unit file so
+            that each represents an equivalent portion small enough to collate meaningfully and
+            large enough that each document demonstrably aligns with the others at its start and end
+            points. We prepared 33 collation units of the novel. XML matching the pre-collation
+            format is prepared from OCR texts of the 1823 edition. Building from the 1818 collation
+            units, we add in encoded transcriptions of Mary Shelley's hand-written edits on
+                <quote>the Thomas copy</quote> of the 1818 publication.<footnote>
+                <para>This is known as <quote>the Thomas copy</quote> because Mary Shelley left the
+                    1818 publication containing her handwritten insertions, deletions, and comments
+                    with her friend Mrs. Thomas before leaving Italy for England in 1823, following
+                    Percy Shelley’s death in Lerici. The edits may have been entered at any time
+                    between 1818 and 1823, and they are of interest because they indicate at an
+                    early stage that Mary Shelley wanted to alter many passages in her novel, and
+                    was continuing to experiment with the characterization of Victor and the
+                    Creature. But they also indicate a point of divergence, since she did not have
+                    access to these edits in revising the novel for its 1831 publication. A key
+                    motivation for collating these editions is to attempt to compare the novel as it
+                    was being revised soon after its first publication (whose bicentennial we
+                    celebrate in 2018) with its later incarnation in the traditionally widely read
+                    1831 edition. Another is discovering just how different the 1816 draft notebooks
+                    are from the later texts. Scholars over the past forty years have oscillated
+                    between the 1831 and 1818 editions as the <quote>preferred</quote> texts, but
+                    there is really no single canonical version of this novel, and for that reason
+                    our Variorum edition does not indicate a standard <quote>base text</quote>,
+                    which is still unusual in representing scholarly editions.</para>
+            </footnote></para>
 
         <para>Stage two weaves these surrogate editions together and transfers information from tags
             that we want to preserve for the variorum. Interacting with the angle brackets as
             patterned strings with Python, we mask several elements from the diplomatic code of the
             manuscript notebooks so that they are not processed in terms of comparison but are
-            nevertheless output to preserve their distinct information. In CollateX's
+            nevertheless output to preserve their distinct information. In CollateX’s
             informationally-rich XML output, these tags render as flattened text with character
             entities replacing angle brackets so as not to introduce overlap problems with its
-            critical apparatus. In Stage three, we work delicately with strings that represent
-            flattened composite of preserved tag information and representations of the text, using
-            XSLT string-manipulation functions to construct new files for analysis. We can then
-            study, for example, where the strings associated with Percy Shelley are repeated in the
-            later editions, and how many were preserved by 1831. We also build a scaffolding in
-            stand-off markup for the digital variorum that bridges multiple editions, as modelled in
+            critical apparatus.</para>
+        <para>In Stage three, we work delicately with strings that represent flattened composite of
+            preserved tag information and representations of the text, using XSLT
+            string-manipulation functions to construct new XML and plain text (TSV or JSON) files
+            for stylometric and other analysis. We can then study term frequencies and, for example,
+            where the strings associated with Percy Shelley are repeated in the later editions, and
+            how many were preserved by 1831. We also build the <emphasis>standoff Bridge</emphasis>
+            in TEI for the digital variorum with its pointers to multiple editions, as modelled in
             Figure 1.</para>
         <figure xml:id="variant" xreflabel="Variant">
             <title>Sample Variant</title>
@@ -402,15 +506,24 @@
 
         <para> This example shows how the stand-off collation identifies variant readings between
             texts by grouping pointers as opposed to grouping strings of text according to the
-            parallel segmentation technique described in Chapter 12 of the TEI Guidelines. The TEI
-            offers a stand-off method for encoding variants, called “double-end-point-attachment”,
-            in which variants can be encoded separately from the base text by specifying the start
-            and end point of the lemma of which they are a variant. This allows encoders to refer to
-            overlapping areas on the base text, but despite its flexibility, this method still
-            requires choosing a base text to which anchor variant readings. While choosing a lemma
-            for each variant may be necessary for a critical edition, it is not ideal for a variorum
-            edition that, by design, does not choose a base text.<footnote><para>For a related example, see Viglianti, R. Music and Words: reconciling libretto and score editions in the digital medium. “Ei, dem alten Herrn zoll’ ich Achtung gern’”, ed. Kristina Richts and Peter Stadler, 2016, 727-755. </para></footnote> Our approach, therefore, simply identifies variance and groups readings from multiple sources without conflating them
-            into one document and with accommodation of multiple hierarchies.</para>
+            parallel segmentation technique described in Chapter 12 of the TEI Guidelines.<footnote>
+                <para>See especially the TEI P5 Guidelines, 12.2.3 and 12.2.4: <link
+                        xlink:href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/TC.html#TCAPPS"
+                        >http://www.tei-c.org/release/doc/tei-p5-doc/en/html/TC.html#TCAPPS</link></para>
+            </footnote> The TEI offers a stand-off method for encoding variants, called
+            “double-end-point-attachment”, in which variants can be encoded separately from the base
+            text by specifying the start and end point of the lemma of which they are a variant.
+            This allows encoders to refer to overlapping areas on the base text, but despite its
+            flexibility, this method still requires choosing a base text to which anchor variant
+            readings. While choosing a lemma for each variant may be necessary for a critical
+            edition, it is not ideal for a variorum edition like ours that, by design, does not
+            choose a base text.<footnote>
+                <para>For a related example, see Viglianti, R. Music and Words: reconciling libretto
+                    and score editions in the digital medium. “Ei, dem alten Herrn zoll’ ich Achtung
+                    gern’”, ed. Kristina Richts and Peter Stadler, 2016, 727-755. </para>
+            </footnote> Our approach, therefore, simply identifies variance and groups readings from
+            multiple sources without conflating them into one document and with accommodation of
+            multiple hierarchies.</para>
 
         <para>Though we think of XML as a stable sustainable archiving medium, the repeated
             collapsing and expansion of hierarchies in our collation process makes us consider that
@@ -446,33 +559,40 @@
         <para><!--CALL IT STAND-OFF PARALLEL SEGMENTATION. Designed to include pointers into <link xlink:href="http://shelleygodwinarchive.org/contents/ms_abinger_c56/">the Shelley-Godwin Archive edition of the manuscript notebook drafts</link> of the novel. As well, pointers to all editions that are part of the project. --></para>
 
         <para>Generating the stand-off parallel segmentation required processing and manipulating
-            our multiple versions of TEI-encoded Frankenstein to locate the "addresses" of each
-            varying point. This document is not, however, the end of the story: the bridges that it
-            establishes are there to be crossed. Crossing the bridges, that is, following the
-            pointers is not always trivial. Serious reasons for the somewhat limited use of
-            stand-off in TEI include the limited support for resolving XPath, as well as the risk of
-            not finding what was expected at the other end (e.g. because of "link rot", or because
-            the target file was – even minimally – changed. In creating our stand-off collation, we
-            tried to keep pointers as simple as possible by favoring well support XPath 1.0 over
-            string ranges (even though the latter are unavoidable on multiple occasions). Finally,
-            we made use of GitHub's ability to obtain URLs to specific versions of files, which
-            means that the files we point to are guaranteed not to change unexpectedly (although the
-            URL itslef may "rot" and return a 404, eventually).
+            our multiple versions of TEI-encoded <emphasis>Frankenstein</emphasis> to locate the
+                <quote>addresses</quote> of each varying point. This document is not, however, the
+            end of the story: the bridges that it establishes are there to be crossed. Crossing the
+            bridges, that is, following the pointers is not always trivial. Serious reasons for the
+            somewhat limited use of stand-off in TEI include the limited support for resolving
+            XPath, as well as the risk of not finding what was expected at the other end (e.g.
+            because of <quote>link rot</quote>, or because the target file was – even minimally –
+            changed. In creating our stand-off collation, we tried to keep pointers as simple as
+            possible by favoring locations expressed with XPath 1.0 over locations with string
+            ranges (although the latter are unavoidable on multiple occasions). Finally, we made use
+            of GitHub’s ability to obtain URLs to specific versions of files, which means that the
+            files we point to are guaranteed not to change unexpectedly (although the URL itslef may
+                <quote>rot</quote> and return a 404, eventually).
             <!-- references to Hugh's work would be useful here --></para>
-        <para>Having taken this precautions, our primary goal is building a web-based interactive
+        <para>Having taken these precautions, our primary goal is building a web-based interactive
             variorum edition that readers can use to explore each version of the text. For example,
             one could start by reading the 1818 version of the novel; highlighted text would
-            indicate the presence of a variant from another version and by clicking on it, the user
-            would be able to 1) see the variant readings and 2) change their current view and pivot
-            to a different text. The software building this view follows links from the stand-off
+            indicate the presence of a variant from another version and by clicking on it, the site visitor
+            would be able to <orderedlist>
+                <listitem>
+                    <para>choose which variant readings they wish to read and compare, and</para>
+                </listitem>
+                <listitem>
+                    <para>change their current view and pivot to a different text or grouping of texts.</para>
+                </listitem>
+            </orderedlist>. The software building this view follows links from the stand-off
             parallel segmentation to highlight text and retrieve bits of text from the other
             documents to be shown at he right place. This mode of publication adheres to
             well-established user experiences for digital editions; the fundamental difference,
             however, is in the integrity of each source document: the stand-off collation allows us
-            to show were the differences are, and retrieve them, without having to modify or control
+            to show where the differences are, and to retrieve them without having to modify or control
             the source documents. One can imagine an even more distributed application of this
             paradigm, where the pointers target TEI documents not owned by the project that does the
-            pointing. Working with S-GA documents was a first experiment in this direction. Even
+            pointing. Working with Shelley-Godwin Archive (S-GA) documents was a first experiment in this direction. Even
             though S-GA staff is directly involved in this project, we have made it a cornerstone of
             our experiment to not modify S-GA files (except the occasional typo or minor
             contribution that was sent back via a GitHub Pull Request); in short, we treated S-GA as
