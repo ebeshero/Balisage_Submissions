@@ -202,14 +202,17 @@
                 <listitem>
                     <para>the need to prioritize a single document hierarchy in the interests of
                         machine-readability, while permitting signposts of overlapping or
-                        conflicting hierarchies as of secondary importance.</para>
+                        conflicting hierarchies as of secondary importance</para>
                 </listitem>
-            </orderedlist> For us to write processes that <quote>read around</quote> conficting
-            hierarchies, we require an alternative that does not place coexistence in an
+            </orderedlist>.<footnote><para>See for example, <link xlink:href="https://doi.org/10.1093/llc/4.2.99">P. M. W. Robinson, "The Collation and Textual Criticism of Icelandic Manuscripts" Literary and Linguistic Computing, Volume 4, Issue 2, 1 January 1989, 99–105, https://doi.org/10.1093/llc/4.2.99</link>; <link xlink:href="https://doi.org/10.1093/llc/fqu007">Dekker, Ronald Haentjens, Dirk van Hulle, Gregor Middell, Vincent Neyt, and Joris van Zundert, "Computer-supported collation of modern manuscripts: CollateX and the Beckett Digital Manuscript Project" Volume 30, Issue 3, 1 September 2015, 452–470, https://doi.org/10.1093/llc/fqu007</link>; <link xlink:href="https://doi.org/10.1093/llc/fqw043">Eggert, Paul, "The reader-oriented scholarly edition" Digital Scholarship in the Humanities, Volume 31, Issue 4, 1 December 2016, 797–810, https://doi.org/10.1093/llc/fqw043</link>; and <link xlink:href="https://doi.org/10.1093/llc/fqw048">Holmes, Martin, "Whatever happened to interchange?" Digital Scholarship in the Humanities, Volume 32, Issue suppl_1, 1 April 2017, 163–168, https://doi.org/10.1093/llc/fqw048</link>.
+                
+                
+            </para></footnote> For us to write processes that <quote>read around</quote> conficting
+            hierarchies, we require a third alternative that does not place coexistence in an
             oppositional camp, but rather prioritizes lateral intersections without sacrificing data
             curated in distinctly different structures. Makers of genetic editions (as for example
                 <link xlink:href="http://beta.faustedition.net/">the genetic Faust edition</link>)
-            find ourselves in this intermediary <quote>third</quote> position, when multiple
+            find ourselves in this intermediary third position, when multiple
             encoding structures must co-exist and correlate to achieve a meaningful comparison of editions.<footnote>
                 <para>See <link xlink:href="https://journals.openedition.org/jtei/697">Gerrit
                         Brüning, Katrin Henzel, and Dietmar Pravida, <quote>Multiple Encoding in
@@ -302,12 +305,8 @@
                 <para>See the documentation, <link xlink:href="https://collatex.net/doc/"
                             ><quote>CollateX – Software for Collating Textual
                     Sources</quote></link>. Another inspiration for the bridging concept are the
-                    visualizations in <link
-                        xlink:href="https://www.balisage.net/Proceedings/vol19/html/Dekker01/BalisageVol19-Dekker01.html#d11284e1180"
-                        >Haentjens Dekker, Ronald, and David J. Birnbaum, <quote>It's more than just
-                            overlap: Text As Graph</quote>, Proceedings of Balisage: The Markup
-                        Conference 2017, Washington, DC, August 1 - 4, 2017</link>. The authors
-                    conceptualize an ideal model of texts in a graph structure organized primarily
+                    visualizations in <link                   xlink:href="https://www.balisage.net/Proceedings/vol19/html/Dekker01/BalisageVol19-Dekker01.html#d11284e1180"
+                        >Haentjens Dekker, Ronald, and David J. Birnbaum. “It’s more than just overlap: Text As Graph.” In <emphasis>Proceedings of Balisage: The Markup Conference 2017. Balisage Series on Markup Technologies</emphasis>, vol. 19 (2017).</link>. The authors conceptualize an ideal model of texts in a graph structure organized primarily
                     by their semantic sequencing and in which structural features are a matter of
                     descriptive annotation rather than elemental hierarchy.</para>
             </footnote>.</para>
@@ -315,11 +314,9 @@
         <para>We have had to contend with the challenge of collating digital editions made at
             different times by different editors in order to prepare a variorum edition of
             Frankenstein in TEI P5. Our collation source documents are adapted from the 1990s
-            encoding of the PAEE (for the 1818 and 1831 editions), and the Shelley-Godwin Archive’s
-            diplomatic edition of the manuscript notebooks. We are also newly incorporating a
-            little-known edition of 1823 produced from corrected OCR together with Mary Shelley’s
-            handwritten revision notes on a copy of the 1818 publication known as <quote>the Thomas
-                copy</quote>. Our collation should yield a meta-narrative of how Frankenstein
+            web 1.0 HTML encoding of the Pennsylvania Electronic Edition of <emphasis>Frankenstein</emphasis> (otherwise referenced as the PAEE) for the 1818 and 1831 editions<footnote><para>Curran, Stuart and Jack Lynch. <link xlink:href="http://knarf.english.upenn.edu/">Frankenstein; or, the Modern Prometheus. The Pennsylvania Electronic Edition</link>. Est. 1994. See a representative page at <link xlink:href="http://knarf.english.upenn.edu/Colv1/f1101.html">http://knarf.english.upenn.edu/Colv1/f1101.html</link>.</para></footnote>, and the Shelley-Godwin Archive’s
+            diplomatic edition of the manuscript notebooks of 1816, the only known existing drafts of the novel.<footnote><para>The Shelley-Godwin Archive's edition of the manuscript notebooks of Frankenstein builds on decades of intensive scholarly research to create TEI diplomatic encoding: <link xlink:href="http://shelleygodwinarchive.org/contents/frankenstein/">http://shelleygodwinarchive.org/contents/frankenstein</link>/. </para></footnote> We are also newly incorporating a little-known edition of the novel’s 1823 publication produced from corrected OCR of a Google Books facsimile, together with transcription of Mary Shelley’s handwritten revision notes on a copy of the 1818 publication known as <quote>the Thomas
+                copy</quote> held at the Morgan Library and Museum. Our collation should yield a meta-narrative of how <emphasis>Frankenstein</emphasis>
             changed over time in four versions that passed through multiple editorial hands. It is
             widely understood that the 1831 edition diverges sharply from the first print edition of
             1818, adding new material and changing the relationships of characters. Less known is
@@ -329,7 +326,7 @@
             identification of Percy Bysshe Shelley’s hand in the notebooks, our collation can reveal
             how much of Percy’s insertions and deletions survive in the later print editions. Our
             work should permit us to survey when and how the major changes of the 1831 text (for
-            example, to Victor Frankenstein's family members and the compression and reduction of a
+            example, to Victor Frankenstein’s family members and the compression and reduction of a
             chapter in part I) occurred. We preserve information about hands, insertions, and
             deletions in the output collation, to serve as the basis for better quantifying,
             characterizing, and surveying the contexts of collaboration and revision in textual
@@ -338,19 +335,17 @@
         <para>The three print editions and extant material from three manuscripts are compared in
             parallel, to indicate the presence of variants in the other texts and to be able to
             highlight them based on intensity of variance, to be displayed like the highlighted
-            passages in each visible edition of The Origin of Species in Darwin Online. Rather than
+            passages in each visible edition of <emphasis>The Origin of Species</emphasis> in Darwin Online.<footnote><para>Barbara Bordalejo, ed. Darwin Online. See for example the illumination of variant passages in The Origin of Species here: <link xlink:href="http://darwin-online.org.uk/Variorum/1859/1859-1-dns.html">http://darwin-online.org.uk/Variorum/1859/1859-1-dns.html</link></para></footnote> Rather than
             any edition serving as the lemma or grounds for collation comparison, we hold the
-            collation information in stand-off markup, in its own XML hierarchy. That XML "bridge"
+            collation information in stand-off markup, in its own XML hierarchy. That XML <quote>bridge</quote>
             expresses relationships among the distinct encodings of diplomatic manuscript markup in
             which the highest level of hierarchy is a unit leaf of the notebook, with the structural
             encoding of print editions organized in chapters, letters, and volumes. While the
             apparently nested structure of these divisions might seem the most meaningful way to
-            model Frankenstein, these pose a challenge to textual scholarship in their own right. As
-            Wendell Piez has discussed, Frankenstein’s overlapping hierarchies of framing letters
+            model <emphasis>Frankenstein</emphasis>, these pose a challenge to textual scholarship in their own right. As Wendell Piez has discussed, <emphasis>Frankenstein</emphasis>’s overlapping hierarchies of framing letters
             and chapters have led to inconsistencies in the novel's print production. Piez deploys a
             non-hierarchical encoding of the novel on which he constructs an SVG modeling (in
-            ordered XML syntax) of the overlap itself. Our work with collation depends on a similar
-            interdependency of structurally inconsistent encoding.</para>
+            ordered XML syntax) of the overlap itself.<footnote><para>These hierarchical issues provided an application for Piez’s invented LMNL <quote>sawtooth</quote> syntax to highlight overlap as semantically important to the novel; see <link xlink:href="https://www.balisage.net/Proceedings/vol13/html/Piez01/BalisageVol13-Piez01.html">Wendell Piez, <quote>Hierarchies within range space: From LMNL to OHCO</quote> Balisage: The Markup Conference Proceedings (2014): https://www.balisage.net/Proceedings/vol13/html/Piez01/BalisageVol13-Piez01.html</link> </para></footnote> Our work with collation depends on a similar interdependency of structurally inconsistent encoding.</para>
 
         <para>Our method involves three stages of structural transformation, each of which disrupts
             the hierarchies of its source documents: <orderedlist>
@@ -372,7 +367,7 @@
             from the PA-EE to create new forms of XML to carry predictable markers to assist in
             alignment. These new, pre-collation editions are resequenced (as when we move marginal
             annotations from the end of the XML document into their marked places as they would be
-            read in the manuscript notebook). They are also differently "chunked" than their source
+            read in the manuscript notebook). They are also differently <quote>chunked</quote> than their source
             texts, resizing the unit file so that each represents an equivalent portion small enough
             to collate meaningfully and large enough that each document demonstrably aligns with the
             others at its start and end points.</para>
@@ -417,8 +412,7 @@
             overlapping areas on the base text, but despite its flexibility, this method still
             requires choosing a base text to which anchor variant readings. While choosing a lemma
             for each variant may be necessary for a critical edition, it is not ideal for a variorum
-            edition that, by design, does not choose a base text. Our approach, therefore, simply
-            identifies variance and groups readings from multiple sources without conflating them
+            edition that, by design, does not choose a base text.<footnote><para>For a related example, see Viglianti, R. Music and Words: reconciling libretto and score editions in the digital medium. “Ei, dem alten Herrn zoll’ ich Achtung gern’”, ed. Kristina Richts and Peter Stadler, 2016, 727-755. </para></footnote> Our approach, therefore, simply identifies variance and groups readings from multiple sources without conflating them
             into one document and with accommodation of multiple hierarchies.</para>
 
         <para>Though we think of XML as a stable sustainable archiving medium, the repeated
