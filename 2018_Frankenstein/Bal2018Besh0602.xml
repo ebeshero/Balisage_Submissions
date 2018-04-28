@@ -349,7 +349,7 @@
                     graph structure organized primarily by their semantic sequencing and in which
                     structural features are a matter of descriptive annotation rather than elemental
                     hierarchy.</para>
-            </footnote>.</para>
+            </footnote></para>
 
         <para>We have had to contend with the challenge of collating digital editions made at
             different times by different editors in order to prepare a variorum edition of
@@ -437,7 +437,7 @@
         </para>
 
         <para>In the first stage, we adapt the source code from the Shelley-Godwin Archive
-            (specialized TEI for manuscript encoding of page surfaces) and from the Pennsylvania
+            (specialized TEI for the encoding of manuscript page surfaces) and from the Pennsylvania
             Electronic Edition (PAEE) (HTML 1.0 from the mid 1990s marking paragraphs and sectional
             headings) to create new forms of XML to carry predictable markers to assist in
             alignment. These new, pre-collation editions are resequenced (as when we move marginal
@@ -564,39 +564,45 @@
             end of the story: the bridges that it establishes are there to be crossed. Crossing the
             bridges, that is, following the pointers is not always trivial. Serious reasons for the
             somewhat limited use of stand-off in TEI include the limited support for resolving
-            XPath, as well as the risk of not finding what was expected at the other end (e.g.
-            because of <quote>link rot</quote>, or because the target file was – even minimally –
-            changed. In creating our stand-off collation, we tried to keep pointers as simple as
-            possible by favoring locations expressed with XPath 1.0 over locations with string
-            ranges (although the latter are unavoidable on multiple occasions). Finally, we made use
-            of GitHub’s ability to obtain URLs to specific versions of files, which means that the
-            files we point to are guaranteed not to change unexpectedly (although the URL itslef may
-                <quote>rot</quote> and return a 404, eventually).
-            <!-- references to Hugh's work would be useful here --></para>
+            XPath, as well as the risk of not finding what was expected at the other end because of
+                <quote>link rot</quote>, or because the target file was – even minimally – changed.
+            In creating our stand-off collation, we tried to keep pointers as simple as possible by
+            favoring locations expressed with XPath 1.0 over locations with string ranges (although
+            the latter are unavoidable on multiple occasions). Finally, we made use of GitHub’s
+            ability to obtain URLs to specific versions of files, which means that the files we
+            point to are guaranteed not to change unexpectedly (although the URL itslef may
+                <quote>rot</quote> and return a 404, eventually)<footnote>
+                <para>See also Cayless, Hugh A., and Adam Soroka. “On Implementing string-range()
+                    for TEI.” Presented at Balisage: The Markup Conference 2010, Montrýal, Canada,
+                    August 3 - 6, 2010. In <emphasis role="italic">Proceedings of Balisage: The
+                        Markup Conference 2010</emphasis>. Balisage Series on Markup Technologies,
+                    vol. 5 (2010). https://doi.org/10.4242/BalisageVol5.Cayless01. </para>
+            </footnote>.</para>
         <para>Having taken these precautions, our primary goal is building a web-based interactive
             variorum edition that readers can use to explore each version of the text. For example,
             one could start by reading the 1818 version of the novel; highlighted text would
-            indicate the presence of a variant from another version and by clicking on it, the site visitor
-            would be able to <orderedlist>
+            indicate the presence of a variant from another version and by clicking on it, the site
+            visitor would be able to <orderedlist>
                 <listitem>
                     <para>choose which variant readings they wish to read and compare, and</para>
                 </listitem>
                 <listitem>
-                    <para>change their current view and pivot to a different text or grouping of texts.</para>
+                    <para>change their current view and pivot to a different text or grouping of
+                        texts.</para>
                 </listitem>
-            </orderedlist>. The software building this view follows links from the stand-off
-            parallel segmentation to highlight text and retrieve bits of text from the other
-            documents to be shown at he right place. This mode of publication adheres to
-            well-established user experiences for digital editions; the fundamental difference,
-            however, is in the integrity of each source document: the stand-off collation allows us
-            to show where the differences are, and to retrieve them without having to modify or control
-            the source documents. One can imagine an even more distributed application of this
-            paradigm, where the pointers target TEI documents not owned by the project that does the
-            pointing. Working with Shelley-Godwin Archive (S-GA) documents was a first experiment in this direction. Even
-            though S-GA staff is directly involved in this project, we have made it a cornerstone of
-            our experiment to not modify S-GA files (except the occasional typo or minor
-            contribution that was sent back via a GitHub Pull Request); in short, we treated S-GA as
-            an external project that we can point to but not change.</para>
+            </orderedlist>The software building this view follows links from the stand-off parallel
+            segmentation to highlight text and retrieve bits of text from the other documents to be
+            shown at he right place. This mode of publication adheres to well-established user
+            experiences for digital editions; the fundamental difference, however, is in the
+            integrity of each source document: the stand-off collation allows us to show where the
+            differences are, and to retrieve them without having to modify or control the source
+            documents. One can imagine an even more distributed application of this paradigm, where
+            the pointers target TEI documents not owned by the project that does the pointing.
+            Working with Shelley-Godwin Archive (S-GA) documents was a first experiment in this
+            direction. Even though S-GA staff is directly involved in this project, we have made it
+            a cornerstone of our experiment to not modify S-GA files (except the occasional typo or
+            minor contribution that was sent back via a GitHub Pull Request); in short, we treated
+            S-GA as an external project that we can point to but not change.</para>
         <para>Publishing the variorum is but one path that can be taken across the bridges of our
             collation. As we mentioned earlier, we kept in mind the richness of S-GA TEI documents,
             particularly regarding authorship (who wrote what) and authorial revisions. In order to
