@@ -27,7 +27,7 @@
                 the hierarchies in a way that expresses intersections essentially as a graph
                 structure of nodes with edge pointers to comparable nodes.</para>
             <para>Our experience on the Frankenstein Variorum is consistent with other TEI projects
-                that involve curating divergence, variance, and forking in text streams. Taken
+                that involve the curation of divergence, variance, and forking in text streams. Taken
                 together, such projects illuminate how the TEI can organize textual data in ways
                 other than an ordered hierarchy of content objects, and that the TEI can be turned
                 to express unordered <quote>lateral</quote> intersections in ways that serve
@@ -429,46 +429,8 @@
                 for example, where the strings associated with Percy Shelley are repeated in the
                 later editions, and how many were preserved by 1831. We also build the <emphasis
                     role="ital">stand-off Bridge</emphasis> in TEI for the digital variorum with its
-                pointers to multiple editions, as modelled in Figure 1.</para>
-            <figure xml:id="variant" xreflabel="Variant">
-                <title>Sample Variant</title>
-                <mediaobject>
-                    <imageobject>
-                        <imagedata format="png" fileref="Bal2018variant042711.png"/>
-                    </imageobject>
-                </mediaobject>
-                <caption>
-                    <para>An example variant with two different readings, showing Percy Bysshe
-                        Shelley's hand in the ms notebook. While the print editions of 1818, 1823,
-                        and the manuscript agree (yellow reading), the print edition of 1831
-                        introduces new text (blue reading). The pointers are expressed according to
-                        the TEI XPointer Schemes defined in Chapter 16 of the TEI Guidelines and are
-                        subject to change.</para>
-                </caption>
-            </figure>
-
-
-            <para> This example shows how the stand-off collation identifies variant readings
-                between texts by grouping pointers as opposed to grouping strings of text according
-                to the parallel segmentation technique described in Chapter 12 of the TEI Guidelines.<footnote>
-                    <para>See especially the TEI P5 Guidelines, 12.2.3 and 12.2.4: <link
-                            xlink:href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/TC.html#TCAPPS"
-                            >http://www.tei-c.org/release/doc/tei-p5-doc/en/html/TC.html#TCAPPS</link></para>
-                </footnote> The TEI offers a stand-off method for encoding variants, called
-                “double-end-point-attachment”, in which variants can be encoded separately from the
-                base text by specifying the start and end point of the lemma of which they are a
-                variant. This allows encoders to refer to overlapping areas on the base text, but
-                despite its flexibility, this method still requires choosing a base text to which
-                anchor variant readings. While choosing a lemma for each variant may be necessary
-                for a critical edition, it is not ideal for a variorum edition like ours that, by
-                design, does not choose a base text.<footnote>
-                    <para>For a related example, see Viglianti, R. Music and Words: reconciling
-                        libretto and score editions in the digital medium. “Ei, dem alten Herrn
-                        zoll’ ich Achtung gern’”, ed. Kristina Richts and Peter Stadler, 2016,
-                        727-755. </para>
-                </footnote> Our approach, therefore, simply identifies variance and groups readings
-                from multiple sources without conflating them into one document and with
-                accommodation of multiple hierarchies.</para>
+                pointers to multiple editions, as discussed and modelled later in this paper. </para>
+           
         </section>
         <section>
             <title>The Collation Process: Building Blocks and Processes</title>
@@ -686,7 +648,7 @@
                         <imagedata format="png" fileref="Bal2018collateOutput042908.png"/>
                     </imageobject>
                 </mediaobject></para>
-            <para>While it may be difficult for humans to read, this code is information-rich and tractable for the next stage of work in building up the Variorum, and due to its simple regularity with embedded complexity, we might consider it to be a successful interchange format in its own right. WE write XSLT to pull from this <quote>pre-TEI</quote> output from the collation process, and build the more legible and interoperable TEI <quote>spinal column</quote> of our Variorum
+            <para>While it may be difficult on human eyes, this code is information-rich and readily tractable for the next stage of work in building up the Variorum, and due to its simple regularity with embedded complexity, we might consider it to be a successful interchange format in its own right. We write XSLT to pull from this <quote>pre-TEI</quote> output from the collation process, and build the more legible and interoperable TEI <quote>spinal column</quote> of our Variorum
                 edition. The edition architecture applies stand-off pointers in a form of <quote>stand-off parallel segmentation</quote>, which enhances the
                 available models in the TEI Guidelines for stand-off collation, while supporting the TEI’s
                 longstanding interests in both interchange and interoperability, as we discuss below. We want to promote
@@ -701,7 +663,46 @@
 
     <section>
         <title>Crossing the bridges</title>
-        <para>We decided to build a variorum edition on the <quote>spine</quote> of a TEI structure that holds forks and branches and that does not set priorities of a base text that should be preferred over any of the others. The apparatus criticus itself is to hold a structure of stand-off pointers that locate and link to passages in each separate edition. Stand-off in the TEI was designed specifically to deal with non-hierarchical structures as a conflict with its OHCO model.<footnote><para>See the <link xlink:href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/NH.html">TEI Guidelines Chapter 20: Non-Hierarchical Structures</link></para></footnote> However, if we build up from a model of critical apparatus that is already breaking with singular hierarchy and rather expressing forks and branches, and if we further do not establish a single base text, we adapt the TEI tree to something more like a graph-based model, in which the hierarchy of elements exists so that <code>&lt;app&gt;</code> elements serve as bridges or edges that hold and connect its nodes in the form of <code>&lt;rdg&gt;</code> elements (for reading witnesses).<footnote><para>For a visual example, a group of Elisa Beshero-Bondar's students led by Nicole Lottig and Brooke Stewart at Pitt-Greensburg experimented with a network analysis of editions of Emily Dickinson's Fascicle 16 poems that share the most variant readings, and to see which most closely resembled one another. See their network visualization and explanation here: <link xlink:href="http://dickinson16.newtfire.org/16/networkAnalysis.html">http://dickinson16.newtfire.org/16/networkAnalysis.html</link> </para></footnote> The starting priority was to generate pointers from the Variorum edition interface directly to pages in the Shelley-Godwin Archive Notebook pages, and not merely the pages but to specific lines we had precisely located in the S-GA markup prior to collation.</para>
+        <para>We decided to build a variorum edition on the <quote>spine</quote> of a TEI structure that holds forks and branches and that does not set priorities of a base text that should be preferred over any of the others. The apparatus criticus itself is to hold a structure of stand-off pointers that locate and link to passages in each separate edition. Stand-off in the TEI was designed specifically to deal with non-hierarchical structures as a conflict with its OHCO model.<footnote><para>See the <link xlink:href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/NH.html">TEI Guidelines Chapter 20: Non-Hierarchical Structures</link></para></footnote> However, if we build up from a model of critical apparatus that is already breaking with singular hierarchy and rather expressing forks and branches, and if we further do not establish a single base text, we adapt the TEI tree to something more like a graph-based model, in which the hierarchy of elements exists so that <code>&lt;app&gt;</code> elements serve as bridges or edges that hold and connect its nodes in the form of <code>&lt;rdg&gt;</code> elements (for reading witnesses).<footnote><para>For a visual example, a group of Elisa Beshero-Bondar's students led by Nicole Lottig and Brooke Stewart at Pitt-Greensburg experimented with a network analysis of editions of Emily Dickinson's Fascicle 16 poems that share the most variant readings, and to see which most closely resembled one another. See their network visualization and explanation here: <link xlink:href="http://dickinson16.newtfire.org/16/networkAnalysis.html">http://dickinson16.newtfire.org/16/networkAnalysis.html</link> </para></footnote> The starting priority was to generate pointers from the Variorum edition interface directly to pages <link xlink:href="http://shelleygodwinarchive.org/sc/oxford/ms_abinger/c56/#/p5">like this one</link> in the Shelley-Godwin Archive edition of the 1816 draft manuscript notebooks. The pointers locate not merely the pages but to specific lines we had precisely captured in the S-GA markup prior to collation, as modelled in the figure below.</para>
+        <figure xml:id="variant" xreflabel="Variant">
+            <title>Sample Variant</title>
+            <mediaobject>
+                <imageobject>
+                    <imagedata format="png" fileref="Bal2018variant042711.png"/>
+                </imageobject>
+            </mediaobject>
+            <caption>
+                <para>An example variant with two different readings, showing Percy Bysshe
+                    Shelley's hand in the ms notebook. While the print editions of 1818, 1823,
+                    and the manuscript agree (yellow reading), the print edition of 1831
+                    introduces new text (blue reading). The pointers are expressed according to
+                    the TEI XPointer Schemes defined in Chapter 16 of the TEI Guidelines and are
+                    subject to change.</para>
+            </caption>
+        </figure>
+    
+        <para> This example shows how the stand-off collation identifies variant readings
+            between texts by grouping pointers as opposed to grouping strings of text according
+            to the parallel segmentation technique described in Chapter 12 of the TEI Guidelines.<footnote>
+                <para>See especially the TEI P5 Guidelines, 12.2.3 and 12.2.4: <link
+                    xlink:href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/TC.html#TCAPPS"
+                    >http://www.tei-c.org/release/doc/tei-p5-doc/en/html/TC.html#TCAPPS</link></para>
+            </footnote> The TEI offers a stand-off method for encoding variants, called
+            “double-end-point-attachment”, in which variants can be encoded separately from the
+            base text by specifying the start and end point of the lemma of which they are a
+            variant. This allows encoders to refer to overlapping areas on the base text, but
+            despite its flexibility, this method still requires choosing a base text to which
+            anchor variant readings. While choosing a lemma for each variant may be necessary
+            for a critical edition, it is not ideal for a variorum edition like ours that, by
+            design, does not choose a base text.<footnote>
+                <para>For a related example, see Viglianti, R. Music and Words: reconciling
+                    libretto and score editions in the digital medium. “Ei, dem alten Herrn
+                    zoll’ ich Achtung gern’”, ed. Kristina Richts and Peter Stadler, 2016,
+                    727-755. </para>
+            </footnote> Our approach, therefore, simply identifies variance and groups readings
+            from multiple sources without conflating them into one document and with
+            accommodation of multiple hierarchies.</para>
+
 
         <para>Generating the stand-off parallel segmentation requires processing and manipulating
             our multiple versions of TEI-encoded <emphasis role="ital">Frankenstein</emphasis> to
@@ -745,7 +746,7 @@
             the pointers target TEI documents not owned by the project that does the pointing.
             Working with Shelley-Godwin Archive (S-GA) documents was a first experiment in this
             direction. Even though S-GA staff is directly involved in this project, we have made it
-            a cornerstone of our experiment to not modify S-GA files (except the occasional typo or
+            a cornerstone of our experiment not to modify S-GA files (except the occasional typo or
             minor contribution that was sent back via a GitHub Pull Request); in short, we treated
             S-GA as an external project that we can point to but not change.</para>
         <para>Publishing the variorum is but one path that can be taken across the bridges of our
@@ -771,8 +772,7 @@
             becomes an organizing principle that fractures hierarchies, chunking if not
             atomizing them at the level of the smallest meaningfully sharable semantic
             features.</para>
-        <para>While we confine our case-study for this paper to the automated collation process and
-            what we can build for it and from it, the perspective we have gained on enhancing interchange for the
+        <para>At the very least, our efforts on this project will likely result in new examples and enhancement of <link xlink:href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/TC.html#TCAPLK">Chapter 12 in the TEI Guidelines on the Critical Apparatus</link>, to develop a model of stand-off annotation that does not require a lemma. However, the perspective we have gained on enhancing interchange for the
             purposes of interoperation may have larger ramifications in the ongoing discussion of
             graph-based models and their application to the TEI.<footnote>
                 <para>For reflection on pertinent examples, see Hugh A. Cayless, <link
@@ -793,13 +793,7 @@
                         on Markup Technologies, vol. 5 (2010)</link>.</para>
             </footnote> For much the same reasons that motivate us, Jeffrey C. Witt designed the
             Scholarly Commentaries and Texts Archive, to transform digital <quote>silo</quote>
-            projects into a network of data and while that project seeks a definitive language of
-            interchange for medieval scholastic textual data, on a smaller scale trained on multiple
-            divergent encodings of the same famous novel, we have negotiated interchangeability by
-            cutting across individual text hierarchies to emphasize lateral connections and
-            commonalities—making a new TEI whose hierarchy serves as a stand-off
-            <quote>backbone</quote> or <quote>switchboard</quote> permitting comparison and
-            sharing of common data.<footnote>
+            projects into a network of data. <footnote>
                 <para><link
                     xlink:href="https://www.helsinki.fi/en/unitube/video/c7b16d35-dd91-419b-b017-a4a8373eac63"
                     >See Jeffrey C. Witt’s recorded presentation, <quote>Texts as Networks: The
@@ -812,7 +806,13 @@
                             sources</quote></link>, a report from the <quote>Linked Data and the
                                 Medieval Scholastic Tradition</quote> workshop held at the University of
                     Basel in August 17-19, 2016.</para>
-            </footnote></para>
+            </footnote>While that project seeks a definitive language of
+            interchange for medieval scholastic textual data, on a smaller scale trained on multiple
+            divergent encodings of the same famous novel, we have negotiated interchangeability by
+            cutting across individual text hierarchies to emphasize lateral connections and
+            commonalities—making a new TEI whose hierarchy serves as a stand-off
+            <quote>backbone</quote> or <quote>switchboard</quote> permitting comparison and
+            sharing of common data. Our goal of pointing to aligned data required us to locate the interchangeable structural markers in our source documents, and enhances interoperation by making it possible for software to parse the comparable with the incomparable, the similar with the divergent.</para>
     
     </section>
 
