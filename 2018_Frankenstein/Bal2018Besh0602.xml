@@ -236,7 +236,7 @@
             </orderedlist> For us to write processes that <quote>read around</quote> conficting
             hierarchies, we require a third alternative that does not place coexistence in an
             oppositional camp, but rather prioritizes lateral intersections without sacrificing data
-            curated in distinctly different structures. Makers of genetic editions (as for example
+            curated in distinctly different structures. Makers of genetic and variorum editions (as for example
                 <link xlink:href="http://beta.faustedition.net/">the genetic Faust edition</link>)
             find ourselves in this intermediary third position, when multiple encoding structures
             must co-exist and correlate to achieve a meaningful comparison of editions.<footnote>
@@ -249,13 +249,13 @@
             points for conversion from containment structures to loci of intersection? That, of
             course, is a determination reliant on interchange, in support of
             interoperationality.</para>
-        <para>To be clear, the work we have done is in support of interoperationality across encoding ecosystems of the TEI. With this paper, we are not proclaiming the solution to make the TEI itself be inherently interoperable. 
-            We cannot simply take the original TEI or early HTML of the source editions we need to compare in our Variorum project, and drop the files unmediated into a collating system to compare with one another. Indeed, as Desmond Schmidt defines interoperability, it is <quote>the
+        <para>To be clear, the work we have done is in support of interoperationality across encoding ecosystems of the TEI. With this paper, we are not proclaiming a universal solution to make the TEI itself be inherently interoperable. 
+            We cannot simply take the original TEI or early HTML of the source editions we need to compare in our variorum project, and drop the files unmediated into a collating system to compare with one another. Indeed, as Desmond Schmidt defines interoperability, it is <quote>the
                 property of data that allows it to be loaded <emphasis role="ital"
                     >unmodified</emphasis> and fully used in a <emphasis role="ital"
                     >variety</emphasis> of software applications</quote>, and as exemplars of the interoperability ideal he indicates the marvellous capacity of many web browsers able to read and parse and interact with HTML and SVG. 
-            Here the lack of ambiguity or expressiveness (or <quote><emphasis>illocutionary force</emphasis></quote> and human subjectivity that Schmidt ascribes as the significant obstacle to interoperability in the TEI), simply makes it possible for software to interpret encoding in a consistent and reliable way.<footnote><para><link xlink:href="https://journals.openedition.org/jtei/979">Desmond Schmidt, <quote>Towards an Interoperable Digital Scholarly Edition</quote>, <emphasis role="ital">Journal of the Text Encoding Initiative</emphasis> Issue , November 2014</link>.</para></footnote>. As we see it, however, interoperability is not an all-or-nothing proposition, because software tools are neither simply compatible nor incompatible with our documents.<footnote><para>Where Schmidt comments on the ability of Google Docs to represent a Word document, we recall plenty of friction between the two formats, and while it may be marvellous that web browsers can interpret HTML, they do not all interpret the specs in the same way, and as standards for CSS and JavaScript change, these methods for presentation are not always consistently experienced from browser to browser.</para></footnote> We contend that there is no perfect interoperability, even in the software tools that we expect to be universally compatible. We do not mean that designing for interoperability is never worth the trouble, but rather that all-or-nothing arguments about it are not especially helpful to the interests of textual scholarship. We assert with Martin Holmes that if designers of TEI editions want to make it easy for others to re-purpose TEI encoding, we generate alternative encodings of project-specific XML for the specific purpose of enhancing interchange. In so doing we make it possible to build the tools of interoperability that do not sacrifice the cross-walkable semantics that drive scholarship and make it possible for us to share, repurpose, and build on each others' work. We will need to interpret our own data structures to define relationships with other ecosystems, and express these relationships in what shared vocabularies we use to communicate with one another. As Holmes observes, <quote>By putting some effort into providing a range of different versions of our XML source encodings, targeted at different use-cases and user groups, we can greatly facilitate the re-use of our data in other projects; this process causes beneficial reflection on our own encoding practices, as well as an additional layer of documentation for our projects.</quote><footnote><para><link xlink:href="https://doi.org/10.1093/llc/fqw048">Martin Holmes; <quote>Whatever happened to interchange?</quote></link></para></footnote></para> 
-        <para>The most helpful part of Desmond Schmidt’s article of 2014 is his call to make digital editions more interoperable by working with stand-off mechanisms for annotation, with attention to intersection points in conflicting hierarchies. However, we do not see that Schmidt's solution of <quote>splitting the text into layers</quote> on its own is going to enhance the kind of interoperation we need, and our needs and interests are not uncommon in textual scholarship. We wish to be able to integrate the elaborately descriptive markup of a diplomatic edition (with additions and deletions and shifts of hands) much like the example Schmidt himself provides in <link xlink:href="https://journals.openedition.org/jtei/979#tocto1n5">section 5 of his article</link>, into a comparison with other digital editions of print versions of this work, in a way that preserves the information about handshifts encoded into the diplomatic edition (with additions and deletions and shifts of hands) and makes it available for comparison with other digital editions of print versions of this work. Indeed, we see ourselves as curating the original markup from our source documents to preserve its information within the Variorum edition we are developing. In the experience we describe in this paper, we treat the markup itself as patterned text, programmatically accessible for selective masking from the automated processes we want to run for machine collation and afterward for constructing the variorum. Dividing the complex markup of insertion and deletion events into separate layers pointing at the document might be a solution for the kind of operation Schmidt needs his limited tools to perform, but for our purposes, the source editions we are working with are long-established and not intractable to computational extraction and sequencing. Altering that markup is not really an option for us and it is so cleanly encoded and well documented that we would rather apply our computational tools to read and parse it, and to build from it rather than to reconstruct it.</para> 
+            Here the lack of ambiguity or expressiveness (or <quote><emphasis>illocutionary force</emphasis></quote> and human subjectivity that Schmidt ascribes as the significant obstacle to interoperability in the TEI), simply makes it possible for software to interpret encoding in a consistent and reliable way.<footnote><para><link xlink:href="https://journals.openedition.org/jtei/979">Desmond Schmidt, <quote>Towards an Interoperable Digital Scholarly Edition</quote>, <emphasis role="ital">Journal of the Text Encoding Initiative</emphasis> Issue , November 2014</link>.</para></footnote>. As we see it, however, interoperability is not an all-or-nothing proposition, because software tools are neither simply compatible nor incompatible with our documents.<footnote><para>Where Schmidt comments on the ability of Google Docs to represent a Word document, we recall plenty of friction between the two formats, and while it may be marvellous that web browsers can interpret HTML, they do not all interpret the specs in the same way, and as standards for CSS and JavaScript change, these methods for presentation are not always consistently experienced from browser to browser.</para></footnote> We contend that there is no perfect interoperability, even in the software tools that we expect to be universally compatible. We do not mean that designing for interoperability is never worth the trouble, but rather that all-or-nothing arguments about it are not especially helpful to the interests of textual scholarship. We assert with Martin Holmes that if designers of TEI editions want to make it easy for others to re-purpose TEI encoding, we generate alternative encodings of project-specific XML for the specific purpose of enhancing interchange. In so doing we make it possible to build the tools of interoperability that do not sacrifice the cross-walkable semantics that drive scholarship and make it possible for us to share, repurpose, and build on each others’ work. We will need to interpret our own data structures to define relationships with other ecosystems, and express these relationships in what shared vocabularies we use to communicate with one another. As Holmes observes, <quote>By putting some effort into providing a range of different versions of our XML source encodings, targeted at different use-cases and user groups, we can greatly facilitate the re-use of our data in other projects; this process causes beneficial reflection on our own encoding practices, as well as an additional layer of documentation for our projects.</quote><footnote><para><link xlink:href="https://doi.org/10.1093/llc/fqw048">Martin Holmes; <quote>Whatever happened to interchange?</quote></link></para></footnote></para> 
+        <para>The most helpful part of Desmond Schmidt’s article of 2014 is his call to make digital editions more interoperable by working with stand-off mechanisms for annotation, with attention to intersection points in conflicting hierarchies. However, we do not see that Schmidt’s solution of <quote>splitting the text into layers</quote> on its own is going to enhance the kind of interoperation we need, and our needs and interests are not uncommon in textual scholarship. We wish to be able to integrate the elaborately descriptive markup of a diplomatic edition (with additions and deletions and shifts of hands) much like the example Schmidt himself provides in <link xlink:href="https://journals.openedition.org/jtei/979#tocto1n5">section 5 of his article</link>, into a comparison with other digital editions of print versions of this work, in a way that preserves the information about handshifts encoded into the diplomatic edition (with additions and deletions and shifts of hands) and makes it available for comparison with other digital editions of print versions of this work. Indeed, we see ourselves as curating the original markup from our source documents to preserve its information within the Variorum edition we are developing. In the experience we describe in this paper, we treat the markup itself as patterned text, programmatically accessible for selective masking from the automated processes we want to run for machine collation and afterward for constructing the variorum. Dividing the complex markup of insertion and deletion events into separate layers pointing at the document might be a solution for the kind of operation Schmidt needs his limited tools to perform, but for our purposes, the source editions we are working with are long-established and not intractable to computational extraction and sequencing. Altering that markup is not really an option for us and it is so cleanly encoded and well documented that we would rather apply our computational tools to read and parse it, and to build from it rather than to reconstruct it.</para> 
         
         
         <para>From the experience of investigating diverse systems of markup applied to multiple versions of one novel from the 1990s to the 2010s, we do not find generalized dismissals of TEI markup as <quote>subjective</quote> to be compelling enough to dismiss the many information-rich projects built with the TEI over decades. Indeed, we need to work with those editions and the rich data they contain, to advance scholarship rather than reinventing it as if its encoding were value-less to outsiders. To advance the interests of scholarship involves <emphasis>respecting</emphasis> the encoding of earlier times and places, not only acknowledging its complexity and shortfalls, but building with it something that will be richly informative and available that was not before. Certainly it is difficult to find a place for a diplomatic edition in a variorum context, but when we build bridges for interchange, we create conditions for interoperation. In the case of our Variorum project, we need to do the work of interchange to make automated collation possible. Even if that collation is not perfect, and requires human intervention, can we ever expect interoperation simply to <quote>work perfectly</quote> without some human intervention? The efforts in building digital editions are necessarily complex, and we rely on interoperation to help build the very bridges we need for our Variorum edition to connect digital editions that remain in their own distinct ecosystems.</para>
@@ -304,17 +304,17 @@
             edition of five versions of Frankenstein in TEI. We first up-converted two of our
             collation source documents from the 1990s web 1.0 HTML encoding of the Pennsylvania
             Electronic Edition of <emphasis role="ital">Frankenstein</emphasis> for the 1818 and
-            1831 editions<footnote>
+            1831 editions.<footnote>
                 <para>Curran, Stuart and Jack Lynch. <link
                         xlink:href="http://knarf.english.upenn.edu/">Frankenstein; or, the Modern
                         Prometheus. The Pennsylvania Electronic Edition</link>. Est. 1994. See a
                     representative page at <link
                         xlink:href="http://knarf.english.upenn.edu/Colv1/f1101.html"
                         >http://knarf.english.upenn.edu/Colv1/f1101.html</link>.</para>
-            </footnote>. We needed to find a way to collate these editions with the Shelley-Godwin
+            </footnote> We needed to find a way to collate these editions with the Shelley-Godwin
             Archive’s diplomatic edition of the manuscript notebooks of 1816, the only known
-            existing drafts of the novel.<footnote>
-                <para>The Shelley-Godwin Archive's edition of the manuscript notebooks of
+            existing drafts of the novel held at the Bodleian Library.<footnote>
+                <para>The Shelley-Godwin Archive’s edition of the manuscript notebooks of
                     Frankenstein builds on decades of intensive scholarly research to create TEI
                     diplomatic encoding: <link
                         xlink:href="http://shelleygodwinarchive.org/contents/frankenstein/"
@@ -363,7 +363,7 @@
             passages in each visible edition of <emphasis role="ital">The Origin of
                 Species</emphasis> in Darwin Online.<footnote>
                 <para>Barbara Bordalejo, ed. Darwin Online. See for example the illumination of
-                    variant passages in The Origin of Species here: <link
+                    variant passages in <emphasis role="ital">The Origin of Species</emphasis> here: <link
                         xlink:href="http://darwin-online.org.uk/Variorum/1859/1859-1-dns.html"
                         >http://darwin-online.org.uk/Variorum/1859/1859-1-dns.html</link></para>
             </footnote> Rather than any edition serving as the lemma or grounds for collation
@@ -376,7 +376,7 @@
                 >Frankenstein</emphasis>, these pose a challenge to textual scholarship in their own
             right. As Wendell Piez has discussed, <emphasis role="ital">Frankenstein</emphasis>’s
             overlapping hierarchies of framing letters and chapters have led to inconsistencies in
-            the novel's print production. Piez deploys a non-hierarchical encoding of the novel on
+            the novel’s print production. Piez deploys a non-hierarchical encoding of the novel on
             which he constructs an SVG modeling (in ordered XML syntax) of the overlap itself.<footnote>
                 <para>These hierarchical issues provided an application for Piez’s invented LMNL
                         <quote>sawtooth</quote> syntax to highlight overlap as semantically
@@ -421,7 +421,7 @@
                 aligns with the others at its start and end points. We prepared 33 collation units
                 of the novel. XML matching the pre-collation format is prepared from OCR texts of
                 the 1823 edition. Building from the 1818 collation units, we add in encoded
-                transcriptions of Mary Shelley's hand-written edits on <quote>the Thomas
+                transcriptions of Mary Shelley’s hand-written edits on <quote>the Thomas
                     copy</quote> of the 1818 publication.</para>
 
             <para>Stage two weaves these surrogate editions together and transfers information from
@@ -514,11 +514,10 @@
             the half-extinguished light, I saw the dull yellow eye of the creature open; it breathed
               &lt;pb xml:id="F1818_v1_110" n="098"/&gt;hard, and a convulsive motion agitated its
             limbs.&lt;/p&gt;
-...
+        ...
       &lt;/xml&gt;
   </programlisting>
-                Note: the code above for the pre-collation version of the 1818 edition is not
-                written in TEI, but borrows its elements. This is an example of simple XML we
+                The code above for the pre-collation version of the 1818 edition is not written in TEI but borrows its elements. This is an example of simple XML we
                 prepared specifically for the purpose of collation, reducing the documents to
                 concentrate on the <quote>running stream</quote> of text and its basic structural
                 divisions. Here the paragraph is the most basic structural division, and chapter
@@ -534,11 +533,11 @@
                 collatable <quote>bridge</quote> format required alteration of each (S-GA and
                 1818-style) to <itemizedlist>
                     <listitem>
-                        <para><quote>meet in the middle</quote>: share matching elements that
+                        <para><emphasis role="bold">meet in the middle</emphasis>: share matching elements that
                             contain and signal the sequence of text to be collated, and</para>
                     </listitem>
                     <listitem>
-                        <para><quote>stay apart</quote>: preserve the diversity of metadata in the
+                        <para><emphasis role="bold">stay apart</emphasis>: preserve the diversity of metadata in the
                             S-GA markup about revisions and handshifts, and find a way to ignore or
                             mask it from the collation process.</para>
                     </listitem>
@@ -547,7 +546,7 @@
                 documents by converting them into milestone-style signals. We want to retain the
                 information about structural divisions, that is, paragraph, chapter, letter, and
                 volume boundaries, and include this as data, since changes in paragraphing or
-                chapter content are relevant to the variorum comparison of the Frankenstein
+                chapter content are relevant to the variorum comparison of the <emphasis role="ital">Frankenstein</emphasis>
                 editions. However, we also retain markup which does not designate the running
                 sequence of text and basic text structure, but offers metadata about who wrote what,
                 and whether the writing was inserted or deleted. This allows us to reconcile
@@ -612,8 +611,7 @@
          &lt;lb n="c56-0045__main__16"/&gt;its limbs.&lt;milestone unit="tei:p"/&gt;    
         </programlisting>
                 Notice what has changed here: We not only had to flatten <code>&lt;line&gt;</code>
-                elements into self-closing <code>&lt;lb/&gt;</code> signals but we needed to
-                actively insert <code>&lt;word&gt;</code> elements to unite whole words broken
+                elements into self-closing <code>&lt;lb/&gt;</code> signals but we needed to insert <code>&lt;word&gt;</code> elements in order to unite whole words broken
                 around the notebook lines. We also added locational <quote>flags</quote> or
                     <quote>signal beacons</quote> as the attribute on <code>&lt;lb
                 n="*"/&gt;</code>, to assist us on the other side of the collation with generating
@@ -650,7 +648,7 @@
                 output in XML flattens the tags we submitted into angle brackets and text, and the
                 shallow XML hierarchy holds only critical apparatus markup: <code>&lt;app&gt;</code>
                 and its children <code>&lt;rdg&gt;</code> to mark divergent branches. The complexity
-                of the code is such that perhaps it is for nearly illegible to human eyes and might
+                of the code is such that perhaps it is nearly illegible to human eyes and might
                 best be rendered in a screen capture for our purposes. Here is a view of the
                 collation output for the sample portion of <emphasis role="ital"
                     >Frankenstein</emphasis> we have been representing: <mediaobject>
@@ -699,7 +697,7 @@
             its nodes in the form of <code>&lt;rdg&gt;</code> elements (for reading witnesses).<footnote>
                 <para>For a visual example, a group of Pitt-Greensburg students led by Nicole
                     Lottig and Brooke Stewart experimented with a network
-                    analysis of editions of Emily Dickinson's Fascicle 16 poems that share the most
+                    analysis of editions of Emily Dickinson’s Fascicle 16 poems that share the most
                     variant readings, and to see which most closely resembled one another. See their
                     network visualization and explanation here: <link
                         xlink:href="http://dickinson16.newtfire.org/16/networkAnalysis.html"
@@ -709,9 +707,9 @@
             interface directly to pages <link
                 xlink:href="http://shelleygodwinarchive.org/sc/oxford/ms_abinger/c56/#/p5">like this
                 one</link> in the Shelley-Godwin Archive edition of the 1816 draft manuscript
-            notebooks. The pointers locate not merely the pages but to specific lines we had
-            precisely captured in the S-GA markup prior to collation, as modelled in the figure
-            below.</para>
+            notebooks. The pointers, as modelled in the figure
+            below, locate not merely the pages but the specific lines we had
+            precisely captured in the S-GA markup prior to collation.</para>
         <figure xml:id="variant" xreflabel="Variant">
             <title>Sample Variant</title>
             <mediaobject>
@@ -720,7 +718,7 @@
                 </imageobject>
             </mediaobject>
             <caption>
-                <para>An example variant with two different readings, showing Percy Bysshe Shelley's
+                <para>An example variant with two different readings, showing Percy Bysshe Shelley’s
                     hand in the ms notebook. While the print editions of 1818, 1823, and the
                     manuscript agree (yellow reading), the print edition of 1831 introduces new text
                     (blue reading). The pointers are expressed according to the TEI XPointer Schemes
@@ -764,7 +762,7 @@
             made use of GitHub’s ability to obtain URLs to specific versions of files, which means
             that the files we point to are guaranteed not to change unexpectedly (although the URL
             itslef may <quote>rot</quote> and return a 404, eventually)<footnote>
-                <para>See also <link
+                <para>See <link
                         xlink:href="http://www.balisage.net/Proceedings/vol5/html/Cayless01/BalisageVol5-Cayless01.html"
                         >Cayless, Hugh A., and Adam Soroka. “On Implementing string-range() for
                         TEI.” Proceedings of Balisage: The Markup Conference 2010. Balisage Series
@@ -841,15 +839,10 @@
                     work on developing pointer specifications to enhance TEI expression beyond
                     inline embedded markup is now part of the <link
                         xlink:href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/SA.html#SATS"
-                        >TEI Guidelines Chapter 16: Linking, Segmentation, and Alignment</link>,
-                        <link
-                        xlink:href="http://www.balisage.net/Proceedings/vol5/html/Cayless01/BalisageVol5-Cayless01.html"
-                        >Cayless, Hugh A., and Adam Soroka. “On Implementing string-range() for
-                        TEI.” Proceedings of Balisage: The Markup Conference 2010. Balisage Series
-                        on Markup Technologies, vol. 5 (2010)</link>.</para>
+                        >TEI Guidelines Chapter 16: Linking, Segmentation, and Alignment</link>.</para>
             </footnote> For much the same reasons that motivate us, Jeffrey C. Witt designed the
             Scholarly Commentaries and Texts Archive, to transform digital <quote>silo</quote>
-            projects into a network of data. <footnote>
+            projects into a network of data.<footnote>
                 <para><link
                         xlink:href="https://www.helsinki.fi/en/unitube/video/c7b16d35-dd91-419b-b017-a4a8373eac63"
                         >See Jeffrey C. Witt’s recorded presentation, <quote>Texts as Networks: The
@@ -862,7 +855,7 @@
                         sources</quote></link>, a report from the <quote>Linked Data and the
                         Medieval Scholastic Tradition</quote> workshop held at the University of
                     Basel in August 17-19, 2016.</para>
-            </footnote>While that project seeks a definitive language of interchange for medieval
+            </footnote> While that project seeks a definitive language of interchange for medieval
             scholastic textual data, on a smaller scale trained on multiple divergent encodings of
             the same famous novel, we have negotiated interchangeability by cutting across
             individual text hierarchies to emphasize lateral connections and commonalities—making a
