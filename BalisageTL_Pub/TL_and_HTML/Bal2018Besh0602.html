@@ -14,7 +14,7 @@
             <h2 class="article-title" id="d1e4">Standoff Bridges in the Frankenstein Variorum Project</h2>
             <h3 class="subtitle"><i>Interchange and Interoperability within TEI Markup Ecosystems</i></h3>
             <div class="author">
-               <h3 class="author">Elisa Eileen Beshero-Bondar</h3>
+               <h3 class="author">Elisa E. Beshero-Bondar</h3>
                <div class="affiliation">
                   <p class="jobtitle">Associate Professor of English</p>
                   <p class="jobtitle">Director, <a href="http://www.greensburg.pitt.edu/digital-humanities/center-digital-text" class="link" target="_new">Center for the Digital Text</a></p>
@@ -77,14 +77,20 @@
          <div class="toc">
             <p><b>Table of Contents</b></p>
             <dl>
-               <dt><span class="section"><a href="#d1e120" class="toc">TEI Ecosystems for Digital Editions: Why Can’t They Be Interoperable <span class="ital">and</span> Interchangeable?</a></span></dt>
-               <dt><span class="section"><a href="#d1e254" class="toc">Bridging the Isolated Ecosystems of Digital Frankenstein Editions to Collate Them</a></span></dt>
-               <dt><span class="section"><a href="#d1e425" class="toc">Building a Variorum Edition from Multiple Sources</a></span></dt>
-               <dt><span class="section"><a href="#d1e577" class="toc">Crossing the bridges</a></span></dt>
+               <dt><span class="section"><a href="#d1e120" class="toc">TEI ecosystems for digital editions: Why can’t they be interoperable <span class="ital">and</span> interchangeable?</a></span></dt>
+               <dt><span class="section"><a href="#d1e254" class="toc">Building a variorum edition from multiple sources</a></span></dt>
+               <dd>
+                  <dl>
+                     <dt><span class="section"><a href="#d1e367" class="toc">Overview of the bridge-building process</a></span></dt>
+                     <dt><span class="section"><a href="#d1e419" class="toc">The Collation Process: Building Blocks and Processes</a></span></dt>
+                  </dl>
+               </dd>
+               <dt><span class="section"><a href="#d1e543" class="toc">Crossing the bridges</a></span></dt>
+               <dt><span class="section"><a href="#d1e582" class="toc">Conclusions and Prospects</a></span></dt>
             </dl>
          </div>
          <div class="section" id="d1e120">
-            <h2 class="title" style="clear: both">TEI Ecosystems for Digital Editions: Why Can’t They Be Interoperable <span class="ital">and</span> Interchangeable?
+            <h2 class="title" style="clear: both">TEI ecosystems for digital editions: Why can’t they be interoperable <span class="ital">and</span> interchangeable?
             </h2>
             <p>In her keynote address at the 2016 conference meeting of the Text Encoding Initiative
                in Vienna, Tara Andrews broached the issue of whether TEI can really be considered
@@ -196,25 +202,167 @@
             </p>
          </div>
          <div class="section" id="d1e254">
-            <h2 class="title" style="clear: both">Bridging the Isolated Ecosystems of Digital Frankenstein Editions to Collate Them</h2>
-            <p>We describe one such effort to support interchange and interoperability among multiple
-               ecosystems we need to reconcile in the Frankenstein Variorum Project.<sup class="fn-label"><a href="#d1e259" class="footnoteref" id="d1e259-ref">[5]</a></sup> The effort involves preparing documents for processing with
-               <a href="https://collatex.net" class="link" target="_new">CollateX</a> software, which automates
-               the location of alignments and deltas in multiple versions of a document. We prepared
-               documents for collation that originated in different markup ecosystems, and we had
-               to do
-               the work of interchange. We had to develop an intermediary <q>bridge format</q>
-               for all of our editions that exists specifically to serve the operational purpose
-               of
-               collation, that is, the marking of moments of divergence and variation in comparable
-               units of text that processes <span class="ital">only</span> what is semantically
-               comparable (including the words in the novel, and whether they are marked for insertion
-               or deletion) and masks or ignores the portions of the documents that are not relevant
-               for comparison purposes (including for our purposes the elements indicating pagination
-               and location on a page surface). Here is a sample of the most elaborately marked TEI
-               we
-               have, from the Shelley-Godwin Archive:
-            </p><pre class="programlisting">
+            <h2 class="title" style="clear: both">Building a variorum edition from multiple sources</h2>
+            <p>In the process of collation, hierarchies must be dismantled and flattened in order
+               for
+               meaningful multiplicity to be represented, and in order for us to understand a dialogic
+               relationship among textual variants. To study variation over time vexes the organizing
+               principle of any singular hierarchy, but for an alternative bridge-building
+               architecture, arches and connecting spans are more viable than monoliths. Our use
+               of the
+               terms <q>arch</q>, <q>bridge</q>, or <q>span</q> is more than a
+               metaphor here, but drawn from a graph-based model of text on which, not coincidentally,
+               collateX was designed for locating variants in documents. <sup class="fn-label"><a href="#d1e268" class="footnoteref" id="d1e268-ref">[5]</a></sup></p>
+            <p>We describe one such effort in the Frankenstein Variorum Project.<sup class="fn-label"><a href="#d1e283" class="footnoteref" id="d1e283-ref">[6]</a></sup>. Much of our work has involved preparing documents for processing with <a href="https://collatex.net" class="link" target="_new">CollateX</a> software, which automates the
+               location of alignments and deltas in multiple versions of a text. We have had to contend
+               a challenge of interchange to be able to make meaningful comparisons of digital editions
+               made at different times by different editors, with a goal to prepare a digital variorum
+               edition of five versions of Frankenstein in TEI. We first up-converted two of our
+               collation source documents from the 1990s web 1.0 HTML encoding of the Pennsylvania
+               Electronic Edition of <span class="ital">Frankenstein</span> for the 1818 and
+               1831 editions<sup class="fn-label"><a href="#d1e296" class="footnoteref" id="d1e296-ref">[7]</a></sup>. We needed to find a way to collate these editions with the Shelley-Godwin
+               Archive’s diplomatic edition of the manuscript notebooks of 1816, the only known
+               existing drafts of the novel.<sup class="fn-label"><a href="#d1e306" class="footnoteref" id="d1e306-ref">[8]</a></sup> We are also newly incorporating a little-known edition of the novel’s 1823
+               publication produced from corrected OCR of a Google Books facsimile, together with
+               transcription of Mary Shelley’s handwritten revision notes on a copy of the 1818
+               publication known as <q>the Thomas copy</q> held at the Morgan Library and Museum.<sup class="fn-label"><a href="#d1e317" class="footnoteref" id="d1e317-ref">[9]</a></sup> Our collation should yield a meta-narrative of how <span class="ital">Frankenstein</span> changed over time in five versions that passed through
+               multiple editorial hands. It is widely understood that the 1831 edition diverges sharply
+               from the first print edition of 1818, adding new material and changing the relationships
+               of characters. Less known is how the notebook material compares with the print editions,
+               and how much we can identify of the persistence of various hands involved in composing,
+               amending, and substantially revising the novel over the three editions. For example,
+               to
+               build on Charlie Robinson’s identification of Percy Bysshe Shelley’s hand in the
+               notebooks, our collation can reveal how much of Percy’s insertions and deletions survive
+               in the later print editions. Our work should permit us to survey when and how the
+               major
+               changes of the 1831 text (for example, to Victor Frankenstein’s family members and
+               the
+               compression and reduction of a chapter in part I) occurred. We preserve information
+               about hands, insertions, and deletions in the output collation, to serve as the basis
+               for better quantifying, characterizing, and surveying the contexts of collaboration
+               and
+               revision in textual scholarship.
+            </p>
+            <p>The three print editions and extant material from three manuscripts are compared in
+               parallel, to indicate the presence of variants in the other texts and to be able to
+               highlight them based on intensity of variance, to be displayed like the highlighted
+               passages in each visible edition of <span class="ital">The Origin of
+                  Species</span> in Darwin Online.<sup class="fn-label"><a href="#d1e338" class="footnoteref" id="d1e338-ref">[10]</a></sup> Rather than any edition serving as the lemma or grounds for collation
+               comparison, we hold the collation information in stand-off markup, in its own XML
+               hierarchy. That XML <q>bridge</q> expresses relationships among the distinct
+               encodings of diplomatic manuscript markup in which the highest level of hierarchy
+               is a
+               unit leaf of the notebook, with the structural encoding of print editions organized
+               in
+               chapters, letters, and volumes. While the apparently nested structure of these divisions
+               might seem the most meaningful way to model <span class="ital">Frankenstein</span>, these pose a challenge to textual scholarship in their own
+               right. As Wendell Piez has discussed, <span class="ital">Frankenstein</span>’s
+               overlapping hierarchies of framing letters and chapters have led to inconsistencies
+               in
+               the novel's print production. Piez deploys a non-hierarchical encoding of the novel
+               on
+               which he constructs an SVG modeling (in ordered XML syntax) of the overlap itself.<sup class="fn-label"><a href="#d1e354" class="footnoteref" id="d1e354-ref">[11]</a></sup> Our work with collation depends on a similar interdependency of structurally
+               inconsistent encoding.
+            </p>
+            <div class="section" id="d1e367">
+               <h3 class="title" style="clear: both">Overview of the bridge-building process</h3>
+               <p>Our method involves three stages of structural transformation, each of which
+                  disrupts the hierarchies of its source documents: 
+                  <div class="orderedlist" id="d1e372">
+                     <ol start="NaN" style="list-style-type: decimal;">
+                        <li id="d1e373">
+                           <p>Preparing texts for collation with CollateX,</p>
+                        </li>
+                        <li id="d1e376">
+                           <p>Collating a new "braided" structure in CollateX XML output, which
+                              positions each variant in its own reading witness,
+                           </p>
+                        </li>
+                        <li id="d1e379">
+                           <p>Transforming the collation output to survey the extents and kinds of
+                              variation, and to build a digital variorum edition.
+                           </p>
+                        </li>
+                     </ol>
+                  </div>
+                  
+               </p>
+               <p>In the first stage, we adapt the source code from the Shelley-Godwin Archive
+                  (specialized TEI for the encoding of manuscript page surfaces) and from the
+                  Pennsylvania Electronic Edition (PAEE) (HTML 1.0 from the mid 1990s marking
+                  paragraphs and sectional headings) to create new forms of XML to carry predictable
+                  markers to assist in alignment. These new, pre-collation editions are resequenced
+                  (as when we move marginal annotations from the end of the XML document into their
+                  marked places as they would be read in the manuscript notebook). The texts from the
+                  PAEE are corrected against photofacsimiles of first publications of the novel in
+                  1818 and 1831. They are also differently <q>chunked</q> than their source
+                  texts, resizing the unit file so that each represents an equivalent portion small
+                  enough to collate meaningfully and large enough that each document demonstrably
+                  aligns with the others at its start and end points. We prepared 33 collation units
+                  of the novel. XML matching the pre-collation format is prepared from OCR texts of
+                  the 1823 edition. Building from the 1818 collation units, we add in encoded
+                  transcriptions of Mary Shelley's hand-written edits on <q>the Thomas
+                     copy</q> of the 1818 publication.
+               </p>
+               <p>Stage two weaves these surrogate editions together and transfers information from
+                  tags that we want to preserve for the variorum. Interacting with the angle brackets
+                  as patterned strings with Python, we mask several elements from the diplomatic code
+                  of the manuscript notebooks so that they are not processed in terms of comparison
+                  but are nevertheless output to preserve their distinct information. In CollateX’s
+                  informationally-rich XML output, these tags render as flattened text with character
+                  entities replacing angle brackets so as not to introduce overlap problems with its
+                  critical apparatus.
+               </p>
+               <p>In Stage three, we work delicately with strings that represent flattened composite
+                  of preserved tag information and representations of the text, using XSLT
+                  string-manipulation functions to construct new XML and plain text (TSV or JSON)
+                  files for stylometric and other analysis. We can then study term frequencies and,
+                  for example, where the strings associated with Percy Shelley are repeated in the
+                  later editions, and how many were preserved by 1831. We also build the <span class="ital">standoff Bridge</span> in TEI for the digital variorum with its
+                  pointers to multiple editions, as modelled in Figure 1.
+               </p>
+               <div class="figure" id="variant">
+                  <p class="title">Figure&nbsp;1: Sample Variant</p>
+                  <div class="figure-contents">
+                     <div class="mediaobject"><img alt="png image (Bal2018variant042711.png)" src="Bal2018variant042711.png"></div>
+                     <div class="caption">
+                        <p>An example variant with two different readings, showing Percy Bysshe
+                           Shelley's hand in the ms notebook. While the print editions of 1818, 1823,
+                           and the manuscript agree (yellow reading), the print edition of 1831
+                           introduces new text (blue reading). The pointers are expressed according to
+                           the TEI XPointer Schemes defined in Chapter 16 of the TEI Guidelines and are
+                           subject to change.
+                        </p>
+                     </div>
+                  </div>
+               </div>
+               <p> This example shows how the stand-off collation identifies variant readings
+                  between texts by grouping pointers as opposed to grouping strings of text according
+                  to the parallel segmentation technique described in Chapter 12 of the TEI Guidelines.<sup class="fn-label"><a href="#d1e409" class="footnoteref" id="d1e409-ref">[12]</a></sup> The TEI offers a stand-off method for encoding variants, called
+                  “double-end-point-attachment”, in which variants can be encoded separately from the
+                  base text by specifying the start and end point of the lemma of which they are a
+                  variant. This allows encoders to refer to overlapping areas on the base text, but
+                  despite its flexibility, this method still requires choosing a base text to which
+                  anchor variant readings. While choosing a lemma for each variant may be necessary
+                  for a critical edition, it is not ideal for a variorum edition like ours that, by
+                  design, does not choose a base text.<sup class="fn-label"><a href="#d1e415" class="footnoteref" id="d1e415-ref">[13]</a></sup> Our approach, therefore, simply identifies variance and groups readings
+                  from multiple sources without conflating them into one document and with
+                  accommodation of multiple hierarchies.
+               </p>
+            </div>
+            <div class="section" id="d1e419">
+               <h3 class="title" style="clear: both">The Collation Process: Building Blocks and Processes</h3>
+               <p>We had to develop an intermediary <q>bridge format</q> for all of our
+                  editions that exists specifically to serve the operational purpose of collation,
+                  that is, the marking of moments of divergence and variation in comparable units of
+                  text that processes <span class="ital">only</span> what is semantically
+                  comparable (including the words in the novel, and whether they are marked for
+                  insertion or deletion) and masks or ignores the portions of the documents that are
+                  not relevant for comparison purposes (including for our purposes the elements
+                  indicating pagination and location on a page surface). Here is a sample of the most
+                  elaborately marked TEI we have, from the Shelley-Godwin Archive:
+               </p><pre class="programlisting">
                  &lt;zone type="main"&gt;
     &lt;line rend="center"&gt;&lt;milestone spanTo="#c56-0045.04" unit="tei:head"/&gt;Chapter 7&lt;hi rend="sup"&gt;&lt;hi rend="underline"&gt;th&lt;/hi&gt;&lt;/hi&gt;&lt;anchor xml:id="c56-0045.04"&gt;&lt;/anchor&gt;&lt;/line&gt;
     &lt;milestone unit="tei:p"&gt;&lt;/milestone&gt;
@@ -252,18 +400,16 @@
     ...
     &lt;/zone&gt;
             </pre><p>The markup above prioritizes description of lines on a manuscript notebook page
-               surface, delineated in a zone element, and the line elements together with those
-               indicating insertions and deletions pose us an obstacle course if we wish to attempt
-               to
-               compare this passage with its corresponding unit in the much simpler XML encoding
-               we
-               prepared for the print publications. One significant problem that we needed to solve
-               is the way words break around
-               the ends of lines in the notebooks. These are given hyphens only when present in the
-               manuscript and are otherwise unmarked. Consider the challenge of comparing the sequential
-               stream of text delineated in the code block above with the corresponding passage in
-               our XML encoding of the 1818 edition:
-               <pre class="programlisting">              
+                  surface, delineated in a zone element, and the line elements together with those
+                  indicating insertions and deletions pose us an obstacle course if we wish to attempt
+                  to compare this passage with its corresponding unit in the much simpler XML encoding
+                  we prepared for the print publications. One significant problem that we needed to
+                  solve is the way words break around the ends of lines in the notebooks. These are
+                  given hyphens only when present in the manuscript and are otherwise unmarked.
+                  Consider the challenge of comparing the sequential stream of text delineated in the
+                  code block above with the corresponding passage in our XML encoding of the 1818
+                  edition:
+                  <pre class="programlisting">              
       &lt;xml&gt;
    &lt;anchor type="collate" xml:id="C10"/&gt;
    &lt;milestone unit="chapter" type="start" n="4"/&gt;
@@ -279,60 +425,53 @@
 ...
       &lt;/xml&gt;
   </pre>
-               Note: the code above for the pre-collation version of the 1818 edition is not written
-               in
-               TEI, but borrows its elements. This is an example of simple XML we prepared specifically
-               for the purpose of collation, reducing the documents to concentrate on the
-               <q>running stream</q> of text and its basic structural divisions. Here the
-               paragraph is the most basic structural division, and chapter boundaries are signalled
-               with milestone markers.
-            </p>
-            <p>The act of reconciling these markup ecosystems required altering the structure of
-               the
-               S-GA markup, to produce it in an alternative pre-collation <q>bridge</q> format
-               that matches up with elements in the encoding of the published editions, which in
-               this
-               paper we will simply call <q>1818-style</q>). In the S-GA markup the hierarchy
-               is not especially deep, or it only becomes deep in describing revision activities
-               and
-               changes of hand. These hierarchical structures do not correspond with anything in
-               the
-               markup of the print-published editions, where hierarchical depth comes from chapter,
-               letter, and volume divisions. To make a collatable <q>bridge</q> format required
-               alteration of each (S-GA and 1818-style) to 
-               <div class="itemizedlist" id="d1e296">
-                  <ul>
-                     <li id="d1e297">
-                        <p><q>meet in the middle</q>: share matching elements that contain
-                           and signal the sequence of text to be collated, and
-                        </p>
-                     </li>
-                     <li id="d1e302">
-                        <p><q>stay apart</q>: preserve the diversity of metadata in the S-GA
-                           markup about revisions and handshifts, and find a way to ignore or mask it
-                           from the collation process.
-                        </p>
-                     </li>
-                  </ul>
-               </div> To build the <q>pre-collation bridge formats</q>, we needed to
-               flatten deep hierarchical structures from the <q>1818-style</q> XML documents by
-               converting them into milestone-style signals. We want to retain the information about
-               structural divisions, that is, paragraph, chapter, letter, and volume boundaries,
-               and
-               include this as data, since changes in paragraphing or chapter content are relevant
-               to
-               the variorum comparison of the Frankenstein editions. However, we also retain markup
-               which does not designate the running sequence of text and basic text structure, but
-               offers metadata about who wrote what, and whether the writing was inserted or deleted.
-               This allows us to reconcile hierarchies that are otherwise completely at odds and
-               nevertheless preserve their information, though we need to do another round of work
-               to
-               screen some of that information away from the collation process. Below is the sample
-               passage from the Shelley-Godwin Notebooks rendered in our bridge format, designed
-               to be
-               comparable laterally with corresponding encoding in the 1818-style that we represented
-               in the block above.
-               <pre class="programlisting">
+                  Note: the code above for the pre-collation version of the 1818 edition is not
+                  written in TEI, but borrows its elements. This is an example of simple XML we
+                  prepared specifically for the purpose of collation, reducing the documents to
+                  concentrate on the <q>running stream</q> of text and its basic structural
+                  divisions. Here the paragraph is the most basic structural division, and chapter
+                  boundaries are signalled with milestone markers.
+               </p>
+               <p>The act of reconciling these markup ecosystems required altering the structure of
+                  the S-GA markup, to produce it in an alternative pre-collation <q>bridge</q>
+                  format that matches up with elements in the encoding of the published editions,
+                  which in this paper we will simply call <q>1818-style</q>). In the S-GA
+                  markup the hierarchy is not especially deep, or it only becomes deep in describing
+                  revision activities and changes of hand. These hierarchical structures do not
+                  correspond with anything in the markup of the print-published editions, where
+                  hierarchical depth comes from chapter, letter, and volume divisions. To make a
+                  collatable <q>bridge</q> format required alteration of each (S-GA and
+                  1818-style) to 
+                  <div class="itemizedlist" id="d1e451">
+                     <ul>
+                        <li id="d1e452">
+                           <p><q>meet in the middle</q>: share matching elements that
+                              contain and signal the sequence of text to be collated, and
+                           </p>
+                        </li>
+                        <li id="d1e457">
+                           <p><q>stay apart</q>: preserve the diversity of metadata in the
+                              S-GA markup about revisions and handshifts, and find a way to ignore or
+                              mask it from the collation process.
+                           </p>
+                        </li>
+                     </ul>
+                  </div> To build the <q>pre-collation bridge formats</q>, we needed
+                  to flatten deep hierarchical structures from the <q>1818-style</q> XML
+                  documents by converting them into milestone-style signals. We want to retain the
+                  information about structural divisions, that is, paragraph, chapter, letter, and
+                  volume boundaries, and include this as data, since changes in paragraphing or
+                  chapter content are relevant to the variorum comparison of the Frankenstein
+                  editions. However, we also retain markup which does not designate the running
+                  sequence of text and basic text structure, but offers metadata about who wrote what,
+                  and whether the writing was inserted or deleted. This allows us to reconcile
+                  hierarchies that are otherwise completely at odds and nevertheless preserve their
+                  information, though we need to do another round of work to screen some of that
+                  information away from the collation process. Below is the sample passage from the
+                  Shelley-Godwin Notebooks rendered in our bridge format, designed to be comparable
+                  laterally with corresponding encoding in the 1818-style that we represented in the
+                  block above.
+                  <pre class="programlisting">
             &lt;xml&gt;
    &lt;anchor type="collate" xml:id="C10"/&gt;
    &lt;surface xmlns:mith="http://mith.umd.edu/sc/ns1#"
@@ -386,243 +525,78 @@
          &lt;lb n="c56-0045__main__15"/&gt;and a convulsive motion agitated 
          &lt;lb n="c56-0045__main__16"/&gt;its limbs.&lt;milestone unit="tei:p"/&gt;    
         </pre>
-               Notice what has changed here: We not only had to flatten <code class="code">&lt;line&gt;</code>
-               elements into self-closing <code class="code">&lt;lb/&gt;</code> signals but we needed to actively
-               insert <code class="code">&lt;word&gt;</code> elements to unite whole words broken around the
-               notebook lines. We also added locational <q>flags</q> or <q>signal
-                  beacons</q> as the attribute on <code class="code">&lt;lb n="*"/&gt;</code>, to assist us on
-               the other side of the collation with generating XML pointers back to the source text:
-               these indicate positional zones and lines on the notebook page surfaces, so that when
-               output that data can be kept with its associated collation units. In these
-               information-enriching activities, of course, we are doing the human work required
-               of
-               interchange, and we do so in the interests of interoperability, so the automated
-               collation process can locate the same word tokens without interference.
-            </p>
-            <p> The <q>pre-collation bridge format</q> needs to retain certain marked metadata from the
-               original TEI, including for example, whose hands are at work on the manuscript at
-               a
-               given moment, so we can attempt to see if a string of text inserted by Percy Bysshe
-               Shelley continues to be supported in the later print publications. However, such
-               metadata needs to be masked from the collation process so that we are not folding
-               it
-               into comparison of the running streams of text that compose each version of the novel.
-               To deliver these <q>pre-collation bridge</q> XML files to collateX and instruct
-               the software collation algorithm on how to process them, <span class="ital">with</span> and <span class="ital">around</span> their markup, we wrote
-               a Python script working with its xml.dom.pulldom tool, which parses XML documents
-               as a running stream of text and instructs the collation process to ignore some
-               patterns surrounded by angle brackets, while actively collating the others.<sup class="fn-label"><a href="#d1e351" class="footnoteref" id="d1e351-ref">[6]</a></sup>
-               
-               
-               
-            </p>
-            <p>In turn, the XML output generated by collateX, too, serves as an intermediary format,
-               not in TEI, but containing its components in the form of critical apparatus tagging,
-               to
-               hold information about the deltas of variance among the editions. Here is a screen
-               capture of the collation output for the sample portion of <span class="ital">Frankenstein</span> we have been representing: 
-               
-               
-               <div class="mediaobject"><img alt="png image (Bal2018collateOutput042908.png)" src="Bal2018collateOutput042908.png"></div>
-               
-               Pulling from this <q>pre-TEI</q> output from
-               the collation process, we then apply XSLT to build the TEI <q>spinal column</q>
-               of our Variorum edition, an edition that applies stand-off pointers in a new method
-               we
-               are calling <q>stand-off parallel segmentation</q>. Our method enhances the
-               available models in the TEI for stand-off collation, while supporting the TEI’s
-               longstanding interests in both interchange and interoperability. We want to promote
-               the
-               long-term sustenance of digital editions by actively building bridges to render isolated
-               monumental projects interchangeable rather than remake them from the ground up. Building
-               ramps for interchangeability is an investment in interoperability as well, specifically
-               for producing the comparative views afforded by collation.
-            </p>
-            <p>Though we confine our case-study for this paper to the automated collation process
-               and
-               what we can build for it and from it, the perspective on enhancing interchange for
-               the
-               purposes of interoperation has larger ramifications in the ongoing discussion of
-               graph-based models and their application to the TEI.<sup class="fn-label"><a href="#d1e381" class="footnoteref" id="d1e381-ref">[7]</a></sup> For much the same reasons that motivate us, Jeffrey C. Witt designed the
-               Scholarly Commentaries and Texts Archive, to transform digital <q>silo</q>
-               projects into a network of data and while that project seeks a definitive language
-               of
-               interchange for medieval scholastic textual data, on a smaller scale trained on multiple
-               divergent encodings of the same famous novel, we have negotiated interchangeability
-               by
-               cutting across individual text hierarchies to emphasize lateral connections and
-               commonalities—making a new TEI whose hierarchy serves as a stand-off
-               <q>backbone</q> or <q>switchboard</q> permitting comparison and
-               sharing of common data.<sup class="fn-label"><a href="#d1e410" class="footnoteref" id="d1e410-ref">[8]</a></sup></p>
-         </div>
-         <div class="section" id="d1e425">
-            <h2 class="title" style="clear: both">Building a Variorum Edition from Multiple Sources</h2>
-            <p>In the process of collation, hierarchies must be dismantled and flattened in order
-               for
-               meaningful multiplicity to be represented, and in order for us to understand a dialogic
-               relationship among textual variants. To study variation over time vexes the organizing
-               principle of any singular hierarchy, but for an alternative bridge-building
-               architecture, arches and connecting spans are more viable than monoliths. Our use
-               of the
-               terms <q>arch</q>, <q>bridge</q>, or <q>span</q> is more than a
-               metaphor here, but drawn from a graph-based model of text on which, not coincidentally,
-               collateX was designed for locating variants in documents. <sup class="fn-label"><a href="#d1e439" class="footnoteref" id="d1e439-ref">[9]</a></sup></p>
-            <p>We have had to contend with the challenge of collating digital editions made at
-               different times by different editors in order to prepare a variorum edition of
-               Frankenstein in TEI P5. Our collation source documents are adapted from the 1990s
-               web
-               1.0 HTML encoding of the Pennsylvania Electronic Edition of <span class="ital">Frankenstein</span> for the 1818 and 1831 editions<sup class="fn-label"><a href="#d1e457" class="footnoteref" id="d1e457-ref">[10]</a></sup>, and the Shelley-Godwin Archive’s diplomatic edition of the manuscript
-               notebooks of 1816, the only known existing drafts of the novel.<sup class="fn-label"><a href="#d1e467" class="footnoteref" id="d1e467-ref">[11]</a></sup> We are also newly incorporating a little-known edition of the novel’s 1823
-               publication produced from corrected OCR of a Google Books facsimile, together with
-               transcription of Mary Shelley’s handwritten revision notes on a copy of the 1818
-               publication known as <q>the Thomas copy</q> held at the Morgan Library and
-               Museum. Our collation should yield a meta-narrative of how <span class="ital">Frankenstein</span> changed over time in four versions that passed through
-               multiple editorial hands. It is widely understood that the 1831 edition diverges sharply
-               from the first print edition of 1818, adding new material and changing the relationships
-               of characters. Less known is how the notebook material compares with the print editions,
-               and how much we can identify of the persistence of various hands involved in composing,
-               amending, and substantially revising the novel over the three editions. For example,
-               to
-               build on Charlie Robinson’s identification of Percy Bysshe Shelley’s hand in the
-               notebooks, our collation can reveal how much of Percy’s insertions and deletions survive
-               in the later print editions. Our work should permit us to survey when and how the
-               major
-               changes of the 1831 text (for example, to Victor Frankenstein’s family members and
-               the
-               compression and reduction of a chapter in part I) occurred. We preserve information
-               about hands, insertions, and deletions in the output collation, to serve as the basis
-               for better quantifying, characterizing, and surveying the contexts of collaboration
-               and
-               revision in textual scholarship.
-            </p>
-            <p>The three print editions and extant material from three manuscripts are compared in
-               parallel, to indicate the presence of variants in the other texts and to be able to
-               highlight them based on intensity of variance, to be displayed like the highlighted
-               passages in each visible edition of <span class="ital">The Origin of
-                  Species</span> in Darwin Online.<sup class="fn-label"><a href="#d1e485" class="footnoteref" id="d1e485-ref">[12]</a></sup> Rather than any edition serving as the lemma or grounds for collation
-               comparison, we hold the collation information in stand-off markup, in its own XML
-               hierarchy. That XML <q>bridge</q> expresses relationships among the distinct
-               encodings of diplomatic manuscript markup in which the highest level of hierarchy
-               is a
-               unit leaf of the notebook, with the structural encoding of print editions organized
-               in
-               chapters, letters, and volumes. While the apparently nested structure of these divisions
-               might seem the most meaningful way to model <span class="ital">Frankenstein</span>, these pose a challenge to textual scholarship in their own
-               right. As Wendell Piez has discussed, <span class="ital">Frankenstein</span>’s
-               overlapping hierarchies of framing letters and chapters have led to inconsistencies
-               in
-               the novel's print production. Piez deploys a non-hierarchical encoding of the novel
-               on
-               which he constructs an SVG modeling (in ordered XML syntax) of the overlap itself.<sup class="fn-label"><a href="#d1e501" class="footnoteref" id="d1e501-ref">[13]</a></sup> Our work with collation depends on a similar interdependency of structurally
-               inconsistent encoding.
-            </p>
-            <p>Our method involves three stages of structural transformation, each of which disrupts
-               the hierarchies of its source documents: 
-               <div class="orderedlist" id="d1e516">
-                  <ol start="NaN" style="list-style-type: decimal;">
-                     <li id="d1e517">
-                        <p>Preparing texts for collation with CollateX,</p>
-                     </li>
-                     <li id="d1e520">
-                        <p>Collating a new "braided" structure in CollateX XML output, which
-                           positions each variant in its own reading witness,
-                        </p>
-                     </li>
-                     <li id="d1e523">
-                        <p>Transforming the collation output to survey the extents and kinds of
-                           variation, and to build a digital variorum edition.
-                        </p>
-                     </li>
-                  </ol>
-               </div>
-               
-            </p>
-            <p>In the first stage, we adapt the source code from the Shelley-Godwin Archive
-               (specialized TEI for the encoding of manuscript page surfaces) and from the Pennsylvania
-               Electronic Edition (PAEE) (HTML 1.0 from the mid 1990s marking paragraphs and sectional
-               headings) to create new forms of XML to carry predictable markers to assist in
-               alignment. These new, pre-collation editions are resequenced (as when we move marginal
-               annotations from the end of the XML document into their marked places as they would
-               be
-               read in the manuscript notebook). The texts from the PAEE are corrected against
-               photofacsimiles of first publications of the novel in 1818 and 1831. They are also
-               differently <q>chunked</q> than their source texts, resizing the unit file so
-               that each represents an equivalent portion small enough to collate meaningfully and
-               large enough that each document demonstrably aligns with the others at its start and
-               end
-               points. We prepared 33 collation units of the novel. XML matching the pre-collation
-               format is prepared from OCR texts of the 1823 edition. Building from the 1818 collation
-               units, we add in encoded transcriptions of Mary Shelley's hand-written edits on
-               <q>the Thomas copy</q> of the 1818 publication.<sup class="fn-label"><a href="#d1e535" class="footnoteref" id="d1e535-ref">[14]</a></sup></p>
-            <p>Stage two weaves these surrogate editions together and transfers information from
-               tags
-               that we want to preserve for the variorum. Interacting with the angle brackets as
-               patterned strings with Python, we mask several elements from the diplomatic code of
-               the
-               manuscript notebooks so that they are not processed in terms of comparison but are
-               nevertheless output to preserve their distinct information. In CollateX’s
-               informationally-rich XML output, these tags render as flattened text with character
-               entities replacing angle brackets so as not to introduce overlap problems with its
-               critical apparatus.
-            </p>
-            <p>In Stage three, we work delicately with strings that represent flattened composite
-               of
-               preserved tag information and representations of the text, using XSLT
-               string-manipulation functions to construct new XML and plain text (TSV or JSON) files
-               for stylometric and other analysis. We can then study term frequencies and, for example,
-               where the strings associated with Percy Shelley are repeated in the later editions,
-               and
-               how many were preserved by 1831. We also build the <span class="ital">standoff
-                  Bridge</span> in TEI for the digital variorum with its pointers to multiple
-               editions, as modelled in Figure 1.
-            </p>
-            <div class="figure" id="variant">
-               <p class="title">Figure&nbsp;1: Sample Variant</p>
-               <div class="figure-contents">
-                  <div class="mediaobject"><img alt="png image (Bal2018variant042711.png)" src="Bal2018variant042711.png"></div>
-                  <div class="caption">
-                     <p>An example variant with two different readings, showing Percy Bysshe Shelley's
-                        hand in the ms notebook. While the print editions of 1818, 1823, and the
-                        manuscript agree (yellow reading), the print edition of 1831 introduces new text
-                        (blue reading). The pointers are expressed according to the TEI XPointer Schemes
-                        defined in Chapter 16 of the TEI Guidelines and are subject to change.
-                     </p>
-                  </div>
-               </div>
+                  Notice what has changed here: We not only had to flatten <code class="code">&lt;line&gt;</code>
+                  elements into self-closing <code class="code">&lt;lb/&gt;</code> signals but we needed to
+                  actively insert <code class="code">&lt;word&gt;</code> elements to unite whole words broken
+                  around the notebook lines. We also added locational <q>flags</q> or
+                  <q>signal beacons</q> as the attribute on <code class="code">&lt;lb
+                     n="*"/&gt;</code>, to assist us on the other side of the collation with generating
+                  XML pointers back to the source text: these indicate positional zones and lines on
+                  the notebook page surfaces, so that when output that data can be kept with its
+                  associated collation units. In these information-enriching activities, of course,
+                  we
+                  are doing the human work required of interchange, and we do so in the interests of
+                  interoperability, so the automated collation process can locate the same word tokens
+                  without interference.
+               </p>
+               <p> The <q>pre-collation bridge format</q> needs to retain certain marked
+                  metadata from the original TEI, including for example, whose hands are at work on
+                  the manuscript at a given moment, so we can attempt to see if a string of text
+                  inserted by Percy Bysshe Shelley continues to be supported in the later print
+                  publications. However, such metadata needs to be masked from the collation process
+                  so that we are not folding it into comparison of the running streams of text that
+                  compose each version of the novel. To deliver these <q>pre-collation
+                     bridge</q> XML files to collateX and instruct the software collation
+                  algorithm on how to process them, <span class="ital">with</span> and
+                  <span class="ital">around</span> their markup, we wrote a Python script
+                  working with its xml.dom.pulldom tool, which parses XML documents as a running
+                  stream of text and instructs the collation process to ignore some patterns
+                  surrounded by angle brackets, while actively collating the others.<sup class="fn-label"><a href="#d1e506" class="footnoteref" id="d1e506-ref">[14]</a></sup>
+                  
+               </p>
+               <p>In turn, the XML output generated by collateX itself serves as an intermediary
+                  format, not in TEI, but containing its components in the form of critical apparatus
+                  tagging, to hold information about the deltas of variance among the editions. The
+                  output in XML flattens the tags we submitted into angle brackets and text, and the
+                  shallow XML hierarchy holds only critical apparatus markup: <code class="code">&lt;app&gt;</code>
+                  and its children <code class="code">&lt;rdg&gt;</code> to mark divergent branches. The complexity
+                  of the code is such that perhaps it is for nearly illegible to human eyes and might
+                  best be rendered in a screen capture for our purposes. Here is a view of the
+                  collation output for the sample portion of <span class="ital">Frankenstein</span> we have been representing: 
+                  <div class="mediaobject"><img alt="png image (Bal2018collateOutput042908.png)" src="Bal2018collateOutput042908.png"></div>
+               </p>
+               <p>While it may be difficult for humans to read, this code is information-rich and tractable
+                  for the next stage of work in building up the Variorum, and due to its simple regularity
+                  with embedded complexity, we might consider it to be a successful interchange format
+                  in its own right. WE write XSLT to pull from this <q>pre-TEI</q> output from the collation process, and build the more legible and interoperable TEI
+                  <q>spinal column</q> of our Variorum
+                  edition. The edition architecture applies stand-off pointers in a form of <q>stand-off parallel segmentation</q>, which enhances the
+                  available models in the TEI Guidelines for stand-off collation, while supporting the
+                  TEI’s
+                  longstanding interests in both interchange and interoperability, as we discuss below.
+                  We want to promote
+                  the long-term sustenance of digital editions by actively building bridges to render
+                  isolated monumental projects interchangeable rather than remake them from the ground
+                  up. Building ramps for interchangeability is an investment in interoperability as
+                  well, specifically for producing the comparative views afforded by collation.
+               </p>
+               <p>Though we think of XML as a stable sustainable archiving medium, the repeated
+                  collapsing and expansion of hierarchies in our collation process makes us consider
+                  that for the viability of digital textual scholarship, ordered hierarchies of
+                  content objects might best be designed with leveling in mind, and that building with
+                  XML may be optimized when it is open to transformation. Preparing diversely encoded
+                  documents for collation challenges us to consider inconsistent and overlapping
+                  hierarchies as a tractable matter for computational alignment—where alignment
+                  becomes an organizing principle that fractures hierarchies, chunking if not
+                  atomizing them at the level of the smallest meaningfully sharable semantic
+                  features.
+               </p>
             </div>
-            <p> This example shows how the stand-off collation identifies variant readings between
-               texts by grouping pointers as opposed to grouping strings of text according to the
-               parallel segmentation technique described in Chapter 12 of the TEI Guidelines.<sup class="fn-label"><a href="#d1e565" class="footnoteref" id="d1e565-ref">[15]</a></sup> The TEI offers a stand-off method for encoding variants, called
-               “double-end-point-attachment”, in which variants can be encoded separately from the
-               base
-               text by specifying the start and end point of the lemma of which they are a variant.
-               This allows encoders to refer to overlapping areas on the base text, but despite its
-               flexibility, this method still requires choosing a base text to which anchor variant
-               readings. While choosing a lemma for each variant may be necessary for a critical
-               edition, it is not ideal for a variorum edition like ours that, by design, does not
-               choose a base text.<sup class="fn-label"><a href="#d1e571" class="footnoteref" id="d1e571-ref">[16]</a></sup> Our approach, therefore, simply identifies variance and groups readings from
-               multiple sources without conflating them into one document and with accommodation
-               of
-               multiple hierarchies.
-            </p>
-            <p>Though we think of XML as a stable sustainable archiving medium, the repeated
-               collapsing and expansion of hierarchies in our collation process makes us consider
-               that
-               for the viability of digital textual scholarship, ordered hierarchies of content objects
-               might best be designed with leveling in mind, and that building with XML may be
-               optimized when it is open to transformation. Preparing diversely encoded documents
-               for
-               collation challenges us to consider inconsistent and overlapping hierarchies as a
-               tractable matter for computational alignment—where alignment becomes an organizing
-               principle that fractures hierarchies, chunking if not atomizing them at the level
-               of the
-               smallest meaningfully sharable semantic features.
-            </p>
          </div>
-         <div class="section" id="d1e577">
+         <div class="section" id="d1e543">
             <h2 class="title" style="clear: both">Crossing the bridges</h2>
             <p></p>
-            <p>Generating the stand-off parallel segmentation required processing and manipulating
+            <p>Generating the stand-off parallel segmentation requires processing and manipulating
                our multiple versions of TEI-encoded <span class="ital">Frankenstein</span> to
                locate the <q>addresses</q> of each varying point. This document is not,
                however, the end of the story: the bridges that it establishes are there to be crossed.
@@ -641,7 +615,7 @@
                the
                files we point to are guaranteed not to change unexpectedly (although the URL itslef
                may
-               <q>rot</q> and return a 404, eventually)<sup class="fn-label"><a href="#d1e596" class="footnoteref" id="d1e596-ref">[17]</a></sup>.
+               <q>rot</q> and return a 404, eventually)<sup class="fn-label"><a href="#d1e562" class="footnoteref" id="d1e562-ref">[15]</a></sup>.
             </p>
             <p>Having taken these precautions, our primary goal is building a web-based interactive
                variorum edition that readers can use to explore each version of the text. For example,
@@ -649,12 +623,12 @@
                indicate the presence of a variant from another version and by clicking on it, the
                site
                visitor would be able to 
-               <div class="orderedlist" id="d1e604">
+               <div class="orderedlist" id="d1e570">
                   <ol start="NaN" style="list-style-type: decimal;">
-                     <li id="d1e605">
+                     <li id="d1e571">
                         <p>choose which variant readings they wish to read and compare, and</p>
                      </li>
-                     <li id="d1e608">
+                     <li id="d1e574">
                         <p>change their current view and pivot to a different text or grouping of
                            texts.
                         </p>
@@ -694,6 +668,26 @@
                as
                visualizations.
             </p>
+         </div>
+         <div class="section" id="d1e582">
+            <h2 class="title" style="clear: both">Conclusions and Prospects</h2>
+            <p>Though we confine our case-study for this paper to the automated collation process
+               and
+               what we can build for it and from it, the perspective we have gained on enhancing
+               interchange for the
+               purposes of interoperation may have larger ramifications in the ongoing discussion
+               of
+               graph-based models and their application to the TEI.<sup class="fn-label"><a href="#d1e587" class="footnoteref" id="d1e587-ref">[16]</a></sup> For much the same reasons that motivate us, Jeffrey C. Witt designed the
+               Scholarly Commentaries and Texts Archive, to transform digital <q>silo</q>
+               projects into a network of data and while that project seeks a definitive language
+               of
+               interchange for medieval scholastic textual data, on a smaller scale trained on multiple
+               divergent encodings of the same famous novel, we have negotiated interchangeability
+               by
+               cutting across individual text hierarchies to emphasize lateral connections and
+               commonalities—making a new TEI whose hierarchy serves as a stand-off
+               <q>backbone</q> or <q>switchboard</q> permitting comparison and
+               sharing of common data.<sup class="fn-label"><a href="#d1e616" class="footnoteref" id="d1e616-ref">[17]</a></sup></p>
          </div>
          <div class="footnotes"><br><hr width="100" align="left">
             <div id="d1e131" class="footnote">
@@ -737,43 +731,8 @@
                         Genetic Editions: The Case of ‘Faust’</q>, Journal of the Text
                      Encoding Initiative (4: March 2013).</a></p>
             </div>
-            <div id="d1e259" class="footnote">
-               <p><sup class="fn-label"><a href="#d1e259-ref" class="footnoteref">[5]</a></sup> Our project, known variously as the Pittsburgh Frankenstein project but probably more
-                  aptly the Frankenstein Variorum project, involves a collaboration of researchers from
-                  the University of Pittsburgh, Carnegie Mellon University, and the Maryland Institute
-                  for Technology in the Humanities (MITH), and currently hosted at <a href="https://pghfrankenstein.github.io/Pittsburgh_Frankenstein/" class="link" target="_new">https://pghfrankenstein.github.io/Pittsburgh_Frankenstein/</a>. At the time of this writing the web development for the variorum edition interface
-                  is under construction.
-               </p>
-            </div>
-            <div id="d1e351" class="footnote">
-               <p><sup class="fn-label"><a href="#d1e351-ref" class="footnoteref">[6]</a></sup> See the xml.dom.pulldom documentation here: <a href="https://docs.python.org/3/library/xml.dom.pulldom.html" class="link" target="_new">https://docs.python.org/3/library/xml.dom.pulldom.html</a>. The Python script is available on our GitHub repository here: <a href="https://github.com/PghFrankenstein/Pittsburgh_Frankenstein/blob/master/collateXPrep/allWitness_collation_to_tei.py" class="link" target="_new">https://github.com/PghFrankenstein/Pittsburgh_Frankenstein/blob/master/collateXPrep/allWitness_collation_to_tei.py</a>.
-               </p>
-            </div>
-            <div id="d1e381" class="footnote">
-               <p><sup class="fn-label"><a href="#d1e381-ref" class="footnoteref">[7]</a></sup> For reflection on pertinent examples, see Hugh A. Cayless, <a href="http://journals.openedition.org/jtei/907" class="link" target="_new"><q>Rebooting TEI
-                        Pointers</q>, Journal of the Text Encoding Initiative, Issue 6,
-                     December 2013</a> and his blog posting, <a href="https://blogs.library.duke.edu/dcthree/2013/08/26/graphs-trees-and-streams-the-tei-data-model/" class="link" target="_new"><q>Graphs, Trees, and Streams: The TEI Data Model</q>, Duke
-                     Collaboratory for Classics Computing (DC3), 26 August 2013</a>. Cayless’s
-                  work on developing pointer specifications to enhance TEI expression beyond
-                  inline embedded markup is now part of the <a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/SA.html#SATS" class="link" target="_new">TEI Guidelines Chapter 16: Linking, Segmentation, and Alignment</a>,
-                  <a href="http://www.balisage.net/Proceedings/vol5/html/Cayless01/BalisageVol5-Cayless01.html" class="link" target="_new">Cayless, Hugh A., and Adam Soroka. “On Implementing string-range() for
-                     TEI.” Proceedings of Balisage: The Markup Conference 2010. Balisage Series
-                     on Markup Technologies, vol. 5 (2010)</a>.
-               </p>
-            </div>
-            <div id="d1e410" class="footnote">
-               <p><sup class="fn-label"><a href="#d1e410-ref" class="footnoteref">[8]</a></sup> <a href="https://www.helsinki.fi/en/unitube/video/c7b16d35-dd91-419b-b017-a4a8373eac63" class="link" target="_new">See Jeffrey C. Witt’s recorded presentation, <q>Texts as Networks: The
-                        Promise and Challenge of Publishing Humanities Texts as Open Data
-                        Networks</q> for the Conference on Philosophy and History of Open
-                     Science at the University of Helsinki, 30 November - 1 December 2016</a>,
-                  and on better supporting interoperability in particular see his <a href="http://lombardpress.org/2016/08/25/basel-workshop-report/" class="link" target="_new"><q>Creating an aggregated dataset from distributed
-                        sources</q></a>, a report from the <q>Linked Data and the
-                     Medieval Scholastic Tradition</q> workshop held at the University of
-                  Basel in August 17-19, 2016.
-               </p>
-            </div>
-            <div id="d1e439" class="footnote">
-               <p><sup class="fn-label"><a href="#d1e439-ref" class="footnoteref">[9]</a></sup> See the documentation, <a href="https://collatex.net/doc/" class="link" target="_new"><q>CollateX – Software for Collating Textual
+            <div id="d1e268" class="footnote">
+               <p><sup class="fn-label"><a href="#d1e268-ref" class="footnoteref">[5]</a></sup> See the documentation, <a href="https://collatex.net/doc/" class="link" target="_new"><q>CollateX – Software for Collating Textual
                         Sources</q></a>. Another inspiration for the bridging concept are the
                   visualizations in <a href="https://www.balisage.net/Proceedings/vol19/html/Dekker01/BalisageVol19-Dekker01.html#d11284e1180" class="link" target="_new">Haentjens Dekker, Ronald, and David J. Birnbaum. “It’s more than just
                      overlap: Text As Graph.” In <span class="ital">Proceedings of Balisage:
@@ -784,33 +743,30 @@
                   descriptive annotation rather than elemental hierarchy.
                </p>
             </div>
-            <div id="d1e457" class="footnote">
-               <p><sup class="fn-label"><a href="#d1e457-ref" class="footnoteref">[10]</a></sup> Curran, Stuart and Jack Lynch. <a href="http://knarf.english.upenn.edu/" class="link" target="_new">Frankenstein; or, the Modern
+            <div id="d1e283" class="footnote">
+               <p><sup class="fn-label"><a href="#d1e283-ref" class="footnoteref">[6]</a></sup> Our project, known variously as the Pittsburgh Frankenstein project but
+                  probably more aptly the Frankenstein Variorum project, involves a collaboration
+                  of researchers from the University of Pittsburgh, Carnegie Mellon University,
+                  and the Maryland Institute for Technology in the Humanities (MITH), and GitHub
+                  repository at <a href="https://pghfrankenstein.github.io/Pittsburgh_Frankenstein/" class="link" target="_new">https://pghfrankenstein.github.io/Pittsburgh_Frankenstein/</a>. At the
+                  time of this writing the web development for the variorum edition interface is
+                  under construction.
+               </p>
+            </div>
+            <div id="d1e296" class="footnote">
+               <p><sup class="fn-label"><a href="#d1e296-ref" class="footnoteref">[7]</a></sup> Curran, Stuart and Jack Lynch. <a href="http://knarf.english.upenn.edu/" class="link" target="_new">Frankenstein; or, the Modern
                      Prometheus. The Pennsylvania Electronic Edition</a>. Est. 1994. See a
                   representative page at <a href="http://knarf.english.upenn.edu/Colv1/f1101.html" class="link" target="_new">http://knarf.english.upenn.edu/Colv1/f1101.html</a>.
                </p>
             </div>
-            <div id="d1e467" class="footnote">
-               <p><sup class="fn-label"><a href="#d1e467-ref" class="footnoteref">[11]</a></sup> The Shelley-Godwin Archive's edition of the manuscript notebooks of
+            <div id="d1e306" class="footnote">
+               <p><sup class="fn-label"><a href="#d1e306-ref" class="footnoteref">[8]</a></sup> The Shelley-Godwin Archive's edition of the manuscript notebooks of
                   Frankenstein builds on decades of intensive scholarly research to create TEI
                   diplomatic encoding: <a href="http://shelleygodwinarchive.org/contents/frankenstein/" class="link" target="_new">http://shelleygodwinarchive.org/contents/frankenstein</a>/. 
                </p>
             </div>
-            <div id="d1e485" class="footnote">
-               <p><sup class="fn-label"><a href="#d1e485-ref" class="footnoteref">[12]</a></sup> Barbara Bordalejo, ed. Darwin Online. See for example the illumination of
-                  variant passages in The Origin of Species here: <a href="http://darwin-online.org.uk/Variorum/1859/1859-1-dns.html" class="link" target="_new">http://darwin-online.org.uk/Variorum/1859/1859-1-dns.html</a></p>
-            </div>
-            <div id="d1e501" class="footnote">
-               <p><sup class="fn-label"><a href="#d1e501-ref" class="footnoteref">[13]</a></sup> These hierarchical issues provided an application for Piez’s invented LMNL
-                  <q>sawtooth</q> syntax to highlight overlap as semantically
-                  important to the novel; see <a href="https://www.balisage.net/Proceedings/vol13/html/Piez01/BalisageVol13-Piez01.html" class="link" target="_new">Wendell Piez, <q>Hierarchies within range space: From LMNL to
-                        OHCO</q> Balisage: The Markup Conference Proceedings (2014):
-                     https://www.balisage.net/Proceedings/vol13/html/Piez01/BalisageVol13-Piez01.html</a>
-                  
-               </p>
-            </div>
-            <div id="d1e535" class="footnote">
-               <p><sup class="fn-label"><a href="#d1e535-ref" class="footnoteref">[14]</a></sup> This is known as <q>the Thomas copy</q> because Mary Shelley left the
+            <div id="d1e317" class="footnote">
+               <p><sup class="fn-label"><a href="#d1e317-ref" class="footnoteref">[9]</a></sup> This is known as <q>the Thomas copy</q> because Mary Shelley left the
                   1818 publication containing her handwritten insertions, deletions, and comments
                   with her friend Mrs. Thomas before leaving Italy for England in 1823, following
                   Percy Shelley’s death in Lerici. The edits may have been entered at any time
@@ -830,19 +786,61 @@
                   which is still unusual in representing scholarly editions.
                </p>
             </div>
-            <div id="d1e565" class="footnote">
-               <p><sup class="fn-label"><a href="#d1e565-ref" class="footnoteref">[15]</a></sup> See especially the TEI P5 Guidelines, 12.2.3 and 12.2.4: <a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/TC.html#TCAPPS" class="link" target="_new">http://www.tei-c.org/release/doc/tei-p5-doc/en/html/TC.html#TCAPPS</a></p>
+            <div id="d1e338" class="footnote">
+               <p><sup class="fn-label"><a href="#d1e338-ref" class="footnoteref">[10]</a></sup> Barbara Bordalejo, ed. Darwin Online. See for example the illumination of
+                  variant passages in The Origin of Species here: <a href="http://darwin-online.org.uk/Variorum/1859/1859-1-dns.html" class="link" target="_new">http://darwin-online.org.uk/Variorum/1859/1859-1-dns.html</a></p>
             </div>
-            <div id="d1e571" class="footnote">
-               <p><sup class="fn-label"><a href="#d1e571-ref" class="footnoteref">[16]</a></sup> For a related example, see Viglianti, R. Music and Words: reconciling libretto
-                  and score editions in the digital medium. “Ei, dem alten Herrn zoll’ ich Achtung
-                  gern’”, ed. Kristina Richts and Peter Stadler, 2016, 727-755. 
+            <div id="d1e354" class="footnote">
+               <p><sup class="fn-label"><a href="#d1e354-ref" class="footnoteref">[11]</a></sup> These hierarchical issues provided an application for Piez’s invented LMNL
+                  <q>sawtooth</q> syntax to highlight overlap as semantically
+                  important to the novel; see <a href="https://www.balisage.net/Proceedings/vol13/html/Piez01/BalisageVol13-Piez01.html" class="link" target="_new">Wendell Piez, <q>Hierarchies within range space: From LMNL to
+                        OHCO</q> Balisage: The Markup Conference Proceedings (2014):
+                     https://www.balisage.net/Proceedings/vol13/html/Piez01/BalisageVol13-Piez01.html</a>
+                  
                </p>
             </div>
-            <div id="d1e596" class="footnote">
-               <p><sup class="fn-label"><a href="#d1e596-ref" class="footnoteref">[17]</a></sup> See also <a href="http://www.balisage.net/Proceedings/vol5/html/Cayless01/BalisageVol5-Cayless01.html" class="link" target="_new">Cayless, Hugh A., and Adam Soroka. “On Implementing string-range() for
+            <div id="d1e409" class="footnote">
+               <p><sup class="fn-label"><a href="#d1e409-ref" class="footnoteref">[12]</a></sup> See especially the TEI P5 Guidelines, 12.2.3 and 12.2.4: <a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/TC.html#TCAPPS" class="link" target="_new">http://www.tei-c.org/release/doc/tei-p5-doc/en/html/TC.html#TCAPPS</a></p>
+            </div>
+            <div id="d1e415" class="footnote">
+               <p><sup class="fn-label"><a href="#d1e415-ref" class="footnoteref">[13]</a></sup> For a related example, see Viglianti, R. Music and Words: reconciling
+                  libretto and score editions in the digital medium. “Ei, dem alten Herrn
+                  zoll’ ich Achtung gern’”, ed. Kristina Richts and Peter Stadler, 2016,
+                  727-755. 
+               </p>
+            </div>
+            <div id="d1e506" class="footnote">
+               <p><sup class="fn-label"><a href="#d1e506-ref" class="footnoteref">[14]</a></sup> See the xml.dom.pulldom documentation here: <a href="https://docs.python.org/3/library/xml.dom.pulldom.html" class="link" target="_new">https://docs.python.org/3/library/xml.dom.pulldom.html</a>. The
+                  Python script is available on our GitHub repository here: <a href="https://github.com/PghFrankenstein/Pittsburgh_Frankenstein/blob/master/collateXPrep/allWitness_collation_to_tei.py" class="link" target="_new">https://github.com/PghFrankenstein/Pittsburgh_Frankenstein/blob/master/collateXPrep/allWitness_collation_to_tei.py</a>.
+               </p>
+            </div>
+            <div id="d1e562" class="footnote">
+               <p><sup class="fn-label"><a href="#d1e562-ref" class="footnoteref">[15]</a></sup> See also <a href="http://www.balisage.net/Proceedings/vol5/html/Cayless01/BalisageVol5-Cayless01.html" class="link" target="_new">Cayless, Hugh A., and Adam Soroka. “On Implementing string-range() for
                      TEI.” Proceedings of Balisage: The Markup Conference 2010. Balisage Series
                      on Markup Technologies, vol. 5 (2010)</a></p>
+            </div>
+            <div id="d1e587" class="footnote">
+               <p><sup class="fn-label"><a href="#d1e587-ref" class="footnoteref">[16]</a></sup> For reflection on pertinent examples, see Hugh A. Cayless, <a href="http://journals.openedition.org/jtei/907" class="link" target="_new"><q>Rebooting TEI
+                        Pointers</q>, Journal of the Text Encoding Initiative, Issue 6,
+                     December 2013</a> and his blog posting, <a href="https://blogs.library.duke.edu/dcthree/2013/08/26/graphs-trees-and-streams-the-tei-data-model/" class="link" target="_new"><q>Graphs, Trees, and Streams: The TEI Data Model</q>, Duke
+                     Collaboratory for Classics Computing (DC3), 26 August 2013</a>. Cayless’s
+                  work on developing pointer specifications to enhance TEI expression beyond
+                  inline embedded markup is now part of the <a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/SA.html#SATS" class="link" target="_new">TEI Guidelines Chapter 16: Linking, Segmentation, and Alignment</a>,
+                  <a href="http://www.balisage.net/Proceedings/vol5/html/Cayless01/BalisageVol5-Cayless01.html" class="link" target="_new">Cayless, Hugh A., and Adam Soroka. “On Implementing string-range() for
+                     TEI.” Proceedings of Balisage: The Markup Conference 2010. Balisage Series
+                     on Markup Technologies, vol. 5 (2010)</a>.
+               </p>
+            </div>
+            <div id="d1e616" class="footnote">
+               <p><sup class="fn-label"><a href="#d1e616-ref" class="footnoteref">[17]</a></sup> <a href="https://www.helsinki.fi/en/unitube/video/c7b16d35-dd91-419b-b017-a4a8373eac63" class="link" target="_new">See Jeffrey C. Witt’s recorded presentation, <q>Texts as Networks: The
+                        Promise and Challenge of Publishing Humanities Texts as Open Data
+                        Networks</q> for the Conference on Philosophy and History of Open
+                     Science at the University of Helsinki, 30 November - 1 December 2016</a>,
+                  and on better supporting interoperability in particular see his <a href="http://lombardpress.org/2016/08/25/basel-workshop-report/" class="link" target="_new"><q>Creating an aggregated dataset from distributed
+                        sources</q></a>, a report from the <q>Linked Data and the
+                     Medieval Scholastic Tradition</q> workshop held at the University of
+                  Basel in August 17-19, 2016.
+               </p>
             </div>
          </div>
       </div>
