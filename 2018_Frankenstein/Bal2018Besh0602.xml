@@ -655,13 +655,22 @@
                         <imagedata format="png" fileref="Bal2018collateOutput042908.png"/>
                     </imageobject>
                 </mediaobject></para>
-            <para>While it may be difficult on human eyes, this code is information-rich and readily
-                tractable for the next stage of work in building up the Variorum, and due to its
-                simple regularity with embedded complexity, we might consider it to be a successful
-                interchange format in its own right. We write XSLT to pull from this
-                    <quote>pre-TEI</quote> output from the collation process, and build the more
-                legible and interoperable TEI <quote>spinal column</quote> of our Variorum edition.
-                The edition architecture applies pointers in a form of <quote>stand-off
+            <para>While it may be difficult on human eyes, this code is information-rich and tractable for the next stage of work in building up the Variorum. Due to its
+                shallow hierarchy combined with its embedded complexity, we might consider this output to be an interchange format in its own right, though we now face a challenge in processing complex details from the source editions now signalled by the pseudo-markup of the angle-bracket escape characters. In a way, this is a kind of database format from which data can be extracted and repurposed from XPath string operations, but the collation process is quite likely to break up the original tagging of <code>&lt;add&gt;</code> or <code>&lt;del&gt;</code> because it has prioritized the location of comparable text strings while <quote>masking</quote> (or parsing around) those tags. We do not treat this as an impossibility, but rather as a moment where the most interoperable portion of the document (the text characters, as Desmond Schmidt would point out), becomes something we need to address with programming tools as structured data. At the time of this writing, we are working with this output of collation to repurpose it in multiple ways:
+            <itemizedlist>
+                <listitem>
+                    <para>as a resource for analyzing the nature and variety of revisions made to the novel over time, tracing the most frequent and most extensive changes, and their locations (as in, which portions of the novel were most heavily revised over time?)</para>
+                </listitem>
+                <listitem>
+                    <para>as a resource for stylometric analysis: tracking which portions of the document contain edits by Percy Shelley, and what becomes of these variants over time in later revisions to the novel;</para>
+                </listitem>
+                <listitem>
+                    <para>as a basis for conversion into the bridge format of the reading interface, generating pointers to the source editions.</para>
+                </listitem>
+            </itemizedlist>
+            </para>
+            <para>The reading interface for the Variorum edition should optimally make available the combined results of our data processing. We are writing XSLT to analyze strings and locating their positions in the source documents, and we are building in TEI a <quote>spinal column</quote> for interconnecting the data on variation.</para>
+                <para>The edition architecture applies pointers in a form of <quote>stand-off
                     parallel segmentation</quote>, which enhances the available models in the TEI
                 Guidelines for stand-off collation, while supporting the TEI’s longstanding
                 interests in both interchange and interoperability, as we discuss below. We want to
