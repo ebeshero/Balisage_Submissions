@@ -122,8 +122,7 @@
                         xlink:href="http://tei2016.acdh.oeaw.ac.at/keynote"><quote>Freeing Our Texts
                             from their (Digital Tool)chains</quote></link>.</para>
             </footnote> Her talk broached a long-recognized issue that the TEI Guidelines permit too
-            many choices, so that for practical purposes there is very little that can be
-            practically interoperable via simple programmatic mapping from one TEI project’s markup
+            many choices, such that there is very little that can be practically interoperable via simple programmatic mapping from one TEI project’s markup
             ecosystem to another. The TEI might well be a garden of too many forking paths, too
             richly labyrinthine because too entertaining of multiple modes of expression. Although
             Andrews’s talk specifically addressed the lack of interoperability in scholarly editions
