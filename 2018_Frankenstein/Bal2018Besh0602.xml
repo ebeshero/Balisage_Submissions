@@ -394,7 +394,10 @@
             &lt;add&gt;ed&lt;/add&gt;
          &lt;/mod&gt;
          &lt;add hand="#pbs" place="intralinear"&gt;,&lt;/add&gt;. &lt;del rend="strikethrough"&gt;And&lt;/del&gt; 
-         &lt;lb n="c56-0045__main__4"/&gt;with an anxiety that almost amount &lt;lb n="c56-0045__main__5"/&gt;ed to agony I collected instruments of life &lt;lb n="c56-0045__main__6"/&gt;around me &lt;mod&gt;
+         &lt;lb n="c56-0045__main__4"/&gt;with an anxiety that almost 
+         &lt;w ana="start"/&gt;amount&lt;lb n="c56-0045__main__5"/&gt;ed&lt;w ana="end"/&gt; to agony I 
+         collected instruments of life 
+         &lt;lb n="c56-0045__main__6"/&gt;around me &lt;mod&gt;
             &lt;del rend="strikethrough"&gt;and endeavour to&lt;/del&gt;
             &lt;add place="superlinear"&gt;that I might&lt;/add&gt;
          &lt;/mod&gt;
@@ -405,7 +408,15 @@
         
             &lt;add place="intralinear"&gt;g&lt;/add&gt;
          &lt;/mod&gt; 
-         &lt;lb n="c56-0045__main__8"/&gt;that lay at my feet. It was already &lt;lb n="c56-0045__main__9"/&gt;one in the morning, the rain pattered &lt;lb n="c56-0045__main__10"/&gt;dismally against the window panes, &amp; &lt;lb n="c56-0045__main__11"/&gt;my candle was nearly burnt out, when &lt;lb n="c56-0045__main__12"/&gt;by the glimmer of the half &lt;w ana="start"/&gt;extinguish&lt;lb n="c56-0045__main__13"/&gt;ed&lt;w ana="end"/&gt; light I saw the dull yellow eye of &lt;lb n="c56-0045__main__14"/&gt;the creature open.—It breathed hard, &lt;lb n="c56-0045__main__15"/&gt;and a convulsive motion agitated &lt;lb n="c56-0045__main__16"/&gt;its limbs.&lt;milestone unit="tei:p"/&gt;    
+         &lt;lb n="c56-0045__main__8"/&gt;that lay at my feet. It was already 
+         &lt;lb n="c56-0045__main__9"/&gt;one in the morning, the rain pattered 
+         &lt;lb n="c56-0045__main__10"/&gt;dismally against the window panes, &amp; 
+         &lt;lb n="c56-0045__main__11"/&gt;my candle was nearly burnt out, when 
+         &lt;lb n="c56-0045__main__12"/&gt;by the glimmer of the half 
+         &lt;w ana="start"/&gt;extinguish&lt;lb n="c56-0045__main__13"/&gt;ed&lt;w ana="end"/&gt; 
+         light I saw the dull yellow eye of &lt;lb n="c56-0045__main__14"/&gt;the creature open.—It breathed hard, 
+         &lt;lb n="c56-0045__main__15"/&gt;and a convulsive motion agitated 
+         &lt;lb n="c56-0045__main__16"/&gt;its limbs.&lt;milestone unit="tei:p"/&gt;    
         </programlisting>
             Notice what has changed here: We not only had to flatten <code>&lt;line&gt;</code>
             elements into self-closing <code>&lt;lb/&gt;</code> signals but we needed to actively
