@@ -212,43 +212,51 @@
                Here the lack of ambiguity or expressiveness (or <q><span class="ital">illocutionary force</span></q> and human subjectivity that Schmidt ascribes as the significant obstacle to interoperability
                in the TEI), simply makes it possible for software to interpret encoding in a consistent
                and reliable way.<sup class="fn-label"><a href="#d1e269" class="footnoteref" id="d1e269-ref">[5]</a></sup>. As we see it, however, interoperability is not an all-or-nothing proposition, because
-               software tools are neither simply compatible or incompatible with our documents.<sup class="fn-label"><a href="#d1e281" class="footnoteref" id="d1e281-ref">[6]</a></sup> We contend that there is no perfect interoperability, even in the software tools
+               software tools are neither simply compatible nor incompatible with our documents.<sup class="fn-label"><a href="#d1e281" class="footnoteref" id="d1e281-ref">[6]</a></sup> We contend that there is no perfect interoperability, even in the software tools
                that we expect to be universally compatible. We do not mean that designing for interoperability
                is never worth the trouble, but rather that all-or-nothing arguments about it are
                not especially helpful to the interests of textual scholarship. We assert with Martin
                Holmes that if designers of TEI editions want to make it easy for others to re-purpose
                TEI encoding, we generate alternative encodings of project-specific XML for the specific
                purpose of enhancing interchange. In so doing we make it possible to build the tools
-               of interoperability that do not clumsily sacrifice cross-walkable semantics that drive
+               of interoperability that do not sacrifice the cross-walkable semantics that drive
                scholarship and make it possible for us to share, repurpose, and build on each others'
-               work. That is, use our own data structure to define relationships to other ecosystems.
-               As Holmes observes, <q>By putting some effort into providing a range of different versions of our XML source
+               work. We will need to interpret our own data structures to define relationships with
+               other ecosystems, and express these relationships in what shared vocabularies we use
+               to communicate with one another. As Holmes observes, <q>By putting some effort into providing a range of different versions of our XML source
                   encodings, targeted at different use-cases and user groups, we can greatly facilitate
                   the re-use of our data in other projects; this process causes beneficial reflection
                   on our own encoding practices, as well as an additional layer of documentation for
                   our projects.</q><sup class="fn-label"><a href="#d1e287" class="footnoteref" id="d1e287-ref">[7]</a></sup></p>
-            <p>Taking this further, we do not see that Schmidt's solution of <q>splitting the text into layers</q> on its own is going to enhance the kind of interoperation we need, and our needs
+            <p>The most helpful part of Desmond Schmidt’s article of 2014 is his call to make digital
+               editions more interoperable by working with stand-off mechanisms for annotation, with
+               attention to intersection points in conflicting hierarchies. However, we do not see
+               that Schmidt's solution of <q>splitting the text into layers</q> on its own is going to enhance the kind of interoperation we need, and our needs
                and interests are not uncommon in textual scholarship. We wish to be able to integrate
                the elaborately descriptive markup of a diplomatic edition (with additions and deletions
                and shifts of hands) much like the example Schmidt himself provides in <a href="https://journals.openedition.org/jtei/979#tocto1n5" class="link" target="_new">section 5 of his article</a>, into a comparison with other digital editions of print versions of this work, in
                a way that preserves the information about handshifts encoded into the diplomatic
-               edition of the manuscript. Dividing these into separate layers pointing at the document
-               might be a solution to Schmidt's immediate problem, but for our purposes, the ability
-               to reconstruct a sequence of writing events and determine what information needs to
-               be preserved relies upon relationships expressed more clearly in the markup itself
-               despite its challenges to read. In the experience we describe in this paper, we do
-               not find a need to strip away markup to achieve interoperation, but rather we treat
-               the markup itself as patterned text, programmatically accessible for selective masking
-               from the automated process we want to run for machine collation. Indeed, we see ourselves
-               as curating markup from our source documents to preserve its information in the Variorum
-               edition we are developing.
+               edition (with additions and deletions and shifts of hands) and makes it available
+               for comparison with other digital editions of print versions of this work. Indeed,
+               we see ourselves as curating the original markup from our source documents to preserve
+               its information within the Variorum edition we are developing. In the experience we
+               describe in this paper, we treat the markup itself as patterned text, programmatically
+               accessible for selective masking from the automated processes we want to run for machine
+               collation and afterward for constructing the variorum. Dividing the complex markup
+               of insertion and deletion events into separate layers pointing at the document might
+               be a solution for the kind of operation Schmidt needs his limited tools to perform,
+               but for our purposes, the source editions we are working with are long-established
+               and not intractable to computational extraction and sequencing. Altering that markup
+               is not really an option for us and it is so cleanly encoded and well documented that
+               we would rather apply our computational tools to read and parse it, and to build from
+               it rather than to reconstruct it.
             </p>
             <p>From the experience of investigating diverse systems of markup applied to multiple
                versions of one novel from the 1990s to the 2010s, we do not find generalized dismissals
                of TEI markup as <q>subjective</q> to be compelling enough to dismiss the many information-rich projects built with
                the TEI over decades. Indeed, we need to work with those editions and the rich data
                they contain, to advance scholarship rather than reinventing it as if its encoding
-               were value-less to outsiders.  To advance the interests of scholarship involves <span class="ital">respecting</span> the encoding of earlier times and places, not only acknowledging its complexity and
+               were value-less to outsiders. To advance the interests of scholarship involves <span class="ital">respecting</span> the encoding of earlier times and places, not only acknowledging its complexity and
                shortfalls, but building with it something that will be richly informative and available
                that was not before. Certainly it is difficult to find a place for a diplomatic edition
                in a variorum context, but when we build bridges for interchange, we create conditions
