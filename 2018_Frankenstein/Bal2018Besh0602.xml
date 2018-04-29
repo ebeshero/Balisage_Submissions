@@ -669,16 +669,9 @@
                 </listitem>
             </itemizedlist>
             </para>
-            <para>The reading interface for the Variorum edition should optimally make available the combined results of our data processing. We are writing XSLT to analyze strings and locating their positions in the source documents, and we are building in TEI a <quote>spinal column</quote> for interconnecting the data on variation.</para>
-                <para>The edition architecture applies pointers in a form of <quote>stand-off
-                    parallel segmentation</quote>, which enhances the available models in the TEI
-                Guidelines for stand-off collation, while supporting the TEI’s longstanding
-                interests in both interchange and interoperability, as we discuss below. We want to
-                promote the long-term sustenance of digital editions by actively building bridges to
-                render isolated monumental projects interchangeable rather than remake them from the
-                ground up. Building ramps for interchangeability is an investment in
-                interoperability as well, specifically for producing the comparative views afforded
-                by collation.</para>
+            <para>We should clarify that these represent multiple, quite challenging processing efforts: the same XSLT that helps to generate pointers into the original editions will not suffice for dealing with insertions and deletions: indeed the goal is not to reproduce the intricately detailed page imaging of the Shelley-Godwin Archive but rather to point precisely to its pages. A different XSLT process will give us a <quote>bridge</quote> rendering of the notebooks with highlights and interactions to indicate <emphasis>how it compares</emphasis> and <emphasis>where it diverges</emphasis> from other editions, and each edition needs to be rendered individually in a way that demonstrates its own comparability and deviation from the others.</para><para>The reading interface for the Variorum edition will optimally make available the combined results of our data processing, and as a starting point, we are writing XSLT to analyze strings and locating their positions in the source documents to construct in TEI a <quote>spinal column</quote> for interconnecting the data on variation. The variorum edition architecture applies pointers in a form of <quote>stand-off parallel segmentation</quote>, which enhances the available models in the TEI
+                Guidelines for stand-off collation while supporting the TEI’s longstanding
+                interests in both interchange and interoperability, as we discuss below.</para>
 
         </section>
 
@@ -820,7 +813,7 @@
         <para>Though we think of hierarchical XML as a stable sustainable archiving medium, the
             repeated collapsing and expansion of hierarchies in our collation process makes us
             consider that for the viability of digital textual scholarship, ordered hierarchies of
-            content objects might best be designed with leveling in mind, and that building with XML
+            content objects might best be designed for interchange with leveling in mind, and that building with XML
             may be optimized when it is open to transformation. Preparing diversely encoded
             documents for collation challenges us to consider inconsistent and overlapping
             hierarchies as a tractable matter for computational alignment—where alignment becomes an
@@ -874,7 +867,11 @@
             goal of pointing to aligned data required us to locate the interchangeable structural
             markers in our source documents, and enhances interoperation by making it possible for
             software to parse the comparable with the incomparable, the similar with the
-            divergent.</para>
+            divergent. Ultimately, we want to
+            promote the long-term sustenance of digital editions by building bridges that permit monumental but isolated projects to be interchangeable rather than having to remake them from the
+            ground up. Building ramps for interchangeability is an investment in
+            interoperability as well, specifically for producing the comparative views afforded
+            by collation.</para>
 
     </section>
 
