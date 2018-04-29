@@ -13,7 +13,7 @@
                 novel. The reconciliation process involves breaking or flattening the original
                 hierarchies to prioritize units of low-level lateral intersection, points shared in
                 common to construct <quote>bridge</quote> or intermediary formats for processing
-                with automated collation via collateX. The output from the automated collation
+                with automated collation via CollateX. The output from the automated collation
                 process also serves as an intermediary format that we transform into a TEI form of
                     <emphasis role="ital">stand-off parallel segmentation</emphasis>, in which
                 stand-off pointing mechanisms operate like a switchboard for connecting the
@@ -255,7 +255,24 @@
                     >unmodified</emphasis> and fully used in a <emphasis role="ital"
                     >variety</emphasis> of software applications</quote>, and as exemplars of the interoperability ideal he indicates the marvellous capacity of many web browsers able to read and parse and interact with HTML and SVG. 
             Here the lack of ambiguity or expressiveness (or <quote><emphasis>illocutionary force</emphasis></quote> and human subjectivity that Schmidt ascribes as the significant obstacle to interoperability in the TEI), simply makes it possible for software to interpret encoding in a consistent and reliable way.<footnote><para><link xlink:href="https://journals.openedition.org/jtei/979">Desmond Schmidt, <quote>Towards an Interoperable Digital Scholarly Edition</quote>, <emphasis role="ital">Journal of the Text Encoding Initiative</emphasis> Issue , November 2014</link>.</para></footnote>. As we see it, however, interoperability is not an all-or-nothing proposition, because software tools are neither simply compatible or incompatible with our documents.<footnote><para>Where Schmidt comments on the ability of Google Docs to represent a Word document, we recall plenty of friction between the two formats, and while it may be marvellous that web browsers can interpret HTML, they do not all interpret the specs in the same way, and as standards for CSS and JavaScript change, these methods for presentation are not always consistently experienced from browser to browser.</para></footnote> We contend that there is no perfect interoperability, even in the software tools that we expect to be universally compatible. We do not mean that designing for interoperability is never worth the trouble, but rather that all-or-nothing arguments about it are not especially helpful to the interests of textual scholarship. We assert with Martin Holmes that if designers of TEI editions want to make it easy for others to re-purpose TEI encoding, we generate alternative encodings of project-specific XML for the specific purpose of enhancing interchange. In so doing we make it possible to build the tools of interoperability that do not clumsily sacrifice cross-walkable semantics that drive scholarship and make it possible for us to share, repurpose, and build on each others' work. That is, use our own data structure to define relationships to other ecosystems. As Holmes observes, <quote>By putting some effort into providing a range of different versions of our XML source encodings, targeted at different use-cases and user groups, we can greatly facilitate the re-use of our data in other projects; this process causes beneficial reflection on our own encoding practices, as well as an additional layer of documentation for our projects.</quote><footnote><para><link xlink:href="https://doi.org/10.1093/llc/fqw048">Martin Holmes; <quote>Whatever happened to interchange?</quote></link></para></footnote></para> 
-        <para>Taking this further, we do not see that Schmidt's solution of <quote>splitting the text into layers</quote> on its own is going to enhance the kind of interoperation we need, and our needs and interests are not uncommon in textual scholarship. We wish to be able to integrate the elaborately descriptive markup of a diplomatic edition (with additions and deletions and shifts of hands) much like the example Schmidt himself provides in <link xlink:href="https://journals.openedition.org/jtei/979#tocto1n5">section 5 of his article</link>, into a comparison with other digital editions of print versions of this work, in a way that preserves the information about handshifts encoded into the diplomatic edition of the manuscript. Dividing these into separate layers pointing at the document might be a solution to Schmidt's immediate problem, but for our purposes, the ability to reconstruct a sequence of writing events and determine what information needs to be preserved relies upon relationships expressed more clearly in the markup itself despite its challenges to read. In the experience we describe in this paper, we do not find a need to strip away markup to achieve interoperation, but rather we treat the markup itself as patterned text, programmatically accessible for selective masking from the automated process we want to run for machine collation. Indeed, we see ourselves as curating markup from our source documents to preserve its information in the Variorum edition we are developing.</para> <para>From the experience of investigating diverse systems of markup applied to multiple versions of one novel from the 1990s to the 2010s, we do not find generalized dismissals of TEI markup as <quote>subjective</quote> to be compelling enough to dismiss the many information-rich projects built with the TEI over decades. Indeed, we need to work with those editions and the rich data they contain, to advance scholarship rather than reinventing it as if its encoding were value-less to outsiders.  To advance the interests of scholarship involves <emphasis>respecting</emphasis> the encoding of earlier times and places, not only acknowledging its complexity and shortfalls, but building with it something that will be richly informative and available that was not before. Certainly it is difficult to find a place for a diplomatic edition in a variorum context, but when we build bridges for interchange, we create conditions for interoperation. In the case of our Variorum project, we need to do the work of interchange to make automated collation possible. Even if that collation is not perfect, and requires human intervention, can we ever expect interoperation simply to <quote>work perfectly</quote> without some human intervention? The efforts in building digital editions are necessarily complex, and we rely on interoperation to help build the very bridges we need for our Variorum edition to connect digital editions that remain in their own distinct ecosystems.</para>
+        <para>Taking this further, we do not see that Schmidt's solution of <quote>splitting the text into layers</quote> on its own is going to enhance the kind of interoperation we need, and our needs and interests are not uncommon in textual scholarship. We wish to be able to integrate the elaborately descriptive markup of a diplomatic edition (with additions and deletions and shifts of hands) much like the example Schmidt himself provides in <link xlink:href="https://journals.openedition.org/jtei/979#tocto1n5">section 5 of his article</link>, into a comparison with other digital editions of print versions of this work, in a way that preserves the information about handshifts encoded into the diplomatic edition of the manuscript. Dividing these into separate layers pointing at the document might be a solution to Schmidt's immediate problem, but for our purposes, the ability to reconstruct a sequence of writing events and determine what information needs to be preserved relies upon relationships expressed more clearly in the markup itself despite its challenges to read. In the experience we describe in this paper, we do not find a need to strip away markup to achieve interoperation, but rather we treat the markup itself as patterned text, programmatically accessible for selective masking from the automated process we want to run for machine collation. Indeed, we see ourselves as curating markup from our source documents to preserve its information in the Variorum edition we are developing.</para> <para>From the experience of investigating diverse systems of markup applied to multiple versions
+            of one novel from the 1990s to the 2010s, we do not find generalized dismissals of TEI
+            markup as <quote>subjective</quote> to be compelling enough to forgo the many
+            information-rich projects built with the TEI over decades. Indeed, we need to work with
+            those editions and the rich data they contain, to advance scholarship rather than
+            reinventing it as if its encoding were value-less to outsiders. To advance the interests
+            of scholarship involves <emphasis>respecting</emphasis> the encoding of earlier times
+            and places, not only acknowledging its complexity and shortfalls, but building with it
+            something that will be richly informative and available that was not before. Certainly
+            it is difficult to find a place for a diplomatic edition in a variorum context, but when
+            we build bridges for interchange, we create conditions for interoperation. In the case
+            of our Variorum project, we need to do the work of interchange to make automated
+            collation possible. Even if that collation is not perfect, and requires human
+            intervention, can we ever expect interoperation simply to <quote>work perfectly</quote>
+            without some human intervention? The efforts in building digital editions are
+            necessarily complex, and we rely on interoperation to help build the very bridges we
+            need for our Variorum edition to connect digital editions that remain in their own
+            distinct ecosystems.</para>
 
     </section>
 
@@ -268,7 +285,7 @@
             architecture, arches and connecting spans are more viable than monoliths. Our use of the
             terms <quote>arch</quote>, <quote>bridge</quote>, or <quote>span</quote> is more than a
             metaphor here, but drawn from a graph-based model of text on which, not coincidentally,
-            collateX was designed for locating variants in documents. <footnote>
+            CollateX was designed for locating variants in documents. <footnote>
                 <para>See the documentation, <link xlink:href="https://collatex.net/doc/"
                             ><quote>CollateX – Software for Collating Textual
                     Sources</quote></link>. Another inspiration for the bridging concept are the
@@ -408,10 +425,10 @@
                 (specialized TEI for the encoding of manuscript page surfaces) and from the
                 Pennsylvania Electronic Edition (PAEE) (HTML 1.0 from the mid 1990s marking
                 paragraphs and sectional headings) to create new forms of XML to carry predictable
-                markers to assist in alignment. These new, pre-collation editions are resequenced
-                (as when we move marginal annotations from the end of the XML document into their
-                marked places as they would be read in the manuscript notebook). The texts from the
-                PAEE are corrected against photofacsimiles of first publications of the novel in
+                markers to assist in alignment. These new, pre-collation editions are resequenced,
+                for example, we move marginal annotations from the end of the XML document into
+                their marked places as they would be read in the manuscript notebook. The texts from
+                the PAEE are corrected against photofacsimiles of first publications of the novel in
                 1818 and 1831. They are also differently <quote>chunked</quote> than their source
                 texts, resizing the unit file so that each represents an equivalent portion small
                 enough to collate meaningfully and large enough that each document demonstrably
@@ -627,7 +644,7 @@
                 publications. However, such metadata needs to be masked from the collation process
                 so that we are not folding it into comparison of the running streams of text that
                 compose each version of the novel. To deliver these <quote>pre-collation
-                    bridge</quote> XML files to collateX and instruct the software collation
+                    bridge</quote> XML files to CollateX and instruct the software collation
                 algorithm on how to process them, <emphasis role="ital">with</emphasis> and
                     <emphasis role="ital">around</emphasis> their markup, we wrote a Python script
                 working with its xml.dom.pulldom tool, which parses XML documents as a running
@@ -641,7 +658,7 @@
                             >https://github.com/PghFrankenstein/Pittsburgh_Frankenstein/blob/master/collateXPrep/allWitness_collation_to_tei.py</link>.</para>
                 </footnote>
             </para>
-            <para>In turn, the XML output generated by collateX itself serves as an intermediary
+            <para>In turn, the XML output generated by CollateX itself serves as an intermediary
                 format, not in TEI, but containing its components in the form of critical apparatus
                 tagging, to hold information about the deltas of variance among the editions. The
                 output in XML flattens the tags we submitted into angle brackets and text, and the
@@ -752,15 +769,15 @@
             locate the <quote>addresses</quote> of each varying point. This document is not,
             however, the end of the story: the bridges that it establishes are there to be crossed.
             Crossing the bridges, that is, following the pointers is not always trivial. Serious
-            reasons for the somewhat limited use of stand-off in TEI include the limited support for
-            resolving XPath, as well as the risk of not finding what was expected at the other end
-            because of <quote>link rot</quote>, or because the target file was – even minimally –
-            changed. In creating our stand-off collation, we tried to keep pointers as simple as
-            possible by favoring locations expressed with XPath 1.0 over locations with string
-            ranges (although the latter are unavoidable on multiple occasions). Finally, we made use
-            of GitHub’s ability to obtain URLs to specific versions of files, which means that the
-            files we point to are guaranteed not to change unexpectedly (although the URL itslef may
-                <quote>rot</quote> and return a 404, eventually)<footnote>
+            reasons for the somewhat limited use of stand-off in TEI include the inadequate support
+            for resolving XPointers, as well as the risk of not finding what was expected at the
+            other end because of <quote>link rot</quote>, or because the target file was – even
+            minimally – changed. In creating our stand-off collation, we tried to keep pointers as
+            simple as possible by favoring locations expressed with XPath 1.0 over locations with
+            string ranges (although the latter are unavoidable on multiple occasions). Finally, we
+            made use of GitHub’s ability to obtain URLs to specific versions of files, which means
+            that the files we point to are guaranteed not to change unexpectedly (although the URL
+            itslef may <quote>rot</quote> and return a 404, eventually)<footnote>
                 <para>See also <link
                         xlink:href="http://www.balisage.net/Proceedings/vol5/html/Cayless01/BalisageVol5-Cayless01.html"
                         >Cayless, Hugh A., and Adam Soroka. “On Implementing string-range() for
@@ -798,8 +815,9 @@
             follow a pointer to an S-GA document, we must process the full document; while it may
             seem counter-intuitive, this is an advantage because we gain access to the full context
             of the texts we address.<footnote>
-                <para>See <link xlink:href="http://dhdebates.gc.cuny.edu/debates/text/28">Michael
-                        Witmore, <quote>Text: A Massively Addressable Object</quote>, <emphasis
+                <para>For a related discussion of addressability and textuality see <link
+                        xlink:href="http://dhdebates.gc.cuny.edu/debates/text/28">Michael Witmore,
+                            <quote>Text: A Massively Addressable Object</quote>, <emphasis
                             role="ital">Debates in the Digital Humanities</emphasis>
                     2012.</link></para>
             </footnote> This would allow us, for example, to determine and indicate in the user
