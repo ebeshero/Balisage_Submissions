@@ -701,7 +701,7 @@
 
     <section>
         <title>Crossing the bridges</title>
-        <para><!--CALL IT STAND-OFF PARALLEL SEGMENTATION. Designed to include pointers into <link xlink:href="http://shelleygodwinarchive.org/contents/ms_abinger_c56/">the Shelley-Godwin Archive edition of the manuscript notebook drafts</link> of the novel. As well, pointers to all editions that are part of the project. --></para>
+        <para>We decided to build a variorum edition on the <quote>spine</quote> of a TEI structure that holds forks and branches and that does not set priorities of a base text that should be preferred over any of the others. The apparatus criticus itself is to hold a structure of stand-off pointers that locate and link to passages in each separate edition. Stand-off in the TEI was designed specifically to deal with non-hierarchical structures as a conflict with its OHCO model.<footnote><para>See the <link xlink:href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/NH.html">TEI Guidelines Chapter 20: Non-Hierarchical Structures</link></para></footnote> However, if we build up from a model of critical apparatus that is already breaking with singular hierarchy and rather expressing forks and branches, and if we further do not establish a single base text, we adapt the TEI tree to something more like a graph-based model, in which the hierarchy of elements exists so that <code>&lt;app&gt;</code> elements serve as bridges or edges that hold and connect its nodes in the form of <code>&lt;rdg&gt;</code> elements (for reading witnesses).<footnote><para>For a visual example, a group of Elisa Beshero-Bondar's students led by Nicole Lottig and Brooke Stewart at Pitt-Greensburg experimented with a network analysis of editions of Emily Dickinson's Fascicle 16 poems that share the most variant readings, and to see which most closely resembled one another. See their network visualization and explanation here: <link xlink:href="http://dickinson16.newtfire.org/16/networkAnalysis.html">http://dickinson16.newtfire.org/16/networkAnalysis.html</link> </para></footnote> The starting priority was to generate pointers from the Variorum edition interface directly to pages in the Shelley-Godwin Archive Notebook pages, and not merely the pages but to specific lines we had precisely located in the S-GA markup prior to collation.</para>
 
         <para>Generating the stand-off parallel segmentation requires processing and manipulating
             our multiple versions of TEI-encoded <emphasis role="ital">Frankenstein</emphasis> to
@@ -753,8 +753,7 @@
             particularly regarding authorship (who wrote what) and authorial revisions. In order to
             follow a pointer to an S-GA document, we must process the full document; while it may
             seem counter-intuitive, this is an advantage because we gain access to the full context
-            of the text we addresses.
-            <!-- reference to Witmore's concept of addressability? http://dhdebates.gc.cuny.edu/debates/text/28 -->
+            of the texts we address.<footnote><para>See <link xlink:href="http://dhdebates.gc.cuny.edu/debates/text/28">Michael Witmore, <quote>Text: A Massively Addressable Object</quote>, <emphasis role="ital">Debates in the Digital Humanities</emphasis> 2012.</link></para> </footnote>
             This would allow us, for example, to determine and indicate in the user interface
             whether a variant reading was part of a revision by Percy Shelley, or allows us to
             perform larger scale operations to track such phenomena, which could then be plotted as
