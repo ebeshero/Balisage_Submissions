@@ -263,12 +263,8 @@
             across multiple sources of the same text (e.g. between a manuscript, a copy, a first
             print, etc.). This is often the first fundamental operation that textual scholars
             perform in preparation of a critical edition. In our specific case, the collation needs
-            to happen between previously encoded editions of the sources we want to compare, meaning
-            that hierarchies must be dismantled and flattened in order for meaningful multiplicity
-            to be represented, and in order for us to understand a dialogic relationship among
-            textual variants. To study variation over time vexes the organizing principle of any
-            singular hierarchy, but for an alternative bridge-building architecture, arches and
-            connecting spans are more viable than monoliths. Our use of the terms
+            to process previously encoded editions of the sources we want to compare. In order to compare these editions, their hierarchies must be dismantled and flattened in order for the collation to be able to account for changes in structure, such as a paragraph break in one edition that is missing in the others, or a handwritten deletion in a manuscript that shows up in a print edition. The collation needs to be able to cut across the original document hierarchies and yet preserve the information from the original markup.</para>
+        <para>To align such variations is necessarily going to disrupt the hierarchical encoding of each source edition, but another way to think of the collation process is as a building tool, a kind of weaving or bridge-building process, creating a new kind of hierarchy that intersects the source editions. The new hierarchy contains arches and connecting spans across formerly isolated monoliths. Our use of the terms
                 <quote>arch</quote>, <quote>bridge</quote>, or <quote>span</quote> is more than a
             metaphor here, but drawn from a graph-based model of text on which, not coincidentally,
             CollateX was designed for locating variants in documents. <footnote>
@@ -287,8 +283,7 @@
             </footnote></para>
 
         <para>We describe one such effort in the Frankenstein Variorum Project.<footnote>
-                <para>Our project, known variously as the Pittsburgh Frankenstein project but
-                    probably more aptly the Frankenstein Variorum project, involves a collaboration
+                <para>The Frankenstein Variorum project involves a collaboration
                     of researchers from the University of Pittsburgh, Carnegie Mellon University,
                     and the Maryland Institute for Technology in the Humanities (MITH), and GitHub
                     repository at <link
