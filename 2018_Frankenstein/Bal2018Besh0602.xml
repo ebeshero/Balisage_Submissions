@@ -21,7 +21,7 @@
                 from the collation process. The TEI <quote>stand-off bridge</quote> negotiates the
                 distinct markup ecosystems in ways that can break the <quote>silo</quote> effect of
                 isolating specially encoded editions. Far from an ephemeral support structure, the
-                stand-off bridge upholds the whole as the <quote>backbone</quote> of the variorum
+                stand-off bridge upholds the whole as the <quote>spine</quote> of the variorum
                 project because it improves the interoperability and interchangeability of all the
                 markup ecosystems involved. Building the stand-off bridge effectively reconstitutes
                 the hierarchies in a way that expresses intersections essentially as a graph
@@ -38,8 +38,8 @@
                 the encoder for help, interoperability reflects the capacity of software tools to
                 process the markup without needing to change either it or the tools. Although we
                 usually consider the needs of software interoperability as at odds with the richly
-                expressive capacity of human-readable semantic interchange, this paper suggests
-                that the TEI can be designed to prioritize the interests of both, from facilitating
+                expressive capacity of human-readable semantic interchange, this paper suggests that
+                the TEI can be designed to prioritize the interests of both, from facilitating
                 automated collation to generating an interlinking web interface that gives the user
                 means to choose and change directions in navigating multiple editions as
                 desired.</para>
@@ -117,24 +117,24 @@
                         xlink:href="http://tei2016.acdh.oeaw.ac.at/keynote"><quote>Freeing Our Texts
                             from their (Digital Tool)chains</quote></link>.</para>
             </footnote> Her talk broached a long-recognized issue that the TEI Guidelines permit too
-            many choices, such that there is very little that can be practically interoperable via simple programmatic mapping from one TEI project’s markup
-            ecosystem to another. The TEI might well be a garden of too many forking paths, too
-            richly labyrinthine because too entertaining of multiple modes of expression. Although
-            Andrews’s talk specifically addressed the lack of interoperability in scholarly editions
-            built with TEI and a lack of available software tools to process universally all TEI
-            documents, we might take this as a more fundamental concern that the TEI has not
-            fulfilled a more basic promise of its origins. That is, beyond its difficulties in
-            achieving interoperability, perhaps the Text Encoding Initiative as a wild ecosystem
-            fails to live up to the ideal vaunted in the title of its documentation as
-                <quote>Guidelines for Electronic Text Encoding and Interchange</quote>. Perhaps,
-            too, it might be said that those of us who work with TEI do not sufficiently prioritize
-            either interoperability or interchangeability in our projects. The goal of universal
-            interoperation may simply be unrealistic for rich variety of applications employed
-            around the world for the TEI, but interoperability among related kinds of documents
-            would seem practically attainable. In the case study of the Frankenstein Variorum
-            project presented in this paper, we exemplify and attempt to solve the problem of
-            achieving interchangeability among different digital editions of the same novel in
-            variant forms, by developing intermediary stand-off markup designed to
+            many choices, such that there is very little that can be practically interoperable via
+            simple programmatic mapping from one TEI project’s markup ecosystem to another. The TEI
+            might well be a garden of too many forking paths, too richly labyrinthine because too
+            entertaining of multiple modes of expression. Although Andrews’s talk specifically
+            addressed the lack of interoperability in scholarly editions built with TEI and a lack
+            of available software tools to process universally all TEI documents, we might take this
+            as a more fundamental concern that the TEI has not fulfilled a more basic promise of its
+            origins. That is, beyond its difficulties in achieving interoperability, perhaps the
+            Text Encoding Initiative as a wild ecosystem fails to live up to the ideal vaunted in
+            the title of its documentation as <quote>Guidelines for Electronic Text Encoding and
+                Interchange</quote>. Perhaps, too, it might be said that those of us who work with
+            TEI do not sufficiently prioritize either interoperability or interchangeability in our
+            projects. The goal of universal interoperation may simply be unrealistic for rich
+            variety of applications employed around the world for the TEI, but interoperability
+            among related kinds of documents would seem practically attainable. In the case study of
+            the Frankenstein Variorum project presented in this paper, we exemplify and attempt to
+            solve the problem of achieving interchangeability among different digital editions of
+            the same novel in variant forms, by developing intermediary stand-off markup designed to
                 <quote>bridge</quote> different TEI markup ecosystems with each their own priorities
             for description and representation of the novel.</para>
         <para>Of course, to be <emphasis role="ital">interoperable</emphasis> is not the same thing
@@ -254,17 +254,22 @@
         
         
         <para>From the experience of investigating diverse systems of markup applied to multiple versions of one novel from the 1990s to the 2010s, we do not find generalized dismissals of TEI markup as <quote>subjective</quote> to be compelling enough to dismiss the many information-rich projects built with the TEI over decades. Indeed, we need to work with those editions and the rich data they contain, to advance scholarship rather than reinventing it as if its encoding were value-less to outsiders. To advance the interests of scholarship involves <emphasis>respecting</emphasis> the encoding of earlier times and places, not only acknowledging its complexity and shortfalls, but building with it something that will be richly informative and available that was not before. Certainly it is difficult to find a place for a diplomatic edition in a variorum context, but when we build bridges for interchange, we create conditions for interoperation. In the case of our Variorum project, we need to do the work of interchange to make automated collation possible. Even if that collation is not perfect, and requires human intervention, can we ever expect interoperation simply to <quote>work perfectly</quote> without some human intervention? The efforts in building digital editions are necessarily complex, and we rely on interoperation to help build the very bridges we need for our Variorum edition to connect digital editions that remain in their own distinct ecosystems.</para>
-
     </section>
 
     <section>
         <title>Building a variorum edition from multiple sources</title>
-        <para>In the process of collation, hierarchies must be dismantled and flattened in order for
-            meaningful multiplicity to be represented, and in order for us to understand a dialogic
-            relationship among textual variants. To study variation over time vexes the organizing
-            principle of any singular hierarchy, but for an alternative bridge-building
-            architecture, arches and connecting spans are more viable than monoliths. Our use of the
-            terms <quote>arch</quote>, <quote>bridge</quote>, or <quote>span</quote> is more than a
+        <para><!--In response to reviewer 2: added a short explantion of what collation is and a reminder of why we need to work around (ie flatten) hierarchies in our case. -->A
+            typical process of collation involves the comparison of textual units (typically words)
+            across multiple sources of the same text (e.g. between a manuscript, a copy, a first
+            print, etc.). This is often the first fundamental operation that textual scholars
+            perform in preparation of a critical edition. In our specific case, the collation needs
+            to happen between previously encoded editions of the sources we want to compare, meaning
+            that hierarchies must be dismantled and flattened in order for meaningful multiplicity
+            to be represented, and in order for us to understand a dialogic relationship among
+            textual variants. To study variation over time vexes the organizing principle of any
+            singular hierarchy, but for an alternative bridge-building architecture, arches and
+            connecting spans are more viable than monoliths. Our use of the terms
+                <quote>arch</quote>, <quote>bridge</quote>, or <quote>span</quote> is more than a
             metaphor here, but drawn from a graph-based model of text on which, not coincidentally,
             CollateX was designed for locating variants in documents. <footnote>
                 <para>See the documentation, <link xlink:href="https://collatex.net/doc/"
@@ -415,9 +420,9 @@
                 enough to collate meaningfully and large enough that each document demonstrably
                 aligns with the others at its start and end points. We prepared 33 collation units
                 of the novel. XML matching the pre-collation format is prepared from OCR texts of
-                the 1823 edition. Building from the 1818 collation units, we add in encoded
-                transcriptions of Mary Shelley’s hand-written edits on <quote>the Thomas
-                    copy</quote> of the 1818 publication.</para>
+                the 1823 edition. Building from the 1818 collation units, we add in encoded transcriptions of Mary Shelley's hand-written edits on <quote>the Thomas
+                    copy</quote> of the 1818
+                publication.<!--Possibly insert a graphical representation of the process described above.--></para>
 
             <para>Stage two weaves these surrogate editions together and transfers information from
                 tags that we want to preserve for the variorum. Interacting with the angle brackets
@@ -426,7 +431,8 @@
                 but are nevertheless output to preserve their distinct information. In CollateX’s
                 informationally-rich XML output, these tags render as flattened text with character
                 entities replacing angle brackets so as not to introduce overlap problems with its
-                critical apparatus.</para>
+                critical
+                apparatus.<!--Possibly insert a graphical representation of the process described above.--></para>
             <para>In Stage three, we work delicately with strings that represent flattened composite
                 of preserved tag information and representations of the text, using XSLT
                 string-manipulation functions to construct new XML and plain text (TSV or JSON)
@@ -434,7 +440,8 @@
                 for example, where the strings associated with Percy Shelley are repeated in the
                 later editions, and how many were preserved by 1831. We also build the <emphasis
                     role="ital">stand-off Bridge</emphasis> in TEI for the digital variorum with its
-                pointers to multiple editions, as discussed and modelled later in this paper. </para>
+                pointers to multiple editions, as discussed and modelled later in this paper.
+                <!--Possibly insert a graphical representation of the process described above.--></para>
 
         </section>
         <section>
@@ -651,23 +658,58 @@
                         <imagedata format="png" fileref="Bal2018collateOutput042908.png"/>
                     </imageobject>
                 </mediaobject></para>
-            <para>While it may be difficult on human eyes, this code is information-rich and tractable for the next stage of work in building up the Variorum. Due to its
-                shallow hierarchy combined with its embedded complexity, we might consider this output to be an interchange format in its own right, though we now face a challenge in processing complex details from the source editions now signalled by the pseudo-markup of the angle-bracket escape characters. In a way, this is a kind of database format from which data can be extracted and repurposed from XPath string operations, but the collation process is quite likely to break up the original tagging of <code>&lt;add&gt;</code> or <code>&lt;del&gt;</code> because it has prioritized the location of comparable text strings while <quote>masking</quote> (or parsing around) those tags. We do not treat this as an impossibility, but rather as a moment where the most interoperable portion of the document (the text characters, as Desmond Schmidt would point out), becomes something we need to address with programming tools as structured data. At the time of this writing, we are working with this output of collation to repurpose it in multiple ways:
-            <itemizedlist>
-                <listitem>
-                    <para>as a resource for analyzing the nature and variety of revisions made to the novel over time, tracing the most frequent and most extensive changes, and their locations (as in, identifying which portions of the novel were most heavily revised over time);</para>
-                </listitem>
-                <listitem>
-                    <para>as a resource for stylometric analysis (as for example, tracking which portions of the document contain edits by Percy Shelley, and what becomes of these variants over time in later revisions to the novel);</para>
-                </listitem>
-                <listitem>
-                    <para>as a basis for conversion into the bridge format of the reading interface, generating pointers to the source editions.</para>
-                </listitem>
-            </itemizedlist>
+            <para>While it may be difficult on human eyes, this code is information-rich and
+                tractable for the next stage of work in building up the Variorum. Due to its shallow
+                hierarchy combined with its embedded complexity, we might consider this output to be
+                an interchange format in its own right, though we now face a challenge in processing
+                complex details from the source editions now signalled by the pseudo-markup of the
+                angle-bracket escape characters. In a way, this is a kind of database format from
+                which data can be extracted and repurposed from XPath string operations, but the
+                collation process is quite likely to break up the original tagging of
+                    <code>&lt;add&gt;</code> or <code>&lt;del&gt;</code> because it has prioritized
+                the location of comparable text strings while <quote>masking</quote> (or parsing
+                around) those tags. We do not treat this as an impossibility, but rather as a moment
+                where the most interoperable portion of the document (the text characters, as
+                Desmond Schmidt would point out), becomes something we need to address with
+                programming tools as structured data. At the time of this writing, we are working
+                with this output of collation to repurpose it in multiple ways: <itemizedlist>
+                    <listitem>
+                        <para>as a resource for analyzing the nature and variety of revisions made
+                            to the novel over time, tracing the most frequent and most extensive
+                            changes, and their locations (as in, identifying which portions of the
+                            novel were most heavily revised over time);</para>
+                    </listitem>
+                    <listitem>
+                        <para>as a resource for stylometric analysis (as for example, tracking which
+                            portions of the document contain edits by Percy Shelley, and what
+                            becomes of these variants over time in later revisions to the
+                            novel);</para>
+                    </listitem>
+                    <listitem>
+                        <para>as a basis for conversion into the bridge format of the reading
+                            interface, generating pointers to the source editions.</para>
+                    </listitem>
+                </itemizedlist>
             </para>
-            <para>We should clarify that these represent multiple, quite challenging processing efforts: the same XSLT that helps to generate pointers into the original editions will not suffice for dealing with insertions and deletions: indeed the goal is not to reproduce the intricately detailed page imaging of the Shelley-Godwin Archive but rather to point precisely to its pages. A different XSLT process will give us a <quote>bridge</quote> rendering of the notebooks with highlights and interactions to indicate <emphasis>how it compares</emphasis> and <emphasis>where it diverges</emphasis> from other editions, and each edition needs to be rendered individually in a way that demonstrates its own comparability and deviation from the others.</para><para>The reading interface for the Variorum edition will optimally make available the combined results of our data processing, and as a starting point, we are writing XSLT to analyze strings and locating their positions in the source documents to construct in TEI a <quote>spinal column</quote> for interconnecting the data on variation. The variorum edition architecture applies pointers in a form of <quote>stand-off parallel segmentation</quote>, which enhances the available models in the TEI
-                Guidelines for stand-off collation while supporting the TEI’s longstanding
-                interests in both interchange and interoperability, as we discuss below.</para>
+            <para>We should clarify that these represent multiple, quite challenging processing
+                efforts: the same XSLT that helps to generate pointers into the original editions
+                will not suffice for dealing with insertions and deletions: indeed the goal is not
+                to reproduce the intricately detailed page imaging of the Shelley-Godwin Archive but
+                rather to point precisely to its pages. A different XSLT process will give us a
+                    <quote>bridge</quote> rendering of the notebooks with highlights and
+                interactions to indicate <emphasis>how it compares</emphasis> and <emphasis>where it
+                    diverges</emphasis> from other editions, and each edition needs to be rendered
+                individually in a way that demonstrates its own comparability and deviation from the
+                others.</para>
+            <para>The reading interface for the Variorum edition will optimally make available the
+                combined results of our data processing, and as a starting point, we are writing
+                XSLT to analyze strings and locating their positions in the source documents to
+                construct in TEI a <quote>spinal column</quote> for interconnecting the data on
+                variation. The variorum edition architecture applies pointers in a form of
+                    <quote>stand-off parallel segmentation</quote>, which enhances the available
+                models in the TEI Guidelines for stand-off collation while supporting the TEI’s
+                longstanding interests in both interchange and interoperability, as we discuss
+                below.</para>
 
         </section>
 
@@ -690,12 +732,12 @@
             like a graph-based model, in which the hierarchy of elements exists so that
                 <code>&lt;app&gt;</code> elements serve as bridges or edges that hold and connect
             its nodes in the form of <code>&lt;rdg&gt;</code> elements (for reading witnesses).<footnote>
-                <para>For a visual example, a group of Pitt-Greensburg students led by Nicole
-                    Lottig and Brooke Stewart experimented with a network
-                    analysis of editions of Emily Dickinson’s Fascicle 16 poems that share the most
-                    variant readings, and to see which most closely resembled one another. See their
-                    network visualization and explanation here: <link
-                        xlink:href="http://dickinson16.newtfire.org/16/networkAnalysis.html"
+
+                <para>For a visual example, a group of Pitt-Greensburg students led by Nicole Lottig
+                    and Brooke Stewart experimented with a network analysis of editions of Emily
+                    Dickinson's Fascicle 16 poems that share the most variant readings, and to see
+                    which most closely resembled one another. See their network visualization and
+                    explanation here: <link xlink:href="http://dickinson16.newtfire.org/16/networkAnalysis.html"
                         >http://dickinson16.newtfire.org/16/networkAnalysis.html</link>
                 </para>
             </footnote> The starting priority was to generate pointers from the Variorum edition
@@ -732,9 +774,10 @@
             text by specifying the start and end point of the lemma of which they are a variant.
             This allows encoders to refer to overlapping areas on the base text, but despite its
             flexibility, this method still requires choosing a base text to which anchor variant
-            readings. While choosing a lemma for each variant may be necessary for a critical
-            edition, it is not ideal for a variorum edition like ours that, by design, does not
-            choose a base text.<footnote>
+            readings.
+            <!--Reviewer 3 got confused by this following sentence about lemmas, I think. I would suggest to remove it (but keep the footnote). The same reviewer also thinks a base text is not required in TEI's current approach to critical appartus, but they're wrong :) so no need to change anything else.<del>-->While
+            choosing a lemma for each variant may be necessary for a critical edition, it is not
+            ideal for a variorum edition like ours that, by design, does not choose a base text.<!--</del>--><footnote>
                 <para>For a related example, see Viglianti, R. Music and Words: reconciling libretto
                     and score editions in the digital medium. “Ei, dem alten Herrn zoll’ ich Achtung
                     gern’”, ed. Kristina Richts and Peter Stadler, 2016, 727-755. </para>
@@ -747,7 +790,7 @@
             our multiple versions of TEI-encoded <emphasis role="ital">Frankenstein</emphasis> to
             locate the <quote>addresses</quote> of each varying point. This document is not,
             however, the end of the story: the bridges that it establishes are there to be crossed.
-            Crossing the bridges, that is, following the pointers is not always trivial. Serious
+            Crossing the bridges, that is following the pointers, is not always trivial. Serious
             reasons for the somewhat limited use of stand-off in TEI include the inadequate support
             for resolving XPointers, as well as the risk of not finding what was expected at the
             other end because of <quote>link rot</quote>, or because the target file was – even
@@ -777,17 +820,31 @@
                 </listitem>
             </orderedlist>The software building this view follows links from the stand-off parallel
             segmentation to highlight text and retrieve bits of text from the other documents to be
-            shown at he right place. This mode of publication adheres to well-established user
-            experiences for digital editions; the fundamental difference, however, is in the
-            integrity of each source document: the stand-off collation allows us to show where the
-            differences are, and to retrieve them without having to modify or control the source
-            documents. One can imagine an even more distributed application of this paradigm, where
-            the pointers target TEI documents not owned by the project that does the pointing.
-            Working with Shelley-Godwin Archive (S-GA) documents was a first experiment in this
-            direction. Even though S-GA staff is directly involved in this project, we have made it
-            a cornerstone of our experiment not to modify S-GA files (except the occasional typo or
-            minor contribution that was sent back via a GitHub Pull Request); in short, we treated
-            S-GA as an external project that we can point to but not change.</para>
+            shown at he right place. <figure xml:id="prototype" xreflabel="Prototype">
+                <title>An early prototype of the variorum interface</title>
+                <mediaobject>
+                    <imageobject>
+                        <imagedata format="png" fileref="Bal2018prototype.png"/>
+                    </imageobject>
+                </mediaobject>
+                <caption>
+                    <para>A screenshot of an early prototype of the variorum interface. The
+                        Frankenstein text shown is TEI data taken 'on the fly' from S-GA's GitHub
+                        repository. The application, morevoer, follows the pointers in the stand-off
+                        collation to highlight variants on the text and, when highlighted text is
+                        clicked, show readings from other sources on the right hand side.</para>
+                </caption>
+            </figure> This mode of publication adheres to well-established user experiences for
+            digital editions; the fundamental difference, however, is in the integrity of each
+            source document: the stand-off collation allows us to show where the differences are,
+            and to retrieve them without having to modify or control the source documents. One can
+            imagine an even more distributed application of this paradigm, where the pointers target
+            TEI documents not owned by the project that does the pointing. Working with
+            Shelley-Godwin Archive (S-GA) documents was a first experiment in this direction. Even
+            though S-GA staff is directly involved in this project, we have made it a cornerstone of
+            our experiment not to modify S-GA files (except the occasional typo or minor
+            contribution that was sent back via a GitHub Pull Request); in short, we treated S-GA as
+            an external project that we can point to but not change.</para>
         <para>Publishing the variorum is but one path that can be taken across the bridges of our
             collation. As we mentioned earlier, we kept in mind the richness of S-GA TEI documents,
             particularly regarding authorship (who wrote what) and authorial revisions. In order to
@@ -810,20 +867,21 @@
         <para>Though we think of hierarchical XML as a stable sustainable archiving medium, the
             repeated collapsing and expansion of hierarchies in our collation process makes us
             consider that for the viability of digital textual scholarship, ordered hierarchies of
-            content objects might best be designed for interchange with leveling in mind, and that building with XML
-            may be optimized when it is open to transformation. Preparing diversely encoded
-            documents for collation challenges us to consider inconsistent and overlapping
-            hierarchies as a tractable matter for computational alignment—where alignment becomes an
-            organizing principle that fractures hierarchies, chunking if not atomizing them at the
-            level of the smallest meaningfully sharable semantic features.</para>
+            content objects might best be designed for interchange with leveling in mind, and that
+            building with XML may be optimized when it is open to transformation. Preparing
+            diversely encoded documents for collation challenges us to consider inconsistent and
+            overlapping hierarchies as a tractable matter for computational alignment—where
+            alignment becomes an organizing principle that fractures hierarchies, chunking if not
+            atomizing them at the level of the smallest meaningfully sharable semantic
+            features.</para>
         <para>At the very least, our efforts on this project will likely result in new examples and
             enhancement of <link
                 xlink:href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/TC.html#TCAPLK"
                 >Chapter 12 in the TEI Guidelines on the Critical Apparatus</link>, to develop a
-            model of stand-off annotation that does not require a lemma. However, the perspective we
-            have gained on enhancing interchange for the purposes of interoperation may have larger
-            ramifications in the ongoing discussion of graph-based models and their application to
-            the TEI.<footnote>
+            model of stand-off annotation that does not require choosing a base text. However, the
+            perspective we have gained on enhancing interchange for the purposes of interoperation
+            may have larger ramifications in the ongoing discussion of graph-based models and their
+            application to the TEI.<footnote>
                 <para>For reflection on pertinent examples, see Hugh A. Cayless, <link
                         xlink:href="http://journals.openedition.org/jtei/907"><quote>Rebooting TEI
                             Pointers</quote>, Journal of the Text Encoding Initiative, Issue 6,
@@ -854,16 +912,16 @@
             scholastic textual data, on a smaller scale trained on multiple divergent encodings of
             the same famous novel, we have negotiated interchangeability by cutting across
             individual text hierarchies to emphasize lateral connections and commonalities—making a
-            new TEI whose hierarchy serves as a stand-off <quote>backbone</quote> or
+            new TEI whose hierarchy serves as a stand-off <quote>spine</quote> or
                 <quote>switchboard</quote> permitting comparison and sharing of common data. Our
             goal of pointing to aligned data required us to locate the interchangeable structural
             markers in our source documents, and enhances interoperation by making it possible for
-            software to parse the comparable with the incomparable, the similar with the
-            divergent. Ultimately, we want to
-            promote the long-term sustenance of digital editions by building bridges that permit monumental but isolated projects to be interchangeable rather than having to remake them from the
-            ground up. Building ramps for interchangeability is an investment in
-            interoperability as well, specifically for producing the comparative views afforded
-            by collation.</para>
+            software to parse the comparable with the incomparable, the similar with the divergent.
+            Ultimately, we want to promote the long-term sustenance of digital editions by building
+            bridges that permit monumental but isolated projects to be interchangeable rather than
+            having to remake them from the ground up. Building ramps for interchangeability is an
+            investment in interoperability as well, specifically for producing the comparative views
+            afforded by collation.</para>
 
     </section>
 
