@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="balisage-1-3.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="balisage-1-3.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-stylesheet type="text/xsl" href="balisage-proceedings-html.xsl"?>
+<article xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink"
+    version="5.0-subset Balisage-1.3">
+
+    <title>Text Encoding and Literate Programming for a University Writing Intensive Course</title>
+   <!-- <subtitle></subtitle>-->
+    <info>
+        <abstract>
+            <para>Can learning text encoding and markup languages constitute a <quote>writing
+                    intensive</quote> experience for university students? The author is developing a
+                Text Encoding Fundamentals course with emphasis on text encoding as writing, as well
+                as a proposal that this fulfill a major state university requirement of a
+                research-oriented 300-level <quote>writing intensive</quote> or <quote>W</quote>
+                course for undergraduate students. The course is specifically
+                designed for those pursuing a Digital Media, Arts, and Technology major but must
+                also be available to others in related disciplines as an experience in <quote>writing across the curriculum</quote>. While we may be familiar with
+                arguments that coding and programming are a kind of literacy, the idea that
+                developing projects with markup technologies may constitute an
+                    <emphasis>intensive</emphasis> writing experience is less familiar. The
+                consideration of text encoding as writing intensive may establish a call for
+                teaching markup technologies more widely in a cross-disciplinary context.</para>
+            <para>Not just any course introducing students to markup should be considered writing
+                intensive. Arguably, a class that involves tagging exercises without project
+                development and invites students to write reflectively about the experience is not
+                engaging in an <emphasis>intensive</emphasis> way with the writing work we associate with coding in a
+                project development context. This paper argues that a
+                    <emphasis>writing intensive</emphasis> course in coding should take seriously
+                the notion that coding and programming is a writing process that requires research
+                and citation, algorithmic problem-solving and decision making, task management to
+                organize a project team, and documentation to share the work and help others to
+                build upon it. A course offering such experiences should, finally, be accessible to
+                students from several disciplines, whether to a junior year English or history major
+                with little to no programming experience, or a junior year computer science or
+                information technology major with an interest in applied programming, unused to
+                research questions that drive humanities scholarship. In presenting its case, this paper responds to a range of literature to evaluate the relationships among <emphasis>encoding</emphasis>, <emphasis>coding</emphasis>, <emphasis>programming</emphasis>, and <emphasis>writing</emphasis>.</para>
+        </abstract>
+        <author>
+            <personname>
+                <firstname>Elisa</firstname>
+                <othername>E.</othername>
+                <surname>Beshero-Bondar</surname>
+            </personname>
+            <personblurb>
+                <para>Elisa Beshero-Bondar is a member of the TEI Technical Council, as well as Professor of Digital Humanities and Program Chair of Digital Media, Arts, and Technology at Penn State Erie, the Behrend College. Until June 2020, she was a professor of English Literature, and her ongoing adventures in markup are documented on <link xlink:href="http://newtfire.org">her development site at newtfire.org</link>. Her projects investigate complex texts such as epics, plays, and multi-volume voyage logs, and involve her in experimentations with the TEI, including refining methods for computer-assisted collation of editions and probing questions of interoperability to reconcile diplomatic and critical edition encodings. She is the founder and organizer of the <link xlink:href="http://digitalmitford.org">Digital Mitford project</link> and its annual coding school.</para>
+            </personblurb>
+            <affiliation>
+                <jobtitle>Professor of Digital Humanities</jobtitle>
+                <jobtitle>Program Chair of Digital Media, Arts, and Technology</jobtitle>
+                <orgname>Penn State Erie, the Behrend College</orgname>
+            </affiliation>
+            <email>eeb4@psu.edu</email>
+        </author>
+        <keywordset role="author">
+            <keyword>markup</keyword>
+            <keyword>writing intensive</keyword>
+            <keyword>literate programming</keyword>
+            <keyword>interchange</keyword>
+            <keyword>code literacy</keyword>
+            <keyword>general education requirement</keyword>
+            <keyword>pedagogy</keyword>
+            <keyword>coding across the curriculum</keyword>
+            <keyword>Text Encoding Initiative</keyword>
+            <keyword>TEI XML</keyword>
+            <keyword>Relax NG</keyword>
+            <keyword>XML family of languages</keyword>
+            <keyword>XPath</keyword>
+            <keyword>XSLT</keyword>
+            <keyword>HTML</keyword>
+        </keywordset>
+    </info>
+    <section>
+        <title></title>
+       <para></para>
+    </section>
+
+</article>
