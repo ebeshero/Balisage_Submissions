@@ -25,8 +25,8 @@
             <para>Not just any course introducing students to markup should be considered writing
                 intensive. Arguably, a class that involves tagging exercises without project
                 development and invites students to write reflectively about the experience is not
-                engaging in an <emphasis>intensive</emphasis> way with the writing work we associate with coding in a
-                project development context. This paper argues that a
+                engaging in an <emphasis>intensive</emphasis> way with the writing work we associate
+                with coding in a project development context. This paper argues that a
                     <emphasis>writing intensive</emphasis> course in coding should take seriously
                 the notion that coding and programming is a writing process that requires research
                 and citation, algorithmic problem-solving and decision making, task management to
@@ -35,7 +35,10 @@
                 students from several disciplines, whether to a junior year English or history major
                 with little to no programming experience, or a junior year computer science or
                 information technology major with an interest in applied programming, unused to
-                research questions that drive humanities scholarship. In presenting its case, this paper responds to a range of literature to evaluate the relationships among <emphasis>encoding</emphasis>, <emphasis>coding</emphasis>, <emphasis>programming</emphasis>, and <emphasis>writing</emphasis>.</para>
+                research questions that drive humanities scholarship. In presenting its case, this
+                paper responds to a range of literature to evaluate the relationships among
+                    <emphasis>encoding</emphasis>, <emphasis>coding</emphasis>,
+                    <emphasis>programming</emphasis>, and <emphasis>writing</emphasis>.</para>
         </abstract>
         <author>
             <personname>
@@ -81,7 +84,13 @@
     </section>
     <section>
         <title>Writing intensively and across the curriculum with markup languages</title>
-        <para></para>
+        <para>The XML family of languages were designed not only to be widely accessible, but also were designed to be a vocabulary the writer controls or consults or interacts with, and requires a hierarchical structuring. Teaching people to work with markup can involve an experience of encountering how many different ways people can imagine encoding the same document. 
+        (Speak of recipe coding)
+        (Speak of recipe coding with a context)
+        (Speak of controlled vocabularies: within a project)
+        (Speak of controlled vocabularies with the TEI)
+        
+        </para>
     </section>
 
 </article>
