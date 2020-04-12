@@ -93,6 +93,13 @@
         (recipe coding with a shared context)
         (designing a schema and of controlled vocabularies: within a project)
         
+       DATA PREPARATION: 
+        XSLT: constructing templates and accounting for nodes. Deciding what can be ignored.
+        Push and pull processing
+        
+        XQUERY and persistent datatyping
+        WHY encounters with marked up text get you someplace different than unmarked text, and give you an intensive constructive experience with data curation and preparation. 
+        
         (decision processes for controlled vocabularies with the TEI)
         (documentation, XML Comments, git commits, methodology pages, sharing the work with others)
         (research in the field: referencing is connecting and networking)
