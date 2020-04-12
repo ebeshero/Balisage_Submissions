@@ -47,7 +47,7 @@
                 <surname>Beshero-Bondar</surname>
             </personname>
             <personblurb>
-                <para>Elisa Beshero-Bondar is a member of the TEI Technical Council, as well as Professor of Digital Humanities and Program Chair of Digital Media, Arts, and Technology at Penn State Erie, the Behrend College. Until June 2020, she was a professor of English Literature, and her ongoing adventures in markup are documented on <link xlink:href="http://newtfire.org">her development site at newtfire.org</link>. Her projects investigate complex texts such as epics, plays, and multi-volume voyage logs, and involve her in experimentations with the TEI, including refining methods for computer-assisted collation of editions and probing questions of interoperability to reconcile diplomatic and critical edition encodings. She is the founder and organizer of the <link xlink:href="http://digitalmitford.org">Digital Mitford project</link> and its annual coding school.</para>
+                <para>Elisa Beshero-Bondar is a member of the TEI Technical Council, as well as Professor of Digital Humanities and Program Chair of Digital Media, Arts, and Technology at Penn State Erie, the Behrend College. Until June 2020, she was a professor of English Literature and Director of the Center for the Digital Text at Pitt-Greensburg which has featured a markup languages as a foundation of the curriculum. Her ongoing adventures with markup technologies are documented on <link xlink:href="http://newtfire.org">her development site at newtfire.org</link>. Her projects investigate complex texts such as epics, plays, and multi-volume voyage logs, and involve her in experimentations with the TEI, including refining methods for computer-assisted collation of editions and probing questions of interoperability to reconcile diplomatic and critical edition encodings. She is the founder and organizer of the <link xlink:href="http://digitalmitford.org">Digital Mitford project</link> and its annual coding school.</para>
             </personblurb>
             <affiliation>
                 <jobtitle>Professor of Digital Humanities</jobtitle>
@@ -77,6 +77,10 @@
     <section>
         <title>What people say about coding, encoding, and programming as literacies</title>
        <para></para>
+        
+        <para>Multimodal Writing: Addressing recent trends to assign student writing compositions in digital modalities such as audio and video, Laura Giovanelli and Molly Keener observe that <quote>Well-designed pedagogy recognizes multimodal writing’s potential to foster student agency and ownership as increasingly participatory citizens where literacy means composing in a range of print and digital media, genres, and modes, where students are consumers <emphasis>and</emphasis> ethical creators.</quote> CITE: "How to talk about copyright so kids will listen, and how to listen about copyright so kids will talk" in Grace Veach,, Teaching​ Information Literacy and Writing Studies : Volume 2, Upper-Level and Graduate Courses (Purdue University Press, 2019-01-15.  ProQuest ebook http://ebookcentral.proquest.com/lib/pitt-ebooks/reader.action?docID=5717973
+            
+        </para>
     </section>
     <section>
         <title>Challenging the notion of writing, and improving it</title>
@@ -120,6 +124,15 @@ Monitoring git commit messages and documentation
         
         (documentation, XML Comments, git commits, methodology pages, sharing the work with others)
         (research in the field: referencing is connecting and networking)
+        
+Teaching outside the Writing/Learning/Content Management System
+To this English professor and self-professed markup geek who was learning HTML in the 1990s, it is distinctly strange to read the language of educational technology specialists who seek ways gently to introduce faculty to <quote>teaching with technology</quote>. In these contexts, classes like <quote>Writing for the Web</quote> are about writing for Wix or Wordpress templates, which provide limited and little-investigated critical access to the code layer. <quote>Teaching with technology</quote> seems to mean working within a management system that facilitates digital submission of documents and return of grades and permits push notifications so faculty and students maintain asynchronous contact through a semester. 
+
+How hard is this for Humanities faculty to learn? 
+Faculty workshops and training can provide it, but it is not often offered, and perhaps we need to overcome a presumption that faculty will not be interested in the material. Where do we markup practitioners imagine that we find an audience for instructional materials? Who should be learning these technologies? Can this be treated not <emphasis>only</emphasis> as a restricted technological preserve, but as an encounter with what digital texts can be made of, as a component of digital literacy for humanities faculty and graduate programs? Can we encourage and incentivize the learning, teaching, and sharing of these technologies? The author learned enough of a foundation in a range of languages in a 15-week semester thanks to the existence of a course taught by David J. Birnbaum in the University of Pittsburgh’s Honors College program CITE, and she learned alongside a group of undergraduates, working in teams on semester projects as described in this paper. While she took the course to learn how to develop a digital edition project, she exited with the basis for developing new courses and imagining new ways of working on projects with students. Other faculty at Pitt and Pitt-Greensburg have lit their torches from the same pedagogical fires, and we are aware of faculty at UVic, U of Maryland, and Vanderbilt (just to name a few) who teach humanities students to engage with a range of XML technologies. 
+
+Teaching Markup Languages during a Pandemic
+This kind of class works for connecting synchronously OR asynchronously. It was much easier to continue the management of a course based on markup technologies in which students had been trained to work with project management tools and to be writing and sharing their documentation in GitHub repositories and over Slack channels than to retool one working within the less connected foundation of 
         </para>
     </section>
 
