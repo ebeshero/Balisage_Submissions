@@ -86,9 +86,9 @@
             electronic interactions with students. To be sure, learning our way around the
             technologies driving Blackboard and Canvas is often abstruse and time-consuming,
             especially when we attempt to navigate integrations with various proprietary software
-            applications like Zoom or Panopto. Software applications and publications supporting
-            educational technology innovations make evident that these are universally expected to
-            be contained within a learning management system (LMS). For example, Hypothes.is, an
+            applications like Zoom or Panopto. Publications supporting
+            educational technology innovations make evident that educational software applications are universally expected to
+            be integrated and accessed from within a learning management system (LMS). For example, Hypothes.is, an
             open-source technology for web annotation is now packaged and funneled into an LMS with
             a proprietary gradebook integration, or faculty may not be aware of its existence or
             understand how to apply it in their courses.<footnote>
@@ -114,9 +114,9 @@
             </footnote> We now rely on markup-based management architectures that control university
             website delivery and our work in the <quote>technology</quote> of higher education is
             widely presumed to be about form-filling, at most using a limited tag set from a menu
-            system. We have been managed into thinking that classes like <quote>Writing for the
+            system. We have been acculturated to expect that classes like <quote>Writing for the
                 Web</quote> are and <emphasis>should be</emphasis> about writing in Wordpress
-            templates which provide carefully constrained and little-investigated access to the code
+            templates that provide carefully constrained and little-investigated access to the code
             layer. <quote>We do not ride on the railroad; it rides upon us,</quote> wrote Henry
             David Thoreau, and we might as well update that for today’s university: content
             management systems organize us, we do not organize them.<footnote>
@@ -128,12 +128,11 @@
                     2020-04-12.</para>
             </footnote>
         </para>
-        <para>While we routinely commit to developing course materials in frameworks that we do not choose for ourselves, we are nevertheless in so doing widely applying markup technologies across our disciplines, and these provide a unified context for the experience now of technologically-enhanced writing in our discussion threads and pages. With universities' deep investment in controlled markup ecosystems, can we imagine a course that inverts the relationship between code and form-box, that engages students and faculty in organizing ideas with markup languages that they themselves control? Can a sustained exploration of the markup technologies that drive our writing experience on the web serve as a cross-disciplinary writing-intensive experience in its own right?</para>
-        <para>The pedagogical discourse surrounding <quote>digital writing modalities</quote> may
+        <para>Although we commit to developing course materials in frameworks that we do not choose for ourselves, those frameworks (e.g. Blackboard, Moodle, Canvas) are built from XML, which itself establishes the context of educational technology. Given universities’ deep investment in XML-based ecosystems, can we imagine a widely-accessible cross-disciplinary course that inverts the relationship between code and form-box, that engages students and faculty in organizing ideas with markup languages that they themselves control? Can a sustained exploration of the markup technologies that drive our writing experience on the web serve as a cross-disciplinary writing-intensive experience in its own right?</para>
+        <para>In awakening students to the technologies shaping composition, classes that teach <quote>digital writing modalities</quote> (or composition that involves multiple media forms) may
             provide faculty markup practitioners a well-established and widely lauded context for
-            teaching markup languages in a writing-intensive way. For writing instructors, digital
-            compositions in multimedia have been providing a productive space of dialogue about form
-            following function, medium, and audience. Addressing recent trends to assign student
+            teaching markup languages in a writing-intensive way. For writing instructors, <quote>digital writing modalities</quote> or <quote>multimodal writing</quote> can motivate dialogue about the medium as the message and the choice of form
+            following function and audience. Addressing recent trends to assign student
             writing compositions in digital modalities such as audio and video, Laura Giovanelli and
             Molly Keener observe that <quote>Well-designed pedagogy recognizes multimodal writing’s
                 potential to foster student agency and ownership as increasingly participatory
@@ -147,22 +146,20 @@
                         Studies: Volume 2, Upper-Level and Graduate Courses</emphasis> (Purdue
                     University Press, 2019-01-15), 225. ProQuest ebook.
                     <!--http://ebookcentral.proquest.com/lib/pitt-ebooks/reader.action?docID=5717973--></para>
-            </footnote> Writing with markup languages can easily be taught as a text-based digital
-            modality of composition that fosters student agency and ownership of the code base,
-            requiring access to software like the oXygen XML editor, writeable web space, and
-            possibly an XML database, instead of the Adobe suite for the writing medium. Much as
+            </footnote> Writing with markup languages can easily be taught in the context of digital
+            multimodal composition that fosters student agency and ownership of the code base. Much as
             students compose by remixing and ironically applying visual or auditory memes, they
             might apply markup languages to compose by self-consciously reordering scripts of
             official documents and develop controlled vocabularies that help communities access
             their heritage.<footnote>
                 <para>A good example of such application of markup languages is <link
-                        xlink:href="https://dhtraining.org/hilt/course/introduction-to-the-text-encoding-initiative-tei-for-black-digital-humanities/"
-                        >Jessica Lu’s and Caitlin Pollock’s 2019 HILT course, <quote>Introduction to
-                            the Text Encoding Initiative (TEI) for Black Digital
+                    xlink:href="https://dhtraining.org/hilt/course/introduction-to-the-text-encoding-initiative-tei-for-black-digital-humanities/"
+                    >Jessica Lu’s and Caitlin Pollock’s 2019 HILT course, <quote>Introduction to
+                        the Text Encoding Initiative (TEI) for Black Digital
                         Humanities</quote></link> which organized training in markup to support
-                        <quote>new ways of accessing, reading, sharing, and analyzing texts of
+                    <quote>new ways of accessing, reading, sharing, and analyzing texts of
                         marginalized people</quote>.</para>
-            </footnote></para>
+            </footnote> Semester-long courses would require access to good syntax-checking code editor (like the oXygen XML editor), writeable web space with secure FTP access, and possibly an XML database (like eXist-dB) and a GitHub account,instead of a Wordpress account and the Adobe suite for the writing environments. While I do not expect every English composition instructor to flock to these technologies, I do anticipate that those of us faculty who can teach the XML family of languages can do so in a way that constitutes a writing-intensive experience valuable to students across the curriculum, and especially valuable in programs with majors, minors, and certificate programs supporting the digital humanities.</para>
         <para>Perhaps the  most significant university context supporting university-wide interdisciplinary pedagogy in coding and programming, and thereby markup languages and their applications, is the call for <quote>coding across the curriculum</quote>. In echoing the mantra of <quote>writing across the curriculum</quote>, it is nevertheless by no means clear that the call for code across disciplines is a recognition of it as an extension and modality of writing.  
             
            
