@@ -77,16 +77,13 @@
     <section>
         <title><quote>Teaching with technology</quote>, <quote>writing modalities</quote>, and
                 <quote>coding across the curriculum</quote></title>
-        <para>To any academic who remembers the exhilaration of writing syllabi in a markup language
-            in the 1990s and posting them to a university server running the Andrew File system, the
-            application of the phrase <quote>teaching with technology</quote> in the university
-            discourse of the 2010s may have a jarring sound. It may seem strange to us markup geeks
-            from a past century that <quote>technology</quote> for education is now entirely
-            packaged and experienced in learning management systems that take care of all of our
-            electronic interactions with students. To be sure, learning our way around the
-            technologies driving Blackboard and Canvas is often abstruse and time-consuming,
-            especially when we attempt to navigate integrations with various proprietary software
-            applications like Zoom or Panopto. Publications supporting
+        <para>To any academic who remembers the exhilaration in the 1990s of navigating around an Andrew File System and posting on it a <quote>paperless syllabus</quote> in a markup language, the application of the phrase <quote>teaching with technology</quote> in the university
+            discourse of the 2010s may have a jarring sound. Scholarly markup geeks
+            from a past century have lived to see <quote>technology</quote> for education be
+            packaged in learning management systems that securely take care of all of our
+            electronic interactions with students from posting announcements to grades. Even for 90s markup geeks, learning our way around the
+            technologies driving Blackboard and Canvas can be abstruse and fretfully time-consuming,
+            especially when we attempt applying their byzantine integrations with various proprietary software applications like Zoom or Panopto. Publications supporting
             educational technology innovations make evident that educational software applications are universally expected to
             be integrated and accessed from within a learning management system (LMS). For example, Hypothes.is, an
             open-source technology for web annotation is now packaged and funneled into an LMS with
@@ -114,7 +111,7 @@
             </footnote> We now rely on markup-based management architectures that control university
             website delivery and our work in the <quote>technology</quote> of higher education is
             widely presumed to be about form-filling, at most using a limited tag set from a menu
-            system. We have been acculturated to expect that classes like <quote>Writing for the
+            system. We have been acculturated to expect that composition and digital media classes like <quote>Writing for the
                 Web</quote> are and <emphasis>should be</emphasis> about writing in Wordpress
             templates that provide carefully constrained and little-investigated access to the code
             layer. <quote>We do not ride on the railroad; it rides upon us,</quote> wrote Henry
@@ -128,7 +125,7 @@
                     2020-04-12.</para>
             </footnote>
         </para>
-        <para>Although we commit to developing course materials in frameworks that we do not choose for ourselves, those frameworks (e.g. Blackboard, Moodle, Canvas) are built from XML, which itself establishes the context of educational technology. Given universities’ deep investment in XML-based ecosystems, can we imagine a widely-accessible cross-disciplinary course that inverts the relationship between code and form-box, that engages students and faculty in organizing ideas with markup languages that they themselves control? Can a sustained exploration of the markup technologies that drive our writing experience on the web serve as a cross-disciplinary writing-intensive experience in its own right?</para>
+        <para>Although we have little practical choice but to commit to developing course materials in frameworks that we do not choose for ourselves, those frameworks (e.g. Blackboard, Moodle, Canvas) are built from XML building blocks which the savvy customer can occasionally learn about to try to modify parts of the system permissible to access. <footnote><para>See, for example, <link xlink:href="https://scholarlms.net/moodle-xml-format/">the documentation of Moodle XML format for quizzes</link>.</para></footnote>. XML establishes the context of educational technology in our educational institutions, but the way in which we access it is carefully gated in ways that benefit us but also relegate the technology under the hood to the level of the abstruse and esoteric. Those of us who build projects with markup and teach students to work with them are few in number, but we are the ones who are aware of the rapid fluency that people can gain when they learn to build and develop with XML. We understand that the XML markup and its family of languages itself has not become more abstruse or difficult to learn, but rather that this learning has been cultivated too narrowly to be recognized as a general skillset to cultivate. Yet given universities’ deep investment in XML-based ecosystems, can we imagine a widely-accessible cross-disciplinary course that inverts the relationship between code and form-box, that engages students and faculty in organizing ideas with markup languages that they themselves control? This paper argues that a sustained learning and application of markup technologies, not as implicit structure, but as explicit document data modeling and development, should serve as a broadly accessible cross-disciplinary writing-intensive experience in its own right.</para>
         <para>In awakening students to the technologies shaping composition, classes that teach
                 <quote>digital writing modalities</quote> (or composition that involves multiple
             media forms) may provide faculty markup practitioners a well-established and widely
