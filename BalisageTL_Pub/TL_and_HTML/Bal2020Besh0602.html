@@ -1,3 +1,5 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -9,497 +11,711 @@
       <div id="balisage-header">
          <h1 style="text-align: right; font-family: serif; margin:0.25em"><i>Balisage:</i>&nbsp;<small>The Markup Conference</small></h1>
       </div>
-      <div lang="en" class="article">
-         <div class="titlepage">
-            <h2 class="article-title" id="d1e5">Text Encoding and Literate Programming for a University Writing Intensive Course</h2>
-            <div class="author">
-               <h3 class="author">Elisa E. Beshero-Bondar</h3>
-               <div class="affiliation">
-                  <p class="jobtitle">Professor of Digital Humanities</p>
-                  <p class="jobtitle">Program Chair of Digital Media, Arts, and Technology</p>
-                  <p class="orgname">Penn State Erie, the Behrend College</p>
+      <html lang="en">
+         <head>
+            <title>Text Encoding and Literate Programming for a University Writing Intensive Course</title>
+            <link rel="stylesheet" href="balisage-plain.css" type="text/css">
+            <meta name="generator" content="Balisage Conference Proceedings XSLT (v1.2)"><script type="text/javascript">
+    function toggle(folderID) {
+      folder = document.getElementById("folder-"+folderID);
+      icon = document.getElementById("icon-"+folderID)
+      // need to:
+      //   switch folder.style.display between 'none' and 'block'
+      //   switch between collapse and expand icons
+      if (folder.style.display != "block") {
+        folder.style.display = "block";
+        icon.src = "minus.png" ;
+        icon.alt = "collapse" ;
+      }
+      else {
+        folder.style.display = "none";
+        icon.src = "plus.png" ;
+        icon.alt = "expand" ;
+      };
+      return;
+    }
+
+   function hidecite(citeID) {
+     cite = document.getElementById(citeID);
+     cite.style.display = "none";
+     return;
+   }
+   
+   function showcite(citeID,anchorID) {
+     cite = document.getElementById(citeID);
+
+     citeLeft = cite.style.left;
+     citeTop = cite.style.top;
+     
+     if (citeLeft != (getLeft(anchorID)+"px") ||
+         citeTop != (getTop(anchorID)+"px")) {
+       cite.style.display = "none";
+     }
+     
+     if (cite.style.display != "table-cell") {
+        movebox(citeID, anchorID);
+        cite.style.display = "table-cell";
+     }
+     else {
+       cite.style.display = "none";
+     };
+     return;
+   }
+
+   function movebox(citeID, anchorID) {
+
+     cite = document.getElementById(citeID);
+     
+     // alert(cite.offsetWidth + " by " + cite.offsetHeight)
+     
+     horizontalOffset = getLeft(anchorID);
+     // horizontalOffset = (inMain(anchorID)) ?
+     // (horizontalOffset - 260) : (horizontalOffset + 20)
+     // (horizontalOffset - (20 + cite.offsetWidth)) : (horizontalOffset + 20)
+
+     verticalOffset = getTop(anchorID);
+     // verticalOffset = (inMain(anchorID)) ?
+     // (verticalOffset - 20) : (verticalOffset + 20)
+     // (verticalOffset - (20 + cite.offsetHeight)) : (verticalOffset + 20)
+
+     /*
+     horizontalOffset = getAbsoluteLeft(anchorID) - getScrollLeft(anchorID) + 20;
+     if (inMain(anchorID)) {
+       horizontalOffset = horizontalOffset - 300;
+     }
+     verticalOffset = getAbsoluteTop(anchorID) - getScrollTop(anchorID) - 40;
+     if (inMain(anchorID)) {
+       verticalOffset = verticalOffset - 300;
+     }
+     */
+     
+     cite.style.left = horizontalOffset + "px";
+     cite.style.top = verticalOffset + "px";
+   }
+   
+   function getLeft(objectID) {
+     var left = getAbsoluteLeft(objectID) - getScrollLeft(objectID);
+     left = (inMain(objectID)) ? (left - 260) : (left + 20)    
+     return left;
+   }
+   
+   function getTop(objectID) {
+     var top = getAbsoluteTop(objectID) - getScrollTop(objectID);
+     top = (inMain(objectID)) ? (top - 50) : (top + 20)
+     return top;     
+   }
+   
+   function getAbsoluteLeft(objectId) {
+   // Get an object left position from the upper left viewport corner
+     o = document.getElementById(objectId)
+     oLeft = o.offsetLeft            // Get left position from the parent object
+     while(o.offsetParent!=null) {   // Parse the parent hierarchy up to the document element
+       oParent = o.offsetParent    // Get parent object reference
+       oLeft += oParent.offsetLeft // Add parent left position
+       o = oParent
+      }
+    return oLeft
+    }
+
+    function getAbsoluteTop(objectId) {
+    // Get an object top position from the upper left viewport corner
+      o = document.getElementById(objectId)
+      oTop = o.offsetTop            // Get top position from the parent object
+      while(o.offsetParent!=null) { // Parse the parent hierarchy up to the document element
+        oParent = o.offsetParent  // Get parent object reference
+        oTop += oParent.offsetTop // Add parent top position
+        o = oParent
+      }
+    return oTop
+    }
+
+   function getScrollLeft(objectId) {
+     // Get a left scroll position
+     o = document.getElementById(objectId)
+     oLeft = o.scrollLeft            // Get left position from the parent object
+     while(o.offsetParent!=null) {   // Parse the parent hierarchy up to the document element
+       oParent = o.offsetParent    // Get parent object reference
+       oLeft += oParent.scrollLeft // Add parent left position
+       o = oParent
+      }
+    return oLeft
+    }
+
+    function getScrollTop(objectId) {
+    // Get a right scroll position
+      o = document.getElementById(objectId)
+      oTop = o.scrollTop            // Get top position from the parent object
+      while(o.offsetParent!=null) { // Parse the parent hierarchy up to the document element
+        oParent = o.offsetParent  // Get parent object reference
+        oTop += oParent.scrollTop // Add parent top position
+        o = oParent
+      }
+    return oTop
+    }
+
+    function inMain(objectId) {
+    // returns true if in div#main
+      o = document.getElementById(objectId)
+      while(o.parentNode != null) { // Parse the parent hierarchy up to div#main
+        oParent = o.parentNode
+        if (o.id == "main") { return true; }
+        o = oParent;
+      }
+    return false;
+    }
+
+
+   /*
+   function showcite(citeID) {
+      cite = document.getElementById(citeID);
+      if (cite.style.display != "table-cell") {
+        cite.style.display = "table-cell";
+      }
+      else {
+        cite.style.display = "none";
+      };
+      return;
+    }
+    */
+
+      </script></head>
+         <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+            <div id="mast">
+               <div class="content">
+                  <h2 class="article-title" id="d2e5">Text Encoding and Literate Programming for a University Writing Intensive Course</h2>
+                  <div class="author">
+                     <h3 class="author">Elisa E. Beshero-Bondar</h3>
+                     <div class="affiliation">
+                        <p class="jobtitle">Professor of Digital Humanities</p>
+                        <p class="jobtitle">Program Chair of Digital Media, Arts, and Technology</p>
+                        <p class="orgname">Penn State Erie, the Behrend College</p>
+                     </div>
+                     <h5 class="author-email"><code class="email">&lt;<a class="email" href="mailto:eeb4@psu.edu">eeb4@psu.edu</a>&gt;</code></h5>
+                  </div>
+                  <div class="mast-box">
+                     <p class="title"><a href="javascript:toggle('d2e8')" class="quiet"><img class="toc-icon" src="plus.png" alt="expand" id="icon-d2e8"></a> <span onclick="javascript:toggle('d2e8');return true">Abstract</span></p>
+                     <div class="folder" id="folder-d2e8" style="display:none">
+                        <p>Can learning text encoding and markup languages constitute a <q>writing
+                              intensive</q> experience for university students? The author is developing a
+                           Text Encoding Fundamentals course with emphasis on text encoding as writing, as well
+                           as a proposal that this fulfill a major state university requirement of a
+                           research-oriented 300-level <q>writing intensive</q> or <q>W</q>
+                           course for undergraduate students. The course is specifically
+                           designed for those pursuing a Digital Media, Arts, and Technology major but must
+                           also be available to others in related disciplines as an experience in <q>writing across the curriculum</q>. While we may be familiar with
+                           arguments that coding and programming are a kind of literacy, the idea that
+                           developing projects with markup technologies may constitute an
+                           <span class="ital">intensive</span> writing experience is less familiar. The
+                           consideration of text encoding as writing intensive may establish a call for
+                           teaching markup technologies more widely in a cross-disciplinary context.</p>
+                        <p>Not just any course introducing students to markup should be considered writing
+                           intensive. Arguably, a class that involves tagging exercises without project
+                           development and invites students to write reflectively about the experience is not
+                           engaging in an <span class="ital">intensive</span> way with the writing work we associate
+                           with coding in a project development context. This paper argues that a
+                           <span class="ital">writing intensive</span> course in coding should take seriously
+                           the notion that coding and programming is a writing process that requires research
+                           and citation, algorithmic problem-solving and decision making, task management to
+                           organize a project team, and documentation to share the work and help others to
+                           build upon it. A course offering such experiences should, finally, be accessible to
+                           students from several disciplines, whether to a junior year English or history major
+                           with little to no programming experience, or a junior year computer science or
+                           information technology major with an interest in applied programming, unused to
+                           research questions that drive humanities scholarship. In presenting its case, this
+                           paper responds to a range of literature to evaluate the relationships among
+                           <span class="ital">encoding</span>, <span class="ital">coding</span>,
+                           <span class="ital">programming</span>, and <span class="ital">writing</span>.</p>
+                     </div>
+                  </div>
+                  <div class="toc">
+                     <p><b>Table of Contents</b></p>
+                     <dl>
+                        <dt><span class="section"><a href="#d2e75" class="toc">Coding literacy as a writing modality</a></span></dt>
+                        <dt><span class="section"><a href="#d2e301" class="toc">Writing intensively and across the curriculum with markup languages</a></span></dt>
+                     </dl>
+                  </div>
+                  <div class="mast-box">
+                     <p class="title"><a href="javascript:toggle('d2e36')" class="linkbox"><img class="toc-icon" src="plus.png" alt="expand" id="icon-d2e36"></a> <span onclick="javascript:toggle('d2e36');return true">Elisa E. Beshero-Bondar</span></p>
+                     <div class="folder" id="folder-d2e36" style="display:none">
+                        <h5 class="author-email"><code class="email">&lt;<a class="email" href="mailto:eeb4@psu.edu">eeb4@psu.edu</a>&gt;</code></h5>
+                        <div class="affiliation">
+                           <p class="jobtitle">Professor of Digital Humanities</p>
+                           <p class="jobtitle">Program Chair of Digital Media, Arts, and Technology</p>
+                           <p class="orgname">Penn State Erie, the Behrend College</p>
+                        </div>
+                        <div class="personblurb">
+                           <p>Elisa Beshero-Bondar is a member of the TEI Technical Council, as well as Professor
+                              of Digital Humanities and Program Chair of Digital Media, Arts, and Technology at
+                              Penn State Erie, the Behrend College. Until June 2020, she was a professor of English
+                              Literature and Director of the Center for the Digital Text at Pitt-Greensburg which
+                              has featured a markup languages as a foundation of a curriculum in Digital Studies.
+                              Her projects investigate complex texts such as epics, plays, and multi-volume voyage
+                              logs, and involve her in experimentations with the TEI, including refining methods
+                              for computer-assisted collation of editions and probing questions of interoperability
+                              to reconcile diplomatic and critical edition encodings. She is the founder and organizer
+                              of the <a href="http://digitalmitford.org" class="link" target="_new">Digital Mitford project</a> and <a href="https://digitalmitford.github.io/DigMitCS/" class="link" target="_new">its usually annual coding school</a>. Her ongoing adventures with markup technologies are documented on <a href="http://newtfire.org" class="link" target="_new">her development site at newtfire.org</a>. </p>
+                        </div>
+                     </div>
+                  </div>
                </div>
-               <h5 class="author-email"><code class="email">&lt;<a class="email" href="mailto:eeb4@psu.edu">eeb4@psu.edu</a>&gt;</code></h5>
             </div>
-            <div class="abstract">
-               <p class="title"><b>Abstract</b></p>
-               <p>Can learning text encoding and markup languages constitute a <q>writing
-                     intensive</q> experience for university students? The author is developing a
-                  Text Encoding Fundamentals course with emphasis on text encoding as writing, as well
-                  as a proposal that this fulfill a major state university requirement of a
-                  research-oriented 300-level <q>writing intensive</q> or <q>W</q>
-                  course for undergraduate students. The course is specifically
-                  designed for those pursuing a Digital Media, Arts, and Technology major but must
-                  also be available to others in related disciplines as an experience in <q>writing across the curriculum</q>. While we may be familiar with
-                  arguments that coding and programming are a kind of literacy, the idea that
-                  developing projects with markup technologies may constitute an
-                  <span class="ital">intensive</span> writing experience is less familiar. The
-                  consideration of text encoding as writing intensive may establish a call for
-                  teaching markup technologies more widely in a cross-disciplinary context.</p>
-               <p>Not just any course introducing students to markup should be considered writing
-                  intensive. Arguably, a class that involves tagging exercises without project
-                  development and invites students to write reflectively about the experience is not
-                  engaging in an <span class="ital">intensive</span> way with the writing work we associate
-                  with coding in a project development context. This paper argues that a
-                  <span class="ital">writing intensive</span> course in coding should take seriously
-                  the notion that coding and programming is a writing process that requires research
-                  and citation, algorithmic problem-solving and decision making, task management to
-                  organize a project team, and documentation to share the work and help others to
-                  build upon it. A course offering such experiences should, finally, be accessible to
-                  students from several disciplines, whether to a junior year English or history major
-                  with little to no programming experience, or a junior year computer science or
-                  information technology major with an interest in applied programming, unused to
-                  research questions that drive humanities scholarship. In presenting its case, this
-                  paper responds to a range of literature to evaluate the relationships among
-                  <span class="ital">encoding</span>, <span class="ital">coding</span>,
-                  <span class="ital">programming</span>, and <span class="ital">writing</span>.</p>
+            <div id="navbar"></div>
+            <div id="balisage-header" style="background-color: #6699CC"><a class="quiet" href="http://www.balisage.net"><img style="float:right;border:none" alt="Balisage logo" height="130" src="http://balisage.net/Logo/BalisageSeries-logo.png"></a><h2 class="page-header">Balisage: The Markup Conference</h2>
+               <h1 class="page-header">Proceedings preview</h1>
             </div>
-            <hr>
-         </div>
-         <div class="toc">
-            <p><b>Table of Contents</b></p>
-            <dl>
-               <dt><span class="section"><a href="#d1e75" class="toc">Coding literacy as a writing modality</a></span></dt>
-               <dt><span class="section"><a href="#d1e301" class="toc">Writing intensively and across the curriculum with markup languages</a></span></dt>
-            </dl>
-         </div>
-         <div class="section" id="d1e75">
-            <h2 class="title" style="clear: both">Coding literacy as a writing modality</h2>
-            <p>To any academic who remembers the exhilaration in the 1990s of navigating around an
-               Andrew File System and posting on it a <q>paperless syllabus</q> in a markup language, the application of the phrase <q>teaching with technology</q> in the university
-               discourse of the 2010s may have a jarring sound. Scholarly markup geeks
-               from a past century have lived to see <q>technology</q> for education be
-               packaged in learning management systems that securely take care of all of our
-               electronic interactions with students from posting announcements to grades. Even for
-               90s markup geeks, learning our way around the
-               technologies driving Blackboard and Canvas can be abstruse and fretfully time-consuming,
-               especially when we attempt applying their byzantine integrations with various proprietary
-               software applications like Zoom or Panopto. Publications supporting
-               educational technology innovations make evident that educational software applications
-               are universally expected to
-               be integrated and accessed from within a learning management system (LMS). For example,
-               Hypothes.is, an
-               open-source technology for web annotation is now packaged and funneled into an LMS
-               with
-               a proprietary gradebook integration, or faculty may not be aware of its existence
-               or
-               understand how to apply it in their courses.<sup class="fn-label"><a href="#d1e85" class="footnoteref" id="d1e85-ref">[1]</a></sup> A group of faculty from Seton Hall university found that <q>teaching
-                  with technology, can be the way to bridge perceived differences between disciplines,
-                  especially at the developmental stages of a writing-across-the-curriculum
-                  program</q>, and in their work to develop new technologically-enhanced courses,
-               they concentrate on the interactive writing opportunities afforded by faculty’s
-               encounter with a university-wide investment in a learning management system.<sup class="fn-label"><a href="#d1e95" class="footnoteref" id="d1e95-ref">[2]</a></sup> We now rely on markup-based management architectures that control university
-               website delivery and our work in the <q>technology</q> of higher education is
-               widely presumed to be about form-filling, at most using a limited tag set from a menu
-               system. We have been acculturated to expect that composition and digital media classes
-               like <q>Writing for the
-                  Web</q> are and <span class="ital">should be</span> about writing in Wordpress
-               templates that provide carefully constrained and little-investigated access to the
-               code
-               layer. <q>We do not ride on the railroad; it rides upon us,</q> wrote Henry
-               David Thoreau, and we might as well update that for today’s university content
-               management systems: we do not direct the content management system, it directs us.<sup class="fn-label"><a href="#d1e115" class="footnoteref" id="d1e115-ref">[3]</a></sup>
-               </p>
-            <p>Although we have little practical choice but to commit to developing course materials
-               in frameworks that we do not choose for ourselves, those frameworks (e.g. Blackboard,
-               Moodle, Canvas) are built from XML building blocks which the savvy customer can occasionally
-               learn about to try to modify parts of the system permissible to access. <sup class="fn-label"><a href="#d1e129" class="footnoteref" id="d1e129-ref">[4]</a></sup>. XML establishes the context of educational technology in our educational institutions,
-               but the way in which we access it is carefully gated in ways that benefit us but also
-               relegate the technology under the hood to the level of the abstruse and esoteric.
-               Those of us who teach students to write and build projects with markup technologies
-               may be few in number, but we are the ones who are aware of the skills our students
-               rapidly develop and hone over the course of a single semester—skills to build data
-               models, a search interfaces, and informational graphics according to their own design
-               and not funnelled through one or two particular brands of software. Learning XML with
-               its family of languages helps students to develop independently from <q>black box</q> software, and also helps make them informed consumers to choose the software they
-               want to commit to particular tasks, to find the software most amenable to user alterations
-               <q>under the hood</q> and most friendly to transporting the data when the software does not last. Learning
-               markup technologies is a way of learning the structures of the web of information,
-               and much the way we learn to write with and against the formal genre expectations
-               of an essay or a poem, we learn formal ways of containing data and relating metadata
-               in an XML framework in ways that are influenced by our interests in processing, sharing,
-               accessing the data. We write things that be read and acted upon by humans; and we
-               write markup to be read and parsed and acted upon by humans and machines.</p>
-            <p>XML markup and its family of languages itself has not become more abstruse or difficult
-               to learn since the millenium. Indeed, instruction is much easier now with many tutorials
-               available and more powerful processing methods available now.<sup class="fn-label"><a href="#d1e142" class="footnoteref" id="d1e142-ref">[5]</a></sup> However, the learning of markup technologies and the XML stack has been cultivated
-               too narrowly to be recognized as a general skillset beneficial to students across
-               disciplines. Given universities’ deep investment in XML-based ecosystems, can we imagine
-               a widely-accessible cross-disciplinary course that inverts the relationship between
-               code and form-box, that engages students and faculty in organizing ideas with markup
-               languages that they themselves control? This paper argues that a sustained learning
-               and application of markup technologies, not as implicit structure, but as explicit
-               document data modeling and development, should serve as a broadly accessible cross-disciplinary
-               writing-intensive experience in its own right. This exploration should open doors
-               to students who would otherwise not consider themselves <q>tech savvy</q> or capable programmers.</p>
-            <p>In awakening students to the technologies that shape composition, classes that teach
-               <q>digital writing modalities</q> (or composition that involves multiple
-               media forms) may provide faculty markup practitioners a well-established and widely
-               lauded context for teaching markup languages in a writing-intensive way. For writing
-               instructors, <q>digital writing modalities</q> or <q>multimodal
-                  writing</q> can motivate dialogue about the medium as the message and the choice
-               of form following function and audience. Addressing recent trends to assign student
-               writing compositions in digital modalities such as audio and video, Laura Giovanelli
-               and
-               Molly Keener observe that <q>Well-designed pedagogy recognizes multimodal writing’s
-                  potential to foster student agency and ownership as increasingly participatory
-                  citizens where literacy means composing in a range of print and digital media,
-                  genres, and modes, where students are consumers <span class="ital">and</span> ethical
-                  creators.</q>
-               <sup class="fn-label"><a href="#d1e160" class="footnoteref" id="d1e160-ref">[6]</a></sup> Writing with markup languages can easily be taught in the context of digital
-               multimodal composition that fosters student agency and ownership of the code base.
-               Much
-               as students compose by remixing and ironically applying visual or auditory memes,
-               they
-               might apply markup languages to compose by self-consciously reordering scripts of
-               official documents and develop controlled vocabularies that help communities access
-               their heritage.<sup class="fn-label"><a href="#d1e171" class="footnoteref" id="d1e171-ref">[7]</a></sup> Semester-long XML-based writing-intensive courses want access to a
-               good syntax-checking code editor (like the oXygen XML editor), writeable web space
-               with
-               secure FTP access, and possibly an XML database (like eXist-dB) and a GitHub account,
-               instead of, perhaps, the more ubiquitous Wordpress account and the Adobe suite as
-               the students’ multimodal writing
-               desk. While I do not expect every digital composition instructor to flock to
-               these technologies (though I wish they might), I do anticipate that those of us faculty
-               who can teach the XML
-               family of languages can do so in a way that constitutes a writing-intensive experience
-               valuable to students across the curriculum, and especially valuable in programs with
-               majors, minors, and certificate programs supporting the digital humanities.</p>
-            <p>Perhaps the most significant university context supporting university-wide
-               interdisciplinary pedagogy in coding and programming, and thereby markup languages
-               and
-               their applications, is the call for <q>coding across the curriculum</q>, which sometimes explores the intersections between writing and coding, seeing both
-               as a foundation for literacy in the twenty-first century. Programming is sometimes
-               described as a specifically actionable kind of language, or a language that combines
-               both actions and descriptions, and for this Annette Vee finds parallels in Kenneth
-               Burke’s speech-act theory of human expression as performative. Vee finds that coding
-               and programming to be a distinctly machine-actionable kind of writing in a language
-               shared by human communities that support it:
-               
-               <div class="blockquote">
-                  <blockquote class="blockquote">
-                     <p>Since the advent of text-based programming languages, code is a form of
-                        writing as well as an enactment of procedures. Now that most of our writing is done
-                        with computational devices, it is no longer possible to fully extricate writing from
-                        programming, just as it is impossible to untangle
-                        writing from speech, or literacy from orality. Exploring the nature of
-                        language, action, and expression through programming allows us to think
-                        about the relationship between writing and speech differently and also to
-                        consider the ways in which technologies can combine with and foster
-                        human abilities. Computational and textual literacy are not simply parallel
-                        abilities, but intersectional, part of a new and larger version of literacy.<sup class="fn-label"><a href="#d1e188" class="footnoteref" id="d1e188-ref">[8]</a></sup></p>
-                  </blockquote>
+            <div id="main">
+               <div class="article">
+                  <h2 class="article-title" id="d2e5">Text Encoding and Literate Programming for a University Writing Intensive Course</h2>
+                  <div class="section" id="d2e75">
+                     <h2 class="title" style="clear: both">Coding literacy as a writing modality</h2>
+                     <p>To any academic who remembers the exhilaration in the 1990s of navigating around an
+                        Andrew File System and posting on it a <q>paperless syllabus</q> in a markup language, the application of the phrase <q>teaching with technology</q> in the university
+                        discourse of the 2010s may have a jarring sound. Scholarly markup geeks
+                        from a past century have lived to see <q>technology</q> for education be
+                        packaged in learning management systems that securely take care of all of our
+                        electronic interactions with students from posting announcements to grades. Even for
+                        90s markup geeks, learning our way around the
+                        technologies driving Blackboard and Canvas can be abstruse and fretfully time-consuming,
+                        especially when we attempt applying their byzantine integrations with various proprietary
+                        software applications like Zoom or Panopto. Publications supporting
+                        educational technology innovations make evident that educational software applications
+                        are universally expected to
+                        be integrated and accessed from within a learning management system (LMS). For example,
+                        Hypothes.is, an
+                        open-source technology for web annotation is now packaged and funneled into an LMS
+                        with
+                        a proprietary gradebook integration, or faculty may not be aware of its existence
+                        or
+                        understand how to apply it in their courses.<sup class="fn-label"><a href="#d2e85" class="footnoteref" id="d2e85-ref">[1]</a></sup> A group of faculty from Seton Hall university found that <q>teaching
+                           with technology, can be the way to bridge perceived differences between disciplines,
+                           especially at the developmental stages of a writing-across-the-curriculum
+                           program</q>, and in their work to develop new technologically-enhanced courses,
+                        they concentrate on the interactive writing opportunities afforded by faculty’s
+                        encounter with a university-wide investment in a learning management system.<sup class="fn-label"><a href="#d2e95" class="footnoteref" id="d2e95-ref">[2]</a></sup> We now rely on markup-based management architectures that control university
+                        website delivery and our work in the <q>technology</q> of higher education is
+                        widely presumed to be about form-filling, at most using a limited tag set from a menu
+                        system. We have been acculturated to expect that composition and digital media classes
+                        like <q>Writing for the
+                           Web</q> are and <span class="ital">should be</span> about writing in Wordpress
+                        templates that provide carefully constrained and little-investigated access to the
+                        code
+                        layer. <q>We do not ride on the railroad; it rides upon us,</q> wrote Henry
+                        David Thoreau, and we might as well update that for today’s university content
+                        management systems: we do not direct the content management system, it directs us.<sup class="fn-label"><a href="#d2e115" class="footnoteref" id="d2e115-ref">[3]</a></sup>
+                        </p>
+                     <p>Although we have little practical choice but to commit to developing course materials
+                        in frameworks that we do not choose for ourselves, those frameworks (e.g. Blackboard,
+                        Moodle, Canvas) are built from XML building blocks which the savvy customer can occasionally
+                        learn about to try to modify parts of the system permissible to access. <sup class="fn-label"><a href="#d2e129" class="footnoteref" id="d2e129-ref">[4]</a></sup>. XML establishes the context of educational technology in our educational institutions,
+                        but the way in which we access it is carefully gated in ways that benefit us but also
+                        relegate the technology under the hood to the level of the abstruse and esoteric.
+                        Those of us who teach students to write and build projects with markup technologies
+                        may be few in number, but we are the ones who are aware of the skills our students
+                        rapidly develop and hone over the course of a single semester—skills to build data
+                        models, a search interfaces, and informational graphics according to their own design
+                        and not funnelled through one or two particular brands of software. Learning XML with
+                        its family of languages helps students to develop independently from <q>black box</q> software, and also helps make them informed consumers to choose the software they
+                        want to commit to particular tasks, to find the software most amenable to user alterations
+                        <q>under the hood</q> and most friendly to transporting the data when the software does not last. Learning
+                        markup technologies is a way of learning the structures of the web of information,
+                        and much the way we learn to write with and against the formal genre expectations
+                        of an essay or a poem, we learn formal ways of containing data and relating metadata
+                        in an XML framework in ways that are influenced by our interests in processing, sharing,
+                        accessing the data. We write things that be read and acted upon by humans; and we
+                        write markup to be read and parsed and acted upon by humans and machines.</p>
+                     <p>XML markup and its family of languages itself has not become more abstruse or difficult
+                        to learn since the millenium. Indeed, instruction is much easier now with many tutorials
+                        available and more powerful processing methods available now.<sup class="fn-label"><a href="#d2e142" class="footnoteref" id="d2e142-ref">[5]</a></sup> However, the learning of markup technologies and the XML stack has been cultivated
+                        too narrowly to be recognized as a general skillset beneficial to students across
+                        disciplines. Given universities’ deep investment in XML-based ecosystems, can we imagine
+                        a widely-accessible cross-disciplinary course that inverts the relationship between
+                        code and form-box, that engages students and faculty in organizing ideas with markup
+                        languages that they themselves control? This paper argues that a sustained learning
+                        and application of markup technologies, not as implicit structure, but as explicit
+                        document data modeling and development, should serve as a broadly accessible cross-disciplinary
+                        writing-intensive experience in its own right. This exploration should open doors
+                        to students who would otherwise not consider themselves <q>tech savvy</q> or capable programmers.</p>
+                     <p>In awakening students to the technologies that shape composition, classes that teach
+                        <q>digital writing modalities</q> (or composition that involves multiple
+                        media forms) may provide faculty markup practitioners a well-established and widely
+                        lauded context for teaching markup languages in a writing-intensive way. For writing
+                        instructors, <q>digital writing modalities</q> or <q>multimodal
+                           writing</q> can motivate dialogue about the medium as the message and the choice
+                        of form following function and audience. Addressing recent trends to assign student
+                        writing compositions in digital modalities such as audio and video, Laura Giovanelli
+                        and
+                        Molly Keener observe that <q>Well-designed pedagogy recognizes multimodal writing’s
+                           potential to foster student agency and ownership as increasingly participatory
+                           citizens where literacy means composing in a range of print and digital media,
+                           genres, and modes, where students are consumers <span class="ital">and</span> ethical
+                           creators.</q>
+                        <sup class="fn-label"><a href="#d2e160" class="footnoteref" id="d2e160-ref">[6]</a></sup> Writing with markup languages can easily be taught in the context of digital
+                        multimodal composition that fosters student agency and ownership of the code base.
+                        Much
+                        as students compose by remixing and ironically applying visual or auditory memes,
+                        they
+                        might apply markup languages to compose by self-consciously reordering scripts of
+                        official documents and develop controlled vocabularies that help communities access
+                        their heritage.<sup class="fn-label"><a href="#d2e171" class="footnoteref" id="d2e171-ref">[7]</a></sup> Semester-long XML-based writing-intensive courses want access to a
+                        good syntax-checking code editor (like the oXygen XML editor), writeable web space
+                        with
+                        secure FTP access, and possibly an XML database (like eXist-dB) and a GitHub account,
+                        instead of, perhaps, the more ubiquitous Wordpress account and the Adobe suite as
+                        the students’ multimodal writing
+                        desk. While I do not expect every digital composition instructor to flock to
+                        these technologies (though I wish they might), I do anticipate that those of us faculty
+                        who can teach the XML
+                        family of languages can do so in a way that constitutes a writing-intensive experience
+                        valuable to students across the curriculum, and especially valuable in programs with
+                        majors, minors, and certificate programs supporting the digital humanities.</p>
+                     <p>Perhaps the most significant university context supporting university-wide
+                        interdisciplinary pedagogy in coding and programming, and thereby markup languages
+                        and
+                        their applications, is the call for <q>coding across the curriculum</q>, which sometimes explores the intersections between writing and coding, seeing both
+                        as a foundation for literacy in the twenty-first century. Programming is sometimes
+                        described as a specifically actionable kind of language, or a language that combines
+                        both actions and descriptions, and for this Annette Vee finds parallels in Kenneth
+                        Burke’s speech-act theory of human expression as performative. Vee finds that coding
+                        and programming to be a distinctly machine-actionable kind of writing in a language
+                        shared by human communities that support it:
+                        
+                        <div class="blockquote">
+                           <blockquote class="blockquote">
+                              <p>Since the advent of text-based programming languages, code is a form of
+                                 writing as well as an enactment of procedures. Now that most of our writing is done
+                                 with computational devices, it is no longer possible to fully extricate writing from
+                                 programming, just as it is impossible to untangle
+                                 writing from speech, or literacy from orality. Exploring the nature of
+                                 language, action, and expression through programming allows us to think
+                                 about the relationship between writing and speech differently and also to
+                                 consider the ways in which technologies can combine with and foster
+                                 human abilities. Computational and textual literacy are not simply parallel
+                                 abilities, but intersectional, part of a new and larger version of literacy.<sup class="fn-label"><a href="#d2e188" class="footnoteref" id="d2e188-ref">[8]</a></sup></p>
+                           </blockquote>
+                        </div>
+                        When coding is understood as literacy, its nexus with writing becomes explicit when
+                        we think of it on the same terms as developing language skills. Coding should be as
+                        ubiquitous and familiar to students as the writing they have been learning since childhood.
+                        Coding does not belong to computer science departments any more than writing belongs
+                        to English departments, as David J. Birnbaum and Alison Langmead make explicit:
+                        
+                        <div class="blockquote">
+                           <blockquote class="blockquote">
+                              <p>The first step toward learning to code is to recognize that computer programming is
+                                 not computer science; it is more like writing. Everyone can learn to do it, and can
+                                 be given the opportunity to learn to do it in ways that are appropriate for their
+                                 disciplines. We offer humanists years of practice in learning to write; let us give
+                                 them the chance also to learn to code. The second step is to recognize that learning
+                                 a
+                                 programming language is like learning a foreign language, except that it is much
+                                 easier.<sup class="fn-label"><a href="#d2e201" class="footnoteref" id="d2e201-ref">[9]</a></sup></p>
+                           </blockquote>
+                        </div>
+                        These are analogies to learning to write or learning a foreign language, intended
+                        to persuade humanists to adopt coding into their disciplines, but the analogies do
+                        not in themselves constitute an argument for coding and programming as potentially
+                        an intensive professional writing experience for students of any discipline.</p>
+                     <p>That argument for the writing-intensiveness of coding can be found <q>outside</q> the humanities. In the context of programming education, Felienne Hermans and Marlies
+                        Aldewereld propose that more students would be interested in computer science if they
+                        learned to program in a way that followed models for learning to write. They suggest
+                        that programming instruction would be improved if it adapted the way writing instructors
+                        model examples of their writing process for students to break it down into discrete
+                        tasks more efficiently. They cite a study in which the elementary students comprehended
+                        scientific concepts better when they were assigned short writing assignments that
+                        engaged the topic. The suggestion that writing reflectively and observantly, and understanding
+                        a context for a program to be working makes the material more widely accessible and
+                        <q>could help a broader group of kids identify as programmers!</q><sup class="fn-label"><a href="#d2e215" class="footnoteref" id="d2e215-ref">[10]</a></sup> Indeed, this emphasis on writing to learn a science enacts a return to an earlier
+                        and more integrated approach to education, before the <q>sciences</q> had become formally distinct from <q>humanities</q>: the late eighteenth century saw the scientific poems of Erasmus Darwin and calls
+                        for poetry that would bring zoology and botany to life and encourage sympathy with
+                        the natural world.<sup class="fn-label"><a href="#d2e231" class="footnoteref" id="d2e231-ref">[11]</a></sup> We have known that the act of writing enhances learning in across disciplines for
+                        a long time now. But futher, as Hermans and Alderweld point out, students can learn
+                        programming more easily if they are taught in the mode of writing instruction, with
+                        modeled examples and activities that hone observation skills.</p>
+                     <p>It is probably no coincidence that Donald Knuth modeled his concept of <q>literate programming</q> with programming for document formatting in the 1980s. In this context the programming
+                        of a machine to format electronic documents unites fundamentally with the action and
+                        reproduction of writing. Knuth’s now-familiar concept seems simple in hindsight: <q>Instead of imagining that our main task is to instruct a computer what to do, let
+                           us concentrate rather on explaining to human beings what we want a computer to do.</q><sup class="fn-label"><a href="#d2e248" class="footnoteref" id="d2e248-ref">[12]</a></sup> The process of literate programming heightens an old association of verbal text with
+                        fabric textile, applying Knuth’s concepts of <span class="ital">weave</span> and <span class="ital">tangle</span>: 
+                        <div class="blockquote">
+                           <blockquote class="blockquote">
+                              <p>One line of processing is called <span class="ital">weaving</span> the web; it produces a document that describes the program clearly and that facilitates
+                                 program maintenance. The other line of processing is called <span class="ital">tangling</span> the web; it produces a machine-executable program. The program and its documentation
+                                 are both generated from the same source, so they are consistent with each other.<sup class="fn-label"><a href="#d2e273" class="footnoteref" id="d2e273-ref">[13]</a></sup></p>
+                           </blockquote>
+                        </div> Literate programming became paradigmatic for the the XML family of languages by the
+                        turn of the new millenium. In 2002 Norm Walsh modeled its application to the DocBook
+                        XSLT stylesheets by applying namespaces to permit the tangling of actionable code
+                        with documentation.<sup class="fn-label"><a href="#d2e277" class="footnoteref" id="d2e277-ref">[14]</a></sup>. And over the course of its development from the early 1990s onward, the One-Document-Does-It-All
+                        (ODD) system represents a path-breaking example of literate programming for the purpose
+                        of compiling and delivering the Guidelines of the Text Encoding Initiative (TEI) as
+                        a combination of documentation and processing code instantiating the schema rules
+                        of the community-maintained XML vocabulary.<sup class="fn-label"><a href="#d2e289" class="footnoteref" id="d2e289-ref">[15]</a></sup> With its deep investment in literate programming, the XML family of languages should
+                        be understood to be perhaps the most thoroughly invested in writing processes. Taken
+                        together, tangling and weaving in the development of markup projects should be understood
+                        across the university as a writing intensive experience, worthy of incorporation in
+                        the curriculum as such.</p>
+                  </div>
+                  <div class="section" id="d2e301">
+                     <h2 class="title" style="clear: both">Writing intensively and across the curriculum with markup languages</h2>
+                     <p>We certainly have a beginning, but the literature is mixed. </p>
+                     <p>REWORK THIS. The XML family of languages were designed not only to be widely accessible,
+                        but also to be a vocabulary that the writer controls or consults or interacts with
+                        in a hierarchical structure. It does not take very long to acquaint new coders to
+                        the rules of how to tag a document, or how to turn a <q>plain text</q> document into an XML document, though often people experience a little frustration
+                        with typing in the attributes or figuring what they can do with attributes. The first
+                        week or two of a class that involves markup methods can orient people to how to code
+                        something in XML, but the interesting experience of that can be when we ask students
+                        to develop their own hierarchies to organize what they are reading, and when we invite
+                        our students to try to recognize what is implicit, and find ways to use elements,
+                        attributes, or comments to make that explicit. The act of inscribing markup has been
+                        recognized (CITE KATE SINGER) as a writing process, but if it goes no further than
+                        an exercise in tagging, perhaps we should consider this something like writing a reflective
+                        paper, a response that sharpens one’s observation and critical thinking skills. In
+                        my years of teaching undergraduates to code, I notice in the first couple of weeks
+                        that certain students have difficulties with conceptualizing dependencies, or what
+                        the relationship between an element and an attribute and its value ought to be. They
+                        sometimes prepare shallow hierarchies, and instead of bundling list items together
+                        in a cluster, make a very flat tree where every line is its own entry. These students
+                        benefit from seeing more detailed markup, and also from understanding something about
+                        how the markup may be processed, how it can be used to organize and access particular
+                        kinds of information. For that reason, I have found that inviting my students to write
+                        their first markup on a recipe, one that contains an interesting variety of ingredients,
+                        measurement units, and activities, provides a very clear and easily recognizable sense
+                        of structure with lots of categories of information. [CITE Newtfire XML EX 1] So,
+                        too, does a poem, or a piece of historical correspondence. Students who have difficulty
+                        constructing dependent clauses may find the preparation of an informative, non-redundant
+                        hierarchy just as challenging. Quite frequently student beginners will take the text
+                        content of a document and repeat it in an attribute value, as for example wrapping
+                        code around a name as given in a text, and using that name in an attribute value on
+                        the element, until they receive some suggestions that they might want to use the attribute
+                        as a key for a standard identifier whenever this individual is mentioned by their
+                        various names.</p>
+                     <p>Learning to code the XML syntax is easy. Learning to optimize one’s preparation of
+                        XML takes a long time, takes practice, and takes application, just like learning to
+                        write good sentences and paragraphs, and learning to develop a research paper or a
+                        thesis. Just like these progressively more complex writing activities, we can identify
+                        levels of intensity in increasing applications of markup technologies, and the challenges
+                        to the thinking and communication process are remarkably similar. The increasing intensity
+                        is not simply due to learning new technologies, but rather becomes gradually more
+                        intensive in cognitive ways. The process of becoming a better reader and writer and
+                        coder and developer is also the process of becoming more adept in organizing and processing
+                        information. Writing may be easily recognizable in the practice we call mere tagging
+                        in first-time coders, but the way one becomes a better writer with markup is by learning
+                        what can be done with and made from the markup. The processes of navigating, extracting,
+                        transforming, and remixing data marked in an XML tree define the <span class="ital">intensive</span>  part of the writing process. When students learn only tagging and do not learn how
+                        to parse their own code, they remain unaware of what the markup makes possible, and
+                        they may often be unaware of the problems imposed by imprecision and inconsistency.
+                        They may be tagging correctly, but not in a way that communicates meaningfully or
+                        reliably. Worse yet, in becoming aware of the human unreliabilities in applying markup,
+                        they may come away with the idea that the tree structures we create are arbitrary,
+                        exert an aggressive control over a document. [CITE] This line of thinking relies on
+                        an unsustained, non-intensive engagement with marked documents and an unfortunate
+                        separation of the technologies of managing and processing XML from instruction in
+                        markup.</p>
+                     <p>Just as we think of free-writing as a valuable exercise to start a first preliminary
+                        draft in a composition class, in teaching markup, a certain amount of mess and unreliability
+                        is okay as we are learning or figuring out what matters to prioritize. Often new coders
+                        introduce far more differently named elements than they really need, or that would
+                        be baffling to keep track of in a real-life project. To come to an understanding of
+                        how to code helpfully and meaningfully, a student needs to confront the problem of
+                        sharing and reproducibility—concepts parallel to the awareness of an audience emphasized
+                        in rhetoric and composition classes as a means to craft better sentences, to trim
+                        out verbosity.</p>
+                     <p>Students often improve their markup dramatically when they learn to write Relax NG
+                        schema code, that creates rules for encoding. This may be a first data-modeling experience
+                        for students in a general education context, when they are called upon to think in
+                        a <q>meta</q> or higher order reflective way about formalizing their code, and making it possible
+                        for others to understand it and reproduce it.</p>
+                     <p>
+                        (recipe coding)
+                        (recipe coding with a shared context)
+                        (designing a schema and of controlled vocabularies: within a project)
+                        (decision processes for controlled vocabularies with the TEI)
+                        
+                        DATA PREPARATION: 
+                        up-conversion with regular expressions: pattern recognition. Useful for all kinds
+                        of text analysis, as in stemming patterns for natural language processing. In XML,
+                        a power tool for preparing a large-sized corpus of documents. 
+                        
+                        
+                        XSLT: constructing templates and accounting for nodes. Deciding what can be ignored.
+                        Revisiting your decisions
+                        Push and pull processing
+                        
+                        XQUERY and persistent datatyping
+                        Encounters with marked up text get you someplace different than unmarked text, and
+                        give students a constructive experience with data curation and preparation. 
+                        CITE: Clifford Anderson's Balisage paper: On Teaching XQuery to Digital Humanists:
+                        <q>XQuery makes it possible for students to become productive without having to learn
+                           as many computer science or software engineering concepts. A simple four or five line
+                           FLWOR expression can easily demonstrate the power of XQuery and provide a basis for
+                           students' tinkering and exploration.</q> And, as Anderson affirms, it is part of a full stack development  http://www.balisage.net/Proceedings/vol13/html/Anderson01/BalisageVol13-Anderson01.html
+                        
+                        DOCUMENTATION and SHARING the work: establishing a context
+                        When students prepare a project in markup, they are not simply writing papers to be
+                        filed in a course-specific context. They are preparing a research site and their work
+                        can often be continued by them or others. Students can be building beyond the constraints
+                        of a single semester, and even if they are not tempted to return to the project, they
+                        can leave scaffolding behind for others to continue the work or alter its direction,
+                        or retrieve the files. Awareness of the potential energy of the work they are doing
+                        can give shape to an encounter with markup languages in the course of a semester.
+                        The energy input over a course of weeks puts emphasis on preparing material that others
+                        can read and reuse. Indeed, assignments for a writing intensive experience can be
+                        constructed with attention to:
+                        1) reading the code and documentation of other projects, and building on it
+                        2) preparing documentation meant to be read by peers and professor(s) working with
+                        you, and meant to be read by others who access your code from a repository. Such documentation
+                        may include:
+                        * Kanban board workflow management
+                        * README.md files
+                        * task lists and issues
+                        * being responsible and <q>on-call</q> for responding to questions and assisting your teammates
+                        
+                        These are activities to do with taking responsibility for method and processes, for
+                        managing the intellectual content of a project. Studying how copyright applies to
+                        code and markup and choosing a license for sharing the work should be part of this
+                        experience. 
+                        Giving students access to the full set of tools in the XML arsenal and establishing
+                        both immediate (in-semester) short-range and long-range possibilities for their work
+                        will introduce students from any background to the power of markup languages and with
+                        the experience of writing to form and connect with communities of practice. This cannot
+                        fail to be a professionalizing experience. Even in developing projects that are not
+                        successful, there will be opportunities to recognize in failures what to document,
+                        how to redo the work differently, how another group might start over—the project-oriented
+                        awareness gives space for documentation to <q>sunset</q> the work. Whether or not students go on to use markup again after the course is over,
+                        they will have engaged with a powerful form of writing that marks up, investigates,
+                        curates, propagates, and conserves textual data. This is the very definition of a
+                        writing-intensive experience that is both professionalizing and cross-disciplinary
+                        in its reach. 
+                        
+                        Monitoring git commit messages and documentation 
+                        
+                        (documentation, XML Comments, git commits, methodology pages, sharing the work with
+                        others)
+                        (research in the field: referencing is connecting and networking)
+                        
+                        
+                        CUT: YOUR GOAL ISN'T TO MAKE EVERYBODY DO THIS, BUT JUST TO RECOGNIZE THAT WHEN IT
+                        IS TAUGHT IT OUGHT TO BE RECOGNIZED AND CREDITED AS WRITING INTENSIVE.
+                        How hard is this for Humanities faculty to learn? 
+                        Faculty workshops and training can provide it, but it is not often offered, and perhaps
+                        we need to overcome a presumption that faculty will not be interested in the material.
+                        Where do we markup practitioners imagine that we find an audience for instructional
+                        materials? Who should be learning these technologies? Can this be treated not <span class="ital">only</span> as a restricted technological preserve, but as an encounter with what digital texts
+                        can be made of, as a component of digital literacy for humanities faculty and graduate
+                        programs? Can we encourage and incentivize the learning, teaching, and sharing of
+                        these technologies? The author learned enough of a foundation in a range of languages
+                        in a 15-week semester thanks to the existence of a course taught by David J. Birnbaum
+                        in the University of Pittsburgh’s Honors College program CITE, and she learned alongside
+                        a group of undergraduates, working in teams on semester projects as described in this
+                        paper. While she took the course to learn how to develop a digital edition project,
+                        she exited with the basis for developing new courses and imagining new ways of working
+                        on projects with students. Other faculty at Pitt and Pitt-Greensburg have lit their
+                        torches from the same pedagogical fires, and we are aware of faculty at UVic, U of
+                        Maryland, Bucknell, and Vanderbilt (just to name a few) who teach humanities students
+                        to engage with a range of XML technologies. 
+                        
+                        Teaching Markup Languages during a Pandemic
+                        Teaching a writing-intensive course in markup modalities offers little distress for
+                        adaptation to a remote learning environment, as we had to do recently after the university
+                        closed down face-to-face classes. This kind of class works for connecting synchronously
+                        OR asynchronously. It was much easier to continue the management of a course based
+                        on markup technologies in which students had been trained to work with project management
+                        tools and to be writing and sharing their documentation in GitHub repositories and
+                        over Slack channels than to retool one in which in-class daily discussion and traditional
+                        kinds of assignments prevailed. The digital modalities organizing our class were lively
+                        enough that the coding class might properly be recognized as <q>flipped</q>, in which most of the learning was already taking place in an applied context outside
+                        of class, while student and faculty class meetings reviewed content all together,
+                        to learn how to interact with an unfamiliar interface or to review issues students
+                        are having or help address something that is not working. 
+                        </p>
+                  </div>
+                  <div class="footnotes"><br><hr width="100" align="left">
+                     <div id="d2e85" class="footnote">
+                        <p><sup class="fn-label"><a href="#d2e85-ref" class="footnoteref">[1]</a></sup> On the day of this writing, 12 April 2020, the <a href="https://web.hypothes.is/" class="link" target="_new">https://web.hypothes.is/</a>
+                           promotes its proprietary LMS integration over its always free web service.
+                           Nevertheless, a paid-for integration with an LMS is unnecessary to anyone with
+                           access to a web browser and a capacity to follow clear and simple instructions
+                           to create a public or private annotation group.</p>
+                     </div>
+                     <div id="d2e95" class="footnote">
+                        <p><sup class="fn-label"><a href="#d2e95-ref" class="footnoteref">[2]</a></sup> Kelly A. Shea, Mary McAleer Balkun, Susan A. Nolan, John T. Saccoman, and
+                           Joyce Wright, <q>One More Time: Transforming the Curriculum Across the
+                              Disciplines Through Technology-Based Faculty Development and
+                              Writing-Intensive Course Redesign</q>
+                           <span class="ital">Across the Disciplines</span> Volume 3
+                           (2006) <a href="https://wac.colostate.edu/docs/atd/articles/shea2006.pdf" class="link" target="_new">https://wac.colostate.edu/docs/atd/articles/shea2006.pdf</a> Accessed 25 April 2020.</p>
+                     </div>
+                     <div id="d2e115" class="footnote">
+                        <p><sup class="fn-label"><a href="#d2e115-ref" class="footnoteref">[3]</a></sup> Henry David Thoreau, <q>Where I lived and what I lived for</q>
+                           <span class="ital">Walden: A Fluid-Text Edition. Digital Thoreau.</span>
+                           Version A (1847), para 17, <a href="http://digitalthoreau.org/fluid-text-toc" class="link" target="_new">http://digitalthoreau.org/fluid-text-toc</a>. Accessed
+                           2020-04-12.</p>
+                     </div>
+                     <div id="d2e129" class="footnote">
+                        <p><sup class="fn-label"><a href="#d2e129-ref" class="footnoteref">[4]</a></sup> See, for example, <a href="https://scholarlms.net/moodle-xml-format/" class="link" target="_new">the documentation of Moodle XML format for quizzes</a>.</p>
+                     </div>
+                     <div id="d2e142" class="footnote">
+                        <p><sup class="fn-label"><a href="#d2e142-ref" class="footnoteref">[5]</a></sup> The author finds it is becoming easier to teach XPath, XSLT, and XQuery since the
+                           introduction of XPath 3.0 and 3.1 with the simplicity of reading the application of
+                           multiple functions using the simple map and arrow concatenator. These have made it
+                           easier to follow a simple step-by-step thinking process in chaining functions together.
+                           This improvement in XPath readability is a refinement of our available writing instruments
+                           making them far more accessible to new learners.</p>
+                     </div>
+                     <div id="d2e160" class="footnote">
+                        <p><sup class="fn-label"><a href="#d2e160-ref" class="footnoteref">[6]</a></sup> Laura Giovanelli and Molly Keener, <q>How to talk about copyright so kids
+                              will listen, and how to listen about copyright so kids will talk</q> in
+                           Grace Veach, <span class="ital">Teaching​ Information Literacy and Writing
+                              Studies: Volume 2, Upper-Level and Graduate Courses</span> (Purdue
+                           University Press, 2019-01-15), 225. ProQuest ebook.
+                           </p>
+                     </div>
+                     <div id="d2e171" class="footnote">
+                        <p><sup class="fn-label"><a href="#d2e171-ref" class="footnoteref">[7]</a></sup> A good example of such application of markup languages is <a href="https://dhtraining.org/hilt/course/introduction-to-the-text-encoding-initiative-tei-for-black-digital-humanities/" class="link" target="_new">Jessica Lu’s and Caitlin Pollock’s 2019 HILT course, <q>Introduction to
+                                 the Text Encoding Initiative (TEI) for Black Digital
+                                 Humanities</q></a> which organized training in markup to support
+                           <q>new ways of accessing, reading, sharing, and analyzing texts of
+                              marginalized people</q>.</p>
+                     </div>
+                     <div id="d2e188" class="footnote">
+                        <p><sup class="fn-label"><a href="#d2e188-ref" class="footnoteref">[8]</a></sup>  Vee, Annette, <span class="ital">Coding Literacy: How Computer Programming Is Changing Writing</span>
+                           The MIT Press, 2017. <a href="doi:10.2307/j.ctt1s476xn" class="link" target="_new">https://www.jstor.org/stable/j.ctt1s476xn</a>. Accessed 14 Apr. 2020.</p>
+                     </div>
+                     <div id="d2e201" class="footnote">
+                        <p><sup class="fn-label"><a href="#d2e201-ref" class="footnoteref">[9]</a></sup>  David J. Birnbaum and Alison Langmead, <q>Task-Driven Programming Pedagogy in the Digital Humanities</q> in <span class="ital">New Directions for Computing Education: Embedding Computing Across Disciplines</span>, ed. Samuel B. Fee, Amanda M. Holland-Minkley, and Thomas E. Lombardi (Springer International
+                           Publishing, 2017) 76.</p>
+                     </div>
+                     <div id="d2e215" class="footnote">
+                        <p><sup class="fn-label"><a href="#d2e215-ref" class="footnoteref">[10]</a></sup>  Felienne Hermans and Marlies Aldewereld, <q>Programming is Writing is Programming</q> <span class="ital">Programming '17: Companion to the first International Conference on the Art, Science
+                              and Engineering of Programming</span> No.33 (April 2017) 1-8; 7. <a href="https://dl.acm.org/doi/pdf/10.1145/3079368.3079413" class="link" target="_new">https://dl.acm.org/doi/pdf/10.1145/3079368.3079413</a>.</p>
+                     </div>
+                     <div id="d2e231" class="footnote">
+                        <p><sup class="fn-label"><a href="#d2e231-ref" class="footnoteref">[11]</a></sup> For context, see Sharon Ruston, <q>The Application of Natural History to Poetry</q> <span class="ital">Literature and Science Hub</span> University of Liverpool. <a href="https://www.liverpool.ac.uk/literature-and-science/essays/ruston_hist/" class="link" target="_new">https://www.liverpool.ac.uk/literature-and-science/essays/ruston_hist/</a>. Accessed 14 April 2020. </p>
+                     </div>
+                     <div id="d2e248" class="footnote">
+                        <p><sup class="fn-label"><a href="#d2e248-ref" class="footnoteref">[12]</a></sup> Donald Knuth, <q>Literate Programming</q>, <span class="ital">The Computer Journal</span> 27:2 (1984) 97-111, 97. <a href="https://doi.org/10.1093/comjnl/27.2.97" class="link" target="_new">https://doi.org/10.1093/comjnl/27.2.97</a>. Accessed 25 April 2020.</p>
+                     </div>
+                     <div id="d2e273" class="footnote">
+                        <p><sup class="fn-label"><a href="#d2e273-ref" class="footnoteref">[13]</a></sup> Knuth 2.</p>
+                     </div>
+                     <div id="d2e277" class="footnote">
+                        <p><sup class="fn-label"><a href="#d2e277-ref" class="footnoteref">[14]</a></sup> Norman Walsh, <q>Literate Programming in XML</q> presented at <span class="ital">XML 2002</span>, 15 October 2002. <a href="https://nwalsh.com/docs/articles/xml2002/lp/paper.html" class="link" target="_new">https://nwalsh.com/docs/articles/xml2002/lp/paper.html</a> Accessed 25 April 2020.</p>
+                     </div>
+                     <div id="d2e289" class="footnote">
+                        <p><sup class="fn-label"><a href="#d2e289-ref" class="footnoteref">[15]</a></sup> Sebastian Rahtz and Lou Burnard, <q>Reviewing the TEI ODD System</q> <span class="ital">DocEng ’13: Proceedings of the 2013 ACM symposium on document engineering</span>, September 2013, 193-196. <a href="https://doi.org/10.1145/2494266.2494321" class="link" target="_new">https://doi.org/10.1145/2494266.2494321</a> Accessed 25 April 2020.</p>
+                     </div>
+                  </div>
                </div>
-               When coding is understood as literacy, its nexus with writing becomes explicit when
-               we think of it on the same terms as developing language skills. Coding should be as
-               ubiquitous and familiar to students as the writing they have been learning since childhood.
-               Coding does not belong to computer science departments any more than writing belongs
-               to English departments, as David J. Birnbaum and Alison Langmead make explicit:
-               
-               <div class="blockquote">
-                  <blockquote class="blockquote">
-                     <p>The first step toward learning to code is to recognize that computer programming is
-                        not computer science; it is more like writing. Everyone can learn to do it, and can
-                        be given the opportunity to learn to do it in ways that are appropriate for their
-                        disciplines. We offer humanists years of practice in learning to write; let us give
-                        them the chance also to learn to code. The second step is to recognize that learning
-                        a
-                        programming language is like learning a foreign language, except that it is much
-                        easier.<sup class="fn-label"><a href="#d1e201" class="footnoteref" id="d1e201-ref">[9]</a></sup></p>
-                  </blockquote>
+               <div id="author-keywords">
+                  <h5 class="keywords"><span class="label">Author's keywords for this paper: </span><span class="keyword">markup</span>; <span class="keyword">writing intensive</span>; <span class="keyword">literate programming</span>; <span class="keyword">interchange</span>; <span class="keyword">code literacy</span>; <span class="keyword">general education requirement</span>; <span class="keyword">pedagogy</span>; <span class="keyword">coding across the curriculum</span>; <span class="keyword">Text Encoding Initiative</span>; <span class="keyword">TEI XML</span>; <span class="keyword">Relax NG</span>; <span class="keyword">XML family of languages</span>; <span class="keyword">XPath</span>; <span class="keyword">XSLT</span>; <span class="keyword">HTML</span></h5>
                </div>
-               These are analogies to learning to write or learning a foreign language, intended
-               to persuade humanists to adopt coding into their disciplines, but the analogies do
-               not in themselves constitute an argument for coding and programming as potentially
-               an intensive professional writing experience for students of any discipline.</p>
-            <p>That argument for the writing-intensiveness of coding can be found <q>outside</q> the humanities. In the context of programming education, Felienne Hermans and Marlies
-               Aldewereld propose that more students would be interested in computer science if they
-               learned to program in a way that followed models for learning to write. They suggest
-               that programming instruction would be improved if it adapted the way writing instructors
-               model examples of their writing process for students to break it down into discrete
-               tasks more efficiently. They cite a study in which the elementary students comprehended
-               scientific concepts better when they were assigned short writing assignments that
-               engaged the topic. The suggestion that writing reflectively and observantly, and understanding
-               a context for a program to be working makes the material more widely accessible and
-               <q>could help a broader group of kids identify as programmers!</q><sup class="fn-label"><a href="#d1e215" class="footnoteref" id="d1e215-ref">[10]</a></sup> Indeed, this emphasis on writing to learn a science enacts a return to an earlier
-               and more integrated approach to education, before the <q>sciences</q> had become formally distinct from <q>humanities</q>: the late eighteenth century saw the scientific poems of Erasmus Darwin and calls
-               for poetry that would bring zoology and botany to life and encourage sympathy with
-               the natural world.<sup class="fn-label"><a href="#d1e231" class="footnoteref" id="d1e231-ref">[11]</a></sup> We have known that the act of writing enhances learning in across disciplines for
-               a long time now. But futher, as Hermans and Alderweld point out, the way writing instruction
-               proceeds by providing model examples and activities that hone observation skills is
-               exactly what can help students to learn programming.</p>
-            <p>It is probably no coincidence that Donald Knuth modeled his concept of <q>literate programming</q> with programming for document formatting in the 1980s. In this context the programming
-               of a machine to format electronic documents unites fundamentally with the action and
-               reproduction of writing. Knuth’s now-familiar concept seems simple in hindsight: <q>Instead of imagining that our main task is to instruct a computer what to do, let
-                  us concentrate rather on explaining to human beings what we want a computer to do.</q><sup class="fn-label"><a href="#d1e248" class="footnoteref" id="d1e248-ref">[12]</a></sup> Knuth’s way of writing about literate programming heightens an old association of
-               verbal text with fabric textile with his concepts of <span class="ital">weave</span> and <span class="ital">tangle</span>: 
-               <div class="blockquote">
-                  <blockquote class="blockquote">
-                     <p>One line of processing is called <span class="ital">weaving</span> the web; it produces a document that describes the program clearly and that facilitates
-                        program maintenance. The other line of processing is called <span class="ital">tangling</span> the web; it produces a machine-executable program. The program and its documentation
-                        are both generated from the same source, so they are consistent with each other.<sup class="fn-label"><a href="#d1e273" class="footnoteref" id="d1e273-ref">[13]</a></sup></p>
-                  </blockquote>
-               </div> Literate programming became paradigmatic for the the XML family of languages by the
-               turn of the new millenium. In 2002 Norm Walsh modeled its application to the DocBook
-               XSLT stylesheets by applying namespaces to permit the tangling of actionable code
-               with documentation.<sup class="fn-label"><a href="#d1e277" class="footnoteref" id="d1e277-ref">[14]</a></sup>. And over the course of its development from the early 1990s onward, the One-Document-Does-It-All
-               (ODD) system represents a path-breaking example of literate programming for the purpose
-               of compiling and delivering the Guidelines of the Text Encoding Initiative (TEI) as
-               a combination of documentation and processing code instantiating the schema rules
-               of the community-maintained XML vocabulary.<sup class="fn-label"><a href="#d1e289" class="footnoteref" id="d1e289-ref">[15]</a></sup>    
-               </p>
-         </div>
-         <div class="section" id="d1e301">
-            <h2 class="title" style="clear: both">Writing intensively and across the curriculum with markup languages</h2>
-            <p>REWORK THIS. The XML family of languages were designed not only to be widely accessible,
-               but also to be a vocabulary that the writer controls or consults or interacts with
-               in a hierarchical structure. It does not take very long to acquaint new coders to
-               the rules of how to tag a document, or how to turn a <q>plain text</q> document into an XML document, though often people experience a little frustration
-               with typing in the attributes or figuring what they can do with attributes. The first
-               week or two of a class that involves markup methods can orient people to how to code
-               something in XML, but the interesting experience of that can be when we ask students
-               to develop their own hierarchies to organize what they are reading, and when we invite
-               our students to try to recognize what is implicit, and find ways to use elements,
-               attributes, or comments to make that explicit. The act of inscribing markup has been
-               recognized (CITE KATE SINGER) as a writing process, but if it goes no further than
-               an exercise in tagging, perhaps we should consider this something like writing a reflective
-               paper, a response that sharpens one’s observation and critical thinking skills. In
-               my years of teaching undergraduates to code, I notice in the first couple of weeks
-               that certain students have difficulties with conceptualizing dependencies, or what
-               the relationship between an element and an attribute and its value ought to be. They
-               sometimes prepare shallow hierarchies, and instead of bundling list items together
-               in a cluster, make a very flat tree where every line is its own entry. These students
-               benefit from seeing more detailed markup, and also from understanding something about
-               how the markup may be processed, how it can be used to organize and access particular
-               kinds of information. For that reason, I have found that inviting my students to write
-               their first markup on a recipe, one that contains an interesting variety of ingredients,
-               measurement units, and activities, provides a very clear and easily recognizable sense
-               of structure with lots of categories of information. [CITE Newtfire XML EX 1] So,
-               too, does a poem, or a piece of historical correspondence. Students who have difficulty
-               constructing dependent clauses may find the preparation of an informative, non-redundant
-               hierarchy just as challenging. Quite frequently student beginners will take the text
-               content of a document and repeat it in an attribute value, as for example wrapping
-               code around a name as given in a text, and using that name in an attribute value on
-               the element, until they receive some suggestions that they might want to use the attribute
-               as a key for a standard identifier whenever this individual is mentioned by their
-               various names.</p>
-            <p>Learning to code the XML syntax is easy. Learning to optimize one’s preparation of
-               XML takes a long time, takes practice, and takes application, just like learning to
-               write good sentences and paragraphs, and learning to develop a research paper or a
-               thesis. Just like these progressively more complex writing activities, we can identify
-               levels of intensity in increasing applications of markup technologies, and the challenges
-               to the thinking and communication process are remarkably similar. The increasing intensity
-               is not simply due to learning new technologies, but rather becomes gradually more
-               intensive in cognitive ways. The process of becoming a better reader and writer and
-               coder and developer is also the process of becoming more adept in organizing and processing
-               information. Writing may be easily recognizable in the practice we call mere tagging
-               in first-time coders, but the way one becomes a better writer with markup is by learning
-               what can be done with and made from the markup. The processes of navigating, extracting,
-               transforming, and remixing data marked in an XML tree define the <span class="ital">intensive</span>  part of the writing process. When students learn only tagging and do not learn how
-               to parse their own code, they remain unaware of what the markup makes possible, and
-               they may often be unaware of the problems imposed by imprecision and inconsistency.
-               They may be tagging correctly, but not in a way that communicates meaningfully or
-               reliably. Worse yet, in becoming aware of the human unreliabilities in applying markup,
-               they may come away with the idea that the tree structures we create are arbitrary,
-               exert an aggressive control over a document. [CITE] This line of thinking relies on
-               an unsustained, non-intensive engagement with marked documents and an unfortunate
-               separation of the technologies of managing and processing XML from instruction in
-               markup.</p>
-            <p>Just as we think of free-writing as a valuable exercise to start a first preliminary
-               draft in a composition class, in teaching markup, a certain amount of mess and unreliability
-               is okay as we are learning or figuring out what matters to prioritize. Often new coders
-               introduce far more differently named elements than they really need, or that would
-               be baffling to keep track of in a real-life project. To come to an understanding of
-               how to code helpfully and meaningfully, a student needs to confront the problem of
-               sharing and reproducibility—concepts parallel to the awareness of an audience emphasized
-               in rhetoric and composition classes as a means to craft better sentences, to trim
-               out verbosity.</p>
-            <p>Students often improve their markup dramatically when they learn to write Relax NG
-               schema code, that creates rules for encoding. This may be a first data-modeling experience
-               for students in a general education context, when they are called upon to think in
-               a <q>meta</q> or higher order reflective way about formalizing their code, and making it possible
-               for others to understand it and reproduce it.</p>
-            <p>
-               (recipe coding)
-               (recipe coding with a shared context)
-               (designing a schema and of controlled vocabularies: within a project)
-               (decision processes for controlled vocabularies with the TEI)
-               
-               DATA PREPARATION: 
-               up-conversion with regular expressions: pattern recognition. Useful for all kinds
-               of text analysis, as in stemming patterns for natural language processing. In XML,
-               a power tool for preparing a large-sized corpus of documents. 
-               
-               
-               XSLT: constructing templates and accounting for nodes. Deciding what can be ignored.
-               Revisiting your decisions
-               Push and pull processing
-               
-               XQUERY and persistent datatyping
-               Encounters with marked up text get you someplace different than unmarked text, and
-               give students a constructive experience with data curation and preparation. 
-               CITE: Clifford Anderson's Balisage paper: On Teaching XQuery to Digital Humanists:
-               <q>XQuery makes it possible for students to become productive without having to learn
-                  as many computer science or software engineering concepts. A simple four or five line
-                  FLWOR expression can easily demonstrate the power of XQuery and provide a basis for
-                  students' tinkering and exploration.</q> And, as Anderson affirms, it is part of a full stack development  http://www.balisage.net/Proceedings/vol13/html/Anderson01/BalisageVol13-Anderson01.html
-               
-               DOCUMENTATION and SHARING the work: establishing a context
-               When students prepare a project in markup, they are not simply writing papers to be
-               filed in a course-specific context. They are preparing a research site and their work
-               can often be continued by them or others. Students can be building beyond the constraints
-               of a single semester, and even if they are not tempted to return to the project, they
-               can leave scaffolding behind for others to continue the work or alter its direction,
-               or retrieve the files. Awareness of the potential energy of the work they are doing
-               can give shape to an encounter with markup languages in the course of a semester.
-               The energy input over a course of weeks puts emphasis on preparing material that others
-               can read and reuse. Indeed, assignments for a writing intensive experience can be
-               constructed with attention to:
-               1) reading the code and documentation of other projects, and building on it
-               2) preparing documentation meant to be read by peers and professor(s) working with
-               you, and meant to be read by others who access your code from a repository. Such documentation
-               may include:
-               * Kanban board workflow management
-               * README.md files
-               * task lists and issues
-               * being responsible and <q>on-call</q> for responding to questions and assisting your teammates
-               
-               These are activities to do with taking responsibility for method and processes, for
-               managing the intellectual content of a project. Studying how copyright applies to
-               code and markup and choosing a license for sharing the work should be part of this
-               experience. 
-               Giving students access to the full set of tools in the XML arsenal and establishing
-               both immediate (in-semester) short-range and long-range possibilities for their work
-               will introduce students from any background to the power of markup languages and with
-               the experience of writing to form and connect with communities of practice. This cannot
-               fail to be a professionalizing experience. Even in developing projects that are not
-               successful, there will be opportunities to recognize in failures what to document,
-               how to redo the work differently, how another group might start over—the project-oriented
-               awareness gives space for documentation to <q>sunset</q> the work. Whether or not students go on to use markup again after the course is over,
-               they will have engaged with a powerful form of writing that marks up, investigates,
-               curates, propagates, and conserves textual data. This is the very definition of a
-               writing-intensive experience that is both professionalizing and cross-disciplinary
-               in its reach. 
-               
-               Monitoring git commit messages and documentation 
-               
-               (documentation, XML Comments, git commits, methodology pages, sharing the work with
-               others)
-               (research in the field: referencing is connecting and networking)
-               
-               
-               CUT: YOUR GOAL ISN'T TO MAKE EVERYBODY DO THIS, BUT JUST TO RECOGNIZE THAT WHEN IT
-               IS TAUGHT IT OUGHT TO BE RECOGNIZED AND CREDITED AS WRITING INTENSIVE.
-               How hard is this for Humanities faculty to learn? 
-               Faculty workshops and training can provide it, but it is not often offered, and perhaps
-               we need to overcome a presumption that faculty will not be interested in the material.
-               Where do we markup practitioners imagine that we find an audience for instructional
-               materials? Who should be learning these technologies? Can this be treated not <span class="ital">only</span> as a restricted technological preserve, but as an encounter with what digital texts
-               can be made of, as a component of digital literacy for humanities faculty and graduate
-               programs? Can we encourage and incentivize the learning, teaching, and sharing of
-               these technologies? The author learned enough of a foundation in a range of languages
-               in a 15-week semester thanks to the existence of a course taught by David J. Birnbaum
-               in the University of Pittsburgh’s Honors College program CITE, and she learned alongside
-               a group of undergraduates, working in teams on semester projects as described in this
-               paper. While she took the course to learn how to develop a digital edition project,
-               she exited with the basis for developing new courses and imagining new ways of working
-               on projects with students. Other faculty at Pitt and Pitt-Greensburg have lit their
-               torches from the same pedagogical fires, and we are aware of faculty at UVic, U of
-               Maryland, Bucknell, and Vanderbilt (just to name a few) who teach humanities students
-               to engage with a range of XML technologies. 
-               
-               Teaching Markup Languages during a Pandemic
-               Teaching a writing-intensive course in markup modalities offers little distress for
-               adaptation to a remote learning environment, as we had to do recently after the university
-               closed down face-to-face classes. This kind of class works for connecting synchronously
-               OR asynchronously. It was much easier to continue the management of a course based
-               on markup technologies in which students had been trained to work with project management
-               tools and to be writing and sharing their documentation in GitHub repositories and
-               over Slack channels than to retool one in which in-class daily discussion and traditional
-               kinds of assignments prevailed. The digital modalities organizing our class were lively
-               enough that the coding class might properly be recognized as <q>flipped</q>, in which most of the learning was already taking place in an applied context outside
-               of class, while student and faculty class meetings reviewed content all together,
-               to learn how to interact with an unfamiliar interface or to review issues students
-               are having or help address something that is not working. 
-               </p>
-         </div>
-         <div class="footnotes"><br><hr width="100" align="left">
-            <div id="d1e85" class="footnote">
-               <p><sup class="fn-label"><a href="#d1e85-ref" class="footnoteref">[1]</a></sup> On the day of this writing, 12 April 2020, the <a href="https://web.hypothes.is/" class="link" target="_new">https://web.hypothes.is/</a>
-                  promotes its proprietary LMS integration over its always free web service.
-                  Nevertheless, a paid-for integration with an LMS is unnecessary to anyone with
-                  access to a web browser and a capacity to follow clear and simple instructions
-                  to create a public or private annotation group.</p>
+               <div id="balisage-footer">
+                  <h3 style="font-family: serif; margin:0.25em; font-style: italic">Balisage Series on Markup Technologies</h3>
+               </div>
             </div>
-            <div id="d1e95" class="footnote">
-               <p><sup class="fn-label"><a href="#d1e95-ref" class="footnoteref">[2]</a></sup> Kelly A. Shea, Mary McAleer Balkun, Susan A. Nolan, John T. Saccoman, and
-                  Joyce Wright, <q>One More Time: Transforming the Curriculum Across the
-                     Disciplines Through Technology-Based Faculty Development and
-                     Writing-Intensive Course Redesign</q>
-                  <span class="ital">Across the Disciplines</span> Volume 3
-                  (2006) <a href="https://wac.colostate.edu/docs/atd/articles/shea2006.pdf" class="link" target="_new">https://wac.colostate.edu/docs/atd/articles/shea2006.pdf</a> Accessed 25 April 2020.</p>
-            </div>
-            <div id="d1e115" class="footnote">
-               <p><sup class="fn-label"><a href="#d1e115-ref" class="footnoteref">[3]</a></sup> Henry David Thoreau, <q>Where I lived and what I lived for</q>
-                  <span class="ital">Walden: A Fluid-Text Edition. Digital Thoreau.</span>
-                  Version A (1847), para 17, <a href="http://digitalthoreau.org/fluid-text-toc" class="link" target="_new">http://digitalthoreau.org/fluid-text-toc</a>. Accessed
-                  2020-04-12.</p>
-            </div>
-            <div id="d1e129" class="footnote">
-               <p><sup class="fn-label"><a href="#d1e129-ref" class="footnoteref">[4]</a></sup> See, for example, <a href="https://scholarlms.net/moodle-xml-format/" class="link" target="_new">the documentation of Moodle XML format for quizzes</a>.</p>
-            </div>
-            <div id="d1e142" class="footnote">
-               <p><sup class="fn-label"><a href="#d1e142-ref" class="footnoteref">[5]</a></sup> The author finds it is becoming easier to teach XPath, XSLT, and XQuery since the
-                  introduction of XPath 3.0 and 3.1 with the simplicity of reading the application of
-                  multiple functions using the simple map and arrow concatenator. These have made it
-                  easier to follow a simple step-by-step thinking process in chaining functions together.
-                  This improvement in XPath readability is a refinement of our available writing instruments
-                  making them far more accessible to new learners.</p>
-            </div>
-            <div id="d1e160" class="footnote">
-               <p><sup class="fn-label"><a href="#d1e160-ref" class="footnoteref">[6]</a></sup> Laura Giovanelli and Molly Keener, <q>How to talk about copyright so kids
-                     will listen, and how to listen about copyright so kids will talk</q> in
-                  Grace Veach, <span class="ital">Teaching​ Information Literacy and Writing
-                     Studies: Volume 2, Upper-Level and Graduate Courses</span> (Purdue
-                  University Press, 2019-01-15), 225. ProQuest ebook.
-                  </p>
-            </div>
-            <div id="d1e171" class="footnote">
-               <p><sup class="fn-label"><a href="#d1e171-ref" class="footnoteref">[7]</a></sup> A good example of such application of markup languages is <a href="https://dhtraining.org/hilt/course/introduction-to-the-text-encoding-initiative-tei-for-black-digital-humanities/" class="link" target="_new">Jessica Lu’s and Caitlin Pollock’s 2019 HILT course, <q>Introduction to
-                        the Text Encoding Initiative (TEI) for Black Digital
-                        Humanities</q></a> which organized training in markup to support
-                  <q>new ways of accessing, reading, sharing, and analyzing texts of
-                     marginalized people</q>.</p>
-            </div>
-            <div id="d1e188" class="footnote">
-               <p><sup class="fn-label"><a href="#d1e188-ref" class="footnoteref">[8]</a></sup>  Vee, Annette, <span class="ital">Coding Literacy: How Computer Programming Is Changing Writing</span>
-                  The MIT Press, 2017. <a href="doi:10.2307/j.ctt1s476xn" class="link" target="_new">https://www.jstor.org/stable/j.ctt1s476xn</a>. Accessed 14 Apr. 2020.</p>
-            </div>
-            <div id="d1e201" class="footnote">
-               <p><sup class="fn-label"><a href="#d1e201-ref" class="footnoteref">[9]</a></sup>  David J. Birnbaum and Alison Langmead, <q>Task-Driven Programming Pedagogy in the Digital Humanities</q> in <span class="ital">New Directions for Computing Education: Embedding Computing Across Disciplines</span>, ed. Samuel B. Fee, Amanda M. Holland-Minkley, and Thomas E. Lombardi (Springer International
-                  Publishing, 2017) 76.</p>
-            </div>
-            <div id="d1e215" class="footnote">
-               <p><sup class="fn-label"><a href="#d1e215-ref" class="footnoteref">[10]</a></sup>  Felienne Hermans and Marlies Aldewereld, <q>Programming is Writing is Programming</q> <span class="ital">Programming '17: Companion to the first International Conference on the Art, Science
-                     and Engineering of Programming</span> No.33 (April 2017) 1-8; 7. <a href="https://dl.acm.org/doi/pdf/10.1145/3079368.3079413" class="link" target="_new">https://dl.acm.org/doi/pdf/10.1145/3079368.3079413</a>.</p>
-            </div>
-            <div id="d1e231" class="footnote">
-               <p><sup class="fn-label"><a href="#d1e231-ref" class="footnoteref">[11]</a></sup> For context, see Sharon Ruston, <q>The Application of Natural History to Poetry</q> <span class="ital">Literature and Science Hub</span> University of Liverpool. <a href="https://www.liverpool.ac.uk/literature-and-science/essays/ruston_hist/" class="link" target="_new">https://www.liverpool.ac.uk/literature-and-science/essays/ruston_hist/</a>. Accessed 14 April 2020. </p>
-            </div>
-            <div id="d1e248" class="footnote">
-               <p><sup class="fn-label"><a href="#d1e248-ref" class="footnoteref">[12]</a></sup> Donald Knuth, <q>Literate Programming</q>, <span class="ital">The Computer Journal</span> 27:2 (1984) 97-111, 97. <a href="https://doi.org/10.1093/comjnl/27.2.97" class="link" target="_new">https://doi.org/10.1093/comjnl/27.2.97</a>. Accessed 25 April 2020.</p>
-            </div>
-            <div id="d1e273" class="footnote">
-               <p><sup class="fn-label"><a href="#d1e273-ref" class="footnoteref">[13]</a></sup> Knuth 2.</p>
-            </div>
-            <div id="d1e277" class="footnote">
-               <p><sup class="fn-label"><a href="#d1e277-ref" class="footnoteref">[14]</a></sup> Norman Walsh, <q>Literate Programming in XML</q> presented at <span class="ital">XML 2002</span>, 15 October 2002. <a href="https://nwalsh.com/docs/articles/xml2002/lp/paper.html" class="link" target="_new">https://nwalsh.com/docs/articles/xml2002/lp/paper.html</a> Accessed 25 April 2020.</p>
-            </div>
-            <div id="d1e289" class="footnote">
-               <p><sup class="fn-label"><a href="#d1e289-ref" class="footnoteref">[15]</a></sup> Sebastian Rahtz and Lou Burnard, <q>Reviewing the TEI ODD System</q> <span class="ital">DocEng ’13: Proceedings of the 2013 ACM symposium on document engineering</span>, September 2013, 193-196. <a href="https://doi.org/10.1145/2494266.2494321" class="link" target="_new">https://doi.org/10.1145/2494266.2494321</a> Accessed 25 April 2020.</p>
-            </div>
-         </div>
-      </div>
+         </body>
+      </html>
       <div id="balisage-footer">
          <h3 style="font-family: serif; margin:0.25em"><i>Balisage:</i>&nbsp;<small>The Markup Conference</small></h3>
       </div>

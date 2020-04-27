@@ -59,7 +59,7 @@
     doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"
     doctype-system="http://www.w3.org/TR/html4/loose.dtd" />
 
-  <xsl:param name="css-file" select="'balisage-proceedings.css'"/>
+  <xsl:param name="css-file" select="'balisage-plain.css'"/>
 
   <xsl:param name="balisage-logo"
     select="'http://balisage.net/Logo/BalisageSeries-logo.png'"/>
