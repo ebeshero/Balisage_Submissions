@@ -36,9 +36,7 @@
                 with little to no programming experience, or a junior year computer science or
                 information technology major with an interest in applied programming, unused to
                 research questions that drive humanities scholarship. In presenting its case, this
-                paper responds to a range of literature to evaluate the relationships among
-                    <emphasis>encoding</emphasis>, <emphasis>coding</emphasis>,
-                    <emphasis>programming</emphasis>, and <emphasis>writing</emphasis>.</para>
+                paper explores a range of literature to locate intersections between digital writing modalities discussed in the context of composition courses and the concept of literate programming that grounds the XML family of languages.</para>
         </abstract>
         <author>
             <personname>
@@ -193,7 +191,25 @@
     </section>
     <section>
         <title>Writing intensively and across the curriculum with markup languages</title>
-        <para>We certainly have a beginning, but the literature is mixed. </para>
+        <para>
+            <!--  WHAT TO DO HERE: 
+        Encounter Kate Singer and Desmond Schmidt over tagging inconsistencies and how one finds a way to consistency in a project team. Cite (maybe) the Ethiopian project team as a case in point, presented at Balisage and TEI? and  
+        Idea of forming a community of practice: Digital Dinah Craik project? 
+        Professional projects require negotiation, discussion, hashing things out in the ODD document. Students need to do this too in project teams. This is writing intensive activity.
+        Learning to process markup leads to a decision making process about streamlining the code-base, making it more legible, tractable, XPath-able. Learning XPath and writing XSLT or XQuery is how the course goes from free form, light introductory experience to intensive and challenging. The processing needs to do more than represent; it must be applied to address a research question in a systematic way.
+        It can even be exploring multiple ways to model a document. Just like there are 15 ways of looking at a blackbird, we need not be stifled by the concept of a monolithic hierarchy. There are many approaches, and our literate programming with XSLT can negotiate among them. 
+        Researching related projects and understanding their markup decisions, customizing a plan for a markup project whether in TEI or your own custom XML should be a required writing activity in a writing intensive course. 
+        Feature Alyssa's Brecon graphs as an exploration to visualize and help understand complex data modeled in documents. 
+        Documentation of a project on a GitHub repository
+        Responsible citation and connection with other related proejcts
+        Investigation of intellectual property rights, choosing a license to represent your work. 
+        These are writing intensive activities we associate with text encoding projects at a university. 
+        
+       
+        
+        
+        -->
+        </para>
         
         
         <para>REWORK THIS. The XML family of languages were designed not only to be widely accessible, but also to be a vocabulary that the writer controls or consults or interacts with in a hierarchical structure. It does not take very long to acquaint new coders to the rules of how to tag a document, or how to turn a <quote>plain text</quote> document into an XML document, though often people experience a little frustration with typing in the attributes or figuring what they can do with attributes. The first week or two of a class that involves markup methods can orient people to how to code something in XML, but the interesting experience of that can be when we ask students to develop their own hierarchies to organize what they are reading, and when we invite our students to try to recognize what is implicit, and find ways to use elements, attributes, or comments to make that explicit. The act of inscribing markup has been recognized (CITE KATE SINGER) as a writing process, but if it goes no further than an exercise in tagging, perhaps we should consider this something like writing a reflective paper, a response that sharpens one’s observation and critical thinking skills. In my years of teaching undergraduates to code, I notice in the first couple of weeks that certain students have difficulties with conceptualizing dependencies, or what the relationship between an element and an attribute and its value ought to be. They sometimes prepare shallow hierarchies, and instead of bundling list items together in a cluster, make a very flat tree where every line is its own entry. These students benefit from seeing more detailed markup, and also from understanding something about how the markup may be processed, how it can be used to organize and access particular kinds of information. For that reason, I have found that inviting my students to write their first markup on a recipe, one that contains an interesting variety of ingredients, measurement units, and activities, provides a very clear and easily recognizable sense of structure with lots of categories of information. [CITE Newtfire XML EX 1] So, too, does a poem, or a piece of historical correspondence. Students who have difficulty constructing dependent clauses may find the preparation of an informative, non-redundant hierarchy just as challenging. Quite frequently student beginners will take the text content of a document and repeat it in an attribute value, as for example wrapping code around a name as given in a text, and using that name in an attribute value on the element, until they receive some suggestions that they might want to use the attribute as a key for a standard identifier whenever this individual is mentioned by their various names.</para>
