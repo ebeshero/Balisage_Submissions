@@ -197,6 +197,7 @@
         Idea of forming a community of practice: Digital Dinah Craik project? 
         Professional projects require negotiation, discussion, hashing things out in the ODD document. Students need to do this too in project teams. This is writing intensive activity.
         Learning to process markup leads to a decision making process about streamlining the code-base, making it more legible, tractable, XPath-able. Learning XPath and writing XSLT or XQuery is how the course goes from free form, light introductory experience to intensive and challenging. The processing needs to do more than represent; it must be applied to address a research question in a systematic way.
+        FEATURE SOME CODE
         It can even be exploring multiple ways to model a document. Just like there are 15 ways of looking at a blackbird, we need not be stifled by the concept of a monolithic hierarchy. There are many approaches, and our literate programming with XSLT can negotiate among them. 
         Researching related projects and understanding their markup decisions, customizing a plan for a markup project whether in TEI or your own custom XML should be a required writing activity in a writing intensive course. 
         Feature Alyssa's Brecon graphs as an exploration to visualize and help understand complex data modeled in documents. 
