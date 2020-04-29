@@ -105,8 +105,8 @@
             educational software applications are universally expected to be integrated and accessed
             from within a learning management system (LMS). For example, Hypothes.is, an open-source
             technology for web annotation is now packaged and funneled into an LMS with a
-            proprietary gradebook integration, or faculty may not be aware of its existence or
-            understand how to apply it in their courses.<footnote>
+            proprietary gradebook integration, without which faculty may not be aware of its
+            existence or understand how to apply it in their courses.<footnote>
                 <para>On the day of this writing, 12 April 2020, the <link
                         xlink:href="https://web.hypothes.is/">https://web.hypothes.is/</link>
                     promotes its proprietary LMS integration over its always free web service.
@@ -152,24 +152,22 @@
                 <para>See, for example, <link xlink:href="https://scholarlms.net/moodle-xml-format/"
                         >the documentation of Moodle XML format for quizzes</link>.</para>
             </footnote>. XML establishes the context of educational technology in our educational
-            institutions, but the way in which we access it is carefully gated in ways that benefit
-            us but also relegate the technology under the hood to the level of the abstruse and
-            esoteric. Those of us who teach students to write and build projects with markup
-            technologies may be few in number, but we are the ones who are aware of the skills our
-            students rapidly develop and hone over the course of a single semester—skills to build
-            data models, a search interfaces, and informational graphics according to their own
-            design and not funnelled through one or two particular brands of software. Learning XML
-            with its family of languages helps students to develop independently from <quote>black
+            institutions, but the way in which we access it is carefully gated in ways that relegate
+            the technology under the hood to the level of the abstruse and esoteric. Those of us who
+            teach students to write and build projects with markup technologies may be few in
+            number, but we are the ones who are aware of the skills our students rapidly develop and
+            hone over the course of a single semester—skills to build data models, search
+            interfaces, and informational graphics according to their own design. Learning XML with
+            its family of languages helps students to develop independently from <quote>black
                 box</quote> software, and also helps make them informed consumers to choose the
-            software they want to commit to particular tasks, to find the software most amenable to
+            software they want to commit to particular tasks, to find the tools most amenable to
             user alterations <quote>under the hood</quote> and most friendly to transporting the
             data when the software does not last. Learning markup technologies is a way of learning
-            the structures of the web of information, and much the way we learn to write with and
-            against the formal genre expectations of an essay or a poem, we learn formal ways of
-            containing data and relating metadata in an XML framework in ways that are influenced by
-            our interests in processing, sharing, accessing the data. We write things that be read
-            and acted upon by humans; and we write markup to be read and parsed and acted upon by
-            humans and machines.</para>
+            the structures of the web of information, and much the way we learn the formal genre
+            expectations of an essay or a poem, we learn formal ways of containing data and metadata
+            in an XML framework driven by our interests in processing, sharing, accessing the data.
+            We write things that be read and acted upon by humans; and we write markup to be read
+            and parsed and acted upon by humans and machines.</para>
         <para>XML markup and its family of languages itself has not become more abstruse or
             difficult to learn since the millenium. Indeed, instruction is much easier now with many
             tutorials available and more powerful processing methods available now.<footnote>
@@ -506,7 +504,12 @@
                     categorize ingredients, mark necessary equipment, and stages for processing, but
                     the system you develop is up to you.<footnote>
                         <para>Elisa Beshero-Bondar, <quote>XML Exercise 1</quote> Coding and Data
-                            Visualization course taught at Pitt-Greensburg, 2019-2020. The author’s series of assignments developing from XML to Relax-NG, regular expressions and document up-conversion, XPath, XSLT, XQuery, as well as HTML, SVG, CSS, and JavaScript are generally accessible at <link xlink:href="https://dh.newtfire.org">https://dh.newtfire.org</link>.<link
+                            Visualization course taught at Pitt-Greensburg, 2019-2020. The author’s
+                            series of assignments developing from XML to Relax-NG, regular
+                            expressions and document up-conversion, XPath, XSLT, XQuery, as well as
+                            HTML, SVG, CSS, and JavaScript are generally accessible at <link
+                                xlink:href="https://dh.newtfire.org"
+                                >https://dh.newtfire.org</link>.<link
                                 xlink:href="https://dh.newtfire.org/XMLExercise1.html"
                                 >https://dh.newtfire.org/XMLExercise1.html</link>. Accessed 28 April
                             2020.</para>
@@ -664,8 +667,8 @@
             an active intellectual investigator.</para>
     </section>
     <section>
-        <title>An example of writing intensive interchange work: two university
-            projects on Emily Dickinson </title>
+        <title>An example of writing intensive interchange work: two university projects on Emily
+            Dickinson </title>
         <para>University students can and do create projects <quote>built to last</quote>, that is,
             launched in a way that others can build on and continue based on the documentation they
             provide. As a case in point, let us consider two markup projects, decades apart,
@@ -781,8 +784,8 @@
             Without needing to consult the Dickinson project team, the Brecon team was able to adapt
             and build on the example of their markup to take their own study in new directions.
             Alyssa Argento, a returning student who was mentoring project teams and continuing
-            learning XSLT and SVG on her own, eagerly took on a challenge of trying to show how
-            the editions compared quantitatively: which editions shared the most material in common,
+            learning XSLT and SVG on her own, eagerly took on a challenge of trying to show how the
+            editions compared quantitatively: which editions shared the most material in common,
             inspired by the example of the network analysis on the Dickinson project. Finding her
             computer unable to install the latest version of the network analysis software that the
             Dickinson team had relied on for their visualization, Argento studied data, worked out
