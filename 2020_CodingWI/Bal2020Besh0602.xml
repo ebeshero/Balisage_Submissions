@@ -151,8 +151,8 @@
             occasionally learn about to try to modify parts of the system permissible to access. <footnote>
                 <para>See, for example, <link xlink:href="https://scholarlms.net/moodle-xml-format/"
                         >the documentation of Moodle XML format for quizzes</link>.</para>
-            </footnote>. XML establishes the context of educational technology in our educational
-            institutions, but the way in which we access it is carefully gated in ways that relegate
+            </footnote> XML establishes the context of educational technology in our educational
+            institutions, but our access is carefully gated in ways that relegate
             the technology under the hood to the level of the abstruse and esoteric. Those of us who
             teach students to write and build projects with markup technologies may be few in
             number, but we are the ones who are aware of the skills our students rapidly develop and
