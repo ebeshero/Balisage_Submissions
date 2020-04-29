@@ -231,9 +231,10 @@
                      <p><b>Table of Contents</b></p>
                      <dl>
                         <dt><span class="section"><a href="#d2e66" class="toc">Coding literacy as a writing modality</a></span></dt>
-                        <dt><span class="section"><a href="#d2e292" class="toc">Coding for interchange: writing intensively and across the curriculum with markup
-                                 languages</a></span></dt>
-                        <dt><span class="section"><a href="#d2e428" class="toc">Coda: Teaching markup languages during a pandemic</a></span></dt>
+                        <dt><span class="section"><a href="#d2e292" class="toc">Writing intensively is coding for interchange</a></span></dt>
+                        <dt><span class="section"><a href="#d2e449" class="toc">An example of writing intensive interchange work: two Emily Dickinson university projects</a></span></dt>
+                        <dt><span class="section"><a href="#d2e528" class="toc">Writing intensive activities cultivated by XML-based semester projects</a></span></dt>
+                        <dt><span class="section"><a href="#d2e552" class="toc">Coda: Teaching markup languages during a pandemic</a></span></dt>
                      </dl>
                   </div>
                   <div class="mast-box">
@@ -458,8 +459,7 @@
                         the curriculum as such.</p>
                   </div>
                   <div class="section" id="d2e292">
-                     <h2 class="title" style="clear: both">Coding for interchange: writing intensively and across the curriculum with markup
-                        languages</h2>
+                     <h2 class="title" style="clear: both">Writing intensively is coding for interchange</h2>
                      <p>The aspect of XML encoding that makes it so problematic or impossible for interoperational
                         processing (even within a shared vocabulary like the TEI) is the semantic naming of
                         tags, what Desmond Schmidt has called its <q><span class="ital">illocutionary force</span></q>.<sup class="fn-label"><a href="#d2e299" class="footnoteref" id="d2e299-ref">[16]</a></sup> This trouble for universalized processing is one of the aspects of XML that makes
@@ -556,15 +556,38 @@
                         kinds of information. For that reason, I have found that inviting my students to write
                         their first markup on a recipe, one that contains an interesting variety of ingredients,
                         measurement units, and activities, provides a very clear and easily recognizable sense
-                        of structure with lots of categories of information. [CITE Newtfire XML EX 1] So,
-                        too, does a poem, or a piece of historical correspondence. Students who have difficulty
-                        constructing dependent clauses may find the preparation of an informative, non-redundant
-                        hierarchy just as challenging. Quite frequently student beginners will take the text
-                        content of a document and repeat it in an attribute value, as for example wrapping
-                        code around a name as given in a text, and using that name in an attribute value on
-                        the element, until they receive some suggestions that they might want to use the attribute
-                        as a key for a standard identifier whenever this individual is mentioned by their
-                        various names.</p>
+                        of structure with lots of categories of information. Further, I ask them to envision
+                        a scenario for the encoding that tries to create a system for filing documents: 
+                        
+                        <div class="blockquote">
+                           <blockquote class="blockquote">
+                              <p>First, read this recipe for homemade bread, and pretend you are filing it with hundreds
+                                 of other recipes that you need to fit a set purpose, such as running a restaurant,
+                                 in which you need to keep track of kinds and quantities of ingredients required. XML
+                                 is written to store information, and when we apply it to a situation with numbers
+                                 and units, like with coding recipes, the code we write can help make computerized
+                                 calculations, and help optimize searching across a collection for particular kinds
+                                 of ingredients. Your code might be designed to help categorize ingredients by what
+                                 part of the grocery store they can be found in. The challenge of the assignment is
+                                 to write code that helps categorize ingredients, mark necessary equipment, and stages
+                                 for processing, but the system you develop is up to you.</p>
+                           </blockquote>
+                        </div>
+                        
+                        <sup class="fn-label"><a href="#d2e349" class="footnoteref" id="d2e349-ref">[19]</a></sup> Moving to the encoding of a poem or a piece of historical correspondence after the
+                        recipe leads to recognition of different kinds of data and observations about the
+                        formal dimensions and organization of patterns, as well as the interest in referencing
+                        different kinds of information like names, dates, people, and places, as well as images,
+                        motifs, rhyme. Quite frequently student beginners will take the text content of a
+                        document and repeat it in an attribute value, as for example wrapping code around
+                        a name as given in a text, and using that name in an attribute value on the element,
+                        until they receive some suggestions that they might want to use the attribute as a
+                        key for a standard identifier whenever this individual is mentioned by their various
+                        names. Students who have difficulty constructing dependent clauses may find the preparation
+                        of an informative, non-redundant hierarchy just as challenging as their composition
+                        courses, and while their first efforts are observably messy, they can be discussed
+                        in terms of how to simplify if one were to prepare a large collection and wanted to
+                        work systematically with a particularly interesting and tractable kind of data. </p>
                      <p>Not until we teach students how to customize, query, or transform their markup can
                         they engage with it in a way that universities would characterize as <span class="ital">writing intensive</span>. By way of reference, the Pennsylvania State University’s cross-curricular definition
                         of a writing intensive course requires that writing be used <q>to help students learn course content</q>, as well as <q>ways of writing in the discipline</q>, and that it have formal expectations delivered in assignment sheets. These expectations
@@ -576,13 +599,13 @@
                         
                         <div class="blockquote">
                            <blockquote class="blockquote">
-                              <div class="itemizedlist" id="d2e354">
+                              <div class="itemizedlist" id="d2e367">
                                  <ul>
-                                    <li id="d2e355">
+                                    <li id="d2e368">
                                        <p>Writing seen as processes that develop through iterations</p>
                                     </li>
-                                    <li id="d2e357">
-                                       <p>Writing in the course includes a combination of formal and informal assignments<sup class="fn-label"><a href="#d2e360" class="footnoteref" id="d2e360-ref">[19]</a></sup></p>
+                                    <li id="d2e370">
+                                       <p>Writing in the course includes a combination of formal and informal assignments<sup class="fn-label"><a href="#d2e373" class="footnoteref" id="d2e373-ref">[20]</a></sup></p>
                                     </li>
                                  </ul>
                               </div>
@@ -609,18 +632,18 @@
                         in rhetoric and composition classes as a means to craft better sentences, to trim
                         out verbosity.</p>
                      <p>Learning to code the XML syntax is easy. Learning to optimize one’s preparation of
-                        XML takes a long time, takes practice, and takes application, just like learning to
-                        write good sentences and paragraphs, and learning to develop a research paper or a
-                        thesis. Just like these progressively more complex writing activities, we can identify
-                        levels of intensity in increasing applications of markup technologies, and the challenges
-                        to the thinking and communication process are remarkably similar. The increasing intensity
-                        is not simply due to learning new technologies, but rather becomes gradually more
-                        intensive in cognitive ways. The process of becoming a better reader and writer is
-                        also the process of becoming more adept in organizing and processing information.
-                        Writing may be easily recognizable in the practice we call mere tagging in first-time
-                        coders, but the way one becomes a better writer with markup is by learning what can
-                        be done with and made from the markup. The processes of navigating, extracting, transforming,
-                        and remixing data marked in an XML tree define the <span class="ital">intensive</span>  part of the writing process. When students learn only tagging and do not learn how
+                        XML takes guided practice, just like learning to write good sentences and paragraphs,
+                        and learning to develop a research paper or a thesis. Just like these progressively
+                        more complex writing activities, we can identify levels of intensity in increasing
+                        applications of markup technologies, and the challenges to the thinking and communication
+                        process are remarkably similar. The increasing intensity is not simply due to learning
+                        new technologies, but rather becomes gradually more intensive in cognitive ways. The
+                        process of becoming a better reader and writer is also the process of becoming more
+                        adept in organizing and processing information. Writing may be easily recognizable
+                        in the practice we call mere tagging in first-time coders, but the way one becomes
+                        a better writer with markup is by learning what can be done with and made from the
+                        markup. The processes of navigating, extracting, transforming, and remixing data marked
+                        in an XML tree define the <span class="ital">intensive</span>  part of the writing process. When students learn only tagging and do not learn how
                         to parse their own code, they remain unaware of what the markup makes possible, and
                         they may often be unaware of the problems imposed by imprecision and inconsistency.
                         They may be tagging correctly, but not in a way that communicates meaningfully or
@@ -629,9 +652,9 @@
                         and arbitrary, and they would be reinforced in this thinking by old arguments from
                         those who find embedded markup a source of intrusive confusion. Johanna Drucker summarizes
                         the argument from a 1999 paper by Dino Buzetti: <q>the semantic value of a text relies on reference, even though it is put directly into
-                           the character string) _as if_ they are marking the plane of reference is a flawed
-                           practice. Markup, in its very basis, embodies a contradiction. It collapses two distinct
-                           orders of linguistic operation in a confused and messy way.</q><sup class="fn-label"><a href="#d2e376" class="footnoteref" id="d2e376-ref">[20]</a></sup> This is an unfortunately binary way of thinking about embedded markup as fundamentally
+                           the character string) <span class="ital">as if</span> they are marking the plane of reference is a flawed practice. Markup, in its very
+                           basis, embodies a contradiction. It collapses two distinct orders of linguistic operation
+                           in a confused and messy way.</q><sup class="fn-label"><a href="#d2e392" class="footnoteref" id="d2e392-ref">[21]</a></sup> This is an unfortunately binary way of thinking about embedded markup as fundamentally
                         disordered in permitting distinct semantic fields of interpretation. The location
                         of the <q>mess</q> is not so much in the orderly tree of XML as in the practice of writing human and
                         machine-readable code. This is not a matter of all embedded markup embodying contradictions,
@@ -649,7 +672,7 @@
                                  a TEI ODD, a METS profile, or the Balisage tag library); based on your knowledge of
                                  my data that comes from either the documents themselves or from the associated files
                                  (or both), you either change my data to suit your system or change your system to
-                                 suit my data as needed. Human intervention, but not direct communication, is required.<sup class="fn-label"><a href="#d2e395" class="footnoteref" id="d2e395-ref">[21]</a></sup></p>
+                                 suit my data as needed. Human intervention, but not direct communication, is required.<sup class="fn-label"><a href="#d2e411" class="footnoteref" id="d2e411-ref">[22]</a></sup></p>
                            </blockquote>
                         </div> 
                         Far from posing a <q>mess</q>, the actions of documenting descriptive markup make it sustainable and sharable when
@@ -661,57 +684,178 @@
                         schema code, that creates rules for encoding. This may be a first data-modeling experience
                         for students in a general education context, when they are called upon to think in
                         a <q>meta</q> or higher order reflective way about formalizing their code, and making it possible
-                        for others to understand it and reproduce it.</p>
-                     <p>
-                        SEQUENCE: (recipe coding)
-                        (recipe coding with a shared context)
-                        (designing a schema and of controlled vocabularies: within a project)
-                        (decision processes for controlled vocabularies with the TEI)
-                        
-                        DATA PREPARATION: 
-                        up-conversion with regular expressions: pattern recognition. Useful for all kinds
-                        of text analysis, as in stemming patterns for natural language processing. In XML,
-                        a power tool for preparing a large-sized corpus of documents. 
-                        
-                        
-                        XSLT: constructing templates and accounting for nodes. Deciding what can be ignored.
-                        Revisiting your decisions
-                        Push and pull processing
-                        
-                        XQUERY and persistent datatyping
-                        Encounters with marked up text get you someplace different than unmarked text, and
-                        give students a constructive experience with data curation and preparation. 
-                        CITE: Clifford Anderson's Balisage paper: On Teaching XQuery to Digital Humanists:
-                        <q>XQuery makes it possible for students to become productive without having to learn
+                        for others to understand it and reproduce it. Learning to write schema code and learning
+                        to navigate and parse the markup also leads to writing comments to explain decisions
+                        and document the code.</p>
+                     <p>Because the XML family of languages is amenable to rapid learning, a student can become
+                        a <q>stack developer</q> easily in the course of a semester, as Clifford Anderson observed of the course he
+                        taught students in XQuery: <q>XQuery makes it possible for students to become productive without having to learn
                            as many computer science or software engineering concepts. A simple four or five line
                            FLWOR expression can easily demonstrate the power of XQuery and provide a basis for
-                           students' tinkering and exploration.</q> And, as Anderson affirms, it is part of a full stack development  http://www.balisage.net/Proceedings/vol13/html/Anderson01/BalisageVol13-Anderson01.html
+                           students' tinkering and exploration.</q><sup class="fn-label"><a href="#d2e437" class="footnoteref" id="d2e437-ref">[23]</a></sup> Further, learning to process markup leads code-writers to a decision making process
+                        about streamlining the code-base, making it more legible, tractable, XPath-able. The
+                        more XPath people learn, the better equipped they are to understand the actionable
+                        aspects of the code they have created. Learning XPath and writing XSLT or XQuery moves
+                        a coder from following rules obediently so that others can process the data, to becoming
+                        an active intellectual investigator.</p>
+                  </div>
+                  <div class="section" id="d2e449">
+                     <h2 class="title" style="clear: both">An example of writing intensive interchange work: two Emily Dickinson university projects</h2>
+                     <p>University students can and do create projects <q>built to last</q>, that is, launched in a way that others can build on and continue based on the documentation
+                        they provide. As a case in point, let us consider two markup projects, decades apart,
+                        addressing the poetry of Emily Dickinson.</p>
+                     <p>The first is a proof-of-concept proposal for a PhD thesis prepared by then graduate
+                        student at University of Virginia, Michele Ierardi, and as of 2020, it is now only
+                        accessible on the web from the Wayback Machine: <a href="https://web.archive.org/web/20191014042502/http://www.cs.virginia.edu/~ajf2j/emily/stab.html" class="link" target="_new">Translating Emily: Digitally Re-Presenting Fascicle 16</a>.<sup class="fn-label"><a href="#d2e460" class="footnoteref" id="d2e460-ref">[24]</a></sup> The project involved an exercise in HTML 1.0 and an early form of JavaScript to render
+                        Emily Dickinson’s handwritten variants on her own poems in a way that did not demote
+                        those variants to a footnote, but gave them equal space using the capacities of hypertext.
+                        On reading a Dickinson’s poems on the site, the reader would encounter Dickinson’s
+                        own different versions of a line in slowly flashing text. The editor’s hope in designing
+                        her interface was to make readers more aware of Dickinson’s open-endedness, in not
+                        cancelling out multiple versions of a line, that all possibilities could coexist.
+                        The site was a proof of concept that did not materialize into a PhD thesis project,
+                        but it persisted and influenced my teaching of American Literature courses when I
+                        wanted to share Dickinson’s unusual writing process with my students and give them
+                        an experience of an interesting and accessible (if slightly hypnotizing) digital edition
+                        interface. The JavaScript on the site ceased to function around 2010, and soon thereafter
+                        I began seeking a way to continue accessing this cleanly and simply encoded project
+                        in a way that would still benefit my students.</p>
+                     <p>In 2015, soon after I had begun teaching courses in coding and the XML stack at Pitt-Greensburg,
+                        I was fortunate to find a group of students interested in poetry and fascinated by
+                        the possibilities of digital archive recovery work. The students and I contacted Michele
+                        Ierardi and obtained her permission to reconstruct her site. This involved up-converting
+                        the code from HTML 1.0 to TEI P5, as well as adding more data researched and supplied
+                        by my students to include TEI critical apparatus markup that would encode Dickinson’s
+                        variants as well as other printed versions of the same poems in a series of editions
+                        published after Dickinson’s death. Their new goal was to build on Ierardi’s work and
+                        create a readable interface for comparing the multiple versions of Dickinson’s poems,
+                        and to begin expanding that work to include other fascicles (the term for the bundles
+                        of poems that Dickinson tied together with thread). My students’ site is the second
+                        <a href="http://dickinson.newtfire.org/" class="link" target="_new">Emily Dickinson project</a>, strongly bound to the first.<sup class="fn-label"><a href="#d2e475" class="footnoteref" id="d2e475-ref">[25]</a></sup> These students have since graduated, but they continue to work on this project, adding
+                        a new fascicle and tinkering with the interface, and I understand from the ongoing
+                        project director, Nicole Lottig, that she intends to continue coding and developing
+                        the site to display all of Dickinson’s fascicles as a long-term project. An excellent
+                        sampling of the project’s interface for reading a Dickinson poem and seeing its variant
+                        texts and images together is its display of <a href="http://dickinson.newtfire.org/16/1605.html" class="link" target="_new">Poem 1605</a>, which shows how most of the early print editions cut out Dickinson’s entire last
+                        stanza and typically ignored her variants. The editors share <a href="http://dickinson.newtfire.org/16/xml/1605variant.xml" class="link" target="_new">their TEI code from the interface</a>, which provides an application of parallel segmentation in the TEI.</p>
+                     <p>In preparing this project, the students had the benefit of building on an earlier
+                        and simpler markup model, as well as a sense of purpose in giving a remarkably interesting
+                        project a new lease on life. They needed to study the TEI P5 guidelines and essentially
+                        took a <q>crash course</q>, as undergraduates from a range of majors in English, Creative Writing, and Information
+                        Sciences in manuscript encoding and textual scholarship, in the course of a semester.
+                        They learned to transform the code and designed the interface in the Fall 2015 semester,
+                        and then redesigned and improved the interface while investigating a new research
+                        question in a following Spring 2016 term. Over the course of one year, in the context
+                        of university coursework, this site took wings, not just as a way to read the documents,
+                        but also to investigate and visualize a serious research question of how these editions
+                        compare to one another. Writing XSLT and XQuery on the project, these students produced
+                        SVG visualizations of <a href="http://dickinson.newtfire.org/16/dash.html" class="link" target="_new"><q>Comparative Dash Reduction</q></a> (measuring which editions most frequently normalized Dickinson’s dash punctuation
+                        into commas, semicolons, or periods), and <a href="http://dickinson.newtfire.org/16/networkAnalysis.html" class="link" target="_new">a network analysis</a> to investigate which editions share the most variants in common. This was created
+                        with XQuery to pull and calculate data from the TEI parallel segmentation markup:
+                        For each instance of critical apparatus markup, study the co-occurrence of particular
+                        witnesses. Generate a count of the number of times each witness appears with each
+                        of the other witnesses. This data was pulled as a simple TSV (tab-separated values
+                        file) and plotted in Cytoscape network analysis software.</p>
+                     <p>The student website documents its methodology extensively and I now use it as a model
+                        for my current students to prepare documentation that <a href="http://dickinson.newtfire.org/16/conclusion.html" class="link" target="_new">features code and coding decisions</a>. Along the way of producing it and sustaining their codebase, the project team cultivated
+                        <a href="http://dickinson.newtfire.org/contact.html" class="link" target="_new">multiple GitHub repositories with issue tracking</a> as they turned to new sources of data and worked to combine Fascicles 6 and 16 into
+                        a new site. Their writing intensive experience involved countless messages to each
+                        other to fix broken code, make a visualization work, update the website, refine the
+                        CSS and JavaScript. The professional experience with web development was took them
+                        far beyond what would be possible in a course in tagging and markup alone, or in web
+                        development within a content management system. The writing intensive part was unquestionably
+                        in producing and testing and refining their own interface. And the project keeps on
+                        giving to future students.</p>
+                     <p>In Fall 2019, a colleague of mine from the History department, Bill Campbell, did
+                        me the great honor of taking my coding course, following a tradition at Pitt begun
+                        when I took David Birnbaum’s XML-stack coding course on Obdurodon in Spring 2013.<sup class="fn-label"><a href="#d2e511" class="footnoteref" id="d2e511-ref">[26]</a></sup>. Campbell launched <a href="http://brecon.newtfire.org" class="link" target="_new">The Brecon Project</a>, together with students on his team, to study the manuscript tradition narrating
+                        the history of the founding of a medieval collegiate church school in Wales. The students
+                        did not need to know medieval Latin to work on the document data modeling and even
+                        to apply critical apparatus markup with a tightly controlled schema combining Relax
+                        NG and Schematron, generated from a TEI ODD customization that they devised and revised
+                        over the course of their project meetings. For the students and my History colleague
+                        involved in the project, this was their introduction to the TEI critical apparatus
+                        as a document data model. Naturally, they turned to previous projects from our course
+                        to follow some examples of critical apparatus markup in order to understand how to
+                        prepare their own, which was distinct since the churhc history was not bundle of poems,
+                        but nevertheless required a modeling of textual variation over time. Without needing
+                        to consult the Dickinson project team, the Brecon team was able to adapt and build
+                        on the example of their markup to take their own study in new directions. Alyssa Argento,
+                        a returning student who was mentoring project teams and continuing learning XSLT and
+                        SVG on her own, and eagerly took on a challenge of trying to show how the editions
+                        compared quantitatively: which editions shared the most material in common, inspired
+                        by the example of the network analysis on the Dickinson project. Finding her computer
+                        unable to install the latest version of the network analysis software that the Dickinson
+                        team had relied on for their visualization, Argento studied data, worked out how to
+                        arrange eight witnesses as nodes in a circle, and produced a network graph by herself
+                        with weighted edges and sized nodes that provide a detailed visual summary of how
+                        much the eight different mansucripts shared in common across 25 sections of the church
+                        history. Having produced a static network visualization, she then studied how to make
+                        it interactive by applying JavaScript to attributes on the SVG elements, and associating
+                        SVG with HTML tables containing data from each of the manuscript chunks. Her interactive
+                        visualization, accessible at  <a href="http://brecon.newtfire.org/html/analysis/network.html " class="link" target="_new">http://brecon.newtfire.org/html/analysis/network.html</a> represents work that she envisioned and worked out by herself with occasional input
+                        from me and the project team, and while it needs work in the documentation area, it
+                        represents a line of succession from earlier projects in my course. I share it here
+                        to demonstrate what is possible for undergraduates to learn, very quickly, with the
+                        benefit of the XML stack.</p>
+                     <p>The many student projects developed in the two <q>sibling</q> University of Pittsburgh coding courses over the past decade are now my richest data
+                        set for comprehending the possibilities of interchange and up-conversion and development
+                        on a code base. Our students show us how this work is not only writing intensive in
+                        the moment of application, but intensifies over time as we learn new ways of doing
+                        things and build on the model of previous projects. We understand this work to be
+                        a long term process in the development of a writing discipline with markup languages.</p>
+                  </div>
+                  <div class="section" id="d2e528">
+                     <h2 class="title" style="clear: both">Writing intensive activities cultivated by XML-based semester projects</h2>
+                     <p> When students prepare a project in markup, they are not simply writing papers to
+                        be filed in a course-specific context. They are preparing a research site and their
+                        work can often be continued by them or others. Students can be building beyond the
+                        constraints of a single semester, and even if they are not tempted to return to the
+                        project, they can leave scaffolding behind for others to continue the work or alter
+                        its direction, or retrieve the files. Awareness of the potential energy of the work
+                        they are doing can give shape to an encounter with markup languages in the course
+                        of a semester. The energy input over a course of weeks puts emphasis on preparing
+                        material that others can read and reuse. Assignments for a writing intensive experience
+                        can be constructed with attention to:
                         
-                        DOCUMENTATION and SHARING the work: establishing a context
-                        When students prepare a project in markup, they are not simply writing papers to be
-                        filed in a course-specific context. They are preparing a research site and their work
-                        can often be continued by them or others. Students can be building beyond the constraints
-                        of a single semester, and even if they are not tempted to return to the project, they
-                        can leave scaffolding behind for others to continue the work or alter its direction,
-                        or retrieve the files. Awareness of the potential energy of the work they are doing
-                        can give shape to an encounter with markup languages in the course of a semester.
-                        The energy input over a course of weeks puts emphasis on preparing material that others
-                        can read and reuse. Indeed, assignments for a writing intensive experience can be
-                        constructed with attention to:
-                        1) reading the code and documentation of other projects, and building on it
-                        2) preparing documentation meant to be read by peers and professor(s) working with
-                        you, and meant to be read by others who access your code from a repository. Such documentation
-                        may include:
-                        * Kanban board workflow management
-                        * README.md files
-                        * task lists and issues
-                        * being responsible and <q>on-call</q> for responding to questions and assisting your teammates
                         
-                        These are activities to do with taking responsibility for method and processes, for
-                        managing the intellectual content of a project. Studying how copyright applies to
-                        code and markup and choosing a license for sharing the work should be part of this
-                        experience. 
-                        Giving students access to the full set of tools in the XML arsenal and establishing
+                        <div class="orderedlist" id="d2e532">
+                           <ol start="NaN" style="list-style-type: decimal;">
+                              <li id="d2e533">
+                                 <p>reading the code and documentation of other projects, and building on it</p>
+                              </li>
+                              <li id="d2e535">
+                                 <p>preparing documentation meant to be read by peers and professor(s) working with you,
+                                    and meant to be read by others who access your code from a repository. Such documentation
+                                    may include:
+                                    
+                                    <div class="itemizedlist" id="d2e538">
+                                       <ul>
+                                          <li id="d2e539">
+                                             <p>Kanban board workflow management</p>
+                                          </li>
+                                          <li id="d2e541">
+                                             <p>README.md files in a GitHub repository</p>
+                                          </li>
+                                          <li id="d2e543">
+                                             <p>developing task lists and and issue tracking</p>
+                                          </li>
+                                          <li id="d2e545">
+                                             <p>responding to questions and assisting your teammates on a project discussion forum
+                                                like Slack</p>
+                                          </li>
+                                       </ul>
+                                    </div>
+                                 </p>
+                              </li>
+                           </ol>
+                        </div>
+                        
+                        These are informal writing-intensive activities to do with taking responsibility for
+                        method and processes, for managing the intellectual content of a project. Studying
+                        how copyright applies to code and markup and choosing a license for sharing the work
+                        should also be part of this experience.</p>
+                     <p>Giving students access to the full set of tools in the XML arsenal and establishing
                         both immediate (in-semester) short-range and long-range possibilities for their work
                         will introduce students from any background to the power of markup languages and with
                         the experience of writing to form and connect with communities of practice. This cannot
@@ -722,19 +866,9 @@
                         they will have engaged with a powerful form of writing that marks up, investigates,
                         curates, propagates, and conserves textual data. This is the very definition of a
                         writing-intensive experience that is both professionalizing and cross-disciplinary
-                        in its reach. 
-                        
-                        Monitoring git commit messages and documentation 
-                        
-                        (documentation, XML Comments, git commits, methodology pages, sharing the work with
-                        others)
-                        (research in the field: referencing is connecting and networking)
-                        
-                        
-                        
-                        </p>
+                        in its reach. </p>
                   </div>
-                  <div class="section" id="d2e428">
+                  <div class="section" id="d2e552">
                      <h2 class="title" style="clear: both">Coda: Teaching markup languages during a pandemic</h2>
                      <p>Teaching a writing-intensive course in markup modalities offers little distress for
                         adaptation to a remote learning environment. In spring 2020, when the author’s university
@@ -851,15 +985,31 @@
                      <div id="d2e328" class="footnote">
                         <p><sup class="fn-label"><a href="#d2e328-ref" class="footnoteref">[18]</a></sup> Kate Singer, <q>Digital Close Reading: TEI for Teaching Poetic Vocabularies</q>, <span class="ital">The Journal of Interactive Technology &amp; Pedagogy</span> issue 3: 15 May 2013. <a href="https://jitp.commons.gc.cuny.edu/digital-close-reading-tei-for-teaching-poetic-vocabularies/" class="link" target="_new">https://jitp.commons.gc.cuny.edu/digital-close-reading-tei-for-teaching-poetic-vocabularies/</a>. Accessed 28 April 2020.</p>
                      </div>
-                     <div id="d2e360" class="footnote">
-                        <p><sup class="fn-label"><a href="#d2e360-ref" class="footnoteref">[19]</a></sup> <q>Features of a Writing Intensive Course</q>, Penn State Learning, 2020. <a href="https://pennstatelearning.psu.edu/features-writing-intensive-course" class="link" target="_new">https://pennstatelearning.psu.edu/features-writing-intensive-course</a>. Accessed 28 April 2020.</p>
+                     <div id="d2e349" class="footnote">
+                        <p><sup class="fn-label"><a href="#d2e349-ref" class="footnoteref">[19]</a></sup> Elisa Beshero-Bondar, <q>XML Exercise 1</q> Coding and Data Visualization course taught at Pitt-Greensburg, 2019-2020. <a href="https://dh.newtfire.org/XMLExercise1.html" class="link" target="_new">https://dh.newtfire.org/XMLExercise1.html</a>. Accessed 28 April 2020.</p>
                      </div>
-                     <div id="d2e376" class="footnote">
-                        <p><sup class="fn-label"><a href="#d2e376-ref" class="footnoteref">[20]</a></sup> Johanna Drucker, <span class="ital">SpecLab: Digital Aesthetics and Projects in Speculative Computing</span> (Chicago: University of Chicago Press, 2009) n. 26. pp. 205-206, citing Dino Buzetti,
+                     <div id="d2e373" class="footnote">
+                        <p><sup class="fn-label"><a href="#d2e373-ref" class="footnoteref">[20]</a></sup> <q>Features of a Writing Intensive Course</q>, Penn State Learning, 2020. <a href="https://pennstatelearning.psu.edu/features-writing-intensive-course" class="link" target="_new">https://pennstatelearning.psu.edu/features-writing-intensive-course</a>. Accessed 28 April 2020.</p>
+                     </div>
+                     <div id="d2e392" class="footnote">
+                        <p><sup class="fn-label"><a href="#d2e392-ref" class="footnoteref">[21]</a></sup> Johanna Drucker, <span class="ital">SpecLab: Digital Aesthetics and Projects in Speculative Computing</span> (Chicago: University of Chicago Press, 2009) n. 26. pp. 205-206, citing Dino Buzetti,
                            <q>Text Representation and Textual Models</q>, ACH-ALLC 1999 Conference Proceedings. <a href="http://www2.iath.virginia.edu/ach-allc.99/proceedings/buzzetti.html" class="link" target="_new">http://www2.iath.virginia.edu/ach-allc.99/proceedings/buzzetti.html</a>. Accessed 28 April 2020.</p>
                      </div>
-                     <div id="d2e395" class="footnote">
-                        <p><sup class="fn-label"><a href="#d2e395-ref" class="footnoteref">[21]</a></sup> Bauman, Syd, “Interchange vs. Interoperability,” <span class="ital">Proceedings of Balisage: The Markup Conference 2011. Balisage Series on Markup Technologies</span>, vol. 7 (2011). <a href="https://doi.org/10.4242/BalisageVol7.Bauman01" class="link" target="_new">https://doi.org/10.4242/BalisageVol7.Bauman01</a>.</p>
+                     <div id="d2e411" class="footnote">
+                        <p><sup class="fn-label"><a href="#d2e411-ref" class="footnoteref">[22]</a></sup> Bauman, Syd, “Interchange vs. Interoperability,” <span class="ital">Proceedings of Balisage: The Markup Conference 2011. Balisage Series on Markup Technologies</span>, vol. 7 (2011). <a href="https://doi.org/10.4242/BalisageVol7.Bauman01" class="link" target="_new">https://doi.org/10.4242/BalisageVol7.Bauman01</a>.</p>
+                     </div>
+                     <div id="d2e437" class="footnote">
+                        <p><sup class="fn-label"><a href="#d2e437-ref" class="footnoteref">[23]</a></sup> Anderson, Clifford B. <q>On Teaching XQuery to Digital Humanists</q>, <span class="ital">Proceedings of Balisage: The Markup Conference 2014. Balisage Series on Markup Technologies</span>, vol. 13 (2014). <a href="https://doi.org/10.4242/BalisageVol13.Anderson01" class="link" target="_new">https://doi.org/10.4242/BalisageVol13.Anderson01</a>.</p>
+                     </div>
+                     <div id="d2e460" class="footnote">
+                        <p><sup class="fn-label"><a href="#d2e460-ref" class="footnoteref">[24]</a></sup> Michele Ierardi, <span class="ital">Translating Emily: Digitally Re-Presenting Fascicle 16</span>, ~1999. The Wayback Machine capture of 14 October 2019: <a href="https://web.archive.org/web/20191014042502/http://www.cs.virginia.edu/~ajf2j/emily/stab.html" class="link" target="_new">https://web.archive.org/web/20191014042502/http://www.cs.virginia.edu/~ajf2j/emily/stab.html</a>. Accessed 28 April 2020.</p>
+                     </div>
+                     <div id="d2e475" class="footnote">
+                        <p><sup class="fn-label"><a href="#d2e475-ref" class="footnoteref">[25]</a></sup> Nicole Lottig, Brooke Stewart, Alex Mielnicki, Brooke Lawrence, and Rebecca Parker,
+                           Emily Dickinson, <span class="ital">Emily Dickinson</span>, Newtfire, 2015. <a href="http://dickinson.newtfire.org/" class="link" target="_new">http://dickinson.newtfire.org/</a>. Accessed 28 April 2020.</p>
+                     </div>
+                     <div id="d2e511" class="footnote">
+                        <p><sup class="fn-label"><a href="#d2e511-ref" class="footnoteref">[26]</a></sup> David J. Birnbaum, Digital Humanities, Obdurodon. <a href="http://dh.obdurodon.org/" class="link" target="_new">http://dh.obdurodon.org/</a>. Accessed 28 April 2020.</p>
                      </div>
                   </div>
                </div>
