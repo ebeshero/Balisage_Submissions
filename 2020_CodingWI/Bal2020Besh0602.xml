@@ -503,15 +503,15 @@
                     can be found in. The challenge of the assignment is to write code that helps
                     categorize ingredients, mark necessary equipment, and stages for processing, but
                     the system you develop is up to you.<footnote>
-                        <para>Elisa Beshero-Bondar, <quote>XML Exercise 1</quote> Coding and Data
-                            Visualization course taught at Pitt-Greensburg, 2019-2020. The author’s
+                        <para><quote>XML Exercise 1</quote> Coding and Data
+                            Visualization course taught at Pitt-Greensburg, 2019-2020. <link
+                                xlink:href="https://dh.newtfire.org/XMLExercise1.html"
+                                >https://dh.newtfire.org/XMLExercise1.html</link>. The author’s
                             series of assignments developing from XML to Relax-NG, regular
                             expressions and document up-conversion, XPath, XSLT, XQuery, as well as
                             HTML, SVG, CSS, and JavaScript are generally accessible at <link
                                 xlink:href="https://dh.newtfire.org"
-                                >https://dh.newtfire.org</link>.<link
-                                xlink:href="https://dh.newtfire.org/XMLExercise1.html"
-                                >https://dh.newtfire.org/XMLExercise1.html</link>. Accessed 28 April
+                                >https://dh.newtfire.org</link>. Accessed 28 April
                             2020.</para>
                     </footnote></para>
             </blockquote> Moving to the encoding of a poem or a piece of historical correspondence
