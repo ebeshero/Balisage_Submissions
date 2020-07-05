@@ -51,11 +51,12 @@
                     Technology at Penn State Erie, the Behrend College. Until June 2020, she was a
                     professor of English Literature and Director of the Center for the Digital Text
                     at Pitt-Greensburg which has featured markup languages as a foundation of a
-                    curriculum in Digital Studies. Her projects involve her in experimentations
-                    with the TEI, including refining methods for computer-assisted collation of
-                    editions and probing questions of interoperability to reconcile diplomatic and
-                    critical edition encodings, as in the <link xlink:href="https://frankensteinvariorum.github.io/viewer/">Frankenstein Variorum project</link>. 
-                    She is the founder and organizer of the <link
+                    curriculum in Digital Studies. Her projects involve her in experimentations with
+                    the TEI, including refining methods for computer-assisted collation of editions
+                    and probing questions of interoperability to reconcile diplomatic and critical
+                    edition encodings, as with the <link
+                        xlink:href="https://frankensteinvariorum.github.io/viewer/">Frankenstein
+                        Variorum</link>. She is the founder and organizer of the <link
                         xlink:href="http://digitalmitford.org">Digital Mitford project</link> and
                         <link xlink:href="https://digitalmitford.github.io/DigMitCS/">its usually
                         annual coding school</link>. Her ongoing adventures with markup technologies
