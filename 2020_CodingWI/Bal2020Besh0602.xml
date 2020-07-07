@@ -92,8 +92,8 @@
     <section>
         <title>Coding literacy as a writing modality</title>
         <para>To any academic who remembers the exhilaration in the 1990s of navigating around an
-            Andrew File System and posting on it a <quote>paperless syllabus</quote> in a markup
-            language, the application of the phrase <quote>teaching with technology</quote> in the
+            Andrew File System and posting on it a <quote>paperless syllabus</quote> in HTML, 
+            the application of the phrase <quote>teaching with technology</quote> in the
             university discourse of the 2010s may have a jarring sound. Scholarly markup geeks from
             a past century have lived to see <quote>technology</quote> for education be packaged in
             learning management systems that securely take care of all of our electronic
@@ -107,7 +107,7 @@
             technology for web annotation is now packaged and funneled into an LMS with a
             proprietary gradebook integration, without which faculty may not be aware of its
             existence or understand how to apply it in their courses.<footnote>
-                <para>On the day of this writing, 12 April 2020, the <link
+                <para>On the day of this writing, 5 July 2020, the <link
                         xlink:href="https://web.hypothes.is/">https://web.hypothes.is/</link>
                     promotes its proprietary LMS integration over its always free web service.
                     Nevertheless, a paid-for integration with an LMS is unnecessary to anyone with
