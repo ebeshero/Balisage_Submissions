@@ -608,15 +608,9 @@
                         xlink:href="http://www2.iath.virginia.edu/ach-allc.99/proceedings/buzzetti.html"
                         >http://www2.iath.virginia.edu/ach-allc.99/proceedings/buzzetti.html</link>.
                     Accessed 28 April 2020.</para>
-            </footnote> This is an unfortunately binary way of thinking about embedded markup as
-            fundamentally disordered in permitting distinct semantic fields of interpretation. The
-            location of the <quote>mess</quote> is not so much in the orderly tree of XML as in the
-            practice of writing human and machine-readable code. This is not a matter of all
-            embedded markup embodying contradictions, but rather a matter of finding ways of
-            imperfectly confronting a mess that can be shared and found useful—the practice of
-            embedding markup very much is the act of reading and writing itself. The markup itself
+            </footnote> Certainly messiness and confusion can be applied to an ill-conceived data model as well as it can to a piece of disorganized and unrevised writing. But embedded encoding itself
             is only a mess to the extent that it defies comprehension, navigation, and processing by
-            an informed reader of markup. Against this dismissal of markup as fundamental confusion
+            an informed reader of markup who is a member of a community of practice. Against Drucker’s dismissal of markup as fundamental confusion
             we should counter with the concept of <emphasis>blind interchange</emphasis>, as Syd
             Bauman defined it in 2011: <blockquote>
                 <para>you want my data; you go to my website or load my CD and download or copy both
@@ -636,7 +630,7 @@
             descriptive markup make it sustainable and sharable when the encoder is removed in time
             and space and technological delivery system from those who encounter the code. This is
             the benefit of the tangle and weave of literate programming, and it is reinforced by
-            communities that encounter the code and interact with it. Or rather, the
+            communities that encounter the code and interact with it. Understood in this way, the
                 <quote>mess</quote> of markup is indistinguishable from the <quote>mess</quote> of
             writing; both may be ordered with care and explanation.</para>
         <para>Students often improve their markup dramatically when they learn to write Relax NG
