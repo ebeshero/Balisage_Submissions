@@ -583,36 +583,39 @@
             applications of markup technologies, and the challenges to the thinking and
             communication process are remarkably similar. The increasing intensity is not simply due
             to learning new technologies, but rather becomes gradually more intensive in cognitive
-            ways. The process of becoming a better reader and writer is also the process of becoming
-            more adept in organizing and processing information. Writing may be easily recognizable
-            in the practice we call mere tagging in first-time coders, but the way one becomes a
-            better writer with markup is by learning what can be done with and made from the markup.
-            The processes of navigating, extracting, transforming, and remixing data marked in an
-            XML tree define the <emphasis>intensive</emphasis> part of the writing process. When
-            students learn only tagging and do not learn how to process their own code to visualize
-            and analyze the data they have marked, they remain unaware of what the markup makes
-            possible, and they may often be unaware of the problems imposed by imprecision and
-            inconsistency. They may be tagging correctly, but not in a way that communicates
-            meaningfully or reliably. Further, in becoming aware of the human unreliabilities in
-            applying markup, they may come away with the idea that the tree structures we create are
-            subjective and arbitrary, and they would be reinforced in this thinking by old arguments
-            from those who find embedded markup a source of intrusive confusion. Johanna Drucker has made this assertion that embedded markup confuses levels of discourse: <quote>Putting content markers into the plane of discourse (a tag that identifies the semantic value of
-                a text relies on reference, even though it is put directly into the character
-                string) <emphasis>as if</emphasis> they are marking the plane of reference is a
-                flawed practice. Markup, in its very basis, embodies a contradiction. It collapses
-                two distinct orders of linguistic operation in a confused and messy way.</quote><footnote>
+            ways.  The processes of navigating, extracting, transforming, and remixing data marked
+            in an XML tree define the <emphasis>intensive</emphasis> part of the writing process I
+            am here associating with text encoding. When students learn only tagging and do not
+            learn how to process their own code to visualize and analyze the data they have marked,
+            they remain unaware of what the markup makes possible, and they may often be unaware of
+            the problems imposed by imprecision and inconsistency. They may be tagging correctly,
+            but not in a way that communicates meaningfully or reliably. Further, in becoming aware
+            of the human unreliabilities in applying markup, they may come away with the idea that
+            the tree structures we create are subjective and arbitrary, and they would be reinforced
+            in this thinking by old arguments from those who find embedded markup a source of
+            intrusive confusion. Johanna Drucker has made this assertion that embedded markup
+            confuses levels of discourse: <quote>Putting content markers into the plane of discourse
+                (a tag that identifies the semantic value of a text relies on reference, even though
+                it is put directly into the character string) <emphasis>as if</emphasis> they are
+                marking the plane of reference is a flawed practice. Markup, in its very basis,
+                embodies a contradiction. It collapses two distinct orders of linguistic operation
+                in a confused and messy way.</quote><footnote>
                 <para>Johanna Drucker, <emphasis role="ital">SpecLab: Digital Aesthetics and
                         Projects in Speculative Computing</emphasis> (Chicago: University of Chicago
-                    Press, 2009) n. 26. pp. 205-206. Drucker cites Dino Buzetti as originating the argument of a fundamentally confused data model in XML in his paper, <quote>Text Representation
-                        and Textual Models</quote>, ACH-ALLC 1999 Conference Proceedings. <link
+                    Press, 2009) n. 26. pp. 205-206. Drucker cites Dino Buzetti as originating the
+                    argument of a fundamentally confused data model in XML in his paper, <quote>Text
+                        Representation and Textual Models</quote>, ACH-ALLC 1999 Conference
+                    Proceedings. <link
                         xlink:href="http://www2.iath.virginia.edu/ach-allc.99/proceedings/buzzetti.html"
                         >http://www2.iath.virginia.edu/ach-allc.99/proceedings/buzzetti.html</link>.
                     Accessed 28 April 2020.</para>
-            </footnote> Certainly messiness and confusion can be applied to an ill-conceived data model as well as it can to a piece of disorganized and unrevised writing. But embedded encoding itself
-            is only a mess to the extent that it defies comprehension, navigation, and processing by
-            an informed reader of markup who is a member of a community of practice. Against Drucker’s dismissal of markup as fundamental confusion
-            we should counter with the concept of <emphasis>blind interchange</emphasis>, as Syd
-            Bauman defined it in 2011: <blockquote>
+            </footnote> Certainly messiness and confusion can be applied to an ill-conceived data
+            model as well as it can to a piece of disorganized and unrevised writing. But embedded
+            encoding itself is only a mess to the extent that it defies comprehension, navigation,
+            and processing by an informed reader of markup who is a member of a community of
+            practice. Against Drucker’s dismissal of markup as fundamental confusion we should
+            counter with the concept of <emphasis>blind interchange</emphasis>, as Syd Bauman
+            defined it in 2011: <blockquote>
                 <para>you want my data; you go to my website or load my CD and download or copy both
                     the data of interest and any associated files (e.g., documentation or
                     specifications like a TEI ODD, a METS profile, or the Balisage tag library);
