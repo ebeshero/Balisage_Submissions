@@ -538,7 +538,7 @@
             is the necessity to return to it and revise it when sharing it with a community of
             practice. When students learn to inspect the code and share its customization in project
             teams, the markup becomes subject to intensive review and systematic revision to make it
-            be sharable rather than subjective. The more this is done, and the more experience that
+            sharable rather than subjective. The more this is done, and the more experience that
             students and scholars gain, the more prepared they are to share in wider conversations,
             as for example, markup practitioners in the classicist community share applications of
             the EpiDoc standard, and a medievalist graduate student prepares to speak at the annual
@@ -562,17 +562,17 @@
             applications of markup technologies, and the challenges to the thinking and
             communication process are remarkably similar. The increasing intensity is not simply due
             to learning new technologies, but rather becomes gradually more intensive in cognitive
-            ways.  The processes of navigating, extracting, transforming, and remixing data marked
-            in an XML tree define the <emphasis>intensive</emphasis> part of the writing process I
-            am here associating with text encoding. When students learn only tagging and do not
-            learn how to process their own code to visualize and analyze the data they have marked,
-            they remain unaware of what the markup makes possible, and they may often be unaware of
-            the problems imposed by imprecision and inconsistency. They may be tagging correctly,
-            but not in a way that communicates meaningfully or reliably. Further, in becoming aware
-            of the human unreliabilities in applying markup, they may come away with the idea that
-            the tree structures we create are subjective and arbitrary, and they would be reinforced
-            in this thinking by old arguments from those who find embedded markup a source of
-            intrusive confusion. Johanna Drucker has made this assertion that embedded markup
+            ways. The processes of navigating, extracting, transforming, and remixing data marked in
+            an XML tree define the <emphasis>intensive</emphasis> part of the writing process I am
+            here associating with text encoding. When students learn only tagging and do not learn
+            how to process their own code to visualize and analyze the data they have marked, they
+            remain unaware of what the markup makes possible, and they may often be unaware of the
+            problems imposed by imprecision and inconsistency. They may be tagging correctly, but
+            not in a way that communicates meaningfully or reliably. As they first become aware of
+            the human unreliabilities in applying markup, they may come away with the idea that the
+            tree structures we create are subjective and arbitrary, and they would be reinforced in
+            this thinking by old arguments from those who find embedded markup a source of intrusive
+            confusion. For example, Johanna Drucker has made this assertion that embedded markup
             confuses levels of discourse: <quote>Putting content markers into the plane of discourse
                 (a tag that identifies the semantic value of a text relies on reference, even though
                 it is put directly into the character string) <emphasis>as if</emphasis> they are
@@ -590,10 +590,10 @@
                     Accessed 28 April 2020.</para>
             </footnote> Certainly messiness and confusion can be applied to an ill-conceived data
             model as well as it can to a piece of disorganized and unrevised writing. But embedded
-            encoding itself is only a mess to the extent that it defies comprehension, navigation,
+            encoding itself is only a <quote>mess</quote> to the extent that it defies comprehension, navigation,
             and processing by an informed reader of markup who is a member of a community of
-            practice. Against Drucker’s dismissal of markup as fundamental confusion we should
-            counter with the concept of <emphasis>blind interchange</emphasis>, as Syd Bauman
+            practice. Against Drucker’s dismissal of markup as mess we should
+            counter the frequent practice in the markup community of <emphasis>blind interchange</emphasis>, as Syd Bauman
             defined it in 2011: <blockquote>
                 <para>you want my data; you go to my website or load my CD and download or copy both
                     the data of interest and any associated files (e.g., documentation or
@@ -616,7 +616,7 @@
                 <quote>mess</quote> of markup is indistinguishable from the <quote>mess</quote> of
             writing; both may be ordered with care and explanation.</para>
         <para>Students often improve their markup dramatically when they learn to write Relax NG
-            schema code, that creates rules for encoding. This may be a first data-modeling
+            schema code that creates rules for encoding. This may be a first data-modeling
             experience for students in a general education context, when they are called upon to
             think in a <quote>meta</quote> or higher order reflective way about formalizing their
             code, and making it possible for others to understand it and reproduce it. Learning to
@@ -710,8 +710,7 @@
             scholarship, in the course of a semester. They learned to transform the code and
             designed the interface in the Fall 2015 semester, and then redesigned and improved the
             interface while investigating a new research question in a following Spring 2016 term.
-            Over the course of one year, in the context of university coursework, this site took
-            wings, not just as a way to read the documents, but also to investigate and visualize a
+            Over the course of one year, in the context of university coursework, the students not only designed a new reading interface but also explored a
             serious research question of how these editions compare to one another. Writing XSLT and
             XQuery on the project, these students produced SVG visualizations of <link
                 xlink:href="http://dickinson.newtfire.org/16/dash.html"><quote>Comparative Dash
@@ -719,11 +718,9 @@
             Dickinson’s dash punctuation into commas, semicolons, or periods), and <link
                 xlink:href="http://dickinson.newtfire.org/16/networkAnalysis.html">a network
                 analysis</link> to investigate which editions share the most variants in common.
-            This was created with XQuery to pull and calculate data from the TEI parallel
-            segmentation markup: For each instance of critical apparatus markup, study the
-            co-occurrence of particular witnesses. Generate a count of the number of times each
-            witness appears with each of the other witnesses. This data was pulled as a simple TSV
-            (tab-separated values file) and plotted in Cytoscape network analysis software.</para>
+            This was created with XQuery to pull and calculate data from the TEI critical apparatus markup they had modelled for the poems. 
+            The network analysis explored how frequently published versions aligned with Dickinson’s writing in the manuscript versions, based on generating counts with XPath of how frequently a particular version (coded as a reading witness) aligned with other versions. The students wrote XQuery code to extract this data into simple TSV
+            (tab-separated values file) and plotted in Cytoscape network analysis software. The programming work they did with XQuery was built on a foundation of their own care in modeling the markup and designing the rules for the project schema.</para>
         <para>The student website documents its methodology extensively and I now use it as a model
             for my current students to prepare documentation that <link
                 xlink:href="http://dickinson.newtfire.org/16/conclusion.html">features code and
@@ -752,14 +749,14 @@
             combining Relax NG and Schematron, generated from a TEI ODD customization that they
             devised and revised over the course of their project meetings. For the students and my
             History colleague involved in the project, this was their introduction to the TEI
-            critical apparatus as a document data model. Naturally, they turned to previous projects
+            critical apparatus as a document data model. They turned to previous projects
             from our course to follow some examples of critical apparatus markup in order to
-            understand how to prepare their own, which was distinct since the text of the charter was not a
-            bundle of poems, but nevertheless required a modeling of textual variation over time.
+            understand how to prepare their own.
             Without needing to consult the Dickinson project team, the Brecon team was able to adapt
-            and build on the example of their markup to take their own study in new directions.
+            and build on the example of their markup to take their own study in new directions, recognizing how their project diverged. For the Brecon team, the text of the charter was not a
+            bundle of poems, but nevertheless required a modeling of textual variation over time.
             Alyssa Argento, a returning student who was mentoring project teams and continuing
-            learning XSLT and SVG on her own, eagerly took on a challenge of trying to show how the
+            learning XSLT and SVG on her own, took on the challenge of trying to show how the
             manuscript and print witnesses compared quantitatively: which versions of the charter shared the most material in common,
             inspired by the example of the network analysis on the Dickinson project. Finding her
             computer unable to install the latest version of the network analysis software that the
@@ -783,7 +780,7 @@
             comprehending the possibilities of interchange and up-conversion and development on a
             code base. Our students show us how this work is not only writing intensive in the
             moment of application, but intensifies over time as we learn new ways of doing things
-            and build on the model of previous projects. We understand this work to be a long term
+            and build on the model of previous projects. Perhaps we can understand this cohort-driven work to be a long term
             process in the development of a writing discipline with markup languages.</para>
     </section>
     <section>
