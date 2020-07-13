@@ -98,18 +98,19 @@
             century have lived to see <quote>technology</quote> for education be packaged in
             learning management systems that securely take care of all of our electronic
             interactions with students from posting announcements to grades. Even for 90s markup
-            geeks, learning our way around the technologies driving Blackboard and Canvas can be
-            abstruse and fretfully time-consuming, especially when we attempt applying their
+            geeks, learning our way around the technologies driving Blackboardc Canvas, or Moodle
+            can be abstruse and fretfully time-consuming, especially when we attempt applying their
             byzantine integrations with various proprietary software applications like Zoom or
             Panopto. Publications supporting educational technology innovations make evident that
             educational software applications are universally expected to be integrated and accessed
             from within a learning management system (LMS). For example, Hypothes.is, an open-source
-            technology for web annotation is now packaged and funneled into an LMS with a
-            proprietary gradebook integration, without which faculty may not be aware of its
-            existence or understand how to apply it in their courses.<footnote>
-                <para>On the day of this writing, 5 July 2020, the <link
+            and fully open access technology for web annotation is now packaged and funneled into an
+            LMS with a proprietary gradebook integration, without which faculty may not be aware of
+            its existence or understand how to apply it in their courses.<footnote>
+                <para>On the day of this writing, 13 July 2020, the <link
                         xlink:href="https://web.hypothes.is/">https://web.hypothes.is/</link>
-                    promotes its proprietary LMS integration over its always free web service.
+                    promotes its proprietary LMS integration over its always free web service, even
+                    in waiving fees for educational institutions for the fall 2020 semester.
                     Nevertheless, a paid-for integration with an LMS is unnecessary to anyone with
                     access to a web browser and a capacity to follow clear and simple instructions
                     to create a public or private annotation group.</para>
@@ -147,27 +148,26 @@
         </para>
         <para>Although we have little practical choice but to commit to developing course materials
             in frameworks that we do not choose for ourselves, those frameworks (e.g. Blackboard,
-            Moodle, Canvas) are built from XML building blocks which the savvy customer can
-            occasionally learn about to try to modify parts of the system permissible to access. <footnote>
+            Canvas, Moodle) are built from XML building blocks which the savvy customer can
+            occasionally find ways to modify <quote>under the hood</quote> where permitted.<footnote>
                 <para>See, for example, <link xlink:href="https://scholarlms.net/moodle-xml-format/"
                         >the documentation of Moodle XML format for quizzes</link>.</para>
             </footnote> XML establishes the context of educational technology in our educational
-            institutions, but our access is carefully gated in ways that relegate
-            the technology under the hood to the level of the abstruse and esoteric. Those of us who
-            teach students to write and build projects with markup technologies may be few in
-            number, but we are the ones who are aware of the skills our students rapidly develop and
-            hone over the course of a single semester—skills to build data models, search
-            interfaces, and informational graphics according to their own design. Learning XML with
-            its family of languages helps students to develop independently from <quote>black
-                box</quote> software, and also helps make them informed consumers to choose the
-            software they want to commit to particular tasks, to find the tools most amenable to
-            user alterations <quote>under the hood</quote> and most friendly to transporting the
-            data when the software does not last. Learning markup technologies is a way of learning
-            the structures of the web of information, and much the way we learn the formal genre
-            expectations of an essay or a poem, we learn formal ways of containing data and metadata
-            in an XML framework driven by our interests in processing, sharing, accessing the data.
-            We write documents to be read and acted upon by humans; and we write markup to be read
-            and parsed and acted upon by humans and machines.</para>
+            institutions, but our access is carefully gated in ways that relegate modification of the framework to the level of the abstruse and esoteric. Those of us who teach students
+            to write and build projects with markup technologies may be few in number, but we are
+            the ones who are aware of the skills our students rapidly develop and hone over the
+            course of a single semester—skills to build data models, search interfaces, and
+            informational graphics according to their own design. Learning XML with its family of
+            languages helps students to develop independently from <quote>black box</quote>
+            software, and also helps make them informed consumers to choose the software they want
+            to commit to particular tasks, to find the tools most amenable to user alterations
+                <quote>under the hood</quote> and most friendly to transporting the data when the
+            software inevitably upgrades or is no longer supported. Learning markup technologies is a way of learning the structures
+            of the web of information, and much the way we learn the formal genre expectations of an
+            essay or a poem, we learn formal ways of containing data and metadata in an XML
+            framework driven by our interests in processing, sharing, accessing the data. We write
+            documents to be read and acted upon by humans; and we write markup to be read and parsed
+            and acted upon by humans and machines.</para>
         <para>XML markup and its family of languages itself has not become more abstruse or
             difficult to learn since the millenium. Indeed, instruction is much easier now with many
             tutorials available and more powerful processing methods available now.<footnote>
@@ -378,9 +378,9 @@
                         xlink:href="https://journals.openedition.org/jtei/979"
                         >https://journals.openedition.org/jtei/979</link>. Accessed 28 April
                     2020.</para>
-            </footnote> This trouble for universalized processing is one of the aspects of XML that
-            makes it writerly and scholarly in nature, and gives it power as a research tool when
-            student writers learn not just how to tag but also how to manage and process their
+            </footnote> This trouble for universalized processing is also a feature of XML that
+            makes it writerly and scholarly in nature, and gives it power as a research tool, a power that is enhanced when
+            new coders learn not just how to tag but also how to manage and process their
             tagging as a controlled system. Confronting the challenge of processing the markup and
             sharing it with others outside one’s discourse community (oneself, one’s team, or one’s
             semester class) is what this section designates as <emphasis>intensive</emphasis> about
