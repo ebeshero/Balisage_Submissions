@@ -596,14 +596,14 @@
             meaningfully or reliably. Further, in becoming aware of the human unreliabilities in
             applying markup, they may come away with the idea that the tree structures we create are
             subjective and arbitrary, and they would be reinforced in this thinking by old arguments
-            from those who find embedded markup a source of intrusive confusion. <footnote>
-                <para>Johanna Drucker has made this assertion that embedded markup confuses levels of discourse: <quote>Putting content markers into the plane of discourse (a tag that identifies the semantic value of
-                        a text relies on reference, even though it is put directly into the character
-                        string) <emphasis>as if</emphasis> they are marking the plane of reference is a
-                        flawed practice. Markup, in its very basis, embodies a contradiction. It collapses
-                        two distinct orders of linguistic operation in a confused and messy way.</quote>Johanna Drucker, <emphasis role="ital">SpecLab: Digital Aesthetics and
+            from those who find embedded markup a source of intrusive confusion. Johanna Drucker has made this assertion that embedded markup confuses levels of discourse: <quote>Putting content markers into the plane of discourse (a tag that identifies the semantic value of
+                a text relies on reference, even though it is put directly into the character
+                string) <emphasis>as if</emphasis> they are marking the plane of reference is a
+                flawed practice. Markup, in its very basis, embodies a contradiction. It collapses
+                two distinct orders of linguistic operation in a confused and messy way.</quote><footnote>
+                <para>Johanna Drucker, <emphasis role="ital">SpecLab: Digital Aesthetics and
                         Projects in Speculative Computing</emphasis> (Chicago: University of Chicago
-                    Press, 2009) n. 26. pp. 205-206. She cites Dino Buzetti as originating the argument of a fundamentally confused data model in XML in his paper, <quote>Text Representation
+                    Press, 2009) n. 26. pp. 205-206. Drucker cites Dino Buzetti as originating the argument of a fundamentally confused data model in XML in his paper, <quote>Text Representation
                         and Textual Models</quote>, ACH-ALLC 1999 Conference Proceedings. <link
                         xlink:href="http://www2.iath.virginia.edu/ach-allc.99/proceedings/buzzetti.html"
                         >http://www2.iath.virginia.edu/ach-allc.99/proceedings/buzzetti.html</link>.
