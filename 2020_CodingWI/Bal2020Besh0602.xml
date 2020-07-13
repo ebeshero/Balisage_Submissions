@@ -293,11 +293,12 @@
                     No.33 (April 2017) 1-8; 7. <link
                         xlink:href="https://dl.acm.org/doi/pdf/10.1145/3079368.3079413"
                         >https://dl.acm.org/doi/pdf/10.1145/3079368.3079413</link>.</para>
-            </footnote> Indeed, this emphasis on writing to learn a science enacts a return to an
-            earlier and more integrated approach to education, before the <quote>sciences</quote>
-            had become formally distinct from <quote>humanities</quote>: the late eighteenth century
-            saw the scientific poems of Erasmus Darwin and calls for poetry that would bring zoology
-            and botany to life and encourage sympathy with the natural world.<footnote>
+            </footnote> Indeed, this idea that writing to document your observations can help to
+            learn a science enacts a return to an earlier and more integrated approach to education,
+            before the <quote>sciences</quote> had become formally distinct from
+                <quote>humanities</quote>: the late eighteenth century saw the scientific poems of
+            Erasmus Darwin and calls for poetry that would bring zoology and botany to life and
+            encourage sympathy with the natural world.<footnote>
                 <para>For context, see Sharon Ruston, <quote>The Application of Natural History to
                         Poetry</quote>
                     <emphasis role="ital">Literature and Science Hub</emphasis> University of
@@ -308,7 +309,16 @@
             </footnote> We have known that the act of writing enhances learning in across
             disciplines for a long time now. But futher, as Hermans and Alderweld point out,
             students can learn programming more easily if they are taught in the mode of writing
-            instruction, with modeled examples and activities that hone observation skills.</para>
+            instruction, with modeled examples and activities that hone observation skills. What
+            might this mean for learning to work with XML? It might involve students reviewing
+            markup, schemas, interfaces, and visualizations from established XML projects as part of
+            their course experience, and writing about how they observe things to be working. For
+            example, students can be given assignments to explore a project site like the <link xlink:href="https://mapoflondon.uvic.ca/index.htm">Map
+                of Early Modern London</link> or the <link xlink:href="http://shelleygodwinarchive.org/">Shelley-Godwin Archive</link> to look at the code
+            under the hood and describe how they understand the pieces of the project to fit
+            together. In exploring sites like these, students in the author’s classes have often found a basis for
+            understanding what kinds of research questions and web reading and research tools their
+            encoding and programming work can make possible, and they often build on what they learn in their own projects to understand how they can organize information about people, places, contexts, language patterns, revision history, and more.<footnote><para>The Map of Early Modern London provides especially helpful, transparent documentation of their markup and editorial practice throughout the site with a strong investment in <link xlink:href="https://mapoflondon.uvic.ca/teaching.htm">teaching resources</link> to assist new coders.</para></footnote></para>
         <para>It is probably no coincidence that Donald Knuth modeled his concept of <quote>literate
                 programming</quote> with programming for document formatting in the 1980s. In this
             context the programming of a machine to format electronic documents unites fundamentally
@@ -332,34 +342,45 @@
                     from the same source, so they are consistent with each other.<footnote>
                         <para>Knuth 2.</para>
                     </footnote></para>
-            </blockquote> Literate programming became paradigmatic for the the XML family of
-            languages by the turn of the new millenium. In 2002 Norm Walsh modeled its application
-            to the DocBook XSLT stylesheets by applying namespaces to permit the tangling of
-            actionable code with documentation.<footnote>
+            </blockquote> Literate programming is part of the XML specifications and became
+            paradigmatic for the the XML family of languages by the turn of the new millenium. In
+            2002 Norm Walsh modeled its application to the DocBook XSLT stylesheets by applying
+            namespaces to permit the tangling of actionable code with documentation.<footnote>
                 <para>Norman Walsh, <quote>Literate Programming in XML</quote> presented at
                         <emphasis role="ital">XML 2002</emphasis>, 15 October 2002. <link
                         xlink:href="https://nwalsh.com/docs/articles/xml2002/lp/paper.html"
                         >https://nwalsh.com/docs/articles/xml2002/lp/paper.html</link> Accessed 25
                     April 2020.</para>
-            </footnote>. And over the course of its development from the early 1990s onward, the
-            One-Document-Does-It-All (ODD) system represents a path-breaking example of literate
-            programming for the purpose of compiling and delivering the Guidelines of the Text
-            Encoding Initiative (TEI) as a combination of documentation and processing code
-            instantiating the schema rules of the community-maintained XML vocabulary.<footnote>
+            </footnote>. Responding to Walsh’s work, Eric van der Vlist prepared a clear and
+            thoroughly-documented explanation how literate programming applies to developing schema
+            rules for project coding through XML with embedded Relax NG code, readily transformable
+            into multiple formats to produce schema validation checking as well as human-readable
+            web-ready documentation.<footnote>
+                <para>Eric Van der Vlist, <quote>Literate Programming: Generating Relax NG
+                        Schemas</quote> in <emphasis role="ital">Relax NG</emphasis>, O’Reilly
+                    Books, 2003. <link
+                        xlink:href="http://books.xmlschemata.org/relaxng/relax-CHP-14-SECT-2.html"
+                        >http://books.xmlschemata.org/relaxng/relax-CHP-14-SECT-2.html</link>.</para>
+            </footnote> And over the course of its development from the early 1990s onward, the
+            One-Document-Does-It-All (ODD) system has modeled literate programming for the purpose
+            of compiling and delivering the Guidelines of the Text Encoding Initiative (TEI) as a
+            combination of documentation and processing code instantiating the schema rules of the
+            community-maintained XML vocabulary.<footnote>
                 <para>Sebastian Rahtz and Lou Burnard, <quote>Reviewing the TEI ODD System</quote>
                     <emphasis role="ital">DocEng ’13: Proceedings of the 2013 ACM symposium on
                         document engineering</emphasis>, September 2013, 193-196. <link
                         xlink:href="https://doi.org/10.1145/2494266.2494321"
                         >https://doi.org/10.1145/2494266.2494321</link> Accessed 25 April
                     2020.</para>
-            </footnote> With its deep investment in literate programming, the XML family of
-            languages should be understood to be perhaps the most thoroughly invested in writing
-            processes. Taken together, tangling and weaving in the development of markup projects
-            should be understood across the university as a writing intensive experience, worthy of
-            incorporation in the curriculum as such.</para>
+            </footnote> With its early and continuing investment in literate programming, especially
+            in the form of specifications and schema modeling, the XML family of languages should be
+            understood to be perhaps the most thoroughly invested in writing processes.</para>
+        <para>Student coders can gain an introductory experience in literate programming in designing
+            ODD schemas with descriptive glosses and explanation encoded together with schema rules
+            in project. Whether or not we understand the drafting of an ODD customization to constitute an experience in programming, we must recognize its value for writing intensive literacy, because it involves students writing the rules for a project to work systematically and designing its data for consistency and precision, and it provides for description and explanation that can make a project sharable with others. Taken together, tangling and weaving in the development of markup projects should be understood in educational institutions as a distinctly writing intensive experience.</para>
     </section>
     <section>
-        <title>Writing intensively is coding for interchange</title>
+        <title>Writing intensively with XML is coding for interchange</title>
         <para>The aspect of XML encoding that makes it so problematic or impossible for
             interoperational processing (even within a shared vocabulary like the TEI) is the
             semantic naming of tags, what Desmond Schmidt has called its
@@ -440,16 +461,17 @@
             and critical thinking skills.</para>
         <para>In my years of teaching undergraduates to code, I notice in the first couple of weeks
             that certain students have difficulties with conceptualizing dependencies, or what the
-            relationship between an element and an attribute and its value ought to be. They
-            sometimes prepare shallow hierarchies, and instead of bundling list items together in a
-            cluster, make a very flat tree where every line is its own entry. These students benefit
-            from seeing more detailed markup, and also from understanding something about how the
-            markup may be processed, how it can be used to organize and access particular kinds of
-            information. For that reason, I have found that inviting my students to write their
-            first markup on a recipe, one that contains an interesting variety of ingredients,
-            measurement units, and activities, provides a very clear and easily recognizable sense
-            of structure with lots of categories of information. Further, I ask them to envision a
-            scenario for the encoding that tries to create a system for filing documents: <blockquote>
+            relationship between an element and an attribute and its value ought to be. Students
+            just starting to code often prepare shallow hierarchies, and instead of bundling list
+            items together into a wrapped cluster, they make a very flat tree where every line is
+            its own entry. These students benefit from seeing examples of more deeply hierarchical
+            markup, and also from understanding something about how the markup may be processed, how
+            it can be used to organize and access particular kinds of information. For that reason,
+            I have found that inviting my students to write their first markup on a recipe, one that
+            contains an interesting variety of ingredients, measurement units, and activities,
+            provides a very clear and easily recognizable sense of structure with lots of categories
+            of information. Further, I ask them to envision a scenario for the encoding that tries
+            to create a system for filing documents: <blockquote>
                 <para>First, read this recipe for homemade bread, and pretend you are filing it with
                     hundreds of other recipes that you need to fit a set purpose, such as running a
                     restaurant, in which you need to keep track of kinds and quantities of
@@ -461,16 +483,15 @@
                     can be found in. The challenge of the assignment is to write code that helps
                     categorize ingredients, mark necessary equipment, and stages for processing, but
                     the system you develop is up to you.<footnote>
-                        <para><quote>XML Exercise 1</quote> Coding and Data
-                            Visualization course taught at Pitt-Greensburg, 2019-2020. <link
+                        <para><quote>XML Exercise 1</quote> Coding and Data Visualization course
+                            taught at Pitt-Greensburg, 2019-2020. <link
                                 xlink:href="https://dh.newtfire.org/XMLExercise1.html"
                                 >https://dh.newtfire.org/XMLExercise1.html</link>. The author’s
                             series of assignments developing from XML to Relax-NG, regular
                             expressions and document up-conversion, XPath, XSLT, XQuery, as well as
                             HTML, SVG, CSS, and JavaScript are generally accessible at <link
-                                xlink:href="https://dh.newtfire.org"
-                                >https://dh.newtfire.org</link>. Accessed 28 April
-                            2020.</para>
+                                xlink:href="https://dh.newtfire.org">https://dh.newtfire.org</link>.
+                            Accessed 28 April 2020.</para>
                     </footnote></para>
             </blockquote> Moving to the encoding of a poem or a piece of historical correspondence
             after the recipe leads to recognition of different kinds of data and observations about
