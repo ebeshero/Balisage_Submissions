@@ -166,10 +166,10 @@
             of the web of information, and much the way we learn the formal genre expectations of an
             essay or a poem, we learn formal ways of containing data and metadata in an XML
             framework driven by our interests in processing, sharing, accessing the data. We write
-            documents to be read and acted upon by humans; and we write markup to be read and parsed
+            documents to be read and acted upon by humans; and we write markup to be read
             and acted upon by humans and machines.</para>
         <para>XML markup and its family of languages itself has not become more abstruse or
-            difficult to learn since the millenium. Indeed, instruction is much easier now with many
+            difficult to learn since the millenium. Indeed, instruction is much easier by the year 2020 with many
             tutorials available and more powerful processing methods available now.<footnote>
                 <para>The author finds it is becoming easier to teach XPath, XSLT, and XQuery since
                     the introduction of XPath 3.0 and 3.1 with the simplicity of reading the
@@ -186,13 +186,13 @@
             markup languages that they themselves control? This paper argues that a sustained
             learning and application of markup technologies, not as implicit structure, but as
             explicit document data modeling and development, should serve as a broadly accessible
-            cross-disciplinary writing-intensive experience in its own right. This exploration
+            cross-disciplinary writing-intensive experience for students. This exploration
             should open doors to students who would otherwise not consider themselves <quote>tech
-                savvy</quote> or capable programmers.</para>
+                savvy</quote> or capable programmers to learn computational tools that make for more powerful capacities to write, develop, and interact with the document data and the semantic web.</para>
         <para>In awakening students to the technologies that shape composition, classes that teach
                 <quote>digital writing modalities</quote> (or composition that involves multiple
             media forms) may provide faculty markup practitioners a well-established and widely
-            lauded context for teaching markup languages in a writing-intensive way. For writing
+            lauded context for teaching markup languages in a way that educational institutions can classify as a writing-intensive experience. For writing
             instructors, <quote>digital writing modalities</quote> or <quote>multimodal
                 writing</quote> can motivate dialogue about the medium as the message and the choice
             of form following function and audience. Addressing recent trends to assign student
