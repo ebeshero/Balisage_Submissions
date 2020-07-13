@@ -589,22 +589,21 @@
             better writer with markup is by learning what can be done with and made from the markup.
             The processes of navigating, extracting, transforming, and remixing data marked in an
             XML tree define the <emphasis>intensive</emphasis> part of the writing process. When
-            students learn only tagging and do not learn how to parse their own code, they remain
-            unaware of what the markup makes possible, and they may often be unaware of the problems
-            imposed by imprecision and inconsistency. They may be tagging correctly, but not in a
-            way that communicates meaningfully or reliably. Further, in becoming aware of the human
-            unreliabilities in applying markup, they may come away with the idea that the tree
-            structures we create are subjective and arbitrary, and they would be reinforced in this
-            thinking by old arguments from those who find embedded markup a source of intrusive
-            confusion. Johanna Drucker summarizes the argument from a 1999 paper by Dino Buzetti:
-                <quote>the semantic value of a text relies on reference, even though it is put
-                directly into the character string) <emphasis>as if</emphasis> they are marking the
-                plane of reference is a flawed practice. Markup, in its very basis, embodies a
-                contradiction. It collapses two distinct orders of linguistic operation in a
-                confused and messy way.</quote><footnote>
-                <para>Johanna Drucker, <emphasis role="ital">SpecLab: Digital Aesthetics and
+            students learn only tagging and do not learn how to process their own code to visualize
+            and analyze the data they have marked, they remain unaware of what the markup makes
+            possible, and they may often be unaware of the problems imposed by imprecision and
+            inconsistency. They may be tagging correctly, but not in a way that communicates
+            meaningfully or reliably. Further, in becoming aware of the human unreliabilities in
+            applying markup, they may come away with the idea that the tree structures we create are
+            subjective and arbitrary, and they would be reinforced in this thinking by old arguments
+            from those who find embedded markup a source of intrusive confusion. <footnote>
+                <para>Johanna Drucker has made this assertion that embedded markup confuses levels of discourse: <quote>Putting content markers into the plane of discourse (a tag that identifies the semantic value of
+                        a text relies on reference, even though it is put directly into the character
+                        string) <emphasis>as if</emphasis> they are marking the plane of reference is a
+                        flawed practice. Markup, in its very basis, embodies a contradiction. It collapses
+                        two distinct orders of linguistic operation in a confused and messy way.</quote>Johanna Drucker, <emphasis role="ital">SpecLab: Digital Aesthetics and
                         Projects in Speculative Computing</emphasis> (Chicago: University of Chicago
-                    Press, 2009) n. 26. pp. 205-206, citing Dino Buzetti, <quote>Text Representation
+                    Press, 2009) n. 26. pp. 205-206. She cites Dino Buzetti as originating the argument of a fundamentally confused data model in XML in his paper, <quote>Text Representation
                         and Textual Models</quote>, ACH-ALLC 1999 Conference Proceedings. <link
                         xlink:href="http://www2.iath.virginia.edu/ach-allc.99/proceedings/buzzetti.html"
                         >http://www2.iath.virginia.edu/ach-allc.99/proceedings/buzzetti.html</link>.
@@ -684,43 +683,43 @@
                         xlink:href="https://web.archive.org/web/20191014042502/http://www.cs.virginia.edu/~ajf2j/emily/stab.html"
                         >https://web.archive.org/web/20191014042502/http://www.cs.virginia.edu/~ajf2j/emily/stab.html</link>.
                     Accessed 28 April 2020.</para>
-            </footnote> The project involved an exercise in HTML 1.0 and an early form of JavaScript
-            to render Emily Dickinson’s handwritten variants on her own poems in a way that did not
-            demote those variants to a footnote, but gave them equal space using the capacities of
-            hypertext. On reading a Dickinson’s poems on the site, the reader would encounter
-            Dickinson’s own different versions of a line in slowly flashing text. The editor’s hope
-            in designing her interface was to make readers more aware of Dickinson’s open-endedness,
-            in not cancelling out multiple versions of a line, that all possibilities could coexist.
-            The site was a proof of concept that did not materialize into a PhD thesis project, but
-            it persisted and influenced my teaching of American Literature courses when I wanted to
-            share Dickinson’s unusual writing process with my students and give them an experience
-            of an interesting and accessible (if slightly hypnotizing) digital edition interface.
-            The JavaScript on the site ceased to function around 2010, and soon thereafter I began
-            seeking a way to continue accessing this cleanly and simply encoded project in a way
-            that would still benefit my students.</para>
+            </footnote> The project involved an exercise applying 1990s HTML and an early form of
+            JavaScript to render Emily Dickinson’s handwritten variants on her own poems in a way
+            that did not demote those variants to a footnote, but gave them equal space using the
+            capacities of hypertext. On reading a Dickinson’s poems on the site, the reader would
+            encounter Dickinson’s own different versions of a line in slowly flashing text. The
+            editor’s hope in designing her interface was to make readers more aware of Dickinson’s
+            open-endedness, in not cancelling out multiple versions of a line, that all
+            possibilities could coexist. The site was a proof of concept that did not materialize
+            into a PhD thesis project, but it persisted and influenced my teaching of American
+            Literature courses when I wanted to share Dickinson’s unusual writing process with my
+            students and give them an experience of an interesting and accessible (if slightly
+            hypnotizing) digital edition interface. The JavaScript on the site ceased to function
+            around 2010, and soon thereafter I began seeking a way to continue accessing this
+            cleanly and simply encoded project in a way that would still benefit my students.</para>
         <para>In 2015, soon after I had begun teaching courses in coding and the XML stack at
             Pitt-Greensburg, I was fortunate to find a group of students interested in poetry and
             fascinated by the possibilities of digital archive recovery work. The students and I
             contacted Michele Ierardi and obtained her permission to reconstruct her site. This
-            involved up-converting the code from HTML 1.0 to TEI P5, as well as adding more data
-            researched and supplied by my students to include TEI critical apparatus markup that
-            would encode Dickinson’s variants as well as other printed versions of the same poems in
-            a series of editions published after Dickinson’s death. Their new goal was to build on
-            Ierardi’s work and create a readable interface for comparing the multiple versions of
-            Dickinson’s poems, and to begin expanding that work to include other fascicles (the term
-            for the bundles of poems that Dickinson tied together with thread). My students’ site is
-            the second <link xlink:href="http://dickinson.newtfire.org/">Emily Dickinson
-                project</link>, strongly bound to the first.<footnote>
+            involved converting the code from HTML to TEI P5, as well as adding more data researched
+            and supplied by my students to include TEI critical apparatus markup that would encode
+            Dickinson’s variants as well as other printed versions of the same poems in a series of
+            editions published after Dickinson’s death. Their new goal was to build on Ierardi’s
+            work and create a readable interface for comparing the multiple versions of Dickinson’s
+            poems, and to begin expanding that work to include other fascicles (the term for the
+            bundles of poems that Dickinson tied together with thread). My students’ site is the
+            second <link xlink:href="http://dickinson.newtfire.org/">Emily Dickinson project</link>,
+            strongly bound to the first.<footnote>
                 <para>Nicole Lottig, Brooke Stewart, Alex Mielnicki, Brooke Lawrence, and Rebecca
-                    Parker, <emphasis role="ital">Emily Dickinson</emphasis>,
-                    Newtfire, 2015. <link xlink:href="http://dickinson.newtfire.org/"
+                    Parker, <emphasis role="ital">Emily Dickinson</emphasis>, Newtfire, 2015. <link
+                        xlink:href="http://dickinson.newtfire.org/"
                         >http://dickinson.newtfire.org/</link>. Accessed 28 April 2020.</para>
-            </footnote> These students have since graduated, but they continue to work on this
-            project, adding a new fascicle and tinkering with the interface, and I understand from
-            the ongoing project director, Nicole Lottig, that she intends to continue coding and
-            developing the site to display all of Dickinson’s fascicles as a long-term project. An
-            excellent sampling of the project’s interface for reading a Dickinson poem and seeing
-            its variant texts and images together is its display of <link
+            </footnote> These students have since graduated from university, but they continue to
+            work on this project, adding a new fascicle and tinkering with the interface, and I
+            understand from the ongoing project director, Nicole Lottig, that she intends to
+            continue coding and developing the site to display all of Dickinson’s fascicles as a
+            long-term project. An excellent sampling of the project’s interface for reading a
+            Dickinson poem and seeing its variant texts and images together is its display of <link
                 xlink:href="http://dickinson.newtfire.org/16/1605.html">Poem 1605</link>, which
             shows how most of the early print editions cut out Dickinson’s entire last stanza and
             typically ignored her variants. The editors share <link
