@@ -391,43 +391,10 @@
             designing schema validation rules. Still more intensification is applied when students
             learn how they can navigate and process the markup data.</para>
         <para>This issue with writerly nature of XML coding and processing is not well appreciated
-            in the larger context of digital humanities work or the developers that surround it,
-            eager to facilitate the publication process and separate it from the markup practice.
-            There is a certain impatience manifested in the writings of developers who want to
-            federate and universalize web interfaces for transforming all bibliographic citations
-            coded in TEI, and finding this difficult or time-consuming because of distinct
-            interpretations of a coding vocabulary, proclaim the TEI itself to be the problem, as
-            Desmond Schmidt has done, for permitting all-in-one incorporation of metadata and
-            interpretation with the data of a text. Schmidt concludes that TEI is out of sync with
-            the web of data: <quote>This document-centric nature of TEI contrasts with the modern
-                data-centric world, where the focus is much more on connecting relatively smaller
-                chunks of data (Berners-Lee 2006).</quote><footnote>
-                <para>Schmidt para 50, citing Tim Berners Lee, “Linked Data.” “Design Issues:
-                    Architectural and Philosophical Points,” 2006. Last modified June 18, 2009.
-                        <link xlink:href="http://www.w3.org/DesignIssues/LinkedData.html"
-                        >http://www.w3.org/DesignIssues/LinkedData.html</link>. Accessed 28 April
-                    2020.</para>
-            </footnote>. Yet this very document-centric orientation is precisely where we should
-            recognize the liberating potential of learning to write intensively with the XML stack,
-            that is, an intellectual freedom from the workings of reductive federated processing
-            mechanisms. The mass scale interoperation that Schmidt and others presume is urgently
-            needed for digital scholarly editions (one particular kind of digital markup project)
-            would separate the scholar from the means of production because the writing of scholars
-            will always pose problems for developers who want to simplify and standardize treatment
-            of their work. Reducing all annotation to standoff triple-stores from the start would
-            inhibit scholarship because it separates the analysis of the text into machine-readable
-            ingestions, and further it presumes that one scholar’s application of the same
-            triple-store ontology will match another’s. Separating layers from the start of
-            constructing a scholarly edition project will not make the work any more objective, but
-            there are other ways to make the documentary work sharable and reviewable by means of
-            interchange. Prioritizing interoperation by separating it into packaged layers will
-            lessen the capacity of scholars who write with markup. When we consider markup as
-            writing intensive, we should not prioritize interoperation over interchange, because
-            interoperation reduces to simple commonalities and interchange explores and creates
-            labyrinths. We need not be ashamed of the XML and TEI for generating complicated
-            structures and giving impatient developers headaches. We would do better to encounter
-            those structures as building materials the way writers do, and give our students the
-            tools to build with them. Rather than designing projects primarily to suit the needs of
+            in the larger context of digital humanities work or among professional developers eager to facilitate the publication process and separate it from the markup practice. Coders can produce complicated, even intricate
+            structures with XML and TEI and give impatient developers headaches, but we would do well to encounter
+            those structures as building materials the way writers do and give our students the
+            tools to work with them. Rather than designing projects primarily to suit the needs of
             developers or content management systems, markup practitioners can learn the writing
             intensive way to control the developing tools as their writing instruments. There will
             be a time and place for the content management system optimized for interoperation, but
