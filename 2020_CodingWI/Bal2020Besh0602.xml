@@ -477,13 +477,14 @@
                 Often new coders introduce far more differently named elements than they really need, or
                 that would be baffling to keep track of in a real-life project. To come to an
                 understanding of how to code helpfully and meaningfully, a student needs to confront the
-                problem of sharing and reproducibility—concepts parallel to the awareness of an audience
+                problem of sharing and reproducibility. Being able to share a decision process and a set of rules for an XML project to describe its work is similar to the awareness of an audience
                 emphasized in rhetoric and composition classes as a means to craft better sentences, to
                 trim out verbosity.</para>
+            
+            
             <para>Learning to code the XML syntax is easy. Learning to optimize one’s preparation of
                 XML takes guided practice, just like learning to write good sentences and
-                paragraphs, and learning to \develop a research paper or a thesis. </para>
-            <para>Just like these progressively more complex writing activities, we can identify
+                paragraphs, and learning to develop a research paper or a thesis. Just like these progressively more complex writing activities, we can identify
                 levels of intensity in increasing applications of markup technologies, and the
                 challenges to the thinking and communication process are remarkably similar. The
                 increasing intensity is not only due to learning new coding syntax, but also
