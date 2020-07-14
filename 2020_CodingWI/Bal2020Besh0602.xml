@@ -475,12 +475,45 @@
                 draft in a composition class, in teaching markup, a certain amount of mess and
                 unreliability is okay as we are learning or figuring out what matters to prioritize.
                 Often new coders introduce far more differently named elements than they really need, or
-                that would be baffling to keep track of in a real-life project. To come to an
-                understanding of how to code helpfully and meaningfully, a student needs to confront the
+                that would be baffling to keep track of in a real-life project. To understand how to code helpfully and meaningfully, a student needs to confront the
                 problem of sharing and reproducibility. Being able to share a decision process and a set of rules for an XML project to describe its work is similar to the awareness of an audience
                 emphasized in rhetoric and composition classes as a means to craft better sentences, to
-                trim out verbosity.</para>
-            
+                trim out verbosity, to outline the thesis project.</para>
+            <para>The road to improvement can be based on the same principles of understanding how
+                to convey relationships, and how to prioritize a main idea with a subordinate
+                clause. A student might write a paragraph like the following in a draft that could
+                benefit from some rounds of revision: <blockquote>
+                    <para>Historically, women have had a tough time when it comes to writing novels
+                        and combatting prejudices and sexism. Many female authors have had to
+                        publish their novels with a male pseudonym or as an anonymous author. When
+                        writing <emphasis role="ital">Frankenstein</emphasis>, Mary shelley wrote it among her friends to see who
+                        could write the best horror story and she did not tag it with her name. The
+                        famous story was left anonymous so her friends wouldn't have a prejudice
+                        view when reading it. The story ended up being her most famous book and she
+                        was a female writer, who wrote a horror story about a male creator and a
+                        frightening, male creature.<footnote>
+                            <para>The quote is taken from a student website project submitted to the
+                                author’s Nineteenth-Century British Literature survey course in Fall
+                                2019.</para>
+                        </footnote>
+                    </para>
+                </blockquote>Instructors who teach writing courses understand the complexities of
+                advising a student on how to revise writing like this. We say things like, the ideas
+                are good, but we need a stronger sense of how the ideas connect, and every sentence
+                needs to support a single central idea, in this case about how Mary Shelley, like
+                other women authors in English history, opted to conceal a female identity in
+                publishing her work. Beyond simple misspellings and missed capitalization, we can
+                identify conceptual problems of subordination, especially evident in the last
+                sentence where the fame of the book and the female identiy of the writer are placed
+                at the same main idea level, out of chronological sequence. The ordering of ideas
+                and the decision of where to place subordinate clauses is a problem we can associate
+                with organization or hierarchy. Rewriting such a paragraph sometimes involves
+                reorganizing and condensing, pulling together apparently disconnected parts in the first draft. For
+                example, here is my own attempt to rewrite the student’s paragraph: <blockquote>
+                    <para>Historically, many women authors faced a sexist and prejudiced publishing industry and opted to conceal their identities either by publishing with a male pseudonym or anonymously, as Mary Shelley did with the anonymous first publication of <emphasis role="ital">Frankenstein</emphasis> in 1818. The novel, a horror story about a male creator and a frightening male creature, became her most famous work, and eventually was published with her name on the title page.</para>
+                </blockquote>
+                My suggested rewriting of this seems a little unsatisfactory because I sense here is something the student might have developed, a sort of loose end from the draft, something about the idea of a female author writing about a male scientist creator and a male creature, whose violent conflict drives this book. Would she have wanted to explore that issue of a woman author investigating male conflict? Is that perhaps the topic of another essay entirely? Writing and rewriting can impose order but also cut out possible avenues of development.</para>
+            <para>I can find similar examples that demonstrate issues with subordination in students’ first XML encoding efforts. </para>
             
             <para>Learning to code the XML syntax is easy. Learning to optimize one’s preparation of
                 XML takes guided practice, just like learning to write good sentences and
