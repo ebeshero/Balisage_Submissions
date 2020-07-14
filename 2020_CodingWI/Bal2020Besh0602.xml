@@ -380,7 +380,7 @@
             in project. Whether or not we understand the drafting of an ODD customization to constitute an experience in programming, we must recognize its value for writing intensive literacy, because it involves students writing the rules for a project to work systematically and designing its data for consistency and precision, and it provides for description and explanation that can make a project sharable with others. Taken together, tangling and weaving in the development of markup projects should be understood in educational institutions as a distinctly writing intensive experience.</para>
     </section>
     <section>
-        <title>Writing intensively with XML is coding for interchange</title>
+        <title>Writing intensively with XML: Coding for interchange</title>
         <para>The aspect of XML encoding that makes it so problematic or impossible for
             interoperational processing (even within a shared vocabulary like the TEI) is the
             semantic naming of tags, what Desmond Schmidt has called its
@@ -459,19 +459,20 @@
             it goes no further than an exercise in tagging, perhaps we should consider this
             something like writing a reflective paper, a response that sharpens one’s observation
             and critical thinking skills.</para>
-        <para>In my years of teaching undergraduates to code, I notice in the first couple of weeks
-            that certain students have difficulties with conceptualizing dependencies, or what the
-            relationship between an element and an attribute and its value ought to be. Students
-            just starting to code often prepare shallow hierarchies, and instead of bundling list
-            items together into a wrapped cluster, they make a very flat tree where every line is
-            its own entry. These students benefit from seeing examples of more deeply hierarchical
-            markup, and also from understanding something about how the markup may be processed, how
-            it can be used to organize and access particular kinds of information. For that reason,
-            I have found that inviting my students to write their first markup on a recipe, one that
-            contains an interesting variety of ingredients, measurement units, and activities,
-            provides a very clear and easily recognizable sense of structure with lots of categories
-            of information. Further, I ask them to envision a scenario for the encoding that tries
-            to create a system for filing documents: <blockquote>
+        <para>In my roughly seven consecutive years of teaching undergraduates to code with the XML
+            family of languages, I notice a recurring pattern in the first couple of weeks of a
+            semester that certain students have difficulties with conceptualizing dependencies, or
+            what the relationship between an element and an attribute and its value ought to be.
+            Students just starting to code often prepare shallow hierarchies, and instead of
+            bundling list items together into a wrapped cluster, they make a very flat tree where
+            every line is its own entry. These students benefit from seeing examples of nested
+            markup, and also from understanding something about how the markup may be processed to
+            work out how attributes can be used to disambiguate or categorize to refine the markup.
+            For that reason, I have found that inviting my students to write their first markup on a
+            recipe, one that contains an interesting variety of ingredients, measurement units, and
+            activities, provides a very clear and easily recognizable sense of structure with lots
+            of categories of information. I ask them to envision a scenario for the encoding that
+            tries to create a system for filing documents: <blockquote>
                 <para>First, read this recipe for homemade bread, and pretend you are filing it with
                     hundreds of other recipes that you need to fit a set purpose, such as running a
                     restaurant, in which you need to keep track of kinds and quantities of
@@ -509,17 +510,17 @@
             wanted to work systematically with a particularly interesting and tractable kind of
             data. </para>
         <para>Not until we teach students how to customize, query, or transform their markup can
-            they engage with it in a way that universities would characterize as <emphasis>writing
-                intensive</emphasis>. By way of reference, the Pennsylvania State University’s
-            cross-curricular definition of a writing intensive course requires that writing be used
-                <quote>to help students learn course content</quote>, as well as <quote>ways of
-                writing in the discipline</quote>, and that it have formal expectations delivered in
-            assignment sheets. These expectations are familiar to us from university composition
-            courses in the requirements for research papers and thesis documents with structured
-            sections, appendices, but can also be conveyed to require well-formedness in the context
-            of markup languages and a documented codebase. The most significant expectations
-            pertinent to the current argument, however, are to do with an expectation of a recursive
-            writing process: <blockquote>
+            they engage with it in a way that educational institutions might characterize as
+                <emphasis>writing intensive</emphasis>. By way of reference, the Pennsylvania State
+            University’s cross-curricular definition of a writing intensive course requires that
+            writing be used <quote>to help students learn course content</quote>, as well as
+                <quote>ways of writing in the discipline</quote>, and that it have formal
+            expectations delivered in assignment sheets. These expectations are familiar to us from
+            university composition courses in the requirements for research papers and thesis
+            documents with structured sections, appendices, but can also be communicated in the
+            context of encoding XML projects according to a carefuly developed schema and a
+            well-documented codebase. Most importantl and pertinent to XML project development is
+            the expectation that writing-intensive courses engage in significant rounds of revision:<blockquote>
                 <itemizedlist>
                     <listitem>
                         <para>Writing seen as processes that develop through iterations</para>
@@ -534,18 +535,21 @@
                             </footnote></para>
                     </listitem>
                 </itemizedlist>
-            </blockquote> What makes the markup an <emphasis>intensive</emphasis> writing experience
-            is the necessity to return to it and revise it when sharing it with a community of
-            practice. When students learn to inspect the code and share its customization in project
-            teams, the markup becomes subject to intensive review and systematic revision to make it
-            sharable rather than subjective. The more this is done, and the more experience that
-            students and scholars gain, the more prepared they are to share in wider conversations,
-            as for example, markup practitioners in the classicist community share applications of
-            the EpiDoc standard, and a medievalist graduate student prepares to speak at the annual
-            conference of the Text Encoding Initiative or at the annual Kalamazoo International
-            Congress on Medieval Studies. As with peer-reviewed scholarship in any discipline, the
-            XML code-base is subject optimally to heated debate and decisions are made befitting
-            communities of practice.</para>
+            </blockquote> Markup and coding with the XML family of languages becomes an
+                <emphasis>intensive</emphasis> writing experience when students return to it and
+            revise it, to better document decisions for the project team, to better document
+            decisions for readers outside the project, to improve the precision of the data, to
+            simplify the categories to make the code more coherent in categorizing and processing
+            information. When students learn to inspect the code and share its customization in
+            project teams, the markup becomes subject to intensive review and systematic revision to
+            make it sharable rather than subjective. The more this is done, and the more experience
+            that students and scholars gain, the more prepared they are to share in wider
+            conversations. For example, markup practitioners in the classicist community share
+            applications of the EpiDoc standard, and a medievalist graduate student prepares to
+            speak at the annual conference of the Text Encoding Initiative or at the annual
+            Kalamazoo International Congress on Medieval Studies. As with peer-reviewed scholarship
+            in any discipline, the XML code-base is subject optimally to heated debate and decisions
+            are made befitting communities of practice.</para>
         <para>Just as we think of free-writing as a valuable exercise to start a first preliminary
             draft in a composition class, in teaching markup, a certain amount of mess and
             unreliability is okay as we are learning or figuring out what matters to prioritize.
@@ -557,7 +561,9 @@
             trim out verbosity.</para>
         <para>Learning to code the XML syntax is easy. Learning to optimize one’s preparation of XML
             takes guided practice, just like learning to write good sentences and paragraphs, and
-            learning to develop a research paper or a thesis. Just like these progressively more
+            learning to develop a research paper or a thesis. In the sub-sections that follow I will
+            explore these concepts of how to improve writing </para>
+        <para>Just like these progressively more
             complex writing activities, we can identify levels of intensity in increasing
             applications of markup technologies, and the challenges to the thinking and
             communication process are remarkably similar. The increasing intensity is not simply due
@@ -629,17 +635,21 @@
                 science or software engineering concepts. A simple four or five line FLWOR
                 expression can easily demonstrate the power of XQuery and provide a basis for
                 students' tinkering and exploration.</quote><footnote>
-                <para>Anderson, Clifford B. <quote>On Teaching XQuery to Digital Humanists</quote>,
+                    <para>Anderson, Clifford B. <quote>On Teaching XQuery to Digital Humanists</quote>,
                         <emphasis role="ital">Proceedings of Balisage: The Markup Conference 2014.
-                        Balisage Series on Markup Technologies</emphasis>, vol. 13 (2014). <link
-                        xlink:href="https://doi.org/10.4242/BalisageVol13.Anderson01"
-                        >https://doi.org/10.4242/BalisageVol13.Anderson01</link>.</para>
-            </footnote> Further, learning to process markup leads code-writers to a decision making
+                            Balisage Series on Markup Technologies</emphasis>, vol. 13 (2014). <link
+                                xlink:href="https://doi.org/10.4242/BalisageVol13.Anderson01"
+                                >https://doi.org/10.4242/BalisageVol13.Anderson01</link>.</para>
+                </footnote> As XQuery developers know, the simple
+            "for", "let" "where", "order by" and "return" statements that make a "FLWOR" are good
+            ways to introduce students to programming concepts quickly and give them powers to
+            construct all kinds of new data structures from an XML document, whether HTML, SVG
+            (scaleable vector graphics), or structured text formats like CSVs to be imported into
+            spreadsheets, or JSON formats for structured maps and arrays. Students work at the intersections of different data formats with exploring what they can build out of XML trees. Bringing students to work at these intersections between data formats leads code-writers to a decision making
             process about streamlining the code-base, making it more legible, tractable, XPath-able.
-            The more XPath people learn, the better equipped they are to understand the actionable
-            aspects of the code they have created. Learning XPath and writing XSLT or XQuery moves a
-            coder from following rules obediently so that others can process the data, to becoming
-            an active intellectual investigator.</para>
+            Learning XPath and writing XSLT or XQuery to process XML moves a
+            coder from following rules obediently so that others will someday process the data, to becoming
+            an active intellectual investigator who can wield markup like a professional writer.</para>
     </section>
     <section>
         <title>An example of writing intensive interchange work: two university projects on Emily
