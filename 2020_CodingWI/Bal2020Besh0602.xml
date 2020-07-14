@@ -588,7 +588,7 @@
                 &lt;!--jgb: You may substitute a Pilserner beer for the dry fermented cider. --&gt;
             </programlisting>
                 Here we see a common problem for new learners of XML: thinking that white space is
-                sufficient to relate like with like, rather than recognizing the need to position
+                sufficient to relate like to like, rather than recognizing the need to position
                 wrapper elements. The student has not quite understood that the
                     <code>&lt;measurement&gt;</code> and <code>&lt;amount&gt;</code> elements are
                 not really associated together. Nor has the student tried to apply attributes, yet,
@@ -659,7 +659,7 @@
     when knocked on the underside. &lt;step n="23"&gt;Transfer the loaf to a &lt;equipment type="bakeware"
             &gt;wire rack&lt;/equipment&gt; to cool for at least &lt;time&gt;1 hour&lt;/time&gt; before cutting&lt;/step&gt;. &lt;/recipe&gt;  
                 </programlisting>
-                The nested measurement elements inside measurement elements are probably taking the
+                The nested <code>&lt;measurement&gt;</code> elements inside <code>&lt;measurement&gt;</code> elements are probably taking the
                 hierarchy a little too far, but offer a good opportunity to discuss how to handle
                 equivalent units (grams to cups), perhaps by encoding that information in attribute
                 values, and reconsidering the representation of fractions. If the code is going to
@@ -788,9 +788,9 @@ type = attribute type{text}     #types:
                 The beginner student, bb, experimenting with tidy, highly legible commentary on his code, including mapping out attribute values he might use to replace the ambiguous text. But we also see students beginning to hear from each other about project work on which they collaborate and getting used to seeing a code file as a site of productive conversation and ongoing revision.   
                 
             </para>
-            <para>When students learn only tagging and do not learn how to process their own code
+            <para>When students learn only tagging and do not learn how to write schema validation or process their own code
                 to visualize and analyze the data they have marked, they remain unaware of what the
-                markup makes possible, and they may often be unaware of the problems imposed by
+                markup makes possible or of the problems imposed by
                 imprecision and inconsistency. They may be tagging correctly, but not in a way that
                 communicates meaningfully or reliably. As they first become aware of the human
                 unreliabilities in applying markup, they may come away with a limited idea that the
