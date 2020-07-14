@@ -380,7 +380,7 @@
             in project. Whether or not we understand the drafting of an ODD customization to constitute an experience in programming, we must recognize its value for writing intensive literacy, because it involves students writing the rules for a project to work systematically and designing its data for consistency and precision, and it provides for description and explanation that can make a project sharable with others. Taken together, tangling and weaving in the development of markup projects should be understood in educational institutions as a distinctly writing intensive experience.</para>
     </section>
     <section>
-        <title>Writing intensively with XML: Coding for interchange</title>
+        <title>Writing intensively with the XML family of languages</title>
         <para>The aspect of XML encoding that makes it so problematic or impossible for
             interoperational processing (even within a shared vocabulary like the TEI) is the
             semantic naming of tags, what Desmond Schmidt has called its
@@ -413,10 +413,7 @@
             be a time and place for the content management system optimized for interoperation, but
             this should not be the only way that students and scholars learn to write with
             markup.</para>
-        <para>Teaching students how to query their XML code and how to transform it for publication can encourage new systems of thinking and
-            gives writers access to their own means of production. The learning required takes
-            weeks, not years, and is suitably incorporated in a university semester without needing
-            specialized computing prerequisites. Such a course could take a concentration within a
+        <para>A course in text encoding could take a concentration within a
             discipline like English Literature, as Kate Singer’s class at Mount Holyoke did, to
             concentrate collectively on constructing a digital edition of a collection of poems.
             Singer found that the <quote>broad-based ‘humanities language’ of the TEI enabled
@@ -458,7 +455,90 @@
             it goes no further than an exercise in tagging, perhaps we should consider this
             something like writing a reflective paper, a response that sharpens one’s observation
             and critical thinking skills.</para>
-        <para>In my roughly seven consecutive years of teaching undergraduates to code with the XML
+        <section><title>Developing a schema, cultivating interchange, and writing professionally</title>
+            <para>Just as we think of free-writing as a valuable exercise to start a first preliminary
+                draft in a composition class, in teaching markup, a certain amount of mess and
+                unreliability is okay as we are learning or figuring out what matters to prioritize.
+                Often new coders introduce far more differently named elements than they really need, or
+                that would be baffling to keep track of in a real-life project. To come to an
+                understanding of how to code helpfully and meaningfully, a student needs to confront the
+                problem of sharing and reproducibility—concepts parallel to the awareness of an audience
+                emphasized in rhetoric and composition classes as a means to craft better sentences, to
+                trim out verbosity.</para>
+            <para>Learning to code the XML syntax is easy. Learning to optimize one’s preparation of XML
+                takes guided practice, just like learning to write good sentences and paragraphs, and
+                learning to develop a research paper or a thesis. In the sub-sections that follow I will
+                explore these concepts of how to improve writing </para>
+            <para>Just like these progressively more
+                complex writing activities, we can identify levels of intensity in increasing
+                applications of markup technologies, and the challenges to the thinking and
+                communication process are remarkably similar. The increasing intensity is not only due
+                to learning new coding syntax, but also involves recognizing problems, researching how to solve them, and confronting a necessity to revise a system you constructed before you fully understood all its interlocking parts. The processes of navigating, extracting, transforming, and remixing data marked in
+                an XML tree define the <emphasis>intensive</emphasis> part of the writing process I am
+                here associating with text encoding. When students learn only tagging and do not learn
+                how to process their own code to visualize and analyze the data they have marked, they
+                remain unaware of what the markup makes possible, and they may often be unaware of the
+                problems imposed by imprecision and inconsistency. They may be tagging correctly, but
+                not in a way that communicates meaningfully or reliably. As they first become aware of
+                the human unreliabilities in applying markup, they may come away with the idea that the
+                tree structures we create are subjective and arbitrary, and they would be reinforced in
+                this thinking by old arguments from those who find embedded markup a source of intrusive
+                confusion. For example, Johanna Drucker has made this assertion that embedded markup
+                confuses levels of discourse: <quote>Putting content markers into the plane of discourse
+                    (a tag that identifies the semantic value of a text relies on reference, even though
+                    it is put directly into the character string) <emphasis>as if</emphasis> they are
+                    marking the plane of reference is a flawed practice. Markup, in its very basis,
+                    embodies a contradiction. It collapses two distinct orders of linguistic operation
+                    in a confused and messy way.</quote><footnote>
+                        <para>Johanna Drucker, <emphasis role="ital">SpecLab: Digital Aesthetics and
+                            Projects in Speculative Computing</emphasis> (Chicago: University of Chicago
+                            Press, 2009) n. 26. pp. 205-206. Drucker cites Dino Buzetti as originating the
+                            argument of a fundamentally confused data model in XML in his paper, <quote>Text
+                                Representation and Textual Models</quote>, ACH-ALLC 1999 Conference
+                            Proceedings. <link
+                                xlink:href="http://www2.iath.virginia.edu/ach-allc.99/proceedings/buzzetti.html"
+                                >http://www2.iath.virginia.edu/ach-allc.99/proceedings/buzzetti.html</link>.
+                            Accessed 28 April 2020.</para>
+                    </footnote> Certainly messiness and confusion can be applied to an ill-conceived data
+                model as well as it can to a piece of disorganized and unrevised writing. But embedded
+                encoding itself is only a <quote>mess</quote> to the extent that it defies comprehension, navigation,
+                and processing by an informed reader of markup who is a member of a community of
+                practice. Against Drucker’s dismissal of markup as mess we should
+                counter the frequent practice in the markup community of <emphasis>blind interchange</emphasis>, as Syd Bauman
+                defined it in 2011: <blockquote>
+                    <para>you want my data; you go to my website or load my CD and download or copy both
+                        the data of interest and any associated files (e.g., documentation or
+                        specifications like a TEI ODD, a METS profile, or the Balisage tag library);
+                        based on your knowledge of my data that comes from either the documents
+                        themselves or from the associated files (or both), you either change my data to
+                        suit your system or change your system to suit my data as needed. Human
+                        intervention, but not direct communication, is required.<footnote>
+                            <para>Bauman, Syd, “Interchange vs. Interoperability,” <emphasis role="ital"
+                                >Proceedings of Balisage: The Markup Conference 2011. Balisage
+                                Series on Markup Technologies</emphasis>, vol. 7 (2011). <link
+                                    xlink:href="https://doi.org/10.4242/BalisageVol7.Bauman01"
+                                    >https://doi.org/10.4242/BalisageVol7.Bauman01</link>.</para>
+                        </footnote></para>
+                </blockquote> Far from posing a <quote>mess</quote>, the actions of documenting
+                descriptive markup make it sustainable and sharable when the encoder is removed in time
+                and space and technological delivery system from those who encounter the code. This is
+                the benefit of the tangle and weave of literate programming, and it is reinforced by
+                communities that encounter the code and interact with it. Understood in this way, the
+                <quote>mess</quote> of markup is indistinguishable from the <quote>mess</quote> of
+                writing; both may be ordered with care and explanation.</para>
+            <para>Students often improve their markup dramatically when they learn to write Relax NG
+                schema code that creates rules for encoding. This may be a first data-modeling
+                experience for students in a general education context, when they are called upon to
+                think in a <quote>meta</quote> or higher order reflective way about formalizing their
+                code, and making it possible for others to understand it and reproduce it. Learning to
+                write schema code and learning to navigate and parse the markup also leads to writing
+                comments to explain decisions and document the code.</para>
+        </section>
+        <section><title>Writing-intensive querying, processing, and transforming</title>
+        <para>Teaching students how to query their XML code and how to transform it for publication encourages new systems of thinking and
+            gives writers access to their own means of production. The learning required takes
+            weeks, not years, and is suitably incorporated in a university semester without needing
+            specialized computing prerequisites. In my roughly seven consecutive years of teaching undergraduates to code with the XML
             family of languages, I notice a recurring pattern in the first couple of weeks of a
             semester that certain students have difficulties with conceptualizing dependencies, or
             what the relationship between an element and an attribute and its value ought to be.
@@ -549,84 +629,7 @@
             Kalamazoo International Congress on Medieval Studies. As with peer-reviewed scholarship
             in any discipline, the XML code-base is subject optimally to heated debate and decisions
             are made befitting communities of practice.</para>
-        <para>Just as we think of free-writing as a valuable exercise to start a first preliminary
-            draft in a composition class, in teaching markup, a certain amount of mess and
-            unreliability is okay as we are learning or figuring out what matters to prioritize.
-            Often new coders introduce far more differently named elements than they really need, or
-            that would be baffling to keep track of in a real-life project. To come to an
-            understanding of how to code helpfully and meaningfully, a student needs to confront the
-            problem of sharing and reproducibility—concepts parallel to the awareness of an audience
-            emphasized in rhetoric and composition classes as a means to craft better sentences, to
-            trim out verbosity.</para>
-        <para>Learning to code the XML syntax is easy. Learning to optimize one’s preparation of XML
-            takes guided practice, just like learning to write good sentences and paragraphs, and
-            learning to develop a research paper or a thesis. In the sub-sections that follow I will
-            explore these concepts of how to improve writing </para>
-        <para>Just like these progressively more
-            complex writing activities, we can identify levels of intensity in increasing
-            applications of markup technologies, and the challenges to the thinking and
-            communication process are remarkably similar. The increasing intensity is not simply due
-            to learning new technologies, but rather becomes gradually more intensive in cognitive
-            ways. The processes of navigating, extracting, transforming, and remixing data marked in
-            an XML tree define the <emphasis>intensive</emphasis> part of the writing process I am
-            here associating with text encoding. When students learn only tagging and do not learn
-            how to process their own code to visualize and analyze the data they have marked, they
-            remain unaware of what the markup makes possible, and they may often be unaware of the
-            problems imposed by imprecision and inconsistency. They may be tagging correctly, but
-            not in a way that communicates meaningfully or reliably. As they first become aware of
-            the human unreliabilities in applying markup, they may come away with the idea that the
-            tree structures we create are subjective and arbitrary, and they would be reinforced in
-            this thinking by old arguments from those who find embedded markup a source of intrusive
-            confusion. For example, Johanna Drucker has made this assertion that embedded markup
-            confuses levels of discourse: <quote>Putting content markers into the plane of discourse
-                (a tag that identifies the semantic value of a text relies on reference, even though
-                it is put directly into the character string) <emphasis>as if</emphasis> they are
-                marking the plane of reference is a flawed practice. Markup, in its very basis,
-                embodies a contradiction. It collapses two distinct orders of linguistic operation
-                in a confused and messy way.</quote><footnote>
-                <para>Johanna Drucker, <emphasis role="ital">SpecLab: Digital Aesthetics and
-                        Projects in Speculative Computing</emphasis> (Chicago: University of Chicago
-                    Press, 2009) n. 26. pp. 205-206. Drucker cites Dino Buzetti as originating the
-                    argument of a fundamentally confused data model in XML in his paper, <quote>Text
-                        Representation and Textual Models</quote>, ACH-ALLC 1999 Conference
-                    Proceedings. <link
-                        xlink:href="http://www2.iath.virginia.edu/ach-allc.99/proceedings/buzzetti.html"
-                        >http://www2.iath.virginia.edu/ach-allc.99/proceedings/buzzetti.html</link>.
-                    Accessed 28 April 2020.</para>
-            </footnote> Certainly messiness and confusion can be applied to an ill-conceived data
-            model as well as it can to a piece of disorganized and unrevised writing. But embedded
-            encoding itself is only a <quote>mess</quote> to the extent that it defies comprehension, navigation,
-            and processing by an informed reader of markup who is a member of a community of
-            practice. Against Drucker’s dismissal of markup as mess we should
-            counter the frequent practice in the markup community of <emphasis>blind interchange</emphasis>, as Syd Bauman
-            defined it in 2011: <blockquote>
-                <para>you want my data; you go to my website or load my CD and download or copy both
-                    the data of interest and any associated files (e.g., documentation or
-                    specifications like a TEI ODD, a METS profile, or the Balisage tag library);
-                    based on your knowledge of my data that comes from either the documents
-                    themselves or from the associated files (or both), you either change my data to
-                    suit your system or change your system to suit my data as needed. Human
-                    intervention, but not direct communication, is required.<footnote>
-                        <para>Bauman, Syd, “Interchange vs. Interoperability,” <emphasis role="ital"
-                                >Proceedings of Balisage: The Markup Conference 2011. Balisage
-                                Series on Markup Technologies</emphasis>, vol. 7 (2011). <link
-                                xlink:href="https://doi.org/10.4242/BalisageVol7.Bauman01"
-                                >https://doi.org/10.4242/BalisageVol7.Bauman01</link>.</para>
-                    </footnote></para>
-            </blockquote> Far from posing a <quote>mess</quote>, the actions of documenting
-            descriptive markup make it sustainable and sharable when the encoder is removed in time
-            and space and technological delivery system from those who encounter the code. This is
-            the benefit of the tangle and weave of literate programming, and it is reinforced by
-            communities that encounter the code and interact with it. Understood in this way, the
-                <quote>mess</quote> of markup is indistinguishable from the <quote>mess</quote> of
-            writing; both may be ordered with care and explanation.</para>
-        <para>Students often improve their markup dramatically when they learn to write Relax NG
-            schema code that creates rules for encoding. This may be a first data-modeling
-            experience for students in a general education context, when they are called upon to
-            think in a <quote>meta</quote> or higher order reflective way about formalizing their
-            code, and making it possible for others to understand it and reproduce it. Learning to
-            write schema code and learning to navigate and parse the markup also leads to writing
-            comments to explain decisions and document the code.</para>
+       
         <para>Because the XML family of languages is amenable to rapid learning, a student can
             become a <quote>stack developer</quote> easily in the course of a semester, as Clifford
             Anderson observed of the course he taught students in XQuery: <quote>XQuery makes it
@@ -649,6 +652,7 @@
             Learning XPath and writing XSLT or XQuery to process XML moves a
             coder from following rules obediently so that others will someday process the data, to becoming
             an active intellectual investigator who can wield markup as a skilled professional writer.</para>
+        </section>
     </section>
     <section>
         <title>An example of writing intensive interchange work: two university projects on Emily
