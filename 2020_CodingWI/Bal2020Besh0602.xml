@@ -236,14 +236,18 @@
             interdisciplinary pedagogy in coding and programming, and thereby markup languages and
             their applications, is the call for <quote>coding across the curriculum</quote>, which
             sometimes explores the intersections between writing and coding, seeing both as a
-            foundation for literacy in the twenty-first century. Learning to write programming code engages a student in imperative commands, conditional expressions, and descriptive annotation as well as metacommentary in documentation. For the distinctly imperative aspects of coding, Annette Vee finds parallels in Kenneth Burke’s speech-act
-            theory of human expression as performative, to move an audience to process ideas in response to a scripted delivery, whether that audience is human or machine, and she calls for greater awareness of the intersection of scripting that connects the writing and coding process.<blockquote>
-                <para>Exploring the nature of language, action, and
-                    expression through programming allows us to think about the relationship between
-                    writing and speech differently and also to consider the ways in which
-                    technologies can combine with and foster human abilities. Computational and
-                    textual literacy are not simply parallel abilities, but intersectional, part of
-                    a new and larger version of literacy.<footnote>
+            foundation for literacy in the twenty-first century. Learning to write programming code
+            engages a student in writing commands, conditional expressions, and descriptive
+            annotation as well as metacommentary in documentation. For the distinctly imperative
+            aspects of coding, Annette Vee finds parallels in Kenneth Burke’s speech-act theory of
+            human expression as performative, to move an audience to process ideas in response to a
+            scripted delivery, whether that audience is human or machine, and she calls for greater
+            awareness of the intersection of scripting that connects the writing and coding process.<blockquote>
+                <para>Exploring the nature of language, action, and expression through programming
+                    allows us to think about the relationship between writing and speech differently
+                    and also to consider the ways in which technologies can combine with and foster
+                    human abilities. Computational and textual literacy are not simply parallel
+                    abilities, but intersectional, part of a new and larger version of literacy.<footnote>
                         <para> Vee, Annette, <emphasis role="ital">Coding Literacy: How Computer
                                 Programming Is Changing Writing</emphasis> The MIT Press, 2017.
                                 <link xlink:href="doi:10.2307/j.ctt1s476xn"
@@ -251,11 +255,16 @@
                             2020.</para>
                     </footnote></para>
             </blockquote> When coding is understood as literacy, its nexus with writing becomes
-            explicit when we think of it on the same terms as developing language skills. Coding
-            should be as ubiquitous and familiar to students as the writing they have been learning
-            since childhood. Coding does not belong to computer science departments any more than
-            writing belongs to English departments, as David J. Birnbaum and Alison Langmead make
-            explicit: <blockquote>
+            explicit when we think of it on the same terms as developing language skills. But the coding literacy movement may not be as profoundly educational as we imagine. A developer writes in <emphasis role="ital">Slate</emphasis> that <quote>coding literacy</quote> books for children
+            are not what students need to learn to code, when these simply involve following scripts
+            obediently to get a so-called correct answer. Rather, the article claims, the learning
+            process needed for coding is simply learning to do any process thoroughly and well, like taking apart a
+            wooden stool and putting it back to together, or learning how to optimize the efficient
+            use of cookie cutters in rolled dough.<footnote><para>Joe Morgan, <quote>I’m a developer. I won’t teach my kids to code and neither should you.</quote> <emphasis role="ital">Slate</emphasis>. 6 December 2018. Accessed 13 July 2020. <link xlink:href="https://slate.com/human-interest/2018/12/against-teaching-kids-to-code-creativity-problem-solving.html ">https://slate.com/human-interest/2018/12/against-teaching-kids-to-code-creativity-problem-solving.html</link> </para></footnote> Really learning to code, that is not just about
+            learning a correct syntax to earn points or get the <quote>correct answer</quote>, is
+            something more experimental, creative, and purposeful, with awareness of many possible paths to try. That kind of learning does not belong to
+            computer science departments any more than writing belongs to English departments, as
+            David J. Birnbaum and Alison Langmead make explicit: <blockquote>
                 <para>The first step toward learning to code is to recognize that computer
                     programming is not computer science; it is more like writing. Everyone can learn
                     to do it, and can be given the opportunity to learn to do it in ways that are
@@ -372,12 +381,18 @@
                         xlink:href="https://doi.org/10.1145/2494266.2494321"
                         >https://doi.org/10.1145/2494266.2494321</link> Accessed 25 April
                     2020.</para>
-            </footnote> With its early and continuing investment in literate programming, especially
-            in the form of specifications and schema modeling, the XML family of languages should be
-            understood to be perhaps the most thoroughly invested in writing processes.</para>
-        <para>Student coders can gain an introductory experience in literate programming in designing
-            ODD schemas with descriptive glosses and explanation encoded together with schema rules
-            in project. Whether or not we understand the drafting of an ODD customization to constitute an experience in programming, we must recognize its value for writing intensive literacy, because it involves students writing the rules for a project to work systematically and designing its data for consistency and precision, and it provides for description and explanation that can make a project sharable with others. Taken together, tangling and weaving in the development of markup projects should be understood in educational institutions as a distinctly writing intensive experience.</para>
+            </footnote> With its early and continuing investment in literate programming, from its specifications to its schema modeling, the XML family of languages should be
+            understood as thoroughly writerly.</para>
+        <para>Student coders can gain an introductory experience in literate programming in
+            designing ODD schemas with descriptive glosses and explanation encoded together with
+            schema rules in project. Whether or not we understand the drafting of an ODD
+            customization to constitute an experience in programming, we must recognize its value
+            for writing intensive literacy, because it involves students writing the rules for a
+            project to work systematically and designing its data for consistency and precision, and
+            it provides for description and explanation that can make a project sharable with
+            others. Markup, documentation and programming work in the
+            development of XML-based projects should be promoted within educational institutions as a 
+            distinctly intensive experience of writing applied to build resources soundly and well.</para>
     </section>
     <section>
         <title>Writing intensively with the XML family of languages</title>
@@ -465,67 +480,72 @@
                 problem of sharing and reproducibility—concepts parallel to the awareness of an audience
                 emphasized in rhetoric and composition classes as a means to craft better sentences, to
                 trim out verbosity.</para>
-            <para>Learning to code the XML syntax is easy. Learning to optimize one’s preparation of XML
-                takes guided practice, just like learning to write good sentences and paragraphs, and
-                learning to develop a research paper or a thesis. In the sub-sections that follow I will
-                explore these concepts of how to improve writing </para>
-            <para>Just like these progressively more
-                complex writing activities, we can identify levels of intensity in increasing
-                applications of markup technologies, and the challenges to the thinking and
-                communication process are remarkably similar. The increasing intensity is not only due
-                to learning new coding syntax, but also involves recognizing problems, researching how to solve them, and confronting a necessity to revise a system you constructed before you fully understood all its interlocking parts. The processes of navigating, extracting, transforming, and remixing data marked in
-                an XML tree define the <emphasis>intensive</emphasis> part of the writing process I am
-                here associating with text encoding. When students learn only tagging and do not learn
-                how to process their own code to visualize and analyze the data they have marked, they
-                remain unaware of what the markup makes possible, and they may often be unaware of the
-                problems imposed by imprecision and inconsistency. They may be tagging correctly, but
-                not in a way that communicates meaningfully or reliably. As they first become aware of
-                the human unreliabilities in applying markup, they may come away with the idea that the
-                tree structures we create are subjective and arbitrary, and they would be reinforced in
-                this thinking by old arguments from those who find embedded markup a source of intrusive
-                confusion. For example, Johanna Drucker has made this assertion that embedded markup
-                confuses levels of discourse: <quote>Putting content markers into the plane of discourse
-                    (a tag that identifies the semantic value of a text relies on reference, even though
-                    it is put directly into the character string) <emphasis>as if</emphasis> they are
-                    marking the plane of reference is a flawed practice. Markup, in its very basis,
-                    embodies a contradiction. It collapses two distinct orders of linguistic operation
-                    in a confused and messy way.</quote><footnote>
-                        <para>Johanna Drucker, <emphasis role="ital">SpecLab: Digital Aesthetics and
-                            Projects in Speculative Computing</emphasis> (Chicago: University of Chicago
-                            Press, 2009) n. 26. pp. 205-206. Drucker cites Dino Buzetti as originating the
-                            argument of a fundamentally confused data model in XML in his paper, <quote>Text
-                                Representation and Textual Models</quote>, ACH-ALLC 1999 Conference
-                            Proceedings. <link
-                                xlink:href="http://www2.iath.virginia.edu/ach-allc.99/proceedings/buzzetti.html"
-                                >http://www2.iath.virginia.edu/ach-allc.99/proceedings/buzzetti.html</link>.
-                            Accessed 28 April 2020.</para>
-                    </footnote> Certainly messiness and confusion can be applied to an ill-conceived data
-                model as well as it can to a piece of disorganized and unrevised writing. But embedded
-                encoding itself is only a <quote>mess</quote> to the extent that it defies comprehension, navigation,
-                and processing by an informed reader of markup who is a member of a community of
-                practice. Against Drucker’s dismissal of markup as mess we should
-                counter the frequent practice in the markup community of <emphasis>blind interchange</emphasis>, as Syd Bauman
-                defined it in 2011: <blockquote>
-                    <para>you want my data; you go to my website or load my CD and download or copy both
-                        the data of interest and any associated files (e.g., documentation or
+            <para>Learning to code the XML syntax is easy. Learning to optimize one’s preparation of
+                XML takes guided practice, just like learning to write good sentences and
+                paragraphs, and learning to \develop a research paper or a thesis. </para>
+            <para>Just like these progressively more complex writing activities, we can identify
+                levels of intensity in increasing applications of markup technologies, and the
+                challenges to the thinking and communication process are remarkably similar. The
+                increasing intensity is not only due to learning new coding syntax, but also
+                involves recognizing problems, researching how to solve them, and confronting a
+                necessity to revise a system you constructed before you fully understood all its
+                interlocking parts. The processes of navigating, extracting, transforming, and
+                remixing data marked in an XML tree define the <emphasis>intensive</emphasis> part
+                of the writing process I am here associating with text encoding. When students learn
+                only tagging and do not learn how to process their own code to visualize and analyze
+                the data they have marked, they remain unaware of what the markup makes possible,
+                and they may often be unaware of the problems imposed by imprecision and
+                inconsistency. They may be tagging correctly, but not in a way that communicates
+                meaningfully or reliably. As they first become aware of the human unreliabilities in
+                applying markup, they may come away with a limited idea that the tree structures we
+                create are necessarily subjective and arbitrary. They would be reinforced in this
+                thinking by old arguments from those who find embedded markup a source of intrusive
+                confusion. For example, Johanna Drucker has asserted that embedded markup confuses
+                levels of discourse: <quote>Putting content markers into the plane of discourse (a
+                    tag that identifies the semantic value of a text relies on reference, even
+                    though it is put directly into the character string) <emphasis>as if</emphasis>
+                    they are marking the plane of reference is a flawed practice. Markup, in its
+                    very basis, embodies a contradiction. It collapses two distinct orders of
+                    linguistic operation in a confused and messy way.</quote><footnote>
+                    <para>Johanna Drucker, <emphasis role="ital">SpecLab: Digital Aesthetics and
+                            Projects in Speculative Computing</emphasis> (Chicago: University of
+                        Chicago Press, 2009) n. 26. pp. 205-206. Drucker cites Dino Buzetti as
+                        originating the argument of a fundamentally confused data model in XML in
+                        his paper, <quote>Text Representation and Textual Models</quote>, ACH-ALLC
+                        1999 Conference Proceedings. <link
+                            xlink:href="http://www2.iath.virginia.edu/ach-allc.99/proceedings/buzzetti.html"
+                            >http://www2.iath.virginia.edu/ach-allc.99/proceedings/buzzetti.html</link>.
+                        Accessed 28 April 2020.</para>
+                </footnote>Certainly messiness and confusion can be applied to an ill-conceived data
+                model as well as it can to a piece of disorganized and unrevised writing. But
+                embedded encoding itself is only a <quote>mess</quote> to the extent that it defies
+                comprehension, navigation, and processing by an informed reader of markup who is a
+                member of a community of practice. Against Drucker’s dismissal of markup as mess we
+                should counter the frequent practice in the markup community of <emphasis>blind
+                    interchange</emphasis>, as Syd Bauman defined it in 2011: <blockquote>
+                    <para>you want my data; you go to my website or load my CD and download or copy
+                        both the data of interest and any associated files (e.g., documentation or
                         specifications like a TEI ODD, a METS profile, or the Balisage tag library);
                         based on your knowledge of my data that comes from either the documents
-                        themselves or from the associated files (or both), you either change my data to
-                        suit your system or change your system to suit my data as needed. Human
+                        themselves or from the associated files (or both), you either change my data
+                        to suit your system or change your system to suit my data as needed. Human
                         intervention, but not direct communication, is required.<footnote>
-                            <para>Bauman, Syd, “Interchange vs. Interoperability,” <emphasis role="ital"
-                                >Proceedings of Balisage: The Markup Conference 2011. Balisage
-                                Series on Markup Technologies</emphasis>, vol. 7 (2011). <link
+                            <para>Bauman, Syd, “Interchange vs. Interoperability,” <emphasis
+                                    role="ital">Proceedings of Balisage: The Markup Conference 2011.
+                                    Balisage Series on Markup Technologies</emphasis>, vol. 7
+                                (2011). <link
                                     xlink:href="https://doi.org/10.4242/BalisageVol7.Bauman01"
                                     >https://doi.org/10.4242/BalisageVol7.Bauman01</link>.</para>
                         </footnote></para>
                 </blockquote> Far from posing a <quote>mess</quote>, the actions of documenting
-                descriptive markup make it sustainable and sharable when the encoder is removed in time
-                and space and technological delivery system from those who encounter the code. This is
-                the benefit of the tangle and weave of literate programming, and it is reinforced by
-                communities that encounter the code and interact with it. Understood in this way, the
-                <quote>mess</quote> of markup is indistinguishable from the <quote>mess</quote> of
-                writing; both may be ordered with care and explanation.</para>
+                descriptive markup make it sustainable and sharable when the encoder is removed in
+                time and space and technological delivery system from those who encounter the code.
+                Blind interchange is the benefit of the tangle and weave of literate programming,
+                and it is reinforced by communities that encounter the code and interact with it.
+                Understood in this way, the <quote>mess</quote> of markup is indistinguishable from
+                the <quote>mess</quote> of writing; both may be ordered with care and explanation
+                for an audience, first an audience of one’s instructor and peers, and then an
+                audience one does not necessarily meet in person.</para>
             <para>Students often improve their markup dramatically when they learn to write Relax NG
                 schema code that creates rules for encoding. This may be a first data-modeling
                 experience for students in a general education context, when they are called upon to
