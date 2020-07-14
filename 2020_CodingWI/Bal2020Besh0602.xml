@@ -386,13 +386,13 @@
         <para>Student coders can gain an introductory experience in literate programming in
             designing ODD schemas with descriptive glosses and explanation encoded together with
             schema rules in project. Whether or not we understand the drafting of an ODD
-            customization to constitute an experience in programming, we must recognize its value
-            for writing intensive literacy, because it involves students writing the rules for a
-            project to work systematically and designing its data for consistency and precision, and
-            it provides for description and explanation that can make a project sharable with
-            others. Markup, documentation and programming work in the
-            development of XML-based projects should be promoted within educational institutions as a 
-            distinctly intensive experience of writing applied to build resources soundly and well.</para>
+            customization to constitute an experience in embedded programming, we can recognize its
+            value for writing intensive literacy, because it involves students writing the rules for
+            a project to work systematically and designing its data for consistency and precision,
+            and it provides for description and explanation that can make a project sharable with
+            others. Markup, documentation and programming work in the development of XML-based
+            projects should be promoted within educational institutions as a distinctly intensive
+            experience of writing applied to build resources soundly and well.</para>
     </section>
     <section>
         <title>Writing intensively with the XML family of languages</title>
@@ -708,7 +708,86 @@
                 with a particularly interesting and tractable kind of data.</para>
         </section>
         <section><title>Developing a schema, cultivating interchange, and writing professionally</title>
-            
+            <para>Students often improve their markup dramatically when they learn to write Relax NG
+                schema code that creates rules for encoding. This may be a first data-modeling
+                experience for students in a general education context, when they are called upon to
+                think in a <quote>meta</quote> or higher order reflective way about formalizing their
+                code, and making it possible for others to understand it and reproduce it. Learning to
+                write schema code also leads to writing
+                comments to explain decisions and document the code. The following example pairs a short coded document with a student’s schema, and a conversation with another student who was reviewing the code and offering advice. First, here is the XML the student prepared with some good-natured snark from my own assignment instructions:
+                <programlisting>
+                   &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;?xml-model href="01-22_SCHEMA_rngEx02.rnc" type="application/relax-ng-compact-syntax"?&gt;
+&lt;root&gt;
+    &lt;intro&gt; Make sure you do the following: &lt;/intro&gt;
+    &lt;step num="1"&gt; 1) &lt;act type="spec"&gt;Save&lt;/act&gt; your &lt;obj type="comp"&gt;Relax NG file&lt;/obj&gt;
+        &lt;desc type="rel"&gt;with the &lt;obj type="comp"&gt;.rnc extension&lt;/obj&gt; at the &lt;obj type="conc"
+                &gt;end&lt;/obj&gt;&lt;/desc&gt; and &lt;act type="unspec"&gt;work with it&lt;/act&gt; in the &lt;desc type="adj"
+            &gt;same&lt;/desc&gt;
+        &lt;obj type="comp"&gt;file directory&lt;/obj&gt;
+        &lt;desc type="rel"&gt;with your &lt;obj type="comp"&gt;.xml file&lt;/obj&gt;.&lt;/desc&gt;
+    &lt;/step&gt;
+    &lt;step num="2"&gt; 2) &lt;act type="spec"&gt;Associate&lt;/act&gt; your &lt;obj type="comp"&gt;.rnc schema&lt;/obj&gt;
+        &lt;desc type="rel"&gt;with your &lt;obj type="comp"&gt;.xml file.&lt;/obj&gt;&lt;/desc&gt;
+        &lt;exp&gt;(You are &lt;desc type="rel"&gt;finished&lt;/desc&gt; with this &lt;obj type="conc"&gt;exercise&lt;/obj&gt; if
+            your &lt;obj type="comp"&gt;XML&lt;/obj&gt; is &lt;desc type="rel"&gt;&lt;act type="spec"&gt;associated&lt;/act&gt;
+                with your schema&lt;/desc&gt; and &lt;desc type="adj"&gt;both&lt;/desc&gt;
+            &lt;obj type="comp"&gt;files&lt;/obj&gt; have &lt;act type="spec"&gt;come out&lt;/act&gt;
+            &lt;desc type="adj"&gt;"green"&lt;/desc&gt; in &lt;obj type="comp"&gt;oXygen&lt;/obj&gt;.)&lt;/exp&gt;
+    &lt;/step&gt;
+    &lt;step num="3"&gt; 3) &lt;act type="spec"&gt;Upload&lt;/act&gt;
+        &lt;desc type="adj"&gt;BOTH&lt;/desc&gt;
+        &lt;obj type="comp"&gt;files&lt;/obj&gt; here. We &lt;act type="unspec"&gt;need to see&lt;/act&gt; your &lt;desc
+            type="rel"&gt;&lt;obj type="comp"&gt;.xml file&lt;/obj&gt; and your &lt;obj type="comp"&gt;.rnc
+            file&lt;/obj&gt;.&lt;/desc&gt;
+    &lt;/step&gt;
+&lt;/root&gt;
+&lt;!-- bb_1/22/20: I wanted to keep it simple for once, so I literally used the assignment as a text. Sue me.--&gt; 
+                </programlisting>
+                Here is the Relax NG schema in compact syntax, where a new pattern of writing extensive commentary is emerging in the student (whose initials are bb). The peer-reviewing student is amp, who had learned to write schemas and design projects in a previous semester: 
+                <programlisting>
+                  datatypes xsd = "http://www.w3.org/2001/XMLSchema-datatypes"
+start = root
+
+#bb_1/22/20: root is the root element
+root = element root{intro, step+}
+
+#bb_1/22/20: step is one of our 'highest' content objects on the hierarchy
+step = element step{num, (exp|act|obj|desc|text)+}
+#amp: This would be better as mixed content! (We've already touched on this in class, but I'll leave a note here as well) So, it would look like this: step = element step{num, mixed{exp | act | obj | desc)+}}
+
+#bb_1/22/20: intro is a misc element
+intro = element intro{text}
+
+#bb_1/22/20: other important places in the hierarchy
+exp = element exp{(type|act|obj|desc|text)*} #exp = explanation
+desc = element desc{(type|act|obj|text)*}    #desc = description
+
+#amp: This is the same as before: these two would be better written with mixed content! So: exp = element exp{mixed{(type | act | obj | desc)*}}
+#desc = element desc{mixed{(type | act | obj)*}}
+
+act = element act{type, text}                #act = action
+obj = element obj{type, text}                #obj = object
+
+#bb_1/22/20: attributes
+num = attribute num{xsd:int}
+type = attribute type{text}     #types: 
+                                  #comp = computer
+                                  #conc = concept
+                                  #rel = relate
+                                  #adj = adjective
+                                  #spec = specific
+                                  #unspec = unspecific
+
+#amp: My first comment is about comments! I'm glad to see you using comments not only to leave notes to the instructors, but also to give information about decisions that you're making while coding. This is so helpful when it comes to projects that you're going to share publicly, because it allows others to see these choices and better understand your code. So, great work with that! 
+
+#amp: Another thing that I like with your schema is the organization! You have clearly designated sections for your elements and attributes that make your code really clear. 
+
+#amp: For the future, I would try working more with the other repetition indicators, as well as with datatypes! In this specific assignment, you could code for the date of the assignment, and use xsd:date or xsd:YearMonth (or both!) to give even more metadata in your xml. Overall, this is a well-organized, simple schema that you'll be able to develop into a more complex schema if you were to continue with it (and with future projects!)
+              </programlisting>
+                The beginner student, bb, experimenting with tidy, highly legible commentary on his code, including mapping out attribute values he might use to replace the ambiguous text. But we also see students beginning to hear from each other about project work on which they collaborate and getting used to seeing a code file as a site of productive conversation and ongoing revision.   
+                
+            </para>
             <para>When students learn only tagging and do not learn how to process their own code
                 to visualize and analyze the data they have marked, they remain unaware of what the
                 markup makes possible, and they may often be unaware of the problems imposed by
@@ -764,86 +843,7 @@
                 the <quote>mess</quote> of writing; both may be ordered with care and explanation
                 for an audience, first an audience of one’s instructor and peers, and then an
                 audience one does not necessarily meet in person.</para>
-            <para>Students often improve their markup dramatically when they learn to write Relax NG
-                schema code that creates rules for encoding. This may be a first data-modeling
-                experience for students in a general education context, when they are called upon to
-                think in a <quote>meta</quote> or higher order reflective way about formalizing their
-                code, and making it possible for others to understand it and reproduce it. Learning to
-                write schema code also leads to writing
-                comments to explain decisions and document the code. The following example pairs a short coded document with a student’s schema, and a conversation with another student who was reviewing the code and offering advice. First, here is the XML the student prepared with some good-natured snark from my own assignment instructions:
-                <programlisting>
-                   &lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;?xml-model href="01-22_SCHEMA_rngEx02.rnc" type="application/relax-ng-compact-syntax"?&gt;
-&lt;root&gt;
-    &lt;intro&gt; Make sure you do the following: &lt;/intro&gt;
-    &lt;step num="1"&gt; 1) &lt;act type="spec"&gt;Save&lt;/act&gt; your &lt;obj type="comp"&gt;Relax NG file&lt;/obj&gt;
-        &lt;desc type="rel"&gt;with the &lt;obj type="comp"&gt;.rnc extension&lt;/obj&gt; at the &lt;obj type="conc"
-                &gt;end&lt;/obj&gt;&lt;/desc&gt; and &lt;act type="unspec"&gt;work with it&lt;/act&gt; in the &lt;desc type="adj"
-            &gt;same&lt;/desc&gt;
-        &lt;obj type="comp"&gt;file directory&lt;/obj&gt;
-        &lt;desc type="rel"&gt;with your &lt;obj type="comp"&gt;.xml file&lt;/obj&gt;.&lt;/desc&gt;
-    &lt;/step&gt;
-    &lt;step num="2"&gt; 2) &lt;act type="spec"&gt;Associate&lt;/act&gt; your &lt;obj type="comp"&gt;.rnc schema&lt;/obj&gt;
-        &lt;desc type="rel"&gt;with your &lt;obj type="comp"&gt;.xml file.&lt;/obj&gt;&lt;/desc&gt;
-        &lt;exp&gt;(You are &lt;desc type="rel"&gt;finished&lt;/desc&gt; with this &lt;obj type="conc"&gt;exercise&lt;/obj&gt; if
-            your &lt;obj type="comp"&gt;XML&lt;/obj&gt; is &lt;desc type="rel"&gt;&lt;act type="spec"&gt;associated&lt;/act&gt;
-                with your schema&lt;/desc&gt; and &lt;desc type="adj"&gt;both&lt;/desc&gt;
-            &lt;obj type="comp"&gt;files&lt;/obj&gt; have &lt;act type="spec"&gt;come out&lt;/act&gt;
-            &lt;desc type="adj"&gt;"green"&lt;/desc&gt; in &lt;obj type="comp"&gt;oXygen&lt;/obj&gt;.)&lt;/exp&gt;
-    &lt;/step&gt;
-    &lt;step num="3"&gt; 3) &lt;act type="spec"&gt;Upload&lt;/act&gt;
-        &lt;desc type="adj"&gt;BOTH&lt;/desc&gt;
-        &lt;obj type="comp"&gt;files&lt;/obj&gt; here. We &lt;act type="unspec"&gt;need to see&lt;/act&gt; your &lt;desc
-            type="rel"&gt;&lt;obj type="comp"&gt;.xml file&lt;/obj&gt; and your &lt;obj type="comp"&gt;.rnc
-            file&lt;/obj&gt;.&lt;/desc&gt;
-    &lt;/step&gt;
-&lt;/root&gt;
-&lt;!-- bb_1/22/20: I wanted to keep it simple for once, so I literally used the assignment as a text. Sue me.--&gt; 
-                </programlisting>
-              Here is the Relax NG schema in compact syntax, where a new pattern of writing extensive commentary is emerging in the student (whose initials are bb). The peer-reviewing student is amp, who had learned to write schemas and design projects in a previous semester: 
-              <programlisting>
-                  datatypes xsd = "http://www.w3.org/2001/XMLSchema-datatypes"
-start = root
-
-#bb_1/22/20: root is the root element
-root = element root{intro, step+}
-
-#bb_1/22/20: step is one of our 'highest' content objects on the hierarchy
-step = element step{num, (exp|act|obj|desc|text)+}
-#amp: This would be better as mixed content! (We've already touched on this in class, but I'll leave a note here as well) So, it would look like this: step = element step{num, mixed{exp | act | obj | desc)+}}
-
-#bb_1/22/20: intro is a misc element
-intro = element intro{text}
-
-#bb_1/22/20: other important places in the hierarchy
-exp = element exp{(type|act|obj|desc|text)*} #exp = explanation
-desc = element desc{(type|act|obj|text)*}    #desc = description
-
-#amp: This is the same as before: these two would be better written with mixed content! So: exp = element exp{mixed{(type | act | obj | desc)*}}
-#desc = element desc{mixed{(type | act | obj)*}}
-
-act = element act{type, text}                #act = action
-obj = element obj{type, text}                #obj = object
-
-#bb_1/22/20: attributes
-num = attribute num{xsd:int}
-type = attribute type{text}     #types: 
-                                  #comp = computer
-                                  #conc = concept
-                                  #rel = relate
-                                  #adj = adjective
-                                  #spec = specific
-                                  #unspec = unspecific
-
-#amp: My first comment is about comments! I'm glad to see you using comments not only to leave notes to the instructors, but also to give information about decisions that you're making while coding. This is so helpful when it comes to projects that you're going to share publicly, because it allows others to see these choices and better understand your code. So, great work with that! 
-
-#amp: Another thing that I like with your schema is the organization! You have clearly designated sections for your elements and attributes that make your code really clear. 
-
-#amp: For the future, I would try working more with the other repetition indicators, as well as with datatypes! In this specific assignment, you could code for the date of the assignment, and use xsd:date or xsd:YearMonth (or both!) to give even more metadata in your xml. Overall, this is a well-organized, simple schema that you'll be able to develop into a more complex schema if you were to continue with it (and with future projects!)
-              </programlisting>
-The beginner student, bb, experimenting with tidy, highly legible commentary on his code, including mapping out attribute values he might use to replace the ambiguous text. But we also see students beginning to hear from each other about project work on which they collaborate and getting used to seeing a code file as a site of productive conversation and ongoing revision.   
-            
-            </para>
+           
         </section>
         <section><title>Writing-intensive querying, processing, and transforming</title>
         <para>Teaching students how to query their XML code and how to transform it for publication encourages new systems of thinking and
@@ -973,12 +973,34 @@ The beginner student, bb, experimenting with tidy, highly legible commentary on 
                 xlink:href="http://dickinson.newtfire.org/16/1605.html">Poem 1605</link>, which
             shows how most of the early print editions cut out Dickinson’s entire last stanza and
             typically ignored her variants. 
-            
-            
             The editors share <link
                 xlink:href="http://dickinson.newtfire.org/16/xml/1605variant.xml">their TEI code
-                from the interface</link>, which provides an application of critical apparatus markup with parallel segmentation in
-            the TEI.</para>
+                from the interface</link>, which applies critical apparatus markup with parallel segmentation in
+            the TEI. The students opted to represent all witnesses even when they were silent, as demonstrated in their coding decisions for the last stanza of poem 1605. They also faced a significant challenge to encode Dickinson’s uncanceled variant passages in her manuscript, and found a way to do this by applying the <code>@type</code> attribute with values of "var0" and "var1":
+        <programlisting>
+             &lt;lg&gt;
+                &lt;l n="17"&gt;&lt;app&gt;
+                    &lt;rdg wit="#df16 #fh"&gt;And then a Plank in Reason, broke,&lt;/rdg&gt;
+                    &lt;rdg wit="#ce #poems3"&gt;&lt;/rdg&gt;
+                &lt;/app&gt;&lt;/l&gt;
+                &lt;l n="18"&gt;&lt;app&gt;
+                    &lt;rdg wit="#df16 #fh"&gt;And I dropped down, and down&#8212;&lt;/rdg&gt;
+                    &lt;rdg wit="#ce #poems3"&gt;&lt;/rdg&gt;
+                &lt;/app&gt;&lt;/l&gt;
+                &lt;l n="19"&gt;&lt;app&gt;
+                    &lt;rdg wit="#df16 #fh" type="var0"&gt;And hit a World, at every plunge,&lt;/rdg&gt;
+                    &lt;rdg wit="#df16" type="var1"&gt;And hit a World, at every Crash&#8212;&lt;/rdg&gt;
+                    &lt;rdg wit="#ce #poems3"&gt;&lt;/rdg&gt;
+                &lt;/app&gt;&lt;/l&gt;
+                &lt;l n="20"&gt;&lt;app&gt;
+                    &lt;rdg wit="#df16 #fh" type="var0"&gt;And Finished knowing&#8212;then&#8212;&lt;/rdg&gt;
+                    &lt;rdg wit="#df16" type="var1"&gt;And Got through&#8212;knowing&#8212;then&#8212;&lt;/rdg&gt;
+                    &lt;rdg wit="#ce #poems3"&gt;&lt;/rdg&gt;
+                &lt;/app&gt;&lt;/l&gt;
+            &lt;/lg&gt;
+        </programlisting>
+        In their transformation to HTML (linked above), the students applied JavaScript and CSS to the variant data coded in these attributes to produce a dynamic and distinctive reading interface permitting the reader a ready view of comparison data. 
+        </para>
         <para>In preparing this project, the students had the benefit of building on an earlier and
             simpler markup model, as well as a sense of purpose in giving a remarkably interesting
             project a new lease on life. They needed to study the TEI P5 guidelines and essentially
@@ -1053,15 +1075,16 @@ The beginner student, bb, experimenting with tidy, highly legible commentary on 
             possible for undergraduates to learn, very quickly, with the benefit of the XML
             stack.</para>
         <para>The many student projects developed in the two <quote>sibling</quote> University of
-            Pittsburgh coding courses over the past decade are now my richest data set for
-            comprehending the possibilities of interchange and up-conversion and development on a
-            code base. Our students show us how this work is not only writing intensive in the
-            moment of application, but intensifies over time as we learn new ways of doing things
-            and build on the model of previous projects. Perhaps we can understand this cohort-driven work to be a long term
-            process in the development of a writing discipline with markup languages.</para>
+            Pittsburgh coding courses taught by David J. Birnbaum (see
+            <link xlink:href="https://dh.obdurodon.org">https://dh.obdurodon.org</link>) and by me with our respective cohorts of
+            student peer-mentors over the past decade are now my richest data set for comprehending
+            the possibilities of interchange and up-conversion and development on a code base.<footnote><para>David Birnbaum’s course in Spring 2013 oriented me to the XML family of languages and also inspired me to attempt organizing my own classes and teaching materials on markup technologies</para></footnote> Our
+            students show us how this work is not only writing intensive in the moment of
+            application, but intensifies over time as we learn new ways of doing things and build on
+            the model of previous projects. </para>
     </section>
     <section>
-        <title>Writing intensive activities cultivated by XML-based semester projects</title>
+        <title>Writing about code to pay a project forward</title>
         <para> When students prepare a project in markup, they are not simply writing papers to be
             filed in a course-specific context. They are preparing a research site and their work
             can often be continued by them or others. Students can be building beyond the
@@ -1073,8 +1096,8 @@ The beginner student, bb, experimenting with tidy, highly legible commentary on 
             can read and reuse. Assignments for a writing intensive experience can be constructed
             with attention to: <orderedlist>
                 <listitem>
-                    <para>reading the code and documentation of other projects, and building on
-                        it</para>
+                    <para>reading the code and documentation of other projects, critiquing it, and
+                        building on it</para>
                 </listitem>
                 <listitem>
                     <para>preparing documentation meant to be read by peers and professor(s) working
@@ -1116,7 +1139,7 @@ The beginner student, bb, experimenting with tidy, highly legible commentary on 
     <section>
         <title>Coda: Teaching markup languages during a pandemic</title>
         <para>Teaching a writing-intensive course in markup modalities offers little distress for
-            adaptation to a remote learning environment. In spring 2020, when the author’s
+            adaptation to a remote learning environment. In March 2020, when the author’s
             university (then the University of Pittsburgh at Greensburg) closed the campus and moved
             all courses online, there was little difficulty in transferring learning materials to a
             new format because we had already been relying on tutorials and assignments we had
@@ -1137,14 +1160,14 @@ The beginner student, bb, experimenting with tidy, highly legible commentary on 
             of students to help resolve a problem on their computers. Synchronous virtual meetings
             could not replace this, but using screen captures in asynchronous chat became more
             necessary, and students are certainly challenged to verbalize things that are not
-            working properly when an instructor cannot come around and see for themselves what is
-            going wrong. But adding comments to code stored in the eXist-dB and the GitHub repo
-            continued as it always had, and because this class had cultivated tools to be able to
-            communicate and work together, they were perhaps less challenged and more bonded than
+            working properly when an instructor cannot come around behind the student’s computer to see what is
+            going wrong. But adding comments to code stored in the class’s shared eXist-dB XML database and their project GitHub repositories
+            continued as it had from the beginning of the semester. Because this class had cultivated tools to be able to
+            communicate and work together online, they were perhaps less challenged and more bonded virtually than
             students in the courses managed only within the learning management system. Build teams
-            of developers in a class, and a pandemic may slow but not stop them. In this experience,
-            the writing intensive nature of project development becomes especially beneficial in
-            organizing a community.</para>
+            of developers in a class, and a pandemic may slow but not stop them. In the pandemic crisis of 2020
+            the writing intensive nature of shared project development seemed especially beneficial in
+            supporting our hive of student coders.</para>
     </section>
 
 </article>
