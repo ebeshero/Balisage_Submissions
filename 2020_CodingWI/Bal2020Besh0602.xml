@@ -443,8 +443,7 @@
                     Accessed 28 April 2020.</para>
             </footnote>. Courses like these prioritize the intellectual engagement of a class with
             the document objects they are investigating, and here the markup is clearly a research
-            and investigation tool. The markup data is more valuable than fitting it to a single
-            uniform publication framework.</para>
+            and investigation tool. Fitting the students' markup to an externally imposed uniform publication framework would have made the work less messy and easier to publish, but would have stifled the students' experimentation and removed them from the intellectual decision-making process of doing their own project development. Even unfinished work in the course of a short semester is a stepping stone to renewed engagement in a process of structured work with document data modeling, querying, checking, testing, and transforming to share their work.</para>
         <para>The XML family of languages were designed not only to be widely accessible, but also
             to be a vocabulary that the writer controls, consults, remixes, and transforms. It does
             not take very long to acquaint new coders to the rules of how to tag a document, or how
@@ -471,7 +470,7 @@
             For that reason, I have found that inviting my students to write their first markup on a
             recipe, one that contains an interesting variety of ingredients, measurement units, and
             activities, provides a very clear and easily recognizable sense of structure with lots
-            of categories of information. I ask them to envision a scenario for the encoding that
+            of categories of information. I ask students to envision a scenario for the encoding that
             tries to create a system for filing documents: <blockquote>
                 <para>First, read this recipe for homemade bread, and pretend you are filing it with
                     hundreds of other recipes that you need to fit a set purpose, such as running a
@@ -515,7 +514,7 @@
             University’s cross-curricular definition of a writing intensive course requires that
             writing be used <quote>to help students learn course content</quote>, as well as
                 <quote>ways of writing in the discipline</quote>, and that it have formal
-            expectations delivered in assignment sheets. These expectations are familiar to us from
+            expectations delivered in structured assignments. These expectations are familiar to us from
             university composition courses in the requirements for research papers and thesis
             documents with structured sections, appendices, but can also be communicated in the
             context of encoding XML projects according to a carefuly developed schema and a
@@ -649,7 +648,7 @@
             process about streamlining the code-base, making it more legible, tractable, XPath-able.
             Learning XPath and writing XSLT or XQuery to process XML moves a
             coder from following rules obediently so that others will someday process the data, to becoming
-            an active intellectual investigator who can wield markup like a professional writer.</para>
+            an active intellectual investigator who can wield markup as a skilled professional writer.</para>
     </section>
     <section>
         <title>An example of writing intensive interchange work: two university projects on Emily
