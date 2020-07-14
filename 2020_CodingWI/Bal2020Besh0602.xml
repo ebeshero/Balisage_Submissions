@@ -513,7 +513,139 @@
                     <para>Historically, many women authors faced a sexist and prejudiced publishing industry and opted to conceal their identities either by publishing with a male pseudonym or anonymously, as Mary Shelley did with the anonymous first publication of <emphasis role="ital">Frankenstein</emphasis> in 1818. The novel, a horror story about a male creator and a frightening male creature, became her most famous work, and eventually was published with her name on the title page.</para>
                 </blockquote>
                 My suggested rewriting of this seems a little unsatisfactory because I sense here is something the student might have developed, a sort of loose end from the draft, something about the idea of a female author writing about a male scientist creator and a male creature, whose violent conflict drives this book. Would she have wanted to explore that issue of a woman author investigating male conflict? Is that perhaps the topic of another essay entirely? Writing and rewriting can impose order but also cut out possible avenues of development.</para>
-            <para>I can find similar examples that demonstrate issues with subordination in students’ first XML encoding efforts. </para>
+            <para>I can find similar examples that demonstrate issues with subordination in
+                students’ first XML encoding efforts. In my roughly seven consecutive years of
+                teaching undergraduates to code with the XML family of languages, I notice a
+                recurring pattern in the first three of weeks of a semester that some students have
+                difficulties with conceptualizing dependencies, much like the issues we identified
+                in the student paragraph about Mary Shelley. Students just starting to code often
+                prepare shallow hierarchies, and instead of bundling list items together into a
+                wrapped cluster, they make a very flat tree where every line is its own entry. These
+                students benefit from seeing examples of nested markup, and also from understanding
+                something about how the markup may be processed to work out how attributes can be
+                used to disambiguate or categorize to refine the markup. For that reason, I have
+                found that inviting my students to write their first markup on a recipe, one that
+                contains an interesting variety of ingredients, measurement units, and activities,
+                provides a very clear and easily recognizable sense of structure with lots of
+                categories of information. I ask students to envision a scenario for the encoding
+                that tries to create a system for filing documents: <blockquote>
+                    <para>First, read this recipe for homemade bread, and pretend you are filing it
+                        with hundreds of other recipes that you need to fit a set purpose, such as
+                        running a restaurant, in which you need to keep track of kinds and
+                        quantities of ingredients required. XML is written to store information, and
+                        when we apply it to a situation with numbers and units, like with coding
+                        recipes, the code we write can help make computerized calculations, and help
+                        optimize searching across a collection for particular kinds of ingredients.
+                        Your code might be designed to help categorize ingredients by what part of
+                        the grocery store they can be found in. The challenge of the assignment is
+                        to write code that helps categorize ingredients, mark necessary equipment,
+                        and stages for processing, but the system you develop is up to you.<footnote>
+                            <para><quote>XML Exercise 1</quote> Coding and Data Visualization course
+                                taught at Pitt-Greensburg, 2019-2020. <link
+                                    xlink:href="https://dh.newtfire.org/XMLExercise1.html"
+                                    >https://dh.newtfire.org/XMLExercise1.html</link>. The author’s
+                                series of assignments developing from XML to Relax-NG, regular
+                                expressions and document up-conversion, XPath, XSLT, XQuery, as well
+                                as HTML, SVG, CSS, and JavaScript are generally accessible at <link
+                                    xlink:href="https://dh.newtfire.org"
+                                    >https://dh.newtfire.org</link>. Accessed 28 April 2020.</para>
+                        </footnote></para>
+                </blockquote> In my roughly seven consecutive years of teaching undergraduates to
+                code with the XML family of languages, I notice a recurring pattern in the first
+                couple of weeks of a semester that certain students have difficulties with
+                conceptualizing dependencies, or what the relationship between an element and an
+                attribute and its value ought to be. Students just starting to code often prepare
+                shallow hierarchies, and instead of bundling list items together into a wrapped
+                cluster, they make a very flat tree where every line is its own entry. These
+                students benefit from seeing examples of nested markup, and also from understanding
+                something about how the markup may be processed to work out how attributes can be
+                used to disambiguate or categorize to refine the markup. To help make structures
+                easy to see and mark at first, I invite my students to write their first markup on a
+                recipe, because these documents usually are clearly laid out in sections with
+                ingredients and procedure, and seem to my eye at least very clearly structured. I
+                try to locate a recipe on the web, such as one for baking bread contains a variety
+                of ingredients, measurement units, and activities, provides a very clear and easily
+                recognizable sense of structure with lots of categories of information. I ask
+                students to envision a scenario for the encoding that tries to create a system for
+                filing documents: <blockquote>
+                    <para>First, read this recipe for homemade bread, and pretend you are filing it
+                        with hundreds of other recipes that you need to fit a set purpose, such as
+                        running a restaurant, in which you need to keep track of kinds and
+                        quantities of ingredients required. XML is written to store information, and
+                        when we apply it to a situation with numbers and units, like with coding
+                        recipes, the code we write can help make computerized calculations, and help
+                        optimize searching across a collection for particular kinds of ingredients.
+                        Your code might be designed to help categorize ingredients by what part of
+                        the grocery store they can be found in. The challenge of the assignment is
+                        to write code that helps categorize ingredients, mark necessary equipment,
+                        and stages for processing, but the system you develop is up to you.<footnote>
+                            <para><quote>XML Exercise 1</quote> Coding and Data Visualization course
+                                taught at Pitt-Greensburg, 2019-2020. <link
+                                    xlink:href="https://dh.newtfire.org/XMLExercise1.html"
+                                    >https://dh.newtfire.org/XMLExercise1.html</link>. The author’s
+                                series of assignments developing from XML to Relax-NG, regular
+                                expressions and document up-conversion, XPath, XSLT, XQuery, as well
+                                as HTML, SVG, CSS, and JavaScript are generally accessible at <link
+                                    xlink:href="https://dh.newtfire.org"
+                                    >https://dh.newtfire.org</link>. Accessed 28 April 2020.</para>
+                        </footnote></para>
+                </blockquote> It is fascinating to see the variety of encodings students submit for
+                this assignment, with no two being much alike. With a few exceptions the students
+                usually are able to submit well-formed XML by day 2 of the course, but they
+                sometimes don't quite understand the concept of nesting structures or demonstrating
+                relationships, as for example this tagging of the ingredients list of a sourdough
+                recipe.
+            <programlisting>
+                    &lt;recipe type="allAges" name="sourdoughIngredients"&gt;
+                    &lt;measurement&gt;1 1/4 cups&lt;/measurement&gt; (&lt;amount&gt;160 grams&lt;/amount&gt;)
+                        &lt;ingredient&gt;white bread flour&lt;/ingredient&gt;, plus more for dusting
+                        &lt;measurement&gt;1/4 cup&lt;/measurement&gt; (&lt;amount&gt;38 grams&lt;/amount&gt;)
+                        &lt;ingredient&gt;stone-ground whole-wheat flour&lt;/ingredient&gt;
+                    &lt;measurement&gt;1/4 cup&lt;/measurement&gt; (&lt;amount&gt;32 grams&lt;/amount&gt;)
+                        &lt;ingredient&gt;stone-ground whole rye flour&lt;/ingredient&gt;
+                    &lt;measurement&gt;1/2 teaspoon&lt;/measurement&gt;
+                    &lt;ingredient&gt;instant yeast or bread machine yeast&lt;/ingredient&gt;
+                    &lt;measurement&gt;1 teaspoon&lt;/measurement&gt;
+                    &lt;ingredient&gt;table salt&lt;/ingredient&gt;
+                    &lt;measurement&gt;1/4 cup&lt;/measurement&gt; (&lt;amount&gt;55 grams&lt;/amount&gt;) &lt;ingredient&gt;dry
+                        fermented cider&lt;/ingredient&gt;
+                    &lt;measurement&gt;1/2 cup&lt;/measurement&gt; (&lt;amount&gt;120 grams&lt;/amount&gt;)
+                        &lt;ingredient&gt;lukewarm water&lt;/ingredient&gt; (&lt;temperature&gt;80
+                        degrees&lt;/temperature&gt;), plus an optional 1 tablespoon recipe&gt;&lt;/recipe&gt;
+                &lt;!--jgb: You may substitute a Pilserner beer for the dry fermented cider. --&gt;
+            </programlisting>
+             Here we see a common problem that new learners have with XML: thinking that white space is sufficient to relate like with like, rather than recognizing the need to position wrapper elements. The student has not quite understood that the <code>&lt;measurement&gt;</code> and <code>&lt;amount&gt;</code> elements are not really associated together. Nor has the student tried to apply attributes, yet, but they have ventured an XML comment about ingredient substitution. The code is promising for its regularity and consistency, but lacks an understanding of how to work with the XML tree hierarhcy.
+            </para> 
+            
+            <para></para>
+                
+                
+                <para>Moving to the encoding of a poem or a piece of historical correspondence
+                after the recipe can lead students to recognize different kinds of data and observations about
+                the formal dimensions and organization of patterns, as well as the interest in
+                referencing different kinds of information like names, dates, people, and places, as
+                well as images, motifs, rhyme. Quite frequently student beginners will take the text
+                content of a document and repeat it in an attribute value, as for example wrapping code
+                around a name as given in a text, and using that name in an attribute value on the
+                element, until they receive some suggestions that they might want to use the attribute
+                as a key for a standard identifier whenever this individual is mentioned by their
+                various names. Students who have difficulty constructing dependent clauses may find the
+                preparation of an informative, non-redundant hierarchy just as challenging as their
+                composition courses, and while their first efforts are observably messy, they can be
+                discussed in terms of how to simplify if one were to prepare a large collection and
+                wanted to work systematically with a particularly interesting and tractable kind of
+                data. </para>
+                <para>Quite frequently student beginners will take the text
+                content of a document and repeat it in an attribute value, as for example wrapping code
+                around a name as given in a text, and using that name in an attribute value on the
+                element, until they receive some suggestions that they might want to use the attribute
+                as a key for a standard identifier whenever this individual is mentioned by their
+                various names. Students who have difficulty constructing dependent clauses may find the
+                preparation of an informative, non-redundant hierarchy just as challenging as their
+                composition courses, and while their first efforts are observably messy, they can be
+                discussed in terms of how to simplify if one were to prepare a large collection and
+                wanted to work systematically with a particularly interesting and tractable kind of
+                data. </para>
             
             <para>Learning to code the XML syntax is easy. Learning to optimize one’s preparation of
                 XML takes guided practice, just like learning to write good sentences and
@@ -592,57 +724,7 @@
         <para>Teaching students how to query their XML code and how to transform it for publication encourages new systems of thinking and
             gives writers access to their own means of production. The learning required takes
             weeks, not years, and is suitably incorporated in a university semester without needing
-            specialized computing prerequisites. In my roughly seven consecutive years of teaching undergraduates to code with the XML
-            family of languages, I notice a recurring pattern in the first couple of weeks of a
-            semester that certain students have difficulties with conceptualizing dependencies, or
-            what the relationship between an element and an attribute and its value ought to be.
-            Students just starting to code often prepare shallow hierarchies, and instead of
-            bundling list items together into a wrapped cluster, they make a very flat tree where
-            every line is its own entry. These students benefit from seeing examples of nested
-            markup, and also from understanding something about how the markup may be processed to
-            work out how attributes can be used to disambiguate or categorize to refine the markup.
-            For that reason, I have found that inviting my students to write their first markup on a
-            recipe, one that contains an interesting variety of ingredients, measurement units, and
-            activities, provides a very clear and easily recognizable sense of structure with lots
-            of categories of information. I ask students to envision a scenario for the encoding that
-            tries to create a system for filing documents: <blockquote>
-                <para>First, read this recipe for homemade bread, and pretend you are filing it with
-                    hundreds of other recipes that you need to fit a set purpose, such as running a
-                    restaurant, in which you need to keep track of kinds and quantities of
-                    ingredients required. XML is written to store information, and when we apply it
-                    to a situation with numbers and units, like with coding recipes, the code we
-                    write can help make computerized calculations, and help optimize searching
-                    across a collection for particular kinds of ingredients. Your code might be
-                    designed to help categorize ingredients by what part of the grocery store they
-                    can be found in. The challenge of the assignment is to write code that helps
-                    categorize ingredients, mark necessary equipment, and stages for processing, but
-                    the system you develop is up to you.<footnote>
-                        <para><quote>XML Exercise 1</quote> Coding and Data Visualization course
-                            taught at Pitt-Greensburg, 2019-2020. <link
-                                xlink:href="https://dh.newtfire.org/XMLExercise1.html"
-                                >https://dh.newtfire.org/XMLExercise1.html</link>. The author’s
-                            series of assignments developing from XML to Relax-NG, regular
-                            expressions and document up-conversion, XPath, XSLT, XQuery, as well as
-                            HTML, SVG, CSS, and JavaScript are generally accessible at <link
-                                xlink:href="https://dh.newtfire.org">https://dh.newtfire.org</link>.
-                            Accessed 28 April 2020.</para>
-                    </footnote></para>
-            </blockquote> Moving to the encoding of a poem or a piece of historical correspondence
-            after the recipe leads to recognition of different kinds of data and observations about
-            the formal dimensions and organization of patterns, as well as the interest in
-            referencing different kinds of information like names, dates, people, and places, as
-            well as images, motifs, rhyme. Quite frequently student beginners will take the text
-            content of a document and repeat it in an attribute value, as for example wrapping code
-            around a name as given in a text, and using that name in an attribute value on the
-            element, until they receive some suggestions that they might want to use the attribute
-            as a key for a standard identifier whenever this individual is mentioned by their
-            various names. Students who have difficulty constructing dependent clauses may find the
-            preparation of an informative, non-redundant hierarchy just as challenging as their
-            composition courses, and while their first efforts are observably messy, they can be
-            discussed in terms of how to simplify if one were to prepare a large collection and
-            wanted to work systematically with a particularly interesting and tractable kind of
-            data. </para>
-        <para>Not until we teach students how to customize, query, or transform their markup can
+            specialized computing prerequisites. Not until we teach students how to customize, query, or transform their markup can
             they engage with it in a way that educational institutions might characterize as
                 <emphasis>writing intensive</emphasis>. By way of reference, the Pennsylvania State
             University’s cross-curricular definition of a writing intensive course requires that
