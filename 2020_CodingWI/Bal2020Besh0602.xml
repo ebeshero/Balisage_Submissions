@@ -294,10 +294,9 @@
             short writing assignments that engaged the topic. The suggestion that writing
             reflectively and observantly, and understanding a context for a program to be working
             makes the material more widely accessible and <quote>could help a broader group of kids
-                identify as programmers!</quote><footnote>
-                <para> Felienne Hermans and Marlies Aldewereld, <quote>Programming is Writing is
+                identify as programmers!</quote><footnote><para>Felienne Hermans and Marlies Aldewereld, <quote>Programming is Writing is
                         Programming</quote>
-                    <emphasis role="ital">Programming '17: Companion to the first International
+                    <emphasis role="ital">Programming ’17: Companion to the first International
                         Conference on the Art, Science and Engineering of Programming</emphasis>
                     No.33 (April 2017) 1-8; 7. <link
                         xlink:href="https://dl.acm.org/doi/pdf/10.1145/3079368.3079413"
@@ -580,13 +579,12 @@
  &lt;ingredient&gt;instant yeast or bread machine yeast&lt;/ingredient&gt;
  &lt;measurement&gt;1 teaspoon&lt;/measurement&gt;
  &lt;ingredient&gt;table salt&lt;/ingredient&gt;
- &lt;measurement&gt;1/4 cup&lt;/measurement&gt; (&lt;amount&gt;55 grams&lt;/amount&gt;) &lt;ingredient&gt;dry
-                        fermented cider&lt;/ingredient&gt;
+ &lt;measurement&gt;1/4 cup&lt;/measurement&gt; (&lt;amount&gt;55 grams&lt;/amount&gt;) 
+ &lt;ingredient&gt;dry fermented cider&lt;/ingredient&gt;
  &lt;measurement&gt;1/2 cup&lt;/measurement&gt; (&lt;amount&gt;120 grams&lt;/amount&gt;)
- &lt;ingredient&gt;lukewarm water&lt;/ingredient&gt; (&lt;temperature&gt;80
-                        degrees&lt;/temperature&gt;), plus an optional 1 tablespoon recipe&gt;&lt;/recipe&gt;
- &lt;!--jgb: You may substitute a Pilserner beer for the dry fermented cider. --&gt;
-            </programlisting>
+ &lt;ingredient&gt;lukewarm water&lt;/ingredient&gt; (&lt;temperature&gt;80 degrees&lt;/temperature&gt;), 
+ plus an optional 1 tablespoon recipe&gt;&lt;/recipe&gt;
+ &lt;!--jgb: You may substitute a Pilserner beer for the dry fermented cider. --&gt;</programlisting>
                 Here we see a common problem for new learners of XML: thinking that white space is
                 sufficient to relate like to like, rather than recognizing the need to position
                 wrapper elements. The student has not quite understood that the
@@ -666,8 +664,7 @@ registers &lt;temp&gt;205 degrees&lt;/temp&gt; on an &lt;equipment type="utensil
 and the loaf sounds hollow when knocked on the underside. 
   &lt;step n="23"&gt;Transfer the loaf to a &lt;equipment type="bakeware"&gt;wire rack&lt;/equipment&gt; 
          to cool for at least &lt;time&gt;1 hour&lt;/time&gt; before cutting&lt;/step&gt;. 
-&lt;/recipe&gt;  
-                </programlisting>
+&lt;/recipe&gt;</programlisting>
                 The nested <code>&lt;measurement&gt;</code> elements inside <code>&lt;measurement&gt;</code> elements show a problem the student was trying to solve with hierarchy, 
                 and suggest a good opportunity for the instructor to discuss with the student how to deal with all the information given about
                 equivalent units (grams to cups). We could suggest the student use just one measurement element and try encoding the equivalency information in attribute
@@ -695,8 +692,7 @@ and the loaf sounds hollow when knocked on the underside.
  &lt;step n="11"&gt;&lt;process type="action"&gt;Transfer&lt;/process&gt; the 
      &lt;item type="ingredient"&gt;dough&lt;/item&gt; to the 
      &lt;adj type="equipment"&gt;floured&lt;/adj&gt;
-     &lt;item type="equipment"&gt;work surface&lt;/item&gt;.&lt;/step&gt;
-            </programlisting>
+     &lt;item type="equipment"&gt;work surface&lt;/item&gt;.&lt;/step&gt;</programlisting>
                 This student reveled in coming up with complex hierarchies in his first week of
                 coding, but a typo means that his attribute values are inconsistently marked. Such
                 imprecision might pass unnoticed as a relatively harmless error in a student essay,
@@ -807,8 +803,7 @@ You have clearly designated sections for your elements and attributes that make 
 as well as with datatypes! In this specific assignment, you could code for the date of the assignment, 
 and use xsd:date or xsd:YearMonth (or both!) to give even more metadata in your xml. 
 Overall, this is a well-organized, simple schema that you'll be able to develop 
-into a more complex schema if you were to continue with it (and with future projects!)
-              </programlisting>
+into a more complex schema if you were to continue with it (and with future projects!)</programlisting>
                 The beginner student, bb, experimenting with tidy, highly legible commentary on his code, including mapping out attribute values he might use to replace the ambiguous text. But we also see students beginning to hear from each other about project work on which they collaborate and getting used to seeing a code file as a site of productive conversation and ongoing revision.   
                 
             </para>
@@ -1021,8 +1016,7 @@ into a more complex schema if you were to continue with it (and with future proj
                     &lt;rdg wit="#df16" type="var1"&gt;And Got through&#8212;knowing&#8212;then&#8212;&lt;/rdg&gt;
                     &lt;rdg wit="#ce #poems3"&gt;&lt;/rdg&gt;
                 &lt;/app&gt;&lt;/l&gt;
-            &lt;/lg&gt;
-        </programlisting>
+            &lt;/lg&gt;</programlisting>
         In their transformation to HTML (linked above), the students applied JavaScript and CSS to the variant data coded in these attributes to produce a dynamic and distinctive reading interface permitting the reader a ready view of comparison data. 
         </para>
         <para>In preparing this project, the students had the benefit of building on an earlier and

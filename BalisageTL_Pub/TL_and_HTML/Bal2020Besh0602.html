@@ -683,24 +683,23 @@
                                            relationships, as for example this tagging of the ingredients list of a sourdough
                                            recipe.
                                            <pre class="programlisting">
-                    &lt;recipe type="allAges" name="sourdoughIngredients"&gt;
-                    &lt;measurement&gt;1 1/4 cups&lt;/measurement&gt; (&lt;amount&gt;160 grams&lt;/amount&gt;)
-                        &lt;ingredient&gt;white bread flour&lt;/ingredient&gt;, plus more for dusting
-                        &lt;measurement&gt;1/4 cup&lt;/measurement&gt; (&lt;amount&gt;38 grams&lt;/amount&gt;)
-                        &lt;ingredient&gt;stone-ground whole-wheat flour&lt;/ingredient&gt;
-                    &lt;measurement&gt;1/4 cup&lt;/measurement&gt; (&lt;amount&gt;32 grams&lt;/amount&gt;)
-                        &lt;ingredient&gt;stone-ground whole rye flour&lt;/ingredient&gt;
-                    &lt;measurement&gt;1/2 teaspoon&lt;/measurement&gt;
-                    &lt;ingredient&gt;instant yeast or bread machine yeast&lt;/ingredient&gt;
-                    &lt;measurement&gt;1 teaspoon&lt;/measurement&gt;
-                    &lt;ingredient&gt;table salt&lt;/ingredient&gt;
-                    &lt;measurement&gt;1/4 cup&lt;/measurement&gt; (&lt;amount&gt;55 grams&lt;/amount&gt;) &lt;ingredient&gt;dry
-                        fermented cider&lt;/ingredient&gt;
-                    &lt;measurement&gt;1/2 cup&lt;/measurement&gt; (&lt;amount&gt;120 grams&lt;/amount&gt;)
-                        &lt;ingredient&gt;lukewarm water&lt;/ingredient&gt; (&lt;temperature&gt;80
-                        degrees&lt;/temperature&gt;), plus an optional 1 tablespoon recipe&gt;&lt;/recipe&gt;
-                &lt;!--jgb: You may substitute a Pilserner beer for the dry fermented cider. --&gt;
-            </pre>
+ &lt;recipe type="allAges" name="sourdoughIngredients"&gt;
+ &lt;measurement&gt;1 1/4 cups&lt;/measurement&gt; (&lt;amount&gt;160 grams&lt;/amount&gt;)
+ &lt;ingredient&gt;white bread flour&lt;/ingredient&gt;, plus more for dusting
+ &lt;measurement&gt;1/4 cup&lt;/measurement&gt; (&lt;amount&gt;38 grams&lt;/amount&gt;)
+ &lt;ingredient&gt;stone-ground whole-wheat flour&lt;/ingredient&gt;
+ &lt;measurement&gt;1/4 cup&lt;/measurement&gt; (&lt;amount&gt;32 grams&lt;/amount&gt;)
+ &lt;ingredient&gt;stone-ground whole rye flour&lt;/ingredient&gt;
+ &lt;measurement&gt;1/2 teaspoon&lt;/measurement&gt;
+ &lt;ingredient&gt;instant yeast or bread machine yeast&lt;/ingredient&gt;
+ &lt;measurement&gt;1 teaspoon&lt;/measurement&gt;
+ &lt;ingredient&gt;table salt&lt;/ingredient&gt;
+ &lt;measurement&gt;1/4 cup&lt;/measurement&gt; (&lt;amount&gt;55 grams&lt;/amount&gt;) 
+ &lt;ingredient&gt;dry fermented cider&lt;/ingredient&gt;
+ &lt;measurement&gt;1/2 cup&lt;/measurement&gt; (&lt;amount&gt;120 grams&lt;/amount&gt;)
+ &lt;ingredient&gt;lukewarm water&lt;/ingredient&gt; (&lt;temperature&gt;80 degrees&lt;/temperature&gt;), 
+ plus an optional 1 tablespoon recipe&gt;&lt;/recipe&gt;
+ &lt;!--jgb: You may substitute a Pilserner beer for the dry fermented cider. --&gt;</pre>
                                            Here we see a common problem for new learners of XML: thinking that white space is
                                            sufficient to relate like to like, rather than recognizing the need to position
                                            wrapper elements. The student has not quite understood that the
@@ -713,70 +712,80 @@
                                            problems of redundancy or overreliance on a particular word, here the attribute
                                                <code class="code">@type</code> being overused:
                                            <pre class="programlisting">
-                    &lt;recipe type="bread" name="country loaf (pain de campagne)"&gt;
-    &lt;measurement type="cup"&gt;1 1/4 cups (&lt;measurement type="gram"&gt;160 grams
-        &lt;/measurement&gt;)&lt;/measurement&gt;
-    &lt;!-- sd: is this a good/okay way to do measurement types? it seems weird but i don't really know --&gt;
-    &lt;ingredient type="dry"&gt;white bread flour&lt;/ingredient&gt;, plus more for dusting &lt;measurement
-        type="cup"&gt;1/4 cup (&lt;measurement type="gram"&gt;38 grams&lt;/measurement&gt;)&lt;/measurement&gt;
-    &lt;ingredient type="dry"&gt;stone-ground whole-wheat flour&lt;/ingredient&gt;
-    &lt;measurement type="cup"&gt;1/4 cup (&lt;measurement type="gram"&gt;32 grams&lt;/measurement&gt;)&lt;/measurement&gt;
-    &lt;ingredient type="dry"&gt;stone-ground whole rye flour&lt;/ingredient&gt;
-    &lt;measurement type="tsp"&gt;1/2 teaspoon&lt;/measurement&gt;
-    &lt;ingredient type="dry"&gt;instant yeast or bread machine yeast&lt;/ingredient&gt;
-    &lt;measurement type="tsp"&gt;1 teaspoon&lt;/measurement&gt;
-    &lt;ingredient type="dry"&gt;table salt&lt;/ingredient&gt;
-    &lt;measurement type="cup"&gt;1/4 cup (&lt;measurement type="gram"&gt;55 grams&lt;/measurement&gt;)&lt;/measurement&gt;
-    &lt;ingredient type="wet"&gt;dry fermented cider&lt;/ingredient&gt; (may substitute Pilsener beer; see
-    headnote) &lt;measurement type="cup"&gt;1/2 cup (&lt;measurement type="gram"&gt;120 grams
-        &lt;/measurement&gt;)&lt;/measurement&gt;
-    &lt;ingredient type="wet"&gt;lukewarm water&lt;/ingredient&gt; (&lt;temp&gt;80 degrees&lt;/temp&gt;), plus an
-        &lt;measurement type="tsp"&gt;optional 1 tablespoon &lt;/measurement&gt; DIRECTIONS &lt;step n="1"
-            &gt;&lt;equipment type="utensil"&gt;Whisk&lt;/equipment&gt; together the flours, yeast and salt in a
-            &lt;equipment type="bakeware"&gt;mixing bowl&lt;/equipment&gt;&lt;/step&gt;. &lt;step n="2"&gt;Combine the cider
-        and water in a &lt;equipment type="bakeware"&gt;liquid measuring cup&lt;/equipment&gt;&lt;/step&gt;. &lt;step
-        n="3"&gt;Add the liquid to the flour mixture; use a &lt;equipment type="utensil"
-            &gt;spatula&lt;/equipment&gt; or &lt;equipment type="utensil"&gt;bench scraper&lt;/equipment&gt; or your hand
-        moistened with water to blend them for about a minute&lt;/step&gt;. The dough should be shaggy yet
-    cohesive. &lt;step n="4"&gt;Cover the bowl with a &lt;equipment type="cloth"&gt;towel&lt;/equipment&gt;; let the
-        dough rest for &lt;time&gt;20 minutes&lt;/time&gt;&lt;/step&gt;. &lt;step n="5"&gt;Moisten your kneading hand. If
-        the dough seems stiff, add the optional tablespoon of water.&lt;/step&gt;
-    &lt;step n="6"&gt;Stretch one edge of the dough (still in the bowl), then press it into the center of
-        the bowl. Repeat this about a dozen times, moving clockwise to catch all sides of the
-        dough&lt;/step&gt;. (This should take &lt;time&gt;1 or 2 minutes&lt;/time&gt;.) &lt;step n="7"&gt;Turn the dough
-        over so the seams are on the bottom&lt;/step&gt;. &lt;step n="8"&gt;Cover and let rest for &lt;time&gt;20
-            minutes&lt;/time&gt;&lt;/step&gt;. &lt;step n="9"&gt;Repeat the clockwise stretching and folding two more
-        times, with &lt;time&gt;20-minute&lt;/time&gt; rests after each&lt;/step&gt;. &lt;step n="10"&gt;Cover and
-        refrigerate &lt;time&gt;at least 8 hours and up to 24 hours&lt;/time&gt;&lt;/step&gt;. The dough should have
-    doubled. If it hasn't, leave it on the counter until it does. &lt;step n="11"&gt;Lightly flour a work
-        surface&lt;/step&gt;. &lt;step n="12"&gt;Use a &lt;equipment type="cloth"&gt;pastry cloth&lt;/equipment&gt; or clean
+&lt;recipe type="bread" name="country loaf (pain de campagne)"&gt;
+  &lt;measurement type="cup"&gt;1 1/4 cups (&lt;measurement type="gram"&gt;160 grams&lt;/measurement&gt;)&lt;/measurement&gt;
+  &lt;!-- sd: is this a good/okay way to do measurement types? it seems weird but i don't really know --&gt;
+  &lt;ingredient type="dry"&gt;white bread flour&lt;/ingredient&gt;, plus more for dusting 
+  &lt;measurement type="cup"&gt;1/4 cup (&lt;measurement type="gram"&gt;38 grams&lt;/measurement&gt;)&lt;/measurement&gt;
+  &lt;ingredient type="dry"&gt;stone-ground whole-wheat flour&lt;/ingredient&gt;
+  &lt;measurement type="cup"&gt;1/4 cup (&lt;measurement type="gram"&gt;32 grams&lt;/measurement&gt;)&lt;/measurement&gt;
+  &lt;ingredient type="dry"&gt;stone-ground whole rye flour&lt;/ingredient&gt;
+  &lt;measurement type="tsp"&gt;1/2 teaspoon&lt;/measurement&gt;
+  &lt;ingredient type="dry"&gt;instant yeast or bread machine yeast&lt;/ingredient&gt;
+  &lt;measurement type="tsp"&gt;1 teaspoon&lt;/measurement&gt;
+  &lt;ingredient type="dry"&gt;table salt&lt;/ingredient&gt;
+  &lt;measurement type="cup"&gt;1/4 cup (&lt;measurement type="gram"&gt;55 grams&lt;/measurement&gt;)&lt;/measurement&gt;
+  &lt;ingredient type="wet"&gt;dry fermented cider&lt;/ingredient&gt; (may substitute Pilsener beer; see
+    headnote) 
+  &lt;measurement type="cup"&gt;1/2 cup (&lt;measurement type="gram"&gt;120 grams&lt;/measurement&gt;)&lt;/measurement&gt;
+  &lt;ingredient type="wet"&gt;lukewarm water&lt;/ingredient&gt; (&lt;temp&gt;80 degrees&lt;/temp&gt;), 
+  plus an &lt;measurement type="tsp"&gt;optional 1 tablespoon &lt;/measurement&gt; 
+  DIRECTIONS 
+  &lt;step n="1"&gt;&lt;equipment type="utensil"&gt;Whisk&lt;/equipment&gt; together the flours, yeast and salt in a 
+  &lt;equipment type="bakeware"&gt;mixing bowl&lt;/equipment&gt;&lt;/step&gt;. 
+  &lt;step n="2"&gt;Combine the cider and water in a &lt;equipment type="bakeware"&gt;liquid measuring cup&lt;/equipment&gt;&lt;/step&gt;. 
+  &lt;step n="3"&gt;Add the liquid to the flour mixture; use a &lt;equipment type="utensil"&gt;spatula&lt;/equipment&gt; 
+  or &lt;equipment type="utensil"&gt;bench scraper&lt;/equipment&gt; or your hand moistened with water to blend them for about a minute
+  &lt;/step&gt;. The dough should be shaggy yet cohesive. 
+  &lt;step n="4"&gt;Cover the bowl with a &lt;equipment type="cloth"&gt;towel&lt;/equipment&gt;; 
+  let the dough rest for &lt;time&gt;20 minutes&lt;/time&gt;&lt;/step&gt;. 
+  &lt;step n="5"&gt;Moisten your kneading hand. If the dough seems stiff, 
+      add the optional tablespoon of water.&lt;/step&gt;
+  &lt;step n="6"&gt;Stretch one edge of the dough (still in the bowl), then press it into the center of
+  the bowl. Repeat this about a dozen times, moving clockwise to catch all sides of the dough&lt;/step&gt;. 
+(This should take &lt;time&gt;1 or 2 minutes&lt;/time&gt;.) 
+  &lt;step n="7"&gt;Turn the dough over so the seams are on the bottom&lt;/step&gt;. 
+  &lt;step n="8"&gt;Cover and let rest for &lt;time&gt;20 minutes&lt;/time&gt;&lt;/step&gt;. 
+  &lt;step n="9"&gt;Repeat the clockwise stretching and folding two more
+        times, with &lt;time&gt;20-minute&lt;/time&gt; rests after each&lt;/step&gt;. 
+  &lt;step n="10"&gt;Cover and refrigerate &lt;time&gt;at least 8 hours and up to 24 hours&lt;/time&gt;&lt;/step&gt;. 
+The dough should have doubled. If it hasn't, leave it on the counter until it does. 
+   &lt;step n="11"&gt;Lightly flour a work surface&lt;/step&gt;. 
+   &lt;step n="12"&gt;Use a &lt;equipment type="cloth"&gt;pastry cloth&lt;/equipment&gt; or clean
             &lt;equipment type="cloth"&gt;dish towel&lt;/equipment&gt; to line a round &lt;equipment
-            type="bakeware"&gt;colander&lt;/equipment&gt;. Dust the cloth with flour&lt;/step&gt;. &lt;step n="13"
-        &gt;Transfer the dough to the floured work surface. Fold the edges toward the center to create
-        a round shape, turning it over so the seams are on the bottom&lt;/step&gt;. &lt;step n="14"&gt;Let it
-        rest for &lt;time&gt;5 minutes&lt;/time&gt;, then transfer to the colander, seam side up&lt;/step&gt;. &lt;step
-        n="15"&gt;Cover with a &lt;equipment type="cloth"&gt;towel&lt;/equipment&gt; and let the dough rise for
+            type="bakeware"&gt;colander&lt;/equipment&gt;. Dust the cloth with flour&lt;/step&gt;. 
+  &lt;step n="13"&gt;Transfer the dough to the floured work surface. Fold the edges toward the center to create
+        a round shape, turning it over so the seams are on the bottom&lt;/step&gt;. 
+  &lt;step n="14"&gt;Let it rest for &lt;time&gt;5 minutes&lt;/time&gt;, then transfer to the colander, seam side up&lt;/step&gt;. 
+  &lt;step n="15"&gt;Cover with a &lt;equipment type="cloth"&gt;towel&lt;/equipment&gt; and let the dough rise for
             &lt;time&gt;1 1/2 hours&lt;/time&gt;.&lt;/step&gt;
-    &lt;step n="16"&gt;&lt;time&gt;Thirty minutes before baking&lt;/time&gt;, place a &lt;equipment type="bakeware"
-            &gt;cast-iron Dutch oven (lid on)&lt;/equipment&gt; or &lt;equipment type="bakeware"&gt;enameled
-            cast-iron pot with a lid (on)&lt;/equipment&gt; in the oven; preheat to &lt;temp&gt;475
-            degrees&lt;/temp&gt;&lt;/step&gt;. &lt;step n="17"&gt;Carefully remove the hot pot from the oven.&lt;/step&gt;
-    &lt;step n="18"&gt;Turn the dough out onto the counter so the seams are on the bottom&lt;/step&gt;. &lt;step
-        n="19"&gt;Use &lt;equipment type="utensil"&gt;kitchen scissors&lt;/equipment&gt; to make 8 snips on the top
-        of the dough in an evenly spaced spoke pattern, each about 1/4-inch deep&lt;/step&gt;. &lt;step
-        n="20"&gt;Lift the dough and carefully drop it into the hot pot. Immediately cover with the hot
-        lid&lt;/step&gt;. &lt;step n="21"&gt;Bake for &lt;time&gt;30 minutes&lt;/time&gt;, then reduce the heat to &lt;temp&gt;450
-            degrees&lt;/temp&gt;&lt;/step&gt;. &lt;step n="22"&gt;Uncover and bake for &lt;time&gt;8 to 10 minutes&lt;/time&gt; or
-        until the crust is dark brown&lt;/step&gt;. Try to minimize the amount of time the oven door is
-    open. The bread is done when its internal temperature registers &lt;temp&gt;205 degrees&lt;/temp&gt; on an
-        &lt;equipment type="utensil"&gt;instant-read thermometer&lt;/equipment&gt; and the loaf sounds hollow
-    when knocked on the underside. &lt;step n="23"&gt;Transfer the loaf to a &lt;equipment type="bakeware"
-            &gt;wire rack&lt;/equipment&gt; to cool for at least &lt;time&gt;1 hour&lt;/time&gt; before cutting&lt;/step&gt;. &lt;/recipe&gt;  
-                </pre>
-                                           The nested <code class="code">&lt;measurement&gt;</code> elements inside <code class="code">&lt;measurement&gt;</code> elements are probably taking the
-                                           hierarchy a little too far, but offer a good opportunity to discuss how to handle
-                                           equivalent units (grams to cups), perhaps by encoding that information in attribute
-                                           values, and reconsidering the representation of fractions. If the code is going to
+  &lt;step n="16"&gt;&lt;time&gt;Thirty minutes before baking&lt;/time&gt;, 
+       place a &lt;equipment type="bakeware"&gt;cast-iron Dutch oven (lid on)&lt;/equipment&gt; 
+       or &lt;equipment type="bakeware"&gt;enameled cast-iron pot with a lid (on)&lt;/equipment&gt; 
+       in the oven; preheat to &lt;temp&gt;475 degrees&lt;/temp&gt;&lt;/step&gt;. 
+  &lt;step n="17"&gt;Carefully remove the hot pot from the oven.&lt;/step&gt;
+  &lt;step n="18"&gt;Turn the dough out onto the counter so the seams are on the bottom&lt;/step&gt;. 
+  &lt;step n="19"&gt;Use &lt;equipment type="utensil"&gt;kitchen scissors&lt;/equipment&gt; 
+      to make 8 snips on the top of the dough in an evenly spaced spoke pattern, 
+      each about 1/4-inch deep&lt;/step&gt;. 
+  &lt;step n="20"&gt;Lift the dough and carefully drop it into the hot pot. 
+         Immediately cover with the hot lid&lt;/step&gt;. 
+  &lt;step n="21"&gt;Bake for &lt;time&gt;30 minutes&lt;/time&gt;, then reduce the heat to 
+       &lt;temp&gt;450 degrees&lt;/temp&gt;&lt;/step&gt;. 
+  &lt;step n="22"&gt;Uncover and bake for &lt;time&gt;8 to 10 minutes&lt;/time&gt; or
+        until the crust is dark brown&lt;/step&gt;. 
+Try to minimize the amount of time the oven door is open. The bread is done when its internal temperature 
+registers &lt;temp&gt;205 degrees&lt;/temp&gt; on an &lt;equipment type="utensil"&gt;instant-read thermometer&lt;/equipment&gt; 
+and the loaf sounds hollow when knocked on the underside. 
+  &lt;step n="23"&gt;Transfer the loaf to a &lt;equipment type="bakeware"&gt;wire rack&lt;/equipment&gt; 
+         to cool for at least &lt;time&gt;1 hour&lt;/time&gt; before cutting&lt;/step&gt;. 
+&lt;/recipe&gt;</pre>
+                                           The nested <code class="code">&lt;measurement&gt;</code> elements inside <code class="code">&lt;measurement&gt;</code> elements show a problem the student was trying to solve with hierarchy, 
+                                           and suggest a good opportunity for the instructor to discuss with the student how to deal with all the information
+                           given about
+                                           equivalent units (grams to cups). We could suggest the student use just one measurement element and try encoding
+                           the equivalency information in attribute
+                                           values, for example. And we need to think about the representation of fractions: If the code is going to
                                            be processed by a computer to, say triple this recipe, how would it be best to
                                            represent the numerical quantities and conversion factors? What is remarkable here
                                            for an early XML assignment is the student decision to mark types of equipment
@@ -788,19 +797,23 @@
                                            prone to inconsistencies like these before they learn to write schema validation
                                            code:
                                            <pre class="programlisting">
-                 &lt;step n="9"&gt;&lt;process type="action"&gt;Lightly flour&lt;/process&gt; a &lt;item type="equimpent"&gt;work
-            surface.&lt;/item&gt; Use a &lt;item type="equipment"&gt;pastry cloth&lt;/item&gt; or &lt;item
-            type="equipment"&gt;clean dish towel&lt;/item&gt; to &lt;process type="action"&gt;line a &lt;item
-                type="equipment"&gt;&lt;adj type="equipment"&gt;round&lt;/adj&gt; colander&lt;/item&gt;&lt;/process&gt;.&lt;/step&gt;
-    &lt;step n="10"&gt;&lt;process type="action"&gt;Dust&lt;/process&gt; the &lt;item type="equipment"&gt;cloth&lt;/item&gt; with
-            &lt;item type="ingredient"&gt;flour&lt;/item&gt;.&lt;/step&gt;
-    &lt;step n="11"&gt;&lt;process type="action"&gt;Transfer&lt;/process&gt; the &lt;item type="ingredient"&gt;dough&lt;/item&gt;
-        to the &lt;adj type="equipment"&gt;floured&lt;/adj&gt;
-        &lt;item type="equipment"&gt;work surface&lt;/item&gt;.&lt;/step&gt;
-            </pre>
+  &lt;step n="9"&gt;&lt;process type="action"&gt;Lightly flour&lt;/process&gt; a 
+      &lt;item type="equimpent"&gt;work surface.&lt;/item&gt; 
+      Use a &lt;item type="equipment"&gt;pastry cloth&lt;/item&gt; or 
+      &lt;item type="equipment"&gt;clean dish towel&lt;/item&gt; to 
+      &lt;process type="action"&gt;line a 
+      &lt;item type="equipment"&gt;&lt;adj type="equipment"&gt;round&lt;/adj&gt; 
+              colander&lt;/item&gt;&lt;/process&gt;.&lt;/step&gt;
+ &lt;step n="10"&gt;&lt;process type="action"&gt;Dust&lt;/process&gt; the 
+     &lt;item type="equipment"&gt;cloth&lt;/item&gt; with
+     &lt;item type="ingredient"&gt;flour&lt;/item&gt;.&lt;/step&gt;
+ &lt;step n="11"&gt;&lt;process type="action"&gt;Transfer&lt;/process&gt; the 
+     &lt;item type="ingredient"&gt;dough&lt;/item&gt; to the 
+     &lt;adj type="equipment"&gt;floured&lt;/adj&gt;
+     &lt;item type="equipment"&gt;work surface&lt;/item&gt;.&lt;/step&gt;</pre>
                                            This student reveled in coming up with complex hierarchies in his first week of
                                            coding, but a typo means that his attribute values are inconsistently marked. Such
-                                           precision might pass unnoticed as a relatively harmless error in a student essay,
+                                           imprecision might pass unnoticed as a relatively harmless error in a student essay,
                                            but here it becomes an opportunity to introduce the power of schema writing to
                                            students, to write their own spell checkers for their attribute values and control
                                            which elements and attributes are permitted to appear at each level of the
@@ -835,7 +848,7 @@
                            a student&#8217;s schema, and a conversation with another student who was reviewing the code and offering advice. First, here is
                            the XML the student prepared with some good-natured snark from my own assignment instructions:
                                            <pre class="programlisting">
-                   &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;?xml-model href="01-22_SCHEMA_rngEx02.rnc" type="application/relax-ng-compact-syntax"?&gt;
 &lt;root&gt;
     &lt;intro&gt; Make sure you do the following: &lt;/intro&gt;
@@ -900,12 +913,21 @@ type = attribute type{text}     #types:
                                   #spec = specific
                                   #unspec = unspecific
 
-#amp: My first comment is about comments! I'm glad to see you using comments not only to leave notes to the instructors, but also to give information about decisions that you're making while coding. This is so helpful when it comes to projects that you're going to share publicly, because it allows others to see these choices and better understand your code. So, great work with that! 
+#amp: My first comment is about comments! I'm glad to see you using comments 
+not only to leave notes to the instructors, but also to give information about decisions 
+that you're making while coding. 
+This is so helpful when it comes to projects that you're going to share publicly, 
+because it allows others to see these choices and better understand your code. 
+So, great work with that! 
 
-#amp: Another thing that I like with your schema is the organization! You have clearly designated sections for your elements and attributes that make your code really clear. 
+#amp: Another thing that I like with your schema is the organization! 
+You have clearly designated sections for your elements and attributes that make your code really clear. 
 
-#amp: For the future, I would try working more with the other repetition indicators, as well as with datatypes! In this specific assignment, you could code for the date of the assignment, and use xsd:date or xsd:YearMonth (or both!) to give even more metadata in your xml. Overall, this is a well-organized, simple schema that you'll be able to develop into a more complex schema if you were to continue with it (and with future projects!)
-              </pre>
+#amp: For the future, I would try working more with the other repetition indicators, 
+as well as with datatypes! In this specific assignment, you could code for the date of the assignment, 
+and use xsd:date or xsd:YearMonth (or both!) to give even more metadata in your xml. 
+Overall, this is a well-organized, simple schema that you'll be able to develop 
+into a more complex schema if you were to continue with it (and with future projects!)</pre>
                                            The beginner student, bb, experimenting with tidy, highly legible commentary on his code, including mapping
                            out attribute values he might use to replace the ambiguous text. But we also see students beginning to hear from each other
                            about project work on which they collaborate and getting used to seeing a code file as a site of productive conversation and
@@ -1094,8 +1116,7 @@ type = attribute type{text}     #types:
                     &lt;rdg wit="#df16" type="var1"&gt;And Got through&#8212;knowing&#8212;then&#8212;&lt;/rdg&gt;
                     &lt;rdg wit="#ce #poems3"&gt;&lt;/rdg&gt;
                 &lt;/app&gt;&lt;/l&gt;
-            &lt;/lg&gt;
-        </pre>
+            &lt;/lg&gt;</pre>
                                 In their transformation to HTML (linked above), the students applied JavaScript and CSS to the variant data coded
                         in these attributes to produce a dynamic and distinctive reading interface permitting the reader a ready view of comparison
                         data. 
@@ -1359,9 +1380,9 @@ type = attribute type{text}     #types:
                         </p>
                      </div>
                      <div id="d0e286" class="footnote">
-                        <p><sup class="fn-label"><a href="#d0e286-ref" class="footnoteref">[11]</a></sup> &#8232;Felienne Hermans and Marlies Aldewereld, <q>Programming is Writing is
+                        <p><sup class="fn-label"><a href="#d0e286-ref" class="footnoteref">[11]</a></sup> Felienne Hermans and Marlies Aldewereld, <q>Programming is Writing is
                                                       Programming</q>
-                                               <span class="ital">Programming '17: Companion to the first International
+                                               <span class="ital">Programming &#8217;17: Companion to the first International
                                                       Conference on the Art, Science and Engineering of Programming</span>
                                                No.33 (April 2017) 1-8; 7. <a href="https://dl.acm.org/doi/pdf/10.1145/3079368.3079413" class="link" target="_new">https://dl.acm.org/doi/pdf/10.1145/3079368.3079413</a>.
                         </p>
