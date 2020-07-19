@@ -10,34 +10,34 @@
     <info>
         <abstract>
             <para>Can learning text encoding and markup languages constitute a <quote>writing
-                    intensive</quote> experience for university students? Having taught students with a range of majors from humanities to computer science to 
-                build web-based research projects with the the XML family of languages, the author is developing a
-                Text Encoding Fundamentals course with emphasis on text encoding as writing, as well
-                as a proposal that this fulfill a major state university requirement of a
-                research-oriented <quote>writing intensive</quote> course for
-                undergraduate students to fulfill a requirement in <quote>writing across the curriculum</quote>. 
-                While we may be familiar with arguments that coding and
-                programming are a kind of literacy, the idea that developing projects with markup
-                technologies may constitute an <emphasis>intensive</emphasis> writing experience is
-                less familiar. The consideration of text encoding as writing intensive may establish
-                a call for teaching markup technologies more widely in a cross-disciplinary
-                context.</para>
-            <para>Not just any course introducing students to markup should be considered writing
-                intensive. Arguably, a class that involves tagging exercises without project
-                development and invites students to write reflectively about the experience is not
-                engaging in an <emphasis>intensive</emphasis> way with the writing work we associate
-                with coding in a project development context. This paper argues that a
-                    <emphasis>writing intensive</emphasis> course involving the XML family of languages should engage a writing process that requires research
-                and citation, algorithmic problem-solving and decision making, task management, and
-                documentation to share the work and help others to build upon it. A course offering
-                such experiences should be accessible to students from several
-                disciplines, whether to a junior year English or history major with little to no
-                programming experience, or a junior year computer science or information technology
-                major with an interest in applied programming, unused to research questions that
-                drive humanities scholarship. In presenting its case, this paper explores a range of
-                literature to locate intersections between digital writing modalities discussed in
-                the context of composition courses and the concept of literate programming that
-                grounds the XML family of languages.</para>
+                    intensive</quote> experience for university students? Having taught
+                undergraduate students from a wide range of majors from humanities to the sciences
+                to develop web-based research projects with the the XML family of languages, the
+                author proposes that such coursework should fulfill a common state university
+                requirement of a research-oriented <quote>writing intensive</quote> or
+                "writing-across-the-curriculum" course. Although coding and programming skills are
+                often represented as a kind of literacy, the idea that learning markup technologies
+                may constitute an <emphasis>intensive</emphasis> writing experience is less
+                familiar. This paper calls for teaching markup technologies widely in a
+                cross-disciplinary context to give students across the curriculum an accessible yet
+                intensively challenging course that integrates coding and writing to investigate
+                research questions.</para>
+            <para>Not just any course that introduces students to markup should be considered
+                writing intensive. Arguably, a class that involves tagging exercises without project
+                development and that invites students to write reflectively about the experience is
+                not engaging in an <emphasis>intensive</emphasis> way with the writing work we
+                associate with coding in the full experience of developing a project. This paper
+                argues that a <emphasis>writing intensive</emphasis> course involving the XML family
+                of languages should require algorithmic problem-solving and decision making,
+                research and citation of related projects, task management, and documentation to
+                share the work and help others to build upon it. A course offering such experiences
+                should be accessible to students from several disciplines, whether to a junior year
+                English or history major with little to no programming experience, or a junior year
+                computer science or information technology major with an interest in applied
+                programming, unused to research questions that drive humanities scholarship. In
+                presenting its case, this paper discusses the pedagogical theory and practice of
+                teaching composition and code as well as the concepts of blind interchange and
+                literate programming important to the XML markup community.</para>
         </abstract>
         <author>
             <personname>
