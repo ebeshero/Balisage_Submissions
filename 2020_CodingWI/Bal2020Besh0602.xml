@@ -277,20 +277,16 @@
                     </footnote></para>
             </blockquote> These are analogies to learning to write or learning a foreign language,
             intended to persuade humanists to adopt coding into their disciplines, but the analogies
-            do not in themselves constitute an argument for coding and programming as potentially an
-            intensive professional writing experience for students of any discipline.</para>
-        <para>That argument for the writing-intensiveness of coding can be found
-                <quote>outside</quote> the humanities. In the context of programming education,
-            Felienne Hermans and Marlies Aldewereld propose that more students would be interested
-            in computer science if they learned to program in a way that followed models for
+            do not in themselves constitute an argument for coding and programming as involving an
+            <emphasis role="ital">intensive</emphasis> professional writing experience for students of any discipline.</para>
+        <para>That argument for the writing-intensiveness of coding can be found outside the humanities. 
+            In the context of programming education, Felienne Hermans and Marlies Aldewereld propose that more students 
+            would be interested in computer science if they learned to program in a way that followed models for
             learning to write. They suggest that programming instruction would be improved if it
             adapted the way writing instructors model examples of their writing process for students
-            to break it down into discrete tasks more efficiently. They cite a study in which the
-            elementary students comprehended scientific concepts better when they were assigned
-            short writing assignments that engaged the topic. The suggestion that writing
-            reflectively and observantly, and understanding a context for a program to be working
-            makes the material more widely accessible and <quote>could help a broader group of kids
-                identify as programmers!</quote><footnote><para>Felienne Hermans and Marlies Aldewereld, <quote>Programming is Writing is
+            to break it down into discrete tasks more efficiently. For example, they cite a study in which 
+            elementary school students comprehended scientific concepts better when they were assigned
+            short writing assignments that engaged the topic. They suggest that understanding a real-world context for a code script and writing observantly and reflectively about it makes the material more widely accessible and <quote>could help a broader group of kids identify as programmers!</quote><footnote><para>Felienne Hermans and Marlies Aldewereld, <quote>Programming is Writing is
                         Programming</quote>
                     <emphasis role="ital">Programming ’17: Companion to the first International
                         Conference on the Art, Science and Engineering of Programming</emphasis>
@@ -310,21 +306,20 @@
                         xlink:href="https://www.liverpool.ac.uk/literature-and-science/essays/ruston_hist/"
                         >https://www.liverpool.ac.uk/literature-and-science/essays/ruston_hist/</link>.
                     Accessed 14 April 2020. </para>
-            </footnote> We have known that the act of writing enhances learning in across
+            </footnote> We have known that the act of writing enhances learning across
             disciplines for a long time now. But futher, as Hermans and Alderweld point out,
             students can learn programming more easily if they are taught in the mode of writing
             instruction, with modeled examples and activities that hone observation skills. What
-            might this mean for learning to work with XML? It might involve students reviewing
+            might this mean for learning to work with XML? It could involve students reviewing
             markup, schemas, interfaces, and visualizations from established XML projects as part of
-            their course experience, and writing about how they observe things to be working. For
+            their course experience. For
             example, students can be given assignments to explore a project site like the <link xlink:href="https://mapoflondon.uvic.ca/index.htm">Map
                 of Early Modern London</link> or the <link xlink:href="http://shelleygodwinarchive.org/">Shelley-Godwin Archive</link> to look at the code
-            under the hood and describe how they understand the pieces of the project to fit
-            together. In exploring sites like these, students in the author’s classes have often found a basis for
-            understanding what kinds of research questions and web reading and research tools their
-            encoding and programming work can make possible, and they often build on what they learn in their own projects to understand how they can organize information about people, places, contexts, language patterns, revision history, and more.<footnote><para>The Map of Early Modern London provides especially helpful, transparent documentation of their markup and editorial practice throughout the site with a strong investment in <link xlink:href="https://mapoflondon.uvic.ca/teaching.htm">teaching resources</link> to assist new coders.</para></footnote></para>
+            under the hood and describe how they understand the component pieces of the project to fit
+            together. In exploring projects like these, students in the author’s classes have often found a basis for
+            understanding what kinds of research questions and web reading and research tools they might design with the right resources, and students often build on what they learn in their own projects to understand how they can organize information about people, places, contexts, language patterns, revision history, and more.<footnote><para>The Map of Early Modern London provides especially helpful, transparent documentation of their markup and editorial practice throughout the site with a strong investment in <link xlink:href="https://mapoflondon.uvic.ca/teaching.htm">teaching resources</link> to assist new coders.</para></footnote></para>
         <para>It is probably no coincidence that Donald Knuth modeled his concept of <quote>literate
-                programming</quote> with programming for document formatting in the 1980s. In this
+                programming</quote> on code for document formatting in the 1980s. In this
             context the programming of a machine to format electronic documents unites fundamentally
             with the action and reproduction of writing. Knuth’s now-familiar concept seems simple
             in hindsight: <quote>Instead of imagining that our main task is to instruct a computer
@@ -356,9 +351,8 @@
                         >https://nwalsh.com/docs/articles/xml2002/lp/paper.html</link> Accessed 25
                     April 2020.</para>
             </footnote>. Responding to Walsh’s work, Eric van der Vlist prepared a clear and
-            thoroughly-documented explanation how literate programming applies to developing schema
-            rules for project coding through XML with embedded Relax NG code, readily transformable
-            into multiple formats to produce schema validation checking as well as human-readable
+            thoroughly-documented explanation of literate programming applied to XML with embedded Relax NG code, 
+            readily transformable into multiple formats to produce schema validation checking as well as human-readable
             web-ready documentation.<footnote>
                 <para>Eric Van der Vlist, <quote>Literate Programming: Generating Relax NG
                         Schemas</quote> in <emphasis role="ital">Relax NG</emphasis>, O’Reilly
@@ -383,12 +377,12 @@
             designing ODD schemas with descriptive glosses and explanation encoded together with
             schema rules in project. Whether or not we understand the drafting of an ODD
             customization to constitute an experience in embedded programming, we can recognize its
-            value for writing intensive literacy, because it involves students writing the rules for
+            value as a writing intensive experience, because it involves students writing the rules for
             a project to work systematically and designing its data for consistency and precision,
-            and it provides for description and explanation that can make a project sharable with
-            others. Markup, documentation and programming work in the development of XML-based
+            and because it provides for description and explanation that can make a project sharable with
+            others. Markup, documentation, and programming work in the development of XML-based
             projects should be promoted within educational institutions as a distinctly intensive
-            experience of writing applied to build resources soundly and well.</para>
+            experience of writing applied to design resources soundly and well.</para>
     </section>
     <section>
         <title>Writing intensively with the XML family of languages</title>
