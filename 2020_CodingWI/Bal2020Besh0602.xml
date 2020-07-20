@@ -397,37 +397,36 @@
                         >https://journals.openedition.org/jtei/979</link>. Accessed 28 April
                     2020.</para>
             </footnote> This trouble for universalized processing is also a feature of XML that
-            makes it writerly and scholarly in nature, and gives it power as a research tool, a power that is enhanced when
-            new coders learn not just how to tag but also how to manage and process their
-            tagging as a controlled system. Confronting the challenge of processing the markup and
-            sharing it with others outside one’s discourse community (oneself, one’s team, or one’s
-            semester class) is what this section designates as <emphasis>intensive</emphasis> about
-            a course in writing with markup. An introductory writing experience with markup
-            languages may familiarize students with the data structure and well-formedness and some
-            of the issues of transformation and sharing the data, but intensification of the writing
-            challenge begins with confronting the management issues of writing a customization and
-            designing schema validation rules. Still more intensification is applied when students
-            learn how they can navigate and process the markup data.</para>
-        <para>This issue with writerly nature of XML coding and processing is not well appreciated
-            in the larger context of digital humanities work or among professional developers eager to facilitate the publication process and separate it from the markup practice. Coders can produce complicated, even intricate
-            structures with XML and TEI and give impatient developers headaches, but we would do well to encounter
-            those structures as building materials the way writers do and give our students the
-            tools to work with them. Rather than designing projects primarily to suit the needs of
-            developers or content management systems, markup practitioners can learn the writing
-            intensive way to control the developing tools as their writing instruments. There will
-            be a time and place for the content management system optimized for interoperation, but
-            this should not be the only way that students and scholars learn to write with
-            markup.</para>
+            makes it writerly and scholarly in nature, and gives it power as a research tool, a
+            power that is enhanced when new coders learn not just how to tag but also how to manage
+            and process their tagging as a controlled system. Confronting the challenge of
+            processing the markup and sharing it with others outside one’s discourse community
+            (oneself, one’s team, or one’s semester class) is what we recognize as
+                <emphasis>intensive</emphasis> about a course in writing with markup. An
+            introductory writing experience with markup languages may familiarize students with the
+            data structure and well-formedness and some of the issues of transformation and sharing
+            the data, but intensification of the writing challenge begins with confronting the
+            management issues of a project: writing a customization and designing schema validation
+            rules. Still more intensification is applied when students learn how they can navigate
+            and process the markup data.</para>
+        <para>This issue with the writerly nature of XML coding and processing is not well
+            appreciated in the larger context of digital humanities work or by professional
+            developers eager to facilitate the publication process and separate it from the markup
+            practice. Coders can produce complicated, even intricate structures with XML and TEI and
+            give impatient developers headaches, but we would do well to encounter those structures
+            as building materials the way writers do and give our students the tools to work with
+            them. Rather than designing projects primarily to suit the needs of developers or
+            content management systems, markup practitioners can learn the writing intensive way to
+            control the developing tools <emphasis role="ital">as</emphasis> their writing instruments. 
+            Taught how to manage and process their own markup, students will design their own markup more efficiently and systematically than they do when shown only how to tag texts, or tag according to the rules imposed by a content management system that magically shows their work. When ruled by an external content management system, students are given an illusion that code is correct when looks good on the screen and conforms to expectations. Tagging according to the rules of an externally imposed publication software is not a writing-intensive experience, because it is stripped of creative experimentation, rigorous decision making, and intellectual challenge.</para>
         <para>A course in text encoding could take a concentration within a
             discipline like English Literature, as Kate Singer’s class at Mount Holyoke did, to
             concentrate collectively on constructing a digital edition of a collection of poems.
             Singer found that the <quote>broad-based ‘humanities language’ of the TEI enabled
                 students to question, historicize, and reconsider the poetic terminology we use to
                 describe poems</quote>. She and her students found that the controlled vocabulary of
-            the TEI, in prioritizing larger patterns of structure while permitting customization to
-            the encoder of historically constructed and shifting categories of poetic genre, left
-            room for a community of scholars to rethink form or apply the old constructions as they
-            saw fit. In the context of a course, that work can be excitingly experimental. The
+            the TEI gave considerable latitude to a community of scholars to rethink or apply old conventional literary terms as they
+            saw fit. Because the TEI elements for poetry express simple structural forms rather than specialized terms (line-groups rather than stanzas, for example), Singer’s students recognized that it was up to the encoder to apply specialized, historically specific poetic terms in their customized application of the TEI. In the context of a course, that work of deciding the appropriate system of terms for oneself can be excitingly experimental. The
             pedagogical benefit of engaging students in markup and its applications was to foster
             decision-making, documentation, and design thinking, as Singer found her students eager
             to take on design decisions for customizing their own interface for their edition. Not
@@ -445,30 +444,26 @@
                     Accessed 28 April 2020.</para>
             </footnote>. Courses like these prioritize the intellectual engagement of a class with
             the document objects they are investigating, and here the markup is clearly a research
-            and investigation tool. Fitting the students' markup to an externally imposed uniform publication framework would have made the work less messy and easier to publish, but would have stifled the students' experimentation and removed them from the intellectual decision-making process of doing their own project development. Even unfinished work in the course of a short semester is a stepping stone to renewed engagement in a process of structured work with document data modeling, querying, checking, testing, and transforming to share their work.</para>
+            and investigation tool. Fitting the students’ markup to an externally imposed uniform publication framework would have made the work less messy and easier to publish, but would have stifled the students' experimentation and removed them from the intellectual decision-making process of doing their own project development. Even unfinished work in the course of a short semester is a stepping stone to renewed engagement in a process of structured work with document data modeling, querying, checking, testing, and transforming to share their work. Such work can lead to impressive senior thesis projects.</para>
         <para>The XML family of languages were designed not only to be widely accessible, but also
             to be a vocabulary that the writer controls, consults, remixes, and transforms. It does
             not take very long to acquaint new coders to the rules of how to tag a document, or how
             to turn a <quote>plain text</quote> document into an XML document, though often people
-            experience a little frustration with typing in the attributes or figuring what they can
+            experience a little frustration with figuring out what they can
             do with attributes. The first week or two of a class that involves markup methods can
-            orient people to the basic rules of well-formedness, but that quickly introduces an
+            orient people to the basic rules of well-formedness, but that almost immediately introduces an
             engaging intellectual experience when we ask students to develop their own hierarchies
-            to organize what they are reading, and when we invite our students to try to recognize
-            what is implicit, and find ways to use elements, attributes, or comments to make that
-            explicit. The act of inscribing markup has been recognized as a writing process, but if
-            it goes no further than an exercise in tagging, perhaps we should consider this
-            something like writing a reflective paper, a response that sharpens one’s observation
-            and critical thinking skills.</para>
+            to organize what they are reading, when we invite our students to try to recognize
+            what is implicit and find ways to use elements, attributes, or comments to make that
+            explicit.</para>
         <section><title>Starting from a mess</title>
             <para>Just as we think of free-writing as a valuable exercise to start a first preliminary
                 draft in a composition class, in teaching markup, a certain amount of mess and
-                unreliability is okay as we are learning or figuring out what matters to prioritize.
-                Often new coders introduce far more differently named elements than they really need, or
-                that would be baffling to keep track of in a real-life project. To understand how to code helpfully and meaningfully, a student needs to confront the
-                problem of sharing and reproducibility. Being able to share a decision process and a set of rules for an XML project to describe its work is similar to the awareness of an audience
+                unreliability is okay as we are figuring out what we want to prioritize.
+                Often new coders introduce far more differently named elements than they really need in ways that would be baffling to keep track of in a fully developed project. To understand how to code helpfully and meaningfully, a student needs to confront the
+                problem of sharing and reproducibility. Thinking about how to share a decision process and a set of rules for an XML project with others is cultivating the awareness of audience that is
                 emphasized in rhetoric and composition classes as a means to craft better sentences, to
-                trim out verbosity, to outline the thesis project.</para>
+                trim out verbosity, to outline a thesis project.</para>
             <para>The road to improvement can be based on the same principles of understanding how
                 to convey relationships, and how to prioritize a main idea with a subordinate
                 clause. A student might write a paragraph like the following in a draft that could
@@ -489,15 +484,15 @@
                     </para>
                 </blockquote>Instructors who teach writing courses understand the complexities of
                 advising a student on how to revise writing like this. We often comment that the
-                students' ideas are <quote>good</quote> or <quote>interesting</quote>, but we need a
+                student’s ideas are <quote>good</quote> or <quote>interesting</quote>, but we need a
                 stronger sense of how the ideas connect, and every sentence needs to support a
-                single central idea, in this case about how Mary Shelley, like other women authors
-                in English history, opted to conceal a female identity in publishing her work.
+                single central idea. In this case we think the central idea is about how Mary Shelley, 
+                like other women authors in English history, opted to conceal a female identity in publishing her work.
                 Beyond simple misspellings and missed capitalization, we can identify conceptual
                 problems of subordination, especially evident in the last sentence where the fame of
-                the book and the female identiy of the writer are placed at the same main idea
-                level, out of chronological sequence. The ordering of ideas and the decision of
-                where to place subordinate clauses is a problem we can associate with organization
+                the book and the female identity of the writer are placed at the same 
+                level as the main idea and represented out of chronological sequence. The ordering of ideas and 
+                the decision of where to place subordinate clauses is a problem we can associate with organization
                 or hierarchy. Rewriting such a paragraph sometimes involves reorganizing and
                 condensing, pulling together apparently disconnected parts in the first draft. For
                 example, here is my own attempt to rewrite the student’s paragraph: <blockquote>
@@ -509,23 +504,22 @@
                         became her most famous work, and eventually was published with her name on
                         the title page.</para>
                 </blockquote> My suggested rewriting of this seems a little unsatisfactory because I
-                sense here is something the student might have developed, a sort of loose end from
-                the draft, something about the idea of a female author writing about a male
+                sense I have removed something interesting that the student might have developed, 
+                a <quote>loose end</quote> from the draft, something about the idea of a female author writing about a male
                 scientist creator and a male creature, whose violent conflict drives this book.
-                Would she have wanted to explore that issue of a woman author investigating male
+                Would the student have wanted to explore that issue of a woman author investigating male
                 conflict? Is that perhaps the topic of another essay entirely? Writing and rewriting
                 can impose order but also cut out possible avenues of development.</para>
             <para>I can find similar examples that demonstrate issues with subordination in
                 students’ first XML encoding efforts. In my roughly seven consecutive years of
                 teaching undergraduates to code with the XML family of languages, I notice a
-                recurring pattern in the first three of weeks of a semester that some students have
+                recurring pattern in the first three of weeks of a semester: that some students have
                 difficulties with conceptualizing dependencies, much like the issues we identified
                 in the student paragraph about Mary Shelley. Students just starting to code often
-                prepare shallow hierarchies, and instead of bundling list items together into a
-                wrapped cluster, they make a very flat tree where every line is its own entry. These
-                students benefit from seeing examples of nested markup, and also from understanding
-                something about how the markup may be processed to work out how attributes can be
-                used to disambiguate or categorize to refine the markup. For that reason, I have
+                prepare shallow hierarchies. For example, instead of bundling list items together into a
+                wrapped cluster, they make a very flat tree where every line is its own entry, a child of the root element.
+                These students benefit from seeing examples of nested markup, and also from understanding
+                something about how the markup may be processed to work out how attributes can refine the markup by helping to categorize, describe, point out related resources, or clarify something unclear in the source document. To help students discover many different ways they could apply markup, I have
                 found that inviting my students to write their first markup on a recipe, one that
                 contains an interesting variety of ingredients, measurement units, and activities,
                 provides a very clear and easily recognizable sense of structure with lots of
