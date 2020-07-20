@@ -9,7 +9,7 @@
     <!-- <subtitle></subtitle>-->
     <info>
         <abstract>
-            <para>Can learning text encoding and markup languages constitute a <quote>writing
+            <para>Can learning markup languages and coding constitute a <quote>writing
                     intensive</quote> experience for university students? Having taught
                 undergraduate students from a wide range of majors from humanities to the sciences
                 to develop web-based research projects with the the XML family of languages, the
@@ -99,7 +99,7 @@
             learning management systems that securely take care of all of our electronic
             interactions with students from posting announcements to grades. Even for 90s markup
             geeks, learning our way around the technologies driving Blackboard, Canvas, or Moodle
-            can be abstruse and fretfully time-consuming, especially when we attempt applying their
+            can be abstruse and fretfully time-consuming, especially when we attempt to apply their
             byzantine integrations with various proprietary software applications like Zoom or
             Panopto. Publications supporting educational technology innovations make evident that
             educational software applications are universally expected to be integrated and accessed
@@ -153,21 +153,23 @@
                 <para>See, for example, <link xlink:href="https://scholarlms.net/moodle-xml-format/"
                         >the documentation of Moodle XML format for quizzes</link>.</para>
             </footnote> XML establishes the context of educational technology in our educational
-            institutions, but our access is carefully gated in ways that relegate modification of the framework to the level of the abstruse and esoteric. Those of us who teach students
+            institutions, but our access is carefully gated in ways that relegate modification of
+            the framework to the level of the abstruse and esoteric. Those of us who teach students
             to write and build projects with markup technologies may be few in number, but we are
             the ones who are aware of the skills our students rapidly develop and hone over the
-            course of a single semester—skills to build data models, search interfaces, and
+            course of a single semester—skills to construct data models, search interfaces, and
             informational graphics according to their own design. Learning XML with its family of
-            languages helps students to develop independently from <quote>black box</quote>
-            software, and also helps make them informed consumers to choose the software they want
-            to commit to particular tasks, to find the tools most amenable to user alterations
-                <quote>under the hood</quote> and most friendly to transporting the data when the
-            software inevitably upgrades or is no longer supported. Learning markup technologies is a way of learning the structures
-            of the web of information, and much the way we learn the formal genre expectations of an
-            essay or a poem, we learn formal ways of containing data and metadata in an XML
-            framework driven by our interests in processing, sharing, accessing the data. We write
-            documents to be read and acted upon by humans; and we write markup to be read
-            and acted upon by humans and machines.</para>
+            languages helps students to design their own projects independently from <quote>black
+                box</quote> software, and also helps make them informed consumers to choose the
+            software they want to commit to particular tasks, to find the tools most amenable to
+            user alterations <quote>under the hood</quote> and most friendly to transporting the
+            data when the software inevitably upgrades or is no longer supported. Learning markup
+            technologies is a way of learning the structures of the web of information, and much the
+            way we learn the formal genre expectations of an essay or a poem, we learn to adapt
+            formal rules and expectations to contain data and metadata in an XML framework driven by
+            our interests in processing, sharing, accessing the data. We write documents to be read
+            and acted upon by humans, and we write markup to be read and acted upon by humans and
+            machines.</para>
         <para>XML markup and its family of languages itself has not become more abstruse or
             difficult to learn since the millenium. Indeed, instruction is much easier by the year 2020 with many
             tutorials available and more powerful processing methods available now.<footnote>
