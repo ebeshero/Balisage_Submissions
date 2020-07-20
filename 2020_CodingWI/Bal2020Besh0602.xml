@@ -941,13 +941,13 @@ into a more complex schema if you were to continue with it (and with future proj
                         xlink:href="https://web.archive.org/web/20191014042502/http://www.cs.virginia.edu/~ajf2j/emily/stab.html"
                         >https://web.archive.org/web/20191014042502/http://www.cs.virginia.edu/~ajf2j/emily/stab.html</link>.
                     Accessed 28 April 2020.</para>
-            </footnote> The project involved an exercise applying 1990s HTML and an early form of
+            </footnote> The project applied 1990s HTML and an early form of
             JavaScript to render Emily Dickinson’s handwritten variants on her own poems in a way
             that did not demote those variants to a footnote, but gave them equal space using the
-            capacities of hypertext. On reading a Dickinson’s poems on the site, the reader would
+            capacities of hypertext. On reading one of the poems on the website, the reader would
             encounter Dickinson’s own different versions of a line in slowly flashing text. The
             editor’s hope in designing her interface was to make readers more aware of Dickinson’s
-            open-endedness, in not cancelling out multiple versions of a line, that all
+            open-endedness, in not cancelling out multiple versions of a line so that all
             possibilities could coexist. The site was a proof of concept that did not materialize
             into a PhD thesis project, but it persisted and influenced my teaching of American
             Literature courses when I wanted to share Dickinson’s unusual writing process with my
@@ -957,15 +957,13 @@ into a more complex schema if you were to continue with it (and with future proj
             cleanly and simply encoded project in a way that would still benefit my students.</para>
         <para>In 2015, soon after I had begun teaching courses in coding and the XML stack at
             Pitt-Greensburg, I was fortunate to find a group of students interested in poetry and
-            fascinated by the possibilities of digital archive recovery work. The students and I
+            fascinated by the possibilities of restoring a digital archive. The students and I
             contacted Michele Ierardi and obtained her permission to reconstruct her site. This
-            involved converting the code from HTML to TEI P5, as well as adding more data researched
-            and supplied by my students to include TEI critical apparatus markup that would encode
+            involved converting the code from HTML with unmatched tags to TEI P5, as well as adding new research. My students investigated additional versions of the poems and added more data to include TEI critical apparatus markup that would encode
             Dickinson’s variants as well as other printed versions of the same poems in a series of
             editions published after Dickinson’s death. Their new goal was to build on Ierardi’s
             work and create a readable interface for comparing the multiple versions of Dickinson’s
-            poems, and to begin expanding that work to include other fascicles (the term for the
-            bundles of poems that Dickinson tied together with thread). My students’ site is the
+            poems, and to begin expanding that work to include other fascicles, or bundles of poems that Dickinson created beyond the original collection Ierardi presented. My students’ site is the
             second <link xlink:href="http://dickinson.newtfire.org/">Emily Dickinson project</link>,
             strongly bound to the first.<footnote>
                 <para>Nicole Lottig, Brooke Stewart, Alex Mielnicki, Brooke Lawrence, and Rebecca
@@ -1008,16 +1006,17 @@ into a more complex schema if you were to continue with it (and with future proj
             &lt;/lg&gt;</programlisting>
         In their transformation to HTML (linked above), the students applied JavaScript and CSS to the variant data coded in these attributes to produce a dynamic and distinctive reading interface permitting the reader a ready view of comparison data. 
         </para>
-        <para>In preparing this project, the students had the benefit of building on an earlier and
+        <para>In preparing this project, the students had the benefit of an earlier and
             simpler markup model, as well as a sense of purpose in giving a remarkably interesting
             project a new lease on life. They needed to study the TEI P5 guidelines and essentially
-            took a <quote>crash course</quote>, as undergraduates from a range of majors in English,
+            took a <quote>crash course</quote> as undergraduates from a range of majors in English,
             Creative Writing, and Information Sciences in manuscript encoding and textual
-            scholarship, in the course of a semester. They learned to transform the code and
-            designed the interface in the Fall 2015 semester, and then redesigned and improved the
-            interface while investigating a new research question in a following Spring 2016 term.
+            scholarship in the course of a semester. They learned to transform the code and
+            designed the interface in the fall of 2015, and then redesigned and improved the
+            interface while investigating a new research question in a following spring 2016 term.
             Over the course of one year, in the context of university coursework, the students not only designed a new reading interface but also explored a
-            serious research question of how these editions compare to one another. Writing XSLT and
+            serious research question of how these editions compare to one another.</para>
+        <para>Writing XSLT and
             XQuery on the project, these students produced SVG visualizations of <link
                 xlink:href="http://dickinson.newtfire.org/16/dash.html"><quote>Comparative Dash
                     Reduction</quote></link> (measuring which editions most frequently normalized
@@ -1026,7 +1025,7 @@ into a more complex schema if you were to continue with it (and with future proj
                 analysis</link> to investigate which editions share the most variants in common.
             This was created with XQuery to pull and calculate data from the TEI critical apparatus markup they had modelled for the poems. 
             The network analysis explored how frequently published versions aligned with Dickinson’s writing in the manuscript versions, based on generating counts with XPath of how frequently a particular version (coded as a reading witness) aligned with other versions. The students wrote XQuery code to extract this data into simple TSV
-            (tab-separated values file) and plotted in Cytoscape network analysis software. The programming work they did with XQuery was built on a foundation of their own care in modeling the markup and designing the rules for the project schema.</para>
+            (tab-separated values file) and plotted in Cytoscape network analysis software. Their programming work  with XQuery depended on their care in designing the rules for the project schema and frequently correcting the markup.</para>
         <para>The student website documents its methodology extensively and I now use it as a model
             for my current students to prepare documentation that <link
                 xlink:href="http://dickinson.newtfire.org/16/conclusion.html">features code and
@@ -1037,9 +1036,9 @@ into a more complex schema if you were to continue with it (and with future proj
             combine Fascicles 6 and 16 into a new site. Their writing intensive experience involved
             countless messages to each other to fix broken code, make a visualization work, update
             the website, refine the CSS and JavaScript. The professional experience with web
-            development was took them far beyond what would be possible in a course in tagging and
-            markup alone, or in web development within a content management system. The writing
-            intensive part was unquestionably in producing and testing and refining their own
+            development took them far beyond what would be possible in a course in tagging and
+            markup alone, or a course in web development within a content management system. The writing
+            intensive part involved recursively producing and testing and refining their own
             interface. And the project keeps on giving to future students.</para>
         <para>In Fall 2019, a colleague of mine from the History department, William Campbell, did me
             the great honor of taking my coding course, following a tradition at Pitt begun when I
@@ -1051,7 +1050,7 @@ into a more complex schema if you were to continue with it (and with future proj
                 Project</link>, together with students on his team, to study the manuscript
             tradition of the foundation charter of a Reformation-era collegiate church and school
             in Wales. The students did not need to know medieval Latin to work on the document data
-            modeling and even to apply critical apparatus markup with a tightly controlled schema
+            modeling or even to apply critical apparatus markup with a tightly controlled schema
             combining Relax NG and Schematron, generated from a TEI ODD customization that they
             devised and revised over the course of their project meetings. For the students and my
             History colleague involved in the project, this was their introduction to the TEI
@@ -1059,7 +1058,7 @@ into a more complex schema if you were to continue with it (and with future proj
             from our course to follow some examples of critical apparatus markup in order to
             understand how to prepare their own.
             Without needing to consult the Dickinson project team, the Brecon team was able to adapt
-            and build on the example of their markup to take their own study in new directions, recognizing how their project diverged. For the Brecon team, the text of the charter was not a
+            and build on the example of their markup to take their own study in new directions, recognizing how their project diverged. For the Brecon team, the text of the charter was a prose text rather than a
             bundle of poems, but nevertheless required a modeling of textual variation over time.
             Alyssa Argento, a returning student who was mentoring project teams and continuing
             learning XSLT and SVG on her own, took on the challenge of trying to show how the
@@ -1067,8 +1066,7 @@ into a more complex schema if you were to continue with it (and with future proj
             inspired by the example of the network analysis on the Dickinson project. Finding her
             computer unable to install the latest version of the network analysis software that the
             Dickinson team had relied on for their visualization, Argento studied the project data, worked out
-            how to arrange eight witnesses as nodes in a circle, and produced a network graph by
-            herself with weighted edges and sized nodes to provide a detailed visual summary of
+            how to arrange eight witnesses as nodes in a circle, and produced a network graph based on calculations she made with XPath with weighted edges and sized nodes to provide a detailed visual summary of
             how much the eight different versions shared in common across 25 sections of the
             charter. Having produced a static network visualization, she then studied how to
             make it interactive by applying JavaScript to address attributes on the SVG elements and
@@ -1078,8 +1076,8 @@ into a more complex schema if you were to continue with it (and with future proj
                 >http://brecon.newtfire.org/html/analysis/network.html</link> represents work that
             she envisioned and worked out by herself with occasional input from me and the project
             team, and while it needs work in the documentation area, it represents a line of
-            succession from earlier projects in my course. I share it here to demonstrate what is
-            possible for undergraduates to learn, very quickly, with the benefit of the XML
+            succession from earlier projects in my course.<footnote><para>Argento’s XSLT code is a celebration of the XPath count() function, accessible on the Brecon GitHub repository: <link xlink:href="https://github.com/haggis78/BreconChurch/blob/master/xslt/networkAnalysis.xsl">https://github.com/haggis78/BreconChurch/blob/master/xslt/networkAnalysis.xsl</link></para></footnote> I share it here to demonstrate what is
+            possible for undergraduates to build on their own with the benefit of learning the XML
             stack.</para>
         <para>The many student projects developed in the two <quote>sibling</quote> University of
             Pittsburgh coding courses taught by David J. Birnbaum (see
@@ -1093,14 +1091,14 @@ into a more complex schema if you were to continue with it (and with future proj
     <section>
         <title>Writing about code to pay a project forward</title>
         <para> When students prepare a project in markup, they are not simply writing papers to be
-            filed in a course-specific context. They are preparing a research site and their work
-            can often be continued by them or others. Students can be building beyond the
+            filed in a course-specific context. They are preparing a research site, and their work
+            can often be continued by themselves or others. Students can be building beyond the
             constraints of a single semester, and even if they are not tempted to return to the
             project, they can leave scaffolding behind for others to continue the work or alter its
-            direction, or retrieve the files. Awareness of the potential energy of the work they are
-            doing can give shape to an encounter with markup languages in the course of a semester.
-            The energy input over a course of weeks puts emphasis on preparing material that others
-            can read and reuse. Assignments for a writing intensive experience can be constructed
+            direction, or to retrieve the source document files and start afresh. Awareness of the 
+            potential energy of the work they are doing can give shape to an encounter with markup languages 
+            in the course of a semester. The energy input over a course of weeks puts emphasis on preparing material
+            that others can read and reuse. Assignments for a writing intensive experience can be constructed
             with attention to: <orderedlist>
                 <listitem>
                     <para>reading the code and documentation of other projects, critiquing it, and
@@ -1126,21 +1124,19 @@ into a more complex schema if you were to continue with it (and with future proj
                         </itemizedlist></para>
                 </listitem>
             </orderedlist> These are informal writing-intensive activities to do with taking
-            responsibility for method and processes, for managing the intellectual content of a
+            responsibility for method and processes and for managing the intellectual content of a
             project. Studying how copyright applies to code and markup and choosing a license for
-            sharing the work should also be part of this experience.</para>
+            sharing the work should be part of this experience. Students should learn how to credit their own and others work, and how to transport their data files when they need to move to a new publishing environment.</para>
         <para>Giving students access to the full set of tools in the XML arsenal and establishing
             both immediate (in-semester) short-range and long-range possibilities for their work
-            will introduce students from any background to the power of markup languages and with
-            the experience of writing to form and connect with communities of practice. This cannot
+            will introduce students from any background to the potential of writing with markup languages to form and connect with communities of practice. This cannot
             fail to be a professionalizing experience. Even in developing projects that are not
             successful, there will be opportunities to recognize in failures what to document, how
-            to redo the work differently, how another group might start over—the project-oriented
-            awareness gives space for documentation to <quote>sunset</quote> the work. Whether or
+            to redo the work differently, or how another group might start over if a team must <quote>sunset</quote> the work. Whether or
             not students go on to use markup again after the course is over, they will have engaged
             with a powerful form of writing that marks up, investigates, curates, propagates, and
             conserves textual data. This is the very definition of a writing-intensive experience
-            that is both professionalizing and cross-disciplinary in its reach. </para>
+            that is both professionalizing and cross-disciplinary in its reach.</para>
 
     </section>
     <section>
@@ -1160,21 +1156,21 @@ into a more complex schema if you were to continue with it (and with future proj
             applied context outside of class, while student and faculty class meetings reviewed
             content all together, to learn how to interact with an unfamiliar interface or to review
             issues students are having or help address something that is not working. It was easy to
-            continue the management of a course based on markup technologies in which students had
+            continue the management of a course in which students had
             been trained to work with project management tools and to be writing and sharing their
             documentation in GitHub repositories and over Slack channels. We did miss the in-person
             interaction on which this class relied, with instructors able to look over the shoulders
             of students to help resolve a problem on their computers. Synchronous virtual meetings
             could not replace this, but using screen captures in asynchronous chat became more
-            necessary, and students are certainly challenged to verbalize things that are not
-            working properly when an instructor cannot come around behind the student’s computer to see what is
-            going wrong. But adding comments to code stored in the class’s shared eXist-dB XML database and their project GitHub repositories
+            necessary. Students were certainly challenged to verbalize things that were not
+            working properly when an instructor could not physically come around behind the student’s computer to see what was
+            going wrong. These communication problems were sometimes resolved by connecting with an instructor over Zoom to share a computer screen. Adding comments to code stored in the class’s shared eXist-dB XML database and their project GitHub repositories
             continued as it had from the beginning of the semester. Because this class had cultivated tools to be able to
             communicate and work together online, they were perhaps less challenged and more bonded virtually than
-            students in the courses managed only within the learning management system. Build teams
-            of developers in a class, and a pandemic may slow but not stop them. In the pandemic crisis of 2020
+            students in the courses managed only within the learning management system. In the pandemic crisis of 2020
             the writing intensive nature of shared project development seemed especially beneficial in
-            supporting our hive of student coders.</para>
+            supporting our hive of student coders. Build teams
+            of developers in a class, and a pandemic may slow but not stop them.</para>
     </section>
 
 </article>
