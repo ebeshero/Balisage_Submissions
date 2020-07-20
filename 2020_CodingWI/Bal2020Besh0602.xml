@@ -651,18 +651,18 @@ and the loaf sounds hollow when knocked on the underside.
          to cool for at least &lt;time&gt;1 hour&lt;/time&gt; before cutting&lt;/step&gt;. 
 &lt;/recipe&gt;</programlisting>
                 The nested <code>&lt;measurement&gt;</code> elements inside <code>&lt;measurement&gt;</code> elements show a problem the student was trying to solve with hierarchy, 
-                and suggest a good opportunity for the instructor to discuss with the student how to deal with all the information given about
+                and make a good opportunity for the instructor to discuss with the student how to deal with all the information given about
                 equivalent units (grams to cups). We could suggest the student use just one measurement element and try encoding the equivalency information in attribute
                 values, for example. And we need to think about the representation of fractions: If the code is going to
-                be processed by a computer to, say triple this recipe, how would it be best to
+                be processed by a computer to, say triple this recipe, how might we write markup to
                 represent the numerical quantities and conversion factors? What is remarkable here
-                for an early XML assignment is the student decision to mark types of equipment
+                for an early XML assignment is the student’s decision to mark types of equipment
                 within the steps. The student could reconsider the variety of attributes, but the
                 effort to track categories of measurement as well as categories of ingredient (wet
-                vs. dry) is admirable on a first experience with angle brackets. </para> 
-            <para>Even when a student quickly learns how to apply hierarchies, they are, of course,
-                prone to inconsistencies like these before they learn to write schema validation
-                code:
+                vs. dry) is admirable on a first experience with angle brackets.</para> 
+            <para>Even when students quickly learn how to apply hierarchies, they are, of course,
+                prone to inconsistencies before they learn to write schema validation
+                code, as in the following example:
                 <programlisting>
   &lt;step n="9"&gt;&lt;process type="action"&gt;Lightly flour&lt;/process&gt; a 
       &lt;item type="equimpent"&gt;work surface.&lt;/item&gt; 
@@ -684,12 +684,12 @@ and the loaf sounds hollow when knocked on the underside.
                 but here it becomes an opportunity to introduce the power of schema writing to
                 students, to write their own spell checkers for their attribute values and control
                 which elements and attributes are permitted to appear at each level of the
-                hierarchy. </para>    
+                hierarchy.</para>    
                 <para>In the first week of my class, students usually move from encoding a recipe to
-                encoding a poem or a piece of historical correspondence. Changing to code a
+                marking up a poem or a piece of historical correspondence. Encoding a
                 different genre of document can lead students to recognize different kinds of data
-                and observations about the formal dimensions and organization of patterns, as well
-                as the interest in referencing different kinds of information like names, dates,
+                and observations about the formal dimensions and organization of patterns. They also often
+                take more of an interest in referencing different kinds of information like names, dates,
                 people, and places, as well as images, motifs, rhyme. Quite frequently student
                 beginners will take the text content of a document and repeat it in an attribute
                 value, as for example wrapping code around a name as given in a text, and using that
@@ -707,7 +707,7 @@ and the loaf sounds hollow when knocked on the underside.
                 schema code that creates rules for encoding. This may be a first data-modeling
                 experience for students in a general education context, when they are called upon to
                 think in a <quote>meta</quote> or higher order reflective way about formalizing their
-                code, and making it possible for others to understand it and reproduce it. Learning to
+                code, and to make it possible for others to understand and apply it. Learning to
                 write schema code also leads to writing
                 comments to explain decisions and document the code. The following example pairs a short coded document with a student’s schema, and a conversation with another student who was reviewing the code and offering advice. First, here is the XML the student prepared with some good-natured snark from my own assignment instructions:
                 <programlisting>
@@ -789,7 +789,7 @@ as well as with datatypes! In this specific assignment, you could code for the d
 and use xsd:date or xsd:YearMonth (or both!) to give even more metadata in your xml. 
 Overall, this is a well-organized, simple schema that you'll be able to develop 
 into a more complex schema if you were to continue with it (and with future projects!)</programlisting>
-                The beginner student, bb, experimenting with tidy, highly legible commentary on his code, including mapping out attribute values he might use to replace the ambiguous text. But we also see students beginning to hear from each other about project work on which they collaborate and getting used to seeing a code file as a site of productive conversation and ongoing revision.   
+                The beginner student, bb, experimenting with tidy, highly legible commentary on his code, including mapping out attribute values he might use to replace the ambiguous text. But we also see students beginning to hear from each other about project work on which they will eventually collaborate. Students are getting used to seeing a code file as a site of productive conversation and ongoing revision.   
                 
             </para>
             <para>When students learn only tagging and do not learn how to write schema validation or process their own code
@@ -846,7 +846,7 @@ into a more complex schema if you were to continue with it (and with future proj
                 Understood in this way, the <quote>mess</quote> of markup is indistinguishable from
                 the <quote>mess</quote> of writing; both may be ordered with care and explanation
                 for an audience, first an audience of one’s instructor and peers, and then an
-                audience one does not necessarily meet in person.</para>
+                audience that one does not necessarily meet in person.</para>
            
         </section>
         <section><title>Writing-intensive querying, processing, and transforming</title>
@@ -861,9 +861,9 @@ into a more complex schema if you were to continue with it (and with future proj
                 <quote>ways of writing in the discipline</quote>, and that it have formal
             expectations delivered in structured assignments. These expectations are familiar to us from
             university composition courses in the requirements for research papers and thesis
-            documents with structured sections, appendices, but can also be communicated in the
+            documents with structured sections, appendices, but they can also be communicated in the
             context of encoding XML projects according to a carefuly developed schema and a
-            well-documented codebase. Most importantl and pertinent to XML project development is
+            well-documented codebase. Most important and pertinent to XML project development is
             the expectation that writing-intensive courses engage in significant rounds of revision:<blockquote>
                 <itemizedlist>
                     <listitem>
@@ -882,14 +882,14 @@ into a more complex schema if you were to continue with it (and with future proj
             </blockquote> Markup and coding with the XML family of languages becomes an
                 <emphasis>intensive</emphasis> writing experience when students return to it and
             revise it, to better document decisions for the project team, to better document
-            decisions for readers outside the project, to improve the precision of the data, to
+            decisions for readers outside the project, to improve the precision of the data, and to
             simplify the categories to make the code more coherent in categorizing and processing
             information. When students learn to inspect the code and share its customization in
             project teams, the markup becomes subject to intensive review and systematic revision to
             make it sharable rather than subjective. The more this is done, and the more experience
             that students and scholars gain, the more prepared they are to share in wider
             conversations. For example, markup practitioners in the classicist community share
-            applications of the EpiDoc standard, and a medievalist graduate student prepares to
+            applications of the <link xlink:href="https://sourceforge.net/p/epidoc/wiki/Home/">EpiDoc guidelines</link>, and a medievalist graduate student prepares to
             speak at the annual conference of the Text Encoding Initiative or at the annual
             Kalamazoo International Congress on Medieval Studies. As with peer-reviewed scholarship
             in any discipline, the XML code-base is subject optimally to heated debate and decisions
@@ -908,14 +908,14 @@ into a more complex schema if you were to continue with it (and with future proj
                             Technologies</emphasis>, vol. 13 (2014). <link
                             xlink:href="https://doi.org/10.4242/BalisageVol13.Anderson01"
                             >https://doi.org/10.4242/BalisageVol13.Anderson01</link>.</para>
-                </footnote> As XQuery developers know, the simple "for", "let" "where", "order by"
-                and "return" statements that make a "FLWOR" are good ways to introduce students to
+                </footnote> As XQuery developers know, the simple <quote>for</quote>, <quote>let</quote>, <quote>where</quote>, <quote>order by</quote>
+                and <quote>return</quote> statements that make a <quote>FLWOR</quote> are good ways to introduce students to
                 programming concepts quickly and give them powers to construct all kinds of new data
                 structures from an XML document, whether HTML, SVG, or structured text formats like
                 CSVs to be imported into spreadsheets, or JSON formats for structured maps and
-                arrays. Students work at the intersections of different data formats with exploring
+                arrays. Students work at the intersections of different data formats while exploring
                 what they can build out of XML trees. Bringing students to work at these
-                intersections between data formats leads code-writers to a decision making process
+                intersections leads code-writers to make challenging decisions
                 about streamlining the code-base, making it more legible, tractable, XPath-able.
                 Learning XPath and writing XSLT or XQuery to process XML moves a coder from
                 following rules obediently so that others will someday process the data, to becoming
