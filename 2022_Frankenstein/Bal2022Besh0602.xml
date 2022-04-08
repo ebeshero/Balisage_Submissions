@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="balisage-1-5.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="balisage-1-5.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-stylesheet type="text/xsl" href="balisage-proceedings-html.xsl"?>
+<article xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink"
+    version="5.0-subset Balisage-1.5">
+
+    <title>Correcting Collation Problems with XSLT</title>
+    <subtitle>Untangling the Frankenstein Variorum</subtitle>
+    <info>
+        <abstract>
+            <para>Computer-aided collation is like a power loom that inevitably tangles up threads caught in the machinery. Automating a tedious process magnifies the complexity of error-correction, calling for new tooling to help us smooth the weaving process. This paper investigates how we can apply XSLT to automate corrections to machine-assisted collation and thereby to refine our collation pre-processing and post-processing algorithms, featuring work from the ongoing <link xlink:href="https://frankensteinvariorum.github.io/">Frankenstein Variorum</link> project.</para>
+        </abstract>
+        <author>
+            <personname>
+                <firstname>Elisa</firstname>
+                <othername>E.</othername>
+                <surname>Beshero-Bondar</surname>
+            </personname>
+            <personblurb>
+                <para>Elisa Beshero-Bondar explores and teaches document data modeling with the XML family of languages.
+                    Until June 2020, she was a professor of English Literature and Director of the Center for the Digital Text at
+                    Pitt-Greensburg. She serves on the TEI Technical Council and is the founder and organizer of the <link xlink:href="https://digitalmitford.org" xlink:type="simple" xlink:show="new" xlink:actuate="onRequest">Digital Mitford project</link> and
+                    <link xlink:href="https://digitalmitford.github.io/DigMitCS/" xlink:type="simple" xlink:show="new" xlink:actuate="onRequest">its usually
+                        annual coding school</link>. She experiments with visualizing data from complex document
+                    structures like epic poems and with computer-assisted collation of differently encoded editions of <link xlink:href="https://frankensteinvariorum.github.io/" xlink:type="simple" xlink:show="new" xlink:actuate="onRequest"><emphasis role="ital">Frankenstein</emphasis></link>. 
+                    Her ongoing adventures with markup technologies are
+                    documented on <link xlink:href="https://newtfire.org" xlink:type="simple" xlink:show="new" xlink:actuate="onRequest">her development site at
+                        newtfire.org</link>.</para>
+            </personblurb>
+            <affiliation>
+                <jobtitle>Professor of Digital Humanities</jobtitle>
+                <jobtitle>Program Chair of Digital Media, Arts, and Technology</jobtitle>
+                <orgname>Penn State Erie, The Behrend College</orgname>
+            </affiliation>
+            <email>eeb4@psu.edu</email>
+        </author>
+        <keywordset role="author">
+            <keyword>collation</keyword>
+            <keyword>Gothenburg model</keyword>
+            <keyword>XSLT</keyword>
+            <keyword>tokenization</keyword>
+            <keyword>normalization</keyword>
+            <keyword>alignment</keyword>
+            <keyword>stand-off markup</keyword>
+            <keyword>stand-off pointers</keyword>
+        </keywordset>
+    </info>
+    <section>
+        <title></title>
+        <para>
+            
+            
+            <footnote>
+                <para>Kelly A. Shea, Mary McAleer Balkun, Susan A. Nolan, John T. Saccoman, and
+                    Joyce Wright, <quote>One More Time: Transforming the Curriculum Across the
+                        Disciplines Through Technology-Based Faculty Development and
+                        Writing-Intensive Course Redesign</quote>
+                    <emphasis role="ital">Across the Disciplines</emphasis> Volume 3 (2006) <link
+                        xlink:href="https://wac.colostate.edu/docs/atd/articles/shea2006.pdf"
+                        >https://wac.colostate.edu/docs/atd/articles/shea2006.pdf</link> Accessed 25
+                    April 2020.</para>
+            </footnote> 
+        </para>
+    </section>
+    <section>
+        <title>Background on the Frankenstein Variorum Project</title>
+        <para>The <emphasis role="ital">Frankenstein Variorum</emphasis> project (hereafter referred to as <emphasis role="ital">FV</emphasis>) is a partially completed collation project that began during the recent 1818-2018 bicentennial celebrating the first publication of Mary Shelley's novel. We are constructing a digital variorum edition that highlights alterations to the novel Frankenstein over five key moments from its first drafting in 1816 to its author’s final revisions by 1831. The project relies on automated collation faciliated by the software collateX, which creates a collation <quote>weave</quote> of five editions of the novel, output in TEI-conformant XML. If we think of each source edition for the collation as a <quote>thread</quote>, the collation algorithm can be said to weave five threads together into a woven pattern that helps us to identify the moments when the editions align together and where they diverge.</para>
+        <para>Source threads for weaving the collation pattern include two well-known digital editions: <link xlink:href="http://knarf.english.upenn.edu/">The Pennsylvania Electronic Edition (PAEE)</link>, an early hypertext edition produced at the University of Pennsylvania in the mid 1990s by Stuart Curran and Jack Lynch that represents the 1818 and 1831 published editions of the novel, and the <link xlink:href="http://shelleygodwinarchive.org/contents/frankenstein/">Shelley-Godwin Archive's edition of the manuscript notebooks (S-GA)</link> published in 2013 by the University of Maryland. We prepared two other editions in XML representing William Godwin’s corrections of his daughter's edition from 1823, and the Thomas copy, which represents Mary Shelley’s corrections and proposed revisions written in a copy of the 1818 edition left in Italy with her friend Mrs. Thomas.</para>
+        <para>We have spoken before at this conference about the processing pipeline for publishing this edition. The pipeline involves machine-assisted collation with Python and collateX. The Python script introduces instructions on normalizing certain variations (such as substituting <quote>and</quote> for <quote>&amp;</quote>). The script also collates markup, helping to indicate where new paragraph boundaries or chapter divisions were inserted in particular versions of the novel.</para>
+        <para>SHOW THE COLLATION SPINE: </para>
+        <para>SHOW THE COLLATION INTERFACE AND HOTSPOTS OF VARIATION</para>
+        
+        <section><title>Problems with the Output Collation</title>
+            <para>WHAT ARE SOME SAMPLE PROBLEMS WITH THE COLLATION, AND WHY ARE THEY PROBLEMS?
+            SPURIOUS ALIGNMENT IS THE WORST
+            
+            </para>
+           
+                <programlisting>
+ &lt;recipe type="allAges" name="sourdoughIngredients"&gt;
+ &lt;measurement&gt;1 1/4 cups&lt;/measurement&gt; (&lt;amount&gt;160 grams&lt;/amount&gt;)
+ &lt;ingredient&gt;white bread flour&lt;/ingredient&gt;, plus more for dusting
+ &lt;measurement&gt;1/4 cup&lt;/measurement&gt; (&lt;amount&gt;38 grams&lt;/amount&gt;)
+ &lt;ingredient&gt;stone-ground whole-wheat flour&lt;/ingredient&gt;
+ &lt;measurement&gt;1/4 cup&lt;/measurement&gt; (&lt;amount&gt;32 grams&lt;/amount&gt;)
+ &lt;ingredient&gt;stone-ground whole rye flour&lt;/ingredient&gt;
+ &lt;measurement&gt;1/2 teaspoon&lt;/measurement&gt;
+ &lt;ingredient&gt;instant yeast or bread machine yeast&lt;/ingredient&gt;
+ &lt;measurement&gt;1 teaspoon&lt;/measurement&gt;
+ &lt;ingredient&gt;table salt&lt;/ingredient&gt;
+ &lt;measurement&gt;1/4 cup&lt;/measurement&gt; (&lt;amount&gt;55 grams&lt;/amount&gt;) 
+ &lt;ingredient&gt;dry fermented cider&lt;/ingredient&gt;
+ &lt;measurement&gt;1/2 cup&lt;/measurement&gt; (&lt;amount&gt;120 grams&lt;/amount&gt;)
+ &lt;ingredient&gt;lukewarm water&lt;/ingredient&gt; (&lt;temperature&gt;80 degrees&lt;/temperature&gt;), 
+ plus an optional 1 tablespoon recipe&gt;&lt;/recipe&gt;
+ &lt;!--jgb: You may substitute a Pilserner beer for the dry fermented cider. --&gt;</programlisting>
+            
+        </section>
+        <section><title></title>
+          <para></para>
+           
+        </section>
+       
+    </section>
+
+  
+    
+
+</article>
