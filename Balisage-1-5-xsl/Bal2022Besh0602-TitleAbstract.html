@@ -1,3 +1,4 @@
+<!DOCTYPE HTML>
 <html lang="en">
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -29,7 +30,7 @@
         filter: invert(100%);
       }
     </style>
-      <link rel="stylesheet" href="balisage-plain.css" type="text/css">
+      <link rel="stylesheet" href="balisage-proceedings.css" type="text/css">
       <meta name="keywords" content="collation, collateX, tandiff, Gothenburg model, XSLT, Python, tokenization, normalization, alignment, stand-off markup, stand-off pointers">
       <link id="favicon" rel="shortcut icon" type="image/png" href="http://balisage.net/favicon.ico">
       <!--balisage-html.xsl--></head>
@@ -38,49 +39,343 @@
       <div id="balisage-header" role="banner">
          <h1><!--* balisage-html.xsl 519.38 *--><i>Balisage:</i>&nbsp;<small>The Markup Conference</small></h1>
       </div>
-      <div lang="en" class="article">
-         <div class="titlepage">
-            <h1 class="article-title" id="d2e5">Balisage Paper: Correcting Collation Problems with XSLT</h1>
-            <h2 class="subtitle">Untangling the Frankenstein Variorum</h2>
-            <div class="author">
-               <h3 class="author">Elisa E. Beshero-Bondar</h3>
-               <div class="affiliation">
-                  <p class="jobtitle">Professor of Digital Humanities</p>
-                  <p class="jobtitle">Program Chair of Digital Media, Arts, and Technology</p>
-                  <p class="orgname">Penn State Erie, The Behrend College</p>
+      <html lang="en">
+         <head>
+            <title>Balisage: Correcting Collation Problems with XSLT</title>
+            <link rel="stylesheet" href="balisage-proceedings.css" type="text/css">
+            <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow&amp;display=swap" rel="stylesheet">
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1"><script type="text/JavaScript">
+      var detailsElement = document.createElement("details");
+      if (!("open" in detailsElement)) {
+          document.write('<script src="..//js/bower_components/better-dom/dist/better-dom.js"><\/script>');
+          document.write('<script src="..//js/bower_components/better-details-polyfill/dist/better-details-polyfill.js"><\/script>');
+          document.write('<script src="..//js/classname.js"><\/script>');
+      }
+      /* Enable CSS styling of figure elements in IE:
+       * https://xopus.com/devblog/2008/style-unknown-elements.html
+       */
+      var IEfix = document.createElement('figure');
+    </script><style type="text/css" id="inverter" media="none">
+      html {
+        filter: invert(100%);
+      }
+
+      * {
+        background-color: inherit;
+      }
+
+      /* do not invert SVG images */
+      img:not([src*=".svg"]),
+      [style*="url("] {
+        filter: invert(100%);
+      }
+    </style>
+            <!--balisage-proceedings.xsl-->
+            <meta name="generator" content="Balisage Conference Proceedings XSLT (v1.2)">
+            <link id="favicon" rel="shortcut icon" type="image/png" href="http://balisage.net/favicon.ico"><script type="text/javascript">
+
+   function hidecite(citeID) {
+     cite = document.getElementById(citeID);
+     cite.style.display = "none";
+     return;
+   }
+   
+   function showcite(citeID,anchorID) {
+     cite = document.getElementById(citeID);
+
+     citeLeft = cite.style.left;
+     citeTop = cite.style.top;
+     
+     if (citeLeft != (getLeft(anchorID)+"px") ||
+         citeTop != (getTop(anchorID)+"px")) {
+       cite.style.display = "none";
+     }
+     
+     if (cite.style.display != "table-cell") {
+        movebox(citeID, anchorID);
+        cite.style.display = "table-cell";
+     }
+     else {
+       cite.style.display = "none";
+     };
+     return;
+   }
+
+   function movebox(citeID, anchorID) {
+
+     cite = document.getElementById(citeID);
+     
+     // alert(cite.offsetWidth + " by " + cite.offsetHeight)
+     
+     horizontalOffset = getLeft(anchorID);
+     // horizontalOffset = (inMain(anchorID)) ?
+     // (horizontalOffset - 260) : (horizontalOffset + 20)
+     // (horizontalOffset - (20 + cite.offsetWidth)) : (horizontalOffset + 20)
+
+     verticalOffset = getTop(anchorID);
+     // verticalOffset = (inMain(anchorID)) ?
+     // (verticalOffset - 20) : (verticalOffset + 20)
+     // (verticalOffset - (20 + cite.offsetHeight)) : (verticalOffset + 20)
+
+     /*
+     horizontalOffset = getAbsoluteLeft(anchorID) - getScrollLeft(anchorID) + 20;
+     if (inMain(anchorID)) {
+       horizontalOffset = horizontalOffset - 300;
+     }
+     verticalOffset = getAbsoluteTop(anchorID) - getScrollTop(anchorID) - 40;
+     if (inMain(anchorID)) {
+       verticalOffset = verticalOffset - 300;
+     }
+     */
+     
+     cite.style.left = horizontalOffset + "px";
+     cite.style.top = verticalOffset + "px";
+   }
+   
+   function getLeft(objectID) {
+     var left = getAbsoluteLeft(objectID) - getScrollLeft(objectID);
+     left = (inMain(objectID)) ? (left - 260) : (left + 20)    
+     return left;
+   }
+   
+   function getTop(objectID) {
+     var top = getAbsoluteTop(objectID) - getScrollTop(objectID);
+     top = (inMain(objectID)) ? (top - 50) : (top + 20)
+     return top;     
+   }
+   
+   function getAbsoluteLeft(objectId) {
+   // Get an object left position from the upper left viewport corner
+     o = document.getElementById(objectId)
+     oLeft = o.offsetLeft            // Get left position from the parent object
+     while(o.offsetParent!=null) {   // Parse the parent hierarchy up to the document element
+       oParent = o.offsetParent    // Get parent object reference
+       oLeft += oParent.offsetLeft // Add parent left position
+       o = oParent
+      }
+    return oLeft
+    }
+
+    function getAbsoluteTop(objectId) {
+    // Get an object top position from the upper left viewport corner
+      o = document.getElementById(objectId)
+      oTop = o.offsetTop            // Get top position from the parent object
+      while(o.offsetParent!=null) { // Parse the parent hierarchy up to the document element
+        oParent = o.offsetParent  // Get parent object reference
+        oTop += oParent.offsetTop // Add parent top position
+        o = oParent
+      }
+    return oTop
+    }
+
+   function getScrollLeft(objectId) {
+     // Get a left scroll position
+     o = document.getElementById(objectId)
+     oLeft = o.scrollLeft            // Get left position from the parent object
+     while(o.offsetParent!=null) {   // Parse the parent hierarchy up to the document element
+       oParent = o.offsetParent    // Get parent object reference
+       oLeft += oParent.scrollLeft // Add parent left position
+       o = oParent
+      }
+    return oLeft
+    }
+
+    function getScrollTop(objectId) {
+    // Get a right scroll position
+      o = document.getElementById(objectId)
+      oTop = o.scrollTop            // Get top position from the parent object
+      while(o.offsetParent!=null) { // Parse the parent hierarchy up to the document element
+        oParent = o.offsetParent  // Get parent object reference
+        oTop += oParent.scrollTop // Add parent top position
+        o = oParent
+      }
+    return oTop
+    }
+
+    function inMain(objectId) {
+    // returns true if in div#main
+      o = document.getElementById(objectId)
+      while(o.parentNode != null) { // Parse the parent hierarchy up to div#main
+        oParent = o.parentNode
+        if (o.id == "main") { return true; }
+        o = oParent;
+      }
+    return false;
+    }
+
+
+   /*
+   function showcite(citeID) {
+      cite = document.getElementById(citeID);
+      if (cite.style.display != "table-cell") {
+        cite.style.display = "table-cell";
+      }
+      else {
+        cite.style.display = "none";
+      };
+      return;
+    }
+    */
+
+      </script></head>
+         <body>
+            <div class="skipnav"><a href="#main">Skip to contents.</a></div>
+            <div id="balisage-header" role="banner" aria-label="Logo and breadcrumb links"><a class="quiet" href="http://www.balisage.net"><img style="float:right;border:none" alt="Balisage logo" height="130" src="icons/BalisageSeries-logo.png"></a><h2 class="page-header">Balisage: The Markup Conference</h2>
+               <h1 class="page-header">Proceedings preview</h1>
+            </div>
+            <nav id="main-menu" role="navigation">
+               <details>
+                  <summary tabindex="0"><svg role="img" viewBox="0 0 20 20" height="20" width="20">
+                        <title>Menu</title>
+                        <path d="m0-0v4h20v-4h-20zm0 8v4h20v-4h-20zm0 8v4h20v-4h-20z" fill="currentColor"></path></svg> Menu
+                     </summary>
+                  <div class="menu">
+                     <div id="navbar"></div>
+                     <div id="index-mast">
+                        <div class="content">
+                           <h1 class="article-title" id="d3e5">Balisage Paper: Correcting Collation Problems with XSLT</h1>
+                           <h2 class="subtitle">Untangling the Frankenstein Variorum</h2>
+                           <details class="mast-box">
+                              <summary class="title">Elisa E. Beshero-Bondar</summary>
+                              <div class="affiliation">
+                                 <p class="jobtitle">Professor of Digital Humanities</p>
+                                 <p class="jobtitle">Program Chair of Digital Media, Arts, and Technology</p>
+                                 <p class="orgname">Penn State Erie, The Behrend College</p>
+                              </div>
+                              <h5 class="author-email"><code class="email">&lt;<a class="email" href="mailto:eeb4@psu.edu">eeb4@psu.edu</a>&gt;</code></h5>
+                              <div class="personblurb">
+                                 <p id="d3e29">Elisa Beshero-Bondar explores and teaches document data modeling with the XML
+                                    family of languages. She serves on the TEI Technical Council and is the founder
+                                    and organizer of the <a href="https://digitalmitford.org" class="link">Digital
+                                       Mitford project</a> and <a href="https://digitalmitford.github.io/DigMitCS/" class="link">its usually annual coding
+                                       school</a>. She experiments with visualizing data from complex document
+                                    structures like epic poems and with computer-assisted collation of differently
+                                    encoded editions of <a href="https://frankensteinvariorum.github.io/" class="link"><span class="ital">Frankenstein</span></a>. Her ongoing adventures with
+                                    markup technologies are documented on <a href="https://newtfire.org" class="link">her
+                                       development site at newtfire.org</a>.</p>
+                              </div>
+                           </details>
+                           <details class="mast-box">
+                              <summary class="title">Raffaele Viglianti</summary>
+                              <div class="affiliation">
+                                 <p class="jobtitle">Research Associate</p>
+                                 <p class="orgname">Maryland Institute for Technology in the Humanities (MITH) at the
+                                    University of Maryland</p>
+                              </div>
+                              <div class="personblurb">
+                                 <p id="d3e54">Raffaele Viglianti is a TEI Technical Council member and Research Associate at
+                                    the Maryland Institute for Technology in the Humanities (MITH) at the University
+                                    of Maryland, where he works on a number of digital humanities projects and is
+                                    the Technical Editor for <a href="http://shelleygodwinarchive.org/" class="link">the
+                                       Shelley-Godwin Archive</a>. Raffaele’s research revolves around digital
+                                    editions and textual scholarship, with a focus on editions of music
+                                    scores.</p>
+                              </div>
+                           </details>
+                           <details class="abstract">
+                              <summary>
+                                 <h2 class="inline-heading">Abstract</h2>
+                              </summary>
+                              <p id="d3e9">Computer-aided collation is like a power loom that inevitably tangles up threads
+                                 in the machinery. Automating a tedious process magnifies the complexity of
+                                 error-correction, calling for new tooling to help us smooth the weaving process. The
+                                 authors are attempting to refine a collation algorithm to improve its alignment of
+                                 variant passages in the <a href="https://frankensteinvariorum.github.io/" class="link">Frankenstein Variorum</a> project. In this paper we investigate how best to
+                                 engage XSLT in the collation process, with our project files as a case study. We
+                                 began with a Python script that tokenizes and normalizes the texts of the editions
+                                 on spaces and delivers them to <a href="https://collatex.net/" class="link">collateX</a> for processing the collation and delivering TEI-conformant
+                                 output for our project. Our pipeline has, to this point, applied XSLT to prepare the
+                                 editions for collation and for post-processing following the collation to correct
+                                 patterns of erroneous alignments. We are now experimenting with the Text Alignment
+                                 Network's <a href="https://github.com/textalign/TAN-2021/blob/master/applications/Diff%2B/Diff%2B.xsl" class="link">tandiff XSLT</a>, <a href="https://www.balisage.net/Proceedings/vol26/html/Kalvesmaki01/BalisageVol26-Kalvesmaki01.html" class="link">introduced by Joel Kalvesmaki at the Balisage 2021 conference</a>, to handle
+                                 the string comparison completely with XPath and XSLT with a much different approach
+                                 to the tokenization process. In this paper we discuss our experiments with collateX
+                                 and tandiff. We seek to determine how far we can take XSLT in the preparation,
+                                 collation, and correction process.</p>
+                           </details>
+                        </div>
+                     </div>
+                  </div>
+               </details>
+            </nav>
+            <nav id="index-mast" class="wide-mode" role="navigation">
+               <div class="content">
+                  <h1 class="article-title" id="d3e5">Balisage Paper: Correcting Collation Problems with XSLT</h1>
+                  <h2 class="subtitle">Untangling the Frankenstein Variorum</h2>
+                  <details class="mast-box">
+                     <summary class="title">Elisa E. Beshero-Bondar</summary>
+                     <div class="affiliation">
+                        <p class="jobtitle">Professor of Digital Humanities</p>
+                        <p class="jobtitle">Program Chair of Digital Media, Arts, and Technology</p>
+                        <p class="orgname">Penn State Erie, The Behrend College</p>
+                     </div>
+                     <h5 class="author-email"><code class="email">&lt;<a class="email" href="mailto:eeb4@psu.edu">eeb4@psu.edu</a>&gt;</code></h5>
+                     <div class="personblurb">
+                        <p id="d3e29">Elisa Beshero-Bondar explores and teaches document data modeling with the XML
+                           family of languages. She serves on the TEI Technical Council and is the founder
+                           and organizer of the <a href="https://digitalmitford.org" class="link">Digital
+                              Mitford project</a> and <a href="https://digitalmitford.github.io/DigMitCS/" class="link">its usually annual coding
+                              school</a>. She experiments with visualizing data from complex document
+                           structures like epic poems and with computer-assisted collation of differently
+                           encoded editions of <a href="https://frankensteinvariorum.github.io/" class="link"><span class="ital">Frankenstein</span></a>. Her ongoing adventures with
+                           markup technologies are documented on <a href="https://newtfire.org" class="link">her
+                              development site at newtfire.org</a>.</p>
+                     </div>
+                  </details>
+                  <details class="mast-box">
+                     <summary class="title">Raffaele Viglianti</summary>
+                     <div class="affiliation">
+                        <p class="jobtitle">Research Associate</p>
+                        <p class="orgname">Maryland Institute for Technology in the Humanities (MITH) at the
+                           University of Maryland</p>
+                     </div>
+                     <div class="personblurb">
+                        <p id="d3e54">Raffaele Viglianti is a TEI Technical Council member and Research Associate at
+                           the Maryland Institute for Technology in the Humanities (MITH) at the University
+                           of Maryland, where he works on a number of digital humanities projects and is
+                           the Technical Editor for <a href="http://shelleygodwinarchive.org/" class="link">the
+                              Shelley-Godwin Archive</a>. Raffaele’s research revolves around digital
+                           editions and textual scholarship, with a focus on editions of music
+                           scores.</p>
+                     </div>
+                  </details>
+                  <details class="abstract">
+                     <summary>
+                        <h2 class="inline-heading">Abstract</h2>
+                     </summary>
+                     <p id="d3e9">Computer-aided collation is like a power loom that inevitably tangles up threads
+                        in the machinery. Automating a tedious process magnifies the complexity of
+                        error-correction, calling for new tooling to help us smooth the weaving process. The
+                        authors are attempting to refine a collation algorithm to improve its alignment of
+                        variant passages in the <a href="https://frankensteinvariorum.github.io/" class="link">Frankenstein Variorum</a> project. In this paper we investigate how best to
+                        engage XSLT in the collation process, with our project files as a case study. We
+                        began with a Python script that tokenizes and normalizes the texts of the editions
+                        on spaces and delivers them to <a href="https://collatex.net/" class="link">collateX</a> for processing the collation and delivering TEI-conformant
+                        output for our project. Our pipeline has, to this point, applied XSLT to prepare the
+                        editions for collation and for post-processing following the collation to correct
+                        patterns of erroneous alignments. We are now experimenting with the Text Alignment
+                        Network's <a href="https://github.com/textalign/TAN-2021/blob/master/applications/Diff%2B/Diff%2B.xsl" class="link">tandiff XSLT</a>, <a href="https://www.balisage.net/Proceedings/vol26/html/Kalvesmaki01/BalisageVol26-Kalvesmaki01.html" class="link">introduced by Joel Kalvesmaki at the Balisage 2021 conference</a>, to handle
+                        the string comparison completely with XPath and XSLT with a much different approach
+                        to the tokenization process. In this paper we discuss our experiments with collateX
+                        and tandiff. We seek to determine how far we can take XSLT in the preparation,
+                        collation, and correction process.</p>
+                  </details>
                </div>
-               <h5 class="author-email"><code class="email">&lt;<a class="email" href="mailto:eeb4@psu.edu">eeb4@psu.edu</a>&gt;</code></h5>
-            </div>
-            <div class="author">
-               <h3 class="author">Raffaele Viglianti</h3>
-               <div class="affiliation">
-                  <p class="jobtitle">Research Associate</p>
-                  <p class="orgname">Maryland Institute for Technology in the Humanities (MITH) at the
-                     University of Maryland</p>
+            </nav>
+            <main id="main" role="main" aria-label="Main Content">
+               <div class="article">
+                  <h1 class="article-title" id="d3e5">Balisage Paper: Correcting Collation Problems with XSLT</h1>
+                  <h2 class="subtitle">Untangling the Frankenstein Variorum</h2>
                </div>
-            </div>
-            <div class="abstract">
-               <h2>Abstract</h2>
-               <p id="d2e9">Computer-aided collation is like a power loom that inevitably tangles up threads
-                  in the machinery. Automating a tedious process magnifies the complexity of
-                  error-correction, calling for new tooling to help us smooth the weaving process. The
-                  authors are attempting to refine a collation algorithm to improve its alignment of
-                  variant passages in the <a href="https://frankensteinvariorum.github.io/" class="link">Frankenstein Variorum</a> project. In this paper we investigate how best to
-                  engage XSLT in the collation process, with our project files as a case study. We
-                  began with a Python script that tokenizes and normalizes the texts of the editions
-                  on spaces and delivers them to <a href="https://collatex.net/" class="link">collateX</a> for processing the collation and delivering TEI-conformant
-                  output for our project. Our pipeline has, to this point, applied XSLT to prepare the
-                  editions for collation and for post-processing following the collation to correct
-                  patterns of erroneous alignments. We are now experimenting with the Text Alignment
-                  Network's <a href="https://github.com/textalign/TAN-2021/blob/master/applications/Diff%2B/Diff%2B.xsl" class="link">tandiff XSLT</a>, <a href="https://www.balisage.net/Proceedings/vol26/html/Kalvesmaki01/BalisageVol26-Kalvesmaki01.html" class="link">introduced by Joel Kalvesmaki at the Balisage 2021 conference</a>, to handle
-                  the string comparison completely with XPath and XSLT with a much different approach
-                  to the tokenization process. In this paper we discuss our experiments with collateX
-                  and tandiff. We seek to determine how far we can take XSLT in the preparation,
-                  collation, and correction process.</p>
-            </div>
-            <hr>
-         </div>
-      </div>
+               <div id="author-keywords">
+                  <h5 class="keywords">Author's keywords for this paper:</h5> <span class="keyword">collation</span>; <span class="keyword">collateX</span>; <span class="keyword">tandiff</span>; <span class="keyword">Gothenburg model</span>; <span class="keyword">XSLT</span>; <span class="keyword">Python</span>; <span class="keyword">tokenization</span>; <span class="keyword">normalization</span>; <span class="keyword">alignment</span>; <span class="keyword">stand-off markup</span>; <span class="keyword">stand-off pointers</span></div>
+               <div id="balisage-footer">
+                  <h3>Balisage Series on Markup Technologies</h3>
+               </div>
+            </main>
+         </body>
+      </html>
       <div id="balisage-footer">
          <h3><!--* balisage-html.xsl 519.38 *--><i>Balisage:</i>&nbsp;<small>The Markup Conference</small></h3>
       </div>
