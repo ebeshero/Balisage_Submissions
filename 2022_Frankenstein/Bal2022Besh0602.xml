@@ -9,7 +9,7 @@
     <subtitle>Untangling the Frankenstein Variorum</subtitle>
     <info>
         <abstract>
-            <para>Computer-aided collation is like a power loom that inevitably tangles up threads caught in the machinery. Automating a tedious process magnifies the complexity of error-correction, calling for new tooling to help us smooth the weaving process. This paper investigates how we can apply XSLT to automate corrections to machine-assisted collation and thereby to refine our collation pre-processing and post-processing algorithms, featuring work from the ongoing <link xlink:href="https://frankensteinvariorum.github.io/">Frankenstein Variorum</link> project.</para>
+            <para>Computer-aided collation is like a power loom that inevitably tangles up threads caught in the machinery. Automating a tedious process magnifies the complexity of error-correction, calling for new tooling to help us smooth the weaving process. The authors are attempting to refine a collation algorithm to improve its alignment of variant passages in the <link xlink:href="https://frankensteinvariorum.github.io/">Frankenstein Variorum</link> project. In this paper we investigate how best to engage XSLT in the collation process, with our project files as a case study. We have begun with a Python script that tokenizes and normalizes the texts of the editions and delivers them to <link xlink:href="https://collatex.net/">collateX</link> for processing the collation and delivering TEI-conformant output for our project. Our pipeline has applied XSLT to prepare editions for collation and also in post-processing to correct patterns of erroneous alignments. We are now experimenting with the Text Alignment Network's <link xlink:href="https://github.com/textalign/TAN-2021/blob/master/applications/Diff%2B/Diff%2B.xsl">tandiff XSLT</link>, introduced by Joel Kalvesmaki at the Balisage 2021 conference, to handle the string comparison completely with XPath and XSLT. In this paper we discuss our experiments with collateX and tandiff, with an emphasis on how far we can take XSLT and Schematron in helping to automate the preparation, collation, and correction process.</para>
         </abstract>
         <author>
             <personname>
@@ -18,15 +18,21 @@
                 <surname>Beshero-Bondar</surname>
             </personname>
             <personblurb>
-                <para>Elisa Beshero-Bondar explores and teaches document data modeling with the XML family of languages.
-                    Until June 2020, she was a professor of English Literature and Director of the Center for the Digital Text at
-                    Pitt-Greensburg. She serves on the TEI Technical Council and is the founder and organizer of the <link xlink:href="https://digitalmitford.org" xlink:type="simple" xlink:show="new" xlink:actuate="onRequest">Digital Mitford project</link> and
-                    <link xlink:href="https://digitalmitford.github.io/DigMitCS/" xlink:type="simple" xlink:show="new" xlink:actuate="onRequest">its usually
-                        annual coding school</link>. She experiments with visualizing data from complex document
-                    structures like epic poems and with computer-assisted collation of differently encoded editions of <link xlink:href="https://frankensteinvariorum.github.io/" xlink:type="simple" xlink:show="new" xlink:actuate="onRequest"><emphasis role="ital">Frankenstein</emphasis></link>. 
-                    Her ongoing adventures with markup technologies are
-                    documented on <link xlink:href="https://newtfire.org" xlink:type="simple" xlink:show="new" xlink:actuate="onRequest">her development site at
-                        newtfire.org</link>.</para>
+                <para>Elisa Beshero-Bondar explores and teaches document data modeling with the XML
+                    family of languages. She serves on the TEI Technical Council and is the founder
+                    and organizer of the <link xlink:href="https://digitalmitford.org"
+                        xlink:type="simple" xlink:show="new" xlink:actuate="onRequest">Digital
+                        Mitford project</link> and <link
+                        xlink:href="https://digitalmitford.github.io/DigMitCS/" xlink:type="simple"
+                        xlink:show="new" xlink:actuate="onRequest">its usually annual coding
+                        school</link>. She experiments with visualizing data from complex document
+                    structures like epic poems and with computer-assisted collation of differently
+                    encoded editions of <link xlink:href="https://frankensteinvariorum.github.io/"
+                        xlink:type="simple" xlink:show="new" xlink:actuate="onRequest"><emphasis
+                            role="ital">Frankenstein</emphasis></link>. Her ongoing adventures with
+                    markup technologies are documented on <link xlink:href="https://newtfire.org"
+                        xlink:type="simple" xlink:show="new" xlink:actuate="onRequest">her
+                        development site at newtfire.org</link>.</para>
             </personblurb>
             <affiliation>
                 <jobtitle>Professor of Digital Humanities</jobtitle>
@@ -34,6 +40,26 @@
                 <orgname>Penn State Erie, The Behrend College</orgname>
             </affiliation>
             <email>eeb4@psu.edu</email>
+        </author>
+        <author>
+            <personname>
+                <firstname>Raffaele</firstname>
+                <surname>Viglianti</surname>
+            </personname>
+            <personblurb>
+                <para>Raffaele Viglianti is a TEI Technical Council member and Research Associate at
+                    the Maryland Institute for Technology in the Humanities (MITH) at the University
+                    of Maryland, where he works on a number of digital humanities projects and is
+                    the Technical Editor for <link xlink:href="http://shelleygodwinarchive.org/">the
+                        Shelley-Godwin Archive</link>. Raffaele’s research revolves around digital
+                    editions and textual scholarship, with a focus on editions of music
+                    scores.</para>
+            </personblurb>
+            <affiliation>
+                <jobtitle>Research Associate</jobtitle>
+                <orgname>Maryland Institute for Technology in the Humanities (MITH) at the
+                    University of Maryland</orgname>
+            </affiliation>
         </author>
         <keywordset role="author">
             <keyword>collation</keyword>

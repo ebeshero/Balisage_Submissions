@@ -1,0 +1,88 @@
+<html lang="en">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>Balisage: Correcting Collation Problems with XSLT</title>
+      <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow&amp;display=swap" rel="stylesheet">
+      <meta name="viewport" content="width=device-width, initial-scale=1"><script type="text/JavaScript">
+      var detailsElement = document.createElement("details");
+      if (!("open" in detailsElement)) {
+          document.write('<script src="..//js/bower_components/better-dom/dist/better-dom.js"><\/script>');
+          document.write('<script src="..//js/bower_components/better-details-polyfill/dist/better-details-polyfill.js"><\/script>');
+          document.write('<script src="..//js/classname.js"><\/script>');
+      }
+      /* Enable CSS styling of figure elements in IE:
+       * https://xopus.com/devblog/2008/style-unknown-elements.html
+       */
+      var IEfix = document.createElement('figure');
+    </script><style type="text/css" id="inverter" media="none">
+      html {
+        filter: invert(100%);
+      }
+
+      * {
+        background-color: inherit;
+      }
+
+      /* do not invert SVG images */
+      img:not([src*=".svg"]),
+      [style*="url("] {
+        filter: invert(100%);
+      }
+    </style>
+      <link rel="stylesheet" href="balisage-plain.css" type="text/css">
+      <meta name="keywords" content="collation, collateX, tandiff, Gothenburg model, XSLT, Python, tokenization, normalization, alignment, stand-off markup, stand-off pointers">
+      <link id="favicon" rel="shortcut icon" type="image/png" href="http://balisage.net/favicon.ico">
+      <!--balisage-html.xsl--></head>
+   <body>
+      <div class="skipnav"><a href="#main">Skip to contents.</a></div>
+      <div id="balisage-header" role="banner">
+         <h1><!--* balisage-html.xsl 519.38 *--><i>Balisage:</i>&nbsp;<small>The Markup Conference</small></h1>
+      </div>
+      <div lang="en" class="article">
+         <div class="titlepage">
+            <h1 class="article-title" id="d2e5">Balisage Paper: Correcting Collation Problems with XSLT</h1>
+            <h2 class="subtitle">Untangling the Frankenstein Variorum</h2>
+            <div class="author">
+               <h3 class="author">Elisa E. Beshero-Bondar</h3>
+               <div class="affiliation">
+                  <p class="jobtitle">Professor of Digital Humanities</p>
+                  <p class="jobtitle">Program Chair of Digital Media, Arts, and Technology</p>
+                  <p class="orgname">Penn State Erie, The Behrend College</p>
+               </div>
+               <h5 class="author-email"><code class="email">&lt;<a class="email" href="mailto:eeb4@psu.edu">eeb4@psu.edu</a>&gt;</code></h5>
+            </div>
+            <div class="author">
+               <h3 class="author">Raffaele Viglianti</h3>
+               <div class="affiliation">
+                  <p class="jobtitle">Research Associate</p>
+                  <p class="orgname">Maryland Institute for Technology in the Humanities (MITH) at the
+                     University of Maryland</p>
+               </div>
+            </div>
+            <div class="abstract">
+               <h2>Abstract</h2>
+               <p id="d2e9">Computer-aided collation is like a power loom that inevitably tangles up threads
+                  in the machinery. Automating a tedious process magnifies the complexity of
+                  error-correction, calling for new tooling to help us smooth the weaving process. The
+                  authors are attempting to refine a collation algorithm to improve its alignment of
+                  variant passages in the <a href="https://frankensteinvariorum.github.io/" class="link">Frankenstein Variorum</a> project. In this paper we investigate how best to
+                  engage XSLT in the collation process, with our project files as a case study. We
+                  began with a Python script that tokenizes and normalizes the texts of the editions
+                  on spaces and delivers them to <a href="https://collatex.net/" class="link">collateX</a> for processing the collation and delivering TEI-conformant
+                  output for our project. Our pipeline has, to this point, applied XSLT to prepare the
+                  editions for collation and for post-processing following the collation to correct
+                  patterns of erroneous alignments. We are now experimenting with the Text Alignment
+                  Network's <a href="https://github.com/textalign/TAN-2021/blob/master/applications/Diff%2B/Diff%2B.xsl" class="link">tandiff XSLT</a>, <a href="https://www.balisage.net/Proceedings/vol26/html/Kalvesmaki01/BalisageVol26-Kalvesmaki01.html" class="link">introduced by Joel Kalvesmaki at the Balisage 2021 conference</a>, to handle
+                  the string comparison completely with XPath and XSLT with a much different approach
+                  to the tokenization process. In this paper we discuss our experiments with collateX
+                  and tandiff. We seek to determine how far we can take XSLT in the preparation,
+                  collation, and correction process.</p>
+            </div>
+            <hr>
+         </div>
+      </div>
+      <div id="balisage-footer">
+         <h3><!--* balisage-html.xsl 519.38 *--><i>Balisage:</i>&nbsp;<small>The Markup Conference</small></h3>
+      </div>
+   </body>
+</html>

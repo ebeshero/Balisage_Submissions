@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="balisage-1-5.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="balisage-1-5.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-stylesheet type="text/xsl" href="balisage-proceedings-html.xsl"?>
+<article xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink"
+    version="5.0-subset Balisage-1.5">
+
+    <title>Correcting Collation Problems with XSLT</title>
+    <subtitle>Untangling the Frankenstein Variorum</subtitle>
+    <info>
+        <abstract>
+            <para>Computer-aided collation is like a power loom that inevitably tangles up threads
+                in the machinery. Automating a tedious process magnifies the complexity of
+                error-correction, calling for new tooling to help us smooth the weaving process. The
+                authors are attempting to refine a collation algorithm to improve its alignment of
+                variant passages in the <link xlink:href="https://frankensteinvariorum.github.io/"
+                    >Frankenstein Variorum</link> project. In this paper we investigate how best to
+                engage XSLT in the collation process, with our project files as a case study. We
+                began with a Python script that tokenizes and normalizes the texts of the editions
+                on spaces and delivers them to <link xlink:href="https://collatex.net/"
+                    >collateX</link> for processing the collation and delivering TEI-conformant
+                output for our project. Our pipeline has, to this point, applied XSLT to prepare the
+                editions for collation and for post-processing following the collation to correct
+                patterns of erroneous alignments. We are now experimenting with the Text Alignment
+                Network's <link
+                    xlink:href="https://github.com/textalign/TAN-2021/blob/master/applications/Diff%2B/Diff%2B.xsl"
+                    >tandiff XSLT</link>, <link
+                    xlink:href="https://www.balisage.net/Proceedings/vol26/html/Kalvesmaki01/BalisageVol26-Kalvesmaki01.html"
+                    >introduced by Joel Kalvesmaki at the Balisage 2021 conference</link>, to handle
+                the string comparison completely with XPath and XSLT with a much different approach
+                to the tokenization process. In this paper we discuss our experiments with collateX
+                and tandiff. We seek to determine how far we can take XSLT in the preparation,
+                collation, and correction process.</para>
+        </abstract>
+        <author>
+            <personname>
+                <firstname>Elisa</firstname>
+                <othername>E.</othername>
+                <surname>Beshero-Bondar</surname>
+            </personname>
+            <personblurb>
+                <para>Elisa Beshero-Bondar explores and teaches document data modeling with the XML
+                    family of languages. She serves on the TEI Technical Council and is the founder
+                    and organizer of the <link xlink:href="https://digitalmitford.org"
+                        xlink:type="simple" xlink:show="new" xlink:actuate="onRequest">Digital
+                        Mitford project</link> and <link
+                        xlink:href="https://digitalmitford.github.io/DigMitCS/" xlink:type="simple"
+                        xlink:show="new" xlink:actuate="onRequest">its usually annual coding
+                        school</link>. She experiments with visualizing data from complex document
+                    structures like epic poems and with computer-assisted collation of differently
+                    encoded editions of <link xlink:href="https://frankensteinvariorum.github.io/"
+                        xlink:type="simple" xlink:show="new" xlink:actuate="onRequest"><emphasis
+                            role="ital">Frankenstein</emphasis></link>. Her ongoing adventures with
+                    markup technologies are documented on <link xlink:href="https://newtfire.org"
+                        xlink:type="simple" xlink:show="new" xlink:actuate="onRequest">her
+                        development site at newtfire.org</link>.</para>
+            </personblurb>
+            <affiliation>
+                <jobtitle>Professor of Digital Humanities</jobtitle>
+                <jobtitle>Program Chair of Digital Media, Arts, and Technology</jobtitle>
+                <orgname>Penn State Erie, The Behrend College</orgname>
+            </affiliation>
+            <email>eeb4@psu.edu</email>
+        </author>
+        <author>
+            <personname>
+                <firstname>Raffaele</firstname>
+                <surname>Viglianti</surname>
+            </personname>
+            <personblurb>
+                <para>Raffaele Viglianti is a TEI Technical Council member and Research Associate at
+                    the Maryland Institute for Technology in the Humanities (MITH) at the University
+                    of Maryland, where he works on a number of digital humanities projects and is
+                    the Technical Editor for <link xlink:href="http://shelleygodwinarchive.org/">the
+                        Shelley-Godwin Archive</link>. Raffaele’s research revolves around digital
+                    editions and textual scholarship, with a focus on editions of music
+                    scores.</para>
+            </personblurb>
+            <affiliation>
+                <jobtitle>Research Associate</jobtitle>
+                <orgname>Maryland Institute for Technology in the Humanities (MITH) at the
+                    University of Maryland</orgname>
+            </affiliation>
+        </author>
+        <keywordset role="author">
+            <keyword>collation</keyword>
+            <keyword>collateX</keyword>
+            <keyword>tandiff</keyword>
+            <keyword>Gothenburg model</keyword>
+            <keyword>XSLT</keyword>
+            <keyword>Python</keyword>
+            <keyword>tokenization</keyword>
+            <keyword>normalization</keyword>
+            <keyword>alignment</keyword>
+            <keyword>stand-off markup</keyword>
+            <keyword>stand-off pointers</keyword>
+        </keywordset>
+    </info>
+</article>
