@@ -1,0 +1,1256 @@
+<!DOCTYPE HTML><html lang="en">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>Balisage: Correcting Collation Problems with XSLT</title>
+      <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow&amp;display=swap" rel="stylesheet">
+      <meta name="viewport" content="width=device-width, initial-scale=1"><script type="text/JavaScript">
+      var detailsElement = document.createElement("details");
+      if (!("open" in detailsElement)) {
+          document.write('<script src="..//js/bower_components/better-dom/dist/better-dom.js"><\/script>');
+          document.write('<script src="..//js/bower_components/better-details-polyfill/dist/better-details-polyfill.js"><\/script>');
+          document.write('<script src="..//js/classname.js"><\/script>');
+      }
+      /* Enable CSS styling of figure elements in IE:
+       * https://xopus.com/devblog/2008/style-unknown-elements.html
+       */
+      var IEfix = document.createElement('figure');
+    </script><style type="text/css" id="inverter" media="none">
+      html {
+        filter: invert(100%);
+      }
+
+      * {
+        background-color: inherit;
+      }
+
+      /* do not invert SVG images */
+      img:not([src*=".svg"]),
+      [style*="url("] {
+        filter: invert(100%);
+      }
+    </style>
+      <link rel="stylesheet" href="balisage-proceedings.css" type="text/css">
+      <meta name="keywords" content="collation, tokenization, normalization, alignment, Gothenburg model, XSLT, Python, stand-off markup, stand-off pointers">
+      <link id="favicon" rel="shortcut icon" type="image/png" href="http://balisage.net/favicon.ico">
+      <!--balisage-html.xsl--></head>
+   <body>
+      <div class="skipnav"><a href="#main">Skip to contents.</a></div>
+      <div id="balisage-header" role="banner">
+         <h1><!--* balisage-html.xsl 519.38 *--><i>Balisage:</i>&nbsp;<small>The Markup Conference</small></h1>
+      </div>
+      <html lang="en">
+         <head>
+            <title>Balisage: Correcting Collation Problems with XSLT</title>
+            <link rel="stylesheet" href="balisage-proceedings.css" type="text/css">
+            <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow&amp;display=swap" rel="stylesheet">
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1"><script type="text/JavaScript">
+      var detailsElement = document.createElement("details");
+      if (!("open" in detailsElement)) {
+          document.write('<script src="..//js/bower_components/better-dom/dist/better-dom.js"><\/script>');
+          document.write('<script src="..//js/bower_components/better-details-polyfill/dist/better-details-polyfill.js"><\/script>');
+          document.write('<script src="..//js/classname.js"><\/script>');
+      }
+      /* Enable CSS styling of figure elements in IE:
+       * https://xopus.com/devblog/2008/style-unknown-elements.html
+       */
+      var IEfix = document.createElement('figure');
+    </script><style type="text/css" id="inverter" media="none">
+      html {
+        filter: invert(100%);
+      }
+
+      * {
+        background-color: inherit;
+      }
+
+      /* do not invert SVG images */
+      img:not([src*=".svg"]),
+      [style*="url("] {
+        filter: invert(100%);
+      }
+    </style>
+            <!--balisage-proceedings.xsl-->
+            <meta name="generator" content="Balisage Conference Proceedings XSLT (v1.2)">
+            <link id="favicon" rel="shortcut icon" type="image/png" href="http://balisage.net/favicon.ico"><script type="text/javascript">
+
+   function hidecite(citeID) {
+     cite = document.getElementById(citeID);
+     cite.style.display = "none";
+     return;
+   }
+   
+   function showcite(citeID,anchorID) {
+     cite = document.getElementById(citeID);
+
+     citeLeft = cite.style.left;
+     citeTop = cite.style.top;
+     
+     if (citeLeft != (getLeft(anchorID)+"px") ||
+         citeTop != (getTop(anchorID)+"px")) {
+       cite.style.display = "none";
+     }
+     
+     if (cite.style.display != "table-cell") {
+        movebox(citeID, anchorID);
+        cite.style.display = "table-cell";
+     }
+     else {
+       cite.style.display = "none";
+     };
+     return;
+   }
+
+   function movebox(citeID, anchorID) {
+
+     cite = document.getElementById(citeID);
+     
+     // alert(cite.offsetWidth + " by " + cite.offsetHeight)
+     
+     horizontalOffset = getLeft(anchorID);
+     // horizontalOffset = (inMain(anchorID)) ?
+     // (horizontalOffset - 260) : (horizontalOffset + 20)
+     // (horizontalOffset - (20 + cite.offsetWidth)) : (horizontalOffset + 20)
+
+     verticalOffset = getTop(anchorID);
+     // verticalOffset = (inMain(anchorID)) ?
+     // (verticalOffset - 20) : (verticalOffset + 20)
+     // (verticalOffset - (20 + cite.offsetHeight)) : (verticalOffset + 20)
+
+     /*
+     horizontalOffset = getAbsoluteLeft(anchorID) - getScrollLeft(anchorID) + 20;
+     if (inMain(anchorID)) {
+       horizontalOffset = horizontalOffset - 300;
+     }
+     verticalOffset = getAbsoluteTop(anchorID) - getScrollTop(anchorID) - 40;
+     if (inMain(anchorID)) {
+       verticalOffset = verticalOffset - 300;
+     }
+     */
+     
+     cite.style.left = horizontalOffset + "px";
+     cite.style.top = verticalOffset + "px";
+   }
+   
+   function getLeft(objectID) {
+     var left = getAbsoluteLeft(objectID) - getScrollLeft(objectID);
+     left = (inMain(objectID)) ? (left - 260) : (left + 20)    
+     return left;
+   }
+   
+   function getTop(objectID) {
+     var top = getAbsoluteTop(objectID) - getScrollTop(objectID);
+     top = (inMain(objectID)) ? (top - 50) : (top + 20)
+     return top;     
+   }
+   
+   function getAbsoluteLeft(objectId) {
+   // Get an object left position from the upper left viewport corner
+     o = document.getElementById(objectId)
+     oLeft = o.offsetLeft            // Get left position from the parent object
+     while(o.offsetParent!=null) {   // Parse the parent hierarchy up to the document element
+       oParent = o.offsetParent    // Get parent object reference
+       oLeft += oParent.offsetLeft // Add parent left position
+       o = oParent
+      }
+    return oLeft
+    }
+
+    function getAbsoluteTop(objectId) {
+    // Get an object top position from the upper left viewport corner
+      o = document.getElementById(objectId)
+      oTop = o.offsetTop            // Get top position from the parent object
+      while(o.offsetParent!=null) { // Parse the parent hierarchy up to the document element
+        oParent = o.offsetParent  // Get parent object reference
+        oTop += oParent.offsetTop // Add parent top position
+        o = oParent
+      }
+    return oTop
+    }
+
+   function getScrollLeft(objectId) {
+     // Get a left scroll position
+     o = document.getElementById(objectId)
+     oLeft = o.scrollLeft            // Get left position from the parent object
+     while(o.offsetParent!=null) {   // Parse the parent hierarchy up to the document element
+       oParent = o.offsetParent    // Get parent object reference
+       oLeft += oParent.scrollLeft // Add parent left position
+       o = oParent
+      }
+    return oLeft
+    }
+
+    function getScrollTop(objectId) {
+    // Get a right scroll position
+      o = document.getElementById(objectId)
+      oTop = o.scrollTop            // Get top position from the parent object
+      while(o.offsetParent!=null) { // Parse the parent hierarchy up to the document element
+        oParent = o.offsetParent  // Get parent object reference
+        oTop += oParent.scrollTop // Add parent top position
+        o = oParent
+      }
+    return oTop
+    }
+
+    function inMain(objectId) {
+    // returns true if in div#main
+      o = document.getElementById(objectId)
+      while(o.parentNode != null) { // Parse the parent hierarchy up to div#main
+        oParent = o.parentNode
+        if (o.id == "main") { return true; }
+        o = oParent;
+      }
+    return false;
+    }
+
+
+   /*
+   function showcite(citeID) {
+      cite = document.getElementById(citeID);
+      if (cite.style.display != "table-cell") {
+        cite.style.display = "table-cell";
+      }
+      else {
+        cite.style.display = "none";
+      };
+      return;
+    }
+    */
+
+      </script></head>
+         <body>
+            <div class="skipnav"><a href="#main">Skip to contents.</a></div>
+            <div id="balisage-header" role="banner" aria-label="Logo and breadcrumb links"><a class="quiet" href="http://www.balisage.net"><img style="float:right;border:none" alt="Balisage logo" height="130" src="icons/BalisageSeries-logo.png"></a><h2 class="page-header">Balisage: The Markup Conference</h2>
+               <h1 class="page-header">Proceedings preview</h1>
+            </div>
+            <nav id="main-menu" role="navigation">
+               <details>
+                  <summary tabindex="0"><svg role="img" viewBox="0 0 20 20" height="20" width="20">
+                        <title>Menu</title>
+                        <path d="m0-0v4h20v-4h-20zm0 8v4h20v-4h-20zm0 8v4h20v-4h-20z" fill="currentColor"></path></svg> Menu
+                     </summary>
+                  <div class="menu">
+                     <div id="navbar"></div>
+                     <div id="index-mast">
+                        <div class="content">
+                           <h1 class="article-title" id="d3e5">Balisage Paper: Correcting Collation Problems with XSLT</h1>
+                           <h2 class="subtitle">Untangling the Frankenstein Variorum</h2>
+                           <details class="mast-box">
+                              <summary class="title">Elisa E. Beshero-Bondar</summary>
+                              <div class="affiliation">
+                                 <p class="jobtitle">Professor of Digital Humanities</p>
+                                 <p class="jobtitle">Program Chair of Digital Media, Arts, and Technology</p>
+                                 <p class="orgname">Penn State Erie, The Behrend College</p>
+                              </div>
+                              <h5 class="author-email"><code class="email">&lt;<a class="email" href="mailto:eeb4@psu.edu">eeb4@psu.edu</a>&gt;</code></h5>
+                              <div class="personblurb">
+                                 <p id="d3e26">Elisa Beshero-Bondar explores and teaches document data modeling with the XML
+                                    family of languages. She serves on the TEI Technical Council and is the founder
+                                    and organizer of the <a href="https://digitalmitford.org" class="link">Digital
+                                       Mitford project</a> and <a href="https://digitalmitford.github.io/DigMitCS/" class="link">its usually annual coding
+                                       school</a>. She experiments with visualizing data from complex document
+                                    structures like epic poems and with computer-assisted collation of differently
+                                    encoded editions of <a href="https://frankensteinvariorum.github.io/" class="link"><span class="ital">Frankenstein</span></a>. Her ongoing adventures with
+                                    markup technologies are documented on <a href="https://newtfire.org" class="link">her
+                                       development site at newtfire.org</a>.</p>
+                              </div>
+                           </details>
+                           <details class="abstract">
+                              <summary>
+                                 <h2 class="inline-heading">Abstract</h2>
+                              </summary>
+                              <p id="d3e9">Computer-aided collation is like a power loom that inevitably tangles up threads caught
+                                 in the machinery. Automating a tedious process magnifies the complexity of error-correction,
+                                 calling for new tooling to help us smooth the weaving process. The authors are attempting
+                                 to refine a collation algorithm to improve its alignment of variant passages in the
+                                 <a href="https://frankensteinvariorum.github.io/" class="link">Frankenstein Variorum</a> project. In this paper we investigate how best to engage XSLT in the collation process,
+                                 with our project files as a case study. We have begun with a Python script that tokenizes
+                                 and normalizes the texts of the editions and delivers them to <a href="https://collatex.net/" class="link">collateX</a> for processing the collation and delivering TEI-conformant output for our project.
+                                 Our pipeline has applied XSLT to prepare editions for collation and also in post-processing
+                                 to correct patterns of erroneous alignments. We are now experimenting with the Text
+                                 Alignment Network's <a href="https://github.com/textalign/TAN-2021/blob/master/applications/Diff%2B/Diff%2B.xsl" class="link">tandiff XSLT</a>, introduced by Joel Kalvesmaki at the Balisage 2021 conference, to handle the string
+                                 comparison completely with XPath and XSLT. In this paper we discuss our experiments
+                                 with collateX and tandiff, with an emphasis on how far we can take XSLT and Schematron
+                                 in helping to automate the preparation, collation, and correction process.</p>
+                           </details>
+                           <details class="toc">
+                              <summary>
+                                 <h2 class="inline-heading">Table of Contents</h2>
+                              </summary>
+                              <dl>
+                                 <dt><span class="section"><a href="#d3e56" class="toc">Cycles of Time with the Gothenburg Model</a></span></dt>
+                                 <dt><span class="section"><a href="#d3e116" class="toc">The Frankenstein Variorum project and its production pipeline</a></span></dt>
+                                 <dt><span class="section"><a href="#d3e353" class="toc">Snags in the Weaving</a></span></dt>
+                                 <dd>
+                                    <dl>
+                                       <dt><span class="section"><a href="#d3e355" class="toc">A Schematron flashlight</a></span></dt>
+                                       <dt><span class="section"><a href="#d3e378" class="toc">XSLT for alignment correction</a></span></dt>
+                                       <dt><span class="section"><a href="#d3e437" class="toc">The <q>smashed-tokens</q> problem</a></span></dt>
+                                    </dl>
+                                 </dd>
+                                 <dt><span class="section"><a href="#d3e460" class="toc">XSLT for the win?</a></span></dt>
+                              </dl>
+                           </details>
+                        </div>
+                     </div>
+                  </div>
+               </details>
+            </nav>
+            <nav id="index-mast" class="wide-mode" role="navigation">
+               <div class="content">
+                  <h1 class="article-title" id="d3e5">Balisage Paper: Correcting Collation Problems with XSLT</h1>
+                  <h2 class="subtitle">Untangling the Frankenstein Variorum</h2>
+                  <details class="mast-box">
+                     <summary class="title">Elisa E. Beshero-Bondar</summary>
+                     <div class="affiliation">
+                        <p class="jobtitle">Professor of Digital Humanities</p>
+                        <p class="jobtitle">Program Chair of Digital Media, Arts, and Technology</p>
+                        <p class="orgname">Penn State Erie, The Behrend College</p>
+                     </div>
+                     <h5 class="author-email"><code class="email">&lt;<a class="email" href="mailto:eeb4@psu.edu">eeb4@psu.edu</a>&gt;</code></h5>
+                     <div class="personblurb">
+                        <p id="d3e26">Elisa Beshero-Bondar explores and teaches document data modeling with the XML
+                           family of languages. She serves on the TEI Technical Council and is the founder
+                           and organizer of the <a href="https://digitalmitford.org" class="link">Digital
+                              Mitford project</a> and <a href="https://digitalmitford.github.io/DigMitCS/" class="link">its usually annual coding
+                              school</a>. She experiments with visualizing data from complex document
+                           structures like epic poems and with computer-assisted collation of differently
+                           encoded editions of <a href="https://frankensteinvariorum.github.io/" class="link"><span class="ital">Frankenstein</span></a>. Her ongoing adventures with
+                           markup technologies are documented on <a href="https://newtfire.org" class="link">her
+                              development site at newtfire.org</a>.</p>
+                     </div>
+                  </details>
+                  <details class="abstract">
+                     <summary>
+                        <h2 class="inline-heading">Abstract</h2>
+                     </summary>
+                     <p id="d3e9">Computer-aided collation is like a power loom that inevitably tangles up threads caught
+                        in the machinery. Automating a tedious process magnifies the complexity of error-correction,
+                        calling for new tooling to help us smooth the weaving process. The authors are attempting
+                        to refine a collation algorithm to improve its alignment of variant passages in the
+                        <a href="https://frankensteinvariorum.github.io/" class="link">Frankenstein Variorum</a> project. In this paper we investigate how best to engage XSLT in the collation process,
+                        with our project files as a case study. We have begun with a Python script that tokenizes
+                        and normalizes the texts of the editions and delivers them to <a href="https://collatex.net/" class="link">collateX</a> for processing the collation and delivering TEI-conformant output for our project.
+                        Our pipeline has applied XSLT to prepare editions for collation and also in post-processing
+                        to correct patterns of erroneous alignments. We are now experimenting with the Text
+                        Alignment Network's <a href="https://github.com/textalign/TAN-2021/blob/master/applications/Diff%2B/Diff%2B.xsl" class="link">tandiff XSLT</a>, introduced by Joel Kalvesmaki at the Balisage 2021 conference, to handle the string
+                        comparison completely with XPath and XSLT. In this paper we discuss our experiments
+                        with collateX and tandiff, with an emphasis on how far we can take XSLT and Schematron
+                        in helping to automate the preparation, collation, and correction process.</p>
+                  </details>
+                  <details class="toc">
+                     <summary>
+                        <h2 class="inline-heading">Table of Contents</h2>
+                     </summary>
+                     <dl>
+                        <dt><span class="section"><a href="#d3e56" class="toc">Cycles of Time with the Gothenburg Model</a></span></dt>
+                        <dt><span class="section"><a href="#d3e116" class="toc">The Frankenstein Variorum project and its production pipeline</a></span></dt>
+                        <dt><span class="section"><a href="#d3e353" class="toc">Snags in the Weaving</a></span></dt>
+                        <dd>
+                           <dl>
+                              <dt><span class="section"><a href="#d3e355" class="toc">A Schematron flashlight</a></span></dt>
+                              <dt><span class="section"><a href="#d3e378" class="toc">XSLT for alignment correction</a></span></dt>
+                              <dt><span class="section"><a href="#d3e437" class="toc">The <q>smashed-tokens</q> problem</a></span></dt>
+                           </dl>
+                        </dd>
+                        <dt><span class="section"><a href="#d3e460" class="toc">XSLT for the win?</a></span></dt>
+                     </dl>
+                  </details>
+               </div>
+            </nav>
+            <main id="main" role="main" aria-label="Main Content">
+               <div class="article">
+                  <h1 class="article-title" id="d3e5">Balisage Paper: Correcting Collation Problems with XSLT</h1>
+                  <h2 class="subtitle">Untangling the Frankenstein Variorum</h2>
+                  <div class="section" id="d3e56">
+                     <h2 class="title" style="clear: both">Cycles of Time with the Gothenburg Model</h2>
+                     <p id="d3e58">This paper marks a return to work on a digital collation project that began in the
+                        years just before the pandemic, and paused a moment in 2020-2021 as I moved to a new
+                        job and concentrated on teaching and running a program in a new university during
+                        the time of COVID. Returning to work on the Frankenstein Variorum has necessitated
+                        reorienting myself to complicated processes and reviewing the problems we identified
+                        as we last documented and left them. This has been a labor of reviewing and sampling
+                        our past code and renewing documentation, trying to find new and better ways to continue
+                        our work.</p>
+                     <p id="d3e59">Much of this project has investigated methods of moving between hierarchical and <q>flat</q> text structures, moving back and forth between markup and strings as we thread our
+                        texts into the machine power-loom of collation software, examine the woven output,
+                        and contemplate snags and snarls. The Gothenburg model guides our work, an elaboration
+                        of five distinct stages of work necessary to guide machine-assisted collation as established
+                        in 2009 by the developers of collateX and Juxta in Gothenburg, Sweden: 
+                        
+                        
+                        <div class="orderedlist" id="d3e63">
+                           <ol style="list-style-type: decimal;">
+                              <li id="d3e64">
+                                 <p id="d3e65">Tokenization (deciding on the smallest units of comparison)</p>
+                              </li>
+                              <li id="d3e66">
+                                 <p id="d3e67">Normalization/Regularization (deciding what distinct features in the source documents
+                                    do not need to be compared)</p>
+                              </li>
+                              <li id="d3e68">
+                                 <p id="d3e69">Alignment (locating via software parallel equivalent passages and locating moments
+                                    of unison and divergence)</p>
+                              </li>
+                              <li id="d3e70">
+                                 <p id="d3e71">Analysis/Feedback (reviewing, correcting, adjusting the alignment algorithm as well
+                                    as normalization/regularization method</p>
+                              </li>
+                              <li id="d3e72">
+                                 <p id="d3e73">Visualization (finding an effective way to show and share the collation results)<sup class="fn-label"><a href="#d3e75" class="footnoteref" id="d3e75-ref">[1]</a></sup></p>
+                              </li>
+                           </ol>
+                        </div>
+                        </p>
+                     <p id="d3e83">These stages are usually numbered, but that numbering belies the cyclicality of the
+                        Gothenburg process. We scholars who collate have to repeat, retool, rethink, try again,
+                        and we have to decide whether certain kinds of problems are best resolved by changing
+                        the <q>pre-processing</q> to improve the normalization prior to collation, or to apply corrections to collation
+                        output errors in <q>post-processing</q>. Collation projects of significant length and complexity require computational assistance
+                        to visualize not only the collation output but crucially to locate patterns in the
+                        collation errors. The Analysis/Feedback stage is critical and without giving it procedural
+                        care, we risk inaccuracies or the human error of hand-correcting outputs.</p>
+                     <p id="d3e89">In returning to work on the Frankenstein Variorum, I have concentrated on the Analysis/Feedback
+                        stage to try to find patterns in the snags of our collation weave, and to try different
+                        normalization and alignment methods to improve the work. The work requires close observation
+                        of meticulous details (plenty of myopic eye fatigue), but also a return to the long
+                        view of our research goals. As David J. Birnbaum and Elena Spadini have discussed,
+                        normalization is interpretive, reflecting on transcription decisions and deciding
+                        on what properties should and should not be considered worthy of comparison.<sup class="fn-label"><a href="#d3e91" class="footnoteref" id="d3e91-ref">[2]</a></sup> In our project, the great challenge for the normalization process has been contending
+                        with the diplomatic markup of the Shelley-Godwin Archive's manuscript notebook edition
+                        of Frankenstein. The meticulous page-by-page markup structured on page surfaces and
+                        zones cannot be compared with the semantic trees representing the other print-based
+                        editions in the project, though deletions do matter, as do the insertion points of
+                        marginal additions and corrections. Alignment of our variant passages is improved
+                        by revisiting our normalization algorithms, and also by testing our software tools
+                        as soon as we recognize problems.</p>
+                     <p id="d3e103">In this paper, I venture that the software we choose to assist us with aligning collations
+                        matters not only for its effectiveness in applying an algorithm like Needleman Wunsch
+                        or Dekker or TAN Diff, but also for its capacity to guide the scholar in the documentation
+                        of a highly complex, time-consuming, cyclical process. In the following sections I
+                        first unfold the elaborate pipeline process of our collation and visualization, to
+                        then introduce problems we have found and efforts to resolve them by exploring a new
+                        method of alignment. XSLT has been vital to the pre-processing and post-processing
+                        of our edition and collation data, but now we find it may be a benefit for handling
+                        the entire process of tree flattening, string collation, and edition construction.
+                        Long ago in the early years of XSLT, John Bradley extolled its virtues not only for
+                        publishing documents but also for text scholarly analysis and research.<sup class="fn-label"><a href="#d3e105" class="footnoteref" id="d3e105-ref">[3]</a></sup> Though it is common in the Digital Humanities community now to think of Python or
+                        R Studio as the only necessary tools one needs for text analysis, the strengths of
+                        XSLT seem realized in its precision and elegance in transforming structured and unstructured
+                        text and its particular ease of documentation for the humanities researcher. In this
+                        paper, I contemplate a move from applying normalizing algorithms to <q>stringified XML</q> in Python to restating and revising those algorithms in XSLT.</p>
+                  </div>
+                  <div class="section" id="d3e116">
+                     <h2 class="title" style="clear: both">The Frankenstein Variorum project and its production pipeline</h2>
+                     <p id="d3e118">The <span class="ital">Frankenstein Variorum</span> project (hereafter referred to as <span class="ital">FV</span>) is an ongoing collation project that began during the recent 1818-2018 bicentennial
+                        celebrating the first publication of Mary Shelley's novel. We are constructing a digital
+                        variorum edition that highlights alterations to the novel <span class="ital">Frankenstein</span> over five key moments from its first drafting in 1816 to its author’s final revisions
+                        by 1831. If we think of each source edition for the collation as a <q>thread</q>, the collation algorithm can be said to weave five threads together into a woven
+                        pattern that helps us to identify the moments when the editions align together and
+                        where they diverge. The project applies automated collation, so far working with the
+                        software collateX to create a <q>weave</q> of five editions of the novel, output in TEI-conformant XML. We have shared papers
+                        at <span class="ital">Balisage</span> in previous years about our processing work, preparing differently-encoded source
+                        editions for machine-assisted collation,
+                        <sup class="fn-label"><a href="#d3e137" class="footnoteref" id="d3e137-ref">[4]</a></sup> and working with the output of collation to construct a <q>spine</q> file in TEI critical apparatus form, which coordinates the preparation of the edition
+                        files that hold elements locating moments of divergence from the other editions.<sup class="fn-label"><a href="#d3e151" class="footnoteref" id="d3e151-ref">[5]</a></sup></p>
+                     <p id="d3e173">Our source <q>threads</q> for weaving the collation pattern include two well-known digital editions: <a href="http://knarf.english.upenn.edu/" class="link">The Pennsylvania Electronic Edition (PAEE)</a>, an early hypertext edition produced at the University of Pennsylvania in the mid
+                        1990s by Stuart Curran and Jack Lynch that represents the 1818 and 1831 published
+                        editions of the novel, and the <a href="http://shelleygodwinarchive.org/contents/frankenstein/" class="link">Shelley-Godwin Archive's edition of the manuscript notebooks (S-GA)</a> published in 2013 by the University of Maryland. We prepared two other editions in
+                        XML representing William Godwin’s corrections of his daughter's edition from 1823,
+                        and the <q>Thomas copy</q>, which represents Mary Shelley’s corrections and proposed revisions written in a
+                        copy of the 1818 edition left in Italy with her friend Mrs. Thomas.</p>
+                     <p id="d3e185">Here is a summary of our project’s production pipeline, discussed in more detail in
+                        previous Balisage papers:
+                        
+                        <div class="orderedlist" id="d3e187">
+                           <ol style="list-style-type: decimal;">
+                              <li id="d3e188">
+                                 <p id="d3e189">Preparing differently-encoded XML files for collation. This involves several stages
+                                    of document analysis and pre-processing:
+                                    
+                                    <div class="itemizedlist" id="d3e191">
+                                       <ul>
+                                          <li id="d3e192">
+                                             <p id="d3e193">Identifying markup that indicates structures we care about: letter, chapter, paragraphs,
+                                                and verse structures, for example. Where these change from version to version, we
+                                                want to be able to track them by including this markup with the text of each edition
+                                                in the collation.</p>
+                                          </li>
+                                          <li id="d3e194">
+                                             <p id="d3e195">Re-sequencing margin annotations coded in the SGA edition of the manuscript notebook,
+                                                as these margin annotations were encoded at the ends of each XML file and needed to
+                                                be moved into reading order for collation. (For this resequencing, we wrote XSLT to
+                                                follow the <code class="code">@xml:id</code>s and pointers on each SGA edition file).</p>
+                                          </li>
+                                          <li id="d3e199">
+                                             <p id="d3e200">Determining and marking <q>chunk</q> boundaries (dividing the texts into units that mostly start and end the same way
+                                                to facilitate comparison): We divided Frankenstein into 33 <q>chunks</q> roughly corresponding with chapter structures. (Later in refining the collation we
+                                                subdivided some of these chunks (breaking some complicated chunks into 3 -5 <q>sub-chunks</q>) for a more granular comparison of shorter passages.)</p>
+                                          </li>
+                                          <li id="d3e208">
+                                             <p id="d3e209"><q>Flattening</q> the edition files' structural markup into Trojan milestone elements (converting structural
+                                                elements that wrap chapters, letters, and paragraphs like <code class="code">&lt;div xml:id="chap-ID"&gt;</code> into self-closed matched pairs of elements to mark the starts and ends of structures:
+                                                <code class="code">div sID="chap-ID"/&gt;</code> and <code class="code">div eID="chap-ID"/&gt;</code>). These milestones facililates the inclusion of markup in the collation when, for
+                                                example, a version inserts a new paragraph of chapter boundary within an otherwise
+                                                identical passage in the other editions. Ultimately this flattening in pre-processing
+                                                facilitates post-processing of the edition files from text strings to XML holding
+                                                collation data.
+                                                <sup class="fn-label"><a href="#d3e218" class="footnoteref" id="d3e218-ref">[6]</a></sup>
+                                                </p>
+                                          </li>
+                                       </ul>
+                                    </div>
+                                    </p>
+                              </li>
+                              <li id="d3e240">
+                                 <p id="d3e241">Normalizing the text and processing the collation. Up to this point, we have been
+                                    applying a Python script to read the flattened XML as text, and to introduce a series
+                                    of about 25 normalizations via regular expression patterns that instruct collateX
+                                    to (among other things):
+                                    
+                                    <div class="itemizedlist" id="d3e243">
+                                       <ul>
+                                          <li id="d3e244">
+                                             <p id="d3e245">Convert <q>&amp;</q> into <q>and</q></p>
+                                          </li>
+                                          <li id="d3e250">
+                                             <p id="d3e251">Ignore some angle-bracketed material that is not relevant to the collation: For example,
+                                                convert <code class="code">&lt;surface.+?/&gt;</code> and <code class="code">&lt;zone.+?/&gt;</code> into <code class="code">""</code> (nothing) when comparing strings of the editions</p>
+                                          </li>
+                                          <li id="d3e259">
+                                             <p id="d3e260">Simplify to ignore the attribute values on Trojan milestone elements. For example,
+                                                remove the <code class="code">@sID</code> and <code class="code">@eID</code> attributes by converting <code class="code">(&lt;p)\s+.+?(/&gt;)</code> into <code class="code">$1$2</code> (or simply <code class="code">&lt;p/&gt;</code>) so that all paragraph markers are read as the same.</p>
+                                          </li>
+                                       </ul>
+                                    </div>
+                                    
+                                    </p>
+                              </li>
+                              <li id="d3e273">
+                                 <p id="d3e274">Work with the output of the collation as a file we call our <q>spine</q>, in the form of TEI critical apparatus. Here is an example of the output, featuring
+                                    a passage in which Victor Frankenstein beholds his completed Creature in each of the
+                                    five editions: 
+                                    
+                                    
+                                    <pre class="programlisting" id="d3e278"><!--language: xml-->   
+    &lt;app type="invariant"&gt;
+        &lt;rdg wit="#f1818"&gt;&lt;milestone n="4" type="start" unit="chapter"/&gt;CHAPTER &lt;/rdg&gt;
+        &lt;rdg wit="#f1823"&gt;&lt;milestone n="4" type="start" unit="chapter"/&gt;CHAPTER &lt;/rdg&gt;
+        &lt;rdg wit="#f1831"&gt;&lt;milestone n="5" type="start" unit="chapter"/&gt;CHAPTER &lt;/rdg&gt;
+        &lt;rdg wit="#fMS"&gt;&lt;lb n="c56-0045__main__1"/&gt;&lt;milestone spanTo="#c56-0045.04"
+            unit="tei:head"/&gt;Chapter &lt;/rdg&gt;
+        &lt;rdg wit="#fThomas"&gt;&lt;milestone n="4" type="start" unit="chapter"/&gt;CHAPTER &lt;/rdg&gt;
+    &lt;/app&gt;
+    &lt;app&gt;
+        &lt;rdg wit="#f1818"&gt;IV.&lt;p loc="novel1_letter4_chapter4_p132__Start"/&gt;IT &lt;/rdg&gt;
+        &lt;rdg wit="#f1823"&gt;IV.&lt;p loc="novel1_letter4_chapter4_p133__Start"/&gt;IT &lt;/rdg&gt;
+        &lt;rdg wit="#f1831"&gt;V.&lt;p loc="novel1_letter4_chapter5_p137__Start"/&gt; &lt;/rdg&gt;
+        &lt;rdg wit="#fMS"&gt;7th&lt;milestone unit="tei:p"/&gt;&lt;lb n="c56-0045__main__2"/&gt; &lt;/rdg&gt;
+        &lt;rdg wit="#fThomas"&gt;IV.&lt;p loc="novel1_letter4_chapter4_p132__Start"/&gt;IT &lt;/rdg&gt;
+    &lt;/app&gt;
+    &lt;app&gt;
+        &lt;rdg wit="#f1831"&gt;IT &lt;/rdg&gt;
+        &lt;rdg wit="#fMS"&gt;It &lt;/rdg&gt;
+    &lt;/app&gt;
+    &lt;app type="invariant"&gt;
+        &lt;rdg wit="#f1818"&gt;was on a dreary night of &lt;/rdg&gt;
+        &lt;rdg wit="#f1823"&gt;was on a dreary night of &lt;/rdg&gt;
+        &lt;rdg wit="#f1831"&gt;was on a dreary night of &lt;/rdg&gt;
+        &lt;rdg wit="#fMS"&gt;was on a dreary night of &lt;/rdg&gt;
+        &lt;rdg wit="#fThomas"&gt;was on a dreary night of &lt;/rdg&gt;
+    &lt;/app&gt;
+    &lt;app&gt;
+        &lt;rdg wit="#f1818"&gt;November, &lt;/rdg&gt;
+        &lt;rdg wit="#f1823"&gt;November, &lt;/rdg&gt;
+        &lt;rdg wit="#f1831"&gt;November, &lt;/rdg&gt;
+        &lt;rdg wit="#fMS"&gt;November &lt;lb n="c56-0045__main__3"/&gt; &lt;/rdg&gt;
+        &lt;rdg wit="#fThomas"&gt;November, &lt;/rdg&gt;
+    &lt;/app&gt;
+    &lt;app type="invariant"&gt;
+        &lt;rdg wit="#f1818"&gt;that I beheld the &lt;/rdg&gt;
+        &lt;rdg wit="#f1823"&gt;that I beheld the &lt;/rdg&gt;
+        &lt;rdg wit="#f1831"&gt;that I beheld the &lt;/rdg&gt;
+        &lt;rdg wit="#fMS"&gt;that I beheld &lt;del loc="c56-0045__main__d1e8429__Start"/&gt;the &lt;/rdg&gt;
+        &lt;rdg wit="#fThomas"&gt;that I beheld the &lt;/rdg&gt;
+    &lt;/app&gt;
+    &lt;app&gt;
+        &lt;rdg wit="#f1818"&gt;accomplishment of &lt;/rdg&gt;
+        &lt;rdg wit="#f1823"&gt;accomplishment of &lt;/rdg&gt;
+        &lt;rdg wit="#f1831"&gt;accomplishment of &lt;/rdg&gt;
+        &lt;rdg wit="#fMS"&gt;frame on whic&lt;del loc="c56-0045__main__d1e8429__End"/&gt; &lt;/rdg&gt;
+        &lt;rdg wit="#fThomas"&gt;accomplishment of &lt;/rdg&gt;
+    &lt;/app&gt;
+    &lt;app type="invariant"&gt;
+        &lt;rdg wit="#f1818"&gt;my &lt;/rdg&gt;
+        &lt;rdg wit="#f1823"&gt;my &lt;/rdg&gt;
+        &lt;rdg wit="#f1831"&gt;my &lt;/rdg&gt;
+        &lt;rdg wit="#fMS"&gt;my &lt;/rdg&gt;
+        &lt;rdg wit="#fThomas"&gt;my &lt;/rdg&gt;
+    &lt;/app&gt;
+    &lt;app&gt;
+        &lt;rdg wit="#f1818"&gt;toils. &lt;/rdg&gt;
+        &lt;rdg wit="#f1823"&gt;toils. &lt;/rdg&gt;
+        &lt;rdg wit="#f1831"&gt;toils. &lt;/rdg&gt;
+        &lt;rdg wit="#fMS"&gt;man completeed,. &lt;del loc="c56-0045__main__d1e8443__Start"/&gt;And&lt;del
+            loc="c56-0045__main__d1e8443__End"/&gt;&lt;lb n="c56-0045__main__4"/&gt; &lt;/rdg&gt;
+        &lt;rdg wit="#fThomas"&gt;toils. &lt;/rdg&gt;
+    &lt;/app&gt;
+                    </pre>
+                                    
+                                    Apply this collation data in post-processing to prepare the edition files:
+                                    
+                                    <div class="itemizedlist" id="d3e281">
+                                       <ul>
+                                          <li id="d3e282">
+                                             <p id="d3e283"><q>Raise</q> the flattened editions in their original form (convert Trojan milestones into the
+                                                original tree hierarchy).</p>
+                                          </li>
+                                          <li id="d3e286">
+                                             <p id="d3e287">With XSLT, pull from the <q>spine</q> file to map <code class="code">&lt;seg&gt;</code> elements to each separate edition file at every point of variance captured in the
+                                                collation. Each <code class="code">&lt;seg&gt;</code> element is keyed by XPath location markers to the collation <q>spine</q> file. Here is an example of <code class="code">&lt;seg&gt;</code> elements applied in the 1818 edition. The <code class="code">@xml:id</code> are keyed to the specific <code class="code">&lt;app&gt;</code> elements in the portion of the spine representing collation unit 10. Where the collation
+                                                <q>spine</q> marks passages around chapter headings and paragraph boundaries, we apply a <code class="code">@part</code> attribute to designate an initial and final portion within the structure of the edition
+                                                XML file:
+                                                
+                                                <pre class="programlisting" id="d3e308"><!--language: xml-->
+         &lt;div type="collation"&gt;
+            &lt;milestone n="4" type="start" unit="chapter"/&gt;
+            &lt;head xml:id="novel1_letter4_chapter4_div4_div4_head1"&gt;CHAPTER &lt;seg part="I" xml:id="C10_app2-f1818__I"&gt;IV.&lt;/seg&gt;
+            &lt;/head&gt;
+            &lt;p xml:id="novel1_letter4_chapter4_div4_div4_p1"&gt;
+               &lt;seg part="F" xml:id="C10_app2-f1818__F"&gt;
+               &lt;/seg&gt;I&lt;hi xml:id="novel1_letter4_chapter4_div4_div4_p1_hi1"&gt;T&lt;/hi&gt; was on a dreary night of &lt;seg xml:id="C10_app5-f1818"&gt;November, &lt;/seg&gt;that I beheld &lt;seg xml:id="C10_app7-f1818"&gt;the accomplishment of my toils. &lt;/seg&gt;With an anxiety that almost amounted to &lt;seg xml:id="C10_app9-f1818"&gt;agony, &lt;/seg&gt;I collected &lt;seg xml:id="C10_app11-f1818"&gt;the &lt;/seg&gt;instruments of life around &lt;seg xml:id="C10_app14-f1818"&gt;me, that &lt;/seg&gt;I &lt;seg xml:id="C10_app16-f1818"&gt;might infuse &lt;/seg&gt;a spark of being into the lifeless thing that lay at my feet. . . .
+            &lt;/p&gt; 
+             . . . 
+         &lt;/div&gt;
+                            </pre>
+                                                </p>
+                                          </li>
+                                          <li id="d3e311">
+                                             <p id="d3e312">Convert the text contents of the <q>spine</q> critical apparatus into stand-off pointers to the <code class="code">&lt;seg&gt;</code> elements new edition files. Here is a passage from the converted <q>standoff spine</q> featuring only the 
+                                                normalized tokens for each variant passage, and containing pointers to the location
+                                                of a <code class="code">&lt;seg&gt;</code>
+                                                element in each edition XML file corresponding with a reading witness:
+                                                
+                                                <pre class="programlisting" id="d3e322"><!--language: xml-->
+            &lt;app xml:id="C10_app7" n="48"&gt;
+               &lt;rdgGrp xml:id="C10_app7_rg1"
+                       n="['&lt;del&gt;the', 'frame', 'on', 'whic&lt;del&gt;', 'my', 'man', 'completeed,.', '&lt;del&gt;and&lt;del&gt;']"&gt;
+                  &lt;rdg wit="#fMS"&gt;
+                     &lt;ptr target="https://raw.githubusercontent.com/PghFrankenstein/fv-data/master/variorum-chunks/fMS_C10.xml#string-range(//tei:surface[@xml:id='ox-ms_abinger_c56-0045']/tei:zone[@type='main']//tei:line[3],15,59)"/&gt;
+                  &lt;/rdg&gt;
+               &lt;/rdgGrp&gt;
+               &lt;rdgGrp xml:id="C10_app7_rg2" n="['the', 'accomplishment', 'of']"&gt;
+                  &lt;rdg wit="#f1818"&gt;
+                     &lt;ptr target="https://raw.githubusercontent.com/PghFrankenstein/fv-data/master/variorum-chunks/f1818_C10.xml#C10_app7-f1818"/&gt;
+                  &lt;/rdg&gt;
+                  &lt;rdg wit="#f1823"&gt;
+                     &lt;ptr target="https://raw.githubusercontent.com/PghFrankenstein/fv-data/master/variorum-chunks/f1823_C10.xml#C10_app7-f1823"/&gt;
+                  &lt;/rdg&gt;
+                  &lt;rdg wit="#fThomas"&gt;
+                     &lt;ptr target="https://raw.githubusercontent.com/PghFrankenstein/fv-data/master/variorum-chunks/fThomas_C10.xml#C10_app7-fThomas"/&gt;
+                  &lt;/rdg&gt;
+                  &lt;rdg wit="#f1831"&gt;
+                     &lt;ptr target="https://raw.githubusercontent.com/PghFrankenstein/fv-data/master/variorum-chunks/f1831_C10.xml#C10_app7-f1831"/&gt;
+                  &lt;/rdg&gt;
+               &lt;/rdgGrp&gt;
+            &lt;/app&gt;
+                            
+                            </pre>
+                                                </p>
+                                          </li>
+                                          <li id="d3e325">
+                                             <p id="d3e326">Calculate special links and pointers to the original XML files of the Shelley-Godwin
+                                                Archive's manuscript edition of Frankenstein, adjusting for the resequencing prior
+                                                to collation.</p>
+                                          </li>
+                                       </ul>
+                                    </div>
+                                    </p>
+                              </li>
+                              <li id="d3e328">
+                                 <p id="d3e329">Publish the XML via a web framework (optimally CETEIcean but <a href="https://frankensteinvariorum.github.io/viewer/" class="link">for now, using Node.js and React</a>). Share the edition text files and XML data from our <a href="https://github.com/FrankensteinVariorum/fv-data" class="link">GitHub repo sharing files at completed stages of our pipeline</a>.
+                                    
+                                    <figure id="fvwebview">
+                                       <p class="title">FV-webView: Web view of a variant passage in the Frankenstein Variorum reading interface</p>
+                                       <div class="figure-contents">
+                                          <div class="mediaobject" id="d3e339"><img alt="" src="Bal2022Besh-FVarWebView.png" style="width: 80%"></div>
+                                          <div class="caption">
+                                             <p id="d3e343">A snapshot of the Frankenstein Variorum web interface showing the 1816 manuscript
+                                                notebook edition at the moment when Victor Frankenstein looks at the form of his complete
+                                                Creature, highlighting the variant passage featured in the preceding code blocks.
+                                                The segmented passages highlight the variants with deepening shades based on Levenshtein
+                                                distance measurements, divided into 3 ranges (very light for Levenshtein distances
+                                                of a few characters, more intense for distances above 20).</p>
+                                          </div>
+                                       </div>
+                                    </figure>
+                                    <sup class="fn-label"><a href="#d3e345" class="footnoteref" id="d3e345-ref">[7]</a></sup>
+                                    </p>
+                              </li>
+                           </ol>
+                        </div>
+                        </p>
+                  </div>
+                  <div class="section" id="d3e353">
+                     <h2 class="title" style="clear: both">Snags in the Weaving</h2>
+                     <div class="section" id="d3e355">
+                        <h3 class="title" style="clear: both">A Schematron flashlight</h3>
+                        <p id="d3e357">For an unhappy time two years ago, pressed by a deadline to launch a proof-of-concept
+                           partial version of the Variorum interface, I hand-corrected the outputs of collation,
+                           assisted by Schematron that would help me to identify common problems. The Schematron
+                           was like a flashlight guiding me through a brittle process of hand-moving witnesses
+                           to apps. The sheer volume of corrections was exhausting, and a short novel like <span class="ital">Frankenstein</span> could seem infinitely long and tortuously slow to read while attempting to make <q>spine adjustments</q>. I knew this method was not sufficient for our needs. This Schematron file was merely
+                           my first attempt to try to address the problem systematically:
+                           
+                           <pre class="programlisting" id="d3e364"><!--language: xml-->
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2"&gt;
+    &lt;sch:pattern&gt;
+        &lt;sch:rule context="app"&gt;
+            &lt;sch:report test="not(rdgGrp)" role="error"&gt;Empty app element--missing rdgGrps! That's an error introduced from editing the collation.&lt;/sch:report&gt;
+     &lt;sch:report test="contains(descendant::rdg[@wit='fThomas'], '&lt;del')" role="info"&gt;
+         Here is a place where the Thomas text contains a deleted passage. Is it completely encompassed in the app?&lt;/sch:report&gt;
+            &lt;sch:assert test="count(descendant::rdg/@wit) = count(distinct-values(descendant::rdg/@wit))" role="error"&gt;
+                A repeated rdg witness is present! There's an error here introduced by editing the collation.
+            &lt;/sch:assert&gt;
+        &lt;/sch:rule&gt;
+    &lt;/sch:pattern&gt;
+    &lt;sch:pattern&gt;
+        &lt;sch:rule context="app[count(rdgGrp) eq 1][count(descendant::rdg) eq 1]"&gt;
+            &lt;sch:report test="count(preceding-sibling::app[1]/rdgGrp) eq 1 or count(following-sibling::app[1]/rdgGrp) eq 1 or last()" role="warning"&gt;
+                Here is a "singleton" app that may be best merged in with the preceding or following "unison" app as part of a new rdgGrp. 
+            &lt;/sch:report&gt;
+        &lt;/sch:rule&gt;
+    &lt;/sch:pattern&gt;
+    &lt;sch:pattern&gt;
+        &lt;sch:let name="delString" value="'&lt;del'"/&gt;
+    &lt;sch:rule context="rdg[@wit='fThomas']" role="error"&gt;
+        &lt;sch:let name="textTokens" value="tokenize(text(), ' ')"/&gt;
+        &lt;sch:let name="delMatch" value="for $t in $textTokens return $t[contains(., $delString)]"/&gt;
+        &lt;sch:assert test="count($delMatch) mod 2 eq 0"&gt;
+            Unfinished deletion in the Thomas witness. We count &lt;sch:value-of select="count($delMatch)"/&gt; deletion matches. 
+            Make sure the Thomas witness deletion is completely encompassed in the app.&lt;/sch:assert&gt;
+    &lt;/sch:rule&gt;
+    &lt;/sch:pattern&gt;
+    &lt;sch:pattern&gt;
+        &lt;sch:rule context="rdgGrp[ancestor::rdgGrp]"&gt;
+            &lt;sch:report test="."&gt;A reading group must NOT be nested inside another reading group!&lt;/sch:report&gt;
+        &lt;/sch:rule&gt;
+    &lt;/sch:pattern&gt;
+&lt;/sch:schema&gt;</pre>   
+                           When reviewing and editing collation <q>spine</q> files, I would apply this schema to guide my work and stop me from making terrible
+                           mistakes in hand-correcting common collation output problems, such as, for example,
+                           pasting a <code class="code">&lt;rdgGrp&gt;</code> element inside another <code class="code">&lt;rdgGrp&gt;</code> (permissible and useful in some TEI projects, but an outright mistake in our very
+                           simple spine). Eye fatigue is a serious problem in just about every stage of the Gothenburg
+                           model, and this Schematron did intervene to prevent clumsy mistakes. More importantly
+                           for the long-range work of the project, this simple Schematron file helped me to document
+                           and describe repeating patterns of error in the collation, most significantly here
+                           the <q>singleton</q> <code class="code">&lt;app&gt;</code>, containing only one witness inside, and the incommplete witness that I wanted to
+                           include a complete act of deletion.
+                           </p>
+                     </div>
+                     <div class="section" id="d3e378">
+                        <h3 class="title" style="clear: both">XSLT for alignment correction</h3>
+                        <p id="d3e380">Revisiting the collation output in fall 2021 with two student research assistants,
+                           we began identifying patterns that XSLT could correct. The output from collateX output
+                           would frequently create a problem we called <q>loner dels</q>: that is, failing to align text with flattened <code class="code">&lt;del&gt;</code> markup wtih corresponding witnesses, despite the presence of related content with
+                           other witnesses. collateX would sometimes place these in an <code class="code">&lt;app&gt;</code> with a single <code class="code">&lt;rdgGrp&gt;</code> by themselves. We succeeded over a few Friday afternoon research team meetings in
+                           November to correct this while my students learned about tunneling parameters in XSLT.
+                           Our Stylesheet is short but represents a step forward in documentation as well as
+                           outright repair of collation alignment:</p>
+                        <pre class="programlisting" id="d3e390"><!--language: xml-->
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:math="http://www.w3.org/2005/xpath-functions/math"
+    xmlns:cx="http://interedition.eu/collatex/ns/1.0"
+    
+    exclude-result-prefixes="xs math"
+    version="3.0"&gt;
+    &lt;!--2021-09-24 ebb with wdjacca and amoebabyte: We are writing XSLT to try to move
+    solitary apps reliably into their neighboring app elements representing all witnesses. 
+    
+    --&gt;
+  &lt;xsl:mode on-no-match="shallow-copy"/&gt;
+  
+&lt;!-- ********************************************************************************************
+        LONER DELS: These templates deal with collateX output of app elements 
+        containing a solitary MS witness containing a deletion, which we interpret as usually a false start, 
+        before a passage.
+     *********************************************************************************************
+    --&gt;  
+    &lt;xsl:template match="app[count(descendant::rdg) = 1][contains(descendant::rdg, '&lt;del')]"&gt;
+  
+        &lt;xsl:if test="following-sibling::app[1][count(descendant::rdgGrp) = 1 and count(descendant::rdg) gt 1]"&gt;
+               &lt;xsl:apply-templates select="following-sibling::app[1]" mode="restructure"&gt;
+                  &lt;xsl:with-param as="node()" name="loner" select="descendant::rdg" tunnel="yes" /&gt;
+                   &lt;xsl:with-param as="attribute()" name="norm" select="rdgGrp/@n" tunnel="yes"/&gt;
+               &lt;/xsl:apply-templates&gt;
+               
+           &lt;/xsl:if&gt;
+    &lt;/xsl:template&gt;
+    
+    
+    &lt;xsl:template match="app[preceding-sibling::app[1][count(descendant::rdg) = 1][contains(descendant::rdg, '&lt;del')]]"/&gt;
+
+
+    &lt;xsl:template match="app" mode="restructure"&gt;
+        &lt;xsl:param name="loner" tunnel="yes"/&gt;
+        &lt;xsl:param name="norm" tunnel="yes"/&gt;
+        &lt;app&gt;
+        &lt;xsl:apply-templates select="rdgGrp" mode="restructure"&gt;
+                &lt;xsl:with-param  as="node()" name="loner" tunnel="yes" select="$loner"/&gt;
+            &lt;/xsl:apply-templates&gt;
+            &lt;xsl:variable name="TokenSquished"&gt;
+                &lt;xsl:value-of select="$norm ! string()||descendant::rdgGrp[descendant::rdg[@wit=$loner/@wit]]/@n"/&gt;
+            &lt;/xsl:variable&gt;
+            &lt;xsl:variable name="newToken"&gt;
+                &lt;xsl:value-of select="replace($TokenSquished, '\]\[', ', ')"/&gt;
+            &lt;/xsl:variable&gt;
+           &lt;rdgGrp n="{$newToken}"&gt;
+              &lt;rdg wit="{$loner/@wit}"&gt;&lt;xsl:value-of select="$loner/text()"/&gt;
+              &lt;xsl:value-of select="descendant::rdg[@wit = $loner/@wit]"/&gt;
+              &lt;/rdg&gt;
+               
+           &lt;/rdgGrp&gt; 
+        &lt;/app&gt; 
+    &lt;/xsl:template&gt;
+    
+    &lt;xsl:template match="rdgGrp" mode="restructure"&gt;
+        &lt;xsl:param name="loner" tunnel="yes"/&gt;
+
+           &lt;xsl:if test="rdg[@wit ne $loner/@wit]"&gt;
+            &lt;xsl:copy-of select="current()" /&gt;
+        &lt;/xsl:if&gt;
+    &lt;/xsl:template&gt;
+&lt;/xsl:stylesheet&gt;
+</pre>
+                        <p id="d3e392">Next my little team and I began to tackle the noxious problem of <q>empty tokens</q>, that is, spurious <code class="code">&lt;rdgGrp&gt;</code> elements that would form around a single witness, the SGA manuscript witness, with
+                           an empty normalized token formed on a normalized <code class="code">&lt;lb/&gt;</code> element. In their most benign and frequently occurring form, they would appear a
+                           separate isolated <code class="code">&lt;app&gt;</code> elements in between two <q>unison apps</q> (that is, interrupting a passage in which all witnesses should align in unison. Here
+                           is an example of the pattern:
+                           
+                           <pre class="programlisting" id="d3e405"><!--language: xml-->
+     &lt;app&gt;
+		&lt;rdgGrp n="['as', 'i', 'did', 'not', 'appear', 'to', 'know']"&gt;
+			&lt;rdg wit="f1818"&gt;as I did not appear to know &lt;/rdg&gt;
+			&lt;rdg wit="f1823"&gt;as I did not appear to know &lt;/rdg&gt;
+			&lt;rdg wit="fThomas"&gt;as I did not appear to know &lt;/rdg&gt;
+			&lt;rdg wit="f1831"&gt;as I did not appear to know &lt;/rdg&gt;
+			&lt;rdg wit="fMS"&gt;as I did not appear to know &lt;/rdg&gt;
+		&lt;/rdgGrp&gt;
+	&lt;/app&gt;
+	&lt;app&gt;
+		&lt;rdgGrp n="['']"&gt;
+			&lt;rdg wit="fMS"&gt;&lt;lb n="c57-0119__main__14"/&gt; &lt;/rdg&gt;
+		&lt;/rdgGrp&gt;
+	&lt;/app&gt;
+	&lt;app&gt;
+		&lt;rdgGrp n="['the']"&gt;
+			&lt;rdg wit="f1818"&gt;the &lt;/rdg&gt;
+			&lt;rdg wit="f1823"&gt;the &lt;/rdg&gt;
+			&lt;rdg wit="fThomas"&gt;the &lt;/rdg&gt;
+			&lt;rdg wit="f1831"&gt;the &lt;/rdg&gt;
+			&lt;rdg wit="fMS"&gt;the &lt;/rdg&gt;
+		&lt;/rdgGrp&gt;
+	&lt;/app&gt;</pre>
+                           The <q>empty token</q> problem is evident here in the normalized form a lb element with all its attributes,
+                           being read properly as an empty token (not even a space), but somehow asserting its
+                           presence to interrupt a unison passage. At this point, there should be only one <code class="code">&lt;app&gt;</code> element that should appear like this:
+                           
+                           <pre class="programlisting" id="d3e412"><!--language: xml-->
+            &lt;app&gt;
+		&lt;rdgGrp n="['as', 'i', 'did', 'not', 'appear', 'to', 'know', 'the']"&gt;
+			&lt;rdg wit="f1818"&gt;as I did not appear to know the &lt;/rdg&gt;
+			&lt;rdg wit="f1823"&gt;as I did not appear to know the &lt;/rdg&gt;
+			&lt;rdg wit="fThomas"&gt;as I did not appear to know the &lt;/rdg&gt;
+			&lt;rdg wit="f1831"&gt;as I did not appear to know the &lt;/rdg&gt;
+			&lt;rdg wit="fMS"&gt;as I did not appear to know the &lt;/rdg&gt;
+		&lt;/rdgGrp&gt;
+	&lt;/app&gt;
+        </pre>
+                           There is a more complex form of this pernicious problem with collating around normalized
+                           markup, and that is when the token asserts itself to generate a delta, a separate
+                           <code class="code">&lt;rdgGrp&gt;</code> within an app, as happens here:
+                           
+                           <pre class="programlisting" id="d3e417"><!--language: xml-->
+    &lt;app&gt;
+		&lt;rdgGrp n="['departed.', 'besides,', 'they']"&gt;
+			&lt;rdg wit="f1818"&gt;departed. Besides, they &lt;/rdg&gt;
+			&lt;rdg wit="f1823"&gt;departed. Besides, they &lt;/rdg&gt;
+			&lt;rdg wit="fThomas"&gt;departed. Besides, they &lt;/rdg&gt;
+			&lt;rdg wit="f1831"&gt;departed. Besides, they &lt;/rdg&gt;
+			&lt;rdg wit="fMS"&gt;departed. Besides, they &lt;/rdg&gt;
+		&lt;/rdgGrp&gt;
+	&lt;/app&gt;
+	&lt;app&gt;
+		&lt;rdgGrp n="['observed']"&gt;
+			&lt;rdg wit="f1818"&gt;observed &lt;/rdg&gt;
+			&lt;rdg wit="f1823"&gt;observed &lt;/rdg&gt;
+			&lt;rdg wit="fThomas"&gt;observed &lt;/rdg&gt;
+			&lt;rdg wit="f1831"&gt;observed &lt;/rdg&gt;
+		&lt;/rdgGrp&gt;
+		&lt;rdgGrp n="['observed,', '']"&gt;
+			&lt;rdg wit="fMS"&gt;observed, &lt;lb n="c57-0119__main__11"/&gt; &lt;/rdg&gt;
+		&lt;/rdgGrp&gt;
+	&lt;/app&gt;
+	&lt;app&gt;
+		&lt;rdgGrp n="['that', 'it', 'appeared']"&gt;
+			&lt;rdg wit="f1818"&gt;that it appeared &lt;/rdg&gt;
+			&lt;rdg wit="f1823"&gt;that it appeared &lt;/rdg&gt;
+			&lt;rdg wit="fThomas"&gt;that it appeared &lt;/rdg&gt;
+			&lt;rdg wit="f1831"&gt;that it appeared &lt;/rdg&gt;
+			&lt;rdg wit="fMS"&gt;that it appeared &lt;/rdg&gt;
+		&lt;/rdgGrp&gt;
+	&lt;/app&gt;
+        </pre>
+                           The capacity of the empty token to create a <q>snag</q> in the collation weave is evident here, generating a false divergence. These <code class="code">&lt;app&gt;</code>s should all be consolidated into one element wth just one unison <code class="code">&lt;rdgGrp&gt;</code>. My research team and I took notes on the various forms this empty token phenomenon
+                           could take and drafted notes, still on my office whiteboard, for how we could handle
+                           them with XSLT.
+                           </p>
+                        <figure id="fvwhiteboard">
+                           <p class="title">FV-whiteboard: Frankenstein collation notes on my office whiteboard</p>
+                           <div class="figure-contents">
+                              <div class="mediaobject" id="d3e429"><img alt="" src="Bal2022Besh-FVWhiteBoard.jpg" style="width: 80%"></div>
+                              <div class="caption">
+                                 <p id="d3e433">My student Jacqueline Chan, Penn State Behrend May 2022 Digital Media, Arts, and Technology
+                                    graduate, carefully drafted these notes on the <q>empty token</q> collation problem and our efforts to solve it on my office whiteboard during a meeting
+                                    with my student research assistants as we inspected collation output code together.</p>
+                              </div>
+                           </div>
+                        </figure>
+                     </div>
+                     <div class="section" id="d3e437">
+                        <h3 class="title" style="clear: both">The <q>smashed-tokens</q> problem</h3>
+                        <p id="d3e442">We discovered another particularly pernicious problem with tokenizing and normalizing
+                           markup via our Python process to collateX. This problem is one of occasional <q>smashed-tokens</q>, that is two tokens losing their space separator and becoming one token. Here is
+                           a very short passage of XML from the Shelley-Godwin Archive's encoding:
+                           
+                           <pre class="programlisting" id="d3e446"><!--language: xml-->
+                 . . . the spot&lt;add eID="c57-0117__main__d3e21951"/&gt; &amp; endeavoured . . .   
+               </pre>
+                           In this passage, we will be normalizing to ignore the <code class="code">&lt;add&gt;</code> element. Notice the spaces separating the element tag from the ampersand. Now, here
+                           is how collateX interprets the passage in its collation alignment:
+                           
+                           <pre class="programlisting" id="d3e451"><!--language: xml-->
+    &lt;app&gt;
+		&lt;rdgGrp n="['spot,', 'and', 'endeavoured,']"&gt;
+			&lt;rdg wit="f1818"&gt;spot, and endeavoured, &lt;/rdg&gt;
+			&lt;rdg wit="f1823"&gt;spot, and endeavoured, &lt;/rdg&gt;
+			&lt;rdg wit="fThomas"&gt;spot, and endeavoured, &lt;/rdg&gt;
+			&lt;rdg wit="f1831"&gt;spot, and endeavoured, &lt;/rdg&gt;
+		&lt;/rdgGrp&gt;
+		&lt;rdgGrp n="['spotand', 'endeavoured']"&gt;
+			&lt;rdg wit="fMS"&gt;spot&amp; endeavoured &lt;/rdg&gt;
+		&lt;/rdgGrp&gt;
+	&lt;/app&gt;
+               </pre>
+                           
+                           Somewhere in the normalizing process, the two completely separate tokens <q>spot</q> and <q>and</q> were spliced together into one token. We are not certain whether this problem is
+                           more with Python's tokenization or with collateX's alignment of normalized empty strings
+                           representing markup irrelevant to the collation. It's as if the normalized markup
+                           refuses quite to disappear, haunting the collation machinery with a ghostly persistent
+                           trace. We are also not certain at the date of this writing whether choosing a different
+                           alignment algorithm in collateX might resolve the problem, but I think not, since
+                           error seems to be in interpreting spaces following normalization. That is, I believe
+                           the problems could be in the Python script that handles the normalization.</p>
+                        <p id="d3e459">At the date of this writing, we have not completed these XSLT post-processing tasks,
+                           in part because we all became busy wih senior projects (for them, completing their
+                           projects and for me, assisting with them). I have also paused a moment before continuing
+                           down this path because the more patterns we discovered to correct, the more I wanted
+                           to try another XSLT approach. If our normalization and alignment were so disjointed
+                           to require so much XSLT post-processing, what if XSLT might simply be better at the
+                           task of normalizing markup and tokenizing and aligning around it? That is, would it
+                           be less brittle to use XSLT for all of our processing, including the collation itself?
+                           </p>
+                     </div>
+                  </div>
+                  <div class="section" id="d3e460">
+                     <h2 class="title" style="clear: both">XSLT for the win?</h2>
+                     <p id="d3e462">At the August 2021 Balisage conference, Joel Kalvesmaki introduced tan diff and tan
+                        collate, 
+                        As I listened to the paper, I was struck by how simple Kalvesmaki made the process
+                        of string comparison seem in his explanation of tan:diff():  
+                        <div class="blockquote">
+                           <blockquote class="blockquote">
+                              <p id="d3e465">tan:diff() . . . extracts a series of progressively smaller samples from the shorter
+                                 of the two texts and looks for a match in the longer one on the basis of fn:contains().
+                                 When a match is found, the results are separated by fn:substring-before() and fn:substring-after()<sup class="fn-label"><a href="#d3e467" class="footnoteref" id="d3e467-ref">[8]</a></sup></p>
+                           </blockquote>
+                        </div>
+                        The simple use of XPath functions described here made the alignment process seem more
+                        familiar and accessible, amenable to the kinds of modifications I regularly make with
+                        my own XSLT. I wondered whether starting with attempts to match longer samples and
+                        moving to match shorter ones might generate fewer aligned clusters and reduce the
+                        spurious particulation I had been seeing in my Python-assisted process with collateX.
+                        So I have lately begun experimenting with tan:diff and tan:collate().
+                        </p>
+                     <p id="d3e479">At the time of this writing, I have begun testing a collation unit from the Frankenstein
+                        Variorum, the same featured above that produced the <q>smashed tokens</q> problem featured in the previous section. Currently I am applying the software following
+                        Kalvesmaki's detailed comments within his sample Diff XSLT files guiding the user
+                        to generate TAN Diff's native XML and HTML output. The XML output is like, but yet
+                        unlike the TEI critical apparatus structure we have been using in the Frankenstein
+                        Variorum project. The markup is simply organized in <code class="code">&lt;c&gt;</code> when all witnesses share a normalized string, and <code class="code">&lt;u&gt;</code> when they are variant from each other. There is nothing like the <code class="code">&lt;app&gt;</code> element to bundle together related groups. But this is the realm of XSLT and the
+                        developers encourage their users to adapt the code to their needs. I have not yet
+                        definitively located where to apply the <code class="code">&lt;app&gt;</code> element I require in the XSLT file housing tan:collate()'s functions, but I will
+                        almost certainly do so before the conference.</p>
+                     <p id="d3e491">Most importantly, I have been applying and updating my 25 normalizing replacement
+                        patterns via XSLT and find this much more legible than my handling of the same in
+                        my Python script (which sometimes contained duplicate passages). XSLT, by nature of
+                        being written in XML is XPathable, and with a large quantity of replacement sequences,
+                        I am able to check and sequence the process carefully in a way that is easier for
+                        me to document legibly.
+                        
+                        <pre class="programlisting" id="d3e493"><!--language: xml-->
+                &lt;!-- Should punctuation be ignored? --&gt;
+    &lt;xsl:param name="tan:ignore-punctuation-differences" as="xs:boolean" select="false()"/&gt;
+    
+    &lt;xsl:param name="additional-batch-replacements" as="element()*"&gt;
+        &lt;!--ebb: normalizations to batch process for collation. NOTE: We want to do these to preserve some markup \\
+            in the output for post-processing to reconstruct the edition files. 
+            Remember, these will be processed in order, so watch out for conflicts. --&gt;
+        &lt;replace pattern="(&lt;.+?&gt;\s*)&amp;gt;" replacement="$1" message="normalizing away extra right angle brackets"/&gt;
+         &lt;replace pattern="&amp;amp;" replacement="and" message="ampersand batch replacement"/&gt;
+        &lt;replace pattern="&lt;/?xml&gt;" replacement="" message="xml tag replacement"/&gt;
+        &lt;replace pattern="(&lt;p)\s+.+?(/&gt;)" replacement="$1$2" message="p-tag batch replacement"/&gt;
+        &lt;replace pattern="(&lt;)(metamark).*?(&gt;).+?\1/\2\3" replacement="" message="metamark batch replacement"/&gt;&lt;!--ebb: metamark contains a text node, and we don't want its contents processed in the collation, so this captures the entire element. --&gt;
+        &lt;replace pattern="(&lt;/?)m(del).*?(&gt;)" replacement="$1$2$3" message="mdel-SGA batch replacement"/&gt;  &lt;!--ebb: mdel contains a text node, so this catches both start and end tag.
+        We want mdel to be processed as &lt;del&gt;...&lt;/del&gt;--&gt;
+        &lt;replace pattern="&lt;/?damage.*?&gt;" replacement="" message="damage-SGA batch replacement"/&gt; &lt;!--ebb: damage contains a text node, so this catches both start and end tag. --&gt;
+        &lt;replace pattern="&lt;/?unclear.*?&gt;" replacement="" message="unclear-SGA batch replacement"/&gt; &lt;!--ebb: unclear contains a text node, so this catches both start and end tag. --&gt;
+        &lt;replace pattern="&lt;/?retrace.*?&gt;" replacement="" message="retrace-SGA batch replacement"/&gt; &lt;!--ebb: retrace contains a text node, so this catches both start and end tag. --&gt;
+        &lt;replace pattern="&lt;/?shi.*?&gt;" replacement="" message="shi-SGA batch replacement"/&gt; &lt;!--ebb: shi (superscript/subscript) contains a text node, so this catches both start and end tag. --&gt;
+        &lt;replace pattern="(&lt;del)\s+.+?(/&gt;)" replacement="$1$2" message="del-tag batch replacement"/&gt;
+        &lt;replace pattern="&lt;hi.+?/&gt;" replacement="" message="hi batch replacement"/&gt;
+        &lt;replace pattern="&lt;pb.+?/&gt;" replacement="" message="pb batch replacement"/&gt;
+        &lt;replace pattern="&lt;add.+?&gt;" replacement="" message="add batch replacement"/&gt;
+        &lt;replace pattern="&lt;w.+?/&gt;" replacement="" message="w-SGA batch replacement"/&gt;
+        &lt;replace pattern="(&lt;del)Span.+?spanTo="#(.+?)".*?(/&gt;)(.+?)&lt;anchor.+?xml:id="\2".*?&gt;" replacement="$1$3$4$1$3" message="delSpan-to-anchor-SGA batch replacement"/
+       &lt;replace pattern="&lt;anchor.+?/&gt;" replacement="" message="anchor-SGA batch replacement"/&gt;  
+        &lt;replace pattern="&lt;milestone.+?unit="tei:p".+?/&gt;" replacement="&lt;p/&gt; &lt;p/&gt;" message="milestone-paragraph-SGA batch replacement"/&gt;  
+        &lt;replace pattern="&lt;milestone.+?/&gt;" replacement="" message="milestone non-p batch replacement"/&gt;  
+        &lt;replace pattern="&lt;lb.+?/&gt;" replacement="" message="lb batch replacement"/&gt;  
+        &lt;replace pattern="&lt;surface.+?/&gt;" replacement="" message="surface-SGA batch replacement"/&gt; 
+        &lt;replace pattern="&lt;zone.+?/&gt;" replacement="" message="zone-SGA batch replacement"/&gt; 
+        &lt;replace pattern="&lt;mod.+?/&gt;" replacement="" message="mod-SGA batch replacement"/&gt; 
+        &lt;replace pattern="&lt;restore.+?/&gt;" replacement="" message="restore-SGA batch replacement"/&gt; 
+        &lt;replace pattern="&lt;graphic.+?/&gt;" replacement="" message="graphic-SGA batch replacement"/&gt; 
+        &lt;replace pattern="&lt;head.+?/&gt;" replacement="" message="head batch replacement"/&gt; 
+ 
+            </pre>
+                        
+                        The documentation-centered nature of the TAN stylesheets makes the XSLT function to
+                        document decisions and makes it easy to amend the process and resequence it. Contrast
+                        this with the brittle complexity of my Python normalization function and its dependencies:
+                        
+                        
+                        <pre class="programlisting" id="d3e496"><!--language: python-->
+regexWhitespace = re.compile(r'\s+')
+regexNonWhitespace = re.compile(r'\S+')
+regexEmptyTag = re.compile(r'/&gt;$')
+regexBlankLine = re.compile(r'\n{2,}')
+regexLeadingBlankLine = re.compile(r'^\n')
+regexPageBreak = re.compile(r'&lt;pb.+?/&gt;')
+RE_MARKUP = re.compile(r'&lt;.+?&gt;')
+RE_PARA = re.compile(r'&lt;p\s[^&lt;]+?/&gt;')
+RE_INCLUDE = re.compile(r'&lt;include[^&lt;]*/&gt;')
+RE_MILESTONE = re.compile(r'&lt;milestone[^&lt;]*/&gt;')
+RE_HEAD = re.compile(r'&lt;head[^&lt;]*/&gt;')
+RE_AB = re.compile(r'&lt;ab[^&lt;]*/&gt;')
+# 2018-10-1 ebb: ampersands are apparently not treated in python regex as entities any more than angle brackets.
+# RE_AMP_NSB = re.compile(r'\S&amp;\s')
+# RE_AMP_NSE = re.compile(r'\s&amp;\S')
+# RE_AMP_SQUISH = re.compile(r'\S&amp;\S')
+# RE_AMP = re.compile(r'\s&amp;\s')
+RE_AMP = re.compile(r'&amp;')
+# RE_MULTICAPS = re.compile(r'(?&lt;=\W|\s|\&gt;)[A-Z][A-Z]+[A-Z]*\s')
+# RE_INNERCAPS = re.compile(r'(?&lt;=hi\d"/&gt;)[A-Z]+[A-Z]+[A-Z]+[A-Z]*')
+# TITLE_MultiCaps = match(RE_MULTICAPS).lower()
+RE_DELSTART = re.compile(r'&lt;del[^&lt;]*&gt;')
+RE_ADDSTART = re.compile(r'&lt;add[^&lt;]*&gt;')
+RE_MDEL = re.compile(r'&lt;mdel[^&lt;]*&gt;.+?&lt;/mdel&gt;')
+RE_SHI = re.compile(r'&lt;shi[^&lt;]*&gt;.+?&lt;/shi&gt;')
+RE_METAMARK = re.compile(r'&lt;metamark[^&lt;]*&gt;.+?&lt;/metamark&gt;')
+RE_HI = re.compile(r'&lt;hi\s[^&lt;]*/&gt;')
+RE_PB = re.compile(r'&lt;pb[^&lt;]*/&gt;')
+RE_LB = re.compile(r'&lt;lb.*?/&gt;')
+# 2021-09-06: ebb and djb: On &lt;lb&gt; collation troubles: LOOK FOR DOT MATCHES ALL FLAG
+# b/c this is likely spanning multiple lines, and getting split by the tokenizing algorithm.
+# 2021-09-10: ebb with mb and jc: trying .*? and DOTALL flag
+RE_LG = re.compile(r'&lt;lg[^&lt;]*/&gt;')
+RE_L = re.compile(r'&lt;l\s[^&lt;]*/&gt;')
+RE_CIT = re.compile(r'&lt;cit\s[^&lt;]*/&gt;')
+RE_QUOTE = re.compile(r'&lt;quote\s[^&lt;]*/&gt;')
+RE_OPENQT = re.compile(r'“')
+RE_CLOSEQT = re.compile(r'”')
+RE_GAP = re.compile(r'&lt;gap\s[^&lt;]*/&gt;')
+# &lt;milestone unit="tei:p"/&gt;
+RE_sgaP = re.compile(r'&lt;milestone\sunit="tei:p"[^&lt;]*/&gt;')
+
+. . .
+
+def normalize(inputText):
+# 2018-09-23 ebb THIS WORKS, SOMETIMES, BUT NOT EVERWHERE: RE_MULTICAPS.sub(format(re.findall(RE_MULTICAPS, inputText, flags=0)).title(), \
+# RE_INNERCAPS.sub(format(re.findall(RE_INNERCAPS, inputText, flags=0)).lower(), \
+    return RE_MILESTONE.sub('', \
+        RE_INCLUDE.sub('', \
+        RE_AB.sub('', \
+        RE_HEAD.sub('', \
+        RE_AMP.sub('and', \
+        RE_MDEL.sub('', \
+        RE_SHI.sub('', \
+        RE_HI.sub('', \
+        RE_LB.sub('', \
+        RE_PB.sub('', \
+        RE_PARA.sub('&lt;p/&gt;', \
+        RE_sgaP.sub('&lt;p/&gt;', \
+        RE_LG.sub('&lt;lg/&gt;', \
+        RE_L.sub('&lt;l/&gt;', \
+        RE_CIT.sub('', \
+        RE_QUOTE.sub('', \
+        RE_OPENQT.sub('"', \
+        RE_CLOSEQT.sub('"', \
+        RE_GAP.sub('', \
+        RE_DELSTART.sub('&lt;del&gt;', \
+        RE_ADDSTART.sub('&lt;add&gt;', \
+        RE_METAMARK.sub('', inputText)))))))))))))))))))))).lower()  
+                </pre>            
+                        I came to realize that in the more writerly environment of the XSLT stylesheets for
+                        TAN Diff, It is easier to review the code, which would be helpful to me setitng it
+                        down and returning to it after some months or years. 
+                        </p>
+                     <p id="d3e499">More to the point of this experiment with a new alignment method, does it succeed
+                        in reducing the tokenization and noramlization alignments discussed in the previous
+                        section? So far, yes, often with identical correct alignments and usually with longer
+                        matches. For example, on the passage that illustrated the <q>smashed tokens</q> problem, here is tan collate's output: 
+                        
+                        <pre class="programlisting" id="d3e503"><!--language: xml-->
+                &lt;u&gt;
+         &lt;txt&gt;spot,&lt;/txt&gt;
+         &lt;wit ref="2-1818_fullFlat_C27" pos="1423"/&gt;
+         &lt;wit ref="4-Thomas_fullFlat_C27" pos="1423"/&gt;
+         &lt;wit ref="3-1823_fullFlat_C27" pos="1421"/&gt;
+         &lt;wit ref="5-1831_fullFlat_C27" pos="1422"/&gt;
+      &lt;/u&gt;
+      &lt;u&gt;
+         &lt;txt&gt;spot&lt;/txt&gt;
+         &lt;wit ref="1-msColl_C27" pos="317"/&gt;
+      &lt;/u&gt;
+      &lt;c&gt;
+         &lt;txt&gt; and &lt;/txt&gt;
+         &lt;wit ref="2-1818_fullFlat_C27" pos="1428"/&gt;
+         &lt;wit ref="4-Thomas_fullFlat_C27" pos="1428"/&gt;
+         &lt;wit ref="3-1823_fullFlat_C27" pos="1426"/&gt;
+         &lt;wit ref="5-1831_fullFlat_C27" pos="1427"/&gt;
+         &lt;wit ref="1-msColl_C27" pos="321"/&gt;
+      &lt;/c&gt;
+      &lt;u&gt;
+         &lt;txt&gt;endeavoured,&lt;/txt&gt;
+         &lt;wit ref="2-1818_fullFlat_C27" pos="1433"/&gt;
+         &lt;wit ref="4-Thomas_fullFlat_C27" pos="1433"/&gt;
+         &lt;wit ref="3-1823_fullFlat_C27" pos="1431"/&gt;
+         &lt;wit ref="5-1831_fullFlat_C27" pos="1432"/&gt;
+      &lt;/u&gt;
+      &lt;u&gt;
+         &lt;txt&gt;endeavoured &lt;/txt&gt;
+         &lt;wit ref="1-msColl_C27" pos="326"/&gt;
+      &lt;/u&gt;     
+            </pre>
+                        
+                        I have found no problems with empty tokens created from markup, and overall the number
+                        of aligned groups is much smaller. Here is a summary of total aligned reading groups
+                        and unison aligned reading groups for the same collation unit as processed by Python-mediated
+                        CollateX vs. Tan Diff XSLT:
+                        
+                        
+                        <div class="table-wrapper" id="mul-table1">
+                           <p class="title">Table&nbsp;I</p>
+                           <div class="caption">
+                              <p id="d3e508">Alignments generated by CollateX vs. Tan Diff</p>
+                           </div>
+                           <table class="table" xml:id="mul-table1" frame="box">
+                              <thead>
+                                 <tr valign="top">
+                                    <th>Alignment</th>
+                                    <th>CollateX</th>
+                                    <th>Tan Diff/Collate</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr>
+                                    <th>Unison Alignments (all witnesses the same)</th>
+                                    <td>1198</td>
+                                    <td>515</td>
+                                 </tr>
+                                 <tr>
+                                    <th>All Alignments (unison and divergent)</th>
+                                    <td>2315</td>
+                                    <td>1932</td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                        In general, the alignments were longer in tan diff (as expected), and the tokenization
+                        and normalization outcomes are much more reliable. At the time of this writing, it
+                        seems to make sound sense to take a moment and adapt tan collate to the pipeline of
+                        the Frankenstein Variorum project, since it appears even <q>out of the box</q> to produce fewer alignment problems. By the time of the Balisage conference, I will
+                        have completed a more thorough analysis of tan diff's adaptability for this project
+                        and its potential to reduce the complexity of our workflow, reviewing it with more
+                        complicated passages of more divergent witnesses. XSLT and XPath functions appear
+                        to be a robust way of handling the complex algorithms of collation, and a wise application
+                        in nearly all stages of the Gothenburg model. 
+                        </p>
+                  </div>
+                  <div class="footnotes"><br><hr width="100" align="left">
+                     <div id="d3e75" class="footnote">
+                        <p><sup class="fn-label"><a href="#d3e75-ref" class="footnoteref">[1]</a></sup> Interedition Development Group, <q>The Gothenburg Model</q>, 2010-2019. <a href="https://collatex.net/doc/" class="link">https://collatex.net/doc/</a></p>
+                     </div>
+                     <div id="d3e91" class="footnote">
+                        <p><sup class="fn-label"><a href="#d3e91-ref" class="footnoteref">[2]</a></sup> Birnbaum, David J. and Elena Spadini, <q>Reassessing the locus of normalization in machine-assisted collation</q> <span class="ital">DHQ: Digital Humanities Quarterly</span> 14:3 (2020). <a href="http://www.digitalhumanities.org/dhq/vol/14/3/000489/000489.html" class="link">http://www.digitalhumanities.org/dhq/vol/14/3/000489/000489.html</a>.</p>
+                     </div>
+                     <div id="d3e105" class="footnote">
+                        <p><sup class="fn-label"><a href="#d3e105-ref" class="footnoteref">[3]</a></sup> John Bradley, <q>Text Tools</q> in <span class="ital">A Companion to Digital Humanities</span>, ed. Susan Schreibman, Ray Siemens, and John Unsworth (Wiley, 2004) pages 505-522.</p>
+                     </div>
+                     <div id="d3e137" class="footnote">
+                        <p><sup class="fn-label"><a href="#d3e137-ref" class="footnoteref">[4]</a></sup> Beshero-Bondar, Elisa Eileen. <q>Rebuilding a Digital Frankenstein by 2018: Reflections toward a Theory of Losses and
+                              Gains in Up-Translation.</q> Presented at Up-Translation and Up-Transformation: Tasks, Challenges, and Solutions,
+                           Washington, DC, July 31, 2017. In <span class="ital">Proceedings of Up-Translation and Up-Transformation: Tasks, Challenges, and Solutions.
+                              Balisage Series on Markup Technologies</span>, vol. 20 (2017). <a href="https://doi.org/10.4242/BalisageVol20.Beshero-Bondar01." class="link">https://doi.org/10.4242/BalisageVol20.Beshero-Bondar01</a>.</p>
+                     </div>
+                     <div id="d3e151" class="footnote">
+                        <p><sup class="fn-label"><a href="#d3e151-ref" class="footnoteref">[5]</a></sup> See Beshero-Bondar, Elisa E., and Raffaele Viglianti. <q>Stand-off Bridges in the Frankenstein Variorum Project: Interchange and Interoperability
+                              within TEI Markup Ecosystems.</q> Presented at Balisage: The Markup Conference 2018, Washington, DC, July 31 - August
+                           3, 2018. In <span class="ital">Proceedings of Balisage: The Markup Conference 2018. Balisage Series on Markup Technologies</span>, vol. 21 (2018); <a href="https://doi.org/10.4242/BalisageVol21.Beshero-Bondar01." class="link">https://doi.org/10.4242/BalisageVol21.Beshero-Bondar01</a>. I am also grateful to Michael Sperberg-McQueen and David Birnbaum for their guidance
+                           of my efforts to <q>raise</q> flattened markup into hierarchical markup leading to a Balisage paper evaluating
+                           multiple methods for attempting this. See Birnbaum, David J., Elisa E. Beshero-Bondar
+                           and C. M. Sperberg-McQueen. <q>Flattening and unflattening XML markup: a Zen garden of XSLT and other tools.</q> Presented at Balisage: The Markup Conference 2018, Washington, DC, July 31 - August
+                           3, 2018. In <span class="ital">Proceedings of Balisage: The Markup Conference 2018. Balisage Series on Markup Technologies</span>, vol. 21 (2018). <a href="https://doi.org/10.4242/BalisageVol21.Birnbaum01" class="link">https://doi.org/10.4242/BalisageVol21.Birnbaum01</a>. 
+                           </p>
+                     </div>
+                     <div id="d3e218" class="footnote">
+                        <p><sup class="fn-label"><a href="#d3e218-ref" class="footnoteref">[6]</a></sup> On Trojan markup, see Steven J. DeRose and David G. Durand, <q>The TEI Hypertext Guidelines</q>, <span class="ital">Computers and the Humanities</span> vol. 29 (1995), pp. 181-190. <a href="https://link.springer.com/content/pdf/10.1007/BF01830615.pdf" class="link">https://link.springer.com/content/pdf/10.1007/BF01830615.pdf</a>.
+                           and Sperberg-McQueen, C. M. <q>Representing concurrent document structures using Trojan Horse markup.</q> Presented at Balisage: The Markup Conference 2018, Washington, DC, July 31 - August
+                           3, 2018. In <span class="ital">Proceedings of Balisage: The Markup Conference 2018. Balisage Series on Markup Technologies</span>, vol. 21 (2018). <a href="https://doi.org/10.4242/BalisageVol21.Sperberg-McQueen01" class="link">https://doi.org/10.4242/BalisageVol21.Sperberg-McQueen01</a>.</p>
+                     </div>
+                     <div id="d3e345" class="footnote">
+                        <p><sup class="fn-label"><a href="#d3e345-ref" class="footnoteref">[7]</a></sup> Our production pipeline unfolds in a series of GitHub repos at <a href="https://github.com/FrankensteinVariorum" class="link">https://github.com/FrankensteinVariorum</a>.</p>
+                     </div>
+                     <div id="d3e467" class="footnote">
+                        <p><sup class="fn-label"><a href="#d3e467-ref" class="footnoteref">[8]</a></sup> Kalvesmaki, Joel. <q>String Comparison in XSLT with tan:diff().</q> Presented at Balisage: The Markup Conference 2021, Washington, DC, August 2 - 6,
+                           2021. In <span class="ital">Proceedings of Balisage: The Markup Conference 2021. Balisage Series on Markup Technologies</span>, vol. 26 (2021). <a href="https://doi.org/10.4242/BalisageVol26.Kalvesmaki01" class="link">https://doi.org/10.4242/BalisageVol26.Kalvesmaki01</a>.</p>
+                     </div>
+                  </div>
+               </div>
+               <div id="author-keywords">
+                  <h5 class="keywords">Author's keywords for this paper:</h5> <span class="keyword">collation</span>; <span class="keyword">tokenization</span>; <span class="keyword">normalization</span>; <span class="keyword">alignment</span>; <span class="keyword">Gothenburg model</span>; <span class="keyword">XSLT</span>; <span class="keyword">Python</span>; <span class="keyword">stand-off markup</span>; <span class="keyword">stand-off pointers</span></div>
+               <div id="balisage-footer">
+                  <h3>Balisage Series on Markup Technologies</h3>
+               </div>
+            </main>
+         </body>
+      </html>
+      <div id="balisage-footer">
+         <h3><!--* balisage-html.xsl 519.38 *--><i>Balisage:</i>&nbsp;<small>The Markup Conference</small></h3>
+      </div>
+   </body>
+</html>
