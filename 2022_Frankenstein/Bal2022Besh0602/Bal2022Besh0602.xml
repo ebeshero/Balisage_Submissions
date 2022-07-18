@@ -5,11 +5,11 @@
 <article xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink"
     version="5.0-subset Balisage-1.5">
 
-    <title>Correcting Collation Problems with XSLT</title>
+    <title>Adventures in Correcting XML Collation Problems with Python and XSLT</title>
     <subtitle>Untangling the Frankenstein Variorum</subtitle>
     <info>
         <abstract>
-            <para>Computer-aided collation is like a power loom that inevitably tangles up threads caught in the machinery. Automating a tedious process magnifies the complexity of error-correction, calling for new tooling to help us smooth the weaving process. The authors are attempting to refine a collation algorithm to improve its alignment of variant passages in the <link xlink:href="https://frankensteinvariorum.github.io/">Frankenstein Variorum</link> project. In this paper we investigate how best to engage XSLT in the collation process, with our project files as a case study. We have begun with a Python script that tokenizes and normalizes the texts of the editions and delivers them to <link xlink:href="https://collatex.net/">collateX</link> for processing the collation and delivering TEI-conformant output for our project. Our pipeline has applied XSLT to prepare editions for collation and also in post-processing to correct patterns of erroneous alignments. We are now experimenting with the Text Alignment Network's <link xlink:href="https://github.com/textalign/TAN-2021/blob/master/applications/Diff%2B/Diff%2B.xsl">tandiff XSLT</link>, introduced by Joel Kalvesmaki at the Balisage 2021 conference, to handle the string comparison completely with XPath and XSLT. In this paper we discuss our experiments with collateX and tandiff, with an emphasis on how far we can take XSLT and Schematron in helping to automate the preparation, collation, and correction process.</para>
+            <para>The process of instructing a computer to compare texts, known as computer-aided collation, might resemble trying to fix a power loom when the threads it is supposed to weave together become tangled. The power of the automated weaving continues, with the threads improperly aligned and the pattern broken in a way that can make it difficult to isolate the cause of the problem. Automating a tedious process magnifies the complexity of error-correction, sometimes calling for new tooling to help us perfect the weaving or collating process. The authors are attempting to refine a collation algorithm to improve its alignment of variant passages in the <link xlink:href="https://frankensteinvariorum.github.io/">Frankenstein Variorum</link> project. In this paper we investigate how best to engage XSLT in the collation process, with our project files as a case study. We have begun with a Python script that tokenizes and normalizes the texts of the editions and delivers them to <link xlink:href="https://collatex.net/">collateX</link> for processing the collation and delivering TEI-conformant output for our project. Following collation, we apply a series of XSLT transformations to the collation output in a production pipeline that publishes the digital variorum edition, which prepares each output witness in TEI XML to store information about its own variance from the other editions. We have also applied Schematron and XSLT in post-processing to correct patterns of erroneous alignments, but eventually realized that the problems we were trying to solve required repairing the collation algorithm. We are now experimenting with revising the collation algorithm in two ways: 1) by fine-tuning the text preparation algorithms we apply in our Python file that delivers text to the collateX software, and 2) by attempting to introduce those same text preparation algorithms entirely with XSLT using the Text Alignment Network's XSLT application of <code>tan:diff()</code> and <code>tan:collate()</code>, introduced by Joel Kalvesmaki at the 2021 Balisage conference. In this paper we discuss the challenges of figuring out where and how to intervene in the collation process, and what we are learning about how far we can take XSLT and Schematron in helping to automate the preparation, collation, and correction process.</para>
         </abstract>
         <author>
             <personname>
@@ -47,16 +47,17 @@
             <keyword>normalization</keyword>
             <keyword>alignment</keyword>
             <keyword>Gothenburg model</keyword>
-            <keyword>XSLT</keyword>
             <keyword>Python</keyword>
+            <keyword>XSLT</keyword>
             <keyword>stand-off markup</keyword>
             <keyword>stand-off pointers</keyword>
         </keywordset>
     </info>
     <section>
-        <title>Cycles of Time with the Gothenburg Model</title>
+        <title>Cycles of time in the Gothenburg model for computer-aided collation</title>
+        <para>WHAT EVEN IS COLLATION ANYWAY? Cite Dekker 2014. </para>
         <para>This paper marks a return to work on a digital collation project that began in the years just before the pandemic, and paused a moment in 2020-2021 as I moved to a new job and concentrated on teaching and running a program in a new university during the time of COVID. Returning to work on the Frankenstein Variorum has necessitated reorienting myself to complicated processes and reviewing the problems we identified as we last documented and left them. This has been a labor of reviewing and sampling our past code and renewing documentation, trying to find new and better ways to continue our work.</para>
-        <para>Much of this project has investigated methods of moving between hierarchical and <quote>flat</quote> text structures, moving back and forth between markup and strings as we thread our texts into the machine power-loom of collation software, examine the woven output, and contemplate snags and snarls. The Gothenburg model guides our work, an elaboration of five distinct stages of work necessary to guide machine-assisted collation as established in 2009 by the developers of collateX and Juxta in Gothenburg, Sweden: 
+        <para>Much of this project has investigated methods of moving between hierarchical and <quote>flat</quote> text structures, moving back and forth between markup and strings as we thread our texts into the machine power-loom of collation software, examine the woven output, and contemplate how to untangle the snags and snarls we find. The Gothenburg model guides our work, an elaboration of five distinct stages of work necessary to guide machine-assisted collation as established in 2009 by the developers of collateX and Juxta in Gothenburg, Sweden: 
             
             <orderedlist>
                 <listitem>
