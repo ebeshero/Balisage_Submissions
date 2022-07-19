@@ -114,7 +114,7 @@
                         <listitem>
                             <para><quote>Flattening</quote> the edition files' structural markup into Trojan milestone elements (converting structural elements that wrap chapters, letters, and paragraphs like <code>&lt;div xml:id="chap-ID"&gt;</code> into self-closed matched pairs of elements to mark the starts and ends of structures: <code>div sID="chap-ID"/></code> and <code>div eID="chap-ID"/></code>). The use of these empty milestones facililates the inclusion of markup in the collation when, for example, a version inserts a new paragraph of chapter boundary within an otherwise identical passage in the other editions. Ultimately this flattening in pre-processing facilitates post-processing of the edition files from text strings to XML holding collation data.
                             <footnote>
-                                <para>On Trojan markup, see Steven J. DeRose and David G. Durand, <quote>The TEI Hypertext Guidelines</quote>, <emphasis role="ital">Computers and the Humanities</emphasis> vol. 29 (1995), pp. 181-190. <link xlink:href="https://link.springer.com/content/pdf/10.1007/BF01830615.pdf">https://link.springer.com/content/pdf/10.1007/BF01830615.pdf</link>.
+                                <para>On Trojan markup, see Steve DeRose, <quote>Markup Overlap: A Review and a Horse</quote>, <emphasis role="ital">Extreme Markup Languages</emphasis> 2004. <link xlink:href="https://www.academia.edu/42096176/Markup_Overlap_A_Review_and_a_Horse">https://www.academia.edu/42096176/Markup_Overlap_A_Review_and_a_Horse</link>.
                                     and Sperberg-McQueen, C. M. <quote>Representing concurrent document structures using Trojan Horse markup.</quote> Presented at Balisage: The Markup Conference 2018, Washington, DC, July 31 - August 3, 2018. In <emphasis role="ital">Proceedings of Balisage: The Markup Conference 2018. Balisage Series on Markup Technologies</emphasis>, vol. 21 (2018). <link xlink:href="https://doi.org/10.4242/BalisageVol21.Sperberg-McQueen01">https://doi.org/10.4242/BalisageVol21.Sperberg-McQueen01</link>.</para>
                             </footnote>
                             </para>
@@ -231,14 +231,15 @@
 		    &lt;/rdgGrp&gt;
 	  &lt;/app&gt;
                     </programlisting>
-    
-   Apply this collation data in post-processing to prepare the edition files:
+                </para></listitem>
+   <listitem>
+       <para>Apply this collation data in post-processing to prepare the edition files:
                     <itemizedlist>
                         <listitem>
                             <para><quote>Raise</quote> the flattened editions in their original form (convert Trojan milestones into the original tree hierarchy).</para>
                         </listitem>
                         <listitem>
-                            <para>With XSLT, pull from the <quote>spine</quote> file to map <code>&lt;seg&gt;</code> elements to each separate edition file at every point of variance captured in the collation. Each <code>&lt;seg&gt;</code> element is keyed by XPath location markers to the collation <quote>spine</quote> file. Here is an example of <code>&lt;seg&gt;</code> elements applied in the 1818 edition. The <code>@xml:id</code> are keyed to the specific <code>&lt;app&gt;</code> elements in the portion of the spine representing collation unit 10. Where the collation <quote>spine</quote> marks passages around chapter headings and paragraph boundaries, we apply a <code>@part</code> attribute to designate an initial and final portion within the structure of the edition XML file:
+                            <para>With XSLT, pull information from the <quote>spine</quote> file, and insert  <code>&lt;seg&gt;</code> elements in each of the distinct edition files to mark every point of variance captured in the collation. Each <code>&lt;seg&gt;</code> element is mapped to a specific location in the collation <quote>spine</quote> file. This mapping is done by recording in the value of the <code>seg @xml:id</code> a modified XPath expression for the particular <code>&lt;app&gt;</code> element in the collation spine. (The modification to the XPath is necessary so that the result is valid as an xml:id, which may not contain a solidus.) Here is an example of <code>&lt;seg&gt;</code> elements applied in the 1818 edition file. Here the <code>@xml:id</code> attributes are keyed to the specific <code>&lt;app&gt;</code> elements in the portion of the spine representing collation unit 10. Where the collation <quote>spine</quote> marks passages around chapter headings and paragraph boundaries, we apply a <code>@part</code> attribute to designate an initial and final portion within the structure of the edition XML file:
                             <programlisting language="xml">
          &lt;div type="collation"&gt;
             &lt;milestone n="4" type="start" unit="chapter"/&gt;
@@ -262,9 +263,9 @@
                             </para>
                         </listitem>
                         <listitem>
-                            <para>Convert the text contents of the <quote>spine</quote> critical apparatus into stand-off pointers to the <code>&lt;seg&gt;</code> elements new edition files. Here is a passage from the converted <quote>standoff spine</quote> featuring only the 
-                                normalized tokens for each variant passage, and containing pointers to the location of a <code>&lt;seg&gt;</code>
-                                element in each edition XML file corresponding with a reading witness:
+                            <para>Convert the text contents of the <quote>spine</quote> critical apparatus into stand-off pointers to the <code>&lt;seg&gt;</code> elements in the new edition files. Here is a passage from the converted <quote>standoff spine</quote> featuring only the 
+                                normalized tokens for each variant passage, and containing pointers to the locations of <code>&lt;seg&gt;</code>
+                                elements in each edition XML file corresponding with a reading witness:
                             <programlisting language="xml">
             &lt;app xml:id="C10_app7" n="48"&gt;
                &lt;rdgGrp xml:id="C10_app7_rg1"
@@ -298,7 +299,7 @@
                     </itemizedlist>
                 </para>
                 </listitem>
-                <listitem><para>Publish the XML via a web framework (optimally CETEIcean but <link xlink:href="https://frankensteinvariorum.github.io/viewer/">for now, using Node.js and React</link>). Share the edition text files and XML data from our <link xlink:href="https://github.com/FrankensteinVariorum/fv-data">GitHub repo sharing files at completed stages of our pipeline</link>.
+                <listitem><para>Publish the XML via a web framework (optimally CETEIcean, but <link xlink:href="https://frankensteinvariorum.github.io/viewer/">for now using Node.js and React</link>). Share the edition text files and XML data from our <link xlink:href="https://github.com/FrankensteinVariorum/fv-data">GitHub repo</link>.
                     <figure xml:id="fvwebview" xreflabel="FV-webView">
                         <title>Web view of a variant passage in the <emphasis role="ital">Frankenstein Variorum</emphasis> reading interface</title>
                         <mediaobject>
@@ -307,7 +308,7 @@
                             </imageobject>
                         </mediaobject>
                         <caption>
-                            <para>A snapshot of the <emphasis role="ital">Frankenstein Variorum</emphasis> web interface showing the 1816 manuscript notebook edition at the moment when Victor Frankenstein looks at the form of his complete Creature, highlighting the variant passage featured in the preceding code blocks. The segmented passages highlight the variants with deepening shades based on Levenshtein distance measurements, divided into 3 ranges (very light for Levenshtein distances of a few characters, more intense for distances above 20).</para>
+                            <para>A snapshot of the <emphasis role="ital">Frankenstein Variorum</emphasis> web interface showing the 1816 manuscript notebook edition at the moment when Victor Frankenstein looks at the form of his complete Creature, highlighting the variant passage featured in the preceding code blocks. The segmented passages highlight the variants with deepening shades based on Levenshtein distance measurements, divided into 3 ranges (very light for Levenshtein distances of a few characters, mid-range, and more intense for distances above 20).</para>
                         </caption>
                     </figure>
                 <footnote>
@@ -322,7 +323,7 @@
         
         <section><title>Snags in the Weaving</title>
             <section><title>A Schematron flashlight</title>
-                <para>For an unhappy time two years ago, pressed by a deadline to launch a proof-of-concept partial version of the Variorum interface, I hand-corrected the outputs of collation, assisted by Schematron that would help me to identify common problems. The Schematron was like a flashlight guiding me through a brittle process of hand-moving witnesses to apps. The sheer volume of corrections was exhausting, and a short novel like <emphasis role="ital">Frankenstein</emphasis> could seem infinitely long and tortuously slow to read while attempting to make <quote>spine adjustments</quote>. I knew this method was not sufficient for our needs. This Schematron file was merely my first attempt to try to address the problem systematically:
+                <para>For an unhappy time two years ago, pressed by a deadline to launch a proof-of-concept partial version of the Variorum interface, I hand-corrected the outputs of collation assisted by a Schematron file that would help me to identify common problems. The Schematron was like a flashlight guiding me through a forest of code in efforts to revise the contents of <code>&lt;rdg&gt;</code> elements and refine the organization of <code>&lt;app&gt;</code> elements and their constituent <code>&lt;rdgGrp&gt;</code> elements. The sheer volume of corrections was exhausting, and a short novel like <emphasis role="ital">Frankenstein</emphasis> could seem infinitely long and tortuously slow to read while attempting to make <quote>spine adjustments</quote>. I knew this method was not sufficient for our needs. This Schematron file was merely my first attempt to try to address the problem systematically:
              <programlisting language="xml">
 &lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2"&gt;
@@ -359,7 +360,7 @@
         &lt;/sch:rule&gt;
     &lt;/sch:pattern&gt;
 &lt;/sch:schema&gt;</programlisting>   
-                When reviewing and editing collation <quote>spine</quote> files, I would apply this schema to guide my work and stop me from making terrible mistakes in hand-correcting common collation output problems, such as, for example, pasting a <code>&lt;rdgGrp&gt;</code> element inside another <code>&lt;rdgGrp&gt;</code> (permissible and useful in some TEI projects, but an outright mistake in our very simple spine). Eye fatigue is a serious problem in just about every stage of the Gothenburg model, and this Schematron did intervene to prevent clumsy mistakes. More importantly for the long-range work of the project, this simple Schematron file helped me to document and describe repeating patterns of error in the collation, most significantly here the <quote>singleton</quote> <code>&lt;app&gt;</code>, containing only one witness inside, and the incommplete witness that I wanted to include a complete act of deletion.
+                When reviewing and editing collation <quote>spine</quote> files, I would apply this schema to guide my work and stop me from making terrible mistakes in hand-correcting common collation output problems, such as, for example, pasting a <code>&lt;rdgGrp&gt;</code> element inside another <code>&lt;rdgGrp&gt;</code> (permissible and useful in some TEI projects, but an outright mistake in our very simple spine). Eye fatigue is a serious problem in just about every stage of the Gothenburg model, and this Schematron did intervene to prevent clumsy mistakes. More importantly for the long-range work of the project, this simple Schematron file helped me to begin documenting and describing repeating patterns of error in the collation, most significantly here the <quote>singleton</quote> <code>&lt;app&gt;</code>, containing only one witness inside, and the incommplete witness that I wanted to include a complete act of deletion.
             </para>
             </section>
             <section><title>XSLT for alignment correction</title>
@@ -431,7 +432,8 @@
     &lt;/xsl:template&gt;
 &lt;/xsl:stylesheet&gt;
 </programlisting>
-    <para>Next my little team and I began to tackle the noxious problem of <quote>empty tokens</quote>, that is, spurious <code>&lt;rdgGrp&gt;</code> elements that would form around a single witness, the SGA manuscript witness, with an empty normalized token formed on a normalized <code>&lt;lb/&gt;</code> element. In their most benign and frequently occurring form, they would appear a separate isolated <code>&lt;app&gt;</code> elements in between two <quote>unison apps</quote> (that is, interrupting a passage in which all witnesses should align in unison. Here is an example of the pattern. Those reading vigilantly will note that the expected octothorpe or sharp <code>#</code> characters indicating that this is a pointer to a defined <code>@xml:id</code> do not appear in the <code>@wit</code> attribute values in this example. These are simply lacking at their point of output from collateX, before it is reprocessed in the post-production pipeline as a TEI document. 
+                <para>Next my little team and I began to tackle the noxious problem of <quote>empty tokens</quote>, that is, spurious <code>&lt;app&gt;</code> elements that would form around a single witness, the Shelley-Godwin Archive's manuscript witness. Most frequently, these isolated <code>&lt;app&gt;</code> elements would with an empty token, <code>""</code>, formed to represent the normalized form  a <code>&lt;lb/&gt;</code> element. The empty token itself is quite correct for our collation normalization process: The Shelley-Godwin Archive editors applied line-by-line encoding of the manuscript notebook, and we need to preserve the information about each line in order to help ensure that each passage is connected back to its source edition file. So in our project, we must not ignore this markup, but we do normalize it for the purposes of the collation since, in our document data model, it is not meaningful information about how the  manuscript notebooks compare with the printed editions. In pre-processing the source files for collation, we converted the Shelley-Godwin Archive’s <code>&lt;line&gt;</code> elements into empty milestone markers as <code>&lt;lb/&gt;</code> marking the beginnings of each line, and these <code>&lt;lb&gt;</code> elements with their informative attributes are output as contents of <code>&lt;rdg wit="fMS"&gt;</code> in the <quote>spine</quote> file. Our normalizing algorithm converts them into empty tokens to indicate that they are meaningless for the purposes of collation, but they are nevertheless meaningful to the reconstruction of the 1816 manuscript edition information following collation.</para>
+                <para>In their most benign and frequently occurring form, the empty-token problem would appear in separate isolated <code>&lt;app&gt;</code> elements in between two <quote>unison apps</quote> (that is, interrupting a passage in which all witnesses should align in unison. Here is an example of the pattern. Those reading vigilantly will note that the expected octothorpe or sharp <code>#</code> characters indicating that this is a pointer to a defined <code>@xml:id</code> do not appear in the <code>@wit</code> attribute values in this example. These are simply lacking at their point of output from collateX, before it is reprocessed in the post-production pipeline as a TEI document. 
     <programlisting language="xml">
      &lt;app&gt;
 		&lt;rdgGrp n="['as', 'i', 'did', 'not', 'appear', 'to', 'know']"&gt;
@@ -456,7 +458,7 @@
 			&lt;rdg wit="fMS"&gt;the &lt;/rdg&gt;
 		&lt;/rdgGrp&gt;
 	&lt;/app&gt;</programlisting>
-   The <quote>empty token</quote> problem is evident here in the normalized form a lb element with all its attributes, being read properly as an empty token (not even a space), but somehow asserting its presence to interrupt a unison passage. At this point, there should be only one <code>&lt;app&gt;</code> element that should appear like this:
+   The <quote>empty token</quote> problem is evident here in the normalized form of an <code>&lt;lb/&gt;</code> element with all its attributes, being read properly as an array of one item, a null string, but somehow despite being nullified, asserting its presence to interrupt a unison passage. At this point, ideally there will be only one <code>&lt;app&gt;</code> element that should appear like this:
         <programlisting language="xml">
             &lt;app&gt;
 		&lt;rdgGrp n="['as', 'i', 'did', 'not', 'appear', 'to', 'know', 'the']"&gt;
@@ -464,7 +466,8 @@
 			&lt;rdg wit="f1823"&gt;as I did not appear to know the &lt;/rdg&gt;
 			&lt;rdg wit="fThomas"&gt;as I did not appear to know the &lt;/rdg&gt;
 			&lt;rdg wit="f1831"&gt;as I did not appear to know the &lt;/rdg&gt;
-			&lt;rdg wit="fMS"&gt;as I did not appear to know the &lt;/rdg&gt;
+			&lt;rdg wit="fMS"&gt;as I did not appear to know 
+			 &lt;rdg wit="fMS"&gt;&lt;lb n=&quot;c57-0119__main__14&quot;/&gt; the &lt;/rdg&gt;
 		&lt;/rdgGrp&gt;
 	&lt;/app&gt;
         </programlisting>
@@ -545,12 +548,11 @@
 
     </section>
         <section><title>XSLT for the win?</title>
-            <para>At the August 2021 Balisage conference, Joel Kalvesmaki introduced tan diff and tan collate, 
-                As I listened to the paper, I was struck by how simple Kalvesmaki made the process of string comparison seem in his explanation of tan:diff():  <blockquote><para>tan:diff() . . . extracts a series of progressively smaller samples from the shorter of the two texts and looks for a match in the longer one on the basis of fn:contains(). When a match is found, the results are separated by fn:substring-before() and fn:substring-after()<footnote><para>Kalvesmaki, Joel. <quote>String Comparison in XSLT with tan:diff().</quote> Presented at Balisage: The Markup Conference 2021, Washington, DC, August 2 - 6, 2021. In <emphasis role="ital">Proceedings of Balisage: The Markup Conference 2021. Balisage Series on Markup Technologies</emphasis>, vol. 26 (2021). <link xlink:href="https://doi.org/10.4242/BalisageVol26.Kalvesmaki01">https://doi.org/10.4242/BalisageVol26.Kalvesmaki01</link>.</para></footnote></para></blockquote>
-The simple use of XPath functions described here made the alignment process seem more familiar and accessible, amenable to the kinds of modifications I regularly make with my own XSLT. I wondered whether starting with attempts to match longer samples and moving to match shorter ones might generate fewer aligned clusters and reduce the spurious particulation I had been seeing in my Python-assisted process with collateX. So I have lately begun experimenting with tan:diff and tan:collate().
+            <para>At the August 2021 Balisage conference, Joel Kalvesmaki introduced <code>tan:diff</code> and <code>tan:collate</code>. As I listened to the paper, I was struck by how clear, simple, and precise Kalvesmaki made the process of string comparison seem, using XPath and XSLT:  <blockquote><para><code>tan:diff()</code> . . . extracts a series of progressively smaller samples from the shorter of the two texts and looks for a match in the longer one on the basis of <code>fn:contains()</code>. When a match is found, the results are separated by <code>fn:substring-before()</code> and <code>fn:substring-after()</code><footnote><para>Kalvesmaki, Joel. <quote>String Comparison in XSLT with tan:diff().</quote> Presented at Balisage: The Markup Conference 2021, Washington, DC, August 2 - 6, 2021. In <emphasis role="ital">Proceedings of Balisage: The Markup Conference 2021. Balisage Series on Markup Technologies</emphasis>, vol. 26 (2021). <link xlink:href="https://doi.org/10.4242/BalisageVol26.Kalvesmaki01">https://doi.org/10.4242/BalisageVol26.Kalvesmaki01</link>.</para></footnote></para></blockquote>
+The application of XPath functions described here made the alignment process seem more familiar and accessible, amenable to the kinds of modifications I regularly make with my own XSLT. I wondered whether starting with attempts to match longer samples and moving to match shorter ones might generate fewer aligned clusters and reduce the spurious particulation I had been seeing in my Python-assisted process with collateX. So I have lately begun experimenting with <code>tan:diff()</code> and <code>tan:collate()</code>.
             </para>
-           <para>At the time of this writing, I have begun testing a collation unit from the <emphasis role="ital">Frankenstein Variorum</emphasis>, the same featured above that produced the <quote>smashed tokens</quote> problem featured in the previous section. Currently I am applying the software following Kalvesmaki's detailed comments within his sample Diff XSLT files guiding the user to generate TAN Diff's native XML and HTML output. The XML output is like, but yet unlike the TEI critical apparatus structure we have been using in the <emphasis role="ital">Frankenstein Variorum</emphasis> project. The markup is simply organized in <code>&lt;c&gt;</code> when all witnesses share a normalized string, and <code>&lt;u&gt;</code> when they are variant from each other. There is nothing like the <code>&lt;app&gt;</code> element to bundle together related groups. But this is the realm of XSLT and the developers encourage their users to adapt the code to their needs. I have not yet definitively located where to apply the <code>&lt;app&gt;</code> element I require in the XSLT file housing tan:collate()'s functions, but I will almost certainly do so before the conference.</para>
-            <para>Most importantly, I have been applying and updating my 25 normalizing replacement patterns via XSLT and find this much more legible than my handling of the same in my Python script (which sometimes contained duplicate passages). XSLT, by nature of being written in XML is XPathable, and with a large quantity of replacement sequences, I am able to check and sequence the process carefully in a way that is easier for me to document legibly.
+           <para>At the time of this writing, I have begun testing a collation unit from the <emphasis role="ital">Frankenstein Variorum</emphasis>, the same featured above that produced the <quote>smashed tokens</quote> problem featured in the previous section. Currently I am applying the software following Kalvesmaki’s detailed comments within his sample Diff XSLT files guiding the user to generate TAN Diff's native XML and HTML output. The XML output is like, but yet unlike the TEI critical apparatus structure we have been using in the <emphasis role="ital">Frankenstein Variorum</emphasis> project. The markup is simply organized in <code>&lt;c&gt;</code> when all witnesses share a normalized string, and <code>&lt;u&gt;</code> when they are variant from each other. There is nothing like the <code>&lt;app&gt;</code> element to bundle together related groups. But this is the realm of XSLT and the developers encourage their users to adapt the code to their needs. Alas, however, at the time of this writing, it appears there may be no straightforward way for me, without assistance from the developer, to output the original text in the format we need for the <quote>spine</quote> of the <emphasis role="ital">Frankenstein Variorum</emphasis> project. This remains an area for future development.</para>
+            <para>Nevertheless, I have been applying and updating my 25 normalizing replacement patterns via XSLT and find this much more legible than my handling of the same in my Python script (which sometimes contained duplicate passages). XSLT, by nature of being written in XML is XPathable, and with a large quantity of replacement sequences, I am able to check and sequence the process carefully in a way that is easier for me to document legibly.
             <programlisting language="xml">
                 &lt;!-- Should punctuation be ignored? --&gt;
     &lt;xsl:param name="tan:ignore-punctuation-differences" as="xs:boolean" select="false()"/&gt;
@@ -563,21 +565,29 @@ The simple use of XPath functions described here made the alignment process seem
          &lt;replace pattern="&amp;amp;" replacement="and" message="ampersand batch replacement"/&gt;
         &lt;replace pattern="&lt;/?xml&gt;" replacement="" message="xml tag replacement"/&gt;
         &lt;replace pattern="(&lt;p)\s+.+?(/&gt;)" replacement="$1$2" message="p-tag batch replacement"/&gt;
-        &lt;replace pattern="(&lt;)(metamark).*?(&gt;).+?\1/\2\3" replacement="" message="metamark batch replacement"/&gt;&lt;!--ebb: metamark contains a text node, and we don't want its contents processed in the collation, so this captures the entire element. --&gt;
-        &lt;replace pattern="(&lt;/?)m(del).*?(&gt;)" replacement="$1$2$3" message="mdel-SGA batch replacement"/&gt;  &lt;!--ebb: mdel contains a text node, so this catches both start and end tag.
+        &lt;replace pattern="(&lt;)(metamark).*?(&gt;).+?\1/\2\3" replacement="" message="metamark batch replacement"/&gt;
+        &lt;!--ebb: metamark contains a text node, and we don't want its contents processed in the collation, so this captures the entire element. --&gt;
+        &lt;replace pattern="(&lt;/?)m(del).*?(&gt;)" replacement="$1$2$3" message="mdel-SGA batch replacement"/&gt;  
+        &lt;!--ebb: mdel contains a text node, so this catches both start and end tag.
         We want mdel to be processed as &lt;del&gt;...&lt;/del&gt;--&gt;
-        &lt;replace pattern="&lt;/?damage.*?&gt;" replacement="" message="damage-SGA batch replacement"/&gt; &lt;!--ebb: damage contains a text node, so this catches both start and end tag. --&gt;
-        &lt;replace pattern="&lt;/?unclear.*?&gt;" replacement="" message="unclear-SGA batch replacement"/&gt; &lt;!--ebb: unclear contains a text node, so this catches both start and end tag. --&gt;
-        &lt;replace pattern="&lt;/?retrace.*?&gt;" replacement="" message="retrace-SGA batch replacement"/&gt; &lt;!--ebb: retrace contains a text node, so this catches both start and end tag. --&gt;
-        &lt;replace pattern="&lt;/?shi.*?&gt;" replacement="" message="shi-SGA batch replacement"/&gt; &lt;!--ebb: shi (superscript/subscript) contains a text node, so this catches both start and end tag. --&gt;
+        &lt;replace pattern="&lt;/?damage.*?&gt;" replacement="" message="damage-SGA batch replacement"/&gt; 
+        &lt;!--ebb: damage contains a text node, so this catches both start and end tag. --&gt;
+        &lt;replace pattern="&lt;/?unclear.*?&gt;" replacement="" message="unclear-SGA batch replacement"/&gt; 
+        &lt;!--ebb: unclear contains a text node, so this catches both start and end tag. --&gt;
+        &lt;replace pattern="&lt;/?retrace.*?&gt;" replacement="" message="retrace-SGA batch replacement"/&gt; 
+            &lt;!--ebb: retrace contains a text node, so this catches both start and end tag. --&gt;
+        &lt;replace pattern="&lt;/?shi.*?&gt;" replacement="" message="shi-SGA batch replacement"/&gt; 
+        &lt;!--ebb: shi (superscript/subscript) contains a text node, so this catches both start and end tag. --&gt;
         &lt;replace pattern="(&lt;del)\s+.+?(/&gt;)" replacement="$1$2" message="del-tag batch replacement"/&gt;
         &lt;replace pattern="&lt;hi.+?/&gt;" replacement="" message="hi batch replacement"/&gt;
         &lt;replace pattern="&lt;pb.+?/&gt;" replacement="" message="pb batch replacement"/&gt;
         &lt;replace pattern="&lt;add.+?&gt;" replacement="" message="add batch replacement"/&gt;
         &lt;replace pattern="&lt;w.+?/&gt;" replacement="" message="w-SGA batch replacement"/&gt;
-        &lt;replace pattern="(&lt;del)Span.+?spanTo=&quot;#(.+?)&quot;.*?(/&gt;)(.+?)&lt;anchor.+?xml:id=&quot;\2&quot;.*?&gt;" replacement="$1$3$4$1$3" message="delSpan-to-anchor-SGA batch replacement"/
+        &lt;replace pattern="(&lt;del)Span.+?spanTo=&quot;#(.+?)&quot;.*?(/&gt;)(.+?)&lt;anchor.+?xml:id=&quot;\2&quot;.*?&gt;" 
+            replacement="$1$3$4$1$3" message="delSpan-to-anchor-SGA batch replacement"/
        &lt;replace pattern="&lt;anchor.+?/&gt;" replacement="" message="anchor-SGA batch replacement"/&gt;  
-        &lt;replace pattern="&lt;milestone.+?unit=&quot;tei:p&quot;.+?/&gt;" replacement="&lt;p/&gt; &lt;p/&gt;" message="milestone-paragraph-SGA batch replacement"/&gt;  
+        &lt;replace pattern="&lt;milestone.+?unit=&quot;tei:p&quot;.+?/&gt;" replacement="&lt;p/&gt; &lt;p/&gt;" 
+            message="milestone-paragraph-SGA batch replacement"/&gt;  
         &lt;replace pattern="&lt;milestone.+?/&gt;" replacement="" message="milestone non-p batch replacement"/&gt;  
         &lt;replace pattern="&lt;lb.+?/&gt;" replacement="" message="lb batch replacement"/&gt;  
         &lt;replace pattern="&lt;surface.+?/&gt;" replacement="" message="surface-SGA batch replacement"/&gt; 
@@ -730,7 +740,8 @@ I have found no problems with empty tokens created from markup, and overall the 
                         </tr>
                     </tbody>
                 </table>
-                In general, the alignments were longer in tan diff (as expected), and the tokenization and normalization outcomes are much more reliable. At the time of this writing, it seems to make sound sense to take a moment and adapt tan collate to the pipeline of the <emphasis role="ital">Frankenstein Variorum</emphasis> project, since it appears even <quote>out of the box</quote> to produce fewer alignment problems. By the time of the Balisage conference, I will have completed a more thorough analysis of tan diff's adaptability for this project and its potential to reduce the complexity of our workflow, reviewing it with more complicated passages of more divergent witnesses. XSLT and XPath functions appear to be a robust way of handling the complex algorithms of collation, and a wise application in nearly all stages of the Gothenburg model. 
+                In general, the alignments were longer in <code>tan:diff()</code> (as expected), and the tokenization and normalization outcomes appear so far to be reasonably reliable, though this is difficult to tell without being able to see the original passages in the TAN collation XML output. When this functionality is achieved, it would make sound sense to take a moment and adapt <code>tan:collate()</code> to the pipeline of the <emphasis role="ital">Frankenstein Variorum</emphasis> project, since it appears even <quote>out of the box</quote> to produce fewer alignment problems. At the time of this writing, however, it is difficult to navigate the TAN library of included XSLT files and to fully understand how to intervene in the collation output process.</para>
+            <para>Just because it is written in XSLT and is well-documented for public usability, does not mean an XSLT library is any more or less adaptable to intensive customization than a library made of other forms of code. As I write this concluding paragraph in mid-July 2022, my student assistant Yuying Jin and I have made a significant breakthrough in modifying our pre-processing Python script for collateX, and we have succeeded in handling the problem of spliced tokens, though we have now multipled the number of empty null-string tokens. Since it now appears easier to continue refining our Python script than to intervene in the labyrinthine XSLT library of functions, we will proceed in this direction for now, and look forward to future developments to improve the customization potential of the TAN library. The XSLT process promises to make the recursive pre-programming cycles in the Gothenburg model more amenable to clear documentation, and the effort to investigate two pre-processing methods via Python, and via XSLT, has proven fruitful to resolve many problems in our original process. The TAN library holds great promise for handling collations in XSLT, and while customizing its output proves for this moment no easy matter for an outsider to TAN, it seems a clear next step for this impressive XSLT library. 
             </para>    
         </section>
 </article>
