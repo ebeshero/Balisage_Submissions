@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="balisage-1-5.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="balisage-1-5.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-stylesheet type="text/xsl" href="balisage-proceedings-html.xsl"?>
+<article xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink"
+    version="5.0-subset Balisage-1.5">
+
+    <title>Markup technologies in the context of AI and big data analytics</title>
+    <subtitle>Academic reflections on a hybrid workflow</subtitle>
+    <info>
+        <abstract>
+            <para>
+                
+            </para>
+            <para>The author is attempting to refine a collation algorithm to improve its alignment of variant passages in the <link xlink:href="https://frankensteinvariorum.github.io/">Frankenstein Variorum</link> project. </para>
+            
+        </abstract>
+        <author>
+            <personname>
+                <firstname>Elisa</firstname>
+                <othername>E.</othername>
+                <surname>Beshero-Bondar</surname>
+            </personname>
+            <personblurb>
+                <para>Elisa Beshero-Bondar explores and teaches document data modeling with the XML
+                    family of languages. She serves on the TEI Technical Council and is the founder
+                    and organizer of the <link xlink:href="https://digitalmitford.org"
+                        xlink:type="simple" xlink:show="new" xlink:actuate="onRequest">Digital
+                        Mitford project</link> and <link
+                        xlink:href="https://digitalmitford.github.io/DigMitCS/" xlink:type="simple"
+                        xlink:show="new" xlink:actuate="onRequest">its usually annual coding
+                        school</link>. She experiments with visualizing data from complex document
+                    structures like epic poems and with computer-assisted collation of differently
+                    encoded editions of <link xlink:href="https://frankensteinvariorum.github.io/"
+                        xlink:type="simple" xlink:show="new" xlink:actuate="onRequest"><emphasis
+                            role="ital">Frankenstein</emphasis></link>. Her ongoing adventures with
+                    markup technologies are documented on <link xlink:href="https://newtfire.org"
+                        xlink:type="simple" xlink:show="new" xlink:actuate="onRequest">her
+                        development site at newtfire.org</link>.</para>
+            </personblurb>
+            <affiliation>
+                <jobtitle>Chair of <orgName>TEI Technical Council</orgName></jobtitle>
+                <jobtitle>Professor of Digital Humanities</jobtitle>
+                <jobtitle>Program Chair of Digital Media, Arts, and Technology</jobtitle>
+                <orgname>Penn State Erie, The Behrend College</orgname>
+            </affiliation>
+            <email>eeb4@psu.edu</email>
+        </author>
+        <keywordset role="author">
+        
+            <keyword>Python</keyword>
+            <keyword>XSLT</keyword>
+            
+        </keywordset>
+    </info>
+    <section>
+        <title></title>
+      
+        <para>Much of this project has investigated methods for moving between hierarchical and <quote>flat</quote> text structures, moving back and forth between markup and strings as we thread our texts into the machine power-loom of collation software, examine the woven output, and contemplate how to untangle the snags and snarls we find in the <quote>woven textile</quote> of collation output. The Gothenburg model guides our work, an elaboration of five distinct stages of work necessary to guide machine-assisted collation as established in 2009 by the developers of collateX and Juxta in Gothenburg, Sweden: 
+            
+            <orderedlist>
+                <listitem>
+                    <para>Tokenization (deciding on the smallest units of comparison)</para>
+                </listitem>
+                <listitem>
+                    <para>Normalization/Regularization (deciding what distinct features in the source documents need to be suppressed from comparison. An easy example of a normlization step is indicating that ampersands are stand in for the word <quote>and</quote>. A more difficult judgment call is the handling of notational metamarks or even editorial markup that assist reading in one document, but should be skipped over by the collation software as not meaningful for comparison with other documents.)</para>
+                </listitem>
+                <listitem>
+                    <para>Alignment (locating via software parallel equivalent passages and their moments of unison and divergence)</para>
+                </listitem>
+                <listitem>
+                    <para>Analysis/Feedback (reviewing, correcting, adjusting the alignment algorithm as well as normalization/regularization method</para>
+                </listitem>
+                <listitem>
+                    <para>Visualization (finding an effective way to show and share the collation results)<footnote>
+                        <para>Interedition Development Group, <quote>The Gothenburg Model</quote>, 2010-2019. <link xlink:href="https://collatex.net/doc/">https://collatex.net/doc/</link>. For more on the summit and workshop of collation software developers in 2009 that formulated the Gothenburg model, see Ronald Haentjens Dekker, Dirk van Hulle, Gregor Middell, Vincent Neyt, and Joris van Zundert. <quote>Computer-supported collation of modern manuscripts: CollateX and the Beckett Digital Manuscript Project.</quote> In <emphasis role="ital">Digital Scholarship in the Humanities</emphasis> 30:3 (December 2014) pp. 3-4.</para>
+                    </footnote></para>
+                </listitem>
+            </orderedlist>
+        </para>
+     
+    </section>
+    
+</article>

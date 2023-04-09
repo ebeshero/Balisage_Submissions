@@ -433,7 +433,7 @@
 &lt;/xsl:stylesheet&gt;
 </programlisting>
                 <para>Next my little team and I began to tackle the noxious problem of <quote>empty tokens</quote>, that is, spurious <code>&lt;app&gt;</code> elements that would form around a single witness, the Shelley-Godwin Archive's manuscript witness. Most frequently, these isolated <code>&lt;app&gt;</code> elements would with an empty token, <code>""</code>, formed to represent the normalized form  a <code>&lt;lb/&gt;</code> element. The empty token itself is quite correct for our collation normalization process: The Shelley-Godwin Archive editors applied line-by-line encoding of the manuscript notebook, and we need to preserve the information about each line in order to help ensure that each passage is connected back to its source edition file. So in our project, we must not ignore this markup, but we do normalize it for the purposes of the collation since, in our document data model, it is not meaningful information about how the  manuscript notebooks compare with the printed editions. In pre-processing the source files for collation, we converted the Shelley-Godwin Archive’s <code>&lt;line&gt;</code> elements into empty milestone markers as <code>&lt;lb/&gt;</code> marking the beginnings of each line, and these <code>&lt;lb&gt;</code> elements with their informative attributes are output as contents of <code>&lt;rdg wit="fMS"&gt;</code> in the <quote>spine</quote> file. Our normalizing algorithm converts them into empty tokens to indicate that they are meaningless for the purposes of collation, but they are nevertheless meaningful to the reconstruction of the 1816 manuscript edition information following collation.</para>
-                <para>In their most benign and frequently occurring form, the empty-token problem would appear in separate isolated <code>&lt;app&gt;</code> elements in between two <quote>unison apps</quote> (that is, interrupting a passage in which all witnesses should align in unison. Here is an example of the pattern. Those reading vigilantly will note that the expected octothorpe or sharp <code>#</code> characters indicating that this is a pointer to a defined <code>@xml:id</code> do not appear in the <code>@wit</code> attribute values in this example. These are simply lacking at their point of output from collateX, before it is reprocessed in the post-production pipeline as a TEI document. 
+                <para>In its most frequently occurring form, the <quote>empty-token problem</quote> would appear in separate isolated <code>&lt;app&gt;</code> elements in between two <quote>unison apps</quote> (that is, interrupting a passage in which all witnesses should align in unison. Here is an example of the pattern. Those reading vigilantly will note that the expected octothorpe or sharp <code>#</code> characters indicating that this is a pointer to a defined <code>@xml:id</code> do not appear in the <code>@wit</code> attribute values in this example. These are simply lacking at their point of output from collateX, before it is reprocessed in the post-production pipeline as a TEI document. 
     <programlisting language="xml">
      &lt;app&gt;
 		&lt;rdgGrp n="['as', 'i', 'did', 'not', 'appear', 'to', 'know']"&gt;
@@ -471,40 +471,7 @@
 		&lt;/rdgGrp&gt;
 	&lt;/app&gt;
         </programlisting>
-       There is a more complex form of this pernicious problem with collating around normalized markup, and that is when the token asserts itself to generate a delta, a separate <code>&lt;rdgGrp&gt;</code> within an app, as happens here:
-        <programlisting language="xml">
-    &lt;app&gt;
-		&lt;rdgGrp n="['departed.', 'besides,', 'they']"&gt;
-			&lt;rdg wit="f1818"&gt;departed. Besides, they &lt;/rdg&gt;
-			&lt;rdg wit="f1823"&gt;departed. Besides, they &lt;/rdg&gt;
-			&lt;rdg wit="fThomas"&gt;departed. Besides, they &lt;/rdg&gt;
-			&lt;rdg wit="f1831"&gt;departed. Besides, they &lt;/rdg&gt;
-			&lt;rdg wit="fMS"&gt;departed. Besides, they &lt;/rdg&gt;
-		&lt;/rdgGrp&gt;
-	&lt;/app&gt;
-	&lt;app&gt;
-		&lt;rdgGrp n="['observed']"&gt;
-			&lt;rdg wit="f1818"&gt;observed &lt;/rdg&gt;
-			&lt;rdg wit="f1823"&gt;observed &lt;/rdg&gt;
-			&lt;rdg wit="fThomas"&gt;observed &lt;/rdg&gt;
-			&lt;rdg wit="f1831"&gt;observed &lt;/rdg&gt;
-		&lt;/rdgGrp&gt;
-		&lt;rdgGrp n="['observed,', '']"&gt;
-			&lt;rdg wit="fMS"&gt;observed, &lt;lb n=&quot;c57-0119__main__11&quot;/&gt; &lt;/rdg&gt;
-		&lt;/rdgGrp&gt;
-	&lt;/app&gt;
-	&lt;app&gt;
-		&lt;rdgGrp n="['that', 'it', 'appeared']"&gt;
-			&lt;rdg wit="f1818"&gt;that it appeared &lt;/rdg&gt;
-			&lt;rdg wit="f1823"&gt;that it appeared &lt;/rdg&gt;
-			&lt;rdg wit="fThomas"&gt;that it appeared &lt;/rdg&gt;
-			&lt;rdg wit="f1831"&gt;that it appeared &lt;/rdg&gt;
-			&lt;rdg wit="fMS"&gt;that it appeared &lt;/rdg&gt;
-		&lt;/rdgGrp&gt;
-	&lt;/app&gt;
-        </programlisting>
-    The capacity of the empty token to create a <quote>snag</quote> in the collation weave is evident here, generating a false divergence. These <code>&lt;app&gt;</code>s should all be consolidated into one element wth just one unison <code>&lt;rdgGrp&gt;</code>. My research team and I took notes on the various forms this empty token phenomenon could take and drafted notes, still on my office whiteboard, for how we could handle them with XSLT.
-    </para>
+      
             <figure xml:id="fvwhiteboard" xreflabel="FV-whiteboard">
                 <title>Frankenstein collation notes on my office whiteboard</title>
                 <mediaobject>
@@ -516,11 +483,12 @@
                     <para>My student Jacqueline Chan, Penn State Behrend May 2022 Digital Media, Arts, and Technology graduate, carefully drafted these notes on the <quote>empty token</quote> collation problem and our efforts to solve it on my office whiteboard during a meeting with my student research assistants as we inspected collation output code together.</para>
                 </caption>
             </figure>
-
+We did not complete the XSLT to resolve this particular problem because it is not outright disruptive to our collation pipeline. That is, the output collation shows two passages rather than one in which all witnesses are properly aligned. All collation problems are solved if we instruct collateX to completely <emphasis role="ital">ignore</emphasis> the <code>&lt;lb/&gt;</code> elements entirely, but we cannot do that. Our output collation files need to preserve locational information stored in the <code>@n</code> attributes, indicating the position of a passage in a specific zone of the source TEI encoding of the manuscript notebook surface. The <code>@n</code> attributes store information needed to reconstruct an XPath to point to a specific location in the S-GA edition. We decided ultimately to live with this collation error for the purposes of the edition production pipeline. 
+                </para>
             </section>
            
      <section><title>The <quote>smashed-tokens</quote> problem</title>
-           <para>We discovered another particularly pernicious problem with tokenizing and normalizing markup via our Python process to collateX. This problem is one of occasional <quote>smashed-tokens</quote>, that is two tokens losing their space separator and becoming one token. Here is a very short passage of XML from the Shelley-Godwin Archive's encoding:
+           <para>We discovered a much more pernicious problem, however, with our method of tokenizing and normalizing passages that contain angle-bracketted markup. This problem generates what we call <quote>smashed-tokens</quote>, that is two tokens losing their space separator and becoming one token. Here is a very short passage of XML from the Shelley-Godwin Archive's encoding:
                <programlisting language="xml">
                  . . . the spot&lt;add eID="c57-0117__main__d3e21951"/&gt; &amp; endeavoured . . .   
                </programlisting>
