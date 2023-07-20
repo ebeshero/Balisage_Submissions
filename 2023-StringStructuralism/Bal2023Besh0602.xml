@@ -24,7 +24,8 @@
                 usually facilitated by Python or R libraries, or the practice of markup and
                 transformation with the XML stack, usually associated with the development of
                 digital scholarly editions or archives of cultural heritage documents.</para>
-            <para>The author’s course project assignments for a <quote>Large-Scale Text
+            <para>I don't have much to say, really. </para>
+            <para>The author’s project assignments for a <quote>Large-Scale Text
                     Analysis</quote> course require accessing large language models including spaCy,
                 NLTK, or most recently, openAI's Generative Pre-trained Transformer (GPT) 3.5 and 4.
                 These projects also purposefully map so-called <quote>plain</quote> text collecitons
@@ -65,7 +66,7 @@
                     <quote>pulling strings</quote>. Pressed in January 2023 with a question or
                 provocation about whether markup is relevant in the era of artificial intelligence
                 driven by large language models, I propose a detailed response in this paper about
-                its many uses, even at scale, in a very messy world of digital ephemera.</para>
+                the meaningfulness of markup in a very messy world of digital ephemera.</para>
          
             <!-- REDO THIS STRUCTURE -->
             
@@ -89,7 +90,7 @@
                     </listitem>
                 </orderedlist> In these sections, I will explore the middle space of transformation
                 and the intellectual work required to migrate texts from one format to another. My
-                unusual experience of moving between communities is charged with a differential
+               experience of moving between communities is charged with a differential
                 energy drawn from both worlds. With help from the Saxon C parser, I pull selected
                 strings from XML nodes in a Python script to send to the processing libraries du
                 jour, and bring it back to supply an enriched collection of XML with data that I
@@ -194,29 +195,28 @@
 
         </keywordset>
     </info>
+
     <section>
         <title>Asking a Language Model to Compare Strings</title>
-        <para>I have been working on a serious text collation project over the past few years, one
-            that has some unusual challenges. The project involves comparing five versions of the
-            novel Frankenstein, and it includes the comparison of markup. I have shared papers about
+        <para>I have been working on a project over the past few years that has challenged me to explore, test, and refine a machine-assisted method for comparing versions of a text. The project involves comparing five versions of the
+            novel Frankenstein, and it includes markup of editions that were coded differently. I have shared papers about
             these adventures over the past few Balisage meetings, involving the fun of flattening
             and raising markup and the challenge of comparing strings that include representations
             of the markup in the editions. Collation is tiring, tedious work. It's one thing to
             prepare an algorithm for comparison and apply it to good, adaptable software for the
             purpose (collateX), but it is quite another have to correct the output. That is where
             the real challenge begins: the intellectual challenge, mental discipline, or
-                <quote>self-psych-out</quote> of <quote>machine-assisted</quote> collation: Do you
-            take the bait to correct by hand, or try to refine the algorithm as far as you
-            can?</para>
+                <quote>self-psych-out</quote> of <quote>machine-assisted</quote> collation: When do you give up trying to refine the software algorithm, and when to you <quote>crack</quote> and resort to hand-correcting problematic outputs? Sometimes giving up really slows down a project, and it is really possible to refine the method, but it requires patience and tinkering with the machinery, and the patience to continue testing.</para>
+        
         <para>When my colleagues began excitedly pointing to ChatGPT's public launch at the end of
             last November 2022, I played the same games that we all did with the interface. For
             example, we could make it create several bios of ourselves and see how ludricously wrong
-            they are. (In one invented bio I'm both a medievalist and a published poet, neither of
+            they are. (In one invented bio I am both a medievalist and a published poet, neither of
             which is true). Of course we also prompted it to invent supposedly serious
-            bibliographies to see its made-up citations and fake URLs, too. While we all worry about
-            our students abusing it for writing their papers, academics who program also quickly
+            bibliographies to see its made-up citations and fake URLs, too. We instructors worry about
+            our students abusing generative AI to compose their papers, but academics who program also quickly
             discovered a supremely helpful aspect of ChatGPT for debugging code or quickly
-            introducing how to access a software library on the fly. ChatGPT has saved me and my
+            introducing how to access a software library on the fly and we also recognize that our students should cultivate skills to prompt AI for help. ChatGPT has saved me and my
             students time that we might otherwise have spent combing through documentation and Stack
             Overflow posts. Even when ChatGPT was wrong and its suggested code plainly did not work,
             it was leading us rapidly to the ad-hoc fixes we needed to make, and particularly with
@@ -232,8 +232,7 @@
                             xlink:href="https://openai.com/blog/chatgpt-plugins#code-interpreter"
                             >ChatGPT plugins: Code interpreter</link></quote>, Chat GPT Blog.
                     2023.</para>
-            </footnote> After years invested in collation to create a scholarly critical edition, I
-            both desired and feared to find a way for AI to assist or even take over my work. After
+            </footnote> I both desired and feared to find a way for AI to assist or even take over my work. After
             all, the point of AI like any good computational solution should be to take over tedious
             tasks that humans can get wrong, whether or not I would discover I had wasted years of
             effort on my projects by starting them too soon.</para>
@@ -260,26 +259,19 @@
         </para>
         
         
-        <para><!-- DISCUSS HOW IT WORKS 
-         
-         DO HUMANS THINK/SPEAK/GENERATE THIS WAY, PREDICTING THE BEST-FIT WORDS?
-          WHY DO WE ANTHROPOMORPHIZE THE AI MODELS?
-          
-         WHY THE LEARNING MODEL IS SO FUZZY?
-        
-        -->
+        <para>
             
             
         </para>
         
-        <para>In a conference presentation in 2015, Michael Sperberg-McQueen declare on slide 8, <quote>Declarative semantics make it possible to reason about representations; imperative semantics impede.</quote><footnote><para>https://blackmesatech.com/2015/10/KIaCiDH/#(8)</para></footnote> Today dialogue with language models gives us the opportunity to  declare and inquire in the voice of reason, but perhaps we are seeing the impedance of imperative semantics in replies that give the structures and forms of reason without reason, without capacity for validation, that yield us something it cannot validate but only predict might be the best-fit next statement. 
+        <para>In a conference presentation in 2015, Michael Sperberg-McQueen declares on slide 8, <quote>Declarative semantics make it possible to reason about representations; imperative semantics impede.</quote><footnote><para>https://blackmesatech.com/2015/10/KIaCiDH/#(8)</para></footnote>  Today dialogue with language models gives us the opportunity to  declare and inquire in the voice of reason, but perhaps we are seeing the impedance of imperative semantics in replies that give the structures and forms of reason without reason, without capacity for validation, that yield us something it cannot validate but only predict might be the best-fit next statement. 
             
 
             
             If we know that hierarchical models are not netural, we have certainly discovered the biases in LLMs. There is no inherent improvement in the area of bias, and at least the hierarchy declares itself and makes itself navigable and transformable. 
             
             
-            Re-reading that seminal article from 1990 <quote>What is Text, Really?</quote> in the year 2023 brings an odd sense of temporal alignment in our awareness of changing technology systems for handling text.<footnote><para>Steven J. DeRose, David G. Durand, Elli Mylonas, Allen H. Renear, <quote>What is Text, Really?</quote> 1990.</para></footnote> Their proposition of that text really is an Ordered Hierarchy of Content Objects comes explicitly as a response (among other things) to concepts of text as a stream of content objects, the gram particles and formmating instructions without reference to structural context. Experimenting with ChatGPT has led me straight into a conflict generated by two different understandings of text. I would venture that ChatGPT's current inability to analyze comparisons of strings has something to do with its token-by-token generative stream. ChatGPT cannot mathematically calculate an edit-distance even if it can separate two different versions of a text in different boxes. Is it unintelligent about textual critique such that it fails to recognize a basis for comparison? Is it a pre-programmed shortness of memory when asked to compare strings? In this specific task, the AI supplies the illusion of structure with some persistent (and to me still baffling) blindness meaningful basis for comparison. <!--I as a flawed human reader of texts am in awe that a mathematically trained model consistently struggles with what seems to be a simple comparison of strings. -->
+            Re-reading that seminal article from 1990 <quote>What is Text, Really?</quote> in the year 2023 brings an odd sense of temporal alignment in our awareness of changing technology systems for handling text.<footnote><para>Steven J. DeRose, David G. Durand, Elli Mylonas, Allen H. Renear, <quote>What is Text, Really?</quote> 1990.</para></footnote> Their proposition, that text really is an Ordered Hierarchy of Content Objects, comes explicitly as a response (among other things) to concepts of text as a stream of content objects, the gram particles and formmating instructions without reference to structural context. Experimenting with ChatGPT has led me straight into a conflict generated by two different understandings of text. I would venture that ChatGPT's current inability to analyze comparisons of strings has something to do with its token-by-token generative stream. ChatGPT cannot mathematically calculate an edit-distance even if it can separate two different versions of a text in different boxes. As a flawed human reader of texts I am in awe that a mathematically trained model that consistently struggles with what seems to be a simple comparison of strings. Is it a pre-programmed shortness of memory when asked to compare strings? In this specific task, the AI supplies the illusion of structure with some persistent (and to me still baffling) blindness meaningful basis for comparison. 
             
         </para>
         
@@ -300,13 +292,45 @@
         <para>
             <!-- COMMENTARY ON WHAT COMPUTATION WE DO WITH FV. The data structure, the pipeline, the construction of an edition in markup from comparisons of flattened strings. All this is a series of problems to solve that do not seem efficiently handled in the space of word vector approximations. 
             
-            WHY does this  matter to say? Because in humanities / digital humanities we risk following into a trap about authoritative understanding of text. What is text, really, has never been a more important question. Without hybrid approaches and without structured containers, we risk falling into a monoculture of fuzzy ways of knowing, in which the construction of knowledge about texts is reduced to trends and patterns at scale. These are valauble studies, but not the only way of knowing about texts. 
+            WHY does this  matter to say? Because in humanities / digital humanities we risk following into a trap about authoritative understanding of text. What is text, really, has never been a more important question. Without hybrid approaches and without structured containers, we risk falling into a monoculture of fuzzy ways of knowing, in which the construction of knowledge about texts is reduced to trends and patterns at scale. These are valuable studies, but not the only way of knowing about texts. 
             
             Moving text between structures, preserving document data models, all these things matter. Text isn't just grams. 
             -->
             
         </para>
         
+    </section>
+    <section>
+        <title>What's so meaningful about markup?</title>
+        <section>
+            <title>Transforming markup influences the semantics</title>
+            <para>Transforming text into other formats shows us what is fluid in markup. We map its structures into forms that machines need to read, and when we do that they become removable trays.</para>
+            <para><!-- What are you really wanting to say? -->
+                Markup from markup to markup via unstructured text.
+                What we meant then, vs. what we mean now.</para>
+            
+            <para>The process of refining the collation process for the Frankenstein Variorum involved a serious challenge to stop the collateX software from always aligning the smallest particles of the same text. The software wants to identify anything grams of text that it reads as <quote>the same</quote>, like <quote>an</quote> and <quote>the</quote>, even in passages that are not meant to be associated across the texts. The Frankenstein Variorum contains many long blocks, multi-paragraph inserted passages, and gaps in the manuscript that make alignment tricky. In the last year, my student Yuying Jin and I established a reliable method for bracketing these off in the last year that we call our <quote>longToken</quote> strategy. Here we lengthen the size of the smallest particle of comparable text to the size of whatever we can express inside an XML element <code>&lt;longToken&gt;.....&lt;/longToken&gt;</code>. We instructed our Python script to isolate all tokens by newline characters, and set the entire length of longToken (which could be as small as a single character and as large as two paragraphs of text, including flattened markup) all in one irreducible line. By controlling the tokenization algorithm, we were able to control the mechanism of the collation software, prevent it from making spurious alignments on small words in a passage that we would effectively bracket away from micro-comparisons.</para>
+            <para>Our Python script is a place of negotiation between paradigms of structured markup and so-called unstructured text. We use the <link xlink:href="https://docs.python.org/3/library/xml.dom.pulldom.html">XML Pulldom library</link> to process what markup from the source documents we want to include in the string comparison process. That is, we mask away some elements, like the page <code>&lt;surface&gt;</code> and  <code>&lt;zone&gt;</code> elements that indicate page surfaces and locations on the pages from the Shelley-Godwin Archive encoding, because we have decided that page position is not relevant to comparison of the semantic text structure. But we want to preserve the element nodes that mark paragraphs, and chapter structures, and we want to preserve the information about deletion marks in the manuscript and from the Thomas copy. The word <quote>mask</quote> seems appropriate here: it's something like applying tape to pieces of the file that we select. We continue to work with the markup, though, in its meaningful form. In the Python script, we define variables containing lists of element names that we will either mask away from the collation, or that we will include: </para> 
+            
+            
+            
+            
+                
+                
+           <para>longToken became for us an extensible unit of comparison, expanding on the assumptions of fine textual granularity. It can be as small as necessary, but it's not allowed to be altered.</para>
+            
+            <para> This markup preserves its meaningfulness outside its context, It allows us to alter the basis of textual comparison: Markup gave me a way to speak to the software that communicates in the language of my research question. With the construction of a longToken I can bracket off passages of text and force the software to deal with them on my terms. The softwware does my bidding, and bidding was communicated in markup.</para>
+            
+            <para> Another way to move between formats is to take one's meaningful units from libraries or predictions based on word embeddings. We can roundtrip this back into markup and use the markup structure to build a structure that simply separates metadata from data in old software files. We can scrape a website from the 1990s and let entity recognizers read it. We can roundtrip that back into markup to build a new website to highlight the tagging, set it in a document structure. Or we can visualize the data: how often does a string turn up and in what document contexts, in the presence of what metadata? </para>
+            
+            <para>Software applications that take input data need to manage their input structures, so you're faced with strange structures like line-by-line JSON-LD to train ChatGPT on a series of prompts, or you can provide data in a TSV format to be read by Cytoscape. The output data formats are simple, flat, and you can typically provide numerous arrangements from an XML document because the tree structure provides a statement about the organization of meaning. Moving between and across hierarchies decants text's data and metadata in ways that charge up the energy of re-mediation. Is a marked up document something like a highly charged battery of potential energy for all its possible transformations? </para>
+            
+            <para>Texts change meaning over time, and transferring markup responds to the semantic flux. What we mark is a meaningful expression of transmission and temporality. In the year 2023 we aren't talking about any electronic text as permanent, but rather as a stage of storage, loss, retrieval, and re-mediation. We can try to rescue the text data trapped in the proprietary boxes and move it into something we can access.</para> 
+            
+            <para>There's a versatility introduced by handling with markup that supplies dimensions, builds meaning, changes meaning, translates meaning. Far from being rigid, it is more like containers for managing flow. These <quote>bins</quote> can be tapped, transformed, and redesigned. </para>
+            
+            
+        </section>
     </section>
 
 
