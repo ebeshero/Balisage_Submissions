@@ -244,7 +244,7 @@
             my work. After all, the point of AI like any good computational solution should be to
             take over tedious tasks that humans can get wrong, whether or not I would discover I had
             wasted years of effort on my projects by starting them too soon.</para>
-        <para>At various moments between February and July 2023, I have been testing a hypothesis
+        <para>At various moments between January and July 2023, I have been testing a hypothesis
             that a machine trained on tokenized strings and word embeddings should excel at the task
             of comparing strings, even tokenizing and normalizing them. Yet over the past several
             months in my experiments to engage ChatGPT in various permutations of this task, it has
@@ -266,7 +266,7 @@
         </para>
 
 
-        <para> </para>
+       
 
         <para>In a conference presentation in 2015, Michael Sperberg-McQueen declares on slide 8,
                 <quote>Declarative semantics make it possible to reason about representations;
@@ -325,7 +325,8 @@
             boxes. But it cannot calculate the edit-distance and it cannot seem to pinpoint variations.
             In this specific
             task, the AI supplies the illusion of structure with some persistent (and to me still
-            baffling) blindness. I think that blindness is about what constitutes a reasonable, meaningful basis for comparison. </para>
+            baffling) blindness. If we could identify the AI's blind-spot, I think it is failing to <quote>see</quote>
+            what constitutes a reasonable, meaningful basis for comparison of text streams.</para>
 
         <para>
             <!-- What could make it better? 
