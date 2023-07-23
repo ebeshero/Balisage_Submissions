@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="balisage-1-5.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="balisage-1-5.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-stylesheet type="text/xsl" href="balisage-proceedings-html.xsl"?>
+<article xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink"
+    version="5.0-subset Balisage-1.5">
+
+    <title>Markup and migratory workflows in the context of AI and big data analytics</title>
+    <subtitle>Reflections on the data modeling groundwork of the digital humanities</subtitle>
+    <info>
+        <abstract>
+            <!--ebb: Many thanks for reading this in a preliminary, inchoate form. 
+            What's here is certainly too long for an abstract and too short for a paper, 
+            but I hope it provides a good idea of how the paper will develop! 
+              -->
+            <para>This paper emerges from repeated migrations from so-called
+                    <quote>unstructured</quote>, <quote>plain</quote> or
+                    <quote>semi-structured</quote> text to schema-managed XML document trees. The
+                author organizes research and university course projects that purposefully engage in
+                such migrations, which involve far more than just a technical reformatting or
+                mapping of structures. The working in between text structures requires an uneasy
+                negotiation with distinct communities of computationally-assisted text
+                analysis—communities that occasionally overlap but often appear to be at odds with
+                one another. In the digital humanities that serves as an academic
+                    <quote>home</quote> to the author, these communities have different priorities:
+                either the practice of big text data analytics with natural language processing,
+                usually facilitated by Python or R libraries, or the practice of markup and
+                transformation with the XML stack, usually associated with the development of
+                digital scholarly editions or archives of cultural heritage documents.</para>
+            <para>The author’s course project assignemnts for a <quote>Large-Scale Text
+                    Analysis</quote> course require accessing large language models including spaCy,
+                NLTK, or most recently, openAI's Generative Pre-trained Transformer (GPT) 3.5 and 4.
+                These projects also purposefully map so-called <quote>plain</quote> text collecitons
+                into XML documents. This facilitates the application of XQuery to investigate
+                patterns in markup of interest, and often <quote>roundtrips</quote> to output simple
+                dataframe text structures in TSV or JSON for delivery to visualization software that
+                supports network analysis and bug detection. The author’s related research involves
+                comparing digital editions to help visualize and navigate distinct stages in the
+                revision of a published novel. As discussed at previous Balisage conferences, the
+                author reads XML document structures as strings in order to include markup tags in
+                the comparison as meaningful indicators of alteration (see <link
+                    xlink:href="https://www.balisage.net/Proceedings/vol27/html/Beshero-Bondar01/BalisageVol27-Beshero-Bondar01.html"
+                    >Adventures in Correcting XML Collation Problems with Python and
+                XSLT</link>).</para>
+            <para>From the author’s professional and informal interactions with colleagues and peers
+                in the <quote>big text data</quote> wing of digital humanities, questions have
+                arisen about the significance or even the continued need for markup with the
+                emergence of large generative language models like openAI's ChatGPT or Microsoft's
+                Bing. In these professional circles, computational analysis typically involves
+                accessing and fine-tuning statistical packages. The ability to study patterns in
+                language over thousands of texts and form conclusions aided by trained natural
+                language processing models is highly valued in the area of digital humanities
+                involving computational text analysis. However, it is sometimes controversial and
+                embarrassing when statistical significance is questioned and confident claims about
+                trends over time are exposed for ignoring or dismissing important contexts. Yet the
+                author’s engagement through the TEI community with digital scholarly editions
+                explores another area of document data modeling with markup ontologies and schemas,
+                where declarative markup raises questions of sharability. These circles, occupied by
+                members of the Text Encoding Initiative, are haunted by questions of why multiple
+                projects cannot share their data in the same way when following the international
+                community’s shared guidelines for encoding electronic texts, and whether the
+                commynity's guidelines are too permissive of variety to be standardized and
+                generalizable and useful for analytics.</para>
+            <para>There are problems in the isolation of these communities, and opportunities to be
+                seen in drawing them together. In this paper, I will reflect on the adventures of
+                teaching and roundtripping​ between text data formats this semester—some insights
+                into strings, data containers, markup—and the control vs. chaos we face in
+                    <quote>pulling strings</quote>. Pressed in January 2023 with a question or
+                provocation about whether markup is relevant in the era of artificial intelligence
+                driven my large language models, I propose a detailed response in this paper about
+                its many uses, even at scale, in a very messy world of digital ephemera.</para>
+            <para> In this paper I will discuss the importance of markup in sustaining of electronic
+                documents from pre-millenial archives, in preparing these for analytical research.
+                Sections to be developed include: <orderedlist>
+                    <listitem>
+                        <para>Cultures of digital text research: big data analytics vs. digital
+                            curation</para>
+                    </listitem>
+                    <listitem>
+                        <para>String cleaning: Markup as a destination in rescuing early electronic
+                            texts</para>
+                    </listitem>
+                    <listitem>
+                        <para>Not <quote>either or</quote> but <quote>both and</quote>: Decanting
+                            text data between container elements and data frames</para>
+                    </listitem>
+                    <listitem>
+                        <para>Declarative conclusions or futurities?</para>
+                    </listitem>
+                </orderedlist> In these sections, I will explore the middle space of transformation
+                and the intellectual work required to migrate texts from one format to another. My
+                unusual experience of moving between communities is charged with a differential
+                energy drawn from both worlds. With help from the Saxon C parser, I pull selected
+                strings from XML nodes in a Python script to send to the processing libraries du
+                jour, and bring it back to supply an enriched collection of XML with data that I
+                might well wish to remove or change when those processing libraries improve. If I
+                want to share those documents in a readable way, XML serves as a basis for many
+                different ways to visualize the documents. The markup facilitates the preservation
+                of metadata, annotations, the basis of scholarly editing for the long range. The
+                same research archive shares simple text formats and marked-up structures.</para>
+
+            <para>The movement between formats can represent a stage in the life-cycle of the
+                digital documents. When addressing that movement, markup provides us an orderly
+                determination of structures that might easily be lost, thrown away in data cleaning
+                or blurred in a process of reading by new software. In my lab and classes, we work
+                with regular expression patterns to mark up collections of documents with Python ti
+                identify structures from patterns of spaces and newlines, the discovery of section
+                boundaries, act and scene divisions, a separation of data from metadata. Applying
+                markup in this way is a method of descriptive document analysis, and it assists in
+                creating what we might think of in laboratory terms as labeled bins or trays. When
+                we do the query work of pulling for string-matches in container elements and
+                translate that data for work in other formats, the oft-cited critique of markup as
+                binding or confining documents to a single hierarchy <!--(c.f. Johanna Drucker)-->
+                seem overstated. The apparent <quote>flatness</quote> of a text file belies its
+                not-so-hidden dimensions and hierarchies. Research that processes the co-occurrences
+                of ngrams can benefit from awareness of bounded containers and document structures,
+                as well as the unmarked, half-expressed, or abbreviated metadata about the author's
+                circumstances or the software for composition. Such document analysis can be modeled
+                in XML structures even at scale, even assisted by AI, and XML is certainly not
+                invalidated by its existence. These are the terms of electronic paleography and
+                digital provenience in our time.</para>
+            <para>In a moment of eager excitement, confusion, and fear about the potential
+                disruptive influences of generative language models, I want to address the
+                reliability and broad applicability of markup technologies. These technologies equip
+                a digital humanities text lab to expand its scope of research questions and to
+                counterbalance the anxiety-ridden speculative work of statistically-based
+                    <quote>distant reading</quote>. When the calculations and training capacities of
+                a large language model are subject to rapid change with the next month's update, and when
+                developers of generative language models conceal their sources for commercial
+                reasons, we would do well to inspect our tools and research methods for brittle
+                dependencies. Declarative markup can offer a modicum of control for humaniites
+                scholarship and a means to directly address the ephemerality of unstable
+                technology stacks.</para>
+            <para>
+                <!--(to reference: 
+                * Mordechai Levy-Eichel and Daniel Scheinerman, "Digital humanists need to learn how to count: A prominent recent book in the field suffers serious methodological pitfalls." The Chronicle of Higher Education 17 May 2022. https://www.chronicle.com/article/digital-humanists-need-to-learn-how-to-count 
+                
+                * essays from The Shape of Data in Digital Humanities, ed. Julia Flanders and Fotis Jannidis. London: Routledge, 2018. 
+                      * (note: Intro, contribution on the TEI by Lou Burnard, conclusion by Sperburg-McQueen). 
+                
+                * Michael Sperburg McQueen, "What does descriptive markup contribute to digital humanities?". Digital Humanities Concepts 2015 Conference presentation (slides + Geoffrey Rockwell's notes). https://philosophi.ca/pmwiki.php/Main/DigitalHumanitiesConcepts2015 
+               
+                
+                * Ted Underwood, The Stone and the shell blog posts:  "Seven ways humanists are using computers to understand text" 4 June 2015:
+                https://tedunderwood.com/2015/06/04/seven-ways-humanists-are-using-computers-to-understand-text/ and "Emerging conversations between literary history and sociology." 02 December 2015: https://tedunderwood.com/2015/12/02/emerging-conversations-between-literary-history-and-sociology/
+                
+                * Gregory J. Palermo, "Transforming Text: Four Valences of a Digital Humanities Informed Writing Analytics" Journal of Writing Analytics 
+                    Vol. 1 (2017). DOI: 10.37514/JWA-J.2017.1.1.11. https://wac.colostate.edu/docs/jwa/vol1/palermo.pdf
+     
+                
+                * author's (professional and friendly) January 2023 conversation about ChatGPT and the supposed demise/irrelevance of the TEI w/ Underwood and digital humanities colleagues on Mastodon wherein limited assumptions about markup's representational capacities were exposed: in Underwood's Mastodon thread: https://sigmoid.social/@TedUnderwood/109730986869388754 
+           -->
+            </para>
+
+        </abstract>
+        <author>
+            <personname>
+                <firstname>Elisa</firstname>
+                <othername>E.</othername>
+                <surname>Beshero-Bondar</surname>
+            </personname>
+            <personblurb>
+                <para>Elisa Beshero-Bondar explores and teaches document data modeling with the XML
+                    family of languages. She serves on the TEI Technical Council and is the founder
+                    and organizer of the <link xlink:href="https://digitalmitford.org"
+                        xlink:type="simple" xlink:show="new" xlink:actuate="onRequest">Digital
+                        Mitford project</link> and <link
+                        xlink:href="https://digitalmitford.github.io/DigMitCS/" xlink:type="simple"
+                        xlink:show="new" xlink:actuate="onRequest">its usually annual coding
+                        school</link>. She experiments with visualizing data from complex document
+                    structures like epic poems and with computer-assisted collation of differently
+                    encoded editions of <link xlink:href="https://frankensteinvariorum.github.io/"
+                        xlink:type="simple" xlink:show="new" xlink:actuate="onRequest"><emphasis
+                            role="ital">Frankenstein</emphasis></link>. Her ongoing adventures with
+                    markup technologies are documented on <link xlink:href="https://newtfire.org"
+                        xlink:type="simple" xlink:show="new" xlink:actuate="onRequest">her
+                        development site at newtfire.org</link>.</para>
+            </personblurb>
+            <affiliation>
+                <jobtitle>Chair</jobtitle>
+                <orgname>TEI Technical Council</orgname>
+            </affiliation>
+            <affiliation>
+                <jobtitle>Professor of Digital Humanities</jobtitle>
+                <jobtitle>Program Chair of Digital Media, Arts, and Technology</jobtitle>
+                <orgname>Penn State Erie, The Behrend College</orgname>
+            </affiliation>
+            <email>eeb4@psu.edu</email>
+        </author>
+        <keywordset role="author">
+
+            <keyword>Python</keyword>
+            <keyword>XSLT</keyword>
+
+        </keywordset>
+    </info>
+
+
+</article>

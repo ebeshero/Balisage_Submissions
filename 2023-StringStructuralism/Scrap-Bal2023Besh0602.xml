@@ -1,0 +1,636 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="balisage-1-5.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="balisage-1-5.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-stylesheet type="text/xsl" href="balisage-proceedings-html.xsl"?>
+<article xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink"
+    version="5.0-subset Balisage-1.5">
+
+    <title>Markup and migratory workflows in the context of AI and big data analytics</title>
+    <subtitle>Reflections on the data modeling groundwork of the digital humanities</subtitle>
+    <info>
+        <abstract>
+
+            <!--WRITE A SIMPLE ABSTRACT NOW. -->
+
+
+
+            <!--   <para>This paper emerges from repeated migrations from so-called
+                    <quote>unstructured</quote>, <quote>plain</quote> or
+                    <quote>semi-structured</quote> text to schema-managed XML document trees. The
+                author organizes research and university course projects that purposefully engage in
+                such migrations, which involve far more than just a technical reformatting or
+                mapping of structures. The working in between text structures requires an uneasy
+                negotiation with distinct communities of computationally-assisted text
+                analysis—communities that occasionally overlap but often appear to be at odds with
+                one another. In the digital humanities that serves as an academic
+                    home to the author, these communities have different priorities:
+                either the practice of big text data analytics with natural language processing,
+                usually facilitated by Python or R libraries, or the practice of markup and
+                transformation with the XML stack, usually associated with the development of
+                digital scholarly editions or archives of cultural heritage documents.</para>
+            
+            
+            <para>From the author’s professional and informal interactions with colleagues and peers
+                in the <quote>big text data</quote> wing of digital humanities, questions have
+                arisen about the significance or even the continued need for markup with the
+                emergence of large generative language models like openAI's ChatGPT or Microsoft's
+                Bing. In these professional circles, computational analysis typically involves
+                accessing and fine-tuning statistical packages. The ability to study patterns in
+                language over thousands of texts and form conclusions aided by trained natural
+                language processing models is highly valued in the area of digital humanities
+                involving computational text analysis. However, it is sometimes controversial and
+                embarrassing when statistical significance is questioned and confident claims about
+                trends over time are exposed for ignoring or dismissing important contexts. Yet the
+                author’s engagement through the TEI community with digital scholarly editions
+                explores another area of document data modeling with markup ontologies and schemas,
+                where declarative markup raises questions of sharability. These circles, occupied by
+                members of the Text Encoding Initiative, are haunted by questions of why multiple
+                projects cannot share their data in the same way when following the international
+                community’s shared guidelines for encoding electronic texts, and whether the
+                community's guidelines are too permissive of variety to be standardized and
+                generalizable and useful for analytics.</para>
+            <para>There are problems in the isolation of these communities, and opportunities to be
+                seen in drawing them together. In this paper, I will reflect on the adventures of
+                teaching and roundtripping​ between text data formats this semester—some insights
+                into strings, data containers, markup—and the control vs. chaos we face in
+                    <quote>pulling strings</quote>. Pressed in January 2023 with a question or
+                provocation about whether markup is relevant in the era of artificial intelligence
+                driven by large language models, I propose a detailed response in this paper about
+                the meaningfulness of markup in a very messy world of digital ephemera.</para>-->
+
+            <!-- REDO THIS STRUCTURE -->
+
+            <!--<para> In this paper I will discuss the importance of markup in sustaining of electronic
+                documents from pre-millenial archives, in preparing these for analytical research.
+                Sections to be developed include: <orderedlist>
+                    <listitem>
+                        <para>Cultures of digital text research: big data analytics vs. digital
+                            curation</para>
+                    </listitem>
+                    <listitem>
+                        <para>String cleaning: Markup as a destination in rescuing early electronic
+                            texts</para>
+                    </listitem>
+                    <listitem>
+                        <para>Not <quote>either or</quote> but <quote>both and</quote>: Decanting
+                            text data between container elements and data frames</para>
+                    </listitem>
+                    <listitem>
+                        <para>Declarative conclusions or futurities?</para>
+                    </listitem>
+                </orderedlist> In these sections, I will explore the middle space of transformation
+                and the intellectual work required to migrate texts from one format to another. My
+                experience of moving between communities is charged with a differential energy drawn
+                from both worlds. With help from the Saxon C parser, I pull selected strings from
+                XML nodes in a Python script to send to the processing libraries du jour, and bring
+                it back to supply an enriched collection of XML with data that I might well wish to
+                remove or change when those processing libraries improve. If I want to share those
+                documents in a readable way, XML serves as a basis for many different ways to
+                visualize the documents. The markup facilitates the preservation of metadata,
+                annotations, the basis of scholarly editing for the long range. The same research
+                archive shares simple text formats and marked-up structures.</para>
+
+            <para>The movement between formats can represent a stage in the life-cycle of the
+                digital documents. When addressing that movement, markup provides us an orderly
+                determination of structures that might easily be lost, thrown away in data cleaning
+                or blurred in a process of reading by new software. In my lab and classes, we work
+                with regular expression patterns to mark up collections of documents with Python to
+                identify structures from patterns of spaces and newlines, the discovery of section
+                boundaries, act and scene divisions, a separation of data from metadata. Applying
+                markup in this way is a method of descriptive document analysis, and it assists in
+                creating what we might think of in laboratory terms as labeled bins or trays. When
+                we do the query work of pulling for string-matches in container elements and
+                translate that data for work in other formats, the oft-cited critique of markup as
+                binding or confining documents to a single hierarchy <!-\-(c.f. Johanna Drucker)-\->
+                seem overstated. The apparent <quote>flatness</quote> of a text file belies its
+                not-so-hidden dimensions and hierarchies. Research that processes the co-occurrences
+                of ngrams can benefit from awareness of bounded containers and document structures,
+                as well as the unmarked, half-expressed, or abbreviated metadata about the author's
+                circumstances or the software for composition. Such document analysis can be modeled
+                in XML structures even at scale, even assisted by AI, and XML is certainly not
+                invalidated by its existence. These are the terms of electronic paleography and
+                digital provenience in our time.</para>-->
+
+   
+           
+            <para>
+                <!--(to reference: 
+                * Mordechai Levy-Eichel and Daniel Scheinerman, "Digital humanists need to learn how to count: A prominent recent book in the field suffers serious methodological pitfalls." The Chronicle of Higher Education 17 May 2022. https://www.chronicle.com/article/digital-humanists-need-to-learn-how-to-count 
+                
+                * essays from The Shape of Data in Digital Humanities, ed. Julia Flanders and Fotis Jannidis. London: Routledge, 2018. 
+                      * (note: Intro, contribution on the TEI by Lou Burnard, conclusion by Sperburg-McQueen). 
+                
+                * Michael Sperburg McQueen, "What does descriptive markup contribute to digital humanities?". Digital Humanities Concepts 2015 Conference presentation (slides + Geoffrey Rockwell's notes). https://philosophi.ca/pmwiki.php/Main/DigitalHumanitiesConcepts2015 
+               
+                
+                * Ted Underwood, The Stone and the shell blog posts:  "Seven ways humanists are using computers to understand text" 4 June 2015:
+                https://tedunderwood.com/2015/06/04/seven-ways-humanists-are-using-computers-to-understand-text/ and "Emerging conversations between literary history and sociology." 02 December 2015: https://tedunderwood.com/2015/12/02/emerging-conversations-between-literary-history-and-sociology/
+                
+                * Gregory J. Palermo, "Transforming Text: Four Valences of a Digital Humanities Informed Writing Analytics" Journal of Writing Analytics 
+                    Vol. 1 (2017). DOI: 10.37514/JWA-J.2017.1.1.11. https://wac.colostate.edu/docs/jwa/vol1/palermo.pdf
+     
+                
+                * author's (professional and friendly) January 2023 conversation about ChatGPT and the supposed demise/irrelevance of the TEI w/ Underwood and digital humanities colleagues on Mastodon wherein limited assumptions about markup's representational capacities were exposed: in Underwood's Mastodon thread: https://sigmoid.social/@TedUnderwood/109730986869388754 
+           -->
+            </para>
+
+        </abstract>
+        <author>
+            <personname>
+                <firstname>Elisa</firstname>
+                <othername>E.</othername>
+                <surname>Beshero-Bondar</surname>
+            </personname>
+            <personblurb>
+                <para>Elisa Beshero-Bondar explores and teaches document data modeling with the XML
+                    family of languages. She serves on the TEI Technical Council and is the founder
+                    and organizer of the <link xlink:href="https://digitalmitford.org"
+                        xlink:type="simple" xlink:show="new" xlink:actuate="onRequest">Digital
+                        Mitford project</link> and <link
+                        xlink:href="https://digitalmitford.github.io/DigMitCS/" xlink:type="simple"
+                        xlink:show="new" xlink:actuate="onRequest">its usually annual coding
+                        school</link>. She experiments with visualizing data from complex document
+                    structures like epic poems and with computer-assisted collation of differently
+                    encoded editions of <link xlink:href="https://frankensteinvariorum.github.io/"
+                        xlink:type="simple" xlink:show="new" xlink:actuate="onRequest"><emphasis
+                            role="ital">Frankenstein</emphasis></link>. Her ongoing adventures with
+                    markup technologies are documented on <link xlink:href="https://newtfire.org"
+                        xlink:type="simple" xlink:show="new" xlink:actuate="onRequest">her
+                        development site at newtfire.org</link>.</para>
+            </personblurb>
+            <affiliation>
+                <jobtitle>Chair</jobtitle>
+                <orgname>TEI Technical Council</orgname>
+            </affiliation>
+            <affiliation>
+                <jobtitle>Professor of Digital Humanities</jobtitle>
+                <jobtitle>Program Chair of Digital Media, Arts, and Technology</jobtitle>
+                <orgname>Penn State Erie, The Behrend College</orgname>
+            </affiliation>
+            <email>eeb4@psu.edu</email>
+        </author>
+        <keywordset role="author">
+            <keyword>machine-assisted collation</keyword>
+            <keyword>Python</keyword>
+            <keyword>XSLT</keyword>
+
+        </keywordset>
+    </info>
+
+    <section>
+        <title>Asking a Language Model to Compare Strings</title>
+        <para>I have been working on a project over the past few years that has challenged me to
+            explore, test, and refine a machine-assisted method for comparing versions of a text.
+            The project involves comparing five versions of the novel Frankenstein, and it includes
+            markup of editions that were coded differently. I have shared papers about these
+            adventures over the past few Balisage meetings, involving the fun of flattening and
+            raising markup and the challenge of comparing strings that include representations of
+            the markup in the editions. Collation is tiring, tedious work. It's one thing to prepare
+            an algorithm for comparison and apply it to good, adaptable software for the purpose
+            (collateX), but it is quite another have to correct the output. That is where the real
+            challenge begins: the intellectual challenge, mental discipline, or
+                <quote>self-psych-out</quote> of <quote>machine-assisted</quote> collation: When do
+            you give up trying to refine the software algorithm, and when to you
+                <quote>crack</quote> and resort to hand-correcting problematic outputs? Sometimes
+            giving up really slows down a project, and it is really possible to refine the method,
+            but it requires patience and tinkering with the machinery, and the patience to continue
+            testing.</para>
+
+        <para>When my colleagues began excitedly pointing to ChatGPT's public launch at the end of
+            last November 2022, I played the same games that we all did with the interface. For
+            example, we could make it create several bios of ourselves and see how ludricously wrong
+            they are. (In one invented bio I am both a medievalist and a published poet, neither of
+            which is true). Of course we also prompted it to invent supposedly serious
+            bibliographies to see its made-up citations and fake URLs, too. We instructors worry
+            about our students abusing generative AI to compose their papers, but academics who
+            program also quickly discovered a supremely helpful aspect of ChatGPT for debugging code
+            or quickly introducing how to access a software library on the fly and we also recognize
+            that our students should cultivate skills to prompt AI for help. ChatGPT has saved me
+            and my students time that we might otherwise have spent combing through documentation
+            and Stack Overflow posts. Even when ChatGPT was wrong and its suggested code plainly did
+            not work, it was leading us rapidly to the ad-hoc fixes we needed to make, and
+            particularly with some knowledge coming in we could work with it in a dialogue and
+            improve our understanding.</para>
+        <para>Debugging or introducing code syntax on the fly has proven a helpful use case of an
+            interactive chat AI. However, the real prize for me would be if AI could indeed work as
+            its developers fondly aspire for it to become: <quote>a very eager junior
+                programmer</quote> to <quote>make completely new workflows effortless and
+                efficient</quote>—on the very task that has taken me and my colleagues and students
+            years to refine: machine-assisted collation of manuscripts and printed documents.<footnote>
+                <para><quote><link
+                            xlink:href="https://openai.com/blog/chatgpt-plugins#code-interpreter"
+                            >ChatGPT plugins: Code interpreter</link></quote>, Chat GPT Blog.
+                    2023.</para>
+            </footnote> I both desired and feared to find a way for AI to assist or even take over
+            my work. After all, the point of AI like any good computational solution should be to
+            take over tedious tasks that humans can get wrong, whether or not I would discover I had
+            wasted years of effort on my projects by starting them too soon.</para>
+        <para>At various moments between January and July 2023, I have been testing a hypothesis
+            that a machine trained on tokenized strings and word embeddings should excel at the task
+            of comparing strings, even tokenizing and normalizing them. Yet over the past several
+            months in my experiments to engage ChatGPT in various permutations of this task, it has
+            not only been wanting, but remarkably and fascinatingly wanting. The ways in which it
+            has bungled my series of challenges may tell us something interesting about the limits
+            of a langugage model to assess differences between strings and also to express
+            cmoparisons in structured forms including markup.</para>
+        <para>
+            <!-- SHOW THEM WHAT TROUBLE CHAT GPT HAS
+                FOLLOW UP WITH SAME EXPERIMENT/SLIGHT IMPROVEMENT ON Anthropic's Claude:
+                https://www.theverge.com/2023/5/12/23720964/chatbot-language-model-context-window-memory-anthropic-claude
+                
+                
+            EXAMPLES + ANALYSIS OF WHAT IT'S GETTING WRONG
+            
+            HYPOTHESIS: WHEN NOT GIVEN A LARGE ENOUGH CONTEXT TO WORK WITH, FUZZINEESS SETS IN
+          
+            -->
+        </para>
+
+
+
+
+        <para>In a conference presentation in 2015, Michael Sperberg-McQueen declares on slide 8,
+                <quote>Declarative semantics make it possible to reason about representations;
+                imperative semantics impede.</quote><footnote>
+                <para>https://blackmesatech.com/2015/10/KIaCiDH/#(8)</para>
+            </footnote> Today dialogue with generative langguage-based AI gives us the opportunity
+            to declare and inquire with reason, but perhaps we can recognize something of how
+            imperative semantics <quote>impede</quote> when we find strange problems in their
+            replies. we can make a study of how far and how frequently and in what ways an AI gets
+            something seriously wrong when it delivers us its reasonable and authoritative-sounding
+            answers whose meaningful content is nevertheless far outside the bounds of reason. We
+            understand that prompt generation is based on statistical predictions of what might be
+            the best-fit, reasonable next tokens of text to supply in sequence.<footnote>
+                <para>CITE STUFF YOU GAVE THE DIGIT 210 STUDENTS.</para>
+            </footnote> We understand the large-language models (LLMs) demonstrate bias because they
+            amplify even the veiled language of racism and sexism that often goes nearly unheard or
+            unmarked in everyday discourse of Wikipedia and Reddit and social media.<footnote>
+                <para>CITE / COMMENT ON THE SEXISM GOOGLE COLLAB NOTEBOOK</para>
+            </footnote>
+        </para>
+        <para>Nothing in our modeling of texts escapes bias, but our capacity to assert and test
+            reasonable statements is a particular strength of declarative markup. In his 2015
+            presentation, Sperberg-McQueen points out that hierarchical models are not neutral. The
+            way we organize document hierarchies and decide on markup representations, and create
+            schema rules to validate our models does not represent reflect absolute <quote>ground
+                truth</quote>, but rather attempts to describe and define based on what choose to
+            prioritize, whether it's the section headings of a legislative memo or the page-by-page
+            printing of a comic book. The models we create for documents and the metadata we care
+            about reflect the paradigms and priorities of the humans who create them. <footnote>
+                <para>CITE THE PAPER/PROJECT ABOUT SEEING 100-YEAR-OLD LIBRARY ARCHIVE METADATA AND
+                    ITS SEXIST CLASSIFICATIONS OF LIBRARY WORKERS</para>
+            </footnote>
+            <quote>Children of a future age, reading this indignant page...know that in a former
+                time, Love, sweet love, was thought a crime.</quote>
+            <footnote>
+                <para><quote>William Blake</quote></para>
+            </footnote> Document historians of the future may come back to our XML markup and find
+            us as benighted, but I think they will also read in our models the rules of our
+            publishing houses, the attitudes and expectations that prevailed in understanding how to
+            study language and archive our cultural heritage. </para>
+
+
+
+        <para> Re-reading that seminal article from 1990 <quote>What is Text, Really?</quote> in the
+            year 2023 is striking for our current it remains as a critique of prevailing technology
+            systems for handling text.<footnote>
+                <para>Steven J. DeRose, David G. Durand, Elli Mylonas, Allen H. Renear, <quote>What
+                        is Text, Really?</quote> 1990.</para>
+            </footnote> Their proposition, that text really is an Ordered Hierarchy of Content
+            Objects, comes explicitly as a response (among other things) to concepts of text as a
+            stream of content objects, the gram particles and formmating instructions without
+            reference to structural context. Experimenting with GPT models (versions 3, 3.5, and 4)
+            in the previous months has illuminated a remarkable problem in evaluating text by the
+            tokens that seems to be generated by two different understandings of
+            <quote>text</quote>. Ask ChatGPT to show you how two versions of a short text compare,
+            to show where they differ, and see some remarkably strange results. Not only were the
+            results almost always inaccurate, but on repeated prompts and requests for corrections,
+            the AI could not be said to improve significantly. Even where there was some
+            improvement, there were usually new inaccuracies introduced to the model's capacity to
+            review the task at hand. </para>
+        <para>As a flawed human reader of texts I am in awe that a mathematically trained model that
+            consistently struggles with what seems to be a simple comparison of strings. Is it a
+            pre-programmed shortness of memory when asked to compare strings? I would venture that
+            ChatGPT's current inability to analyze comparisons of strings has something to do with
+            its token-by-token generative stream. ChatGPT can correctly tell me what Levenshtein (or
+            edit-distance) distance is. <!-- DEFINE IT. --> The AI can also separate two different
+            versions of a text in different boxes. But it cannot calculate the edit-distance and it
+            cannot seem to pinpoint variations. In this specific task, the AI supplies the illusion
+            of structure with some persistent (and to me still baffling) blindness. If we could
+            identify the AI's blind-spot, I think it is failing to <quote>see</quote> what
+            constitutes a reasonable, meaningful basis for comparison of text streams.</para>
+        <para><!-- Did you ask it to "diff" the strings?  --></para>
+
+        <para>
+            <!-- What could make it better? 
+           Mulitple articles suggest LLMs are proceeding in too linear/sequential a way
+           Vector databases would allow for  graph structures, associations of metadata with data:
+           https://www.pinecone.io/learn/vector-database/
+           
+           Tree of Thoughts: Deliberate Problem Solving with Large Language Models: https://arxiv.org/pdf/2305.10601.pdf
+           This includes te complaint about left-to-right token-by-token processing, and need for more dimenensions: decision tree
+           
+           Length generalization problems: This piece seems to address why LLMs fall short and fail to fully solve problems: Can LLMs extrapolate from short examples to solve longer problems?  https://openreview.net/pdf?id=zSkYVeX7bC4 
+       
+            
+            -->
+        </para>
+        <para>
+            <!-- COMMENTARY ON WHAT COMPUTATION WE DO WITH FV. The data structure, the pipeline, the construction of an edition in markup from comparisons of flattened strings. All this is a series of problems to solve that do not seem efficiently handled in the space of word vector approximations. 
+            
+            WHY does this  matter to say? Because in humanities / digital humanities we risk following into a trap about authoritative understanding of text. What is text, really, has never been a more important question. Without hybrid approaches and without structured containers, we risk falling into a monoculture of fuzzy ways of knowing, in which the construction of knowledge about texts is reduced to trends and patterns at scale. These are valuable studies, but not the only way of knowing about texts. 
+            
+            Moving text between structures, preserving document data models, all these things matter. Text isn't just grams. 
+            -->
+        </para>
+
+    </section>
+    <section>
+        <title>What's so meaningful about markup?</title>
+        <section>
+            <title>Transforming markup influences the semantics</title>
+            <para>Transforming text into other formats shows us what is fluid in markup. We map its
+                structures into forms that machines need to read, and when we do that they become
+                removable trays.</para>
+            <para><!-- What are you really wanting to say? --> Markup from markup to markup via
+                unstructured text. What we meant then, vs. what we mean now.</para>
+
+            <para>The process of refining the collation process for the Frankenstein Variorum
+                involved a serious challenge to stop the collateX software from its default
+                mechanism, always to align the smallest particles of the same text. Following the
+                pair-wise comparison model of Needleman Wunsch, the software compares the smallest
+                irreducible units of text (tokens) that it reads as <quote>the same</quote>, like
+                    <quote>an</quote> and <quote>the</quote>, even in passages that are not meant to
+                be associated across the texts. Some of the versions of
+                    <citation>Frankenstein</citation> contain long inserted blocks, multi-paragraph
+                inserted passages, and gaps in the manuscript that make alignment tricky. In the
+                last year, my student Yuying Jin and I established a reliable method for bracketing
+                these off in the last year that we call our <quote>longToken</quote> strategy. Here
+                we lengthen the size of the smallest particle of comparable text to the size of
+                whatever we can express inside an XML element
+                    <code>&lt;longToken&gt;.....&lt;/longToken&gt;</code>. We instructed our Python
+                script to isolate all tokens by newline characters, and set the entire length of
+                longToken (which could be as small as a single character and as large as two
+                paragraphs of text, including flattened markup) all in one irreducible line. By
+                controlling the tokenization algorithm, we were able to control the mechanism of the
+                collation software, prevent it from making spurious alignments on small words in a
+                passage that we would effectively bracket away from micro-comparisons.</para>
+            <para>Our Python script is a place of negotiation between paradigms of structured markup
+                and so-called unstructured text. We use the <link
+                    xlink:href="https://docs.python.org/3/library/xml.dom.pulldom.html">XML Pulldom
+                    library</link> to process what markup from the source documents we want to
+                include in the string comparison process. That is, we mask away some elements, like
+                the page <code>&lt;surface&gt;</code> and <code>&lt;zone&gt;</code> elements that
+                indicate page surfaces and locations on the pages from the Shelley-Godwin Archive
+                encoding, because we have decided that page position is not relevant to comparison
+                of the semantic text structure. But we want to preserve the element nodes that mark
+                paragraphs, and chapter structures, and we want to preserve the information about
+                deletion marks in the manuscript and from the Thomas copy. The word
+                    <quote>mask</quote> seems appropriate here: it's something like applying tape to
+                pieces of the file that we select. We continue to work with the markup, though, in
+                its meaningful form. In the Python script, we define variables containing lists of
+                element names that we will either mask away from the collation, or that we will
+                include: <programlisting>
+            ignore = ['sourceDoc', 'xml', 'comment', 'include', 'addSpan', 'handShift', 'damage', 
+                'unclear', 'restore', 'surface', 'zone', 'retrace']
+            blockEmpty = ['p', 'div', 'milestone', 'lg', 'l', 'cit', 'quote', 'bibl']
+            inlineEmpty = ['mod', 'pb', 'sga-add', 'delSpan', 'anchor', 'lb', 'gap', 
+                 'hi', 'w', 'ab']
+            inlineContent = ['del-INNER', 'add-INNER', 'metamark', 'shi']
+            inlineVariationEvent = ['head', 'del', 'mdel', 'add', 'note', 'longToken']
+                </programlisting> The <code>ignore</code> variable contains
+                everything we are screening away from the stream of text comparison. The other
+                variables represent elements types we will see in the input. This input contains
+                some recognizable elements from the TEI, but <code>&lt;p&gt;</code>,
+                    <code>&lt;lg&gt;</code>, and <code>&lt;l&gt;</code> are defined in the
+                    <code>blockEmpty</code> list, along with <code>&lt;milestone&gt;</code>, which
+                is the only element that those knowledgeable of the TEI would recognize as
+                legitimately empty.</para>
+            <para>What have we done to the TEI? Perhaps a sacrilege, but we are meddling with TEI
+                XML files as after all text files bearing meaningful markup, and we have converted
+                their element nodes into a format that allows us to compare texts based on their
+                original structures by removing the structures to process the comparison.</para>
+            <para>In preparing our editions for collation (as discussed in previous Balisage
+                papers), we have <quote>flattened</quote> the original TEI structural elements, and
+                abstracted them away from their original document models. We do this on purpose to
+                represent the element tags as Trojan-style markers and to be able to work them into
+                our a new XML file that stores a standoff critical apparatus in TEI. That file
+                represents the results of our collation pipeline, and it stores a flattened
+                representation of the tags from the source editions. The standoff critical apparatus
+                serves, also, as a basis for creating new edition files that store the collation
+                data, highlighting passages that vary with the other editions.</para>
+            <para>In this process, detailed elsewhere, the semantics of the declarative markup from
+                the source files are preserved even while that markup has undergone a complicated
+                series of transformations. First it is transferred into strings or a stream of text
+                in order to be collated, and then that stream of text is mapped back again into new
+                XML structures to represent the meaningful data in the critical apparatus about how
+                the texts compare to one another.</para>
+            <para>Moving in between text-processing paradigms illuminates a transfer of semantics
+                into format. The logic of declarative markup is preserved in the Python function
+                running the pull parser via the XML Pulldom library. This function delivers us a way
+                to transfer the logic of the markup element nodes into the formatting used to
+                prepare the tokens and normalized tokens to be delivered to the collateX software.
+                <programlisting>
+                    def extract(input_xml):
+    """Process entire input XML document, firing on events"""
+    # Start pulling; it continues automatically
+    doc = pulldom.parse(input_xml)
+    output = ''
+    for event, node in doc:
+        if event == pulldom.START_ELEMENT and node.localName in ignore:
+            continue
+        # copy comments intact
+        # if event == pulldom.COMMENT:
+        #     doc.expandNode(node)
+        #     output += node.toxml()
+        # ebb: The following handles our longToken and longToken-style elements:
+        # complete element nodes surrounded by newline characters to make a long complete token:
+        if event == pulldom.START_ELEMENT and node.localName in inlineVariationEvent:
+            doc.expandNode(node)
+            output += '\n' + node.toxml() + '\n'
+        # stops the problem of forming tokens that fuse element tags to words.
+        elif event == pulldom.START_ELEMENT and node.localName in blockEmpty:
+            output += '\n' + node.toxml() + '\n'
+        # ebb: empty inline elements that do not take surrounding white spaces:
+        elif event == pulldom.START_ELEMENT and node.localName in inlineEmpty:
+            output += node.toxml()
+        # non-empty inline elements: mdel, shi, metamark
+        elif event == pulldom.START_ELEMENT and node.localName in inlineContent:
+            output += '\n' + regexEmptyTag.sub('>', node.toxml())
+            # output += '\n' + node.toxml()
+        elif event == pulldom.END_ELEMENT and node.localName in inlineContent:
+            output += '&lt;/' + node.localName + '&gt;' + '\n'
+        # elif event == pulldom.START_ELEMENT and node.localName in blockElement:
+        #    output += '\n&lt;' + node.localName + '&gt;\n'
+        # elif event == pulldom.END_ELEMENT and node.localName in blockElement:
+        #    output += '\n&lt;/' + node.localName + '>'
+        elif event == pulldom.CHARACTERS:
+            # output += fixToken(normalizeSpace(node.data))
+            output += normalizeSpace(node.data)
+        else:System ID: /Users/eeb4/Documents/GitHub/fv/collationWorkspace/collationChunks/C08/output/Collation_C08-complete.xml
+Description: 
+XPath location: /cx:apparatus[1]/app[54]
+Start location: 667:2
+End location: 699:8
+
+            continue
+    return output</programlisting> The <quote>partial DOM tree</quote> constructed
+                by XML PullDom serializes something resonant with the semantics of explicit markup,
+                allowing us in our project to hold the logic and even the structure of markup as a
+                stream of text to be tokenized, chopped into the smallest fragments of meaningful
+                variation. Thanks to the advantage of declarative markup, the scholarly editor gets
+                to declare what that smallest fragment can be. A full element node marking an
+                    <code>inlineVariationEvent</code> surrounded by <code>\n</code> newline
+                characters becomes an irreducible token in , and this includes the
+                    <code>&lt;longToken&gt;</code>, <code>&lt;add&gt;</code>, and
+                    <code>&lt;del&gt;</code> elements that in our project mark irreducible units of
+                comparison. We want an entire added or deleted passage to be lined up complete as
+                one action in the text. It must be compared to a full comparable unit marked in the
+                other documents, fully undeleted. That is a decision of our scholarly edition work
+                to handle collation events, and it means that a deletion event followed by an
+                insertion event in the Thomas text (where the author crossed out a passage and
+                indicated another to add) effectively drives the collation software to generate a
+                specially shaped entry in our critical apparatus. We have programmed our work to
+                prepare this output: <programlisting>
+               &lt;app&gt;
+		&lt;rdgGrp
+			n="['&lt;del&gt;to his statement, which was delivered&lt;/del&gt;', 'to him with interest for he spoke']"&gt;
+			&lt;rdg wit="fThomas"&gt;&lt;del rend="strikethrough"&gt;to his statement, which was
+				delivered&lt;/del&gt; &lt;add&gt;to him with interest for he spoke&lt;/add&gt;&lt;/rdg&gt;
+		&lt;/rdgGrp&gt;
+		&lt;rdgGrp n="['to his statement, which was delivered']"&gt;
+			&lt;rdg wit="f1818"&gt;&lt;longToken&gt;to his statement, which was
+				delivered&lt;/longToken&gt;&lt;/rdg&gt;
+			&lt;rdg wit="f1823"&gt;&lt;longToken&gt;to his statement, which was
+				delivered&lt;/longToken&gt;&lt;/rdg&gt;
+			&lt;rdg wit="f1831"&gt;&lt;longToken&gt;to his statement, which was
+				delivered&lt;/longToken&gt;&lt;/rdg&gt;
+		&lt;/rdgGrp&gt;
+	&lt;/app&gt;</programlisting> Here you see a unit of variation after the collation
+                machinery has run to align our marked inline variation events. This is TEI XML
+                critical apparatus deliberately constructed to express the logic of elements storing
+                variation information across five source edition files. In this moment of meaningful
+                variation marked by an <code>&lt;app&gt;</code>, each <code>&lt;rdg&gt;</code>
+                element stores a single token representing the text of one witness, here a phrase.
+                The collation software follows our normalizing algorithm to determine that three of
+                the witnesses share one form, and the Thomas edition holds the same passage crossed
+                out together with its complete replacement. Declarative markup permits us to control
+                the tokenizing process and to express our theory of textual variation in the logic
+                of the programming pipeline. It gave us control of a process of pair-wise
+                comparisons, but allowing us to alter the usual definition of the smallest unit of
+                meaningful variation. Certainly we did something unorthodox with the machinery of
+                comparing texts by declaring what a token could be, and we invented our own markup
+                outside the TEI to work our control, but we did so to assist a collation process
+                that itself does not process text in a declarative way.</para>
+
+            <para> </para>
+
+
+
+
+
+
+
+
+
+            <para> This markup preserves its meaningfulness outside its context, It allows us to
+                alter the basis of textual comparison: Markup gave me a way to speak to the software
+                that communicates in the language of my research question. With the construction of
+                a longToken I can bracket off passages of text and force the software to deal with
+                them on my terms. The softwware does my bidding, and that bidding was communicated
+                in declarative markup.</para>
+
+
+            <para>Software applications that take input data impose requirements on their input
+                structures, so you're faced with strange structures like line-by-line JSON-LD to
+                train ChatGPT on a series of prompts, or you can provide data in a TSV format to be
+                read by Cytoscape. The large language models of the year 2023 recognize data
+                structures and can output well-formed XML on request. They get how to set text into
+                bins, but the bins do not hold to the logic of a coherent representational strategy
+                consistently. As they remix our text and tokens now, they generate a surface
+                appearance of form, but the logic of its declared meaning will not be stable or
+                persistent. Not all that is markup holds to a declarative priniciple. Yet a string
+                of The output data formats are simple, flat, and you can typically provide numerous
+                arrangements from an XML document because the tree structure provides a statement
+                about the organization of meaning. Moving between and across hierarchies decants
+                text's data and metadata in ways that charge up the energy of re-mediation. Is a
+                marked up document something like a highly charged battery of potential energy for
+                all its possible transformations? </para>
+
+            <para>Texts change meaning over time, and transferring markup responds to the semantic
+                flux. What we mark is a meaningful expression of transmission and temporality. In
+                the year 2023 we aren't talking about any electronic text as permanent, but rather
+                as a stage of storage, loss, retrieval, and re-mediation. We can try to rescue the
+                text data trapped in the old proprietary data formats and move it into something we
+                can access. Or we can compare texts encoded in multiple ways. Doing this work in
+                declarative ways helps us to articulate more than just a document data model for the
+                moment. It can be a document data model designed for transference, for comparison,
+                for re-mediation, taking us beyond the intentions of one generation of encoders:
+                indeed, as someone once described the TEI, <quote>yesterday's information
+                    tomorrow</quote>. </para>
+
+            <para> </para>
+
+
+        </section>
+    </section>
+    <section><title>Conclusion</title>
+        
+        
+        
+        <!--<para>Software applications that take input data impose requirements on their input
+            structures, so you're faced with strange structures like line-by-line JSON-LD to
+            train ChatGPT on a series of prompts, or you can provide data in a TSV format to be
+            read by Cytoscape. The large language models of the year 2023 recognize data
+            structures and can output well-formed XML on request. They get how to set text into
+            bins, but the bins do not hold to the logic of a coherent representational strategy
+            consistently. As they remix our text and tokens, they generate a surface
+            appearance of form but a simulation of logic, 
+            and a simulation derived from its training set. 
+            
+            
+            If the language model is trained on your own project and if it can apply tools rather than name them, 
+            perhaps the AI could then become the skilled junior programmer that openAI wants it to be. 
+            
+            
+            Not all that is markup holds to a declarative priniciple. Yet a string
+            of 
+            
+            The output data formats are simple, flat, and you can typically provide numerous
+            arrangements from an XML document because the tree structure provides a statement
+            about the organization of meaning. 
+            
+        </para>
+        
+        <para>Texts change meaning when transmitted over time and translated across cultures, and collation projects can be considered 
+            a complicated way to track particular changes methodically based on a carefully defined concept of meaningful change.
+            Such projects can engage with markup as a meaningful expression of transmission and temporality. 
+            Declarative statements, too, change over time as patterns and templates transformed into new contexts
+            in electronic lifecycles of storage, loss, retrieval, and re=mediation.
+            Perhaps a well-marked document is something like a store of potential energy that directs
+            and amplifies its future transformations. Declarative markup can also talk back to 
+            the expectations of another time, to articulate 
+            a meaningful difference from what is outmoded, to guide a meaningful change. 
+            It is after all just a way of saying something first, and then
+            deliberately packaging it in the syntax that imperative programming can process.
+        </para>-->
+        
+        <para>In a moment of eager excitement, confusion, and fear about the potential
+            disruptive influences of generative language models, markup technologies stand out
+            for their reliability and practicality. They allow us to intervene and guide
+            computational processes within the declarative bounds of reason. Declarative methods
+            can provide a foundation for a digital humanities lab like mine to counterbalance
+            the anxiety-ridden speculative work of statistically-based <quote>distant
+                reading</quote>, to extend what digital resources we can create, and to ground
+            the authority of our research. When the calculations and training capacities of a
+            large language model are subject to rapid change with the next month's update, and
+            when developers of generative language models conceal their sources for commercial
+            reasons, we would do well to inspect our tools and research methods for brittle
+            dependencies. Declarative markup proves itself a precision instrument to guide
+            computational processing and a direct way to address the ephemerality of unstable
+            technology stacks.</para>
+        
+    </section>
+
+
+</article>
