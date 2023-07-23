@@ -38,7 +38,7 @@
                     Vol. 1 (2017). DOI: 10.37514/JWA-J.2017.1.1.11. https://wac.colostate.edu/docs/jwa/vol1/palermo.pdf
      
                 
-                * author's (professional and friendly) January 2023 conversation about ChatGPT and the supposed demise/irrelevance of the TEI w/ Underwood and digital humanities colleagues on Mastodon wherein limited assumptions about markup's representational capacities were exposed: in Underwood's Mastodon thread: https://sigmoid.social/@TedUnderwood/109730986869388754 
+              
            -->
             </para>
 
@@ -180,28 +180,28 @@
                         xlink:href="http://revistaie.ase.ro/content/105/01%20-%20zamfiroiu,%20vasile,%20savu.pdf"
                         >http://revistaie.ase.ro/content/105/01%20-%20zamfiroiu,%20vasile,%20savu.pdf</link>.
                     Accessed 2023-07-22.</para>
-            </footnote> ChatGPT has also prompted much informal fun tinkering with prompts among my
+            </footnote> ChatGPT has also motivated much fun, informal tinkering with prompts among my
             academic circles. We would ask for introductions of ourselves and our colleagues
             suitable for use in conferences and laugh at how ludricously wrong they are. (In one
             invented bio I am both a medievalist and a published poet, neither of which is true, but
-            I could speculate that somehow the words associated with me in ChatGPT's training had
+            I could speculate that somehow the words associated with me in ChatGPT’s training had
             been in proximity with medievalist friends and people far more creative than me). Of
             course we also prompted it to invent supposedly serious bibliographies to see its
             made-up citations and fake URLs, too. At universities, teaching faculty worry about our
             students abusing generative AI to compose their papers, and possibilities for new
-            approaches to the writing process. Academics who program quickly discovered a supremely
+            approaches to the writing process. Academics who write computer programming code quickly discovered a supremely
             helpful aspect of ChatGPT for debugging code or quickly introducing how to access a
-            software library on the fly and we also recognize that our students should cultivate
-            skills to prompt AI for help. ChatGPT has saved me and my students time that we might
+            software library on the fly. Once we have seen such benefits, we tend to recognize that our students should also cultivate
+            skills to prompt AI—responsibly—for coding assistance. ChatGPT has saved time for me and my most dedicated students, time that we might
             otherwise have spent combing through documentation and Stack Overflow posts. Even when
             ChatGPT was wrong and its suggested code plainly did not work, it was leading us rapidly
             to the ad-hoc fixes we needed to make, and particularly with some knowledge coming in we
             could work with it in a dialogue and improve our understanding. </para>
 
-        <para>We have been eagerly experimenting all year with something that seems to promise the
+        <para>Encouraged by such time-saving help, we have been eagerly experimenting all year with something that seems to promise the
             ultimate <emphasis>declarative</emphasis> possiblity: to directly ask a machine to
             deliver an output, without directing how it generates that output. The developers at
-            openAI fondly aspire for their chat model to become: <quote>a very eager junior
+            OpenAI fondly aspire for their chat model to become: <quote>a very eager junior
                 programmer</quote> to <quote>make completely new workflows effortless and
                 efficient</quote>.<footnote>
                 <para><quote><link
@@ -219,29 +219,19 @@
                 know</quote> how to optimize the most reasonable alignments and outputs? </para>
         <para>At various moments between January and July 2023, I began testing a hypothesis that a
             machine trained on tokenized strings and word embeddings should excel at the task of
-            comparing strings, even tokenizing and normalizing them. I caution that my approach to
-            prompt engineering discussed in the following sections could likely be improved and I am
-            exploring this area as a humanities scholar, but I do have specific requirements for an
-            optimal collation in mind that I have attempted to declare to the AI. Over the past
+            comparing strings, even tokenizing and normalizing them. My informal approach to conversational
+            prompt engineering discussed in the following sections could likely be improved, but I do have specific requirements for an
+            optimal collation in mind that I have been attempting to declare and discuss with  text-generative chat interfaces, and the exercise has been instructive. Over the past
             several months in my prompt experiments to engage ChatGPT and Anthropic’s Claude in
             various permutations of this task, they not only been wanting, but remarkably and
             consistently so. The ways in which generative AI has bungled my series of
             string-comparison challenges may tell us something interesting about the limits of
             current large language models to correctly observe the differences between strings, and
-            to express those differences in structured forms. In this paper I first share my
-            experiments with ChatGPT and Claude, and I attempt to diagnose the problems with their
-            output in a way that seems to illuminate a limitation of sequential processing in the
-            systems I am working with. The errors are illuminating in a way that brings forward some
-            of the strengths of declarative markup when it can be introduced in a processing system.
-            I then turn to a discussion of how declarative markup assists in controlling an
-            imperative step-by-step process of string comparison in my collation project, to
-            recognize something about the deliberate preservation of declarative logic possible in
-            imperative systems. What might it mean for AI to be able to operate in a fully
-            declarative way? </para>
-    </section>
+            to express those differences in structured forms. The errors are illuminating in a way that demonstrates something seriously lacking in the text-generative system in 2023, and that is a fully declarative method of working with input and generating output.</para>
+    
 
     <section>
-        <title>Asking a Language Model to Compare Strings</title>
+        <title>What happens when we asking a Language Model to Compare Strings</title>
         <para>To begin to estimate whether AI could assist my collation work, I needed to work
             within the limits of ChatGPT’s input window. But just as I could ask it to proofread a
             paragraph or two for errors, surely I could provide some input strings and ask it to
@@ -385,12 +375,19 @@
             Moving text between structures, preserving document data models, all these things matter. Text isn't just grams. 
             -->
         </para>
-
+    </section>
+        <section>
+            <title>From stochastic parrot to reasoning intelligence?</title>
+            
+            
+            <para>What might it mean for a text-generative <quote>AI</quote> system to to operate in a fully declarative way?
+</para>
+        </section>
     </section>
     <section>
-        <title>How meaningful is the markup, anyway?</title>
+        <title>How meaningful is markup in a time of AIanyway?</title>
 
-        <para>When the text-generative AI models wrote the markup shared in the previous section,
+        <para>When the text-generative AI models composed the markup shared in the previous section,
             their declarative semantics were unclear and often inconsistent, particularly when the
             tags don't match the content. In my experiments, the logic of the generated markup
             betrays inconsistencies. Perhaps its purpose became diluted by other imperatives of the
