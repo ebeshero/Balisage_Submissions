@@ -137,9 +137,8 @@
             colleagues, simply because in the document modeling and research I do with digital
             scholarly editions, I am trying to do things with texts and declare things about texts
             that seem to be out of scope in their work (at least for now). Some of my analytical
-            colleagues do express that declarative markup seems unnecessary in a time of big text
-            data analytics, when declarations about the documents seem to encumber or inhibit
-            projects at scale.<footnote>
+            colleagues opine that declarative markup seems unnecessary in a time of big text
+            data analytics, particularly when the making of declarations about the document form and content seems to encumber or inhibit projects at scale. The classifications and categorizations made by AI should be able to do the work of markup or render it obsolete.<footnote>
                 <para>Evidence of how my colleagues practicing digital humanities perceive
                     declarative markup in the time of AI can be seen in the author's January 2023
                     conversation with Ted Underwood on Mastodon:
@@ -147,10 +146,10 @@
                     conversation was sparked by a declaration that ChatGPT’s capacity to take text
                     input with instructions and output it marked in TEI also meant that eventually
                     there will be no more need for markup at all. In some ways this paper responds
-                    to the challenge of that conversation, by an awareness that more needs to be
-                    declared now about what we do with declarative methods and semantics.</para>
+                    to the challenge of that conversation.</para>
             </footnote> In this paper, I want to address the question of what declarative markup can
-            do for us who engage in textual scholarship in the digital humanities.</para>
+            do for us who engage in textual scholarship in the digital humanities. More needs to be
+            declared just now about what we do with declarative methods and semantics and how they might assist the efforts of AI in our time.</para>
         <para>Because I am steeped in scholarly editing and a declarative markup
                 <quote>specialization</quote> in the digital humanities, my efforts to test the chat
             interfaces of large language models reflect my distinct research interests in comparing
@@ -290,8 +289,8 @@
         <section>
             <title>From stochastic parrot to reasoning intelligence?</title>
             
-            <para>As a human (read: limited, inconsistent) reader of texts I am in awe that a mathematically trained language model, a so-called "artificial intelligence" which I expect to be more consistent and adept at pattern recognition than , consistently struggles with what seems to be a simple comparison of strings. Is
-                it a pre-programmed shortness of memory when asked to compare strings? I would
+            <para>As a human (read: limited, inconsistent) reader of texts I am in awe that a mathematically trained language model, a so-called "artificial intelligence" which I expect to be more consistent and adept at pattern recognition than I am, consistently struggles with what seems to be a simple comparison of strings. Is
+                it a shortness of Long-Term Short-Term Memory(LTSTM) that causes the models to lose track of the details in the process of calculating a response? I would
                 venture that ChatGPT's current inability to analyze comparisons of strings has
                 something to do with its token-by-token generative stream. ChatGPT can correctly
                 tell me what Levenshtein (or edit-distance) distance is. <!-- DEFINE IT. --> The AI
@@ -366,25 +365,29 @@
                 in the year 2023 for how current it remains as a critique of prevailing technology
                 systems for handling text.<footnote>
                     <para>Steven J. DeRose, David G. Durand, Elli Mylonas, Allen H. Renear,
-                        <quote>What is Text, Really?</quote> 1990.</para>
+                            <quote>What is Text, Really?</quote> 1990.</para>
                 </footnote> Their proposition, that text really is an Ordered Hierarchy of Content
                 Objects, comes explicitly as a response (among other things) to concepts of text as
                 a stream of content objects, the gram particles and formmating instructions without
                 reference to structural context. In the year 2023 when we ask questions to large
                 language models we are given to understand that text is generated in response to the
-                <quote>context window</quote> that model uses for perceiving the range of nearby
-                tokens and their proximity to teh current token a frame of reference. Is it the case
+                    <quote>context window</quote> that model uses for perceiving the range of nearby
+                tokens and their proximity to the current token a frame of reference. Is it the case
                 in 2023 that context in the large language model is being determined by frames of
                 reference in a stream of text? When semantics is coded and decoded in vector space
                 by position and co-occurrence, this generates the appearance of meaningful output,
                 which may not be true but is nevertheless frequently deemed useful. This is the
-                argument of the famous <quote>Stochastic Parrots</quote> article: that large language models distort, exploit, and waste resources in an effort only to produce unreliable and biased approximations. <footnote>
-                    <para> For helpful introductions to how large language models work to generate text based on predictive algorithms, see On how meaning is predicted in large language models, see Jay Alammar,
-                        <link xlink:href="http://jalammar.github.io/illustrated-transformer/"
-                            ><quote>The Illustrated Transformer</quote></link> blog post. 27
+                argument of the famous <quote>Stochastic Parrots</quote> article: that large
+                language models distort, exploit, and waste resources in an effort only to produce
+                unreliable and biased approximations. <footnote>
+                    <para> For helpful introductions to how large language models work to generate
+                        text based on predictive algorithms, see On how meaning is predicted in
+                        large language models, see Jay Alammar, <link
+                            xlink:href="http://jalammar.github.io/illustrated-transformer/"
+                                ><quote>The Illustrated Transformer</quote></link> blog post. 27
                         June 2018; Molly Ruby <link
                             xlink:href="https://towardsdatascience.com/how-chatgpt-works-the-models-behind-the-bot-1ce5fca96286"
-                            ><quote>How ChatGPT Works: The Model Behind The Bot</quote></link>,
+                                ><quote>How ChatGPT Works: The Model Behind The Bot</quote></link>,
                         in Towards Data Science. Medium. 30 January 2023. </para>
                 </footnote> I </para>
             
@@ -436,12 +439,12 @@
             <title>Markup as declarative intervention in an imperative process</title>
             <para>The process of refining the collation process for the Frankenstein Variorum
                 involved a serious challenge to stop the collateX software from its default
-                mechanism, always to align the smallest particles of the same text. Adapting the
-                pair-wise comparison model of Needleman Wunsch among others, the software definitely
+                mechanism, always to align the smallest particles of the same text. CollateX definitely
                 tends to align the smallest irreducible units of text (tokens) that it reads as
                     <quote>the same</quote>, like <quote>an</quote> and <quote>the</quote>, even in
                 passages that are not meant to be associated across the texts.<footnote>
-                    <para/>
+                    <para>
+                        See the CollateX documentation, section 3.1 Alignment Algorithms in <link xlink:href="https://collatex.net/doc/">https://collatex.net/doc/</link>. The Needleman-Wunsch algorithm appears to be a starting point that CollateX has adapted and improved to the Dekker algorithm, but the author's experience applying the default alignment algorithm is consistent with this pronounced statement from Needleman and Wunsch when they introduced their comparison algorithm for bioinformatics in 1970: <quote>Comparisons are made from the smallest unit of significance</quote>. This means that the software consistently defaults to aligning the smallest units of agreement (such as <quote>a</quote>, <quote>an</quote>, <quote>the</quote>) at the token level, even when the context of the passage of text surrounding them  (say the unit paragraph or section) is completely different. One solution to this is to handle the problem in pre-processing to normalize the text stream to exclude such articles, or (as we did) to extend longToken elements around completely divergent long passages to prevent their unit words from being processed separately by the software. Other solutions involve post-processing or editing the output collation units by hand, which in our case was a brittle solution, prone to introducing new errors.</para>
                 </footnote> Some of the versions of <citation>Frankenstein</citation> contain long
                 inserted blocks, multi-paragraph inserted passages, and gaps in the manuscript that
                 make alignment tricky. In the last year, my student Yuying Jin and I established a
@@ -492,7 +495,7 @@
                 original structures by removing the structures to process the comparison.</para>
         </section>
         <section>
-            <title>Transferring and preserving declared semantics</title>
+            <title>Transferring declared semantics</title>
             <para>In preparing our editions for collation (as discussed in previous Balisage
                 papers), we have <quote>flattened</quote> the original TEI structural elements, and
                 abstracted them away from their original document models. We do this on purpose to
@@ -514,9 +517,8 @@
                 to transfer the logic of the markup element nodes into the formatting used to
                 prepare the tokens and normalized tokens to be delivered to the collateX software.
                 <programlisting>
-                    def extract(input_xml):
+    def extract(input_xml):
     """Process entire input XML document, firing on events"""
-    # Start pulling; it continues automatically
     doc = pulldom.parse(input_xml)
     output = ''
     for event, node in doc:
@@ -550,12 +552,7 @@
         elif event == pulldom.CHARACTERS:
             # output += fixToken(normalizeSpace(node.data))
             output += normalizeSpace(node.data)
-        else:System ID: /Users/eeb4/Documents/GitHub/fv/collationWorkspace/collationChunks/C08/output/Collation_C08-complete.xml
-Description: 
-XPath location: /cx:apparatus[1]/app[54]
-Start location: 667:2
-End location: 699:8
-
+        else:
             continue
     return output</programlisting> The <quote>partial DOM tree</quote> constructed
                 by XML PullDom serializes something resonant with the semantics of explicit markup,
