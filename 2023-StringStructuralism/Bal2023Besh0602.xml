@@ -161,7 +161,7 @@
             with imperative programming, simply and profoundly makes that analysis possible to
             accomplish. This is a paper intended to demonstrate the importance of declarative
             authority in our text-analytic systems and to join a call for a more declarative
-            approach to what is currently an unintelligent system for modeling language. </para>
+            approach to what is currently an unintelligent system for modeling language.</para>
 
     </section>
 
@@ -396,6 +396,7 @@
             
             <para>
                 <!-- What could make it better? 
+                   
            Mulitple articles suggest LLMs are proceeding in too linear/sequential a way
            Vector databases would allow for  graph structures, associations of metadata with data:
            https://www.pinecone.io/learn/vector-database/
@@ -441,14 +442,15 @@
                 involved a serious challenge to stop the collateX software from its default
                 mechanism, always to align the smallest particles of the same text. CollateX definitely
                 tends to align the smallest irreducible units of text (tokens) that it reads as
-                    <quote>the same</quote>, like <quote>an</quote> and <quote>the</quote>, even in
+                <quote>the same</quote>, like <quote>a</quote>, <quote>an</quote>, and <quote>the</quote>, even in
                 passages that are not meant to be associated across the texts.<footnote>
                     <para>
-                        See the CollateX documentation, section 3.1 Alignment Algorithms in <link xlink:href="https://collatex.net/doc/">https://collatex.net/doc/</link>. The Needleman-Wunsch algorithm appears to be a starting point that CollateX has adapted and improved to the Dekker algorithm, but the author's experience applying the default alignment algorithm is consistent with this pronounced statement from Needleman and Wunsch when they introduced their comparison algorithm for bioinformatics in 1970: <quote>Comparisons are made from the smallest unit of significance</quote>. This means that the software consistently defaults to aligning the smallest units of agreement (such as <quote>a</quote>, <quote>an</quote>, <quote>the</quote>) at the token level, even when the context of the passage of text surrounding them  (say the unit paragraph or section) is completely different. One solution to this is to handle the problem in pre-processing to normalize the text stream to exclude such articles, or (as we did) to extend longToken elements around completely divergent long passages to prevent their unit words from being processed separately by the software. Other solutions involve post-processing or editing the output collation units by hand, which in our case was a brittle solution, prone to introducing new errors.</para>
-                </footnote> Some of the versions of <citation>Frankenstein</citation> contain long
+                        See the CollateX documentation, section 3.1 Alignment Algorithms in <link xlink:href="https://collatex.net/doc/">https://collatex.net/doc/</link>. The Needleman-Wunsch algorithm appears to be a starting point that CollateX has adapted and improved to the Dekker algorithm, but the author's experience applying the default alignment algorithm is consistent with this pronounced statement from Needleman and Wunsch when they introduced their comparison algorithm for bioinformatics in 1970: <quote>Comparisons are made from the smallest unit of significance.</quote> This means that the software consistently defaults to aligning the smallest units of agreement at the token level, even when the context of the passage of text surrounding them  (say the unit paragraph or section) is completely different. Saul B. Needleman and Christian D. Wunsch, <quote>A general method applicable to the search for similarities in the amino acid sequence of two proteins</quote> Journal of Molecular Biology 48:3 (28 March 1970) pp. 443-453. <link xlink:href="https://doi.org/10.1016/0022-2836(70)90057-4">https://doi.org/10.1016/0022-2836(70)90057-4</link>.</para>
+                </footnote> One solution is to normalize the text stream in pre-processing prior to collation, to exclude such articles or short punctuation, but this did not accord with our methods of comparing the texts: the small words do matter to us when they mark variations. Other solutions involve post-processing or editing the output collation units by hand, which in our case was a brittle solution, prone to introducing new errors. Some of the versions of <citation>Frankenstein</citation> contain long
                 inserted blocks, multi-paragraph inserted passages, and gaps in the manuscript that
-                make alignment tricky. In the last year, my student Yuying Jin and I established a
-                reliable method for bracketing these off in the last year that we call our
+                make it tricky to prepare aligned units (or <quote>chunks</quote> representing parallel passages across the five versions).</para>
+            <para>Over the last year, my student Yuying Jin and I established a
+                reliable method for bracketing off long divergent passages, a method that we call our
                     <quote>longToken</quote> strategy. Here we lengthen the size of the smallest
                 particle of comparable text to the size of whatever we can express inside an XML
                 element <code>&lt;longToken&gt;.....&lt;/longToken&gt;</code>. We instructed our
@@ -490,12 +492,12 @@
                 is the only element that those knowledgeable of the TEI would recognize as
                 legitimately empty.</para>
             <para>What have we done to the TEI? Perhaps a sacrilege, but we are meddling with TEI
-                XML files as after all text files bearing meaningful markup, and we have converted
+                XML files as, after all, text files that hold meaningful declarative markup, and we have converted
                 their element nodes into a format that allows us to compare texts based on their
                 original structures by removing the structures to process the comparison.</para>
         </section>
         <section>
-            <title>Transferring declared semantics</title>
+            <title>There and back again: Transferring declared semantics</title>
             <para>In preparing our editions for collation (as discussed in previous Balisage
                 papers), we have <quote>flattened</quote> the original TEI structural elements, and
                 abstracted them away from their original document models. We do this on purpose to
