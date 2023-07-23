@@ -90,36 +90,56 @@
             that involve us in tokenizing texts and applying software to study how they cluster and
             co-occur. Studies of term/token frequency-inverse document frequency (TF-IDF) are the
             basis of experiments like topic modeling, an approximate statistical effort to survey
-            <quote>topics</quote> based on clustering of tokens. The practice of tokenizing
+                <quote>topics</quote> based on clustering of tokens. The practice of tokenizing
             texts is also fundamental to stylometry, to seek evidence of what patterns and
-            clusterings make a voice distinctive. Among digital
-            humanists who have spoken at the ADHO conference from 2015 onward, my own work on digital scholarly editions involves me much
-            more than usual with declarative markup through XML and TEI.<footnote><para>See the analysis of topics represented in ADHO conference abstracts in Scott Weingart, <quote>What’s Under the Big Tent?: A Study of ADHO Conference Abstracts</quote>, Digital Studies/le Champ Numérique, 7(1), 6. DOI: <link xlink:href="http://doi.org/10.16995/dscn.284">http://doi.org/10.16995/dscn.284</link>.</para></footnote> This apparent marginality in my field means I have a slightly unusual and persistently useful
-            <quote>toolkit</quote> I have been using for a decade, and that I am also a resource for
-            my colleagues when they need to learn these technologies. My work with declarative methods also allows me to enter the world of natural language processing and explore
-            documents as my colleagues do where we share common areas of interest. These days I regularly move data from my marked-up documents into the realm
-            of natural language processing to identify and analyze patterns. Such work tends to
-            cycle from marked-up XML documents to strings for tokenization and processing, and then
-            back into markup to frame the outputs for sharing and visualizing the data in SVG, XML,
+            clusterings make a voice distinctive. Among digital humanists who have spoken at the
+            ADHO conference from 2015 onward, my own work on digital scholarly editions involves me
+            much more than usual with declarative markup through XML and TEI.<footnote>
+                <para>At least in 2017, topics connected to digital scholarly editions (and
+                    connected to it, declarative markup) seems to have been on the decline. See
+                    Scott Weingart, <quote>What’s Under the Big Tent?: A Study of ADHO Conference
+                        Abstracts</quote>, Digital Studies/le Champ Numérique, 7(1), 6. DOI: <link
+                        xlink:href="http://doi.org/10.16995/dscn.284"
+                        >http://doi.org/10.16995/dscn.284</link>. See also the questions raised
+                    about the ADHO conference and its representation of the practice of
+                        <quote>digital humanities</quote> in Laura Estill, Jennifer Giuliano, Élika
+                    Ortega, Melissa Terras, Deb Verhoeven, and Glen Layne-Worthy, <quote>The circus
+                        we deserve? A front row look at the organization of the annual academic
+                        conference for the Digital Humanities</quote> DHQ: Digital Humanities
+                    Quarterly 16:4 (2022). <link
+                        xlink:href="A front row look at the organization of the annual academic conference for the Digital Humanities"
+                        >http://www.digitalhumanities.org/dhq/vol/16/4/000643/000643.html</link>
+                </para>
+            </footnote> This apparent marginality in my field means I have a slightly unusual and
+            persistently useful <quote>toolkit</quote> I have been using for a decade, and that I am
+            also a resource for my colleagues when they need to learn these technologies. My work
+            with declarative methods also allows me to enter the world of natural language
+            processing and explore documents as my colleagues do where we share common areas of
+            interest. These days I regularly move data from my marked-up documents into the realm of
+            natural language processing to identify and analyze patterns. Such work tends to cycle
+            from marked-up XML documents to strings for tokenization and processing, and then back
+            into markup to frame the outputs for sharing and visualizing the data in SVG, XML,
             XHTML5.</para>
         <para>The cycle from declarative markup, to string-processing algorthims, and back to
-            declarative markup for outputs is a fundamental aspect of my research and teaching, but
-            for many in my field, only the string processing portion of this is relevant, as they are
-            not regularly involved as I am with designing custom interfaces. When you work with digital scholarly
-            editions, you think of interfaces and representation, and you also tend to work closely
-            with lots of textual data drawn from single works or small collections, instead of at a
-            distance from thousands or millions of documents treated as <quote>unstructured</quote>
-            streams of tokenized data. I began my career in the United States in the 1990s in a
-            literary and cultural field called <quote>English</quote>, and I know that many of my
-            digital humanities colleagues invested in natural language processing share that
-            background with me, and share much of my own migration experience into a institutional
-            zones delineated <quote>digital humanities</quote> in our strange institutional
-            adventures with computers. But I know that I think of texts quite differently than many
-            of my digital humanist colleagues, simply because in the document modeling and research
-            I do with digital scholarly editions, I am trying to do things with texts and declare
-            things about texts that seem to be out of scope in their work (at least for now). Some of my analytical colleagues do express that declarative markup seems
-            unnecessary in a time of big text data analytics, when declarations about the documents
-            seem to encumber or inhibit projects at scale.<footnote>
+            declarative markup for outputs is a fundamental aspect of my research and teaching. But
+            for many in my field, only the string processing portion of this is relevant, as they
+            are not regularly involved as I am with designing custom interfaces. When you work with
+            digital scholarly editions, you think of interfaces and representation, and you also
+            tend to work closely with lots of textual data drawn from single works or small
+            collections, instead of at a distance from thousands or millions of documents treated as
+                <quote>unstructured</quote> streams of tokenized data. I began my career in the
+            United States in the 1990s in a literary and cultural field called
+                <quote>English</quote>, and I know that many of my digital humanities colleagues
+            invested in natural language processing share that background with me, and share much of
+            my own migration experience into a institutional zones delineated <quote>digital
+                humanities</quote> in our strange institutional adventures with computers. But I
+            know that I think of texts quite differently than many of my digital humanist
+            colleagues, simply because in the document modeling and research I do with digital
+            scholarly editions, I am trying to do things with texts and declare things about texts
+            that seem to be out of scope in their work (at least for now). Some of my analytical
+            colleagues do express that declarative markup seems unnecessary in a time of big text
+            data analytics, when declarations about the documents seem to encumber or inhibit
+            projects at scale.<footnote>
                 <para>Evidence of how my colleagues practicing digital humanities perceive
                     declarative markup in the time of AI can be seen in the author's January 2023
                     conversation with Ted Underwood on Mastodon:
@@ -129,37 +149,43 @@
                     there will be no more need for markup at all. In some ways this paper responds
                     to the challenge of that conversation, by an awareness that more needs to be
                     declared now about what we do with declarative methods and semantics.</para>
-            </footnote> In this paper, I want to address the question of what declarative markup can do for us who engage in textual scholarship in the digital humanities.</para>
+            </footnote> In this paper, I want to address the question of what declarative markup can
+            do for us who engage in textual scholarship in the digital humanities.</para>
         <para>Because I am steeped in scholarly editing and a declarative markup
-            <quote>specialization</quote> in the digital humanities, my efforts to test the
-            chat interfaces of large language models reflect my distinct research interests
-            in comparing and collating texts. I have learned something that highlights the authority
-            and efficacy of declarative methods in text analysis, and I hope this is worth sharing
-            with declarative markup specialists and their adjacent text-scholarly friends in the
-            digital humanities. In this paper I will discuss a form of token-based text analysis
-            that foils large language models consistently, and I will show how declarative markup,
-            interacting with imperative programming, simply and profoundly makes that analysis
-            possible to accomplish. This is a paper intended to demonstrate the importance of
-            declarative authority in our text-analytic systems and to join a call for a more
-            declarative approach to what is currently an unintelligent system for modeling language. </para>
-        
+                <quote>specialization</quote> in the digital humanities, my efforts to test the chat
+            interfaces of large language models reflect my distinct research interests in comparing
+            and collating texts. I have learned something that highlights the authority and efficacy
+            of declarative methods in text analysis, and I hope this is worth sharing with
+            declarative markup specialists and their adjacent text-scholarly friends in the digital
+            humanities. In this paper I will discuss a form of token-based text analysis that foils
+            large language models consistently, and I will show how declarative markup, interacting
+            with imperative programming, simply and profoundly makes that analysis possible to
+            accomplish. This is a paper intended to demonstrate the importance of declarative
+            authority in our text-analytic systems and to join a call for a more declarative
+            approach to what is currently an unintelligent system for modeling language. </para>
+
     </section>
 
     <section>
         <title>Can AI help with my document collation?</title>
         <para>I have been working on a project over the past few years that has challenged me to
             explore, test, and refine a machine-assisted method for comparing versions of a text.
-            The project involves comparing five versions of the novel <emphasis>Frankenstein</emphasis>, and the basis for comparing these versions includes
-            the markup from editions that were coded differently. I have shared papers about these
-            adventures over the past few Balisage meetings, including the fun of flattening and
-            raising markup and the challenge of comparing strings that include representations of
-            the markup in the editions.<footnote>
-                <para>See among others, Elisa Beshero-Bondar, <quote>Adventures in Correcting XML Collation Problems with Python and
-                        XSLT</quote>, Proceedings of Balisage: The Markup Conference 2022. Balisage Series on Markup Technologies, vol. 27 (2022). <link xlink:href="https://doi.org/10.4242/BalisageVol27.Beshero-Bondar01">https://doi.org/10.4242/BalisageVol27.Beshero-Bondar01</link>.</para>
-            </footnote> Even when machine-assisted, document collation is tiring, tedious work. It is one thing to
-            prepare an algorithm for comparison and apply it to good, adaptable software for the
-            purpose, but it is quite another have to correct the output. That is where the real
-            challenge begins: the intellectual challenge, mental discipline, or
+            The project involves comparing five versions of the novel
+                <emphasis>Frankenstein</emphasis>, and the basis for comparing these versions
+            includes the markup from editions that were coded differently. I have shared papers
+            about these adventures over the past few Balisage meetings, including the fun of
+            flattening and raising markup and the challenge of comparing strings that include
+            representations of the markup in the editions.<footnote>
+                <para>See among others, Elisa Beshero-Bondar, <quote>Adventures in Correcting XML
+                        Collation Problems with Python and XSLT</quote>, Proceedings of Balisage:
+                    The Markup Conference 2022. Balisage Series on Markup Technologies, vol. 27
+                    (2022). <link
+                        xlink:href="https://doi.org/10.4242/BalisageVol27.Beshero-Bondar01"
+                        >https://doi.org/10.4242/BalisageVol27.Beshero-Bondar01</link>.</para>
+            </footnote> Even when machine-assisted, document collation is tiring, tedious work. It
+            is one thing to prepare an algorithm for comparison and apply it to good, adaptable
+            software for the purpose, but it is quite another have to correct the output. That is
+            where the real challenge begins: the intellectual challenge, mental discipline, or
                 <quote>self-psych-out</quote> of <quote>machine-assisted</quote> collation: When do
             you give up trying to refine the software algorithm, and when to you
                 <quote>crack</quote> and resort to hand-correcting problematic outputs? Sometimes
@@ -180,8 +206,8 @@
                         xlink:href="http://revistaie.ase.ro/content/105/01%20-%20zamfiroiu,%20vasile,%20savu.pdf"
                         >http://revistaie.ase.ro/content/105/01%20-%20zamfiroiu,%20vasile,%20savu.pdf</link>.
                     Accessed 2023-07-22.</para>
-            </footnote> ChatGPT has also motivated much fun, informal tinkering with prompts among my
-            academic circles. We would ask for introductions of ourselves and our colleagues
+            </footnote> ChatGPT has also motivated much fun, informal tinkering with prompts among
+            my academic circles. We would ask for introductions of ourselves and our colleagues
             suitable for use in conferences and laugh at how ludricously wrong they are. (In one
             invented bio I am both a medievalist and a published poet, neither of which is true, but
             I could speculate that somehow the words associated with me in ChatGPT’s training had
@@ -189,21 +215,23 @@
             course we also prompted it to invent supposedly serious bibliographies to see its
             made-up citations and fake URLs, too. At universities, teaching faculty worry about our
             students abusing generative AI to compose their papers, and possibilities for new
-            approaches to the writing process. Academics who write computer programming code quickly discovered a supremely
-            helpful aspect of ChatGPT for debugging code or quickly introducing how to access a
-            software library on the fly. Once we have seen such benefits, we tend to recognize that our students should also cultivate
-            skills to prompt AI—responsibly—for coding assistance. ChatGPT has saved time for me and my most dedicated students, time that we might
-            otherwise have spent combing through documentation and Stack Overflow posts. Even when
-            ChatGPT was wrong and its suggested code plainly did not work, it was leading us rapidly
-            to the ad-hoc fixes we needed to make, and particularly with some knowledge coming in we
-            could work with it in a dialogue and improve our understanding. </para>
+            approaches to the writing process. Academics who write computer programming code quickly
+            discovered a supremely helpful aspect of ChatGPT for debugging code or quickly
+            introducing how to access a software library on the fly. Once we have seen such
+            benefits, we tend to recognize that our students should also cultivate skills to prompt
+            AI—responsibly—for coding assistance. ChatGPT has saved time for me and my most
+            dedicated students, time that we might otherwise have spent combing through
+            documentation and Stack Overflow posts. Even when ChatGPT was wrong and its suggested
+            code plainly did not work, it was leading us rapidly to the ad-hoc fixes we needed to
+            make, and particularly with some knowledge coming in we could work with it in a dialogue
+            and improve our understanding. </para>
 
-        <para>Encouraged by such time-saving help, we have been eagerly experimenting all year with something that seems to promise the
-            ultimate <emphasis>declarative</emphasis> possiblity: to directly ask a machine to
-            deliver an output, without directing how it generates that output. The developers at
-            OpenAI fondly aspire for their chat model to become: <quote>a very eager junior
-                programmer</quote> to <quote>make completely new workflows effortless and
-                efficient</quote>.<footnote>
+        <para>Encouraged by such time-saving help, we have been eagerly experimenting all year with
+            something that seems to promise the ultimate <emphasis>declarative</emphasis>
+            possiblity: to directly ask a machine to deliver an output, without directing how it
+            generates that output. The developers at OpenAI fondly aspire for their chat model to
+            become: <quote>a very eager junior programmer</quote> to <quote>make completely new
+                workflows effortless and efficient</quote>.<footnote>
                 <para><quote><link
                             xlink:href="https://openai.com/blog/chatgpt-plugins#code-interpreter"
                             >ChatGPT plugins: Code interpreter</link></quote>, Chat GPT Blog.
@@ -219,142 +247,152 @@
                 know</quote> how to optimize the most reasonable alignments and outputs? </para>
         <para>At various moments between January and July 2023, I began testing a hypothesis that a
             machine trained on tokenized strings and word embeddings should excel at the task of
-            comparing strings, even tokenizing and normalizing them. My informal approach to conversational
-            prompt engineering discussed in the following sections could likely be improved, but I do have specific requirements for an
-            optimal collation in mind that I have been attempting to declare and discuss with  text-generative chat interfaces, and the exercise has been instructive. Over the past
-            several months in my prompt experiments to engage ChatGPT and Anthropic’s Claude in
-            various permutations of this task, they not only been wanting, but remarkably and
-            consistently so. The ways in which generative AI has bungled my series of
-            string-comparison challenges may tell us something interesting about the limits of
-            current large language models to correctly observe the differences between strings, and
-            to express those differences in structured forms. The errors are illuminating in a way that demonstrates something seriously lacking in the text-generative system in 2023, and that is a fully declarative method of working with input and generating output.</para>
-    
-
-    <section>
-        <title>What happens when we asking a Language Model to Compare Strings</title>
-        <para>To begin to estimate whether AI could assist my collation work, I needed to work
-            within the limits of ChatGPT’s input window. But just as I could ask it to proofread a
-            paragraph or two for errors, surely I could provide some input strings and ask it to
-            compare them, and show me how they differ.</para>
+            comparing strings, even tokenizing and normalizing them. My informal approach to
+            conversational prompt engineering discussed in the following sections could likely be
+            improved, but I do have specific requirements for an optimal collation in mind that I
+            have been attempting to declare and discuss with text-generative chat interfaces, and
+            the exercise has been instructive. Over the past several months in my prompt experiments
+            to engage ChatGPT and Anthropic’s Claude in various permutations of this task, they not
+            only been wanting, but remarkably and consistently so. The ways in which generative AI
+            has bungled my series of string-comparison challenges may tell us something interesting
+            about the limits of current large language models to correctly observe the differences
+            between strings, and to express those differences in structured forms. The errors are
+            illuminating in a way that demonstrates something seriously lacking in the
+            text-generative system in 2023, and that is a fully declarative method of working with
+            input and generating output.</para>
 
 
+        <section>
+            <title>What happens when we ask a large language model to compare strings?</title>
+            <para>To begin to estimate whether AI could assist my collation work, I needed to work
+                within the limits of ChatGPT’s input window. But just as I could ask it to proofread
+                a paragraph or two for errors, surely I could provide some input strings and ask it
+                to compare them, and show me how they differ.</para>
 
 
+            <para><!-- Did you ask it to "diff" the strings?  YES--></para>
 
-
-        <para>In a conference presentation in 2015, Michael Sperberg-McQueen declares on slide 8,
-                <quote>Declarative semantics make it possible to reason about representations;
-                imperative semantics impede.</quote><footnote>
-                <para>https://blackmesatech.com/2015/10/KIaCiDH/#(8)</para>
-            </footnote> Today dialogue with generative language-based AI gives us the opportunity to
-            declare and inquire with reason, but the stochastic outputs we receive sometimes seem to
-            reflect an impedance, something blocking the path of reasoned representation.
-            <!-- perhaps we can recognize something of how
-            imperative semantics <quote>impede</quote> when we find strange problems in their
-            replies.--> We can make a study of how far and how frequently and in what
-            ways an AI gets something seriously wrong when it delivers us its reasonable and
-            authoritative-sounding answers whose meaningful content is nevertheless outside the
-            bounds of reason. We understand that prompt generation is based on statistical
-            predictions of what might be the best-fit, reasonable next tokens of text to supply in sequence.<footnote>
-                <para>For unsophisticated novices like me, these articles have been particularly
-                    helpful for gaining a basic appreciation of key concepts in text generative AI:
-                    Haomiao Huang, <link
-                        xlink:href="https://arstechnica.com/gadgets/2023/01/the-generative-ai-revolution-has-begun-how-did-we-get-here/"
+            <para>Experimenting with text-generative AI models in the previous months has
+                illuminated a remarkable problem in evaluating text by the tokens that seems to be
+                generated by two different understandings of <quote>text</quote>. Prepare three or
+                four versions of a reasonably short text to for the chat interface to compare. Ask
+                the chat to show you how they compare and where they differe, and see some
+                remarkably strange results. Not only were the results almost always inaccurate, but
+                on repeated prompts and requests for corrections, the AI could not be said to
+                improve significantly. Even where there was some improvement, there were usually new
+                inaccuracies introduced to the model's capacity to review the task at hand. </para>
+            
+            
+            
+             
+          
+        </section>
+        <section>
+            <title>From stochastic parrot to reasoning intelligence?</title>
+            
+            <para>As a human (read: limited, inconsistent) reader of texts I am in awe that a mathematically trained language model, a so-called "artificial intelligence" which I expect to be more consistent and adept at pattern recognition than , consistently struggles with what seems to be a simple comparison of strings. Is
+                it a pre-programmed shortness of memory when asked to compare strings? I would
+                venture that ChatGPT's current inability to analyze comparisons of strings has
+                something to do with its token-by-token generative stream. ChatGPT can correctly
+                tell me what Levenshtein (or edit-distance) distance is. <!-- DEFINE IT. --> The AI
+                can also separate two different versions of a text in different boxes. But it cannot
+                calculate the edit-distance and it cannot seem to pinpoint variations. In this
+                specific task, the AI supplies the illusion of structure with some persistent (and
+                to me still baffling) blindness. If we could identify the AI's blind-spot, I think
+                it is failing to <quote>see</quote> what constitutes a reasonable, meaningful basis
+                for comparison of text streams.</para>
+            <para>In a conference presentation in 2015, Michael Sperberg-McQueen declares on slide
+                8, <quote>Declarative semantics make it possible to reason about representations;
+                    imperative semantics impede.</quote><footnote>
+                        <para>https://blackmesatech.com/2015/10/KIaCiDH/#(8)</para>
+                    </footnote> Today dialogue with generative language-based AI gives us the
+                opportunity to declare and inquire with reason, but the stochastic outputs we
+                receive sometimes seem to reflect an impedance, something blocking the path of
+                reasoned representation. We can make a study of how far and how frequently and in
+                what ways an AI gets something seriously wrong when it delivers us its reasonable
+                and authoritative-sounding answers whose meaningful content is nevertheless outside
+                the bounds of reason. We understand that prompt generation is based on statistical
+                predictions of what might be the best-fit, reasonable next tokens of text to supply
+                in sequence.<footnote>
+                    <para>For unsophisticated novices like me, these articles have been particularly
+                        helpful for gaining a basic appreciation of key concepts in text generative
+                        AI: Haomiao Huang, <link
+                            xlink:href="https://arstechnica.com/gadgets/2023/01/the-generative-ai-revolution-has-begun-how-did-we-get-here/"
                             ><quote>The generative AI revolution has begun—how did we get
-                            here?</quote></link> Ars Technica 30 January 2023; Jay Alammar, <link
-                        xlink:href="https://jalammar.github.io/illustrated-word2vec/"><quote>The
-                            Illustrated Word2Vec</quote></link> blog post, 27 March 2019. </para>
+                                here?</quote></link> Ars Technica 30 January 2023; Jay Alammar,
+                        <link xlink:href="https://jalammar.github.io/illustrated-word2vec/"
+                            ><quote>The Illustrated Word2Vec</quote></link> blog post, 27 March
+                        2019. </para>
+                    
+                </footnote> We also understand the large-language models (LLMs) demonstrate bias
+                because they amplify even the veiled language of racism and sexism that often goes
+                nearly unheard or unmarked in everyday discourse of Wikipedia and Reddit and social media.<footnote>
+                    <para>This Google Collab Notebook tutorial offers an accessible introduction to
+                        gender and social class bias engrained in large language models: Shlomi Hod,
+                        <quote>Tutorial // Exploring Gender Bias in Word Embedding</quote>
+                        2018—. <link
+                            xlink:href="https://colab.research.google.com/github/ResponsiblyAI/word-embedding/blob/main/tutorial-bias-word-embedding.ipynb"
+                            >https://colab.research.google.com/github/ResponsiblyAI/word-embedding/blob/main/tutorial-bias-word-embedding.ipynb</link>.
+                        This article details pervasive problema of gender bias in ChatGPT’s
+                        translations from English to Farsi, Malay, Tagalog, Thai, and Turkish:
+                        Sourojit Ghosh and Aylin Caliskan, <quote>ChatGPT Perpetuates Gender Bias in
+                            Machine Translation and Ignores Non-Gendered Pronouns: Findings across
+                            Bengali and Five other Low-Resource Languages</quote> Upcoming
+                        Publication in AAAI/ACM Conference on AI, Ethics, and Society, 2023.</para>
+                </footnote> Text-generative AI speaks with a language of authority and confidence
+                and amplifies normative values in its predictions of the best fit content completion
+                for a prompt. </para>
+            <para>Nothing in our modeling of texts escapes bias, but our capacity to assert and test
+                reasonable statements is a particular strength of declarative markup. In his 2015
+                presentation, Sperberg-McQueen points out that hierarchical models are not neutral.
+                The way we organize document hierarchies and decide on markup representations, and
+                create schema rules to validate our models does not represent reflect absolute
+                <quote>ground truth</quote>, but rather attempts to describe and define based on
+                what choose to prioritize, whether that is the section headings of a legislative
+                memo or the page-by-page printing of a comic book. The models we create for
+                documents and the metadata we care about reflect the paradigms and priorities of the
+                humans who create them. Document historians of the future may come back to our XML
+                markup and find us benighted, but they could also research in our models the rules
+                of our publishing houses, the attitudes and expectations that prevailed in
+                understanding how to study language and archive our cultural heritage. The point is,
+                what we express in declarative semantics is fully visible, tractable, and usually
+                documented. It is explicitly and deliberately marked, while the biases amplified by
+                large language models in our stochastic AI systems are revealed only by analyzing the
+                outputs or attempting to source the now-secret training data.</para>
+            
 
-            </footnote> We also understand the large-language models (LLMs) demonstrate bias because
-            they amplify even the veiled language of racism and sexism that often goes nearly
-            unheard or unmarked in everyday discourse of Wikipedia and Reddit and social media.<footnote>
-                <para>This Google Collab Notebook tutorial offers an accessible introduction to
-                    gender and social class bias engrained in large language models: Shlomi Hod,
-                        <quote>Tutorial // Exploring Gender Bias in Word Embedding</quote> 2018—.
-                        <link
-                        xlink:href="https://colab.research.google.com/github/ResponsiblyAI/word-embedding/blob/main/tutorial-bias-word-embedding.ipynb"
-                        >https://colab.research.google.com/github/ResponsiblyAI/word-embedding/blob/main/tutorial-bias-word-embedding.ipynb</link>.
-                    This article details pervasive problema of gender bias in ChatGPT’s translations
-                    from English to Farsi, Malay, Tagalog, Thai, and Turkish: Sourojit Ghosh and
-                    Aylin Caliskan, <quote>ChatGPT Perpetuates Gender Bias in Machine Translation
-                        and Ignores Non-Gendered Pronouns: Findings across Bengali and Five other
-                        Low-Resource Languages</quote> Upcoming Publication in AAAI/ACM Conference
-                    on AI, Ethics, and Society, 2023.</para>
-            </footnote> Text-generative AI speaks with a language of authority and confidence and
-            amplifies normative values in its predictions of the best fit content completion for a
-            prompt. </para>
-        <para>Nothing in our modeling of texts escapes bias, but our capacity to assert and test
-            reasonable statements is a particular strength of declarative markup. In his 2015
-            presentation, Sperberg-McQueen points out that hierarchical models are not neutral. The
-            way we organize document hierarchies and decide on markup representations, and create
-            schema rules to validate our models does not represent reflect absolute <quote>ground
-                truth</quote>, but rather attempts to describe and define based on what choose to
-            prioritize, whether that is the section headings of a legislative memo or the
-            page-by-page printing of a comic book. The models we create for documents and the
-            metadata we care about reflect the paradigms and priorities of the humans who create
-            them. Document historians of the future may come back to our XML markup and find us
-            benighted, but they could also research in our models the rules of our publishing
-            houses, the attitudes and expectations that prevailed in understanding how to study
-            language and archive our cultural heritage. The point is, what we express in declarative
-            semantics is fully visible, tractable, and usually documented. It is explicitly and
-            deliberately marked, while the biases amplified by large language models in our
-            stochastic AI systems are revealed by analyzing the outputs or attempting to source the
-            now-secret training data.</para>
-
-      
-
-
-
-        <para> That seminal article from 1990 <quote>What is Text, Really?</quote> is striking in
-            tbe year 2023 for how current it remains as a critique of prevailing technology systems
-            for handling text.<footnote>
-                <para>Steven J. DeRose, David G. Durand, Elli Mylonas, Allen H. Renear, <quote>What
-                        is Text, Really?</quote> 1990.</para>
-            </footnote> Their proposition, that text really is an Ordered Hierarchy of Content
-            Objects, comes explicitly as a response (among other things) to concepts of text as a
-            stream of content objects, the gram particles and formmating instructions without
-            reference to structural context. In the year 2023 when we ask questions to large
-            language models we are given to understand that text is generated in response to the
+            
+            <para> That seminal article from 1990 <quote>What is Text, Really?</quote> is striking
+                in the year 2023 for how current it remains as a critique of prevailing technology
+                systems for handling text.<footnote>
+                    <para>Steven J. DeRose, David G. Durand, Elli Mylonas, Allen H. Renear,
+                        <quote>What is Text, Really?</quote> 1990.</para>
+                </footnote> Their proposition, that text really is an Ordered Hierarchy of Content
+                Objects, comes explicitly as a response (among other things) to concepts of text as
+                a stream of content objects, the gram particles and formmating instructions without
+                reference to structural context. In the year 2023 when we ask questions to large
+                language models we are given to understand that text is generated in response to the
                 <quote>context window</quote> that model uses for perceiving the range of nearby
-            tokens and their proximity to teh current token a frame of reference. Is it the case in
-            2023 that context in the large language model is being determined by frames of reference
-            in a stream of text? When semantics is coded and decoded in vector space by position and
-            co-occurrence, this generates the appearance of meaningful output, which may not be true
-            but is nevertheless frequently deemed useful. This is the argument of the famous
-                <quote>Stochastic Parrots</quote> article: the danger of large-language models is
-            the <footnote>
-                <para> On how meaning is predicted in large language models, see Jay Alammar, <link
-                        xlink:href="http://jalammar.github.io/illustrated-transformer/"><quote>The
-                            Illustrated Transformer</quote></link> blog post. 27 June 2018; Molly
-                    Ruby <link
-                        xlink:href="https://towardsdatascience.com/how-chatgpt-works-the-models-behind-the-bot-1ce5fca96286"
-                            ><quote>How ChatGPT Works: The Model Behind The Bot</quote></link>, in
-                    Towards Data Science. Medium. 30 January 2023. </para>
-            </footnote> I </para>
-
-        <para>Experimenting with GPT models (versions 3, 3.5, and 4) in the previous months has
-            illuminated a remarkable problem in evaluating text by the tokens that seems to be
-            generated by two different understandings of <quote>text</quote>. Ask ChatGPT to show
-            you how four versions of a short text compare, to show where they differ, and see some
-            remarkably strange results. Not only were the results almost always inaccurate, but on
-            repeated prompts and requests for corrections, the AI could not be said to improve
-            significantly. Even where there was some improvement, there were usually new
-            inaccuracies introduced to the model's capacity to review the task at hand. </para>
-        <para>As a flawed human reader of texts I am in awe that a mathematically trained model that
-            consistently struggles with what seems to be a simple comparison of strings. Is it a
-            pre-programmed shortness of memory when asked to compare strings? I would venture that
-            ChatGPT's current inability to analyze comparisons of strings has something to do with
-            its token-by-token generative stream. ChatGPT can correctly tell me what Levenshtein (or
-            edit-distance) distance is. <!-- DEFINE IT. --> The AI can also separate two different
-            versions of a text in different boxes. But it cannot calculate the edit-distance and it
-            cannot seem to pinpoint variations. In this specific task, the AI supplies the illusion
-            of structure with some persistent (and to me still baffling) blindness. If we could
-            identify the AI's blind-spot, I think it is failing to <quote>see</quote> what
-            constitutes a reasonable, meaningful basis for comparison of text streams.</para>
-        <para><!-- Did you ask it to "diff" the strings?  YES--></para>
-
-        <para>
-            <!-- What could make it better? 
+                tokens and their proximity to teh current token a frame of reference. Is it the case
+                in 2023 that context in the large language model is being determined by frames of
+                reference in a stream of text? When semantics is coded and decoded in vector space
+                by position and co-occurrence, this generates the appearance of meaningful output,
+                which may not be true but is nevertheless frequently deemed useful. This is the
+                argument of the famous <quote>Stochastic Parrots</quote> article: that large language models distort, exploit, and waste resources in an effort only to produce unreliable and biased approximations. <footnote>
+                    <para> For helpful introductions to how large language models work to generate text based on predictive algorithms, see On how meaning is predicted in large language models, see Jay Alammar,
+                        <link xlink:href="http://jalammar.github.io/illustrated-transformer/"
+                            ><quote>The Illustrated Transformer</quote></link> blog post. 27
+                        June 2018; Molly Ruby <link
+                            xlink:href="https://towardsdatascience.com/how-chatgpt-works-the-models-behind-the-bot-1ce5fca96286"
+                            ><quote>How ChatGPT Works: The Model Behind The Bot</quote></link>,
+                        in Towards Data Science. Medium. 30 January 2023. </para>
+                </footnote> I </para>
+            
+            
+          
+            
+            <para>
+                <!-- What could make it better? 
            Mulitple articles suggest LLMs are proceeding in too linear/sequential a way
            Vector databases would allow for  graph structures, associations of metadata with data:
            https://www.pinecone.io/learn/vector-database/
@@ -366,26 +404,15 @@
        
             
             -->
-        </para>
-        <para>
-            <!-- COMMENTARY ON WHAT COMPUTATION WE DO WITH FV. The data structure, the pipeline, the construction of an edition in markup from comparisons of flattened strings. All this is a series of problems to solve that do not seem efficiently handled in the space of word vector approximations. 
-            
-            WHY does this  matter to say? Because in humanities / digital humanities we risk following into a trap about authoritative understanding of text. What is text, really, has never been a more important question. Without hybrid approaches and without structured containers, we risk falling into a monoculture of fuzzy ways of knowing, in which the construction of knowledge about texts is reduced to trends and patterns at scale. These are valuable studies, but not the only way of knowing about texts. 
-            
-            Moving text between structures, preserving document data models, all these things matter. Text isn't just grams. 
-            -->
-        </para>
-    </section>
-        <section>
-            <title>From stochastic parrot to reasoning intelligence?</title>
-            
-            
-            <para>What might it mean for a text-generative <quote>AI</quote> system to to operate in a fully declarative way?
-</para>
+            </para>   
+
+
+            <para>What might it mean for a text-generative <quote>AI</quote> system to to operate in
+                a fully declarative way? </para>
         </section>
     </section>
     <section>
-        <title>How meaningful is markup in a time of AIanyway?</title>
+        <title>How meaningful is markup, anyway?</title>
 
         <para>When the text-generative AI models composed the markup shared in the previous section,
             their declarative semantics were unclear and often inconsistent, particularly when the
@@ -465,7 +492,7 @@
                 original structures by removing the structures to process the comparison.</para>
         </section>
         <section>
-            <title>Preserving declared semantics in imperative processes</title>
+            <title>Transferring and preserving declared semantics</title>
             <para>In preparing our editions for collation (as discussed in previous Balisage
                 papers), we have <quote>flattened</quote> the original TEI structural elements, and
                 abstracted them away from their original document models. We do this on purpose to
