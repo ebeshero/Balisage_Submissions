@@ -624,8 +624,8 @@ went he.
                 presence or absence of the comma (omittingentirely in the critical apparatus).
                 Finally, there is the issue with representing transposition. Versions 2 and 4 show
                     <quote>he went there</quote> while Versions 1 and 3 have <quote>there went
-                    he</quote>. ChatGPT almost completely these differences in its representation of
-                the end of the passages. Its apparatus correctly represents Text 2 as the only
+                    he</quote>. ChatGPT almost completely misses these differences in representing the ends of
+                the end of the passages. The apparatus correctly represents Text 2 as the only
                 variant holding <quote>erstwhile</quote>, butincorrectly identifies Text 4 as
                 showing <quote>eftsoons there</quote> along with Texts 1 and 3.should have
                 stopped the alignment at <quote>eftsoons</quote>, and created a new
@@ -691,7 +691,7 @@ went he.
                         further adjustments!</para>
                 </blockquote> Somehow in the series of prompts and responses, something I expect
                 ChatGPT to have <quote>learned</quote> seems to be forgotten. ChatGPT is returning
-                to its original preference for blocking long portions of text in the
+                to their original preference for blocking long portions of text in the
                     <code>&lt;rdg&gt;</code> elements.is nevertheless indicating, incorrectly,
                 that Texts 1 and 3 agree completely, when Text 3 contains a comma after
                     <quote>Marinere</quote>. Is the experiment worth continuing? Reader, I did
@@ -725,24 +725,24 @@ Marinere eftsoons there went he. He wanted to talk to the AI about collation and
 
                 </blockquote> ChatGPT replaces one kind of problem for a new kind of error. There
                 are omissions and failures to recognize precisely what is common and what is not.
-                And now text thatclaims to be the same across all versions is <emphasis
+                And now text that claims to be the same across all versions is <emphasis
                     role="ital">also</emphasis> represented as variant. This is a terrible
                 misrepresentation, but the kinds of errors make me wonder how the language model is
-                attempting to process my requests. Why iscreating these errors? </para>
+                attempting to process my requests. Why is ChatGPT generating these errors? </para>
 
 
-            <para>I had learned that sometimes if you prompt the chatbot to pretend thatis an
-                expert in an area that this would help improve its response, and in some of my
+            <para>I had learned that sometimes if you prompt the chatbot to pretend that they are an
+                expert in an area, this can improve their responses. In some of my
                 experiments this year I attempted this sort of <quote>let’s pretend</quote> game to
                 ask ChatGPT to pretend they are an expert in the TEI and preparing a digital
-                scholarly edition, but at least for the tasks I was requesting they did not help to
-                improve the responses. They are predictably unreliable, and never once did I see a
+                scholarly edition, but this did not help to
+                improve the responses to my tasks. They are predictably unreliable, and never once did I see a
                 response without errors. I also tried simplifying the task and askingdirectly
                 only to <quote>diff</quote> some strings, but this made no difference and I have yet
                 to see an accurate response to a prompt requesting a comparison of two or more
                 strings.</para>
             <para>Finally, I attempted an experiment with Anthropic’s Claude AI, which purports to
-                having a larger memory capacity and context window for prompt processing that
+                have a larger memory capacity and context window for prompt processing than
                 ChatGPT.<footnote><para>I accessed Claude in July 2023 at <link xlink:href="https://claude.ai">https://claude.ai</link></para></footnote> The results were slightly better out of the box. In this case I returned to
                 comparing two versions of the passage from <emphasis>Frankenstein</emphasis>: <blockquote>
                     <title>Elisa:</title>
@@ -776,8 +776,8 @@ lay at my feet.&lt;/p&gt;
 
                 </blockquote> This is <emphasis role="ital">almost</emphasis> correct, and indeed, I
                 was surprised to find that Claude was unifying the text streams around the parallel
-                portions.was missing the differences in punctuation, however, and even when I
-                prompted Claude to correct for omissions they might have made, Claude failed to
+                portions. Claude missed the differences in punctuation, however, and even when I
+                prompted the AI to correct for omissions they might have made, Claude failed to
                 identify the problems. </para>
 
             <para>Experimenting with text-generative language models in the previous months has
@@ -785,7 +785,7 @@ lay at my feet.&lt;/p&gt;
                 that work with tokenized string inputs. Comparisons are fuzzy, overly broad, or
                 outright drop tokens and usually misrepresent the source texts in some way. Not only
                 were the results almost always inaccurate, but on repeated prompts and requests for
-                corrections, neither ChatGPT nor Claude could not be said to improve significantly.
+                corrections, neither ChatGPT nor Claude could be said to improve significantly.
                 Why are the models so problematic at a task that involves identifying sameness and
                 difference in sequences of tokenized text? I can only speculate since I lack access
                 or expertise to comprehend the working systems <quote>under the hood</quote> of the
