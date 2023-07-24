@@ -159,22 +159,24 @@
             about these adventures over the past few Balisage meetings, including the fun of
             flattening and raising markup and the challenge of comparing strings that include
             representations of the markup in the editions.<footnote>
-                <para>See among others, Elisa Beshero-Bondar, <quote>Adventures in Correcting XML
+                <para>See among others, <quote>Adventures in Correcting XML
                         Collation Problems with Python and XSLT</quote>, Proceedings of Balisage:
                     The Markup Conference 2022. Balisage Series on Markup Technologies, vol. 27
                     (2022). <link
                         xlink:href="https://doi.org/10.4242/BalisageVol27.Beshero-Bondar01"
                         >https://doi.org/10.4242/BalisageVol27.Beshero-Bondar01</link>.</para>
-            </footnote> Even when machine-assisted, document collation is tiring, tedious work.is one thing to prepare an algorithm for comparison and applyto good, adaptable
-            software for the purpose, butis quite another have to correct the output. That is
-            where the real challenge begins, the intellectual challenge, mental discipline, or
+            </footnote> Even when it is  machine-assisted, document collation is tiring, tedious work.
+            It is one thing to prepare an algorithm for comparison and apply it to good, adaptable
+            software for the purpose, but it is quite another have to correct the output. That is
+            where the real challenge begins—the intellectual challenge, mental discipline, or
                 <quote>self-psych-out</quote> of <quote>machine-assisted</quote> collation: When do
             you give up trying to refine the software algorithm, and when do you
                 <quote>crack</quote> and resort to hand-correcting problematic outputs? Sometimes
-            giving up really slows down a project, whenis still possible to refine the method. Not giving up on the process requires patience and tinkering with the machinery, and the patience to continue
-            testing. Wouldnot be wonderful for artificial intelligence to assist and accelerate
-            this painstaking effort, if there could be a reliable way to trainto process text
-            like an editor of a digital scholarly edition?</para>
+            giving up really slows down a project, when it is still possible to refine the method. 
+            Not giving up on the process requires patience and tinkering with the machinery, and the patience to continue
+            testing. Would it not be wonderful for artificial intelligence to assist and accelerate
+            this painstaking effort, if there could be a reliable way to train a large language model to process text
+            the way an editor of a digital scholarly edition would?</para>
         <para>The sensational public launch of ChatGPT on November 30, 2022 has sparked excitment,
             confusion, concern and a new surge of publications across academia and the public sector.<footnote>
                 <para>This article documents a significant body of publications aided by, applying,
@@ -193,10 +195,10 @@
             invented bio I am both a medievalist and a published poet, neither of which is true, but
             I could speculate that somehow the words associated with me in ChatGPT’s training had
             been in proximity with medievalist friends and people far more creative than me). Of
-            course we also promptedto invent supposedly serious bibliographies to see its
-            made-up citations and fake URLs, too. At universities, teaching faculty worry about our
-            students abusing generative AI to compose their papers, and possibilities for new
-            approaches to the writing process. Academics who write computer programs quickly
+            course we also prompted ChatGPT to invent supposedly serious bibliographies to see its
+            made-up citations and fake URLs. At universities, teaching faculty worry about our
+            students abusing generative AI to compose their papers, even as we explore new possibilities 
+            for the writing process. Academics who write computer programs quickly
             discovered a supremely helpful aspect of ChatGPT for debugging code or quickly
             introducing how to access a software library on the fly. Once we have seen such
             benefits, we tend to recognize that our students should also cultivate skills to prompt
@@ -204,49 +206,49 @@
             dedicated students, time that we might otherwise have spent combing through
             documentation and Stack Overflow posts. Even when ChatGPT’s code plainly did not work, 
             the AI was leading us rapidly to the ad-hoc fixes we needed to
-            make, and particularly with some knowledge coming in we could work within a dialogue
+            make, and particularly when we began with a foundation of knowledge, we could work within a dialogue
             and improve our understanding. </para>
 
         <para>Encouraged by such time-saving coding assistance, my colleagues, students, and I have
             been eagerly experimenting all year with something that seems to promise the ultimate
                 <emphasis>declarative</emphasis> possiblity: to directly ask a machine to deliver an
-            output, without directing howgenerates that output. The developers at OpenAI fondly
+            output, without directing how it generates that output. The developers at OpenAI fondly
             aspire for their chat model to become: <quote>a very eager junior programmer</quote> to
                 <quote>make completely new workflows effortless and efficient</quote>.<footnote>
                 <para><quote><link
                             xlink:href="https://openai.com/blog/chatgpt-plugins#code-interpreter"
                             >ChatGPT plugins: Code interpreter</link></quote>, Chat GPT Blog.
                     2023.</para>
-            </footnote> I wondered how well the grand new AI models might perform on the very task
+            </footnote> I wondered how well the new AI models might perform on the very task
             that has taken me and my colleagues and students years to refine: the machine-assisted
             collation of multiple versions of a work in the form of manuscripts and printed
             documents. The processes that underlie this involve aligning chunks of text, and a
             token-by-token processing of streams of text pulled from marked-up documents. The large
             language models supporting generative AI are themselves based on word embeddings and
-            tokenized processing text streams. could the <quote>word arithmetic</quote> we associate
-            with text-generative AI be applied to comparison algorithms? Would<quote>just
+            tokenized processing text streams. Could the <quote>word arithmetic</quote> we associate
+            with text-generative AI be applied to comparison algorithms? Would the language model <quote>just
                 know</quote> how to optimize the most reasonable alignments and outputs? </para>
         <para>At various moments between January and July 2023, I began testing a hypothesis that a
-            machine trained on tokenized strings and word embeddings should excel at the task of
-            token-by-token comparison of strings. My informal approach to conversational prompt
-            engineering discussed in the following sections could likely be improved, but I do have
+            machine trained on tokenized text and word embeddings should excel at the task of
+            token-by-token comparison of strings. I will document some of my representative prompt
+            engineering experiments in the next section. My prompts could likely be improved, but I do have
             specific requirements for an optimal collation in mind that I have been attempting to
-            declare and discuss with text-generative chat interfaces, and the exercise has been
-            instructive. Over the past several months in my prompt experiments to engage ChatGPT and
-            Anthropic’s Claude in various permutations of this task, they have not only been wanting, but
-            remarkably and consistently so. The ways in which generative AI has bungled my series of
-            string-comparison challenges may tell us something interesting about the limits of
-            current large language models to correctly observe the differences between strings, and
-            to express those differences in structured forms. The errors are illuminating in a way
-            that demonstrates something seriously lacking in the text-generative system in 2023, and
-            that is a fully declarative method of working with input and generating output.</para>
+            declare to the AI, and the exercise has been instructive. Over the past several months 
+            in my prompt experiments to engage ChatGPT and Anthropic’s Claude in various permutations of 
+            this task, they have not only been wanting, but remarkably and consistently so. The ways 
+            in which generative AI has bungled my series of string-comparison challenges may tell us 
+            something interesting about the limits of current large language models to correctly observe 
+            the differences between strings, and to express those differences in structured forms. The 
+            errors are illuminating in a way that demonstrates something seriously lacking in the text-generative 
+            system in 2023, and that is a fully declarative method of working with input and generating output.</para>
 
 
         <section>
             <title>What happens when we ask a large language model to compare strings?</title>
             <para>To begin to estimate whether AI could assist my collation work, I needed to work
-                within the limits of ChatGPT’s input window. But just as I could askto proofread
-                a paragraph or two for errors, surely I could provide some input strings and askto compare them, and show me how they differ. In no case did I ever receive
+                within the limits of ChatGPT’s input window. But just as I could ask the AI to proofread
+                a paragraph or two for errors, surely I could provide some input strings and ask the AI to compare them, 
+                and show me how they differ. In no case did I ever receive
                 reliable, accurate results, but the kinds of errors I saw were interesting to try to
                 diagnose the basis of error. Here I share a representative sampling of the
                 experiments.<footnote><para>I accessed ChatGPT from January through July 2023 from <link xlink:href="https://chat.openai.com/">https://chat.openai.com/</link></para></footnote></para>
@@ -259,12 +261,12 @@
                     <para>Can you prepare a data structure to show where these texts are the same
                         and where they differ?</para>
 
-                    <para>Manuscript:was on a dreary night of November that I beheld the frame
+                    <para>Manuscript: It was on a dreary night of November that I beheld the frame
                         on which my man compleated. And with an anxiety that almost amounted to
                         agony I collected instruments of life around me that I might infuse a spark
                         of being into the lifeless thing that lay at my feet.</para>
 
-                    <para>1818 edition and 1831 edition:was on a dreary night of November, that
+                    <para>1818 edition and 1831 edition: It was on a dreary night of November, that
                         I beheld the accomplishment of my toils. With an anxiety that almost
                         amounted to agony, I collected the instruments of life around me, that I
                         might infuse a spark of being into the lifeless thing that lay at my
@@ -279,7 +281,7 @@
 +---------------------+---------------------------+-------------------------+
 |       Manuscript     |      1818 edition         |     1831 edition        |
 +---------------------+---------------------------+-------------------------+
-|was on a dreary  |was on a dreary        |was on a dreary      |
+| It was on a dreary  | It was on a dreary        | It was on a dreary      |
 | night of November   | night of November         | night of November       |
 | that I beheld the   | that I beheld the         | that I beheld the       |
 | frame on which my   | accomplishment of my      | accomplishment of my    |
@@ -304,9 +306,9 @@
                     <para> By comparing the texts using this structure, you can easily identify the
                         variations between the Manuscript, 1818 edition, and 1831 edition.</para>
 
-                </blockquote> Here I was pleased to see that ChatGPT understood that I wanted to
-                represent three editions, although I was surprised thatdid nothing besides block
-                the text into a single row. I asked for ChatGPT to refine the table. <blockquote>
+                </blockquote> Here I was pleased to see that ChatGPT understood that I wanted a
+                visual representation of three editions. But I was surprised that the Ai did nothing 
+                more than block the text into a single row. I asked for ChatGPT to refine the table. <blockquote>
                     <title>Elisa:</title>
                     <para>Let's try to refine this. Where the texts are identical, just show one
                         block of text on the screen. Then when the texts are different, use the
@@ -319,7 +321,7 @@
                         an updated representation:</para>
                     <programlisting>
                     Identical <emphasis role="under">text</emphasis>:
--------------------------was <emphasis role="under">on</emphasis> a dreary night <emphasis role="under">of</emphasis> November
+------------------------- It was <emphasis role="under">on</emphasis> a dreary night <emphasis role="under">of</emphasis> November
 
 <emphasis role="under">Text</emphasis> differences:
 +---------------------+---------------------------+-------------------------+
@@ -350,32 +352,32 @@
                 </blockquote> Here I am applying underlined emphasis to show what ChatGPT delivered
                 in blue color-coded CSS to highlight whatcalls <quote>variations</quote> between
                 the editions. A few strange things have happened. First the language model does
-                correctly indicate that the first portion of the string is identical. Butmisses
+                correctly indicate that the first portion of the string is identical. But ChatGPT misses
                 the difference that there is a comma in the 1818 and 1831 versions, and simply does
                 not represent the comma, so we have dropped a small token of text. Next in the
                 table, we completely miss the variant passage from the manuscript: <quote>the frame
                     on which my man compleated. And</quote>. Instead ChatGPT represents the
-                manuscript text as the same block thatprovides for the other two. Is the AI
+                manuscript text as the same block provided for the other two. Is the AI
                 forgetting the differences? Yet they seem to understand that some indication of
                 differences is expected, and they highlight words of between two and four characters
-                long that are identical in the gthree passagesblocked. This is distressingly
-                inaccurate, but enough to raise questions of howcan be determining what to
+                long that are identical in the three passages blocked. This is distressingly
+                inaccurate, and raises questions about how ChatGPT can be determining what to
                 highlight.</para>
             <para>I tried again with this experiment. I understood that ChatGPT’s memory might well
                 be too short to handle the text processing completely, but I wondered whether they
-                could improve the response, much as we can prod them to help us debug our code. Perhapswould
+                could improve the response, much as we can prod them to help us debug our code. Perhaps ChatGPT would
                 help to provide the source texts again to restore them to the context window of memory. <blockquote>
                     <title>Elisa:</title>
                     <para>Your approach is what I had in mind, good. But you've forgotten where the
                         source texts are different. Can you redo this, taking another look at the
                         source texts?</para>
 
-                    <para>Manuscript:was on a dreary night of November that I beheld the frame
+                    <para>Manuscript: It was on a dreary night of November that I beheld the frame
                         on which my man compleated. And with an anxiety that almost amounted to
                         agony I collected instruments of life around me that I might infuse a spark
                         of being into the lifeless thing that lay at my feet.</para>
 
-                    <para>1818 edition and 1831 edition:was on a dreary night of November, that
+                    <para>1818 edition and 1831 edition: It was on a dreary night of November, that
                         I beheld the accomplishment of my toils. With an anxiety that almost
                         amounted to agony, I collected the instruments of life around me, that I
                         might infuse a spark of being into the lifeless thing that lay at my
@@ -390,7 +392,7 @@
 +---------------------+---------------------------+-------------------------+
 |       Manuscript     |      1818 edition         |     1831 edition        |
 +---------------------+---------------------------+-------------------------+
-|was <emphasis role="under">on</emphasis> a dreary  |was <emphasis role="under">on</emphasis> a dreary        |was <emphasis role="under">on</emphasis> a dreary      |
+| It was <emphasis role="under">on</emphasis> a dreary  | It was <emphasis role="under">on</emphasis> a dreary        | It was <emphasis role="under">on</emphasis> a dreary      |
 | night <emphasis role="under">of</emphasis> November   | night <emphasis role="under">of</emphasis> November         | night <emphasis role="under">of</emphasis> November       |
 | that I beheld the   | that I beheld the         | that I beheld the       |
 | frame <emphasis role="under">on</emphasis> which my   | accomplishment <emphasis role="under">of</emphasis> my      | accomplishment <emphasis role="under">of</emphasis> my    |
@@ -413,16 +415,16 @@
                         that are the same in all versions are omitted for brevity, and only the
                         differing sections are displayed.</para>
 
-                </blockquote> With this response, I am baffled and simply stop the prompt experiment
-                sequence. ChatGPT seems unaware of whatis, and is not doing. There is a single
-                accentuated highlight (in yellow against the blue) of the capitalized word
-                    <quote>And</quote> from the manuscript, buthas otherwise simply highlighted
+                </blockquote> With this response, I was baffled and simply left the conversation. 
+                ChatGPT seems to have forgotten what I thought we established in the previous prompts. 
+                There is a single accentuated highlight (in yellow against the blue) of the capitalized word
+                    <quote>And</quote> from the manuscript, but the AI has otherwise simply highlighted
                 short words across all the witnesses. What most surprised me was ChatGPT's assertion
-                that<quote>omitted</quote> all the passages that were the same.omitted
-                nothing. Andseemed to have no understanding of the concept of
+                that<quote>omitted</quote> all the passages that were the same, when they omitted
+                nothing. And the AI seemed to have no understanding of the concept of
                 differentiation.</para>
 
-            <para>I tried similar experiments this summer, wondering if differentiation of strings
+            <para>I tried similar experiments this summer, wondering if the language model’s string-differentiation powers
                 might have improved after the news that ChatGPT had a newly expanded context window for
                 processing input. After June 21, developers are able to prompt ChatGPT with
                 8000-word prompts, andwill be able ot store longer passages in memory. My
@@ -472,12 +474,14 @@
                     <para>Here's the TEI critical apparatus:</para>
                     <programlisting>
 &lt;app&gt;
-  &lt;lem&gt;was an ancient Marinere eftsoons there went he.
+  &lt;lem&gt;
+    It was an ancient Marinere eftsoons there went he.
   &lt;/lem&gt;
   &lt;rdg wit="#W2"&gt;
     He was an old mariner, erstwhile he went there.
   &lt;/rdg&gt;
-  &lt;rdg wit="#W3"&gt;was an old Marinere, eftsoons there went he.
+  &lt;rdg wit="#W3"&gt;
+    It was an old Marinere, eftsoons there went he.
   &lt;/rdg&gt;
   &lt;rdg wit="#W4"&gt;
     He was an ancient Marinere, eftsoons he went there.
@@ -502,7 +506,7 @@
                         ancient Marinere eftsoons there went he," and three variants (W2, W3, and
                         W4) are provided with their corresponding readings. </para>
 
-                </blockquote> What is presented here as a distinct advantage over my other
+                </blockquote> ChatGPT’s response here has distinct advantage over my other
                 experiments of being, quite simply correct. Indeed, none of these four sentences is
                 the same, and from ChatGPT this is a fair representation of TEI critical apparatus
                 encoding, representing a single moment of variation in the <code>&lt;app&gt;</code>
@@ -525,12 +529,14 @@
                         apparatus:</para>
                     <programlisting>
 &lt;app&gt;
-  &lt;lem&gt;was an ancient Marinere eftsoons there went he.
+  &lt;lem&gt;
+    It was an ancient Marinere eftsoons there went he.
   &lt;/lem&gt;
   &lt;rdg wit="#W2"&gt;
     He was an old mariner, erstwhile he went there.
   &lt;/rdg&gt;
-  &lt;rdg wit="#W3"&gt;was an old Marinere, eftsoons there went he.
+  &lt;rdg wit="#W3"&gt;
+    It was an old Marinere, eftsoons there went he.
   &lt;/rdg&gt;
   &lt;rdg wit="#W4"&gt;
     He was an ancient Marinere, eftsoons he went there.
@@ -548,8 +554,8 @@
                 is a justification or rationalization. </para>
             <para>If I want to approach the problem differently, perhaps I need a better prompt.
                 So I try again. In the prompt below, I attempted to show ChatGPT what kind of output
-                I wanted to see, and gavea start that I requested to continue. (I
-                inadvertently left the second app element unclosed, though this omission does not
+                I wanted to see, and gave the AI a start that I requested them to continue. (I
+                inadvertently left the second <code>&lt;app&gt;</code> element unclosed, though this omission does not
                 seem to have affected the reply.) <blockquote>
                     <title>Elisa:</title>
                     <para>That is not what I meant. I'd like you to apply the critical apparatus
@@ -604,8 +610,8 @@ went he.
                         segmentation. Let me know if you need any further adjustments!</para>
 
                 </blockquote> At first glance this appeared to be what I wanted, but on review of
-                the strings I had asked ChatGPT to collate, we need to recognize some significant
-                errors. <orderedlist>
+                the strings I had asked ChatGPT to collate, we needed to recognize some significant
+                errors. Let’s review the original input strings that we asked ChatGPT to compare: <orderedlist>
                     <listitem>
                         <para>It was an ancient Marinere eftsoons there went he.</para>
                     </listitem>
@@ -620,20 +626,21 @@ went he.
                     </listitem>
                 </orderedlist> ChatGPT's critical apparatus markup declares that all of the texts
                 share the capitalized and distinct spelling <quote>Marinere</quote>, missing the
-                difference of witness 2 which has <quote>mariner</quote>.also misses the
-                presence or absence of the comma (omittingentirely in the critical apparatus).
+                difference of witness 2 which has <quote>mariner</quote>. The AI also misses the
+                presence or absence of the comma (omitting it entirely in the critical apparatus).
                 Finally, there is the issue with representing transposition. Versions 2 and 4 show
                     <quote>he went there</quote> while Versions 1 and 3 have <quote>there went
                     he</quote>. ChatGPT almost completely misses these differences in representing the ends of
-                the end of the passages. The apparatus correctly represents Text 2 as the only
-                variant holding <quote>erstwhile</quote>, butincorrectly identifies Text 4 as
-                showing <quote>eftsoons there</quote> along with Texts 1 and 3.should have
+                the passages. The apparatus correctly represents Text 2 as the only
+                variant holding <quote>erstwhile</quote>, but it incorrectly indicates Text 4 as
+                showing <quote>eftsoons there</quote> along with Texts 1 and 3. ChatGPT should have
                 stopped the alignment at <quote>eftsoons</quote>, and created a new
                     <code>&lt;app&gt;</code> to hold the variations of <quote>there went he</quote>
-                vs. <quote>he went there</quote>.was doing pretty well, but clearly this was
+                vs. <quote>he went there</quote>. The AI was doing pretty well, but clearly this was
                 only an approximation and precise accuracy is not to be expected.</para>
             <para>Still I wondered if I had given ChatGPT something too short and intricate with too
-                many small variations. What if I added a bit to the four strings that would givesomething that should be easy to align, a long stretch of identical tokens? Couldshow improvement, continuing on? <blockquote>
+                many small variations. What if I added a bit to the four strings that would give the AI something 
+                that should be easy to align, a long stretch of identical tokens? Could ChatGPT show improvement, continuing on? <blockquote>
                     <title>Elisa:</title>
                     <para> You're on the right track, but you're dropping some of the text in your
                         comparison. Let's try again with a longer set of texts to see if that helps. <orderedlist>
@@ -725,35 +732,37 @@ Marinere eftsoons there went he. He wanted to talk to the AI about collation and
 
                 </blockquote> ChatGPT replaces one kind of problem for a new kind of error. There
                 are omissions and failures to recognize precisely what is common and what is not.
-                And now text that claims to be the same across all versions is <emphasis
-                    role="ital">also</emphasis> represented as variant. This is a terrible
-                misrepresentation, but the kinds of errors make me wonder how the language model is
+                And now text that the AI claims to be the same across all versions is <emphasis
+                    role="ital">also</emphasis> represented as variant. This is a rather spectacular
+                misrepresentation, and the kinds of errors make me wonder how the language model is
                 attempting to process my requests. Why is ChatGPT generating these errors? </para>
 
 
             <para>I had learned that sometimes if you prompt the chatbot to pretend that they are an
                 expert in an area, this can improve their responses. In some of my
-                experiments this year I attempted this sort of <quote>let’s pretend</quote> game to
+                experiments this year I attempted this sort of <quote>let’s pretend</quote> game, to
                 ask ChatGPT to pretend they are an expert in the TEI and preparing a digital
                 scholarly edition, but this did not help to
                 improve the responses to my tasks. They are predictably unreliable, and never once did I see a
-                response without errors. I also tried simplifying the task and askingdirectly
-                only to <quote>diff</quote> some strings, but this made no difference and I have yet
+                response without errors. I also tried simplifying the task and asking the AI directly
+                only to <quote>diff</quote> some strings, wondering if that word might be more familiar to the language model. 
+                But this made no difference and I have yet
                 to see an accurate response to a prompt requesting a comparison of two or more
                 strings.</para>
             <para>Finally, I attempted an experiment with Anthropic’s Claude AI, which purports to
                 have a larger memory capacity and context window for prompt processing than
-                ChatGPT.<footnote><para>I accessed Claude in July 2023 at <link xlink:href="https://claude.ai">https://claude.ai</link></para></footnote> The results were slightly better out of the box. In this case I returned to
+                ChatGPT.<footnote><para>I accessed Claude in July 2023 at <link xlink:href="https://claude.ai">https://claude.ai</link></para></footnote> 
+                The results were slightly better out of the box. In this case I returned to
                 comparing two versions of the passage from <emphasis>Frankenstein</emphasis>: <blockquote>
                     <title>Elisa:</title>
                     <para>You are preparing a critical edition in TEI using critical apparatus
                         markup. Can you prepare a sample of code for comparing two editions based on
                         the following three versions of the same passage?</para>
-                    <para>Manuscript:was on a dreary night of November that I beheld the frame
+                    <para>Manuscript: It was on a dreary night of November that I beheld the frame
                         on which my man compleated. And with an anxiety that almost amounted to
                         agony I collected instruments of life around me that I might infuse a spark
                         of being into the lifeless thing that lay at my feet.</para>
-                    <para>1818 edition and 1831 edition:was on a dreary night of November, that
+                    <para>1818 edition and 1831 edition: It was on a dreary night of November, that
                         I beheld the accomplishment of my toils. With an anxiety that almost
                         amounted to agony, I collected the instruments of life around me, that I
                         might infuse a spark of being into the lifeless thing that lay at my
@@ -799,11 +808,11 @@ lay at my feet.&lt;/p&gt;
         <section>
             <title>From stochastic parrot to reasoning intelligence?</title>
 
-            <para>As a human (read: limited, inconsistent) reader of texts I am in awe that a
+            <para>As a human (read: limited, inconsistent) reader of texts I am surprised that a
                 mathematically trained language model, a so-called <quote>artificial
                     intelligence</quote> which I expect to be more consistent and adept at pattern
                 recognition than I am, consistently struggles with what seems to be a simple
-                comparison of strings. Isa shortness of Long-Term Short-Term Memory (LTSTM) that
+                comparison of strings. Is a shortness of Long-Term Short-Term Memory (LTSTM) that
                 causes the models to lose track of the details in the process of calculating a
                 response? Perhaps ChatGPT’s current inability to analyze comparisons of strings has
                 something to do with its token-by-token generative stream. ChatGPT can correctly
@@ -813,21 +822,22 @@ lay at my feet.&lt;/p&gt;
                         single-character edits (insertions, deletions, or substitutions) required to
                         change one string into another.</para>
                 </blockquote> The AI can also separate two different versions of a text in different
-                boxes. Butcannot accurately calculate the edit-distance andcannot seem to
+                boxes. But it cannot accurately calculate the edit-distance and it cannot seem to
                 pinpoint variations. In the task of preparing an alignment table or a TEI critical
                 apparatus, the AI supplies the illusion of structure with some persistent blind
-                spots. Perhapsis failing to <quote>see</quote> what constitutes a reasonable,
+                spots. Perhaps the model is failing to <quote>see</quote> what constitutes a reasonable,
                 meaningful basis for comparison of text streams. Perhaps this is due to a confusion
-                between its paradigm of understanding tokens based on
-                    <emphasis>relatedness</emphasis> as opposed to their exact sameness or
+                between the model’s understanding tokens based on
+                    <emphasis>relatedness</emphasis>, as opposed to their exact sameness or
                 difference. In other words, I suspect that something about semantics is getting in
-                the way, not literally the meaning of the text, but rather the programming to
+                the way, not literally the semantic meaning of the text, but rather the programming to
                 associate tokens with each other based on their co-occurence, the vectorized word
-                embeddings that helps the AI predict the next token to generate. The very capacities
-                that permit ChatGPT and Claude to converse in a reasonable voice interfere with
+                embeddings that help the AI predict the next token to generate something that strikes
+                us a plausibly meaningful. The very capacities
+                that permit ChatGPT and Claude to converse in a convincingly reasonable voice interfere with
                 their capacities to calculate or prepare an accurate programming script. We have
-                been learning these past several months simply to expect, and live with, AI being
-                fast but fuzzy, to expect error, and certainly not to askdo to our math homework.<footnote>
+                been learning these past several months simply to expect and live with AIs being
+                fast but fuzzy, to expect error, and certainly not to ask them do to our math homework.<footnote>
                     <para>Simon Frieder, Luca Pinchetti, Alexis Chevalier, Ryan-Rhys Griffiths,
                         Tommaso Salvatori, Thomas Lukasiewicz, Philipp Christian Petersen, Julius
                         Berner, <quote>Mathematical Capabilities of ChatGPT</quote> Arxiv: Computer
@@ -838,9 +848,9 @@ lay at my feet.&lt;/p&gt;
             <para>Perhaps we should not expect anything better. Today dialogue with generative
                 language-based AI gives us the opportunity to declare and inquire with the voice of
                 reason, but the stochastic outputs we receive sometimes contradict themselves and
-                frequently miscalculatge and misrepresent. We understand that prompt generation is
+                frequently miscalculate and misrepresent. We understand that prompt generation is
                 based on statistical predictions of what might be the best-fit, reasonable next
-                tokens of text to supply in sequence, and that this makes them not intelligent at
+                tokens of text to supply in sequence, and that this makes generative language models not intelligent at
                 all but rather stochastic machines.<footnote>
                     <para>For unsophisticated novices like me, these articles have been particularly
                         helpful for gaining a basic appreciation of key concepts in text generative
@@ -861,21 +871,21 @@ lay at my feet.&lt;/p&gt;
                         2018—. <link
                             xlink:href="https://colab.research.google.com/github/ResponsiblyAI/word-embedding/blob/main/tutorial-bias-word-embedding.ipynb"
                             >https://colab.research.google.com/github/ResponsiblyAI/word-embedding/blob/main/tutorial-bias-word-embedding.ipynb</link>.
-                        This article details pervasive problema of gender bias in ChatGPT’s
+                        The following article details pervasive problema of gender bias in ChatGPT’s
                         translations from English to Farsi, Malay, Tagalog, Thai, and Turkish:
                         Sourojit Ghosh and Aylin Caliskan, <quote>ChatGPT Perpetuates Gender Bias in
                             Machine Translation and Ignores Non-Gendered Pronouns: Findings across
                             Bengali and Five other Low-Resource Languages</quote> Upcoming
                         Publication in AAAI/ACM Conference on AI, Ethics, and Society, 2023.</para>
                 </footnote> In the year 2023, text-generative AI speaks with a language of authority
-                and confidence that amplifies normative values in its unstable predictions of the
-                best fit content completion for a prompt. We know these limitations, and their
+                and confidence that amplifies normative values in their unstable predictions of the
+                best-fit content completion for a prompt. We know these limitations, and their
                 consequences are dire.</para>
 
             <para>Reasoned authority is what we expect of optimal interactions with computers, and
                 this is a foundational value of our declarative markup community. In slides from a
-                2015 digital humanities conference presentation, Michael Sperberg-McQueen claims,
-                    <quote>Declarative semantics makepossible to reason about representations;
+                2015 digital humanities conference presentation, Michael Sperberg-McQueen reminds us,
+                    <quote>Declarative semantics make it possible to reason about representations;
                     imperative semantics impede.</quote><footnote>
                     <para>Michael Sperberg-McQueen, <link
                             xlink:href="https://blackmesatech.com/2015/10/KIaCiDH/"><quote>What does
@@ -889,9 +899,9 @@ lay at my feet.&lt;/p&gt;
                 and the tooling our community has developed for it. In that 2015 presentation,
                 Sperberg-McQueen also points out that hierarchical models are not neutral. The way
                 we organize document hierarchies and decide on markup representations, and create
-                schema rules to validate our models does not represent reflect absolute
+                schema rules to validate our models does not represent absolute
                     <quote>ground truth</quote>, but rather attempts to describe and define based on
-                what choose to prioritize, whether that is the section headings of a legislative
+                what we choose to prioritize, whether that is the section headings of a legislative
                 memo or the page-by-page printing of a comic book. The models we create for
                 documents and the metadata we care about reflect the paradigms and priorities of the
                 humans who create them. Document historians of the future may come back to our XML
@@ -902,21 +912,21 @@ lay at my feet.&lt;/p&gt;
                 documented. Our ways of thinking about texts, however flawed, are explicitly and
                 deliberately marked. By stark contrast, the biases amplified by large language
                 models in our stochastic systems are revealed only by analyzing the outputs or
-                attempting to source the now-secret training data.</para>
+                attempting to source their now-secret training data.</para>
             <para>That seminal article from 1990 <quote>What is Text, Really?</quote> is striking in
-                the year 2023 for how currentremains as a critique of prevailing machine systems
+                the year 2023 for how current it remains as a critique of prevailing machine systems
                 for handling text.<footnote>
                     <para>Steven J. DeRose, David G. Durand, Elli Mylonas, Allen H. Renear,
                         <quote>What is Text, Really?</quote> Journal of Computing in Higher Education. 1. 3-26. 1990. <link xlink:href="https://doi.org/10.1007/BF02941632">https://doi.org/10.1007/BF02941632</link></para>
-                </footnote> Their proposition, that text really is an Ordered Hierarchy of Content
+                </footnote> The authors' proposition, that text really is an Ordered Hierarchy of Content
                 Objects, came explicitly as a response (among other things) to concepts of text as a
                 stream of content objects, the gram particles and formmating instructions without
                 reference to structural context. In the year 2023 when we ask questions to large
                 language models we are given to understand that text is generated in response to a
                 limited <quote>context window</quote> that the language model uses for perceiving
-                the range of nearby tokens and their proximity to the current token a frame of
-                reference. Isthen the case in 2023 that context in the large language model is
-                being determined by frames of reference in a stream of text? When an approximation
+                the range of nearby tokens and their proximity to the current token as a frame of
+                reference. Is it then the case that context in the large language model is
+                determined by frames of reference in a stream of text? When an approximation
                 of semantics is coded and decoded in vector space by position and token
                 co-occurrence, this generates the appearance of meaningful output, which cannot be
                 said to represent truth but might sometimes approximate it. This is the argument of
@@ -929,11 +939,10 @@ lay at my feet.&lt;/p&gt;
                         pp. 610–623. <link xlink:href="https://doi.org/10.1145/3442188.3445922"
                             >https://doi.org/10.1145/3442188.3445922</link>. For helpful
                         introductions to how large language models work to generate text based on
-                        predictive algorithms, see On how meaning is predicted in large language
-                        models, see Jay Alammar, <link
+                        predictive algorithms, see Jay Alammar, <link
                             xlink:href="http://jalammar.github.io/illustrated-transformer/"
                                 ><quote>The Illustrated Transformer</quote></link> blog post. 27
-                        June 2018; Molly Ruby <link
+                        June 2018. See also Molly Ruby <link
                             xlink:href="https://towardsdatascience.com/how-chatgpt-works-the-models-behind-the-bot-1ce5fca96286"
                                 ><quote>How ChatGPT Works: The Model Behind The Bot</quote></link>,
                         in Towards Data Science. Medium. 30 January 2023. </para>
@@ -965,7 +974,7 @@ lay at my feet.&lt;/p&gt;
                 differentiation between AI then and now: <blockquote>
                     <para>The main goal of AI has been to develop programs that make intelligent
                         decisions and solve real-world problems, possibly dealing with “messy" real
-                        world input that could makedifficult to handle using “conventional"
+                        world input that could make it difficult to handle using “conventional"
                         programming. The earlier AI problem solvers were expert systems that
                         attempted to model the way experts reason and make decisions using a set of
                         logical rules. Programming languages like Lisp and Prolog were designed to
@@ -977,16 +986,16 @@ lay at my feet.&lt;/p&gt;
                         could go beyond an independent set of rules and turn to logical programs
                         with a Turing-complete expressivity, supporting logical inference, for
                         example, by unification and resolution. However, real-world problems are
-                        complex and often involve many interdependent components . . .It has become
+                        complex and often involve many interdependent components . . . It has become
                         evident that formalizing complex problem solving using programming a finite
-                        set of deterministic logic-based rules is not possible, nor ispossible
+                        set of deterministic logic-based rules is not possible, nor is it possible
                         to write a conventional structured program, even with a Turing-complete
                         language, for supporting intelligent decision-making based on naturally
                         occurring data.</para>
                 </blockquote>The virtues of declarative methods are here expressed in familiar
                 terms: domain experts can communicate needed information and apply programming to
                 validate according to logical constraints. The authors point out how insufficient
-                these machine learning techniques are, and call for augmenting them with what they
+                these machine learning techniques are and call for augmenting those techniques with what they
                 call Systems AI using declarative methods. <blockquote>
                     <para>We emphasize the need to use some fundamental declarative ideas such as
                         first-order query languages, knowledge representation and reasoning
@@ -1005,11 +1014,11 @@ lay at my feet.&lt;/p&gt;
                             </para>
                         </footnote></para>
                 </blockquote>
-                 I have quoted at length to emphasize a point that should not be
+                 I have quoted this article at length to emphasize a point that should not be
                 forgotten about the origins of artificial intelligence work in declarative methods,
                 and the capacity of declarative methods to alter the grounds of what a machine
                 intelligence can reference. The language models with which we interact in 2023
-                cannot change paradigms for how they evaluate language. If they are to develop to
+                cannot currently adjust their paradigms for how they evaluate language. If they are to develop to
                 become precision instruments that do no harm, declarative methods may be the way
                 forward. </para>
 
@@ -1020,12 +1029,12 @@ lay at my feet.&lt;/p&gt;
         <title>How meaningful is markup, anyway?</title>
 
         <para>When the text-generative AI models composed the markup shared in the previous section,
-            their declarative semantics were unclear and often inconsistently applied.Perhaps its
+            their declarative semantics were unclear and often inconsistently applied. Perhaps the AI’s
             purpose became diluted by other imperatives of the generative language algorithm. We
             could describe such output as expressing a middle state, a string bearing the forms of
             markup but with dubious or disreputable declarative semantics. The way declarative logic
             is incorporated in a text-processing system matters. How deliberate can we be in
-            applyingand generating the output we ask for? In their current form, large language
+            applying it and generating the output we ask for? In their current form, large language
             models are limited in their capacities to handle complex tasks.</para>
         <para> When handled deliberately, declarative logic can be processed in imperative programs
             without loss of their significance in the output. Transforming text into other formats
@@ -1039,13 +1048,14 @@ lay at my feet.&lt;/p&gt;
             <para>The process of refining the collation process for the Frankenstein Variorum
                 involved a serious challenge to stop the collateX software from its default
                 mechanism, always to align the smallest particles of the same text. CollateX
-                definitely tends to align the smallest irreducible units of text (tokens) thatreads as <quote>the same</quote>, like <quote>a</quote>, <quote>an</quote>, and
+                definitely tends to align the smallest irreducible units of text (tokens) that
+                it reads as <quote>the same</quote>, like <quote>a</quote>, <quote>an</quote>, and
                     <quote>the</quote>, even in passages that are not meant to be associated across
                 the texts.<footnote>
                     <para> See the CollateX documentation, section 3.1 Alignment Algorithms in <link
                             xlink:href="https://collatex.net/doc/">https://collatex.net/doc/</link>.
                         The Needleman-Wunsch algorithm appears to be a starting point that CollateX
-                        has adapted and improved to the Dekker algorithm, but the author's
+                        has adapted and improved to the Dekker algorithm, but my
                         experience applying the default alignment algorithm is consistent with this
                         pronounced statement from Needleman and Wunsch when they introduced their
                         comparison algorithm for bioinformatics in 1970: <quote>Comparisons are made
@@ -1065,7 +1075,7 @@ lay at my feet.&lt;/p&gt;
                 collation units by hand, which in our case was a brittle solution, prone to
                 introducing new errors. Some of the versions of <citation>Frankenstein</citation>
                 contain long inserted blocks, multi-paragraph inserted passages, and gaps in the
-                manuscript that maketricky to prepare aligned units (or <quote>chunks</quote>
+                manuscript that make it tricky to prepare aligned units (or <quote>chunks</quote>
                 representing parallel passages across the five versions).</para>
             <para>Over the last year, my student Yuying Jin and I established a reliable method for
                 bracketing off long divergent passages, a method that we call our
@@ -1073,23 +1083,23 @@ lay at my feet.&lt;/p&gt;
                 particle of comparable text to the size of whatever we can express inside an XML
                 element <code>&lt;longToken&gt;.....&lt;/longToken&gt;</code>. We instructed our
                 Python script to isolate all tokens by newline characters, and set the entire length
-                of longToken (which could be as small as a single character and as large as two
-                paragraphs of text, including flattened markup) all in one irreducible line. By
+                of a longToken (which could be as small as a single character and as large as two
+                paragraphs of text, including flattened markup) all on one irreducible line. By
                 controlling the tokenization algorithm, we were able to control the mechanism of the
-                collation software, preventfrom making spurious alignments on small words in a
+                collation software, prevent it from making spurious alignments on small words in a
                 passage that we would effectively bracket away from micro-comparisons.</para>
             <para>Our Python script is a place of negotiation between paradigms of structured markup
                 and so-called unstructured text. We use the <link
                     xlink:href="https://docs.python.org/3/library/xml.dom.pulldom.html">XML Pulldom
                     library</link> to process what markup from the source documents we want to
                 include in the string comparison process. That is, we mask away some elements, like
-                the page <code>&lt;surface&gt;</code> and <code>&lt;zone&gt;</code> elements that
+                the <code>&lt;surface&gt;</code> and <code>&lt;zone&gt;</code> elements that
                 indicate page surfaces and locations on the pages from the Shelley-Godwin Archive
                 encoding, because we have decided that page position is not relevant to comparison
                 of the semantic text structure. But we want to preserve the element nodes that mark
                 paragraphs, and chapter structures, and we want to preserve the information about
                 deletion marks in the manuscript and from the Thomas copy. The word
-                    <quote>mask</quote> seems appropriate here:is something like applying tape
+                    <quote>mask</quote> seems appropriate here: This is something like applying tape
                 to pieces of the file that we select. We continue to work with the markup, though,
                 in its meaningful form. In the Python script, we define variables containing lists
                 of element names that we will either mask away from the collation, or that we will
@@ -1122,20 +1132,20 @@ inlineVariationEvent = ['head', 'del', 'mdel', 'add', 'note', 'longToken']
                 abstracted them away from their original document models. We do this on purpose to
                 represent the element tags as Trojan-style markers and to be able to work them into
                 our a new XML file that stores a standoff critical apparatus in TEI. That file
-                represents the results of our collation pipeline, andstores a flattened
+                represents the results of our collation pipeline, and it stores a flattened
                 representation of the tags from the source editions. The standoff critical apparatus
                 serves, also, as a basis for creating new edition files that store the collation
                 data, highlighting passages that vary with the other editions.</para>
             <para>In this process, the semantics of the declarative markup from the source files are
                 preserved even while that markup has undergone a complicated series of
-                transformations. Firstis transferred into strings or a stream of text in order
+                transformations. First it is transferred into strings or a stream of text in order
                 to be collated. Then that stream of text is mapped back again into new XML
                 structures to represent the meaningful data in the critical apparatus about how the
                 texts compare to one another.</para>
             <para>Moving in between text-processing paradigms illuminates a transfer of semantics
-                into format. The logic of declarative markup is preserved in the Python function
+                into formatting. The logic of declarative markup is preserved in the Python function
                 running the pull parser via the XML Pulldom library. This function delivers us a way
-                to transfer the logic of the markup element nodes into the formatting used to
+                to transfer the logic of the markup element nodes into the syntax used to
                 prepare the tokens and normalized tokens to be delivered to the collateX software.
                 <programlisting>
     def extract(input_xml):
@@ -1182,13 +1192,13 @@ inlineVariationEvent = ['head', 'del', 'mdel', 'add', 'note', 'longToken']
                 variation. Thanks to the advantage of declarative markup, the scholarly editor gets
                 to declare what that smallest fragment can be. A full element node marking an
                     <code>inlineVariationEvent</code> surrounded by <code>\n</code> newline
-                characters becomes an irreducible token in , and this includes the
+                characters becomes an irreducible token, and this includes the
                     <code>&lt;longToken&gt;</code>, <code>&lt;add&gt;</code>, and
                     <code>&lt;del&gt;</code> elements that in our project mark irreducible units of
                 comparison. We want an entire added or deleted passage to be lined up complete as
-                one action in the text.must be compared to a full comparable unit marked in the
+                one action in the text. Such a <quote>longToken</quote> must be compared to a full comparable unit marked in the
                 other documents, fully undeleted. That is a decision of our scholarly edition work
-                to handle collation events, andmeans that a deletion event followed by an
+                to handle collation events, and it means that a deletion event followed by an
                 insertion event in the Thomas text (where the author crossed out a passage and
                 indicated another to add) effectively drives the collation software to generate a
                 specially shaped entry in our critical apparatus. We have programmed our work to
@@ -1212,16 +1222,16 @@ inlineVariationEvent = ['head', 'del', 'mdel', 'add', 'note', 'longToken']
 	&lt;/app&gt;</programlisting> This output from collateX is formatted according to
                 the TEI XML critical apparatus to express the logic of elements storing variation
                 information across five source edition files. A moment of meaningful variation is
-                stored in an <code>&lt;app&gt;</code> element, and each of uts
+                stored in an <code>&lt;app&gt;</code> element, and each of its
                     <code>&lt;rdg&gt;</code> descendants stores a single token representing the text
                 of one witness, here a phrase that we purposefully blocked off to be an irreducible
                 unit of comparison using the <code>&lt;longToken&gt;</code> element. You can see the
                 trace of the longToken elements in the <code>&lt;rdg&gt;</code> text nodes, while
                 the <code>@n</code> attribute on the <code>&lt;rdgGrp</code> elements serves to
                 express how the collation software normalizes each token to show on what basis the
-                    <code>&lt;rdg&gt;</code> elements inside are understood to agree: the trace of
-                the longToken element is removed there becauseis not itself part of the string
-                we ask the collation software to compare. </para>
+                    <code>&lt;rdg&gt;</code> elements inside are understood to agree. The trace of
+                the longToken element is removed there because it is not itself part of the strings
+                that we ask the collation software to compare. </para>
 
 
             <para>In the example, the collation software follows our normalizing algorithm to
@@ -1229,24 +1239,24 @@ inlineVariationEvent = ['head', 'del', 'mdel', 'add', 'note', 'longToken']
                 the same passage crossed out together with its complete replacement. Here,
                 declarative markup provides a precise way to delineate information on what
                 constitutes an indivisible token to the software. With the demarcation of a
-                    <code>&lt;longToken&gt;</code> I can bracket off passages of text and force the
-                software to deal with them on my terms. This gives us control of a process of
+                    <code>&lt;longToken&gt;</code> we can bracket off passages of text and force the
+                software to deal with them on our terms. This gives us control of a process of
                 pair-wise comparisons by allowing us to alter the usual definition of the smallest
                 unit of meaningful variation. Declarative markup thus permits us to express our
                 theory of textual variation in the logic of the programming pipeline. Certainly we
                 did something unorthodox with the machinery of comparing texts and we invented our
-                own markup outside the TEI to declare what a token could be, and I want to call this
+                own markup outside the TEI to declare what a token could be. I want to call this
                 a deliberate, <emphasis>declarative intervention</emphasis> in the imperative
-                algorithms. </para>
+                algorithms.</para>
 
 
-            <para>This presupposes that the imperative tools can read the declarations, and
+            <para>Our effort presupposes that the imperative tools can read the declarations, and
                 accommodate the markup. For this capacity in our project, we flatten the element
                 nodes into strings and identify those as regular expression patterns for processing.
                 In our project we raise them again into elements with an XSLT pipeline, here fully
                 relying on declarative methods to communicate our desired output. But in the crucial
                 stage of collation, when texts must be handled as sequential strings and imperative
-                processes are requird for calculations of alignment and comparison, the handling of
+                processes are required for calculations of alignment and comparison, the handling of
                 markup as patterns in imperative programs offers a modicum of authority and control
                 of the output.</para>
         </section>
@@ -1258,17 +1268,17 @@ inlineVariationEvent = ['head', 'del', 'mdel', 'add', 'note', 'longToken']
         <para>In this paper we looked first at the ways in which large language models fail
             repeatedly in the task of comparing and differentiating strings. We considered this a
             curious failing in a system that works with tokenized units of language, and also a sign
-            of a limited basis for making reasonable statements. Perhaps this could be improved with
+            of a limited basis for making reasonable statements. Perhaps this could be improved by
             implementing declarative methods. ChatGPT promised a kind of declarative affordance and
             declares to us its results, but its declarations are neither consistent nor reasonable.
             Perhaps a more adaptable algorithm for AI would allow for declarative mechanisms to
             control the logic of its operations. </para>
         <para>We then turned to consider how declarative methods can be implemented in imperative
-            programming. When scholars should have the capacity to alter the scripts on which
+            programming. When scholars have the capacity to alter the scripts on which
             machines do their complex processing, they lend scholarly authority to what computing
             machines can process. What we require, and what declarative methods should afford, is
             control and validation of the grounds of knowledge, even when these are shifting.</para>
-        <para>In a moment of eager excitement, confusion, and fear about the potential disruptive
+        <para>In a moment of eager excitement, confusion, and fear about the disruptive
             influences of generative language models, markup technologies provide reliable precision
             and control. They allow us to intervene and guide computational processes within
             declarative bounds of reason. Declarative methods can provide a foundation for a digital
@@ -1280,7 +1290,7 @@ inlineVariationEvent = ['head', 'del', 'mdel', 'add', 'note', 'longToken']
             for commercial reasons and do not share their transformer architectures openly, we would
             do well to inspect our tools and research methods for brittle dependencies. Declarative
             markup proves itself a precision instrument to guide computational processing and may
-            help to address the ephemerality of unstable technology stacks. What mightmean for a
+            help to address the ephemerality of unstable technology stacks. What might it mean for a
             text-generative <quote>AI</quote> system to operate in a fully declarative
             way?</para>
     </section>
