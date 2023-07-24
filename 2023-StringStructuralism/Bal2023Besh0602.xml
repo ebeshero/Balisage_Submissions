@@ -111,7 +111,7 @@
             United States in the 1990s in a literary and cultural field called
                 <quote>English</quote>, and I know that many of my digital humanities colleagues
             invested in natural language processing share that background with me, and share much of
-            my own migration experience into a institutional zones delineated <quote>digital
+            my own migration experience into zones delineated <quote>digital
                 humanities</quote> in our strange institutional adventures with computers. But I
             think of texts quite differently than many of my digital humanist colleagues do, simply
             because in my document modeling and research with digital scholarly editions, I am
@@ -1292,7 +1292,7 @@ inlineVariationEvent = ['head', 'del', 'mdel', 'add', 'note', 'longToken']
             do well to inspect our tools and research methods for brittle dependencies. Declarative
             markup proves itself a precision instrument to guide computational processing and may
             help to address the ephemerality of unstable technology stacks. What might it mean for a
-            text-generative <quote>AI</quote> system to to operate in a fully declarative
+            text-generative <quote>AI</quote> system to operate in a fully declarative
             way?</para>
     </section>
 
