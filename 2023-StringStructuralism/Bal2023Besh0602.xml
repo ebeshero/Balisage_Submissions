@@ -168,9 +168,9 @@
             </footnote> Even when machine-assisted, document collation is tiring, tedious work. It
             is one thing to prepare an algorithm for comparison and apply it to good, adaptable
             software for the purpose, but it is quite another have to correct the output. That is
-            where the real challenge begins: the intellectual challenge, mental discipline, or
+            where the real challenge begins, the intellectual challenge, mental discipline, or
                 <quote>self-psych-out</quote> of <quote>machine-assisted</quote> collation: When do
-            you give up trying to refine the software algorithm, and when to you
+            you give up trying to refine the software algorithm, and when do you
                 <quote>crack</quote> and resort to hand-correcting problematic outputs? Sometimes
             giving up really slows down a project, and it is really possible to refine the method,
             but it requires patience and tinkering with the machinery, and the patience to continue
