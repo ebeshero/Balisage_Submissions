@@ -234,7 +234,7 @@
             specific requirements for an optimal collation in mind that I have been attempting to
             declare and discuss with text-generative chat interfaces, and the exercise has been
             instructive. Over the past several months in my prompt experiments to engage ChatGPT and
-            Anthropic’s Claude in various permutations of this task, they not only been wanting, but
+            Anthropic’s Claude in various permutations of this task, they have not only been wanting, but
             remarkably and consistently so. The ways in which generative AI has bungled my series of
             string-comparison challenges may tell us something interesting about the limits of
             current large language models to correctly observe the differences between strings, and
