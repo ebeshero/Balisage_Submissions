@@ -10,9 +10,7 @@
     <info>
         <abstract>
 
-            <para>
-                <!--WRITE A SIMPLE ABSTRACT NOW. -->
-            </para>
+            <para>Can large language models, working with tokenized text, effectively compare strings and accurately model the comparison in structured forms like alignment tables and the TEI critical apparatus? The answer is no, or not very well, but that answer helps to illuminate a remarkable strength and versatility of declarative markup, when deliberately introduced to imperative programs. We can see how declarative methods control the imperative machinery of a complex collation process in the Frankenstein Variorum project. The key question or provocation is whether <quote>artificial intelligence</quote> in our time can be improved by returning to its declarative origins, to make room for the authority of domain experts to control an otherwise unwieldy stochastic process that poses as a voice of reason.</para>
 
         </abstract>
         <author>
@@ -50,16 +48,26 @@
             <email>eeb4@psu.edu</email>
         </author>
         <keywordset role="author">
+            <keyword>artificial intelligence</keyword>
+            <keyword>AI</keyword>
+            <keyword>large language model</keyword>
+            <keyword>LLM</keyword>
+            <keyword>declarative markup</keyword>
+            <keyword>declarative methods</keyword>
+            <keyword>imperative methods</keyword>
+            <keyword>TEI</keyword>
+            <keyword>Text Encoding Initiative</keyword>
+            <keyword>tokenization</keyword>
+            <keyword>normalization</keyword>
             <keyword>machine-assisted collation</keyword>
             <keyword>Python</keyword>
             <keyword>XSLT</keyword>
-
         </keywordset>
     </info>
     <section>
         <title>Introduction: Text tokenization and declarative methods in digital humanities</title>
         <para>Many scholars in the digital humanities work on natural language processing projects
-            that involve us in tokenizing texts and applying software to study how they cluster and
+            that involve tokenizing texts and applying software to study how they cluster and
             co-occur. Studies of term/token frequency-inverse document frequency (TF-IDF) are the
             basis of experiments like topic modeling, an approximate statistical effort to survey
                 <quote>topics</quote> based on clustering of tokens. The practice of tokenizing
@@ -116,7 +124,7 @@
                 <para>Evidence of how my colleagues practicing digital humanities perceive
                     declarative markup in the time of AI can be seen in the author's January 2023
                     conversation with Ted Underwood on Mastodon:
-                    https://sigmoid.social/@TedUnderwood/109730986869388754. The informal
+                    <link xlink:href="https://sigmoid.social/@TedUnderwood/109730986869388754">https://sigmoid.social/@TedUnderwood/109730986869388754</link>. The informal
                     conversation was sparked by a declaration that ChatGPT’s capacity to take text
                     input with instructions and output it marked in TEI also meant that eventually
                     there will be no more need for markup at all. In some ways this paper responds
@@ -244,7 +252,7 @@
                 to compare them, and show me how they differ. In no case did I ever receive
                 reliable, accurate results, the the kinds of errors I saw were interesting to try to
                 diagnose the basis of error. Here I share a representative sampling of the
-                experiments.</para>
+                experiments.<footnote><para>I accessed ChatGPT from January through July 2023 from <link xlink:href="https://chat.openai.com/">https://chat.openai.com/</link></para></footnote></para>
 
             <para>In some of my experiments, I simply requested that ChatGPT present me a table
                 showing me how two versions of a text align. In this prompt, I indicated that two
@@ -557,7 +565,7 @@ It was <emphasis role="under">on</emphasis> a dreary night <emphasis role="under
                         of text where all witnesses are the same, and then use the
                             <code>&lt;app&gt;</code> element in the specific moments where the text
                         differs. Here is how you could begin: <programlisting> 
-                      &lt;app&gt;
+                   &lt;app&gt;
                        &lt;rdg wit="#W1 #W3"&gt;It&lt;/lem&gt;
                            &lt;rdg wit="#W2 #W4"&gt;He&lt;/rdg&gt;
                    &lt;/app&gt;
@@ -745,7 +753,7 @@ Marinere eftsoons there went he. He wanted to talk to the AI about collation and
                 strings.</para>
             <para>Finally, I attempted an experiment with Anthropic’s Claude AI, which purports to
                 having a larger memory capacity and context window for prompt processing that
-                ChatGPT. The results were slightly better out of the box. In this case I returned to
+                ChatGPT.<footnote><para>I accessed Claude in July 2023 at <link xlink:href="https://claude.ai">https://claude.ai</link></para></footnote> The results were slightly better out of the box. In this case I returned to
                 comparing two versions of the passage from <emphasis>Frankenstein</emphasis>: <blockquote>
                     <title>Elisa:</title>
                     <para>You are preparing a critical edition in TEI using critical apparatus
@@ -837,27 +845,29 @@ lay at my feet.&lt;/p&gt;
                             xlink:href="https://doi.org/10.48550/arXiv.2301.13867"
                             >https://doi.org/10.48550/arXiv.2301.13867</link></para>
                 </footnote></para>
-            <para>Perhaps we should not expect anything better. Today dialogue with generative language-based AI gives us the
-                opportunity to declare and inquire with the voice of reason, but the stochastic outputs we
-                receive sometimes contradict themselves and frequently miscalculatge and misrepresent. We understand that prompt generation is based on statistical
-                predictions of what might be the best-fit, reasonable next tokens of text to supply
-                in sequence, and that this makes them not intelligent at all but rather stochastic machines.<footnote>
+            <para>Perhaps we should not expect anything better. Today dialogue with generative
+                language-based AI gives us the opportunity to declare and inquire with the voice of
+                reason, but the stochastic outputs we receive sometimes contradict themselves and
+                frequently miscalculatge and misrepresent. We understand that prompt generation is
+                based on statistical predictions of what might be the best-fit, reasonable next
+                tokens of text to supply in sequence, and that this makes them not intelligent at
+                all but rather stochastic machines.<footnote>
                     <para>For unsophisticated novices like me, these articles have been particularly
                         helpful for gaining a basic appreciation of key concepts in text generative
                         AI: Haomiao Huang, <link
                             xlink:href="https://arstechnica.com/gadgets/2023/01/the-generative-ai-revolution-has-begun-how-did-we-get-here/"
-                            ><quote>The generative AI revolution has begun—how did we get
+                                ><quote>The generative AI revolution has begun—how did we get
                                 here?</quote></link> Ars Technica 30 January 2023; Jay Alammar,
-                        <link xlink:href="https://jalammar.github.io/illustrated-word2vec/"
-                            ><quote>The Illustrated Word2Vec</quote></link> blog post, 27 March
+                            <link xlink:href="https://jalammar.github.io/illustrated-word2vec/"
+                                ><quote>The Illustrated Word2Vec</quote></link> blog post, 27 March
                         2019. </para>
-                    
-                </footnote> Further, we understand these stochastic machines can do damage,
-                because they amplify even the veiled language of racism and sexism that often goes
-                nearly unheard or unmarked in everyday discourse of Wikipedia and Reddit and social media.<footnote>
+
+                </footnote> Further, we understand these stochastic machines can do damage, because
+                they amplify even the veiled language of racism and sexism that often goes nearly
+                unheard or unmarked in everyday discourse of Wikipedia and Reddit and social media.<footnote>
                     <para>This Google Collab Notebook tutorial offers an accessible introduction to
                         gender and social class bias engrained in large language models: Shlomi Hod,
-                        <quote>Tutorial // Exploring Gender Bias in Word Embedding</quote>
+                            <quote>Tutorial // Exploring Gender Bias in Word Embedding</quote>
                         2018—. <link
                             xlink:href="https://colab.research.google.com/github/ResponsiblyAI/word-embedding/blob/main/tutorial-bias-word-embedding.ipynb"
                             >https://colab.research.google.com/github/ResponsiblyAI/word-embedding/blob/main/tutorial-bias-word-embedding.ipynb</link>.
@@ -867,14 +877,29 @@ lay at my feet.&lt;/p&gt;
                             Machine Translation and Ignores Non-Gendered Pronouns: Findings across
                             Bengali and Five other Low-Resource Languages</quote> Upcoming
                         Publication in AAAI/ACM Conference on AI, Ethics, and Society, 2023.</para>
-                </footnote> In the year 2023, text-generative AI speaks with a language of authority and confidence that amplifies normative values in its unstable predictions of the best fit content completion for a prompt. We know these limitations, and their consequences are dire.</para>
+                </footnote> In the year 2023, text-generative AI speaks with a language of authority
+                and confidence that amplifies normative values in its unstable predictions of the
+                best fit content completion for a prompt. We know these limitations, and their
+                consequences are dire.</para>
 
-            <para>Reasoned authority is what we expect of optimal interactions with computers, and  this is a foundational value of our declarative markup community. In slides from a 2015 digital humanities conference presentation, Michael Sperberg-McQueen claims,  <quote>Declarative semantics make it possible to reason about representations; imperative semantics impede.</quote><footnote><para>Michael Sperberg-McQueen, <link xlink:href="https://blackmesatech.com/2015/10/KIaCiDH/"><quote>What does descriptive markup contribute to digital humanities?</quote></link>, Key Ideas and Concepts of Digital Humanities conference, Technische Universitat Darmstadt, 26-28 October, 2015. <link xlink:href="https://blackmesatech.com/2015/10/KIaCiDH/#(8)">Slide 8</link>.</para></footnote>
-Nothing in our modeling of texts escapes bias, but our capacity to assert and test
-                reasonable statements is a particular strength of declarative markup and the tooling our community has developed for it. In that 2015
-                presentation, Sperberg-McQueen also points out that hierarchical models are not neutral.
-                The way we organize document hierarchies and decide on markup representations, and
-                create schema rules to validate our models does not represent reflect absolute
+            <para>Reasoned authority is what we expect of optimal interactions with computers, and
+                this is a foundational value of our declarative markup community. In slides from a
+                2015 digital humanities conference presentation, Michael Sperberg-McQueen claims,
+                    <quote>Declarative semantics make it possible to reason about representations;
+                    imperative semantics impede.</quote><footnote>
+                    <para>Michael Sperberg-McQueen, <link
+                            xlink:href="https://blackmesatech.com/2015/10/KIaCiDH/"><quote>What does
+                                descriptive markup contribute to digital humanities?</quote></link>,
+                        Key Ideas and Concepts of Digital Humanities conference, Technische
+                        Universitat Darmstadt, 26-28 October, 2015. <link
+                            xlink:href="https://blackmesatech.com/2015/10/KIaCiDH/#(8)">Slide
+                            8</link>.</para>
+                </footnote> Nothing in our modeling of texts escapes bias, but our capacity to
+                assert and test reasonable statements is a particular strength of declarative markup
+                and the tooling our community has developed for it. In that 2015 presentation,
+                Sperberg-McQueen also points out that hierarchical models are not neutral. The way
+                we organize document hierarchies and decide on markup representations, and create
+                schema rules to validate our models does not represent reflect absolute
                     <quote>ground truth</quote>, but rather attempts to describe and define based on
                 what choose to prioritize, whether that is the section headings of a legislative
                 memo or the page-by-page printing of a comic book. The models we create for
@@ -884,27 +909,30 @@ Nothing in our modeling of texts escapes bias, but our capacity to assert and te
                 of our publishing houses, the attitudes and expectations that prevailed in
                 understanding how to study language and archive our cultural heritage. The point is,
                 what we express in declarative semantics is fully visible, tractable, and usually
-                documented. Our ways of thinking about texts, however flawed, are explicitly and deliberately marked. By stark contrast, the biases amplified by
-                large language models in our stochastic systems are revealed only by analyzing
-                the outputs or attempting to source the now-secret training data.</para>
-            <para>That seminal article from 1990 <quote>What is Text, Really?</quote> is striking
-                in the year 2023 for how current it remains as a critique of prevailing machine
-                systems for handling text.<footnote>
+                documented. Our ways of thinking about texts, however flawed, are explicitly and
+                deliberately marked. By stark contrast, the biases amplified by large language
+                models in our stochastic systems are revealed only by analyzing the outputs or
+                attempting to source the now-secret training data.</para>
+            <para>That seminal article from 1990 <quote>What is Text, Really?</quote> is striking in
+                the year 2023 for how current it remains as a critique of prevailing machine systems
+                for handling text.<footnote>
                     <para>Steven J. DeRose, David G. Durand, Elli Mylonas, Allen H. Renear,
-                            <quote>What is Text, Really?</quote> 1990.</para>
+                        <quote>What is Text, Really?</quote> Journal of Computing in Higher Education. 1. 3-26. 1990. <link xlink:href="https://doi.org/10.1007/BF02941632">https://doi.org/10.1007/BF02941632</link></para>
                 </footnote> Their proposition, that text really is an Ordered Hierarchy of Content
-                Objects, came explicitly as a response (among other things) to concepts of text as
-                a stream of content objects, the gram particles and formmating instructions without
+                Objects, came explicitly as a response (among other things) to concepts of text as a
+                stream of content objects, the gram particles and formmating instructions without
                 reference to structural context. In the year 2023 when we ask questions to large
-                language models we are given to understand that text is generated in response to a limited <quote>context window</quote> that the language model uses for perceiving the range of nearby
-                tokens and their proximity to the current token a frame of reference. Is it then the case
-                in 2023 that context in the large language model is being determined by frames of
-                reference in a stream of text? When an approximation of semantics is coded and decoded in vector space
-                by position and token co-occurrence, this generates the appearance of meaningful output,
-                which cannot be said to represent truth but might sometimes approximate it. This is the
-                argument of the famous <quote>Stochastic Parrots</quote> article: that large
-                language models distort, exploit, and waste resources in an effort only to produce
-                unreliable and biased approximations. <footnote>
+                language models we are given to understand that text is generated in response to a
+                limited <quote>context window</quote> that the language model uses for perceiving
+                the range of nearby tokens and their proximity to the current token a frame of
+                reference. Is it then the case in 2023 that context in the large language model is
+                being determined by frames of reference in a stream of text? When an approximation
+                of semantics is coded and decoded in vector space by position and token
+                co-occurrence, this generates the appearance of meaningful output, which cannot be
+                said to represent truth but might sometimes approximate it. This is the argument of
+                the famous <quote>Stochastic Parrots</quote> article: that large language models
+                distort, exploit, and waste resources in an effort only to produce unreliable and
+                biased approximations. <footnote>
                     <para> Emily Bender, Timnit Gebru et. al. <quote>On the Dangers of Stochastic
                             Parrots: Can Language Models Be Too Big?</quote> Proceedings of the 2021
                         ACM Conference on Fairness, Accountability, and Transparency, March 2021,
@@ -922,12 +950,13 @@ Nothing in our modeling of texts escapes bias, but our capacity to assert and te
                 </footnote>
             </para>
             <para>Should we expect better of so-called <quote>artificial intelligence</quote> in our
-                time, to attempt something more than formulaic approximations of reasoned responses? Mulitple researchers suggest that large language models could attempt
-                a wider range of learning methods, to associate metadata wtih data, or to attempt solving complex
+                time, to attempt something more than formulaic approximations of reasoned responses?
+                Mulitple researchers suggest that large language models could attempt a wider range
+                of learning methods, to associate metadata wtih data, or to attempt solving complex
                 problems using hierarchical decision trees.<footnote>
                     <para>Here is a sampling of recent articles on how to improve problem solving
                         capacities in large language models: Cem Anil, Yuhuai Wu et. al.,
-                        <quote>Exploring Length Generalization in Large Language Models</quote>
+                            <quote>Exploring Length Generalization in Large Language Models</quote>
                         36th Conference on Neural Information Processing Systems. 2022. <link
                             xlink:href="https://openreview.net/pdf?id=zSkYVeX7bC4"
                             >https://openreview.net/pdf?id=zSkYVeX7bC4</link>; Shunyu Yao, Dian Yu,
@@ -936,21 +965,20 @@ Nothing in our modeling of texts escapes bias, but our capacity to assert and te
                         Computation and Language, May 2023 preprint <link
                             xlink:href="https://arxiv.org/pdf/2305.10601.pdf"
                             >https://arxiv.org/pdf/2305.10601.pdf</link>; Roie Schwaber-Cohen,
-                        <quote>Vector Databases</quote>, Pinecone <link
+                            <quote>Vector Databases</quote>, Pinecone <link
                             xlink:href="https://www.pinecone.io/learn/vector-database/"
                             >https://www.pinecone.io/learn/vector-database/</link> n.d. </para>
-                </footnote>
-                A group of researchers writing from the NIH, discussing the application of AI in
-                medical diagnostics, explicitly calls for declarative methods to improve the
-                learning algorithms. Because they historicize artificial intelligence to show how
-                declarative methods once were central in Lisp and Prolog, they provide a helpful
+                </footnote> A group of researchers writing from the NIH, discussing the application
+                of AI in medical diagnostics, explicitly calls for declarative methods to improve
+                the learning algorithms. Because they historicize artificial intelligence to show
+                how declarative methods once were central in Lisp and Prolog, they provide a helpful
                 differentiation between AI then and now: <blockquote>
                     <para>The main goal of AI has been to develop programs that make intelligent
                         decisions and solve real-world problems, possibly dealing with “messy" real
                         world input that could make it difficult to handle using “conventional"
                         programming. The earlier AI problem solvers were expert systems that
                         attempted to model the way experts reason and make decisions using a set of
-                        logical rules. Programming languages like Lisp1 and Prolog were designed to
+                        logical rules. Programming languages like Lisp and Prolog were designed to
                         make programming such systems easy even for non-expert users. The idea was
                         to represent the domain knowledge using a set of logical rules, and use the
                         rules in a logical reasoning process hidden from the programmers.</para>
@@ -978,18 +1006,22 @@ Nothing in our modeling of texts escapes bias, but our capacity to assert and te
                         deep learning libraries and automatic differentiation tools, and integrate
                         them with innovative programming languages and software development
                         techniques, as a way to address complex real-world problems that require
-                        both learning and reasoning models.</para>
+                        both learning and reasoning models.<footnote>
+                            <para>Kordjamshidi P, Roth D, Kersting K., <quote>Declarative Learning-Based
+                                Programming as an Interface to AI Systems</quote>, Frontiers in
+                                Artifical Intelligence 5:755361, 2022 Mar 14. doi:10.3389/frai.2022.755361.
+                                <link xlink:href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8967162/"
+                                    >https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8967162/</link>
+                            </para>
+                        </footnote></para>
                 </blockquote>
-                <footnote>
-                    <para>Kordjamshidi P, Roth D, Kersting K., <quote>Declarative Learning-Based
-                            Programming as an Interface to AI Systems</quote>, Frontiers in
-                        Artifical Intelligence 5:755361, 2022 Mar 14. doi:10.3389/frai.2022.755361.
-                            <link xlink:href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8967162/"
-                            >https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8967162/</link>
-                    </para>
-                </footnote> 
-                I have quoted at length to emphasize a point that should not be forgotten about the origins of artificial intelligence work in declarative methods, and the capacity of declarative methods to alter the grounds of what a machine intelligence can reference. The language models with which we interact in 2023 cannot change paradigms for how they evaluate language. If they are to develop to become precision instruments that do not harm, declarative methods may be the way forward.
-            </para>
+                 I have quoted at length to emphasize a point that should not be
+                forgotten about the origins of artificial intelligence work in declarative methods,
+                and the capacity of declarative methods to alter the grounds of what a machine
+                intelligence can reference. The language models with which we interact in 2023
+                cannot change paradigms for how they evaluate language. If they are to develop to
+                become precision instruments that do no harm, declarative methods may be the way
+                forward. </para>
 
 
         </section>
@@ -998,23 +1030,20 @@ Nothing in our modeling of texts escapes bias, but our capacity to assert and te
         <title>How meaningful is markup, anyway?</title>
 
         <para>When the text-generative AI models composed the markup shared in the previous section,
-            their declarative semantics were unclear and often inconsistent, particularly when the
-            tags don't match the content. In my experiments, the logic of the generated markup
-            betrays inconsistencies. Perhaps its purpose became diluted by other imperatives of the
-            generative language algorithm. We could describe such output as expressing a middle
-            state, a string bearing the forms of markup but with dubious declarative semantics. </para>
-        <para>The way declarative logic is incorporated in a text-processing system matters. How
-            deliberate can we be in applying it and generating the output we ask for? In its current
-            form, I am finding AI to be limited in its capacities to handle declarative tasks.
-            Handled differently, declarative logic can be processed in imperative programs without
-            loss of their significance in the output. Transforming text into other formats shows us
-            what is fluid and transferrable in markup. We map its structures into forms that
-            machines need to read, and when we do that they become moveable bins or containers of
-            information. The process has been vital to our collation project, where a deliberate
-            declared logic for controlling the basis for comparison has been key to consistent
-            processing. </para>
-
-
+            their declarative semantics were unclear and often inconsistently applied.Perhaps its
+            purpose became diluted by other imperatives of the generative language algorithm. We
+            could describe such output as expressing a middle state, a string bearing the forms of
+            markup but with dubious or disreputable declarative semantics. The way declarative logic
+            is incorporated in a text-processing system matters. How deliberate can we be in
+            applying it and generating the output we ask for? In their current form, large language
+            models are limited in their capacities to handle complex tasks.</para>
+        <para> When handled deliberately, declarative logic can be processed in imperative programs
+            without loss of their significance in the output. Transforming text into other formats
+            shows us what is fluid and transferrable in markup. We map its structures into forms
+            that machines need to read, and when we do that they become moveable bins or containers
+            of information. The process has been vital to our collation project for the Frankenstein
+            Variorum, where a deliberate declared logic for controlling the basis for comparison has
+            been key to consistent processing.</para>
         <section>
             <title>Markup as declarative intervention in an imperative process</title>
             <para>The process of refining the collation process for the Frankenstein Variorum
@@ -1071,18 +1100,18 @@ Nothing in our modeling of texts escapes bias, but our capacity to assert and te
                 of the semantic text structure. But we want to preserve the element nodes that mark
                 paragraphs, and chapter structures, and we want to preserve the information about
                 deletion marks in the manuscript and from the Thomas copy. The word
-                    <quote>mask</quote> seems appropriate here: it's something like applying tape to
-                pieces of the file that we select. We continue to work with the markup, though, in
-                its meaningful form. In the Python script, we define variables containing lists of
-                element names that we will either mask away from the collation, or that we will
+                    <quote>mask</quote> seems appropriate here: it is something like applying tape
+                to pieces of the file that we select. We continue to work with the markup, though,
+                in its meaningful form. In the Python script, we define variables containing lists
+                of element names that we will either mask away from the collation, or that we will
                 include: <programlisting>
-            ignore = ['sourceDoc', 'xml', 'comment', 'include', 'addSpan', 'handShift', 'damage', 
+ignore = ['sourceDoc', 'xml', 'comment', 'include', 'addSpan', 'handShift', 'damage', 
                 'unclear', 'restore', 'surface', 'zone', 'retrace']
-            blockEmpty = ['p', 'div', 'milestone', 'lg', 'l', 'cit', 'quote', 'bibl']
-            inlineEmpty = ['mod', 'pb', 'sga-add', 'delSpan', 'anchor', 'lb', 'gap', 
+blockEmpty = ['p', 'div', 'milestone', 'lg', 'l', 'cit', 'quote', 'bibl']
+inlineEmpty = ['mod', 'pb', 'sga-add', 'delSpan', 'anchor', 'lb', 'gap', 
                  'hi', 'w', 'ab']
-            inlineContent = ['del-INNER', 'add-INNER', 'metamark', 'shi']
-            inlineVariationEvent = ['head', 'del', 'mdel', 'add', 'note', 'longToken']
+inlineContent = ['del-INNER', 'add-INNER', 'metamark', 'shi']
+inlineVariationEvent = ['head', 'del', 'mdel', 'add', 'note', 'longToken']
                 </programlisting> The <code>ignore</code> variable contains
                 everything we are screening away from the stream of text comparison. The other
                 variables represent elements types we will see in the input. This input contains
@@ -1108,12 +1137,12 @@ Nothing in our modeling of texts escapes bias, but our capacity to assert and te
                 representation of the tags from the source editions. The standoff critical apparatus
                 serves, also, as a basis for creating new edition files that store the collation
                 data, highlighting passages that vary with the other editions.</para>
-            <para>In this process, detailed elsewhere, the semantics of the declarative markup from
-                the source files are preserved even while that markup has undergone a complicated
-                series of transformations. First it is transferred into strings or a stream of text
-                in order to be collated, and then that stream of text is mapped back again into new
-                XML structures to represent the meaningful data in the critical apparatus about how
-                the texts compare to one another.</para>
+            <para>In this process, the semantics of the declarative markup from the source files are
+                preserved even while that markup has undergone a complicated series of
+                transformations. First it is transferred into strings or a stream of text in order
+                to be collated. Then that stream of text is mapped back again into new XML
+                structures to represent the meaningful data in the critical apparatus about how the
+                texts compare to one another.</para>
             <para>Moving in between text-processing paradigms illuminates a transfer of semantics
                 into format. The logic of declarative markup is preserved in the Python function
                 running the pull parser via the XML Pulldom library. This function delivers us a way
@@ -1177,9 +1206,11 @@ Nothing in our modeling of texts escapes bias, but our capacity to assert and te
                 prepare this output: <programlisting>
                &lt;app&gt;
 		&lt;rdgGrp
-			n="['&lt;del&gt;to his statement, which was delivered&lt;/del&gt;', 'to him with interest for he spoke']"&gt;
-			&lt;rdg wit="fThomas"&gt;&lt;del rend="strikethrough"&gt;to his statement, which was
-				delivered&lt;/del&gt; &lt;add&gt;to him with interest for he spoke&lt;/add&gt;&lt;/rdg&gt;
+			n="['&lt;del&gt;to his statement, which was delivered&lt;/del&gt;', 
+			'to him with interest for he spoke']"&gt;
+			&lt;rdg wit="fThomas"&gt;&lt;del rend="strikethrough"&gt;to his statement, 
+			which was delivered&lt;/del&gt; &lt;add&gt;to him with interest
+			for he spoke&lt;/add&gt;&lt;/rdg&gt;
 		&lt;/rdgGrp&gt;
 		&lt;rdgGrp n="['to his statement, which was delivered']"&gt;
 			&lt;rdg wit="f1818"&gt;&lt;longToken&gt;to his statement, which was
@@ -1233,35 +1264,21 @@ Nothing in our modeling of texts escapes bias, but our capacity to assert and te
 
 
     </section>
-    <!--(to reference: 
-                    
-                    
-                * Kordjamshidi P, Roth D, Kersting K. <link xlink:href="Kordjamshidi P, Roth D, Kersting K. Declarative Learning-Based Programming as an Interface to AI Systems. Front Artif Intell. 2022;5:755361. Published 2022 Mar 14. doi:10.3389/frai.2022.755361">Declarative Learning-Based Programming as an Interface to AI Systems. 
-                Frontiers in Artifical Intelligence</link>  5:755361, 2022 Mar 14. doi:10.3389/frai.2022.755361
-                https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8967162/#fn0001
-                    
-                * Mordechai Levy-Eichel and Daniel Scheinerman, "Digital humanists need to learn how to count: A prominent recent book in the field suffers serious methodological pitfalls." The Chronicle of Higher Education 17 May 2022. https://www.chronicle.com/article/digital-humanists-need-to-learn-how-to-count 
-                
-                * essays from The Shape of Data in Digital Humanities, ed. Julia Flanders and Fotis Jannidis. London: Routledge, 2018. 
-                      * (note: Intro, contribution on the TEI by Lou Burnard, conclusion by Sperburg-McQueen). 
-                
-          
-               
-                
-             
-  
-           -->
     <section>
         <title>Conclusion</title>
-        <para><!-- Sum up the findings --> ChatGPT promised a kind of declarative affordance and
+        <para>In this paper we looked first at the ways in which large language models fail
+            repeatedly in the task of comparing and differentiating strings. We considered this a
+            curious failing in a system that works with tokenized units of language, and also a sign
+            of a limited basis for making reasonable statements. Perhaps this could be improved with
+            implementing declarative methods. ChatGPT promised a kind of declarative affordance and
             declares to us its results, but its declarations are neither consistent nor reasonable.
             Perhaps a more adaptable algorithm for AI would allow for declarative mechanisms to
             control the logic of its operations. </para>
-
-
-        <para>What might it mean for a text-generative <quote>AI</quote> system to to operate in a
-            fully declarative way? </para>
-
+        <para>We then turned to consider how declarative methods can be implemented in imperative
+            programming. When scholars should have the capacity to alter the scripts on which
+            machines do their complex processing, they lend scholarly authority to what computing
+            machines can process. What we require, and what declarative methods should afford, is
+            control and validation of the grounds of knowledge, even when these are shifting.</para>
         <para>In a moment of eager excitement, confusion, and fear about the potential disruptive
             influences of generative language models, markup technologies provide reliable precision
             and control. They allow us to intervene and guide computational processes within
@@ -1274,7 +1291,9 @@ Nothing in our modeling of texts escapes bias, but our capacity to assert and te
             for commercial reasons and do not share their transformer architectures openly, we would
             do well to inspect our tools and research methods for brittle dependencies. Declarative
             markup proves itself a precision instrument to guide computational processing and may
-            help to address the ephemerality of unstable technology stacks.</para>
+            help to address the ephemerality of unstable technology stacks. What might it mean for a
+            text-generative <quote>AI</quote> system to to operate in a fully declarative
+            way?</para>
     </section>
 
 </article>
