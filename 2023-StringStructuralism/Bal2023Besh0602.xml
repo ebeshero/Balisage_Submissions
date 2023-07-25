@@ -554,9 +554,20 @@
                 is a justification or rationalization. </para>
             <para>If I want to approach the problem differently, perhaps I need a better prompt.
                 So I try again. In the prompt below, I attempted to show ChatGPT what kind of output
-                I wanted to see, and gave the AI a start that I requested them to continue. (I
-                inadvertently left the second <code>&lt;app&gt;</code> element unclosed, though this omission does not
-                seem to have affected the reply.) <blockquote>
+                I wanted to see, and gave the AI a start that I requested them to continue. Adding the c
+                ode freehand without a syntax checker, I
+                inadvertently made two mistakes which mangled this code: <itemizedlist> 
+                    <listitem><para>I pasted in one of ChatGPT’s <code>&lt;lem&gt;</code> elements from the previous prompt,
+                        intending to modify it to an <code>&lt;rdg&gt;</code> element. 
+                        But in haste, I only changed it to an <code>&lt;rdg&gt;</code> start tag and
+                    left the <code>&lt;lem&gt;</code> end tag.</para></listitem>
+                    <listitem><para>I left the second <code>&lt;app&gt;</code> element unclosed.</para></listitem> 
+                
+                </itemizedlist>
+                
+       
+                
+                <blockquote>
                     <title>Elisa:</title>
                     <para>That is not what I meant. I'd like you to apply the critical apparatus
                         using inline parallel segmentation. This means you should show just one line
@@ -609,7 +620,8 @@ went he.
                     <para>I hope this format better meets your requirements for inline parallel
                         segmentation. Let me know if you need any further adjustments!</para>
 
-                </blockquote> At first glance this appeared to be what I wanted, but on review of
+                </blockquote>At first glance this appeared to be what I wanted, particularly since ChatGPT fixed my mangled input so that start tags properly matched end tags. 
+                However on review of
                 the strings I had asked ChatGPT to collate, we needed to recognize some significant
                 errors. Let’s review the original input strings that we asked ChatGPT to compare: <orderedlist>
                     <listitem>
@@ -636,8 +648,10 @@ went he.
                 showing <quote>eftsoons there</quote> along with Texts 1 and 3. ChatGPT should have
                 stopped the alignment at <quote>eftsoons</quote>, and created a new
                     <code>&lt;app&gt;</code> to hold the variations of <quote>there went he</quote>
-                vs. <quote>he went there</quote>. The AI was doing pretty well, but clearly this was
-                only an approximation and precise accuracy is not to be expected.</para>
+                vs. <quote>he went there</quote>. The AI was doing pretty well, and if well-formed markup was all that was expected, 
+                it can be said to write good XML. But if accurate content in the critical apparatus is called for, this approximation 
+                is dropping information needed for accurate content in the critical apparatus. 
+              </para>
             <para>Still I wondered if I had given ChatGPT something too short and intricate with too
                 many small variations. What if I added a bit to the four strings that would give the AI something 
                 that should be easy to align, a long stretch of identical tokens? Could ChatGPT show improvement, continuing on? <blockquote>
