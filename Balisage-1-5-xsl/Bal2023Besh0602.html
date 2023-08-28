@@ -1,7 +1,7 @@
 <!DOCTYPE HTML><html lang="en">
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-      <title>Balisage: Markup and migratory workflows in the context of AI and big data analytics</title>
+      <title>Balisage: Declarative markup in the time of AI</title>
       <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow&amp;display=swap" rel="stylesheet">
       <meta name="viewport" content="width=device-width, initial-scale=1"><script type="text/JavaScript">
       var detailsElement = document.createElement("details");
@@ -40,7 +40,7 @@
       </div>
       <html lang="en">
          <head>
-            <title>Balisage: Markup and migratory workflows in the context of AI and big data analytics</title>
+            <title>Balisage: Declarative markup in the time of AI</title>
             <link rel="stylesheet" href="balisage-proceedings.css" type="text/css">
             <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow&amp;display=swap" rel="stylesheet">
             <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -233,8 +233,8 @@
                      <div id="navbar"></div>
                      <div id="index-mast">
                         <div class="content">
-                           <h1 class="article-title" id="d4e5">Balisage Paper: Markup and migratory workflows in the context of AI and big data analytics</h1>
-                           <h2 class="subtitle">Reflections on the data modeling groundwork of the digital humanities</h2>
+                           <h1 class="article-title" id="d4e5">Balisage Paper: Declarative markup in the time of <q>AI</q></h1>
+                           <h2 class="subtitle">Controlling the semantics of tokenized strings</h2>
                            <details class="mast-box">
                               <summary class="title">Elisa E. Beshero-Bondar</summary>
                               <div class="affiliation">
@@ -248,7 +248,7 @@
                               </div>
                               <h5 class="author-email"><code class="email">&lt;<a class="email" href="mailto:eeb4@psu.edu">eeb4@psu.edu</a>&gt;</code></h5>
                               <div class="personblurb">
-                                 <p id="d4e19">Elisa Beshero-Bondar explores and teaches document data modeling with the XML
+                                 <p id="d4e21">Elisa Beshero-Bondar explores and teaches document data modeling with the XML
                                     family of languages. She serves on the TEI Technical Council and is the founder
                                     and organizer of the <a href="https://digitalmitford.org" class="link">Digital
                                        Mitford project</a> and <a href="https://digitalmitford.github.io/DigMitCS/" class="link">its usually annual coding
@@ -263,7 +263,7 @@
                               <summary>
                                  <h2 class="inline-heading">Abstract</h2>
                               </summary>
-                              <p id="d4e9">Can large language models, working with tokenized text, effectively compare strings
+                              <p id="d4e11">Can large language models, working with tokenized text, effectively compare strings
                                  and accurately model the comparison in structured forms like alignment tables and
                                  the TEI critical apparatus? The answer is no, or not very well, but that answer helps
                                  to illuminate a remarkable strength and versatility of declarative markup, when deliberately
@@ -278,22 +278,22 @@
                                  <h2 class="inline-heading">Table of Contents</h2>
                               </summary>
                               <dl>
-                                 <dt><span class="section"><a href="#d4e58" class="toc">Introduction: Text tokenization and declarative methods in digital humanities</a></span></dt>
-                                 <dt><span class="section"><a href="#d4e103" class="toc">Can AI help with my document collation?</a></span></dt>
+                                 <dt><span class="section"><a href="#d4e60" class="toc">Introduction: Text tokenization and declarative methods in digital humanities</a></span></dt>
+                                 <dt><span class="section"><a href="#d4e105" class="toc">Can AI help with my document collation?</a></span></dt>
                                  <dd>
                                     <dl>
-                                       <dt><span class="section"><a href="#d4e158" class="toc">What happens when we ask a large language model to compare strings?</a></span></dt>
-                                       <dt><span class="section"><a href="#d4e602" class="toc">From stochastic parrot to reasoning intelligence?</a></span></dt>
+                                       <dt><span class="section"><a href="#d4e160" class="toc">What happens when we ask a large language model to compare strings?</a></span></dt>
+                                       <dt><span class="section"><a href="#d4e620" class="toc">From stochastic parrot to reasoning intelligence?</a></span></dt>
                                     </dl>
                                  </dd>
-                                 <dt><span class="section"><a href="#d4e732" class="toc">How meaningful is markup, anyway?</a></span></dt>
+                                 <dt><span class="section"><a href="#d4e750" class="toc">How meaningful is markup, anyway?</a></span></dt>
                                  <dd>
                                     <dl>
-                                       <dt><span class="section"><a href="#d4e736" class="toc">Markup as declarative intervention in an imperative process</a></span></dt>
-                                       <dt><span class="section"><a href="#d4e800" class="toc">There and back again: Transferring declared semantics</a></span></dt>
+                                       <dt><span class="section"><a href="#d4e754" class="toc">Markup as declarative intervention in an imperative process</a></span></dt>
+                                       <dt><span class="section"><a href="#d4e818" class="toc">There and back again: Transferring declared semantics</a></span></dt>
                                     </dl>
                                  </dd>
-                                 <dt><span class="section"><a href="#d4e850" class="toc">Conclusion</a></span></dt>
+                                 <dt><span class="section"><a href="#d4e868" class="toc">Conclusion</a></span></dt>
                               </dl>
                            </details>
                         </div>
@@ -303,8 +303,8 @@
             </nav>
             <nav id="index-mast" class="wide-mode" role="navigation">
                <div class="content">
-                  <h1 class="article-title" id="d4e5">Balisage Paper: Markup and migratory workflows in the context of AI and big data analytics</h1>
-                  <h2 class="subtitle">Reflections on the data modeling groundwork of the digital humanities</h2>
+                  <h1 class="article-title" id="d4e5">Balisage Paper: Declarative markup in the time of <q>AI</q></h1>
+                  <h2 class="subtitle">Controlling the semantics of tokenized strings</h2>
                   <details class="mast-box">
                      <summary class="title">Elisa E. Beshero-Bondar</summary>
                      <div class="affiliation">
@@ -318,7 +318,7 @@
                      </div>
                      <h5 class="author-email"><code class="email">&lt;<a class="email" href="mailto:eeb4@psu.edu">eeb4@psu.edu</a>&gt;</code></h5>
                      <div class="personblurb">
-                        <p id="d4e19">Elisa Beshero-Bondar explores and teaches document data modeling with the XML
+                        <p id="d4e21">Elisa Beshero-Bondar explores and teaches document data modeling with the XML
                            family of languages. She serves on the TEI Technical Council and is the founder
                            and organizer of the <a href="https://digitalmitford.org" class="link">Digital
                               Mitford project</a> and <a href="https://digitalmitford.github.io/DigMitCS/" class="link">its usually annual coding
@@ -333,7 +333,7 @@
                      <summary>
                         <h2 class="inline-heading">Abstract</h2>
                      </summary>
-                     <p id="d4e9">Can large language models, working with tokenized text, effectively compare strings
+                     <p id="d4e11">Can large language models, working with tokenized text, effectively compare strings
                         and accurately model the comparison in structured forms like alignment tables and
                         the TEI critical apparatus? The answer is no, or not very well, but that answer helps
                         to illuminate a remarkable strength and versatility of declarative markup, when deliberately
@@ -348,33 +348,33 @@
                         <h2 class="inline-heading">Table of Contents</h2>
                      </summary>
                      <dl>
-                        <dt><span class="section"><a href="#d4e58" class="toc">Introduction: Text tokenization and declarative methods in digital humanities</a></span></dt>
-                        <dt><span class="section"><a href="#d4e103" class="toc">Can AI help with my document collation?</a></span></dt>
+                        <dt><span class="section"><a href="#d4e60" class="toc">Introduction: Text tokenization and declarative methods in digital humanities</a></span></dt>
+                        <dt><span class="section"><a href="#d4e105" class="toc">Can AI help with my document collation?</a></span></dt>
                         <dd>
                            <dl>
-                              <dt><span class="section"><a href="#d4e158" class="toc">What happens when we ask a large language model to compare strings?</a></span></dt>
-                              <dt><span class="section"><a href="#d4e602" class="toc">From stochastic parrot to reasoning intelligence?</a></span></dt>
+                              <dt><span class="section"><a href="#d4e160" class="toc">What happens when we ask a large language model to compare strings?</a></span></dt>
+                              <dt><span class="section"><a href="#d4e620" class="toc">From stochastic parrot to reasoning intelligence?</a></span></dt>
                            </dl>
                         </dd>
-                        <dt><span class="section"><a href="#d4e732" class="toc">How meaningful is markup, anyway?</a></span></dt>
+                        <dt><span class="section"><a href="#d4e750" class="toc">How meaningful is markup, anyway?</a></span></dt>
                         <dd>
                            <dl>
-                              <dt><span class="section"><a href="#d4e736" class="toc">Markup as declarative intervention in an imperative process</a></span></dt>
-                              <dt><span class="section"><a href="#d4e800" class="toc">There and back again: Transferring declared semantics</a></span></dt>
+                              <dt><span class="section"><a href="#d4e754" class="toc">Markup as declarative intervention in an imperative process</a></span></dt>
+                              <dt><span class="section"><a href="#d4e818" class="toc">There and back again: Transferring declared semantics</a></span></dt>
                            </dl>
                         </dd>
-                        <dt><span class="section"><a href="#d4e850" class="toc">Conclusion</a></span></dt>
+                        <dt><span class="section"><a href="#d4e868" class="toc">Conclusion</a></span></dt>
                      </dl>
                   </details>
                </div>
             </nav>
             <main id="main" role="main" aria-label="Main Content">
                <div class="article">
-                  <h1 class="article-title" id="d4e5">Balisage Paper: Markup and migratory workflows in the context of AI and big data analytics</h1>
-                  <h2 class="subtitle">Reflections on the data modeling groundwork of the digital humanities</h2>
-                  <div class="section" id="d4e58">
+                  <h1 class="article-title" id="d4e5">Balisage Paper: Declarative markup in the time of <q>AI</q></h1>
+                  <h2 class="subtitle">Controlling the semantics of tokenized strings</h2>
+                  <div class="section" id="d4e60">
                      <h2 class="title" style="clear: both">Introduction: Text tokenization and declarative methods in digital humanities</h2>
-                     <p id="d4e60">Many scholars in the digital humanities work on natural language processing projects
+                     <p id="d4e62">Many scholars in the digital humanities work on natural language processing projects
                         that involve tokenizing texts and applying software to study how they cluster and
                         co-occur. Studies of term/token frequency-inverse document frequency (TF-IDF) are
                         the
@@ -384,7 +384,7 @@
                         clusterings make a voice distinctive. Among digital humanists who have spoken at the
                         ADHO conference from 2015 onward, my own work on digital scholarly editions involves
                         me
-                        much more than usual with declarative markup through XML and TEI.<sup class="fn-label"><a href="#d4e64" class="footnoteref" id="d4e64-ref">[1]</a></sup> This apparent marginality in my field means I have a slightly unusual and
+                        much more than usual with declarative markup through XML and TEI.<sup class="fn-label"><a href="#d4e66" class="footnoteref" id="d4e66-ref">[1]</a></sup> This apparent marginality in my field means I have a slightly unusual and
                         persistently useful <q>toolkit</q> I have been using for a decade, and that I am
                         also a resource for my colleagues when they need to learn these technologies. My work
                         with declarative methods also allows me to enter the world of natural language
@@ -396,7 +396,7 @@
                         back
                         into markup to frame the outputs for sharing and visualizing the data in SVG, XML,
                         XHTML5.</p>
-                     <p id="d4e82">The cycle from declarative markup, to string-processing algorthims, and back to output
+                     <p id="d4e84">The cycle from declarative markup, to string-processing algorthims, and back to output
                         declarative markup is a fundamental aspect of my research and teaching. But for many
                         in
                         my field, only the string processing portion of this is relevant, as they are not
@@ -422,13 +422,13 @@
                         the
                         document form and content seems to encumber or inhibit projects at scale. The
                         classifications and categorizations made by AI should be able to do the work of markup
-                        or render it obsolete.<sup class="fn-label"><a href="#d4e90" class="footnoteref" id="d4e90-ref">[2]</a></sup> In this paper, I want to address the question of what declarative markup can
+                        or render it obsolete.<sup class="fn-label"><a href="#d4e92" class="footnoteref" id="d4e92-ref">[2]</a></sup> In this paper, I want to address the question of what declarative markup can
                         do for us who engage in textual scholarship in the digital humanities. More needs
                         to be
                         declared just now about what we do with declarative methods and semantics and how
                         they
                         might assist the efforts of AI in our time.</p>
-                     <p id="d4e97">Because I am steeped in scholarly editing and a declarative markup
+                     <p id="d4e99">Because I am steeped in scholarly editing and a declarative markup
                         <q>specialization</q> in the digital humanities, my efforts to test the chat
                         interfaces of large language models reflect my distinct research interests in comparing
                         and collating texts. Over the course of this year, I have realized something about
@@ -447,16 +447,16 @@
                         a more declarative approach to what is currently an unintelligent (so-called
                         <q>AI</q>) system for modeling language.</p>
                   </div>
-                  <div class="section" id="d4e103">
+                  <div class="section" id="d4e105">
                      <h2 class="title" style="clear: both">Can AI help with my document collation?</h2>
-                     <p id="d4e105">I have been working on a project over the past few years that has challenged me to
+                     <p id="d4e107">I have been working on a project over the past few years that has challenged me to
                         explore, test, and refine a machine-assisted method for comparing versions of a text.
                         The project involves comparing five versions of the novel
                         <span class="ital">Frankenstein</span>, and the basis for comparing these versions
                         includes the markup from editions that were coded differently. I have shared papers
                         about these adventures over the past few Balisage meetings, including the fun of
                         flattening and raising markup and the challenge of comparing strings that include
-                        representations of the markup in the editions.<sup class="fn-label"><a href="#d4e109" class="footnoteref" id="d4e109-ref">[3]</a></sup> Even when it is  machine-assisted, document collation is tiring, tedious work.
+                        representations of the markup in the editions.<sup class="fn-label"><a href="#d4e111" class="footnoteref" id="d4e111-ref">[3]</a></sup> Even when it is  machine-assisted, document collation is tiring, tedious work.
                         It is one thing to prepare an algorithm for comparison and apply it to good, adaptable
                         software for the purpose, but it is quite another have to correct the output. That
                         is
@@ -472,9 +472,9 @@
                         this painstaking effort, if there could be a reliable way to train a large language
                         model to process text
                         the way an editor of a digital scholarly edition would?</p>
-                     <p id="d4e124">The sensational public launch of ChatGPT on November 30, 2022 has sparked excitment,
+                     <p id="d4e126">The sensational public launch of ChatGPT on November 30, 2022 has sparked excitment,
                         confusion, concern and a new surge of publications across academia and the public
-                        sector.<sup class="fn-label"><a href="#d4e126" class="footnoteref" id="d4e126-ref">[4]</a></sup> ChatGPT has also given us much fun with prompt experiments among
+                        sector.<sup class="fn-label"><a href="#d4e128" class="footnoteref" id="d4e128-ref">[4]</a></sup> ChatGPT has also given us much fun with prompt experiments among
                         my academic circles. We would ask for introductions of ourselves and our colleagues
                         suitable for use in conferences and laugh at how ludricously wrong they are. (In one
                         invented bio I am both a medievalist and a published poet, neither of which is true,
@@ -500,12 +500,12 @@
                         make, and particularly when we began with a foundation of knowledge, we could work
                         within a dialogue
                         and improve our understanding. </p>
-                     <p id="d4e137">Encouraged by such time-saving coding assistance, my colleagues, students, and I have
+                     <p id="d4e139">Encouraged by such time-saving coding assistance, my colleagues, students, and I have
                         been eagerly experimenting all year with something that seems to promise the ultimate
                         <span class="ital">declarative</span> possiblity: to directly ask a machine to deliver an
                         output, without directing how it generates that output. The developers at OpenAI fondly
                         aspire for their chat model to become: <q>a very eager junior programmer</q> to
-                        <q>make completely new workflows effortless and efficient</q>.<sup class="fn-label"><a href="#d4e145" class="footnoteref" id="d4e145-ref">[5]</a></sup> I wondered how well the new AI models might perform on the very task
+                        <q>make completely new workflows effortless and efficient</q>.<sup class="fn-label"><a href="#d4e147" class="footnoteref" id="d4e147-ref">[5]</a></sup> I wondered how well the new AI models might perform on the very task
                         that has taken me and my colleagues and students years to refine: the machine-assisted
                         collation of multiple versions of a work in the form of manuscripts and printed
                         documents. The processes that underlie this involve aligning chunks of text, and a
@@ -516,7 +516,7 @@
                         with text-generative AI be applied to comparison algorithms? Would the language model
                         <q>just
                            know</q> how to optimize the most reasonable alignments and outputs? </p>
-                     <p id="d4e157">At various moments between January and July 2023, I began testing a hypothesis that
+                     <p id="d4e159">At various moments between January and July 2023, I began testing a hypothesis that
                         a
                         machine trained on tokenized text and word embeddings should excel at the task of
                         token-by-token comparison of strings. I will document some of my representative prompt
@@ -540,9 +540,9 @@
                         the text-generative 
                         system in 2023, and that is a fully declarative method of working with input and generating
                         output.</p>
-                     <div class="section" id="d4e158">
+                     <div class="section" id="d4e160">
                         <h3 class="title" style="clear: both">What happens when we ask a large language model to compare strings?</h3>
-                        <p id="d4e160">To begin to estimate whether AI could assist my collation work, I needed to work
+                        <p id="d4e162">To begin to estimate whether AI could assist my collation work, I needed to work
                            within the limits of ChatGPT’s input window. But just as I could ask the AI to proofread
                            a paragraph or two for errors, surely I could provide some input strings and ask the
                            AI to compare them, 
@@ -550,21 +550,21 @@
                            reliable, accurate results, but the kinds of errors I saw were interesting to try
                            to
                            diagnose the basis of error. Here I share a representative sampling of the
-                           experiments.<sup class="fn-label"><a href="#d4e162" class="footnoteref" id="d4e162-ref">[6]</a></sup></p>
-                        <p id="d4e167">In some of my experiments, I simply requested that ChatGPT present me a table
+                           experiments.<sup class="fn-label"><a href="#d4e164" class="footnoteref" id="d4e164-ref">[6]</a></sup></p>
+                        <p id="d4e169">In some of my experiments, I simply requested that ChatGPT present me a table
                            showing me how two versions of a text align. In this prompt, I indicated that two
                            editions share a version, and a manuscript presents a different version. I was
                            curious to see how the AI would handle two versions shared by three documents. 
                            <div class="blockquote">
                               <blockquote class="blockquote">
                                  <p class="title">Elisa:</p>
-                                 <p id="d4e171">Can you prepare a data structure to show where these texts are the same
+                                 <p id="d4e173">Can you prepare a data structure to show where these texts are the same
                                     and where they differ?</p>
-                                 <p id="d4e172">Manuscript: It was on a dreary night of November that I beheld the frame
+                                 <p id="d4e174">Manuscript: It was on a dreary night of November that I beheld the frame
                                     on which my man compleated. And with an anxiety that almost amounted to
                                     agony I collected instruments of life around me that I might infuse a spark
                                     of being into the lifeless thing that lay at my feet.</p>
-                                 <p id="d4e173">1818 edition and 1831 edition: It was on a dreary night of November, that
+                                 <p id="d4e175">1818 edition and 1831 edition: It was on a dreary night of November, that
                                     I beheld the accomplishment of my toils. With an anxiety that almost
                                     amounted to agony, I collected the instruments of life around me, that I
                                     might infuse a spark of being into the lifeless thing that lay at my
@@ -575,10 +575,10 @@
                            <div class="blockquote">
                               <blockquote class="blockquote">
                                  <p class="title">ChatGPT:</p>
-                                 <p id="d4e177">To compare the texts and visualize the similarities and differences, you
+                                 <p id="d4e179">To compare the texts and visualize the similarities and differences, you
                                     can use a data structure such as a table or a side-by-side comparison.
                                     Here's an example of how you can represent the texts:</p>
-                                 <pre class="programlisting" id="d4e178">
+                                 <pre class="programlisting" id="d4e180">
 +---------------------+---------------------------+-------------------------+
 |       Manuscript     |      1818 edition         |     1831 edition        |
 +---------------------+---------------------------+-------------------------+
@@ -599,11 +599,11 @@
 +---------------------+---------------------------+-------------------------+
 
                     </pre>
-                                 <p id="d4e179">In this representation, each row corresponds to a line of text, and the
+                                 <p id="d4e181">In this representation, each row corresponds to a line of text, and the
                                     columns represent the different versions: Manuscript, 1818 edition, and 1831
                                     edition. The matching text is aligned vertically, allowing you to see where
                                     the texts are the same and where they differ.</p>
-                                 <p id="d4e180"> By comparing the texts using this structure, you can easily identify the
+                                 <p id="d4e182"> By comparing the texts using this structure, you can easily identify the
                                     variations between the Manuscript, 1818 edition, and 1831 edition.</p>
                               </blockquote>
                            </div> Here I was pleased to see that ChatGPT understood that I wanted a
@@ -614,7 +614,7 @@
                            <div class="blockquote">
                               <blockquote class="blockquote">
                                  <p class="title">Elisa:</p>
-                                 <p id="d4e184">Let's try to refine this. Where the texts are identical, just show one
+                                 <p id="d4e186">Let's try to refine this. Where the texts are identical, just show one
                                     block of text on the screen. Then when the texts are different, use the
                                     table to put the differences side by side.</p>
                               </blockquote>
@@ -623,10 +623,10 @@
                            <div class="blockquote">
                               <blockquote class="blockquote">
                                  <p class="title">ChatGPT:</p>
-                                 <p id="d4e188">Sure! Let's refine the representation to show the identical text blocks
+                                 <p id="d4e190">Sure! Let's refine the representation to show the identical text blocks
                                     once and use a table to display the differing portions side by side. Here's
                                     an updated representation:</p>
-                                 <pre class="programlisting" id="d4e189">
+                                 <pre class="programlisting" id="d4e191">
                     Identical <span class="under">text</span>:
 ------------------------- It was <span class="under">on</span> a dreary night <span class="under">of</span> November
 
@@ -649,7 +649,7 @@
 +---------------------+---------------------------+-------------------------+
   
                 </pre>
-                                 <p id="d4e270">In this refined representation, the identical text block "It was on a
+                                 <p id="d4e272">In this refined representation, the identical text block "It was on a
                                     dreary night of November" is displayed once at the top, indicating that this
                                     portion is the same in all versions. The table below then shows the
                                     differing text portions side by side, highlighting the variations between
@@ -670,7 +670,7 @@
                            long that are identical in the three passages blocked. This is distressingly
                            inaccurate, and raises questions about how ChatGPT can be determining what to
                            highlight.</p>
-                        <p id="d4e277">I tried again with this experiment. I understood that ChatGPT’s memory might well
+                        <p id="d4e279">I tried again with this experiment. I understood that ChatGPT’s memory might well
                            be too short to handle the text processing completely, but I wondered whether they
                            could improve the response, much as we can prod them to help us debug our code. Perhaps
                            ChatGPT would
@@ -679,14 +679,14 @@
                            <div class="blockquote">
                               <blockquote class="blockquote">
                                  <p class="title">Elisa:</p>
-                                 <p id="d4e281">Your approach is what I had in mind, good. But you've forgotten where the
+                                 <p id="d4e283">Your approach is what I had in mind, good. But you've forgotten where the
                                     source texts are different. Can you redo this, taking another look at the
                                     source texts?</p>
-                                 <p id="d4e282">Manuscript: It was on a dreary night of November that I beheld the frame
+                                 <p id="d4e284">Manuscript: It was on a dreary night of November that I beheld the frame
                                     on which my man compleated. And with an anxiety that almost amounted to
                                     agony I collected instruments of life around me that I might infuse a spark
                                     of being into the lifeless thing that lay at my feet.</p>
-                                 <p id="d4e283">1818 edition and 1831 edition: It was on a dreary night of November, that
+                                 <p id="d4e285">1818 edition and 1831 edition: It was on a dreary night of November, that
                                     I beheld the accomplishment of my toils. With an anxiety that almost
                                     amounted to agony, I collected the instruments of life around me, that I
                                     might infuse a spark of being into the lifeless thing that lay at my
@@ -697,9 +697,9 @@
                            <div class="blockquote">
                               <blockquote class="blockquote">
                                  <p class="title">ChatGPT:</p>
-                                 <p id="d4e287">Apologies for the oversight. Let's revise the representation to include
+                                 <p id="d4e289">Apologies for the oversight. Let's revise the representation to include
                                     the differing portions as well. Here's the updated version:</p>
-                                 <pre class="programlisting" id="d4e288">
+                                 <pre class="programlisting" id="d4e290">
                       Text differences:
 +---------------------+---------------------------+-------------------------+
 |       Manuscript     |      1818 edition         |     1831 edition        |
@@ -721,7 +721,7 @@
 +---------------------+---------------------------+-------------------------+
                       
                   </pre>
-                                 <p id="d4e377">In this refined representation, we have the text differences table with
+                                 <p id="d4e379">In this refined representation, we have the text differences table with
                                     the Manuscript, 1818 edition, and 1831 edition side by side. The portions
                                     that are the same in all versions are omitted for brevity, and only the
                                     differing sections are displayed.</p>
@@ -736,7 +736,7 @@
                            that<q>omitted</q> all the passages that were the same, when they omitted
                            nothing. And the AI seemed to have no understanding of the concept of
                            differentiation.</p>
-                        <p id="d4e383">I tried similar experiments this summer, wondering if the language model’s string-differentiation
+                        <p id="d4e385">I tried similar experiments this summer, wondering if the language model’s string-differentiation
                            powers
                            might have improved after the news that ChatGPT had a newly expanded context window
                            for
@@ -746,28 +746,28 @@
                            processing about my requests to compare strings, and I was curious whether I might
                            see improvements. So I tried some similar experiments. Among my experiments were
                            efforts to ask ChatGPT to provide responses not in an alignment table but TEI
-                           critical apparatus markup.<sup class="fn-label"><a href="#d4e385" class="footnoteref" id="d4e385-ref">[7]</a></sup></p>
-                        <p id="d4e391">Here is a more recent experiment, requesting output in TEI critical apparatus
+                           critical apparatus markup.<sup class="fn-label"><a href="#d4e387" class="footnoteref" id="d4e387-ref">[7]</a></sup></p>
+                        <p id="d4e393">Here is a more recent experiment, requesting output in TEI critical apparatus
                            markup (with apologies to Samuel Taylor Coleridge for my flagrant abuse of
                            <q>The Rime of the Ancient Mariner</q>). 
                            <div class="blockquote">
                               <blockquote class="blockquote">
                                  <p class="title">Elisa:</p>
-                                 <p id="d4e397">Given these four text inputs, can you collate them and generate a TEI
+                                 <p id="d4e399">Given these four text inputs, can you collate them and generate a TEI
                                     critical apparatus? 
-                                    <div class="orderedlist" id="d4e399">
+                                    <div class="orderedlist" id="d4e401">
                                        <ol style="list-style-type: decimal;">
-                                          <li id="d4e400">
-                                             <p id="d4e401">It was an ancient Marinere eftsoons there went he.</p>
-                                          </li>
                                           <li id="d4e402">
-                                             <p id="d4e403">He was an old mariner, erstwhile he went there.</p>
+                                             <p id="d4e403">It was an ancient Marinere eftsoons there went he.</p>
                                           </li>
                                           <li id="d4e404">
-                                             <p id="d4e405">It was an old Marinere, eftsoons there went he.</p>
+                                             <p id="d4e405">He was an old mariner, erstwhile he went there.</p>
                                           </li>
                                           <li id="d4e406">
-                                             <p id="d4e407">He was an ancient Marinere, eftsoons he went there.</p>
+                                             <p id="d4e407">It was an old Marinere, eftsoons there went he.</p>
+                                          </li>
+                                          <li id="d4e408">
+                                             <p id="d4e409">He was an ancient Marinere, eftsoons he went there.</p>
                                           </li>
                                        </ol>
                                     </div>
@@ -778,14 +778,14 @@
                            <div class="blockquote">
                               <blockquote class="blockquote">
                                  <p class="title">ChatGPT:</p>
-                                 <p id="d4e412">Certainly! A critical apparatus in Text Encoding Initiative (TEI) format
+                                 <p id="d4e414">Certainly! A critical apparatus in Text Encoding Initiative (TEI) format
                                     typically consists of variant readings with corresponding witnesses. In this
                                     case, the four text inputs are slightly different from each other, and we
                                     can create a simple critical apparatus for them. I will assume that each
                                     text is a separate witness (W1, W2, W3, and W4) in the critical
                                     apparatus.</p>
-                                 <p id="d4e413">Here's the TEI critical apparatus:</p>
-                                 <pre class="programlisting" id="d4e414">
+                                 <p id="d4e415">Here's the TEI critical apparatus:</p>
+                                 <pre class="programlisting" id="d4e416">
 &lt;app&gt;
   &lt;lem&gt;
     It was an ancient Marinere eftsoons there went he.
@@ -801,24 +801,24 @@
   &lt;/rdg&gt;
 &lt;/app&gt;   
               </pre>
-                                 <p id="d4e415"> In this representation: 
-                                    <div class="itemizedlist" id="d4e417">
+                                 <p id="d4e417"> In this representation: 
+                                    <div class="itemizedlist" id="d4e419">
                                        <ul>
-                                          <li id="d4e418">
-                                             <p id="d4e419"><code class="code">&lt;lem&gt;</code> stands for the lemma (the base
+                                          <li id="d4e420">
+                                             <p id="d4e421"><code class="code">&lt;lem&gt;</code> stands for the lemma (the base
                                                 text).</p>
                                           </li>
-                                          <li id="d4e422">
-                                             <p id="d4e423"><code class="code">&lt;rdg&gt;</code> stands for a variant reading.</p>
+                                          <li id="d4e424">
+                                             <p id="d4e425"><code class="code">&lt;rdg&gt;</code> stands for a variant reading.</p>
                                           </li>
-                                          <li id="d4e426">
-                                             <p id="d4e427"><code class="code">wit="#W1"</code> represents the witness identifier for
+                                          <li id="d4e428">
+                                             <p id="d4e429"><code class="code">wit="#W1"</code> represents the witness identifier for
                                                 each variant reading.</p>
                                           </li>
                                        </ul>
                                     </div>
                                     </p>
-                                 <p id="d4e431">Now, the critical apparatus shows that the lemma (base text) is "It was an
+                                 <p id="d4e433">Now, the critical apparatus shows that the lemma (base text) is "It was an
                                     ancient Marinere eftsoons there went he," and three variants (W2, W3, and
                                     W4) are provided with their corresponding readings. </p>
                               </blockquote>
@@ -836,7 +836,7 @@
                            <div class="blockquote">
                               <blockquote class="blockquote">
                                  <p class="title">Elisa:</p>
-                                 <p id="d4e437">Can you improve this by using the <code class="code">&lt;app&gt;</code> elements only
+                                 <p id="d4e439">Can you improve this by using the <code class="code">&lt;app&gt;</code> elements only
                                     where there are forks or deltas in the text?</p>
                               </blockquote>
                            </div>
@@ -844,12 +844,12 @@
                            <div class="blockquote">
                               <blockquote class="blockquote">
                                  <p class="title">ChatGPT:</p>
-                                 <p id="d4e445">Certainly! In a critical apparatus, we can use the
+                                 <p id="d4e447">Certainly! In a critical apparatus, we can use the
                                     <code class="code">&lt;app&gt;</code> element only where there are forks or deltas
                                     (variants) in the text. This will help in presenting a more concise
                                     representation of the textual differences. Here's the improved TEI critical
                                     apparatus:</p>
-                                 <pre class="programlisting" id="d4e449">
+                                 <pre class="programlisting" id="d4e451">
 &lt;app&gt;
   &lt;lem&gt;
     It was an ancient Marinere eftsoons there went he.
@@ -865,7 +865,7 @@
   &lt;/rdg&gt;
 &lt;/app&gt;    
                     </pre>
-                                 <p id="d4e450">In this representation, the <code class="code">&lt;app&gt;</code> element encloses the
+                                 <p id="d4e452">In this representation, the <code class="code">&lt;app&gt;</code> element encloses the
                                     entire set of variant readings (rdg elements) because there are textual
                                     differences among the witnesses at this point. Since the lemma (base text)
                                     remains the same in all cases, we don’t need separate
@@ -874,20 +874,38 @@
                            </div> This was amusing. ChatGPT does not change the code, and of course,
                            the witnesses each differ from one another. This
                            is a justification or rationalization. </p>
-                        <p id="d4e457">If I want to approach the problem differently, perhaps I need a better prompt.
+                        <p id="d4e459">If I want to approach the problem differently, perhaps I need a better prompt.
                            So I try again. In the prompt below, I attempted to show ChatGPT what kind of output
-                           I wanted to see, and gave the AI a start that I requested them to continue. (I
-                           inadvertently left the second <code class="code">&lt;app&gt;</code> element unclosed, though this omission does not
-                           seem to have affected the reply.) 
+                           I wanted to see, and gave the AI a start that I requested them to continue. Adding
+                           the c
+                           ode freehand without a syntax checker, I
+                           inadvertently made two mistakes which mangled this code: 
+                           <div class="itemizedlist" id="d4e461">
+                              <ul>
+                                 <li id="d4e462">
+                                    <p id="d4e463">I pasted in one of ChatGPT’s <code class="code">&lt;lem&gt;</code> elements from the previous prompt,
+                                       intending to modify it to an <code class="code">&lt;rdg&gt;</code> element. 
+                                       But in haste, I only changed it to an <code class="code">&lt;rdg&gt;</code> start tag and
+                                       left the <code class="code">&lt;lem&gt;</code> end tag.</p>
+                                 </li>
+                                 <li id="d4e473">
+                                    <p id="d4e474">I left the second <code class="code">&lt;app&gt;</code> element unclosed.</p>
+                                 </li>
+                              </ul>
+                           </div>
+                           
+                           
+                           
+                           
                            <div class="blockquote">
                               <blockquote class="blockquote">
                                  <p class="title">Elisa:</p>
-                                 <p id="d4e463">That is not what I meant. I'd like you to apply the critical apparatus
+                                 <p id="d4e481">That is not what I meant. I'd like you to apply the critical apparatus
                                     using inline parallel segmentation. This means you should show just one line
                                     of text where all witnesses are the same, and then use the
                                     <code class="code">&lt;app&gt;</code> element in the specific moments where the text
                                     differs. Here is how you could begin: 
-                                    <pre class="programlisting" id="d4e467"> 
+                                    <pre class="programlisting" id="d4e485"> 
                    &lt;app&gt;
                        &lt;rdg wit="#W1 #W3"&gt;It&lt;/lem&gt;
                            &lt;rdg wit="#W2 #W4"&gt;He&lt;/rdg&gt;
@@ -899,17 +917,17 @@
    
                   </pre>
                                     </p>
-                                 <p id="d4e469">Can you continue based on this start?</p>
+                                 <p id="d4e487">Can you continue based on this start?</p>
                               </blockquote>
                            </div>
                            
                            <div class="blockquote">
                               <blockquote class="blockquote">
                                  <p class="title">ChatGPT:</p>
-                                 <p id="d4e473">Apologies for the misunderstanding. I understand now that you want to
+                                 <p id="d4e491">Apologies for the misunderstanding. I understand now that you want to
                                     represent the critical apparatus using inline parallel segmentation. Here's
                                     the continuation based on the start you provided:</p>
-                                 <pre class="programlisting" id="d4e474">                        
+                                 <pre class="programlisting" id="d4e492">                        
 &lt;app&gt;
   &lt;rdg wit="#W1 #W3"&gt;It&lt;/rdg&gt;
   &lt;rdg wit="#W2 #W4"&gt;He&lt;/rdg&gt;
@@ -927,31 +945,33 @@ Marinere
 went he.
     
                     </pre>
-                                 <p id="d4e475">In this representation, the critical apparatus is represented using the
+                                 <p id="d4e493">In this representation, the critical apparatus is represented using the
                                     <code class="code">&lt;app&gt;</code> element, and within each
                                     <code class="code">&lt;app&gt;</code> element, we use the <code class="code">&lt;rdg&gt;</code>
                                     elements to indicate the variant readings for different witnesses (W1, W2,
                                     W3, and W4).</p>
-                                 <p id="d4e483">I hope this format better meets your requirements for inline parallel
+                                 <p id="d4e501">I hope this format better meets your requirements for inline parallel
                                     segmentation. Let me know if you need any further adjustments!</p>
                               </blockquote>
-                           </div> At first glance this appeared to be what I wanted, but on review of
+                           </div>At first glance this appeared to be what I wanted, particularly since ChatGPT fixed
+                           my mangled input so that start tags properly matched end tags. 
+                           However on review of
                            the strings I had asked ChatGPT to collate, we needed to recognize some significant
                            errors. Let’s review the original input strings that we asked ChatGPT to compare:
                            
-                           <div class="orderedlist" id="d4e485">
+                           <div class="orderedlist" id="d4e503">
                               <ol style="list-style-type: decimal;">
-                                 <li id="d4e486">
-                                    <p id="d4e487">It was an ancient Marinere eftsoons there went he.</p>
+                                 <li id="d4e504">
+                                    <p id="d4e505">It was an ancient Marinere eftsoons there went he.</p>
                                  </li>
-                                 <li id="d4e488">
-                                    <p id="d4e489">He was an old mariner, erstwhile he went there.</p>
+                                 <li id="d4e506">
+                                    <p id="d4e507">He was an old mariner, erstwhile he went there.</p>
                                  </li>
-                                 <li id="d4e490">
-                                    <p id="d4e491">It was an old Marinere, eftsoons there went he.</p>
+                                 <li id="d4e508">
+                                    <p id="d4e509">It was an old Marinere, eftsoons there went he.</p>
                                  </li>
-                                 <li id="d4e492">
-                                    <p id="d4e493">He was an ancient Marinere, eftsoons he went there.</p>
+                                 <li id="d4e510">
+                                    <p id="d4e511">He was an ancient Marinere, eftsoons he went there.</p>
                                  </li>
                               </ol>
                            </div> ChatGPT's critical apparatus markup declares that all of the texts
@@ -966,9 +986,13 @@ went he.
                            showing <q>eftsoons there</q> along with Texts 1 and 3. ChatGPT should have
                            stopped the alignment at <q>eftsoons</q>, and created a new
                            <code class="code">&lt;app&gt;</code> to hold the variations of <q>there went he</q>
-                           vs. <q>he went there</q>. The AI was doing pretty well, but clearly this was
-                           only an approximation and precise accuracy is not to be expected.</p>
-                        <p id="d4e517">Still I wondered if I had given ChatGPT something too short and intricate with too
+                           vs. <q>he went there</q>. The AI was doing pretty well, and if well-formed markup was all that was expected,
+                           
+                           it can be said to write good XML. But if accurate content in the critical apparatus
+                           is called for, this approximation 
+                           is dropping information needed for accurate content in the critical apparatus. 
+                           </p>
+                        <p id="d4e535">Still I wondered if I had given ChatGPT something too short and intricate with too
                            many small variations. What if I added a bit to the four strings that would give the
                            AI something 
                            that should be easy to align, a long stretch of identical tokens? Could ChatGPT show
@@ -976,24 +1000,24 @@ went he.
                            <div class="blockquote">
                               <blockquote class="blockquote">
                                  <p class="title">Elisa:</p>
-                                 <p id="d4e521"> You're on the right track, but you're dropping some of the text in your
+                                 <p id="d4e539"> You're on the right track, but you're dropping some of the text in your
                                     comparison. Let's try again with a longer set of texts to see if that helps. 
-                                    <div class="orderedlist" id="d4e523">
+                                    <div class="orderedlist" id="d4e541">
                                        <ol style="list-style-type: decimal;">
-                                          <li id="d4e524">
-                                             <p id="d4e525">It was an ancient Marinere eftsoons there went he. He wanted
+                                          <li id="d4e542">
+                                             <p id="d4e543">It was an ancient Marinere eftsoons there went he. He wanted
                                                 to talk to the AI about collation and TEI.</p>
                                           </li>
-                                          <li id="d4e526">
-                                             <p id="d4e527">He was an old mariner, erstwhile he went there. He wanted to
+                                          <li id="d4e544">
+                                             <p id="d4e545">He was an old mariner, erstwhile he went there. He wanted to
                                                 talk about TEI to the AI that day.</p>
                                           </li>
-                                          <li id="d4e528">
-                                             <p id="d4e529">It was an old Marinere, eftsoons there went he. He wanted to
+                                          <li id="d4e546">
+                                             <p id="d4e547">It was an old Marinere, eftsoons there went he. He wanted to
                                                 talk to the AI about TEI.</p>
                                           </li>
-                                          <li id="d4e530">
-                                             <p id="d4e531">He was an ancient Marinere, eftsoons he went there. He wanted
+                                          <li id="d4e548">
+                                             <p id="d4e549">He was an ancient Marinere, eftsoons he went there. He wanted
                                                 to talk about TEI and AI.</p>
                                           </li>
                                        </ol>
@@ -1005,10 +1029,10 @@ went he.
                            <div class="blockquote">
                               <blockquote class="blockquote">
                                  <p class="title">ChatGPT:</p>
-                                 <p id="d4e536">Apologies for the oversight. Let's try again with the longer set of texts,
+                                 <p id="d4e554">Apologies for the oversight. Let's try again with the longer set of texts,
                                     using the inline parallel segmentation for the TEI critical
                                     apparatus:</p>
-                                 <pre class="programlisting" id="d4e537">
+                                 <pre class="programlisting" id="d4e555">
 &lt;app&gt;
   &lt;rdg wit="#W1 #W3"&gt;It was an ancient Marinere eftsoons there went he.&lt;/rdg&gt;
   &lt;rdg wit="#W2"&gt;He was an old mariner, erstwhile he went there.&lt;/rdg&gt;
@@ -1021,8 +1045,8 @@ went he.
   &lt;rdg wit="#W4"&gt;He wanted to talk about TEI and AI.&lt;/rdg&gt;
 &lt;/app&gt;
                     </pre>
-                                 <p id="d4e538"> In this representation:</p>
-                                 <p id="d4e539">The first <code class="code">&lt;app&gt;</code> element contains the variant readings
+                                 <p id="d4e556"> In this representation:</p>
+                                 <p id="d4e557">The first <code class="code">&lt;app&gt;</code> element contains the variant readings
                                     for the first sentence: <q>It was an ancient Marinere eftsoons there
                                        went he.</q> (W1, W2, W3, and W4). The second
                                     <code class="code">&lt;app&gt;</code> element contains the variant readings for the
@@ -1030,7 +1054,7 @@ went he.
                                     (W1), "He wanted to talk about TEI to the AI that day." (W2), "He wanted to
                                     talk to the AI about TEI." (W3), and "He wanted to talk about TEI and AI."
                                     (W4).</p>
-                                 <p id="d4e547">This format shows the differences between the witnesses inline for each
+                                 <p id="d4e565">This format shows the differences between the witnesses inline for each
                                     sentence. Let me know if this meets your requirements, or if you need any
                                     further adjustments!</p>
                               </blockquote>
@@ -1047,7 +1071,7 @@ went he.
                            <div class="blockquote">
                               <blockquote class="blockquote">
                                  <p class="title">ChatGPT:</p>
-                                 <pre class="programlisting" id="d4e558">
+                                 <pre class="programlisting" id="d4e576">
 &lt;app&gt;
   &lt;rdg wit="#W1 #W3"&gt;It was an&lt;/rdg&gt;
   &lt;rdg wit="#W2 #W4"&gt;He was an&lt;/rdg&gt;
@@ -1065,7 +1089,7 @@ Marinere eftsoons there went he. He wanted to talk to the AI about collation and
   &lt;rdg wit="#W4"&gt;He wanted to talk about TEI and AI.&lt;/rdg&gt;
 &lt;/app&gt;   
          </pre>
-                                 <p id="d4e559">Now, the revised encoding correctly shows the common phrase "He wanted to
+                                 <p id="d4e577">Now, the revised encoding correctly shows the common phrase "He wanted to
                                     talk to the AI about collation and TEI." in the second text, which is
                                     present across all four witnesses (W1, W2, W3, and W4).</p>
                               </blockquote>
@@ -1074,7 +1098,7 @@ Marinere eftsoons there went he. He wanted to talk to the AI about collation and
                            And now text that the AI claims to be the same across all versions is <span class="ital">also</span> represented as variant. This is a rather spectacular
                            misrepresentation, and the kinds of errors make me wonder how the language model is
                            attempting to process my requests. Why is ChatGPT generating these errors? </p>
-                        <p id="d4e564">I had learned that sometimes if you prompt the chatbot to pretend that they are an
+                        <p id="d4e582">I had learned that sometimes if you prompt the chatbot to pretend that they are an
                            expert in an area, this can improve their responses. In some of my
                            experiments this year I attempted this sort of <q>let’s pretend</q> game, to
                            ask ChatGPT to pretend they are an expert in the TEI and preparing a digital
@@ -1087,22 +1111,22 @@ Marinere eftsoons there went he. He wanted to talk to the AI about collation and
                            But this made no difference and I have yet
                            to see an accurate response to a prompt requesting a comparison of two or more
                            strings.</p>
-                        <p id="d4e570">Finally, I attempted an experiment with Anthropic’s Claude AI, which purports to
+                        <p id="d4e588">Finally, I attempted an experiment with Anthropic’s Claude AI, which purports to
                            have a larger memory capacity and context window for prompt processing than
-                           ChatGPT.<sup class="fn-label"><a href="#d4e572" class="footnoteref" id="d4e572-ref">[8]</a></sup> 
+                           ChatGPT.<sup class="fn-label"><a href="#d4e590" class="footnoteref" id="d4e590-ref">[8]</a></sup> 
                            The results were slightly better out of the box. In this case I returned to
                            comparing two versions of the passage from <span class="ital">Frankenstein</span>: 
                            <div class="blockquote">
                               <blockquote class="blockquote">
                                  <p class="title">Elisa:</p>
-                                 <p id="d4e582">You are preparing a critical edition in TEI using critical apparatus
+                                 <p id="d4e600">You are preparing a critical edition in TEI using critical apparatus
                                     markup. Can you prepare a sample of code for comparing two editions based on
                                     the following three versions of the same passage?</p>
-                                 <p id="d4e583">Manuscript: It was on a dreary night of November that I beheld the frame
+                                 <p id="d4e601">Manuscript: It was on a dreary night of November that I beheld the frame
                                     on which my man compleated. And with an anxiety that almost amounted to
                                     agony I collected instruments of life around me that I might infuse a spark
                                     of being into the lifeless thing that lay at my feet.</p>
-                                 <p id="d4e584">1818 edition and 1831 edition: It was on a dreary night of November, that
+                                 <p id="d4e602">1818 edition and 1831 edition: It was on a dreary night of November, that
                                     I beheld the accomplishment of my toils. With an anxiety that almost
                                     amounted to agony, I collected the instruments of life around me, that I
                                     might infuse a spark of being into the lifeless thing that lay at my
@@ -1113,9 +1137,9 @@ Marinere eftsoons there went he. He wanted to talk to the AI about collation and
                            <div class="blockquote">
                               <blockquote class="blockquote">
                                  <p class="title">Claude.ai:</p>
-                                 <p id="d4e588">Here is a sample TEI encoding of the critical apparatus comparing those
+                                 <p id="d4e606">Here is a sample TEI encoding of the critical apparatus comparing those
                                     three versions of the passage:</p>
-                                 <pre class="programlisting" id="d4e589">
+                                 <pre class="programlisting" id="d4e607">
 &lt;p&gt;It was on a dreary night of November, that I beheld the 
 &lt;app&gt;
   &lt;rdg wit="#MS"&gt;frame on which my man compleated&lt;/rdg&gt;
@@ -1131,7 +1155,7 @@ lay at my feet.&lt;/p&gt;
                            portions. Claude missed the differences in punctuation, however, and even when I
                            prompted the AI to correct for omissions they might have made, Claude failed to
                            identify the problems. </p>
-                        <p id="d4e594">Experimenting with text-generative language models in the previous months has
+                        <p id="d4e612">Experimenting with text-generative language models in the previous months has
                            illuminated some interesting problems in comparing text strings in language models
                            that work with tokenized string inputs. Comparisons are fuzzy, overly broad, or
                            outright drop tokens and usually misrepresent the source texts in some way. Not only
@@ -1147,9 +1171,9 @@ lay at my feet.&lt;/p&gt;
                            the AI can <q>read</q> in no other way than by the (statistical)
                            books.</p>
                      </div>
-                     <div class="section" id="d4e602">
+                     <div class="section" id="d4e620">
                         <h3 class="title" style="clear: both">From stochastic parrot to reasoning intelligence?</h3>
-                        <p id="d4e604">As a human (read: limited, inconsistent) reader of texts I am surprised that a
+                        <p id="d4e622">As a human (read: limited, inconsistent) reader of texts I am surprised that a
                            mathematically trained language model, a so-called <q>artificial
                               intelligence</q> which I expect to be more consistent and adept at pattern
                            recognition than I am, consistently struggles with what seems to be a simple
@@ -1161,7 +1185,7 @@ lay at my feet.&lt;/p&gt;
                            <div class="blockquote">
                               <blockquote class="blockquote">
                                  <p class="title">ChatGPT:</p>
-                                 <p id="d4e610">The Levenshtein distance is a measure of the minimum number of
+                                 <p id="d4e628">The Levenshtein distance is a measure of the minimum number of
                                     single-character edits (insertions, deletions, or substitutions) required to
                                     change one string into another.</p>
                               </blockquote>
@@ -1183,26 +1207,26 @@ lay at my feet.&lt;/p&gt;
                            with
                            their capacities to calculate or prepare an accurate programming script. We have
                            been learning these past several months simply to expect and live with AIs being
-                           fast but fuzzy, to expect error, and certainly not to ask them do to our math homework.<sup class="fn-label"><a href="#d4e616" class="footnoteref" id="d4e616-ref">[9]</a></sup></p>
-                        <p id="d4e623">Perhaps we should not expect anything better. Today dialogue with generative
+                           fast but fuzzy, to expect error, and certainly not to ask them do to our math homework.<sup class="fn-label"><a href="#d4e634" class="footnoteref" id="d4e634-ref">[9]</a></sup></p>
+                        <p id="d4e641">Perhaps we should not expect anything better. Today dialogue with generative
                            language-based AI gives us the opportunity to declare and inquire with the voice of
                            reason, but the stochastic outputs we receive sometimes contradict themselves and
                            frequently miscalculate and misrepresent. We understand that prompt generation is
                            based on statistical predictions of what might be the best-fit, reasonable next
                            tokens of text to supply in sequence, and that this makes generative language models
                            not intelligent at
-                           all but rather stochastic machines.<sup class="fn-label"><a href="#d4e625" class="footnoteref" id="d4e625-ref">[10]</a></sup> Further, we understand these stochastic machines can do damage, because
+                           all but rather stochastic machines.<sup class="fn-label"><a href="#d4e643" class="footnoteref" id="d4e643-ref">[10]</a></sup> Further, we understand these stochastic machines can do damage, because
                            they amplify even the veiled language of racism and sexism that often goes nearly
-                           unheard or unmarked in everyday discourse of Wikipedia and Reddit and social media.<sup class="fn-label"><a href="#d4e635" class="footnoteref" id="d4e635-ref">[11]</a></sup> In the year 2023, text-generative AI speaks with a language of authority
+                           unheard or unmarked in everyday discourse of Wikipedia and Reddit and social media.<sup class="fn-label"><a href="#d4e653" class="footnoteref" id="d4e653-ref">[11]</a></sup> In the year 2023, text-generative AI speaks with a language of authority
                            and confidence that amplifies normative values in their unstable predictions of the
                            best-fit content completion for a prompt. We know these limitations, and their
                            consequences are dire.</p>
-                        <p id="d4e646">Reasoned authority is what we expect of optimal interactions with computers, and
+                        <p id="d4e664">Reasoned authority is what we expect of optimal interactions with computers, and
                            this is a foundational value of our declarative markup community. In slides from a
                            2015 digital humanities conference presentation, Michael Sperberg-McQueen reminds
                            us,
                            <q>Declarative semantics make it possible to reason about representations;
-                              imperative semantics impede.</q><sup class="fn-label"><a href="#d4e649" class="footnoteref" id="d4e649-ref">[12]</a></sup> Nothing in our modeling of texts escapes bias, but our capacity to
+                              imperative semantics impede.</q><sup class="fn-label"><a href="#d4e667" class="footnoteref" id="d4e667-ref">[12]</a></sup> Nothing in our modeling of texts escapes bias, but our capacity to
                            assert and test reasonable statements is a particular strength of declarative markup
                            and the tooling our community has developed for it. In that 2015 presentation,
                            Sperberg-McQueen also points out that hierarchical models are not neutral. The way
@@ -1221,9 +1245,9 @@ lay at my feet.&lt;/p&gt;
                            deliberately marked. By stark contrast, the biases amplified by large language
                            models in our stochastic systems are revealed only by analyzing the outputs or
                            attempting to source their now-secret training data.</p>
-                        <p id="d4e661">That seminal article from 1990 <q>What is Text, Really?</q> is striking in
+                        <p id="d4e679">That seminal article from 1990 <q>What is Text, Really?</q> is striking in
                            the year 2023 for how current it remains as a critique of prevailing machine systems
-                           for handling text.<sup class="fn-label"><a href="#d4e665" class="footnoteref" id="d4e665-ref">[13]</a></sup> The authors' proposition, that text really is an Ordered Hierarchy of Content
+                           for handling text.<sup class="fn-label"><a href="#d4e683" class="footnoteref" id="d4e683-ref">[13]</a></sup> The authors' proposition, that text really is an Ordered Hierarchy of Content
                            Objects, came explicitly as a response (among other things) to concepts of text as
                            a
                            stream of content objects, the gram particles and formmating instructions without
@@ -1238,20 +1262,20 @@ lay at my feet.&lt;/p&gt;
                            said to represent truth but might sometimes approximate it. This is the argument of
                            the famous <q>Stochastic Parrots</q> article: that large language models
                            distort, exploit, and waste resources in an effort only to produce unreliable and
-                           biased approximations. <sup class="fn-label"><a href="#d4e677" class="footnoteref" id="d4e677-ref">[14]</a></sup>
+                           biased approximations. <sup class="fn-label"><a href="#d4e695" class="footnoteref" id="d4e695-ref">[14]</a></sup>
                            </p>
-                        <p id="d4e692">Should we expect better of so-called <q>artificial intelligence</q> in our
+                        <p id="d4e710">Should we expect better of so-called <q>artificial intelligence</q> in our
                            time, to attempt something more than formulaic approximations of reasoned responses?
                            Mulitple researchers suggest that large language models could attempt a wider range
                            of learning methods, to associate metadata wtih data, or to attempt solving complex
-                           problems using hierarchical decision trees.<sup class="fn-label"><a href="#d4e696" class="footnoteref" id="d4e696-ref">[15]</a></sup> A group of researchers writing from the NIH, discussing the application
+                           problems using hierarchical decision trees.<sup class="fn-label"><a href="#d4e714" class="footnoteref" id="d4e714-ref">[15]</a></sup> A group of researchers writing from the NIH, discussing the application
                            of AI in medical diagnostics, explicitly calls for declarative methods to improve
                            the learning algorithms. Because they historicize artificial intelligence to show
                            how declarative methods once were central in Lisp and Prolog, they provide a helpful
                            differentiation between AI then and now: 
                            <div class="blockquote">
                               <blockquote class="blockquote">
-                                 <p id="d4e717">The main goal of AI has been to develop programs that make intelligent
+                                 <p id="d4e735">The main goal of AI has been to develop programs that make intelligent
                                     decisions and solve real-world problems, possibly dealing with “messy" real
                                     world input that could make it difficult to handle using “conventional"
                                     programming. The earlier AI problem solvers were expert systems that
@@ -1260,7 +1284,7 @@ lay at my feet.&lt;/p&gt;
                                     make programming such systems easy even for non-expert users. The idea was
                                     to represent the domain knowledge using a set of logical rules, and use the
                                     rules in a logical reasoning process hidden from the programmers.</p>
-                                 <p id="d4e718">From the traditional AI perspective, this is a declarative programming
+                                 <p id="d4e736">From the traditional AI perspective, this is a declarative programming
                                     paradigm where we program for the what and not the how. The expert programs
                                     could go beyond an independent set of rules and turn to logical programs
                                     with a Turing-complete expressivity, supporting logical inference, for
@@ -1280,7 +1304,7 @@ lay at my feet.&lt;/p&gt;
                            call Systems AI using declarative methods. 
                            <div class="blockquote">
                               <blockquote class="blockquote">
-                                 <p id="d4e721">We emphasize the need to use some fundamental declarative ideas such as
+                                 <p id="d4e739">We emphasize the need to use some fundamental declarative ideas such as
                                     first-order query languages, knowledge representation and reasoning
                                     techniques, programming languages for multi agent systems, database
                                     management systems (DBMS), and deductive databases (DDB). We need to place
@@ -1288,7 +1312,7 @@ lay at my feet.&lt;/p&gt;
                                     deep learning libraries and automatic differentiation tools, and integrate
                                     them with innovative programming languages and software development
                                     techniques, as a way to address complex real-world problems that require
-                                    both learning and reasoning models.<sup class="fn-label"><a href="#d4e723" class="footnoteref" id="d4e723-ref">[16]</a></sup></p>
+                                    both learning and reasoning models.<sup class="fn-label"><a href="#d4e741" class="footnoteref" id="d4e741-ref">[16]</a></sup></p>
                               </blockquote>
                            </div>
                            I have quoted this article at length to emphasize a point that should not be
@@ -1301,9 +1325,9 @@ lay at my feet.&lt;/p&gt;
                            forward. </p>
                      </div>
                   </div>
-                  <div class="section" id="d4e732">
+                  <div class="section" id="d4e750">
                      <h2 class="title" style="clear: both">How meaningful is markup, anyway?</h2>
-                     <p id="d4e734">When the text-generative AI models composed the markup shared in the previous section,
+                     <p id="d4e752">When the text-generative AI models composed the markup shared in the previous section,
                         their declarative semantics were unclear and often inconsistently applied. Perhaps
                         the AI’s
                         purpose became diluted by other imperatives of the generative language algorithm.
@@ -1315,7 +1339,7 @@ lay at my feet.&lt;/p&gt;
                         is incorporated in a text-processing system matters. How deliberate can we be in
                         applying it and generating the output we ask for? In their current form, large language
                         models are limited in their capacities to handle complex tasks.</p>
-                     <p id="d4e735"> When handled deliberately, declarative logic can be processed in imperative programs
+                     <p id="d4e753"> When handled deliberately, declarative logic can be processed in imperative programs
                         without loss of their significance in the output. Transforming text into other formats
                         shows us what is fluid and transferrable in markup. We map its structures into forms
                         that machines need to read, and when we do that they become moveable bins or containers
@@ -1323,15 +1347,15 @@ lay at my feet.&lt;/p&gt;
                         Variorum, where a deliberate declared logic for controlling the basis for comparison
                         has
                         been key to consistent processing.</p>
-                     <div class="section" id="d4e736">
+                     <div class="section" id="d4e754">
                         <h3 class="title" style="clear: both">Markup as declarative intervention in an imperative process</h3>
-                        <p id="d4e738">The process of refining the collation process for the Frankenstein Variorum
+                        <p id="d4e756">The process of refining the collation process for the Frankenstein Variorum
                            involved a serious challenge to stop the collateX software from its default
                            mechanism, always to align the smallest particles of the same text. CollateX
                            definitely tends to align the smallest irreducible units of text (tokens) that
                            it reads as <q>the same</q>, like <q>a</q>, <q>an</q>, and
                            <q>the</q>, even in passages that are not meant to be associated across
-                           the texts.<sup class="fn-label"><a href="#d4e748" class="footnoteref" id="d4e748-ref">[17]</a></sup> One solution is to normalize the text stream in pre-processing prior to
+                           the texts.<sup class="fn-label"><a href="#d4e766" class="footnoteref" id="d4e766-ref">[17]</a></sup> One solution is to normalize the text stream in pre-processing prior to
                            collation, to exclude such articles or short punctuation, but this did not accord
                            with our methods of comparing the texts: the small words do matter to us when they
                            mark variations. Other solutions involve post-processing or editing the output
@@ -1340,7 +1364,7 @@ lay at my feet.&lt;/p&gt;
                            contain long inserted blocks, multi-paragraph inserted passages, and gaps in the
                            manuscript that make it tricky to prepare aligned units (or <q>chunks</q>
                            representing parallel passages across the five versions).</p>
-                        <p id="d4e767">Over the last year, my student Yuying Jin and I established a reliable method for
+                        <p id="d4e785">Over the last year, my student Yuying Jin and I established a reliable method for
                            bracketing off long divergent passages, a method that we call our
                            <q>longToken</q> strategy. Here we lengthen the size of the smallest
                            particle of comparable text to the size of whatever we can express inside an XML
@@ -1351,7 +1375,7 @@ lay at my feet.&lt;/p&gt;
                            controlling the tokenization algorithm, we were able to control the mechanism of the
                            collation software, prevent it from making spurious alignments on small words in a
                            passage that we would effectively bracket away from micro-comparisons.</p>
-                        <p id="d4e773">Our Python script is a place of negotiation between paradigms of structured markup
+                        <p id="d4e791">Our Python script is a place of negotiation between paradigms of structured markup
                            and so-called unstructured text. We use the <a href="https://docs.python.org/3/library/xml.dom.pulldom.html" class="link">XML Pulldom
                               library</a> to process what markup from the source documents we want to
                            include in the string comparison process. That is, we mask away some elements, like
@@ -1366,7 +1390,7 @@ lay at my feet.&lt;/p&gt;
                            in its meaningful form. In the Python script, we define variables containing lists
                            of element names that we will either mask away from the collation, or that we will
                            include: 
-                           <pre class="programlisting" id="d4e784">
+                           <pre class="programlisting" id="d4e802">
 ignore = ['sourceDoc', 'xml', 'comment', 'include', 'addSpan', 'handShift', 'damage', 
                 'unclear', 'restore', 'surface', 'zone', 'retrace']
 blockEmpty = ['p', 'div', 'milestone', 'lg', 'l', 'cit', 'quote', 'bibl']
@@ -1382,15 +1406,15 @@ inlineVariationEvent = ['head', 'del', 'mdel', 'add', 'note', 'longToken']
                            <code class="code">blockEmpty</code> list, along with <code class="code">&lt;milestone&gt;</code>, which
                            is the only element that those knowledgeable of the TEI would recognize as
                            legitimately empty.</p>
-                        <p id="d4e799">What have we done to the TEI? Perhaps a sacrilege, but we are meddling with TEI
+                        <p id="d4e817">What have we done to the TEI? Perhaps a sacrilege, but we are meddling with TEI
                            XML files as, after all, text files that hold meaningful declarative markup, and we
                            have converted their element nodes into a format that allows us to compare texts
                            based on their original structures by removing the structures to process the
                            comparison.</p>
                      </div>
-                     <div class="section" id="d4e800">
+                     <div class="section" id="d4e818">
                         <h3 class="title" style="clear: both">There and back again: Transferring declared semantics</h3>
-                        <p id="d4e802">In preparing our editions for collation (as discussed in previous Balisage
+                        <p id="d4e820">In preparing our editions for collation (as discussed in previous Balisage
                            papers), we have <q>flattened</q> the original TEI structural elements, and
                            abstracted them away from their original document models. We do this on purpose to
                            represent the element tags as Trojan-style markers and to be able to work them into
@@ -1399,19 +1423,19 @@ inlineVariationEvent = ['head', 'del', 'mdel', 'add', 'note', 'longToken']
                            representation of the tags from the source editions. The standoff critical apparatus
                            serves, also, as a basis for creating new edition files that store the collation
                            data, highlighting passages that vary with the other editions.</p>
-                        <p id="d4e806">In this process, the semantics of the declarative markup from the source files are
+                        <p id="d4e824">In this process, the semantics of the declarative markup from the source files are
                            preserved even while that markup has undergone a complicated series of
                            transformations. First it is transferred into strings or a stream of text in order
                            to be collated. Then that stream of text is mapped back again into new XML
                            structures to represent the meaningful data in the critical apparatus about how the
                            texts compare to one another.</p>
-                        <p id="d4e807">Moving in between text-processing paradigms illuminates a transfer of semantics
+                        <p id="d4e825">Moving in between text-processing paradigms illuminates a transfer of semantics
                            into formatting. The logic of declarative markup is preserved in the Python function
                            running the pull parser via the XML Pulldom library. This function delivers us a way
                            to transfer the logic of the markup element nodes into the syntax used to
                            prepare the tokens and normalized tokens to be delivered to the collateX software.
                            
-                           <pre class="programlisting" id="d4e809">
+                           <pre class="programlisting" id="d4e827">
     def extract(input_xml):
     """Process entire input XML document, firing on events"""
     doc = pulldom.parse(input_xml)
@@ -1467,7 +1491,7 @@ inlineVariationEvent = ['head', 'del', 'mdel', 'add', 'note', 'longToken']
                            indicated another to add) effectively drives the collation software to generate a
                            specially shaped entry in our critical apparatus. We have programmed our work to
                            prepare this output: 
-                           <pre class="programlisting" id="d4e826">
+                           <pre class="programlisting" id="d4e844">
                &lt;app&gt;
 		&lt;rdgGrp
 			n="['&lt;del&gt;to his statement, which was delivered&lt;/del&gt;', 
@@ -1497,7 +1521,7 @@ inlineVariationEvent = ['head', 'del', 'mdel', 'add', 'note', 'longToken']
                            <code class="code">&lt;rdg&gt;</code> elements inside are understood to agree. The trace of
                            the longToken element is removed there because it is not itself part of the strings
                            that we ask the collation software to compare. </p>
-                        <p id="d4e843">In the example, the collation software follows our normalizing algorithm to
+                        <p id="d4e861">In the example, the collation software follows our normalizing algorithm to
                            determine that three of the witnesses share one form, and the Thomas edition holds
                            the same passage crossed out together with its complete replacement. Here,
                            declarative markup provides a precise way to delineate information on what
@@ -1511,7 +1535,7 @@ inlineVariationEvent = ['head', 'del', 'mdel', 'add', 'note', 'longToken']
                            own markup outside the TEI to declare what a token could be. I want to call this
                            a deliberate, <span class="ital">declarative intervention</span> in the imperative
                            algorithms.</p>
-                        <p id="d4e849">Our effort presupposes that the imperative tools can read the declarations, and
+                        <p id="d4e867">Our effort presupposes that the imperative tools can read the declarations, and
                            accommodate the markup. For this capacity in our project, we flatten the element
                            nodes into strings and identify those as regular expression patterns for processing.
                            In our project we raise them again into elements with an XSLT pipeline, here fully
@@ -1523,9 +1547,9 @@ inlineVariationEvent = ['head', 'del', 'mdel', 'add', 'note', 'longToken']
                            of the output.</p>
                      </div>
                   </div>
-                  <div class="section" id="d4e850">
+                  <div class="section" id="d4e868">
                      <h2 class="title" style="clear: both">Conclusion</h2>
-                     <p id="d4e852">In this paper we looked first at the ways in which large language models fail
+                     <p id="d4e870">In this paper we looked first at the ways in which large language models fail
                         repeatedly in the task of comparing and differentiating strings. We considered this
                         a
                         curious failing in a system that works with tokenized units of language, and also
@@ -1537,13 +1561,13 @@ inlineVariationEvent = ['head', 'del', 'mdel', 'add', 'note', 'longToken']
                         declares to us its results, but its declarations are neither consistent nor reasonable.
                         Perhaps a more adaptable algorithm for AI would allow for declarative mechanisms to
                         control the logic of its operations. </p>
-                     <p id="d4e853">We then turned to consider how declarative methods can be implemented in imperative
+                     <p id="d4e871">We then turned to consider how declarative methods can be implemented in imperative
                         programming. When scholars have the capacity to alter the scripts on which
                         machines do their complex processing, they lend scholarly authority to what computing
                         machines can process. What we require, and what declarative methods should afford,
                         is
                         control and validation of the grounds of knowledge, even when these are shifting.</p>
-                     <p id="d4e854">In a moment of eager excitement, confusion, and fear about the disruptive
+                     <p id="d4e872">In a moment of eager excitement, confusion, and fear about the disruptive
                         influences of generative language models, markup technologies provide reliable precision
                         and control. They allow us to intervene and guide computational processes within
                         declarative bounds of reason. Declarative methods can provide a foundation for a digital
@@ -1564,8 +1588,8 @@ inlineVariationEvent = ['head', 'del', 'mdel', 'add', 'note', 'longToken']
                         way?</p>
                   </div>
                   <div class="footnotes"><br><hr width="100" align="left">
-                     <div id="d4e64" class="footnote">
-                        <p><sup class="fn-label"><a href="#d4e64-ref" class="footnoteref">[1]</a></sup> At least in 2017, topics connected to digital scholarly editions (and
+                     <div id="d4e66" class="footnote">
+                        <p><sup class="fn-label"><a href="#d4e66-ref" class="footnoteref">[1]</a></sup> At least in 2017, topics connected to digital scholarly editions (and
                            connected to it, declarative markup) seems to have been on the decline. See
                            Scott Weingart, <q>What’s Under the Big Tent?: A Study of ADHO Conference
                               Abstracts</q>, Digital Studies/le Champ Numérique, 7(1), 6. DOI: <a href="http://doi.org/10.16995/dscn.284" class="link">http://doi.org/10.16995/dscn.284</a>. See also the questions raised
@@ -1577,8 +1601,8 @@ inlineVariationEvent = ['head', 'del', 'mdel', 'add', 'note', 'longToken']
                            Quarterly 16:4 (2022). <a href="A front row look at the organization of the annual academic conference for the Digital Humanities" class="link">http://www.digitalhumanities.org/dhq/vol/16/4/000643/000643.html</a>
                            </p>
                      </div>
-                     <div id="d4e90" class="footnote">
-                        <p><sup class="fn-label"><a href="#d4e90-ref" class="footnoteref">[2]</a></sup> Evidence of how my colleagues practicing digital humanities perceive
+                     <div id="d4e92" class="footnote">
+                        <p><sup class="fn-label"><a href="#d4e92-ref" class="footnoteref">[2]</a></sup> Evidence of how my colleagues practicing digital humanities perceive
                            declarative markup in the time of AI can be seen in the author's January 2023
                            conversation with Ted Underwood on Mastodon:
                            <a href="https://sigmoid.social/@TedUnderwood/109730986869388754" class="link">https://sigmoid.social/@TedUnderwood/109730986869388754</a>. The informal
@@ -1587,14 +1611,14 @@ inlineVariationEvent = ['head', 'del', 'mdel', 'add', 'note', 'longToken']
                            there will be no more need for markup at all. In some ways this paper responds
                            to the challenge of that conversation.</p>
                      </div>
-                     <div id="d4e109" class="footnote">
-                        <p><sup class="fn-label"><a href="#d4e109-ref" class="footnoteref">[3]</a></sup> See among others, <q>Adventures in Correcting XML
+                     <div id="d4e111" class="footnote">
+                        <p><sup class="fn-label"><a href="#d4e111-ref" class="footnoteref">[3]</a></sup> See among others, <q>Adventures in Correcting XML
                               Collation Problems with Python and XSLT</q>, Proceedings of Balisage:
                            The Markup Conference 2022. Balisage Series on Markup Technologies, vol. 27
                            (2022). <a href="https://doi.org/10.4242/BalisageVol27.Beshero-Bondar01" class="link">https://doi.org/10.4242/BalisageVol27.Beshero-Bondar01</a>.</p>
                      </div>
-                     <div id="d4e126" class="footnote">
-                        <p><sup class="fn-label"><a href="#d4e126-ref" class="footnoteref">[4]</a></sup> This article documents a significant body of publications aided by, applying,
+                     <div id="d4e128" class="footnote">
+                        <p><sup class="fn-label"><a href="#d4e128-ref" class="footnoteref">[4]</a></sup> This article documents a significant body of publications aided by, applying,
                            or investigating ChatGPT published between December 2022 and February 2023, just
                            the beginning of a scholarly surge of interest across disciplines in AI:
                            Zamfiroiu, Alin, Denisa Vasile, and Daniel Savu, <q>ChatGPT – A Systematic
@@ -1603,38 +1627,38 @@ inlineVariationEvent = ['head', 'del', 'mdel', 'add', 'note', 'longToken']
                            <a href="http://revistaie.ase.ro/content/105/01%20-%20zamfiroiu,%20vasile,%20savu.pdf" class="link">http://revistaie.ase.ro/content/105/01%20-%20zamfiroiu,%20vasile,%20savu.pdf</a>.
                            Accessed 2023-07-22.</p>
                      </div>
-                     <div id="d4e145" class="footnote">
-                        <p><sup class="fn-label"><a href="#d4e145-ref" class="footnoteref">[5]</a></sup> <q><a href="https://openai.com/blog/chatgpt-plugins#code-interpreter" class="link">ChatGPT plugins: Code interpreter</a></q>, Chat GPT Blog.
+                     <div id="d4e147" class="footnote">
+                        <p><sup class="fn-label"><a href="#d4e147-ref" class="footnoteref">[5]</a></sup> <q><a href="https://openai.com/blog/chatgpt-plugins#code-interpreter" class="link">ChatGPT plugins: Code interpreter</a></q>, Chat GPT Blog.
                            2023.</p>
                      </div>
-                     <div id="d4e162" class="footnote">
-                        <p><sup class="fn-label"><a href="#d4e162-ref" class="footnoteref">[6]</a></sup> I accessed ChatGPT from January through July 2023 from <a href="https://chat.openai.com/" class="link">https://chat.openai.com/</a></p>
+                     <div id="d4e164" class="footnote">
+                        <p><sup class="fn-label"><a href="#d4e164-ref" class="footnoteref">[6]</a></sup> I accessed ChatGPT from January through July 2023 from <a href="https://chat.openai.com/" class="link">https://chat.openai.com/</a></p>
                      </div>
-                     <div id="d4e385" class="footnote">
-                        <p><sup class="fn-label"><a href="#d4e385-ref" class="footnoteref">[7]</a></sup> Timothy Mugayi, <a href="https://levelup.gitconnected.com/chatgpt-16k-context-window-a-step-closer-to-100k-c770f0658996" class="link"><q>ChatGPT 16K Context Window A Step Closer to 100k: A look at
+                     <div id="d4e387" class="footnote">
+                        <p><sup class="fn-label"><a href="#d4e387-ref" class="footnoteref">[7]</a></sup> Timothy Mugayi, <a href="https://levelup.gitconnected.com/chatgpt-16k-context-window-a-step-closer-to-100k-c770f0658996" class="link"><q>ChatGPT 16K Context Window A Step Closer to 100k: A look at
                                  larger context windows and whatmeans for your
                                  applications</q></a> Medium: Level Up Coding. 21 June
                            2023.</p>
                      </div>
-                     <div id="d4e572" class="footnote">
-                        <p><sup class="fn-label"><a href="#d4e572-ref" class="footnoteref">[8]</a></sup> I accessed Claude in July 2023 at <a href="https://claude.ai" class="link">https://claude.ai</a></p>
+                     <div id="d4e590" class="footnote">
+                        <p><sup class="fn-label"><a href="#d4e590-ref" class="footnoteref">[8]</a></sup> I accessed Claude in July 2023 at <a href="https://claude.ai" class="link">https://claude.ai</a></p>
                      </div>
-                     <div id="d4e616" class="footnote">
-                        <p><sup class="fn-label"><a href="#d4e616-ref" class="footnoteref">[9]</a></sup> Simon Frieder, Luca Pinchetti, Alexis Chevalier, Ryan-Rhys Griffiths,
+                     <div id="d4e634" class="footnote">
+                        <p><sup class="fn-label"><a href="#d4e634-ref" class="footnoteref">[9]</a></sup> Simon Frieder, Luca Pinchetti, Alexis Chevalier, Ryan-Rhys Griffiths,
                            Tommaso Salvatori, Thomas Lukasiewicz, Philipp Christian Petersen, Julius
                            Berner, <q>Mathematical Capabilities of ChatGPT</q> Arxiv: Computer
                            Science &gt; Machine Learning, 2023. <a href="https://doi.org/10.48550/arXiv.2301.13867" class="link">https://doi.org/10.48550/arXiv.2301.13867</a></p>
                      </div>
-                     <div id="d4e625" class="footnote">
-                        <p><sup class="fn-label"><a href="#d4e625-ref" class="footnoteref">[10]</a></sup> For unsophisticated novices like me, these articles have been particularly
+                     <div id="d4e643" class="footnote">
+                        <p><sup class="fn-label"><a href="#d4e643-ref" class="footnoteref">[10]</a></sup> For unsophisticated novices like me, these articles have been particularly
                            helpful for gaining a basic appreciation of key concepts in text generative
                            AI: Haomiao Huang, <a href="https://arstechnica.com/gadgets/2023/01/the-generative-ai-revolution-has-begun-how-did-we-get-here/" class="link"><q>The generative AI revolution has begun—how did we get
                                  here?</q></a> Ars Technica 30 January 2023; Jay Alammar,
                            <a href="https://jalammar.github.io/illustrated-word2vec/" class="link"><q>The Illustrated Word2Vec</q></a> blog post, 27 March
                            2019. </p>
                      </div>
-                     <div id="d4e635" class="footnote">
-                        <p><sup class="fn-label"><a href="#d4e635-ref" class="footnoteref">[11]</a></sup> This Google Collab Notebook tutorial offers an accessible introduction to
+                     <div id="d4e653" class="footnote">
+                        <p><sup class="fn-label"><a href="#d4e653-ref" class="footnoteref">[11]</a></sup> This Google Collab Notebook tutorial offers an accessible introduction to
                            gender and social class bias engrained in large language models: Shlomi Hod,
                            <q>Tutorial // Exploring Gender Bias in Word Embedding</q>
                            2018—. <a href="https://colab.research.google.com/github/ResponsiblyAI/word-embedding/blob/main/tutorial-bias-word-embedding.ipynb" class="link">https://colab.research.google.com/github/ResponsiblyAI/word-embedding/blob/main/tutorial-bias-word-embedding.ipynb</a>.
@@ -1645,19 +1669,19 @@ inlineVariationEvent = ['head', 'del', 'mdel', 'add', 'note', 'longToken']
                               Bengali and Five other Low-Resource Languages</q> Upcoming
                            Publication in AAAI/ACM Conference on AI, Ethics, and Society, 2023.</p>
                      </div>
-                     <div id="d4e649" class="footnote">
-                        <p><sup class="fn-label"><a href="#d4e649-ref" class="footnoteref">[12]</a></sup> Michael Sperberg-McQueen, <a href="https://blackmesatech.com/2015/10/KIaCiDH/" class="link"><q>What does
+                     <div id="d4e667" class="footnote">
+                        <p><sup class="fn-label"><a href="#d4e667-ref" class="footnoteref">[12]</a></sup> Michael Sperberg-McQueen, <a href="https://blackmesatech.com/2015/10/KIaCiDH/" class="link"><q>What does
                                  descriptive markup contribute to digital humanities?</q></a>,
                            Key Ideas and Concepts of Digital Humanities conference, Technische
                            Universitat Darmstadt, 26-28 October, 2015. <a href="https://blackmesatech.com/2015/10/KIaCiDH/#(8)" class="link">Slide
                               8</a>.</p>
                      </div>
-                     <div id="d4e665" class="footnote">
-                        <p><sup class="fn-label"><a href="#d4e665-ref" class="footnoteref">[13]</a></sup> Steven J. DeRose, David G. Durand, Elli Mylonas, Allen H. Renear,
+                     <div id="d4e683" class="footnote">
+                        <p><sup class="fn-label"><a href="#d4e683-ref" class="footnoteref">[13]</a></sup> Steven J. DeRose, David G. Durand, Elli Mylonas, Allen H. Renear,
                            <q>What is Text, Really?</q> Journal of Computing in Higher Education. 1. 3-26. 1990. <a href="https://doi.org/10.1007/BF02941632" class="link">https://doi.org/10.1007/BF02941632</a></p>
                      </div>
-                     <div id="d4e677" class="footnote">
-                        <p><sup class="fn-label"><a href="#d4e677-ref" class="footnoteref">[14]</a></sup>  Emily Bender, Timnit Gebru et. al. <q>On the Dangers of Stochastic
+                     <div id="d4e695" class="footnote">
+                        <p><sup class="fn-label"><a href="#d4e695-ref" class="footnoteref">[14]</a></sup>  Emily Bender, Timnit Gebru et. al. <q>On the Dangers of Stochastic
                               Parrots: Can Language Models Be Too Big?</q> Proceedings of the 2021
                            ACM Conference on Fairness, Accountability, and Transparency, March 2021,
                            pp. 610–623. <a href="https://doi.org/10.1145/3442188.3445922" class="link">https://doi.org/10.1145/3442188.3445922</a>. For helpful
@@ -1666,8 +1690,8 @@ inlineVariationEvent = ['head', 'del', 'mdel', 'add', 'note', 'longToken']
                            June 2018. See also Molly Ruby <a href="https://towardsdatascience.com/how-chatgpt-works-the-models-behind-the-bot-1ce5fca96286" class="link"><q>How ChatGPT Works: The Model Behind The Bot</q></a>,
                            in Towards Data Science. Medium. 30 January 2023. </p>
                      </div>
-                     <div id="d4e696" class="footnote">
-                        <p><sup class="fn-label"><a href="#d4e696-ref" class="footnoteref">[15]</a></sup> Here is a sampling of recent articles on how to improve problem solving
+                     <div id="d4e714" class="footnote">
+                        <p><sup class="fn-label"><a href="#d4e714-ref" class="footnoteref">[15]</a></sup> Here is a sampling of recent articles on how to improve problem solving
                            capacities in large language models: Cem Anil, Yuhuai Wu et. al.,
                            <q>Exploring Length Generalization in Large Language Models</q>
                            36th Conference on Neural Information Processing Systems. 2022. <a href="https://openreview.net/pdf?id=zSkYVeX7bC4" class="link">https://openreview.net/pdf?id=zSkYVeX7bC4</a>; Shunyu Yao, Dian Yu,
@@ -1676,15 +1700,15 @@ inlineVariationEvent = ['head', 'del', 'mdel', 'add', 'note', 'longToken']
                            Computation and Language, May 2023 preprint <a href="https://arxiv.org/pdf/2305.10601.pdf" class="link">https://arxiv.org/pdf/2305.10601.pdf</a>; Roie Schwaber-Cohen,
                            <q>Vector Databases</q>, Pinecone <a href="https://www.pinecone.io/learn/vector-database/" class="link">https://www.pinecone.io/learn/vector-database/</a> n.d. </p>
                      </div>
-                     <div id="d4e723" class="footnote">
-                        <p><sup class="fn-label"><a href="#d4e723-ref" class="footnoteref">[16]</a></sup> Kordjamshidi P, Roth D, Kersting K., <q>Declarative Learning-Based
+                     <div id="d4e741" class="footnote">
+                        <p><sup class="fn-label"><a href="#d4e741-ref" class="footnoteref">[16]</a></sup> Kordjamshidi P, Roth D, Kersting K., <q>Declarative Learning-Based
                               Programming as an Interface to AI Systems</q>, Frontiers in
                            Artifical Intelligence 5:755361, 2022 Mar 14. doi:10.3389/frai.2022.755361.
                            <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8967162/" class="link">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8967162/</a>
                            </p>
                      </div>
-                     <div id="d4e748" class="footnote">
-                        <p><sup class="fn-label"><a href="#d4e748-ref" class="footnoteref">[17]</a></sup>  See the CollateX documentation, section 3.1 Alignment Algorithms in <a href="https://collatex.net/doc/" class="link">https://collatex.net/doc/</a>.
+                     <div id="d4e766" class="footnote">
+                        <p><sup class="fn-label"><a href="#d4e766-ref" class="footnoteref">[17]</a></sup>  See the CollateX documentation, section 3.1 Alignment Algorithms in <a href="https://collatex.net/doc/" class="link">https://collatex.net/doc/</a>.
                            The Needleman-Wunsch algorithm appears to be a starting point that CollateX
                            has adapted and improved to the Dekker algorithm, but my
                            experience applying the default alignment algorithm is consistent with this

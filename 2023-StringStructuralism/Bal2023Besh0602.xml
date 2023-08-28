@@ -5,8 +5,8 @@
 <article xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink"
     version="5.0-subset Balisage-1.5">
 
-    <title>Markup and migratory workflows in the context of AI and big data analytics</title>
-    <subtitle>Reflections on the data modeling groundwork of the digital humanities</subtitle>
+    <title>Declarative markup in the time of <quote>AI</quote></title>
+    <subtitle>Controlling the semantics of tokenized strings</subtitle>
     <info>
         <abstract>
 
