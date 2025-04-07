@@ -1,0 +1,144 @@
+<!DOCTYPE HTML>
+<html lang="en">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>Balisage: Is Invisible XML Ready for Undergraduates?</title>
+      <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow&amp;display=swap" rel="stylesheet">
+      <meta name="viewport" content="width=device-width, initial-scale=1"><script type="text/JavaScript">
+      var detailsElement = document.createElement("details");
+      if (!("open" in detailsElement)) {
+          document.write('<script src="..//js/bower_components/better-dom/dist/better-dom.js"><\/script>');
+          document.write('<script src="..//js/bower_components/better-details-polyfill/dist/better-details-polyfill.js"><\/script>');
+          document.write('<script src="..//js/classname.js"><\/script>');
+      }
+      /* Enable CSS styling of figure elements in IE:
+       * https://xopus.com/devblog/2008/style-unknown-elements.html
+       */
+      var IEfix = document.createElement('figure');
+    </script><style type="text/css" id="inverter" media="none">
+      html {
+        filter: invert(100%);
+      }
+
+      * {
+        background-color: inherit;
+      }
+
+      /* do not invert SVG images */
+      img:not([src*=".svg"]),
+      [style*="url("] {
+        filter: invert(100%);
+      }
+    </style>
+      <link rel="stylesheet" href="balisage-plain.css" type="text/css">
+      <meta name="keywords" content="invisible XML, ixml, declarative markup, declarative methods, imperative methods, Python, XSLT">
+      <link id="favicon" rel="shortcut icon" type="image/png" href="http://balisage.net/favicon.ico">
+      <!--balisage-html.xsl--></head>
+   <body>
+      <div class="skipnav"><a href="#main">Skip to contents.</a></div>
+      <div id="balisage-header" role="banner">
+         <h1><!--* balisage-html.xsl 519.38 *--><i>Balisage:</i>&nbsp;<small>The Markup Conference</small></h1>
+      </div>
+      <div lang="en" class="article">
+         <div class="titlepage">
+            <h1 class="article-title" id="d2e5">Balisage Paper: Is Invisible XML Ready for Undergraduates?</h1>
+            <h2 class="subtitle">Trying ixml and XProc with Regular Expressions, Relax NG, XSLT, and Python in an Undergraduate
+               Text Analysis Course</h2>
+            <div class="author">
+               <h3 class="author">Elisa E. Beshero-Bondar</h3>
+               <div class="affiliation">
+                  <p class="jobtitle">Chair</p>
+                  <p class="orgname">TEI Technical Council</p>
+               </div>
+               <div class="affiliation">
+                  <p class="jobtitle">Professor of Digital Humanities</p>
+                  <p class="jobtitle">Program Chair of Digital Media, Arts, and Technology</p>
+                  <p class="orgname">Penn State Erie, The Behrend College</p>
+               </div>
+               <h5 class="author-email"><code class="email">&lt;<a class="email" href="mailto:eeb4@psu.edu">eeb4@psu.edu</a>&gt;</code></h5>
+            </div>
+            <div class="abstract">
+               <h2>Abstract</h2>
+               <p id="d2e11">Is invisible XML ready for the undergraduate educational arena? In spring semester
+                  2025, we have been testing what it takes for
+                  university students in the Digital Media, Arts, and Technology program at Penn State
+                  Behrend to try writing invisible XML to represent 
+                  text documents as a grammar in preparing XML on the way to becoming tractable for
+                  use in real semester text analysis projects. This paper
+                  will share what students have to gain from learning how to install and tinker with
+                  software in alpha stages and test how well it works across platforms.
+                  It will also share some areas that challenged students and professors alike, as well
+                  as suggestions on best practices in guiding people to prepare processing pipelines
+                  (with XProc) that incorporate ixml. Further, this paper will reflect on why this adventure
+                  was worthwhile. </p>
+               <p id="d2e13">Context: The Large-Scale Text Analysis class is taught
+                  in Spring semesters as part of a multiple-semester sequence: Students came to this
+                  class with previous Fall experience in text encoding with XML, transformation with
+                  XSLT, and web development with HTML and CSS, and semesters provide about 15 weeks
+                  with three 50-minute classes per week, regular daily homework and a few tests, and
+                  a strong emphasis on developing projects in teams. The spring Text Analysis class
+                  is usually <q>the Python-and-Regex course</q>, and it usually involves preparing text corpora by generating simple XML from regularly-patterned
+                  files using search-and-replace operations using regular expressions. Students would
+                  then learn some XQuery to output portions of the texts they wish to analyze using
+                  Natural Language Processing libraries (spaCy or NLTK). For example, students could
+                  <q>scrape</q> collections of popular game script files and choose to output the texts that described
+                  decision making forks, or find out how frequently certain characters and items are
+                  mentioned at specific locations in the game. Or, students exploring readily-available
+                  TV script files like <span class="ital">The Simpsons</span> could explore characters' use of language, and once they had prepared simple XML
+                  to identify dialogue, speakers, and non-spoken descriptive passages, they could use
+                  XQuery to separate out just the portions of the texts they wished to analyze in plain-text
+                  inputs to provide to Python. We could even import the Saxon-C package to have students
+                  apply XPath and XQuery directly within their Python scripts. Previously, Python dominated
+                  the experience of the pipeline algorithm. This year, however, by introducing Invisible
+                  XML, we also could introduce XProc and formalize the work students did with grammar
+                  writing, schema writing, and regular expression matching (via XSLT) in an XML stack
+                  first, before beginning work with Python.</p>
+               <p id="d2e25">Adding Invisible XML to the course certainly changed the students’ learning experience.
+                  At the time of this writing, beginning the last month of the course, the author finds
+                  that students approach Python with better understanding of algorithmic pipelines,
+                  more clarity and less trouble with installation processes, and especially greater
+                  comfort with command line processes. There is something more: The appreciation of
+                  declarative methods is balanced differently with the imperative programming of Python.
+                  Are students understanding the formatting and processing of text differently when
+                  encountering Invisible XML? At this preliminary stage of writing, it seems to me that
+                  students did not necessarily significantly benefit in a practical way for their projects
+                  from learning Invisible XML, but encountered it as an option alongside regular expression
+                  search-and-replace operations on the way to cleaning and preparing their text corpora.
+                  But in making Invisible XML a topic for homework and demonstration, students encountered
+                  the concept of grammars, in context with schema validation and regular expression
+                  matching—related to these but fundamentally different. The declaration of patterns,
+                  and the experience of writing grammars explicitly to work across platforms (Windows,
+                  Mac, Linux systems) may have enriched their experience of moving between declarative
+                  and imperative methods of text handling, and helped them to reflect on a certain fluidity
+                  of methods. The experience caused the author to find a place to assert the value of
+                  declarative methods in the 2020s, a time when natural language processing of sequential
+                  strings dominates the development of Large Language Models and <q>artificial intelligence</q>. The movement from <q>raw text</q> to identifying structures as nodes, and then extracting text from nodes for meaningful
+                  natural language processing, with findings expressed, visualized, and output on websites
+                  involves a round-trip adventure with text and code formats. Why is Invisible XML beneficial
+                  to students to learn in this process? The identification of structures involves onstructing
+                  one's own pattern recognition as XML, and being able to script the rules and structures
+                  makes for a multi-dimensional experience of text, both as architectures and as streams.
+                  Furthermore, finding our way with this helps us to understand there are distinct cultures
+                  in text analysis that benefit from being studied together.
+                  </p>
+            </div>
+            <hr>
+         </div>
+         <details class="toc">
+            <summary>
+               <h2 class="inline-heading">Table of Contents</h2>
+            </summary>
+            <dl>
+               <dt><span class="section"><a href="#d2e86" class="toc">TBD</a></span></dt>
+            </dl>
+         </details>
+         <div class="section" id="d2e86">
+            <h2 class="title" style="clear: both">TBD</h2>
+            <p id="d2e89">...</p>
+         </div>
+      </div>
+      <div id="balisage-footer">
+         <h3><!--* balisage-html.xsl 519.38 *--><i>Balisage:</i>&nbsp;<small>The Markup Conference</small></h3>
+      </div>
+   </body>
+</html>
