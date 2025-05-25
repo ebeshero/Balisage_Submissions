@@ -10,75 +10,29 @@
         Undergraduate Text Analysis Course</subtitle>
     <info>
         <abstract>
+            <para>Is invisible XML ready for teaching university undergraduates? Is it a good idea
+                to try this? This paper will attempt to address these questions. University students
+                in the Digital Media, Arts, and Technology program at Penn State Behrend are offered
+                a course in “Large-Scale Text Analysis”. Going into this course, students have
+                experience in encoding text with XML, transforming XML with XSLT, and web
+                development with HTML and CSS. In the past, the Text Analysis course has been a
+                procedural “Python-and-Regex course”: preparing text corpora by generating simple
+                XML from regularly-patterned files using regular expression search-and-replace
+                operations, using XQuery to extract the portions of the texts to analyze, and
+                producing plain-text inputs to provide to Python. Python has dominated the
+                experience of the pipeline.</para>
+            <para>This year’s course tried a different approach. Students were taught iXML grammars
+                as a way to prepare XML for analysis and XProc for pipelining. Regular expression
+                matching was accomplished via XSLT, and the entire XML stack was used before
+                approaching Python. This paper will share what students have to gain from learning
+                how to install and tinker with software in alpha stages and test how well it works
+                across platforms. It will also share some areas that challenged students and
+                professors alike, as well as suggestions on best practices in guiding people to
+                prepare processing pipelines (with XProc) that incorporate ixml. Further, this paper
+                will reflect on why this adventure was worthwhile.</para>
 
-            <para>Is invisible XML ready for the undergraduate educational arena? In spring semester
-                2025, we have been testing what it takes for university students in the Digital
-                Media, Arts, and Technology program at Penn State Behrend to try writing invisible
-                XML to represent text documents as a grammar in preparing XML on the way to becoming
-                tractable for use in real semester text analysis projects. This paper will share
-                what students have to gain from learning how to install and tinker with software in
-                alpha stages and test how well it works across platforms. It will also share some
-                areas that challenged students and professors alike, as well as suggestions on best
-                practices in guiding people to prepare processing pipelines (with XProc) that
-                incorporate ixml. Further, this paper will reflect on why this adventure was
-                worthwhile. </para>
-            <para><!-- EBB: THIS PARA TO BE MOVED TO THE BODY OF THE PAPER AS IT DEVELOPS -->Context:
-                The Large-Scale Text Analysis class is taught in Spring semesters as part of a
-                multiple-semester sequence: Students came to this class with previous Fall
-                experience in text encoding with XML, transformation with XSLT, and web development
-                with HTML and CSS, and semesters provide about 15 weeks with three 50-minute classes
-                per week, regular daily homework and a few tests, and a strong emphasis on
-                developing projects in teams. The spring Text Analysis class is usually <quote>the
-                    Python-and-Regex course</quote>, and it usually involves preparing text corpora
-                by generating simple XML from regularly-patterned files using search-and-replace
-                operations using regular expressions. Students would then learn some XQuery to
-                output portions of the texts they wish to analyze using Natural Language Processing
-                libraries (spaCy or NLTK). For example, students could <quote>scrape</quote>
-                collections of popular game script files and choose to output the texts that
-                described decision making forks, or find out how frequently certain characters and
-                items are mentioned at specific locations in the game. Or, students exploring
-                readily-available TV script files like <emphasis>The Simpsons</emphasis> could
-                explore characters' use of language, and once they had prepared simple XML to
-                identify dialogue, speakers, and non-spoken descriptive passages, they could use
-                XQuery to separate out just the portions of the texts they wished to analyze in
-                plain-text inputs to provide to Python. We could even import the Saxon-C package to
-                have students apply XPath and XQuery directly within their Python scripts.
-                Previously, Python dominated the experience of the pipeline algorithm. This year,
-                however, by introducing Invisible XML, we also could introduce XProc and formalize
-                the work students did with grammar writing, schema writing, and regular expression
-                matching (via XSLT) in an XML stack first, before beginning work with Python.</para>
-            <para>Adding Invisible XML to the course certainly changed the students’ learning
-                experience. At the time of this writing, beginning the last month of the course, the
-                author finds that students approach Python with better understanding of algorithmic
-                pipelines, more clarity and less trouble with installation processes, and especially
-                greater comfort with command line processes. There is something more: The
-                appreciation of declarative methods is balanced differently with the imperative
-                programming of Python. Are students understanding the formatting and processing of
-                text differently when encountering Invisible XML? At this preliminary stage of
-                writing, it seems to me that students did not necessarily significantly benefit in a
-                practical way for their projects from learning Invisible XML, but encountered it as
-                an option alongside regular expression search-and-replace operations on the way to
-                cleaning and preparing their text corpora. But in making Invisible XML a topic for
-                homework and demonstration, students encountered the concept of grammars, in context
-                with schema validation and regular expression matching—related to these but
-                fundamentally different. The declaration of patterns, and the experience of writing
-                grammars explicitly to work across platforms (Windows, Mac, Linux systems) may have
-                enriched their experience of moving between declarative and imperative methods of
-                text handling, and helped them to reflect on a certain fluidity of methods. The
-                experience caused the author to find a place to assert the value of declarative
-                methods in the 2020s, a time when natural language processing of sequential strings
-                dominates the development of Large Language Models and <quote>artificial
-                    intelligence</quote>. The movement from <quote>raw text</quote> to identifying
-                structures as nodes, and then extracting text from nodes for meaningful natural
-                language processing, with findings expressed, visualized, and output on websites
-                involves a round-trip adventure with text and code formats. Why is Invisible XML
-                beneficial to students to learn in this process? The identification of structures
-                involves onstructing one's own pattern recognition as XML, and being able to script
-                the rules and structures makes for a multi-dimensional experience of text, both as
-                architectures and as streams. Furthermore, finding our way with this helps us to
-                understand there are distinct cultures in text analysis that benefit from being
-                studied together. </para>
         </abstract>
+
         <author>
             <personname>
                 <firstname>Elisa</firstname>
@@ -113,6 +67,23 @@
             </affiliation>
             <email>eeb4@psu.edu</email>
         </author>
+        <author>
+            <personname>
+                <firstname>Michael</firstname>
+                <othername>Roy</othername>
+                <surname>Simonw</surname>
+            </personname>
+            <personblurb>
+                <para><!-- DEVELOP THIS! --></para>
+            </personblurb>
+
+            <affiliation>
+                <jobtitle>Student</jobtitle>
+                <jobtitle>Reseearch Assistant / Coding Mentor</jobtitle>
+                <orgname>Penn State Erie, The Behrend College</orgname>
+            </affiliation>
+            <email>eeb4@psu.edu</email>
+        </author>
         <keywordset role="author">
             <keyword>invisible XML</keyword>
             <keyword>ixml</keyword>
@@ -124,8 +95,93 @@
         </keywordset>
     </info>
     <section>
-        <title>TBD</title>
-        <para>...</para>
+        <title>Context: The Large-Scale Text Analysis Course at Penn State Behrend</title>
+        <para> The Large-Scale Text Analysis class is taught in Spring semesters as part of a
+            multiple-semester sequence: Students came to this class with previous Fall experience in
+            text encoding with XML, transformation with XSLT, and web development with HTML and CSS,
+            and semesters provide about 15 weeks with three 50-minute classes per week, regular
+            daily homework and a few tests, and a strong emphasis on developing projects in teams.
+            The spring Text Analysis class is usually <quote>the Python-and-Regex course</quote>,
+            and it usually involves preparing text corpora by generating simple XML from
+            regularly-patterned files using search-and-replace operations using regular expressions.
+            Students would then learn some XQuery to output portions of the texts they wish to
+            analyze using Natural Language Processing libraries (spaCy or NLTK). For example,
+            students could <quote>scrape</quote> collections of popular game script files and choose
+            to output the texts that described decision making forks, or find out how frequently
+            certain characters and items are mentioned at specific locations in the game. Or,
+            students exploring readily-available TV script files like <emphasis>The
+                Simpsons</emphasis> could explore characters' use of language, and once they had
+            prepared simple XML to identify dialogue, speakers, and non-spoken descriptive passages,
+            they could use XQuery to separate out just the portions of the texts they wished to
+            analyze in plain-text inputs to provide to Python. We could even import the Saxon-C
+            package to have students apply XPath and XQuery directly within their Python scripts.
+            Previously, Python dominated the experience of the pipeline algorithm. This year,
+            however, by introducing Invisible XML, we also could introduce XProc and formalize the
+            work students did with grammar writing, schema writing, and regular expression matching
+            (via XSLT) in an XML stack first, before beginning work with Python.</para>
+        <para><!--ebb: DEVELOP --> This time, we spent most of our time in the beginning of the
+            course on XML, XSLT, SVG, and introduced invisible XML and XProc before turning to
+            Python in the second half of the course. </para>
+        <section>
+            <title>Developing Command Line Fluency: Learning how to install software in alpha
+                development</title>
+            <para><!-- To cover: The challenge of testing and working across platforms
+        
+        -->
+            </para>
+        </section>
+        <section>
+            <title>Introducing Pipelines with XProc</title>
+            <para><!-- XProc pipelines  -->
+            </para>
+        </section>
+        <section>
+            <title>The Optimally Motivated Student Experience</title>
+            <!-- What Michael did and how well it succeeded. (Can include images / links to project etc)
+            
+            SHOULD definitely include code. (Look up how to make these.)
+        -->
+
+        </section>
+    </section>
+
+    <section>
+        <title>What do we gain from learning and teaching invisible XML?</title>
+        <para>Adding Invisible XML to the course certainly changed the students’ learning
+            experience. At the time of this writing, beginning the last month of the course, the
+            author finds that students approach Python with better understanding of algorithmic
+            pipelines, more clarity and less trouble with installation processes, and especially
+            greater comfort with command line processes. There is something more: The appreciation
+            of <emphasis role="ital">declarative methods</emphasis> is balanced differently with the
+                <emphasis role="ital">imperative</emphasis> programming of Python.
+            <!--ebb: Don't oversimplify this: everything is a mix. --> Are students understanding
+            the formatting and processing of text differently when encountering Invisible XML? At
+            this preliminary stage of writing, it seems to me that students did not necessarily
+            significantly benefit in a practical way for their projects from learning Invisible XML,
+            but encountered it as an option alongside regular expression search-and-replace
+            operations on the way to cleaning and preparing their text corpora. But in making
+            Invisible XML a topic for homework and demonstration, students encountered the concept
+            of grammars, in context with schema validation and regular expression matching—related
+            to these but fundamentally different. The declaration of patterns, and the experience of
+            writing grammars explicitly to work across platforms (Windows, Mac, Linux systems) may
+            have enriched their experience of moving between declarative and imperative methods of
+            text handling, and helped them to reflect on a certain fluidity of methods. The
+            experience caused the author to find a place to assert the value of declarative methods
+            in the 2020s, a time when natural language processing of sequential strings dominates
+            the development of Large Language Models and <quote>artificial intelligence</quote>. The
+            movement from <quote>raw text</quote> to identifying structures as nodes, and then
+            extracting text from nodes for meaningful natural language processing, with findings
+            expressed, visualized, and output on websites involves a round-trip adventure with text
+            and code formats. Why is Invisible XML beneficial to students to learn in this process?
+            The identification of structures involves constructing one's own pattern recognition as
+            XML, and being able to script the rules and structures makes for a multi-dimensional
+            experience of text, both as architectures and as streams. Furthermore, finding our way
+            with this helps us to understand there are distinct cultures in text analysis that
+            benefit from being studied together. </para>
+        <section>
+            <title>Reflecting on relationships between Relax NG, iXML, and Regex</title>
+            <para>....DEVELOP....!</para>
+        </section>
 
     </section>
 
