@@ -111,45 +111,74 @@
     </info>
     <section>
         <title>Context: The Large-Scale Text Analysis Course at Penn State Behrend</title>
-        <para> The Large-Scale Text Analysis class is taught in spring semesters as part of a
-            multiple-semester sequence in the Digital Media, Arts, and Technology major: Students
-            usually came to this class with previous experience from a course taught regularly each
-            fall in text encoding with XML, transformation with XSLT, and web development with HTML
-            and CSS. Our university semesters are 15 weeks long with three 50-minute classes per
-            week, during which these classes involve daily homework and a few tests with an emphasis
-            on students' applying what they learn to develop semester projects in small
-            teams.</para>
+        <para> The Large-Scale Text Analysis class (Digit 210) is taught in spring semesters as part
+            of a multiple-semester digital humanities core sequence in the Digital Media, Arts, and
+            Technology major: Students usually came to this class with previous experience from a
+            course taught regularly each fall in text encoding with XML, transformation with XSLT,
+            and web development with HTML and CSS. Our university semesters are 15 weeks long with
+            three 50-minute classes per week, during which these classes involve daily homework and
+            a few tests with an emphasis on students' applying what they learn to develop semester
+            projects in small teams.</para>
 
-        <para>The Text Analysis class is usually understood to be <quote>the Python-and-Regex
-                course</quote>. A typical semester would involve orienting students to natural
-            language processing in Python and preparing text corpora for analysis. In this context,
-            XML was a helpful (but not completely necessary) option that contributed to more precise
-            text curation and analysis, and the expectation to prepare XML provided a good means for
-            students to learn regular expression search and replace operations in order to generate
-            simply but meaningfully structured XML from regular patterns in text corpora. Students
-            would then learn to write XQuery to output portions of the texts to analyze using
-            natural language processing libraries (spaCy or NLTK). For an exemplary semester
-            project, a team of students <quote>scraped</quote> collections of popular game script
-            files. On performing careful document analysis, they applied regular expression search
-            and replace operations to create a simple XML structure that helped them to isolate (and
-            mark off) spoken conversation between NPC characters from passages about game items and
-            optional actions. The team prepared XML and wrote XQuery to output the texts that
-            described decision making forks, in order to find out how frequently certain characters
-            and items are mentioned at specific locations in the game. In other projects, students
-            developed text corpora from many seasons of available TV series like <emphasis>The
-                Simpsons</emphasis>. They prepared simple XML to identify dialogue, speakers, and
-            non-spoken descriptive passages, applied XQuery to separate out just the portions of the
-            texts they wished to analyze (just the spoken text) to separate out just the portions of
-            the texts they wished to analyze in plain-text inputs to provide to Python. In previous
-            semesters we would have student teams import the Saxon-C package into their Python
-            scripts to have students apply XPath and XQuery directly as a pipeline process within
-            their Python. Thus, Python has traditionally come first in this course and dominated the
-            class experience of developing a pipeline algorithm for analyzing text corpora.</para>
+        <para>Digit 210 is usually understood to be <quote>the Python-and-Regex course</quote>. A
+            typical semester would involve orienting students to natural language processing in
+            Python and preparing text corpora for analysis. In this context, XML was a helpful (but
+            not completely necessary) option that contributed to more precise text curation and
+            analysis, and the expectation to prepare XML provided a good means for students to learn
+            regular expression search and replace operations in order to generate simply but
+            meaningfully structured XML from regular patterns in text corpora. Students would then
+            learn to write XQuery to output portions of the texts to analyze using natural language
+            processing libraries (spaCy or NLTK). For an exemplary semester project, a team of
+            students <quote>scraped</quote> collections of popular game script files. On performing
+            careful document analysis, they applied regular expression search and replace operations
+            to create a simple XML structure that helped them to isolate (and mark off) spoken
+            conversation between NPC characters from passages about game items and optional actions.
+            The team prepared XML and wrote XQuery to output the texts that described decision
+            making forks, in order to find out how frequently certain characters and items are
+            mentioned at specific locations in the game. In other projects, students developed text
+            corpora from many seasons of available TV series like <emphasis>The Simpsons</emphasis>.
+            They prepared simple XML to identify dialogue, speakers, and non-spoken descriptive
+            passages, applied XQuery to separate out just the portions of the texts they wished to
+            analyze (just the spoken text) to separate out just the portions of the texts they
+            wished to analyze in plain-text inputs to provide to Python. In previous semesters we
+            would have student teams import the Saxon-C package into their Python scripts to have
+            students apply XPath and XQuery directly as a pipeline process within their Python.
+            Thus, Python has traditionally come first in this course and dominated the class
+            experience of developing a pipeline algorithm for analyzing text corpora.</para>
         <para>Perhaps the 2020s are a decade inviting us to resist complacency, particularly in the
             organizing of teaching syllabi. In Spring 2025, motivated greatly by the interesting
             opportunities of invisible XML and the creative affordances of SVG discussed in previous
-            years at Balisage, we changed direction and put XML technologies much more in the
-            foreground. This year, our students began the course by learning to write SVG and think
+            years at Balisage, we changed direction and put XML technologies much more in the foreground.<footnote>
+                <para>Several papers in the Proceedings of Balisage:The Markup Conference vol. 29 (2024) demonstrated exciting
+                    applications of invisible XML connected to careful document planning and
+                    analysis with exciting implications for interface design. See Joseph Michael
+                    Courtney and Michael Robert Gryk, <quote>Pulse, Parse, and Ponder: Using
+                        Invisible XML to Dissect a Scientific Domain Specific Language</quote>,
+                    <link
+                        xlink:href="https://doi.org/10.4242/BalisageVol29.Courtney01"
+                        >https://doi.org/10.4242/BalisageVol29.Courtney01</link>; Mary Holstege,
+                        <quote>Invisible Fish: API Experimentation with InvisibleXML</quote>,
+                    <link
+                        xlink:href="https://doi.org/10.4242/BalisageVol29.Holstege01"
+                        >https://doi.org/10.4242/BalisageVol29.Holstege01</link>; John Lumley,
+                        <quote>Variations on an Invisible Theme: Using iXML to produce XML to
+                        produce iXML to produce ....</quote> <link
+                        xlink:href="https://doi.org/10.4242/BalisageVol29.Lumley01"
+                        >https://doi.org/10.4242/BalisageVol29.Lumley01</link>; Ari Nordström,
+                        <quote>Adventures in Mainframes, Text-based Messaging, and iXML</quote>
+                    <link
+                        xlink:href="https://doi.org/10.4242/BalisageVol29.Nordstrom01"
+                        >https://doi.org/10.4242/BalisageVol29.Nordstrom01</link>; C. M.
+                    Sperberg-McQueen, <quote>From Word to XML via iXML: a Word-first XML workflow in
+                        the TLRR 2e project</quote> <link
+                        xlink:href="https://doi.org/10.4242/BalisageVol29.Sperberg-McQueen01"
+                        >https://doi.org/10.4242/BalisageVol29.Sperberg-McQueen01</link>; Bethan
+                    Tovey-Walsh, <quote>When women do algorithms: a semi-generative approach to
+                        overlay crochet with iXML and XSLT</quote>
+                        <link xlink:href="https://doi.org/10.4242/BalisageVol29.Tovey-Walsh01"
+                        >https://doi.org/10.4242/BalisageVol29.Tovey-Walsh01</link>.</para>
+
+            </footnote> This year, our students began the course by learning to write SVG and think
             about creative ways to visualize data by programmatically scripting SVG with XSLT. The
             SVG data visualization unit previously came at the end of the Python-dominated course,
             as a consequence of preparing the XML and writing XQuery: Students were prepared to
