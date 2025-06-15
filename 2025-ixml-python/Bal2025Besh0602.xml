@@ -71,10 +71,21 @@
             <personname>
                 <firstname>Michael</firstname>
                 <othername>Roy</othername>
-                <surname>Simonw</surname>
+                <surname>Simons</surname>
             </personname>
             <personblurb>
-                <para><!-- DEVELOP THIS! --></para>
+                <para>Michael Simons is a Digital Media, Arts, and Technology (DIGIT) student at
+                    Penn State Behrend. After two years of studying Computer Science, he decided to
+                    pivot to Dr. Beshero-Bondar’s DIGIT program as it allows for greater creativity
+                    and a more focused path while still learning how to get the most out of today’s
+                    innovative technologies. In this program, he’s taken a deep dive into the XML
+                    stack where he enjoys using tools like XSLT—and more recently, ixml and XProc—to
+                    create rich markup that is both satisfyingly organized and able to be processed
+                    in interesting ways. Michael’s main passion is music, which he utilized to
+                    develop a <link xlink:href="https://afish2003.github.io/GretaVanZeppelin/"
+                        xlink:type="simple" xlink:show="new" xlink:actuate="onRequest">large-scale
+                        text analysis project</link> comparing the lyrics and chord progressions of
+                    seemingly similar artists.</para>
             </personblurb>
 
             <affiliation>
@@ -82,7 +93,7 @@
                 <jobtitle>Reseearch Assistant / Coding Mentor</jobtitle>
                 <orgname>Penn State Erie, The Behrend College</orgname>
             </affiliation>
-            <email>eeb4@psu.edu</email>
+            <email>mrs7068@psu.edu</email>
         </author>
         <keywordset role="author">
             <keyword>invisible XML</keyword>
@@ -137,10 +148,13 @@
         </section>
         <section>
             <title>The Optimally Motivated Student Experience</title>
-            <!-- What Michael did and how well it succeeded. (Can include images / links to project etc)
-            
-            SHOULD definitely include code. (Look up how to make these.)
-        -->
+            <!-- What Michael did and how well it succeeded. (Can include images / links to project etc) -->
+            <para>
+            </para>
+
+            <para>
+                <programlisting xml:space="preserve">Sample code block</programlisting>
+            </para>
 
         </section>
     </section>
