@@ -30,7 +30,7 @@
         filter: invert(100%);
       }
     </style>
-      <link rel="stylesheet" href="balisage-plain.css" type="text/css">
+      <link rel="stylesheet" href="balisage-proceedings.css" type="text/css">
       <meta name="keywords" content="invisible XML, ixml, declarative markup, declarative methods, imperative methods, Python, XSLT">
       <link id="favicon" rel="shortcut icon" type="image/png" href="http://balisage.net/favicon.ico">
       <!--balisage-html.xsl--></head>
@@ -39,173 +39,569 @@
       <div id="balisage-header" role="banner">
          <h1><!--* balisage-html.xsl 519.38 *--><i>Balisage:</i>&nbsp;<small>The Markup Conference</small></h1>
       </div>
-      <div lang="en" class="article">
-         <div class="titlepage">
-            <h1 class="article-title" id="d2e5">Balisage Paper: Is Invisible XML Ready for Undergraduates?</h1>
-            <h2 class="subtitle">Trying ixml and XProc with Regular Expressions, Relax NG, XSLT, and Python in an
-               Undergraduate Text Analysis Course</h2>
-            <div class="author">
-               <h3 class="author">Elisa E. Beshero-Bondar</h3>
-               <div class="affiliation">
-                  <p class="jobtitle">Chair</p>
-                  <p class="orgname">TEI Technical Council</p>
+      <html lang="en">
+         <head>
+            <title>Balisage: Is Invisible XML Ready for Undergraduates?</title>
+            <link rel="stylesheet" href="balisage-proceedings.css" type="text/css">
+            <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow&amp;display=swap" rel="stylesheet">
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1"><script type="text/JavaScript">
+      var detailsElement = document.createElement("details");
+      if (!("open" in detailsElement)) {
+          document.write('<script src="..//js/bower_components/better-dom/dist/better-dom.js"><\/script>');
+          document.write('<script src="..//js/bower_components/better-details-polyfill/dist/better-details-polyfill.js"><\/script>');
+          document.write('<script src="..//js/classname.js"><\/script>');
+      }
+      /* Enable CSS styling of figure elements in IE:
+       * https://xopus.com/devblog/2008/style-unknown-elements.html
+       */
+      var IEfix = document.createElement('figure');
+    </script><style type="text/css" id="inverter" media="none">
+      html {
+        filter: invert(100%);
+      }
+
+      * {
+        background-color: inherit;
+      }
+
+      /* do not invert SVG images */
+      img:not([src*=".svg"]),
+      [style*="url("] {
+        filter: invert(100%);
+      }
+    </style>
+            <!--balisage-proceedings.xsl-->
+            <meta name="generator" content="Balisage Conference Proceedings XSLT (v1.2)">
+            <link id="favicon" rel="shortcut icon" type="image/png" href="http://balisage.net/favicon.ico"><script type="text/javascript">
+
+   function hidecite(citeID) {
+     cite = document.getElementById(citeID);
+     cite.style.display = "none";
+     return;
+   }
+   
+   function showcite(citeID,anchorID) {
+     cite = document.getElementById(citeID);
+
+     citeLeft = cite.style.left;
+     citeTop = cite.style.top;
+     
+     if (citeLeft != (getLeft(anchorID)+"px") ||
+         citeTop != (getTop(anchorID)+"px")) {
+       cite.style.display = "none";
+     }
+     
+     if (cite.style.display != "table-cell") {
+        movebox(citeID, anchorID);
+        cite.style.display = "table-cell";
+     }
+     else {
+       cite.style.display = "none";
+     };
+     return;
+   }
+
+   function movebox(citeID, anchorID) {
+
+     cite = document.getElementById(citeID);
+     
+     // alert(cite.offsetWidth + " by " + cite.offsetHeight)
+     
+     horizontalOffset = getLeft(anchorID);
+     // horizontalOffset = (inMain(anchorID)) ?
+     // (horizontalOffset - 260) : (horizontalOffset + 20)
+     // (horizontalOffset - (20 + cite.offsetWidth)) : (horizontalOffset + 20)
+
+     verticalOffset = getTop(anchorID);
+     // verticalOffset = (inMain(anchorID)) ?
+     // (verticalOffset - 20) : (verticalOffset + 20)
+     // (verticalOffset - (20 + cite.offsetHeight)) : (verticalOffset + 20)
+
+     /*
+     horizontalOffset = getAbsoluteLeft(anchorID) - getScrollLeft(anchorID) + 20;
+     if (inMain(anchorID)) {
+       horizontalOffset = horizontalOffset - 300;
+     }
+     verticalOffset = getAbsoluteTop(anchorID) - getScrollTop(anchorID) - 40;
+     if (inMain(anchorID)) {
+       verticalOffset = verticalOffset - 300;
+     }
+     */
+     
+     cite.style.left = horizontalOffset + "px";
+     cite.style.top = verticalOffset + "px";
+   }
+   
+   function getLeft(objectID) {
+     var left = getAbsoluteLeft(objectID) - getScrollLeft(objectID);
+     left = (inMain(objectID)) ? (left - 260) : (left + 20)    
+     return left;
+   }
+   
+   function getTop(objectID) {
+     var top = getAbsoluteTop(objectID) - getScrollTop(objectID);
+     top = (inMain(objectID)) ? (top - 50) : (top + 20)
+     return top;     
+   }
+   
+   function getAbsoluteLeft(objectId) {
+   // Get an object left position from the upper left viewport corner
+     o = document.getElementById(objectId)
+     oLeft = o.offsetLeft            // Get left position from the parent object
+     while(o.offsetParent!=null) {   // Parse the parent hierarchy up to the document element
+       oParent = o.offsetParent    // Get parent object reference
+       oLeft += oParent.offsetLeft // Add parent left position
+       o = oParent
+      }
+    return oLeft
+    }
+
+    function getAbsoluteTop(objectId) {
+    // Get an object top position from the upper left viewport corner
+      o = document.getElementById(objectId)
+      oTop = o.offsetTop            // Get top position from the parent object
+      while(o.offsetParent!=null) { // Parse the parent hierarchy up to the document element
+        oParent = o.offsetParent  // Get parent object reference
+        oTop += oParent.offsetTop // Add parent top position
+        o = oParent
+      }
+    return oTop
+    }
+
+   function getScrollLeft(objectId) {
+     // Get a left scroll position
+     o = document.getElementById(objectId)
+     oLeft = o.scrollLeft            // Get left position from the parent object
+     while(o.offsetParent!=null) {   // Parse the parent hierarchy up to the document element
+       oParent = o.offsetParent    // Get parent object reference
+       oLeft += oParent.scrollLeft // Add parent left position
+       o = oParent
+      }
+    return oLeft
+    }
+
+    function getScrollTop(objectId) {
+    // Get a right scroll position
+      o = document.getElementById(objectId)
+      oTop = o.scrollTop            // Get top position from the parent object
+      while(o.offsetParent!=null) { // Parse the parent hierarchy up to the document element
+        oParent = o.offsetParent  // Get parent object reference
+        oTop += oParent.scrollTop // Add parent top position
+        o = oParent
+      }
+    return oTop
+    }
+
+    function inMain(objectId) {
+    // returns true if in div#main
+      o = document.getElementById(objectId)
+      while(o.parentNode != null) { // Parse the parent hierarchy up to div#main
+        oParent = o.parentNode
+        if (o.id == "main") { return true; }
+        o = oParent;
+      }
+    return false;
+    }
+
+
+   /*
+   function showcite(citeID) {
+      cite = document.getElementById(citeID);
+      if (cite.style.display != "table-cell") {
+        cite.style.display = "table-cell";
+      }
+      else {
+        cite.style.display = "none";
+      };
+      return;
+    }
+    */
+
+      </script></head>
+         <body>
+            <div class="skipnav"><a href="#main">Skip to contents.</a></div>
+            <div id="balisage-header" role="banner" aria-label="Logo and breadcrumb links"><a class="quiet" href="http://www.balisage.net"><img style="float:right;border:none" alt="Balisage logo" height="130" src="icons/BalisageSeries-logo.png"></a><h2 class="page-header">Balisage: The Markup Conference</h2>
+               <h1 class="page-header">Proceedings preview</h1>
+            </div>
+            <nav id="main-menu" role="navigation">
+               <details>
+                  <summary tabindex="0"><svg role="img" viewBox="0 0 20 20" height="20" width="20">
+                        <title>Menu</title>
+                        <path d="m0-0v4h20v-4h-20zm0 8v4h20v-4h-20zm0 8v4h20v-4h-20z" fill="currentColor"></path></svg> Menu
+                     </summary>
+                  <div class="menu">
+                     <div id="navbar"></div>
+                     <div id="index-mast">
+                        <div class="content">
+                           <h1 class="article-title" id="d3e5">Balisage Paper: Is Invisible XML Ready for Undergraduates?</h1>
+                           <h2 class="subtitle">Trying ixml and XProc with Regular Expressions, Relax NG, XSLT, and Python in an
+                              Undergraduate Text Analysis Course</h2>
+                           <details class="mast-box">
+                              <summary class="title">Elisa E. Beshero-Bondar</summary>
+                              <div class="affiliation">
+                                 <p class="jobtitle">Chair</p>
+                                 <p class="orgname">TEI Technical Council</p>
+                              </div>
+                              <div class="affiliation">
+                                 <p class="jobtitle">Professor of Digital Humanities</p>
+                                 <p class="jobtitle">Program Chair of Digital Media, Arts, and Technology</p>
+                                 <p class="orgname">Penn State Erie, The Behrend College</p>
+                              </div>
+                              <h5 class="author-email"><code class="email">&lt;<a class="email" href="mailto:eeb4@psu.edu">eeb4@psu.edu</a>&gt;</code></h5>
+                              <div class="personblurb">
+                                 <p id="d3e24">Elisa Beshero-Bondar explores and teaches document data modeling with the XML
+                                    family of languages. She serves on the TEI Technical Council and is the founder
+                                    and organizer of the <a href="https://digitalmitford.org" class="link">Digital
+                                       Mitford project</a> and <a href="https://digitalmitford.github.io/DigMitCS/" class="link">its usually annual coding
+                                       school</a>. She experiments with visualizing data from complex document
+                                    structures like epic poems and with computer-assisted collation of differently
+                                    encoded editions of <a href="https://frankensteinvariorum.github.io/" class="link"><span class="ital">Frankenstein</span></a>. Her ongoing adventures with
+                                    markup technologies are documented on <a href="https://newtfire.org" class="link">her
+                                       development site at newtfire.org</a>. </p>
+                              </div>
+                           </details>
+                           <details class="mast-box">
+                              <summary class="title">Michael Roy Simons</summary>
+                              <div class="affiliation">
+                                 <p class="jobtitle">Student</p>
+                                 <p class="jobtitle">Reseearch Assistant / Coding Mentor</p>
+                                 <p class="orgname">Penn State Erie, The Behrend College</p>
+                              </div>
+                              <h5 class="author-email"><code class="email">&lt;<a class="email" href="mailto:mrs7068@psu.edu">mrs7068@psu.edu</a>&gt;</code></h5>
+                              <div class="personblurb">
+                                 <p id="d3e62">Michael Simons is a Digital Media, Arts, and Technology (DIGIT) student at
+                                    Penn State Behrend. After two years of studying Computer Science, he decided to
+                                    pivot to Dr. Beshero-Bondar’s DIGIT program as it allows for greater creativity
+                                    and a more focused path while still learning how to get the most out of today’s
+                                    innovative technologies. In this program, he’s taken a deep dive into the XML
+                                    stack where he enjoys using tools like XSLT—and more recently, ixml and XProc—to
+                                    create rich markup that is both satisfyingly organized and able to be processed
+                                    in interesting ways. Michael’s main passion is music, which he utilized to
+                                    develop a <a href="https://afish2003.github.io/GretaVanZeppelin/" class="link">large-scale
+                                       text analysis project</a> comparing the lyrics and chord progressions of
+                                    seemingly similar artists.</p>
+                              </div>
+                           </details>
+                           <details class="abstract">
+                              <summary>
+                                 <h2 class="inline-heading">Abstract</h2>
+                              </summary>
+                              <p id="d3e11">Is invisible XML ready for teaching university undergraduates? Is it a good idea
+                                 to try this? This paper will attempt to address these questions. University students
+                                 in the Digital Media, Arts, and Technology program at Penn State Behrend are offered
+                                 a course in “Large-Scale Text Analysis”. Going into this course, students have
+                                 experience in encoding text with XML, transforming XML with XSLT, and web
+                                 development with HTML and CSS. In the past, the Text Analysis course has been a
+                                 procedural “Python-and-Regex course”: preparing text corpora by generating simple
+                                 XML from regularly-patterned files using regular expression search-and-replace
+                                 operations, using XQuery to extract the portions of the texts to analyze, and
+                                 producing plain-text inputs to provide to Python. Python has dominated the
+                                 experience of the pipeline.</p>
+                              <p id="d3e13">This year’s course tried a different approach. Students were taught iXML grammars
+                                 as a way to prepare XML for analysis and XProc for pipelining. Regular expression
+                                 matching was accomplished via XSLT, and the entire XML stack was used before
+                                 approaching Python. This paper will share what students have to gain from learning
+                                 how to install and tinker with software in alpha stages and test how well it works
+                                 across platforms. It will also share some areas that challenged students and
+                                 professors alike, as well as suggestions on best practices in guiding people to
+                                 prepare processing pipelines (with XProc) that incorporate ixml. Further, this paper
+                                 will reflect on why this adventure was worthwhile.</p>
+                           </details>
+                           <details class="toc">
+                              <summary>
+                                 <h2 class="inline-heading">Table of Contents</h2>
+                              </summary>
+                              <dl>
+                                 <dt><span class="section"><a href="#d3e91" class="toc">Context: The Large-Scale Text Analysis Course at Penn State Behrend</a></span></dt>
+                                 <dd>
+                                    <dl>
+                                       <dt><span class="section"><a href="#d3e126" class="toc">Developing Command Line Fluency: Learning how to install software in alpha
+                                                development</a></span></dt>
+                                       <dt><span class="section"><a href="#d3e132" class="toc">Introducing Pipelines with XProc</a></span></dt>
+                                       <dt><span class="section"><a href="#d3e138" class="toc">The Optimally Motivated Student Experience</a></span></dt>
+                                    </dl>
+                                 </dd>
+                                 <dt><span class="section"><a href="#d3e151" class="toc">What do we gain from learning and teaching invisible XML?</a></span></dt>
+                                 <dd>
+                                    <dl>
+                                       <dt><span class="section"><a href="#d3e170" class="toc">Reflecting on relationships between Relax NG, iXML, and Regex</a></span></dt>
+                                    </dl>
+                                 </dd>
+                              </dl>
+                           </details>
+                        </div>
+                     </div>
+                  </div>
+               </details>
+            </nav>
+            <nav id="index-mast" class="wide-mode" role="navigation">
+               <div class="content">
+                  <h1 class="article-title" id="d3e5">Balisage Paper: Is Invisible XML Ready for Undergraduates?</h1>
+                  <h2 class="subtitle">Trying ixml and XProc with Regular Expressions, Relax NG, XSLT, and Python in an
+                     Undergraduate Text Analysis Course</h2>
+                  <details class="mast-box">
+                     <summary class="title">Elisa E. Beshero-Bondar</summary>
+                     <div class="affiliation">
+                        <p class="jobtitle">Chair</p>
+                        <p class="orgname">TEI Technical Council</p>
+                     </div>
+                     <div class="affiliation">
+                        <p class="jobtitle">Professor of Digital Humanities</p>
+                        <p class="jobtitle">Program Chair of Digital Media, Arts, and Technology</p>
+                        <p class="orgname">Penn State Erie, The Behrend College</p>
+                     </div>
+                     <h5 class="author-email"><code class="email">&lt;<a class="email" href="mailto:eeb4@psu.edu">eeb4@psu.edu</a>&gt;</code></h5>
+                     <div class="personblurb">
+                        <p id="d3e24">Elisa Beshero-Bondar explores and teaches document data modeling with the XML
+                           family of languages. She serves on the TEI Technical Council and is the founder
+                           and organizer of the <a href="https://digitalmitford.org" class="link">Digital
+                              Mitford project</a> and <a href="https://digitalmitford.github.io/DigMitCS/" class="link">its usually annual coding
+                              school</a>. She experiments with visualizing data from complex document
+                           structures like epic poems and with computer-assisted collation of differently
+                           encoded editions of <a href="https://frankensteinvariorum.github.io/" class="link"><span class="ital">Frankenstein</span></a>. Her ongoing adventures with
+                           markup technologies are documented on <a href="https://newtfire.org" class="link">her
+                              development site at newtfire.org</a>. </p>
+                     </div>
+                  </details>
+                  <details class="mast-box">
+                     <summary class="title">Michael Roy Simons</summary>
+                     <div class="affiliation">
+                        <p class="jobtitle">Student</p>
+                        <p class="jobtitle">Reseearch Assistant / Coding Mentor</p>
+                        <p class="orgname">Penn State Erie, The Behrend College</p>
+                     </div>
+                     <h5 class="author-email"><code class="email">&lt;<a class="email" href="mailto:mrs7068@psu.edu">mrs7068@psu.edu</a>&gt;</code></h5>
+                     <div class="personblurb">
+                        <p id="d3e62">Michael Simons is a Digital Media, Arts, and Technology (DIGIT) student at
+                           Penn State Behrend. After two years of studying Computer Science, he decided to
+                           pivot to Dr. Beshero-Bondar’s DIGIT program as it allows for greater creativity
+                           and a more focused path while still learning how to get the most out of today’s
+                           innovative technologies. In this program, he’s taken a deep dive into the XML
+                           stack where he enjoys using tools like XSLT—and more recently, ixml and XProc—to
+                           create rich markup that is both satisfyingly organized and able to be processed
+                           in interesting ways. Michael’s main passion is music, which he utilized to
+                           develop a <a href="https://afish2003.github.io/GretaVanZeppelin/" class="link">large-scale
+                              text analysis project</a> comparing the lyrics and chord progressions of
+                           seemingly similar artists.</p>
+                     </div>
+                  </details>
+                  <details class="abstract">
+                     <summary>
+                        <h2 class="inline-heading">Abstract</h2>
+                     </summary>
+                     <p id="d3e11">Is invisible XML ready for teaching university undergraduates? Is it a good idea
+                        to try this? This paper will attempt to address these questions. University students
+                        in the Digital Media, Arts, and Technology program at Penn State Behrend are offered
+                        a course in “Large-Scale Text Analysis”. Going into this course, students have
+                        experience in encoding text with XML, transforming XML with XSLT, and web
+                        development with HTML and CSS. In the past, the Text Analysis course has been a
+                        procedural “Python-and-Regex course”: preparing text corpora by generating simple
+                        XML from regularly-patterned files using regular expression search-and-replace
+                        operations, using XQuery to extract the portions of the texts to analyze, and
+                        producing plain-text inputs to provide to Python. Python has dominated the
+                        experience of the pipeline.</p>
+                     <p id="d3e13">This year’s course tried a different approach. Students were taught iXML grammars
+                        as a way to prepare XML for analysis and XProc for pipelining. Regular expression
+                        matching was accomplished via XSLT, and the entire XML stack was used before
+                        approaching Python. This paper will share what students have to gain from learning
+                        how to install and tinker with software in alpha stages and test how well it works
+                        across platforms. It will also share some areas that challenged students and
+                        professors alike, as well as suggestions on best practices in guiding people to
+                        prepare processing pipelines (with XProc) that incorporate ixml. Further, this paper
+                        will reflect on why this adventure was worthwhile.</p>
+                  </details>
+                  <details class="toc">
+                     <summary>
+                        <h2 class="inline-heading">Table of Contents</h2>
+                     </summary>
+                     <dl>
+                        <dt><span class="section"><a href="#d3e91" class="toc">Context: The Large-Scale Text Analysis Course at Penn State Behrend</a></span></dt>
+                        <dd>
+                           <dl>
+                              <dt><span class="section"><a href="#d3e126" class="toc">Developing Command Line Fluency: Learning how to install software in alpha
+                                       development</a></span></dt>
+                              <dt><span class="section"><a href="#d3e132" class="toc">Introducing Pipelines with XProc</a></span></dt>
+                              <dt><span class="section"><a href="#d3e138" class="toc">The Optimally Motivated Student Experience</a></span></dt>
+                           </dl>
+                        </dd>
+                        <dt><span class="section"><a href="#d3e151" class="toc">What do we gain from learning and teaching invisible XML?</a></span></dt>
+                        <dd>
+                           <dl>
+                              <dt><span class="section"><a href="#d3e170" class="toc">Reflecting on relationships between Relax NG, iXML, and Regex</a></span></dt>
+                           </dl>
+                        </dd>
+                     </dl>
+                  </details>
                </div>
-               <div class="affiliation">
-                  <p class="jobtitle">Professor of Digital Humanities</p>
-                  <p class="jobtitle">Program Chair of Digital Media, Arts, and Technology</p>
-                  <p class="orgname">Penn State Erie, The Behrend College</p>
+            </nav>
+            <main id="main" role="main" aria-label="Main Content">
+               <div class="article">
+                  <h1 class="article-title" id="d3e5">Balisage Paper: Is Invisible XML Ready for Undergraduates?</h1>
+                  <h2 class="subtitle">Trying ixml and XProc with Regular Expressions, Relax NG, XSLT, and Python in an
+                     Undergraduate Text Analysis Course</h2>
+                  <div class="section" id="d3e91">
+                     <h2 class="title" style="clear: both">Context: The Large-Scale Text Analysis Course at Penn State Behrend</h2>
+                     <p id="d3e94"> The Large-Scale Text Analysis class is taught in spring semesters as part of a
+                        multiple-semester sequence in the Digital Media, Arts, and Technology major: Students
+                        usually came to this class with previous experience from a course taught regularly
+                        each
+                        fall in text encoding with XML, transformation with XSLT, and web development with
+                        HTML
+                        and CSS. Our university semesters are 15 weeks long with three 50-minute classes per
+                        week, during which these classes involve daily homework and a few tests with an emphasis
+                        on students' applying what they learn to develop semester projects in small
+                        teams.</p>
+                     <p id="d3e96">The Text Analysis class is usually understood to be <q>the Python-and-Regex
+                           course</q>. A typical semester would involve orienting students to natural
+                        language processing in Python and preparing text corpora for analysis. In this context,
+                        XML was a helpful (but not completely necessary) option that contributed to more precise
+                        text curation and analysis, and the expectation to prepare XML provided a good means
+                        for
+                        students to learn regular expression search and replace operations in order to generate
+                        simply but meaningfully structured XML from regular patterns in text corpora. Students
+                        would then learn to write XQuery to output portions of the texts to analyze using
+                        natural language processing libraries (spaCy or NLTK). For an exemplary semester
+                        project, a team of students <q>scraped</q> collections of popular game script
+                        files. On performing careful document analysis, they applied regular expression search
+                        and replace operations to create a simple XML structure that helped them to isolate
+                        (and
+                        mark off) spoken conversation between NPC characters from passages about game items
+                        and
+                        optional actions. The team prepared XML and wrote XQuery to output the texts that
+                        described decision making forks, in order to find out how frequently certain characters
+                        and items are mentioned at specific locations in the game. In other projects, students
+                        developed text corpora from many seasons of available TV series like <span class="ital">The
+                           Simpsons</span>. They prepared simple XML to identify dialogue, speakers, and
+                        non-spoken descriptive passages, applied XQuery to separate out just the portions
+                        of the
+                        texts they wished to analyze (just the spoken text) to separate out just the portions
+                        of
+                        the texts they wished to analyze in plain-text inputs to provide to Python. In previous
+                        semesters we would have student teams import the Saxon-C package into their Python
+                        scripts to have students apply XPath and XQuery directly as a pipeline process within
+                        their Python. Thus, Python has traditionally come first in this course and dominated
+                        the
+                        class experience of developing a pipeline algorithm for analyzing text corpora.</p>
+                     <p id="d3e107">Perhaps the 2020s are a decade inviting us to resist complacency, particularly in
+                        the
+                        organizing of teaching syllabi. In Spring 2025, motivated greatly by the interesting
+                        opportunities of invisible XML and the creative affordances of SVG discussed in previous
+                        years at Balisage, we changed direction and put XML technologies much more in the
+                        foreground. This year, our students began the course by learning to write SVG and
+                        think
+                        about creative ways to visualize data by programmatically scripting SVG with XSLT.
+                        The
+                        SVG data visualization unit previously came at the end of the Python-dominated course,
+                        as a 
+                        consequence of preparing the XML and writing XQuery: Students were prepared to script
+                        SVG with XQuery with an emphasis on extracting data and providing an
+                        alternative to visualization libraries available in the Python ecosystem. In the new
+                        experimental course, we decided to <span class="ital">begin</span> with hand-encoding SVG as a rewarding starting point
+                        for our digital creative students, and then review what they had learned of XSLT in
+                        their Text Encoding course
+                        by this time pulling data from texts they had encoded in order to make their own data
+                        visualizations.
+                        This moved XSLT <q>front and center</q> in this year’s course, though also caused us not to cover
+                        XQuery, given the time we would now have to give to new processing technologies. We
+                        then covered
+                        the regular expressions unit much as usual with the same goals of preparing XML files
+                        from so-called <q>plain text</q> using search-and-replace operations in the
+                        oXygen XML Editor. However, <span class="ital">this time</span> we found opportunity to return again to XSLT to
+                        introduce stages of conversion from text to XML using <code class="code">xsl:analyze-string</code> to
+                        refine their processing and create new element nodes based on regular expression matches
+                        and non-matches. This set the stage for the new unit on invisible XML and XProc.</p>
+                     <p id="d3e124">All this activity concentrated on XML processing before the students wrote any Python.
+                        The new priority on XML not only helped students review and develop XSLT skills
+                        introduced in the previous semester, but it also gave students an unusual experience
+                        with writing grammars and seeing the relationships and differences between regular
+                        expression matching, grammars, and schemas. Putting these XML, XSLT, and ixml experiences
+                        first, before introducing Python for natural language processing, changed the course
+                        experience significantly. Even though not all students applied ixml or XProc pipelines
+                        in their semester projects, the common experience of encountering these technologies
+                        certainly changed the way students encountered pipeline processing, improved their
+                        command line fluency. and introduced them to software development in alpha stages.
+                        Was
+                        invisible XML ready for experimentation by undergraduates, and was the experience
+                        worth
+                        deferring their attention to Python processing?</p>
+                     <div class="section" id="d3e126">
+                        <h3 class="title" style="clear: both">Developing Command Line Fluency: Learning how to install software in alpha
+                           development</h3>
+                        <p id="d3e129">
+                           </p>
+                     </div>
+                     <div class="section" id="d3e132">
+                        <h3 class="title" style="clear: both">Introducing Pipelines with XProc</h3>
+                        <p id="d3e135">
+                           </p>
+                     </div>
+                     <div class="section" id="d3e138">
+                        <h3 class="title" style="clear: both">The Optimally Motivated Student Experience</h3>
+                        <h4 class="subtitle" style="clear: both">GretaVanFleet Chord Chart Analysis: what iXML looks like in a large-scale
+                           student project</h4>
+                        <p id="d3e144"> </p>
+                        <p id="d3e146">
+                           
+                           <pre class="programlisting" id="d3e148">Sample code block</pre>
+                           </p>
+                     </div>
+                  </div>
+                  <div class="section" id="d3e151">
+                     <h2 class="title" style="clear: both">What do we gain from learning and teaching invisible XML?</h2>
+                     <p id="d3e154">Adding Invisible XML to the course certainly changed the students’ learning
+                        experience. At the time of this writing, beginning the last month of the course, the
+                        author finds that students approach Python with better understanding of algorithmic
+                        pipelines, more clarity and less trouble with installation processes, and especially
+                        greater comfort with command line processes. There is something more: The appreciation
+                        of <span class="ital">declarative methods</span> is balanced differently with the
+                        <span class="ital">imperative</span> programming of Python.
+                         Are students understanding
+                        the formatting and processing of text differently when encountering Invisible XML?
+                        At
+                        this preliminary stage of writing, it seems to me that students did not necessarily
+                        significantly benefit in a practical way for their projects from learning Invisible
+                        XML,
+                        but encountered it as an option alongside regular expression search-and-replace
+                        operations on the way to cleaning and preparing their text corpora. But in making
+                        Invisible XML a topic for homework and demonstration, students encountered the concept
+                        of grammars, in context with schema validation and regular expression matching—related
+                        to these but fundamentally different. The declaration of patterns, and the experience
+                        of
+                        writing grammars explicitly to work across platforms (Windows, Mac, Linux systems)
+                        may
+                        have enriched their experience of moving between declarative and imperative methods
+                        of
+                        text handling, and helped them to reflect on a certain fluidity of methods. The
+                        experience caused the author to find a place to assert the value of declarative methods
+                        in the 2020s, a time when natural language processing of sequential strings dominates
+                        the development of Large Language Models and <q>artificial intelligence</q>. The
+                        movement from <q>raw text</q> to identifying structures as nodes, and then
+                        extracting text from nodes for meaningful natural language processing, with findings
+                        expressed, visualized, and output on websites involves a round-trip adventure with
+                        text
+                        and code formats. Why is Invisible XML beneficial to students to learn in this process?
+                        The identification of structures involves constructing one's own pattern recognition
+                        as
+                        XML, and being able to script the rules and structures makes for a multi-dimensional
+                        experience of text, both as architectures and as streams. Furthermore, finding our
+                        way
+                        with this helps us to understand there are distinct cultures in text analysis that
+                        benefit from being studied together. </p>
+                     <div class="section" id="d3e170">
+                        <h3 class="title" style="clear: both">Reflecting on relationships between Relax NG, iXML, and Regex</h3>
+                        <p id="d3e173">....DEVELOP....! Highlight: iXML is NOT a replacement for Regex!</p>
+                     </div>
+                  </div>
                </div>
-               <h5 class="author-email"><code class="email">&lt;<a class="email" href="mailto:eeb4@psu.edu">eeb4@psu.edu</a>&gt;</code></h5>
-            </div>
-            <div class="author">
-               <h3 class="author">Michael Roy Simonw</h3>
-               <div class="affiliation">
-                  <p class="jobtitle">Student</p>
-                  <p class="jobtitle">Reseearch Assistant / Coding Mentor</p>
-                  <p class="orgname">Penn State Erie, The Behrend College</p>
+               <div id="author-keywords">
+                  <h5 class="keywords">Author's keywords for this paper:</h5> <span class="keyword">invisible XML</span>; <span class="keyword">ixml</span>; <span class="keyword">declarative markup</span>; <span class="keyword">declarative methods</span>; <span class="keyword">imperative methods</span>; <span class="keyword">Python</span>; <span class="keyword">XSLT</span></div>
+               <div id="balisage-footer">
+                  <h3>Balisage Series on Markup Technologies</h3>
                </div>
-               <h5 class="author-email"><code class="email">&lt;<a class="email" href="mailto:eeb4@psu.edu">eeb4@psu.edu</a>&gt;</code></h5>
-            </div>
-            <div class="abstract">
-               <h2>Abstract</h2>
-               <p id="d2e11">Is invisible XML ready for teaching university undergraduates? Is it a good idea
-                  to try this? This paper will attempt to address these questions. University students
-                  in the Digital Media, Arts, and Technology program at Penn State Behrend are offered
-                  a course in “Large-Scale Text Analysis”. Going into this course, students have
-                  experience in encoding text with XML, transforming XML with XSLT, and web
-                  development with HTML and CSS. In the past, the Text Analysis course has been a
-                  procedural “Python-and-Regex course”: preparing text corpora by generating simple
-                  XML from regularly-patterned files using regular expression search-and-replace
-                  operations, using XQuery to extract the portions of the texts to analyze, and
-                  producing plain-text inputs to provide to Python. Python has dominated the
-                  experience of the pipeline.</p>
-               <p id="d2e13">This year’s course tried a different approach. Students were taught iXML grammars
-                  as a way to prepare XML for analysis and XProc for pipelining. Regular expression
-                  matching was accomplished via XSLT, and the entire XML stack was used before
-                  approaching Python. This paper will share what students have to gain from learning
-                  how to install and tinker with software in alpha stages and test how well it works
-                  across platforms. It will also share some areas that challenged students and
-                  professors alike, as well as suggestions on best practices in guiding people to
-                  prepare processing pipelines (with XProc) that incorporate ixml. Further, this paper
-                  will reflect on why this adventure was worthwhile.</p>
-            </div>
-            <hr>
-         </div>
-         <details class="toc">
-            <summary>
-               <h2 class="inline-heading">Table of Contents</h2>
-            </summary>
-            <dl>
-               <dt><span class="section"><a href="#d2e88" class="toc">Context: The Large-Scale Text Analysis Course at Penn State Behrend</a></span></dt>
-               <dd>
-                  <dl>
-                     <dt><span class="section"><a href="#d2e105" class="toc">Developing Command Line Fluency: Learning how to install software in alpha
-                              development</a></span></dt>
-                     <dt><span class="section"><a href="#d2e111" class="toc">Introducing Pipelines with XProc</a></span></dt>
-                     <dt><span class="section"><a href="#d2e117" class="toc">The Optimally Motivated Student Experience</a></span></dt>
-                  </dl>
-               </dd>
-               <dt><span class="section"><a href="#d2e121" class="toc">What do we gain from learning and teaching invisible XML?</a></span></dt>
-               <dd>
-                  <dl>
-                     <dt><span class="section"><a href="#d2e140" class="toc">Reflecting on relationships between Relax NG, iXML, and Regex</a></span></dt>
-                  </dl>
-               </dd>
-            </dl>
-         </details>
-         <div class="section" id="d2e88">
-            <h2 class="title" style="clear: both">Context: The Large-Scale Text Analysis Course at Penn State Behrend</h2>
-            <p id="d2e91"> The Large-Scale Text Analysis class is taught in Spring semesters as part of a
-               multiple-semester sequence: Students came to this class with previous Fall experience
-               in
-               text encoding with XML, transformation with XSLT, and web development with HTML and
-               CSS,
-               and semesters provide about 15 weeks with three 50-minute classes per week, regular
-               daily homework and a few tests, and a strong emphasis on developing projects in teams.
-               The spring Text Analysis class is usually <q>the Python-and-Regex course</q>,
-               and it usually involves preparing text corpora by generating simple XML from
-               regularly-patterned files using search-and-replace operations using regular expressions.
-               Students would then learn some XQuery to output portions of the texts they wish to
-               analyze using Natural Language Processing libraries (spaCy or NLTK). For example,
-               students could <q>scrape</q> collections of popular game script files and choose
-               to output the texts that described decision making forks, or find out how frequently
-               certain characters and items are mentioned at specific locations in the game. Or,
-               students exploring readily-available TV script files like <span class="ital">The
-                  Simpsons</span> could explore characters' use of language, and once they had
-               prepared simple XML to identify dialogue, speakers, and non-spoken descriptive passages,
-               they could use XQuery to separate out just the portions of the texts they wished to
-               analyze in plain-text inputs to provide to Python. We could even import the Saxon-C
-               package to have students apply XPath and XQuery directly within their Python scripts.
-               Previously, Python dominated the experience of the pipeline algorithm. This year,
-               however, by introducing Invisible XML, we also could introduce XProc and formalize
-               the
-               work students did with grammar writing, schema writing, and regular expression matching
-               (via XSLT) in an XML stack first, before beginning work with Python.</p>
-            <p id="d2e102"> This time, we spent most of our time in the beginning of the
-               course on XML, XSLT, SVG, and introduced invisible XML and XProc before turning to
-               Python in the second half of the course. </p>
-            <div class="section" id="d2e105">
-               <h3 class="title" style="clear: both">Developing Command Line Fluency: Learning how to install software in alpha
-                  development</h3>
-               <p id="d2e108">
-                  </p>
-            </div>
-            <div class="section" id="d2e111">
-               <h3 class="title" style="clear: both">Introducing Pipelines with XProc</h3>
-               <p id="d2e114">
-                  </p>
-            </div>
-            <div class="section" id="d2e117">
-               <h3 class="title" style="clear: both">The Optimally Motivated Student Experience</h3>
-            </div>
-         </div>
-         <div class="section" id="d2e121">
-            <h2 class="title" style="clear: both">What do we gain from learning and teaching invisible XML?</h2>
-            <p id="d2e124">Adding Invisible XML to the course certainly changed the students’ learning
-               experience. At the time of this writing, beginning the last month of the course, the
-               author finds that students approach Python with better understanding of algorithmic
-               pipelines, more clarity and less trouble with installation processes, and especially
-               greater comfort with command line processes. There is something more: The appreciation
-               of <span class="ital">declarative methods</span> is balanced differently with the
-               <span class="ital">imperative</span> programming of Python.
-                Are students understanding
-               the formatting and processing of text differently when encountering Invisible XML?
-               At
-               this preliminary stage of writing, it seems to me that students did not necessarily
-               significantly benefit in a practical way for their projects from learning Invisible
-               XML,
-               but encountered it as an option alongside regular expression search-and-replace
-               operations on the way to cleaning and preparing their text corpora. But in making
-               Invisible XML a topic for homework and demonstration, students encountered the concept
-               of grammars, in context with schema validation and regular expression matching—related
-               to these but fundamentally different. The declaration of patterns, and the experience
-               of
-               writing grammars explicitly to work across platforms (Windows, Mac, Linux systems)
-               may
-               have enriched their experience of moving between declarative and imperative methods
-               of
-               text handling, and helped them to reflect on a certain fluidity of methods. The
-               experience caused the author to find a place to assert the value of declarative methods
-               in the 2020s, a time when natural language processing of sequential strings dominates
-               the development of Large Language Models and <q>artificial intelligence</q>. The
-               movement from <q>raw text</q> to identifying structures as nodes, and then
-               extracting text from nodes for meaningful natural language processing, with findings
-               expressed, visualized, and output on websites involves a round-trip adventure with
-               text
-               and code formats. Why is Invisible XML beneficial to students to learn in this process?
-               The identification of structures involves constructing one's own pattern recognition
-               as
-               XML, and being able to script the rules and structures makes for a multi-dimensional
-               experience of text, both as architectures and as streams. Furthermore, finding our
-               way
-               with this helps us to understand there are distinct cultures in text analysis that
-               benefit from being studied together. </p>
-            <div class="section" id="d2e140">
-               <h3 class="title" style="clear: both">Reflecting on relationships between Relax NG, iXML, and Regex</h3>
-               <p id="d2e143">....DEVELOP....!</p>
-            </div>
-         </div>
-      </div>
+            </main>
+         </body>
+      </html>
       <div id="balisage-footer">
          <h3><!--* balisage-html.xsl 519.38 *--><i>Balisage:</i>&nbsp;<small>The Markup Conference</small></h3>
       </div>
