@@ -148,6 +148,7 @@
         </section>
         <section>
             <title>The Optimally Motivated Student Experience</title>
+            <subtitle>GretaVanFleet Chord Chart Analysis: what iXML looks like in a large-scale student project</subtitle>
             <!-- What Michael did and how well it succeeded. (Can include images / links to project etc) -->
             <para>
             </para>
@@ -194,7 +195,7 @@
             benefit from being studied together. </para>
         <section>
             <title>Reflecting on relationships between Relax NG, iXML, and Regex</title>
-            <para>....DEVELOP....!</para>
+            <para>....DEVELOP....! Highlight: iXML is NOT a replacement for Regex!</para>
         </section>
 
     </section>
