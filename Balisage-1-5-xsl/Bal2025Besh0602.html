@@ -31,7 +31,7 @@
       }
     </style>
       <link rel="stylesheet" href="balisage-proceedings.css" type="text/css">
-      <meta name="keywords" content="invisible XML, ixml, declarative markup, declarative methods, imperative methods, Python, XSLT">
+      <meta name="keywords" content="invisible XML, ixml, XProc, regular expressions, grammar, schema, declarative markup, declarative methods, imperative methods, Python, XSLT">
       <link id="favicon" rel="shortcut icon" type="image/png" href="http://balisage.net/favicon.ico">
       <!--balisage-html.xsl--></head>
    <body>
@@ -313,21 +313,16 @@
                                  <h2 class="inline-heading">Table of Contents</h2>
                               </summary>
                               <dl>
-                                 <dt><span class="section"><a href="#d3e91" class="toc">Context: The Large-Scale Text Analysis Course at Penn State Behrend</a></span></dt>
+                                 <dt><span class="section"><a href="#d3e99" class="toc">Context: The Large-Scale Text Analysis Course at Penn State Behrend</a></span></dt>
                                  <dd>
                                     <dl>
-                                       <dt><span class="section"><a href="#d3e126" class="toc">Developing Command Line Fluency: Learning how to install software in alpha
+                                       <dt><span class="section"><a href="#d3e134" class="toc">Developing Command Line Fluency: Learning how to install software in alpha
                                                 development</a></span></dt>
-                                       <dt><span class="section"><a href="#d3e132" class="toc">Introducing Pipelines with XProc</a></span></dt>
-                                       <dt><span class="section"><a href="#d3e138" class="toc">The Optimally Motivated Student Experience</a></span></dt>
+                                       <dt><span class="section"><a href="#d3e140" class="toc">Introducing Pipelines with XProc</a></span></dt>
+                                       <dt><span class="section"><a href="#d3e146" class="toc">The Optimally Motivated Student Experience</a></span></dt>
                                     </dl>
                                  </dd>
-                                 <dt><span class="section"><a href="#d3e151" class="toc">What do we gain from learning and teaching invisible XML?</a></span></dt>
-                                 <dd>
-                                    <dl>
-                                       <dt><span class="section"><a href="#d3e170" class="toc">Reflecting on relationships between Relax NG, iXML, and Regex</a></span></dt>
-                                    </dl>
-                                 </dd>
+                                 <dt><span class="section"><a href="#d3e159" class="toc">What do we gain from learning and teaching invisible XML?</a></span></dt>
                               </dl>
                            </details>
                         </div>
@@ -416,21 +411,16 @@
                         <h2 class="inline-heading">Table of Contents</h2>
                      </summary>
                      <dl>
-                        <dt><span class="section"><a href="#d3e91" class="toc">Context: The Large-Scale Text Analysis Course at Penn State Behrend</a></span></dt>
+                        <dt><span class="section"><a href="#d3e99" class="toc">Context: The Large-Scale Text Analysis Course at Penn State Behrend</a></span></dt>
                         <dd>
                            <dl>
-                              <dt><span class="section"><a href="#d3e126" class="toc">Developing Command Line Fluency: Learning how to install software in alpha
+                              <dt><span class="section"><a href="#d3e134" class="toc">Developing Command Line Fluency: Learning how to install software in alpha
                                        development</a></span></dt>
-                              <dt><span class="section"><a href="#d3e132" class="toc">Introducing Pipelines with XProc</a></span></dt>
-                              <dt><span class="section"><a href="#d3e138" class="toc">The Optimally Motivated Student Experience</a></span></dt>
+                              <dt><span class="section"><a href="#d3e140" class="toc">Introducing Pipelines with XProc</a></span></dt>
+                              <dt><span class="section"><a href="#d3e146" class="toc">The Optimally Motivated Student Experience</a></span></dt>
                            </dl>
                         </dd>
-                        <dt><span class="section"><a href="#d3e151" class="toc">What do we gain from learning and teaching invisible XML?</a></span></dt>
-                        <dd>
-                           <dl>
-                              <dt><span class="section"><a href="#d3e170" class="toc">Reflecting on relationships between Relax NG, iXML, and Regex</a></span></dt>
-                           </dl>
-                        </dd>
+                        <dt><span class="section"><a href="#d3e159" class="toc">What do we gain from learning and teaching invisible XML?</a></span></dt>
                      </dl>
                   </details>
                </div>
@@ -440,9 +430,9 @@
                   <h1 class="article-title" id="d3e5">Balisage Paper: Is Invisible XML Ready for Undergraduates?</h1>
                   <h2 class="subtitle">Trying ixml and XProc with Regular Expressions, Relax NG, XSLT, and Python in an
                      Undergraduate Text Analysis Course</h2>
-                  <div class="section" id="d3e91">
+                  <div class="section" id="d3e99">
                      <h2 class="title" style="clear: both">Context: The Large-Scale Text Analysis Course at Penn State Behrend</h2>
-                     <p id="d3e94"> The Large-Scale Text Analysis class is taught in spring semesters as part of a
+                     <p id="d3e102"> The Large-Scale Text Analysis class is taught in spring semesters as part of a
                         multiple-semester sequence in the Digital Media, Arts, and Technology major: Students
                         usually came to this class with previous experience from a course taught regularly
                         each
@@ -452,7 +442,7 @@
                         week, during which these classes involve daily homework and a few tests with an emphasis
                         on students' applying what they learn to develop semester projects in small
                         teams.</p>
-                     <p id="d3e96">The Text Analysis class is usually understood to be <q>the Python-and-Regex
+                     <p id="d3e104">The Text Analysis class is usually understood to be <q>the Python-and-Regex
                            course</q>. A typical semester would involve orienting students to natural
                         language processing in Python and preparing text corpora for analysis. In this context,
                         XML was a helpful (but not completely necessary) option that contributed to more precise
@@ -483,7 +473,7 @@
                         their Python. Thus, Python has traditionally come first in this course and dominated
                         the
                         class experience of developing a pipeline algorithm for analyzing text corpora.</p>
-                     <p id="d3e107">Perhaps the 2020s are a decade inviting us to resist complacency, particularly in
+                     <p id="d3e115">Perhaps the 2020s are a decade inviting us to resist complacency, particularly in
                         the
                         organizing of teaching syllabi. In Spring 2025, motivated greatly by the interesting
                         opportunities of invisible XML and the creative affordances of SVG discussed in previous
@@ -493,109 +483,137 @@
                         about creative ways to visualize data by programmatically scripting SVG with XSLT.
                         The
                         SVG data visualization unit previously came at the end of the Python-dominated course,
-                        as a 
-                        consequence of preparing the XML and writing XQuery: Students were prepared to script
-                        SVG with XQuery with an emphasis on extracting data and providing an
-                        alternative to visualization libraries available in the Python ecosystem. In the new
-                        experimental course, we decided to <span class="ital">begin</span> with hand-encoding SVG as a rewarding starting point
-                        for our digital creative students, and then review what they had learned of XSLT in
-                        their Text Encoding course
-                        by this time pulling data from texts they had encoded in order to make their own data
-                        visualizations.
-                        This moved XSLT <q>front and center</q> in this year’s course, though also caused us not to cover
-                        XQuery, given the time we would now have to give to new processing technologies. We
-                        then covered
+                        as a consequence of preparing the XML and writing XQuery: Students were prepared to
+                        script SVG with XQuery with an emphasis on extracting data and providing an alternative
+                        to visualization libraries available in the Python ecosystem. In the new experimental
+                        course, we decided to <span class="ital">begin</span> with hand-encoding SVG as a rewarding
+                        starting point for our digital creative students, and then review what they had learned
+                        of XSLT in their Text Encoding course by this time pulling data from texts they had
+                        encoded in order to make their own data visualizations. This moved XSLT <q>front and
+                           center</q> in this year’s course, though also caused us not to cover XQuery,
+                        given the time we would now have to give to new processing technologies. We then covered
                         the regular expressions unit much as usual with the same goals of preparing XML files
                         from so-called <q>plain text</q> using search-and-replace operations in the
-                        oXygen XML Editor. However, <span class="ital">this time</span> we found opportunity to return again to XSLT to
-                        introduce stages of conversion from text to XML using <code class="code">xsl:analyze-string</code> to
-                        refine their processing and create new element nodes based on regular expression matches
-                        and non-matches. This set the stage for the new unit on invisible XML and XProc.</p>
-                     <p id="d3e124">All this activity concentrated on XML processing before the students wrote any Python.
+                        oXygen XML Editor. However, <span class="ital">this time</span> we found opportunity to
+                        return again to XSLT to introduce stages of conversion from text to XML using
+                        <code class="code">xsl:analyze-string</code> to refine their processing and create new element
+                        nodes based on regular expression matches and non-matches. This set the stage for
+                        the
+                        new unit on invisible XML and XProc.</p>
+                     <p id="d3e132">All this activity concentrated on XML processing before the students wrote any Python.
                         The new priority on XML not only helped students review and develop XSLT skills
                         introduced in the previous semester, but it also gave students an unusual experience
                         with writing grammars and seeing the relationships and differences between regular
-                        expression matching, grammars, and schemas. Putting these XML, XSLT, and ixml experiences
-                        first, before introducing Python for natural language processing, changed the course
-                        experience significantly. Even though not all students applied ixml or XProc pipelines
-                        in their semester projects, the common experience of encountering these technologies
-                        certainly changed the way students encountered pipeline processing, improved their
-                        command line fluency. and introduced them to software development in alpha stages.
-                        Was
-                        invisible XML ready for experimentation by undergraduates, and was the experience
-                        worth
-                        deferring their attention to Python processing?</p>
-                     <div class="section" id="d3e126">
+                        expression matching, grammars, and schemas. Putting these XML, XSLT, and ixml
+                        experiences first, before introducing Python for natural language processing, changed
+                        the course experience significantly. Even though not all students applied ixml or
+                        XProc
+                        pipelines in their semester projects, the common experience of encountering these
+                        technologies certainly changed the way students encountered pipeline processing,
+                        improved their command line fluency. and introduced them to software development in
+                        alpha stages. Was invisible XML ready for experimentation by undergraduates, and was
+                        the
+                        experience worth deferring their attention to Python processing?</p>
+                     <div class="section" id="d3e134">
                         <h3 class="title" style="clear: both">Developing Command Line Fluency: Learning how to install software in alpha
                            development</h3>
-                        <p id="d3e129">
+                        <p id="d3e137">
                            </p>
                      </div>
-                     <div class="section" id="d3e132">
+                     <div class="section" id="d3e140">
                         <h3 class="title" style="clear: both">Introducing Pipelines with XProc</h3>
-                        <p id="d3e135">
+                        <p id="d3e143">
                            </p>
                      </div>
-                     <div class="section" id="d3e138">
+                     <div class="section" id="d3e146">
                         <h3 class="title" style="clear: both">The Optimally Motivated Student Experience</h3>
                         <h4 class="subtitle" style="clear: both">GretaVanFleet Chord Chart Analysis: what iXML looks like in a large-scale
                            student project</h4>
-                        <p id="d3e144"> </p>
-                        <p id="d3e146">
+                        <p id="d3e152"> </p>
+                        <p id="d3e154">
                            
-                           <pre class="programlisting" id="d3e148">Sample code block</pre>
+                           <pre class="programlisting" id="d3e156">Sample code block</pre>
                            </p>
                      </div>
                   </div>
-                  <div class="section" id="d3e151">
+                  <div class="section" id="d3e159">
                      <h2 class="title" style="clear: both">What do we gain from learning and teaching invisible XML?</h2>
-                     <p id="d3e154">Adding Invisible XML to the course certainly changed the students’ learning
-                        experience. At the time of this writing, beginning the last month of the course, the
-                        author finds that students approach Python with better understanding of algorithmic
+                     <p id="d3e162">Was this worth the effort, and was invisible XML ready for undergraduates in an
+                        algorithmic text analysis course? Most student project teams were not motivated to
+                        apply
+                        invisible XML in their projects and we did not require them to do so. (We only required
+                        that students give the technologies a try in their homework assignments). For those
+                        that
+                        were motivated (particularly the authors of this paper), there was an interest in
+                        the
+                        technologies themselves cultivated by drafting new documentation and training resources
+                        for the class, but also an awareness that invisible XML was not strictly necessary
+                        to
+                        their projects: regular expression matching and XSLT could have sufficed more quickly.
+                        Yet there is satisfaction in writing a successful grammar and a simplification in
+                        the
+                        documentation, as well. Invisible XML <span class="ital">declares</span> the patterns of a
+                        text document to be the defining grammar of XML nodes, and this is both <span class="ital">less
+                           and more</span> compared to scripting a process with a sequential set of regular
+                        expression search and replace operations. It is <span class="ital">more</span> in the sense
+                        of sheer effort to ensure the operations work, and also <span class="ital">more</span>
+                        definitive as a grammar than a convenient string-match, and perhaps
+                        <span class="ital">more</span> in the sense of requiring the installation of CoffeePot or
+                        Markup Blitz to process it rather than built-in regular expression search features
+                        in a
+                        coding IDE like oXygen or the re library in Python. But it is <span class="ital">less</span>
+                        in the precise elegance of a grammar that expresses an expectation of its source
+                        documents, and (in our experience) fewer lines of code, though each line scripted
+                        with
+                        exacting care. Each approach puts students in the position of writing declaratively
+                        what
+                        needs to become their data structure, and perhaps the thinking process required of
+                        invisible XML might be different from writing sequential regular expression recipes
+                        in
+                        the way that writing poetry differs from prose. Poetry, like invisible XML, attends
+                        to
+                        more dimensions of expression for every meaningful and resonant word and punctuation
+                        mark than prosaic instruction. </p>
+                     <p id="d3e183">Certainly for all its expressive power, invisible XML cannot replace the prosaic
+                        versatility of regular expressions as a <q>Swiss-army knife</q> for many
+                        different text analysis purposes. And we could have taught our course without it.
+                        But
+                        the experience may have enhanced other kinds of learning in the course. For example,
+                        we
+                        found that students approached Python with better understanding of algorithmic
                         pipelines, more clarity and less trouble with installation processes, and especially
-                        greater comfort with command line processes. There is something more: The appreciation
-                        of <span class="ital">declarative methods</span> is balanced differently with the
-                        <span class="ital">imperative</span> programming of Python.
-                         Are students understanding
-                        the formatting and processing of text differently when encountering Invisible XML?
-                        At
-                        this preliminary stage of writing, it seems to me that students did not necessarily
-                        significantly benefit in a practical way for their projects from learning Invisible
-                        XML,
-                        but encountered it as an option alongside regular expression search-and-replace
-                        operations on the way to cleaning and preparing their text corpora. But in making
-                        Invisible XML a topic for homework and demonstration, students encountered the concept
-                        of grammars, in context with schema validation and regular expression matching—related
-                        to these but fundamentally different. The declaration of patterns, and the experience
+                        greater comfort with command line processes. Perhaps there was something more: The
+                        appreciation of <span class="ital">declarative methods</span> this year was
+                        balanced differently with the <span class="ital">imperative</span> programming of
+                        Python. Are students understanding the formatting and processing of text differently
+                        when encountering Invisible XML? In making Invisible XML a topic for homework and
+                        demonstration, students encountered the concept of grammars, in context with schema
+                        validation and regular expression matching—related to these but fundamentally different.
+                        The declaration of patterns, and the experience of writing grammars explicitly to
+                        work
+                        across platforms (Windows, Mac, Linux systems) may have enriched their experience
                         of
-                        writing grammars explicitly to work across platforms (Windows, Mac, Linux systems)
-                        may
-                        have enriched their experience of moving between declarative and imperative methods
-                        of
-                        text handling, and helped them to reflect on a certain fluidity of methods. The
-                        experience caused the author to find a place to assert the value of declarative methods
-                        in the 2020s, a time when natural language processing of sequential strings dominates
-                        the development of Large Language Models and <q>artificial intelligence</q>. The
-                        movement from <q>raw text</q> to identifying structures as nodes, and then
-                        extracting text from nodes for meaningful natural language processing, with findings
-                        expressed, visualized, and output on websites involves a round-trip adventure with
-                        text
-                        and code formats. Why is Invisible XML beneficial to students to learn in this process?
-                        The identification of structures involves constructing one's own pattern recognition
-                        as
-                        XML, and being able to script the rules and structures makes for a multi-dimensional
-                        experience of text, both as architectures and as streams. Furthermore, finding our
-                        way
-                        with this helps us to understand there are distinct cultures in text analysis that
-                        benefit from being studied together. </p>
-                     <div class="section" id="d3e170">
-                        <h3 class="title" style="clear: both">Reflecting on relationships between Relax NG, iXML, and Regex</h3>
-                        <p id="d3e173">....DEVELOP....! Highlight: iXML is NOT a replacement for Regex!</p>
-                     </div>
+                        moving between declarative and imperative methods of text handling, and helped them
+                        to
+                        reflect on a certain fluidity of methods.</p>
+                     <p id="d3e194">Our experience of this course helped to bridge distinct cultures in text analysis
+                        that
+                        are perhaps better connected than experienced in isolation. Perhaps we have found
+                        a
+                        place to assert the value of declarative methods in the 2020s, a time when natural
+                        language processing of sequential strings dominates the development of Large Language
+                        Models and <q>artificial intelligence</q>. The movement from <q>raw
+                           text</q> to identifying structures as nodes, and then extracting text from nodes
+                        for meaningful natural language processing, with findings expressed, visualized, and
+                        output on websites involves a round-trip adventure with text and code formats. Perhaps
+                        the most significant application of invisible XML is the agency it gives the student
+                        coder in constructing one's own pattern recognition as XML. The experience of developing
+                        and processing invisible XML in a text analysis course makes for a multi-dimensional
+                        experience of text, both as architectures and as streams. </p>
                   </div>
                </div>
                <div id="author-keywords">
-                  <h5 class="keywords">Author's keywords for this paper:</h5> <span class="keyword">invisible XML</span>; <span class="keyword">ixml</span>; <span class="keyword">declarative markup</span>; <span class="keyword">declarative methods</span>; <span class="keyword">imperative methods</span>; <span class="keyword">Python</span>; <span class="keyword">XSLT</span></div>
+                  <h5 class="keywords">Author's keywords for this paper:</h5> <span class="keyword">invisible XML</span>; <span class="keyword">ixml</span>; <span class="keyword">XProc</span>; <span class="keyword">regular expressions</span>; <span class="keyword">grammar</span>; <span class="keyword">schema</span>; <span class="keyword">declarative markup</span>; <span class="keyword">declarative methods</span>; <span class="keyword">imperative methods</span>; <span class="keyword">Python</span>; <span class="keyword">XSLT</span></div>
                <div id="balisage-footer">
                   <h3>Balisage Series on Markup Technologies</h3>
                </div>
