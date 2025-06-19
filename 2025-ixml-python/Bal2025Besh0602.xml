@@ -261,7 +261,7 @@
             <subtitle>The Optimally Motivated Student Experience</subtitle>
             <!-- What Michael did and how well it succeeded. (Can include images / links to project etc) -->
             <para>Michael again! Dr. Beshero-Bondar has deemed me an <quote>optimally motivated student</quote> because I did
-                the work (relatively on-time) and </para>
+                the work (relatively on-time) and (branch test)</para>
 
             <para>
                 <programlisting xml:space="preserve">Sample code block</programlisting>
