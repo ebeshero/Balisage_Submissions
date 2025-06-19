@@ -23,13 +23,13 @@
                 experience of the pipeline.</para>
             <para>This year’s course tried a different approach. Students were taught iXML grammars
                 as a way to prepare XML for analysis and XProc for pipelining. Regular expression
-                matching was accomplished via XSLT, and the entire XML stack was used before
+                matching involved working with XSLT, and the entire XML stack was used before
                 approaching Python. This paper will share what students have to gain from learning
                 how to install and tinker with software in alpha stages and test how well it works
                 across platforms. It will also share some areas that challenged students and
                 professors alike, as well as suggestions on best practices in guiding people to
-                prepare processing pipelines (with XProc) that incorporate ixml. Further, this paper
-                will reflect on why this adventure was worthwhile.</para>
+                prepare processing pipelines (with XProc) that incorporate invisible XML. Further,
+                this paper will reflect on why this adventure was worthwhile.</para>
 
         </abstract>
 
@@ -111,7 +111,7 @@
     </info>
     <section>
         <title>Context: The Large-Scale Text Analysis Course at Penn State Behrend</title>
-        <para> The Large-Scale Text Analysis class (Digit 210) is taught in spring semesters as part
+        <para>The Large-Scale Text Analysis class (Digit 210) is taught in spring semesters as part
             of a multiple-semester digital humanities core sequence in the Digital Media, Arts, and
             Technology major: Students usually came to this class with previous experience from a
             course taught regularly each fall in text encoding with XML, transformation with XSLT,
@@ -149,33 +149,31 @@
             organizing of teaching syllabi. In Spring 2025, motivated greatly by the interesting
             opportunities of invisible XML and the creative affordances of SVG discussed in previous
             years at Balisage, we changed direction and put XML technologies much more in the foreground.<footnote>
-                <para>Several papers in the Proceedings of Balisage:The Markup Conference vol. 29 (2024) demonstrated exciting
-                    applications of invisible XML connected to careful document planning and
-                    analysis with exciting implications for interface design. See Joseph Michael
-                    Courtney and Michael Robert Gryk, <quote>Pulse, Parse, and Ponder: Using
-                        Invisible XML to Dissect a Scientific Domain Specific Language</quote>,
-                    <link
+                <para>Several papers in the Proceedings of Balisage:The Markup Conference vol. 29
+                    (2024) demonstrated exciting applications of invisible XML connected to careful
+                    document planning and analysis with exciting implications for interface design.
+                    See Joseph Michael Courtney and Michael Robert Gryk, <quote>Pulse, Parse, and
+                        Ponder: Using Invisible XML to Dissect a Scientific Domain Specific
+                        Language</quote>, <link
                         xlink:href="https://doi.org/10.4242/BalisageVol29.Courtney01"
                         >https://doi.org/10.4242/BalisageVol29.Courtney01</link>; Mary Holstege,
-                        <quote>Invisible Fish: API Experimentation with InvisibleXML</quote>,
-                    <link
+                        <quote>Invisible Fish: API Experimentation with InvisibleXML</quote>, <link
                         xlink:href="https://doi.org/10.4242/BalisageVol29.Holstege01"
                         >https://doi.org/10.4242/BalisageVol29.Holstege01</link>; John Lumley,
                         <quote>Variations on an Invisible Theme: Using iXML to produce XML to
-                        produce iXML to produce ....</quote> <link
-                        xlink:href="https://doi.org/10.4242/BalisageVol29.Lumley01"
+                        produce iXML to produce ....</quote>
+                    <link xlink:href="https://doi.org/10.4242/BalisageVol29.Lumley01"
                         >https://doi.org/10.4242/BalisageVol29.Lumley01</link>; Ari Nordström,
                         <quote>Adventures in Mainframes, Text-based Messaging, and iXML</quote>
-                    <link
-                        xlink:href="https://doi.org/10.4242/BalisageVol29.Nordstrom01"
+                    <link xlink:href="https://doi.org/10.4242/BalisageVol29.Nordstrom01"
                         >https://doi.org/10.4242/BalisageVol29.Nordstrom01</link>; C. M.
                     Sperberg-McQueen, <quote>From Word to XML via iXML: a Word-first XML workflow in
-                        the TLRR 2e project</quote> <link
-                        xlink:href="https://doi.org/10.4242/BalisageVol29.Sperberg-McQueen01"
+                        the TLRR 2e project</quote>
+                    <link xlink:href="https://doi.org/10.4242/BalisageVol29.Sperberg-McQueen01"
                         >https://doi.org/10.4242/BalisageVol29.Sperberg-McQueen01</link>; Bethan
                     Tovey-Walsh, <quote>When women do algorithms: a semi-generative approach to
                         overlay crochet with iXML and XSLT</quote>
-                        <link xlink:href="https://doi.org/10.4242/BalisageVol29.Tovey-Walsh01"
+                    <link xlink:href="https://doi.org/10.4242/BalisageVol29.Tovey-Walsh01"
                         >https://doi.org/10.4242/BalisageVol29.Tovey-Walsh01</link>.</para>
 
             </footnote> This year, our students began the course by learning to write SVG and think
@@ -209,7 +207,12 @@
             improved their command line fluency. and introduced them to software development in
             alpha stages. Was invisible XML ready for experimentation by undergraduates, and was the
             experience worth deferring their attention to Python processing?</para>
-
+    </section>
+    <section>
+        <title>The Learning Experiences</title>
+        <para>This semester, everything was new and different, and here we break down the most
+            challenging and learning-intensive experiences for students confronting invisible XML
+            and XProc for the first time. </para>
         <section>
             <title>Developing Command Line Fluency: Learning how to install software in alpha
                 development</title>
