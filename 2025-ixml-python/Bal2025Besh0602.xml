@@ -263,23 +263,39 @@
             <subtitle>The Optimally Motivated Student Experience</subtitle>
             <!-- What Michael did and how well it succeeded. (Can include images / links to project etc) -->
             <para>Michael again! Dr. Beshero-Bondar deemed me an <quote>optimally motivated
-                    student</quote> because I did the work (relatively on-time) and was able to
+                    student</quote> because I did the work (relatively on time) and was able to
                 grasp iXML and XProc enough to take it further than what most other students
-                attempted to do. The big question for me was: <quote>Is this worth incorporating
-                    into my group's semester project?</quote>
+                attempted to do. The big question for me was: <quote>Are these technologies worth incorporating
+                    into my group’s semester project?</quote>
             </para>
-            <para>The short-term answer, unfortunately, was no because I held up my team working on
-                something that I did with Regex in less than a quarter of the time I spent on iXML.
-                However, the big picture answer may in-fact be a yes because here I am, reflecting
-                on my learning experience in a professional setting which is a great honor.</para>
-            <para>My group's project goal was to analyze the chord charts of two artists and
-                determine if there were any reasonable connections between them, musically or
-                lyrically. <emphasis role="ital">Spoiler alert: there weren't any!</emphasis> The
+            <para>The short-term answer, unfortunately, was <quote>no</quote>, because I held up my team working on
+                something that I actually completed with regular expressions search-and-replace operations
+                in less than a quarter of the time I spent on iXML.
+                However, the big picture answer may in fact be a <quote>yes</quote>, because here I am, reflecting
+                on my learning experience in a professional setting which is a great honor.
+                <!-- ebb: SOMEWHERE in this section (after you've presented the code blocks), 
+                    reflect a bit more on how the ixml was different from the regex? 
+                
+                FOOD FOR THOUGHT: 
+                     Is there something about chord notation that *declares* itself to be markup in its own right,
+                     that invites us to see it and declare it as nodes, in line with the idea of invisible XML?
+                     (Maybe this is a good moment to review and cite Norm Tovey-Walsh (or others) on the purpose/idea
+                     of invisible XML.) 
+                     How is the treatment of chord notation as invisible XML different from treating it as raw strings for
+                     regex patterns-matching? 
+                     
+                     AND where did this get to be too much for invisible XML to handle? 
+                    
+                -->
+            </para>
+            <para>The project goal for my team was to analyze the chord charts of two musical artists and
+                determine if there were any meaningful comparisons between them, musically or
+                lyrically. <emphasis role="ital">Spoiler alert: our findings were inconclusive!</emphasis> The
                 data we extracted from the documents resulted in some nice data visualizations, but
-                unfortunately, we didn't take it far enough to draw any of those conclusions between
-                the two chosen artists. So, for me, the main takeaway was the process in which we
+                unfortunately, we didn’t take it far enough to draw any of those conclusions between
+                the two chosen artists. So, for me, the main takeaway from this project was <!-- surprisingly? --> the process in which we
                 obtained the data, including of course, iXML and an XProc pipeline.</para>
-            <para>My main task within this project was the transformation of the raw text into
+            <para>My main task for this project was the transformation of the raw text into
                 something the rest of the team could process with various Python tools and display
                 on our website. This became my task largely because of my role as a battle-tester of
                 the new markup tools. Conversely, my battle-tester status motivated me further to
