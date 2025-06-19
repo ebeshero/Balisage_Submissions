@@ -265,18 +265,16 @@
             <para>Michael again! Dr. Beshero-Bondar deemed me an <quote>optimally motivated
                     student</quote> because I did the work (relatively on time) and was able to
                 grasp iXML and XProc enough to take it further than what most other students
-                attempted to do. The big question for me was: <quote>Are these technologies worth incorporating
-                    into my group’s semester project?</quote>
+                attempted to do. The big question for me was: <quote>Are these technologies worth
+                    incorporating into my group’s semester project?</quote>
             </para>
-            <para>The short-term answer, unfortunately, was <quote>no</quote>, because I held up my team working on
-                something that I actually completed with regular expressions search-and-replace operations
-                in less than a quarter of the time I spent on iXML.
-                However, the big picture answer may in fact be a <quote>yes</quote>, because here I am, reflecting
-                on my learning experience in a professional setting which is a great honor.
-                <!-- ebb: SOMEWHERE in this section (after you've presented the code blocks), 
-                    reflect a bit more on how the ixml was different from the regex? 
-                
-                FOOD FOR THOUGHT: 
+            <para>The short-term answer, unfortunately, was <quote>no</quote>, because I held up my
+                team working on something that I actually completed with regular expressions
+                search-and-replace operations in less than a quarter of the time I spent on iXML.
+                However, the big picture answer may in fact be a <quote>yes</quote>, because here I
+                am, reflecting on my learning experience in a professional setting which is a great
+                honor.</para>
+            <!-- ebb: FOOD FOR THOUGHT: 
                      Is there something about chord notation that *declares* itself to be markup in its own right,
                      that invites us to see it and declare it as nodes, in line with the idea of invisible XML?
                      (Maybe this is a good moment to review and cite Norm Tovey-Walsh (or others) on the purpose/idea
@@ -287,14 +285,14 @@
                      AND where did this get to be too much for invisible XML to handle? 
                     
                 -->
-            </para>
-            <para>The project goal for my team was to analyze the chord charts of two musical artists and
-                determine if there were any meaningful comparisons between them, musically or
-                lyrically. <emphasis role="ital">Spoiler alert: our findings were inconclusive!</emphasis> The
-                data we extracted from the documents resulted in some nice data visualizations, but
-                unfortunately, we didn’t take it far enough to draw any of those conclusions between
-                the two chosen artists. So, for me, the main takeaway from this project was <!-- surprisingly? --> the process in which we
-                obtained the data, including of course, iXML and an XProc pipeline.</para>
+            <para>The project goal for my team was to analyze the chord charts of two musical
+                artists and determine if there were any meaningful comparisons between them,
+                musically or lyrically. <emphasis role="ital">Spoiler alert: our findings were
+                    inconclusive!</emphasis> The data we extracted from the documents resulted in
+                some nice data visualizations, but unfortunately, we didn’t take it far enough to
+                draw any of those conclusions between the two chosen artists. So, for me, the main
+                takeaway from this project was, unexpectedly, the process in which we obtained the
+                data, including of course, iXML and an XProc pipeline.</para>
             <para>My main task for this project was the transformation of the raw text into
                 something the rest of the team could process with various Python tools and display
                 on our website. This became my task largely because of my role as a battle-tester of
@@ -303,12 +301,30 @@
                 what I had learned.</para>
             <section>
                 <title>Implementation</title>
-                <para></para>
+                <para>My implementation of raw text transformation began by sketching out what the
+                    process would look like (a pipeline). After some basic XML structure, I knew
+                    that I would first need to identify the beginning and end of each section of the
+                    songs (Verse, Chorus, etc.), which were separated by two blank lines. Then, I
+                    would need to separate chords from lyrics within those sections. Finally, some
+                    additional processing would be needed to identify individual chords for counting
+                    purposes and to extract either just the chords/lyrics for analysis.</para>
+                <para><emphasis role="ital">Ideally, the raw text would have been proofread and
+                        fixed more thoroughly. It became apparent that lines were not separated
+                        logically as they would be if I or a professional made the chord charts.
+                        Instead of the lines being divided by musical phrases/chord progressions,
+                        they seemed to be divided by simply what looked the best on the page. This
+                        limited our ability to analyze actual chord progressions, so instead we
+                        focused on chord usage per song/artist.</emphasis></para>
+                <para> </para>
 
-
-            <para>
-                <programlisting xml:space="preserve">Sample code block</programlisting>
-            </para>
+                <para>
+                    <programlisting xml:space="preserve">Sample code block</programlisting>
+                </para>
+            </section>
+            <section>
+                <title>Reflection</title>
+                <!-- ebb: SOMEWHERE in this section (after you've presented the code blocks), 
+                    reflect a bit more on how the ixml was different from the regex? -->
             </section>
         </section>
     </section>
