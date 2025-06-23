@@ -258,8 +258,8 @@
         </section>
         <section>
 
-            <title>GretaVanFleet Chord Chart Analysis: what iXML looks like in a large-scale student
-                project</title>
+            <title>GretaVanZeppelin Chord Chart Analysis: what iXML looks like in a large-scale
+                student project</title>
             <subtitle>The Optimally Motivated Student Experience</subtitle>
             <!-- What Michael did and how well it succeeded. (Can include images / links to project etc) -->
             <para>Michael again! Dr. Beshero-Bondar deemed me an <quote>optimally motivated
@@ -268,23 +268,13 @@
                 attempted to do. The big question for me was: <quote>Are these technologies worth
                     incorporating into my group’s semester project?</quote>
             </para>
+            <para><programlisting><emphasis role="ital">My semester project's website is located <link xlink:href="https://afish2003.github.io/GretaVanZeppelin/">here</link></emphasis></programlisting></para>
             <para>The short-term answer, unfortunately, was <quote>no</quote>, because I held up my
                 team working on something that I actually completed with regular expressions
                 search-and-replace operations in less than a quarter of the time I spent on iXML.
                 However, the big picture answer may in fact be a <quote>yes</quote>, because here I
                 am, reflecting on my learning experience in a professional setting which is a great
                 honor.</para>
-            <!-- ebb: FOOD FOR THOUGHT: 
-                     Is there something about chord notation that *declares* itself to be markup in its own right,
-                     that invites us to see it and declare it as nodes, in line with the idea of invisible XML?
-                     (Maybe this is a good moment to review and cite Norm Tovey-Walsh (or others) on the purpose/idea
-                     of invisible XML.) 
-                     How is the treatment of chord notation as invisible XML different from treating it as raw strings for
-                     regex patterns-matching? 
-                     
-                     AND where did this get to be too much for invisible XML to handle? 
-                    
-                -->
             <para>The project goal for my team was to analyze the chord charts of two musical
                 artists and determine if there were any meaningful comparisons between them,
                 musically or lyrically. <emphasis role="ital">Spoiler alert: our findings were
@@ -303,11 +293,12 @@
                 <title>Implementation</title>
                 <para>My implementation of raw text transformation began by sketching out what the
                     process would look like (a pipeline). After some basic XML structure, I knew
-                    that I would first need to identify the beginning and end of each section of the
-                    songs (Verse, Chorus, etc.), which were separated by two blank lines. Then, I
-                    would need to separate chords from lyrics within those sections. Finally, some
-                    additional processing would be needed to identify individual chords for counting
-                    purposes and to extract either just the chords/lyrics for analysis.</para>
+                    that I would first need to find the two blank lines that separated the
+                    beginnings and endings of each section (Verse, Chorus, etc.) in the song files.
+                    Then, I would need to separate chords from lyrics within those sections.
+                    Finally, some additional processing would be needed to identify individual
+                    chords for counting purposes and to extract either just the chords or just the
+                    lyrics for analysis.</para>
                 <para><emphasis role="ital">Ideally, the raw text would have been proofread and
                         fixed more thoroughly. It became apparent that lines were not separated
                         logically as they would be if I or a professional made the chord charts.
@@ -315,11 +306,93 @@
                         they seemed to be divided by simply what looked the best on the page. This
                         limited our ability to analyze actual chord progressions, so instead we
                         focused on chord usage per song/artist.</emphasis></para>
-                <para> </para>
-
+                <para><emphasis role="ital">An example of this inconsistent formatting is shown
+                        below. Each chord is 1 measure long, but the original formatting confusingly
+                        makes it seem more complex than that.</emphasis></para>
                 <para>
-                    <programlisting xml:space="preserve">Sample code block</programlisting>
+                    <programlisting xml:space="preserve"><emphasis role="ital">(from Greta Van Fleet's song <quote><link xlink:href="https://github.com/afish2003/GretaVanZeppelin/blob/main/pipeline/raw-text/Greta/fromTheFires/song-03.txt">Flower Power</link></quote>)</emphasis>
+
+<emphasis role="bold">Original:</emphasis>
+[Chorus]
+A
+Turn tonight, firelight
+D
+Star shines in her eye
+A                   D
+ Makes me feel like I'm alive
+                   A
+She's outta sight, yeah
+D
+Aw yeah
+        A                             D
+She's alright, she's alright, she's alright
+                         F    G
+She's outta sight, outta sight
+
+<emphasis role="bold">Ideally edited (for the purpose of this example):</emphasis>
+[Chorus]
+A
+Turn tonight, firelight
+D
+Star shines in her eye
+A
+ Makes me feel like 
+D
+I'm alive, she's outta sight
+A
+Yeah
+D
+Aw yeah
+           A
+She's al - right, she's alright
+           D
+She's al - right, she's outta sight
+      F         G
+Outta sight</programlisting>
                 </para>
+                <para>One more important note about the raw text: the chords are placed directly
+                    over the word, or syllable of the word (example: al -
+                    <emphasis>r</emphasis>ight), that is being sung when that chord is played. In
+                    the above example, the chords were placed properly above the words; the easiest
+                    way for me to check this is to listen to the song and pay attention to when the
+                    chord changes. In some of the chord charts, I noticed that less care was taken
+                    to preserve the placement of the chords. For this reason, combined with the
+                    sometimes confusing line divisions, I made the decision that we would not make
+                    the effort to preserve the chords' placement with the lyrics. There are likely
+                    ways to accomplish this, but I personally can’t see the benefits of it in this
+                    project other than beautifully &amp; accurately displaying the final XML output. </para>
+                <para>There is, however, something to be said for noting the duration of the chords
+                    in the markup. My preliminary research into the <link
+                        xlink:href="https://music-encoding.org/">Music Encoding Initiative
+                        (MEI)</link> showed that they use an attribute <code>@dur</code> in their
+                        <code>&lt;chord&gt;</code> elements to indicate the duration of the chord.
+                    This would allow for chord progressions to be analyzed more completely by our
+                    Python analysis tools without having to preserve the spacing between the chords
+                    and make the technology understand that each line is, say, one bar. This,
+                    however, was not within the scope of this project, because unless there is an AI
+                    tool that can accurately listen to music and recognize chord changes, the
+                    durations of the chords would have to be marked by hand for every chord in every
+                    song. </para>
+                <para>All of this begs the question: <quote>Is chord notation declaring itself to be
+                        markup in its own right?</quote> What is an easier form of music for a lot
+                    of musicians to read is not as easy for a computer to understand because of the
+                    implicit attributes encoded into chord charts. Is it worth encoding chord charts
+                    so that computers can understand them? MIDI files store musical notation data
+                    that a computer can output as
+                    music.<!-- mrs7068: didn't finish this thought. Want to make sure it's worth finishing, not sure where I'm going or how to tie directly into iXML-->
+                    But anyways, back to the iXML!</para>
+                <!-- ebb: FOOD FOR THOUGHT: 
+                     Is there something about chord notation that *declares* itself to be markup in its own right,
+                     that invites us to see it and declare it as nodes, in line with the idea of invisible XML?
+                     (Maybe this is a good moment to review and cite Norm Tovey-Walsh (or others) on the purpose/idea
+                     of invisible XML.) 
+                     How is the treatment of chord notation as invisible XML different from treating it as raw strings for
+                     regex patterns-matching? 
+                     
+                     AND where did this get to be too much for invisible XML to handle? 
+                -->
+                
+                <!-- mrs7068: finally getting to ixml implementation here-->
             </section>
             <section>
                 <title>Reflection</title>
