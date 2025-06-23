@@ -31,7 +31,7 @@
       }
     </style>
       <link rel="stylesheet" href="balisage-proceedings.css" type="text/css">
-      <meta name="keywords" content="invisible XML, ixml, XProc, regular expressions, grammar, schema, declarative markup, declarative methods, imperative methods, Python, XSLT">
+      <meta name="keywords" content="invisible XML, ixml, XProc, music encoding, ChordPro, MEI, MusicXML, perl, regular expressions, grammar, schema, declarative markup, declarative methods, imperative methods, Python, XSLT">
       <link id="favicon" rel="shortcut icon" type="image/png" href="http://balisage.net/favicon.ico">
       <!--balisage-html.xsl--></head>
    <body>
@@ -235,7 +235,7 @@
                      <div id="index-mast">
                         <div class="content">
                            <h1 class="article-title" id="d3e5">Balisage Paper: Is Invisible XML Ready for Undergraduates?</h1>
-                           <h2 class="subtitle">Trying ixml and XProc with Regular Expressions, Relax NG, XSLT, and Python in an
+                           <h2 class="subtitle">Trying ixml and XProc on a Music Analysis Project in an
                               Undergraduate Text Analysis Course</h2>
                            <details class="mast-box">
                               <summary class="title">Elisa E. Beshero-Bondar</summary>
@@ -300,29 +300,46 @@
                                  experience of the pipeline.</p>
                               <p id="d3e13">This year’s course tried a different approach. Students were taught iXML grammars
                                  as a way to prepare XML for analysis and XProc for pipelining. Regular expression
-                                 matching was accomplished via XSLT, and the entire XML stack was used before
+                                 matching involved working with XSLT, and the entire XML stack was used before
                                  approaching Python. This paper will share what students have to gain from learning
                                  how to install and tinker with software in alpha stages and test how well it works
                                  across platforms. It will also share some areas that challenged students and
                                  professors alike, as well as suggestions on best practices in guiding people to
-                                 prepare processing pipelines (with XProc) that incorporate ixml. Further, this paper
-                                 will reflect on why this adventure was worthwhile.</p>
+                                 prepare processing pipelines (with XProc) that incorporate invisible XML. Further,
+                                 this paper will reflect on why this adventure was worthwhile.</p>
                            </details>
                            <details class="toc">
                               <summary>
                                  <h2 class="inline-heading">Table of Contents</h2>
                               </summary>
                               <dl>
-                                 <dt><span class="section"><a href="#d3e99" class="toc">Context: The Large-Scale Text Analysis Course at Penn State Behrend</a></span></dt>
+                                 <dt><span class="section"><a href="#d3e110" class="toc">Context: The Large-Scale Text Analysis Course at Penn State Behrend</a></span></dt>
                                  <dd>
                                     <dl>
-                                       <dt><span class="section"><a href="#d3e177" class="toc">Developing Command Line Fluency: Learning how to install software in alpha
+                                       <dt><span class="section"><a href="#d3e190" class="toc">Introducing the Battle-Testing Team</a></span></dt>
+                                       <dt><span class="section"><a href="#d3e211" class="toc">Developing Command Line Fluency: Learning how to install iXML and XProc software in
+                                                alpha
                                                 development</a></span></dt>
-                                       <dt><span class="section"><a href="#d3e183" class="toc">Introducing Pipelines with XProc</a></span></dt>
-                                       <dt><span class="section"><a href="#d3e189" class="toc">The Optimally Motivated Student Experience</a></span></dt>
+                                       <dt><span class="section"><a href="#d3e217" class="toc">Introductory material on iXML and XProc</a></span></dt>
                                     </dl>
                                  </dd>
-                                 <dt><span class="section"><a href="#d3e202" class="toc">What do we gain from learning and teaching invisible XML?</a></span></dt>
+                                 <dt><span class="section"><a href="#d3e225" class="toc">Invisible XML and the Music Analysis Project</a></span></dt>
+                                 <dd>
+                                    <dl>
+                                       <dt><span class="section"><a href="#d3e232" class="toc">A Project on Chord Chart Analysis: what iXML looks like in a large-scale
+                                                student project</a></span></dt>
+                                       <dd>
+                                          <dl>
+                                             <dt><span class="section"><a href="#d3e244" class="toc">Introducing the GranVanZeppelin Project</a></span></dt>
+                                             <dt><span class="section"><a href="#d3e269" class="toc">Background on Music Encoding</a></span></dt>
+                                             <dt><span class="section"><a href="#d3e275" class="toc">Document analysis and invented markup</a></span></dt>
+                                             <dt><span class="section"><a href="#d3e327" class="toc">Implementation and reflection on iXML in the Project</a></span></dt>
+                                             <dt><span class="section"><a href="#d3e332" class="toc">What if we had used ChordPro?: The Potential of iXML</a></span></dt>
+                                          </dl>
+                                       </dd>
+                                    </dl>
+                                 </dd>
+                                 <dt><span class="section"><a href="#d3e335" class="toc">What do we gain from learning and teaching invisible XML?</a></span></dt>
                               </dl>
                            </details>
                         </div>
@@ -333,7 +350,7 @@
             <nav id="index-mast" class="wide-mode" role="navigation">
                <div class="content">
                   <h1 class="article-title" id="d3e5">Balisage Paper: Is Invisible XML Ready for Undergraduates?</h1>
-                  <h2 class="subtitle">Trying ixml and XProc with Regular Expressions, Relax NG, XSLT, and Python in an
+                  <h2 class="subtitle">Trying ixml and XProc on a Music Analysis Project in an
                      Undergraduate Text Analysis Course</h2>
                   <details class="mast-box">
                      <summary class="title">Elisa E. Beshero-Bondar</summary>
@@ -398,29 +415,46 @@
                         experience of the pipeline.</p>
                      <p id="d3e13">This year’s course tried a different approach. Students were taught iXML grammars
                         as a way to prepare XML for analysis and XProc for pipelining. Regular expression
-                        matching was accomplished via XSLT, and the entire XML stack was used before
+                        matching involved working with XSLT, and the entire XML stack was used before
                         approaching Python. This paper will share what students have to gain from learning
                         how to install and tinker with software in alpha stages and test how well it works
                         across platforms. It will also share some areas that challenged students and
                         professors alike, as well as suggestions on best practices in guiding people to
-                        prepare processing pipelines (with XProc) that incorporate ixml. Further, this paper
-                        will reflect on why this adventure was worthwhile.</p>
+                        prepare processing pipelines (with XProc) that incorporate invisible XML. Further,
+                        this paper will reflect on why this adventure was worthwhile.</p>
                   </details>
                   <details class="toc">
                      <summary>
                         <h2 class="inline-heading">Table of Contents</h2>
                      </summary>
                      <dl>
-                        <dt><span class="section"><a href="#d3e99" class="toc">Context: The Large-Scale Text Analysis Course at Penn State Behrend</a></span></dt>
+                        <dt><span class="section"><a href="#d3e110" class="toc">Context: The Large-Scale Text Analysis Course at Penn State Behrend</a></span></dt>
                         <dd>
                            <dl>
-                              <dt><span class="section"><a href="#d3e177" class="toc">Developing Command Line Fluency: Learning how to install software in alpha
+                              <dt><span class="section"><a href="#d3e190" class="toc">Introducing the Battle-Testing Team</a></span></dt>
+                              <dt><span class="section"><a href="#d3e211" class="toc">Developing Command Line Fluency: Learning how to install iXML and XProc software in
+                                       alpha
                                        development</a></span></dt>
-                              <dt><span class="section"><a href="#d3e183" class="toc">Introducing Pipelines with XProc</a></span></dt>
-                              <dt><span class="section"><a href="#d3e189" class="toc">The Optimally Motivated Student Experience</a></span></dt>
+                              <dt><span class="section"><a href="#d3e217" class="toc">Introductory material on iXML and XProc</a></span></dt>
                            </dl>
                         </dd>
-                        <dt><span class="section"><a href="#d3e202" class="toc">What do we gain from learning and teaching invisible XML?</a></span></dt>
+                        <dt><span class="section"><a href="#d3e225" class="toc">Invisible XML and the Music Analysis Project</a></span></dt>
+                        <dd>
+                           <dl>
+                              <dt><span class="section"><a href="#d3e232" class="toc">A Project on Chord Chart Analysis: what iXML looks like in a large-scale
+                                       student project</a></span></dt>
+                              <dd>
+                                 <dl>
+                                    <dt><span class="section"><a href="#d3e244" class="toc">Introducing the GranVanZeppelin Project</a></span></dt>
+                                    <dt><span class="section"><a href="#d3e269" class="toc">Background on Music Encoding</a></span></dt>
+                                    <dt><span class="section"><a href="#d3e275" class="toc">Document analysis and invented markup</a></span></dt>
+                                    <dt><span class="section"><a href="#d3e327" class="toc">Implementation and reflection on iXML in the Project</a></span></dt>
+                                    <dt><span class="section"><a href="#d3e332" class="toc">What if we had used ChordPro?: The Potential of iXML</a></span></dt>
+                                 </dl>
+                              </dd>
+                           </dl>
+                        </dd>
+                        <dt><span class="section"><a href="#d3e335" class="toc">What do we gain from learning and teaching invisible XML?</a></span></dt>
                      </dl>
                   </details>
                </div>
@@ -428,12 +462,11 @@
             <main id="main" role="main" aria-label="Main Content">
                <div class="article">
                   <h1 class="article-title" id="d3e5">Balisage Paper: Is Invisible XML Ready for Undergraduates?</h1>
-                  <h2 class="subtitle">Trying ixml and XProc with Regular Expressions, Relax NG, XSLT, and Python in an
+                  <h2 class="subtitle">Trying ixml and XProc on a Music Analysis Project in an
                      Undergraduate Text Analysis Course</h2>
-                  <div class="section" id="d3e99">
+                  <div class="section" id="d3e110">
                      <h2 class="title" style="clear: both">Context: The Large-Scale Text Analysis Course at Penn State Behrend</h2>
-                     <p id="d3e102"> The Large-Scale Text Analysis class (Digit 210) is taught in spring semesters as
-                        part
+                     <p id="d3e113">The Large-Scale Text Analysis class (Digit 210) is taught in spring semesters as part
                         of a multiple-semester digital humanities core sequence in the Digital Media, Arts,
                         and
                         Technology major: Students usually came to this class with previous experience from
@@ -445,7 +478,7 @@
                         and
                         a few tests with an emphasis on students' applying what they learn to develop semester
                         projects in small teams.</p>
-                     <p id="d3e104">Digit 210 is usually understood to be <q>the Python-and-Regex course</q>. A
+                     <p id="d3e115">Digit 210 is usually understood to be <q>the Python-and-Regex course</q>. A
                         typical semester would involve orienting students to natural language processing in
                         Python and preparing text corpora for analysis. In this context, XML was a helpful
                         (but
@@ -476,12 +509,12 @@
                         students apply XPath and XQuery directly as a pipeline process within their Python.
                         Thus, Python has traditionally come first in this course and dominated the class
                         experience of developing a pipeline algorithm for analyzing text corpora.</p>
-                     <p id="d3e115">Perhaps the 2020s are a decade inviting us to resist complacency, particularly in
+                     <p id="d3e126">Perhaps the 2020s are a decade inviting us to resist complacency, particularly in
                         the
                         organizing of teaching syllabi. In Spring 2025, motivated greatly by the interesting
                         opportunities of invisible XML and the creative affordances of SVG discussed in previous
                         years at Balisage, we changed direction and put XML technologies much more in the
-                        foreground.<sup class="fn-label"><a href="#d3e117" class="footnoteref" id="d3e117-ref">[1]</a></sup> This year, our students began the course by learning to write SVG and think
+                        foreground.<sup class="fn-label"><a href="#d3e128" class="footnoteref" id="d3e128-ref">[1]</a></sup> This year, our students began the course by learning to write SVG and think
                         about creative ways to visualize data by programmatically scripting SVG with XSLT.
                         The
                         SVG data visualization unit previously came at the end of the Python-dominated course,
@@ -502,7 +535,7 @@
                         nodes based on regular expression matches and non-matches. This set the stage for
                         the
                         new unit on invisible XML and XProc.</p>
-                     <p id="d3e175">All this activity concentrated on XML processing before the students wrote any Python.
+                     <p id="d3e186">All this activity concentrated on XML processing before the students wrote any Python.
                         The new priority on XML not only helped students review and develop XSLT skills
                         introduced in the previous semester, but it also gave students an unusual experience
                         with writing grammars and seeing the relationships and differences between regular
@@ -516,31 +549,209 @@
                         alpha stages. Was invisible XML ready for experimentation by undergraduates, and was
                         the
                         experience worth deferring their attention to Python processing?</p>
-                     <div class="section" id="d3e177">
-                        <h3 class="title" style="clear: both">Developing Command Line Fluency: Learning how to install software in alpha
+                     <p id="d3e188">This semester, everything was new and different, and here we break down the most
+                        challenging and learning-intensive experiences for students confronting invisible
+                        XML
+                        and XProc for the first time.</p>
+                     <div class="section" id="d3e190">
+                        <h3 class="title" style="clear: both">Introducing the Battle-Testing Team</h3>
+                        <h4 class="subtitle" style="clear: both">Preparing for a Cross-Platform educationl experiment</h4>
+                        <p id="d3e196">Hello world! I'm Michael Simons, and I was one of the
+                           <q>battle-testers</q> for the new iXML &amp; XProc unit in our DIGIT 210
+                           class. I was one of three who signed up to assist Dr. Beshero-Bondar in trying out
+                           some new exciting XML technologies to be taught to the rest of our class. I was
+                           joined by Dannika, who was taking the course with me, and Caleb, who had taken the
+                           course the previous year in its previous form. Dannika is a student who has
+                           attention to detail and great leadership qualities but likely would have not gained
+                           as much from iXML and XProc if she had not been a behind-the-scenes battle-tester.
+                           Caleb is also a highly motivated student and leader, and one of his main
+                           contributions was working through the challenges of installing iXML and XProc
+                           processors in a Windows environment, as Dr. Beshero-Bondar, Dannika and myself are
+                           all MacOS users.</p>
+                        <p id="d3e201">Our group of battle-testers was largely responsible for, most importantly, getting
+                           ahead of the class and working our way through learning iXML and XProc before our
+                           peers, so that we could 
+                           <div class="orderedlist" id="d3e203">
+                              <ol style="list-style-type: decimal;">
+                                 <li id="d3e204">
+                                    <p id="d3e205">Write instructions for installation and configuration that we felt our
+                                       peers would be able to easily follow</p>
+                                 </li>
+                                 <li id="d3e207">
+                                    <p id="d3e208">Assist our peers when problems arose.</p>
+                                 </li>
+                              </ol>
+                           </div> Like I mentioned about Dannika, we all gained more knowledge about
+                           iXML and XProc than we would have otherwise because of the problems we worked
+                           through together, so that is something I value greatly about this experience.</p>
+                     </div>
+                     <div class="section" id="d3e211">
+                        <h3 class="title" style="clear: both">Developing Command Line Fluency: Learning how to install iXML and XProc software in
+                           alpha
                            development</h3>
-                        <p id="d3e180">
+                        <p id="d3e214">
                            </p>
                      </div>
-                     <div class="section" id="d3e183">
-                        <h3 class="title" style="clear: both">Introducing Pipelines with XProc</h3>
-                        <p id="d3e186">
-                           </p>
-                     </div>
-                     <div class="section" id="d3e189">
-                        <h3 class="title" style="clear: both">The Optimally Motivated Student Experience</h3>
-                        <h4 class="subtitle" style="clear: both">GretaVanFleet Chord Chart Analysis: what iXML looks like in a large-scale
-                           student project</h4>
-                        <p id="d3e195"> </p>
-                        <p id="d3e197">
-                           
-                           <pre class="programlisting" id="d3e199">Sample code block</pre>
+                     <div class="section" id="d3e217">
+                        <h3 class="title" style="clear: both">Introductory material on iXML and XProc</h3>
+                        <p id="d3e220"> 
                            </p>
                      </div>
                   </div>
-                  <div class="section" id="d3e202">
+                  <div class="section" id="d3e225">
+                     <h2 class="title" style="clear: both">Invisible XML and the Music Analysis Project</h2>
+                     <h3 class="subtitle" style="clear: both">The Optimally Motivated Student Experience</h3>
+                     <p id="d3e230">What we hoped initially was that students would be inspired to try out these technologies
+                        on their
+                        own projects. And some students did, but we learned some unexpected things about their
+                        potential application, 
+                        especially to the field of music encoding. </p>
+                     <div class="section" id="d3e232">
+                        <h3 class="title" style="clear: both">A Project on Chord Chart Analysis: what iXML looks like in a large-scale
+                           student project</h3>
+                        <p id="d3e236">Michael again! Dr. Beshero-Bondar deemed me an <q>optimally motivated
+                              student</q> because I did the work (relatively on time) and was able to
+                           grasp iXML and XProc enough to take it further than what most other students
+                           attempted to do. The big question for me was: <q>Are these technologies worth
+                              incorporating into my group’s semester project?</q>
+                           </p>
+                        <div class="section" id="d3e244">
+                           <h4 class="title" style="clear: both">Introducing the GranVanZeppelin Project</h4>
+                           <p id="d3e247">
+                              <pre class="programlisting" id="d3e248"><span class="ital">My semester project's website is located <a href="https://afish2003.github.io/GretaVanZeppelin/" class="link">here</a></span></pre>
+                           </p>
+                           <p id="d3e254">The short-term answer, unfortunately, was <q>no</q>, because I held up my
+                              team working on something that I actually completed with regular expressions
+                              search-and-replace operations in less than a quarter of the time I spent on iXML.
+                              However, the big picture answer may in fact be <q>yes</q>, because here I
+                              am, reflecting on my learning experience in a professional setting which is a great
+                              honor.</p>
+                           <p id="d3e262">The project goal for my team was to analyze the chord charts of two musical
+                              artists and determine if there were any meaningful comparisons between them,
+                              musically or lyrically. <span class="ital">Spoiler alert: our findings were
+                                 inconclusive!</span> The data we extracted from the documents resulted in
+                              some nice data visualizations, but unfortunately, we didn’t take it far enough to
+                              draw any of those conclusions between the two chosen artists. So, for me, the main
+                              takeaway from this project was, unexpectedly, the process in which we obtained the
+                              data, including of course, iXML and an XProc pipeline.</p>
+                           <p id="d3e267">My main task for this project was the transformation of the raw text into
+                              something the rest of the team could process with various Python tools and display
+                              on our website. This became my task largely because of my role as a battle-tester
+                              of
+                              the new markup tools. Conversely, my battle-tester status motivated me further to
+                              include iXML and XProc in our project because I felt a strong desire to implement
+                              what I had learned.</p>
+                        </div>
+                        <div class="section" id="d3e269">
+                           <h4 class="title" style="clear: both">Background on Music Encoding</h4>
+                           <h5 class="subtitle" style="clear: both">Including some things we wished we knew when we started the project</h5>
+                        </div>
+                        <div class="section" id="d3e275">
+                           <h4 class="title" style="clear: both">Document analysis and invented markup</h4>
+                           <p id="d3e278">My implementation of raw text transformation began by sketching out what the
+                              process would look like (a pipeline). After some basic XML structure, I knew
+                              that I would first need to find the two blank lines that separated the
+                              beginnings and endings of each section (Verse, Chorus, etc.) in the song files.
+                              Then, I would need to separate chords from lyrics within those sections.
+                              Finally, some additional processing would be needed to identify individual
+                              chords for counting purposes and to extract either just the chords or just the
+                              lyrics for analysis.</p>
+                           <p id="d3e280"><span class="ital">Ideally, the raw text would have been proofread and
+                                 fixed more thoroughly. It became apparent that lines were not separated
+                                 logically as they would be if I or a professional made the chord charts.
+                                 Instead of the lines being divided by musical phrases/chord progressions,
+                                 they seemed to be divided by simply what looked the best on the page. This
+                                 limited our ability to analyze actual chord progressions, so instead we
+                                 focused on chord usage per song/artist.</span></p>
+                           <p id="d3e283"><span class="ital">An example of this inconsistent formatting is shown
+                                 below. Each chord is 1 measure long, but the original formatting confusingly
+                                 makes it seem more complex than that.</span></p>
+                           <p id="d3e286">
+                              
+                              <pre class="programlisting" id="d3e288"><span class="ital">(from Greta Van Fleet's song <q><a href="https://github.com/afish2003/GretaVanZeppelin/blob/main/pipeline/raw-text/Greta/fromTheFires/song-03.txt" class="link">Flower Power</a></q>)</span>
+
+<span class="bold">Original:</span>
+[Chorus]
+A
+Turn tonight, firelight
+D
+Star shines in her eye
+A                   D
+ Makes me feel like I'm alive
+                   A
+She's outta sight, yeah
+D
+Aw yeah
+        A                             D
+She's alright, she's alright, she's alright
+                         F    G
+She's outta sight, outta sight
+
+<span class="bold">Ideally edited (for the purpose of this example):</span>
+[Chorus]
+A
+Turn tonight, firelight
+D
+Star shines in her eye
+A
+ Makes me feel like 
+D
+I'm alive, she's outta sight
+A
+Yeah
+D
+Aw yeah
+           A
+She's al - right, she's alright
+           D
+She's al - right, she's outta sight
+      F         G
+Outta sight</pre>
+                              </p>
+                           <p id="d3e303">One more important note about the raw text: the chords are placed directly
+                              over the word, or syllable of the word (example: al -
+                              <span class="ital">r</span>ight), that is being sung when that chord is played. In
+                              the above example, the chords were placed properly above the words; the easiest
+                              way for me to check this is to listen to the song and pay attention to when the
+                              chord changes. In some of the chord charts, I noticed that less care was taken
+                              to preserve the placement of the chords. For this reason, combined with the
+                              sometimes confusing line divisions, I made the decision that we would not make
+                              the effort to preserve the chords' placement with the lyrics. There are likely
+                              ways to accomplish this, but I personally can’t see the benefits of it in this
+                              project other than beautifully &amp; accurately displaying the final XML output.
+                              The objective of the project wasn't to improve the displaying of the chord
+                              charts but rather to analyze them.</p>
+                           <p id="d3e308">There is, however, something to be said for noting the duration of the chords
+                              in the markup. My preliminary research into the <a href="https://music-encoding.org/" class="link">Music Encoding Initiative
+                                 (MEI)</a> showed that they use an attribute <code class="code">@dur</code> in their
+                              <code class="code">&lt;chord&gt;</code> elements to indicate the duration of the chord.
+                              This would allow for chord progressions to be analyzed more completely by our
+                              Python analysis tools without having to preserve the spacing between the chords
+                              and make the technology understand that each line is, say, one bar. This,
+                              however, was not within the scope of this project, because unless there is an AI
+                              tool that can accurately listen to music and recognize chord changes, the
+                              durations of the chords would have to be marked by hand for every chord in every
+                              song. </p>
+                           <p id="d3e319">All of this begs the question: <q>Is chord notation declaring itself to be
+                                 markup in its own right?</q> What is an easier form of music for a lot
+                              of musicians to read is not as easy for a computer to understand because of the
+                              implicit attributes encoded into chord charts. Is it worth encoding chord charts
+                              so that computers can understand them? MIDI files store musical notation data
+                              that a computer can output as
+                              music.
+                              But anyways, back to the iXML!</p>
+                        </div>
+                        <div class="section" id="d3e327">
+                           <h4 class="title" style="clear: both">Implementation and reflection on iXML in the Project</h4>
+                        </div>
+                        <div class="section" id="d3e332">
+                           <h4 class="title" style="clear: both">What if we had used ChordPro?: The Potential of iXML</h4>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="section" id="d3e335">
                      <h2 class="title" style="clear: both">What do we gain from learning and teaching invisible XML?</h2>
-                     <p id="d3e205">Was this worth the effort, and was invisible XML ready for undergraduates in an
+                     <p id="d3e338">Was this worth the effort, and was invisible XML ready for undergraduates in an
                         algorithmic text analysis course? Most student project teams were not motivated to
                         apply
                         invisible XML in their projects and we did not require them to do so. (We only required
@@ -576,7 +787,7 @@
                         to
                         more dimensions of expression for every meaningful and resonant word and punctuation
                         mark than prosaic instruction. </p>
-                     <p id="d3e226">Certainly for all its expressive power, invisible XML cannot replace the prosaic
+                     <p id="d3e359">Certainly for all its expressive power, invisible XML cannot replace the prosaic
                         versatility of regular expressions as a <q>Swiss-army knife</q> for many
                         different text analysis purposes. And we could have taught our course without it.
                         But
@@ -598,7 +809,7 @@
                         moving between declarative and imperative methods of text handling, and helped them
                         to
                         reflect on a certain fluidity of methods.</p>
-                     <p id="d3e237">Our experience of this course helped to bridge distinct cultures in text analysis
+                     <p id="d3e370">Our experience of this course helped to bridge distinct cultures in text analysis
                         that
                         are perhaps better connected than experienced in isolation. Perhaps we have found
                         a
@@ -614,22 +825,22 @@
                         experience of text, both as architectures and as streams. </p>
                   </div>
                   <div class="footnotes"><br><hr width="100" align="left">
-                     <div id="d3e117" class="footnote">
-                        <p><sup class="fn-label"><a href="#d3e117-ref" class="footnoteref">[1]</a></sup> Several papers in the Proceedings of Balisage:The Markup Conference vol. 29 (2024)
-                           demonstrated exciting
-                           applications of invisible XML connected to careful document planning and
-                           analysis with exciting implications for interface design. See Joseph Michael
-                           Courtney and Michael Robert Gryk, <q>Pulse, Parse, and Ponder: Using
-                              Invisible XML to Dissect a Scientific Domain Specific Language</q>,
-                           <a href="https://doi.org/10.4242/BalisageVol29.Courtney01" class="link">https://doi.org/10.4242/BalisageVol29.Courtney01</a>; Mary Holstege,
-                           <q>Invisible Fish: API Experimentation with InvisibleXML</q>,
-                           <a href="https://doi.org/10.4242/BalisageVol29.Holstege01" class="link">https://doi.org/10.4242/BalisageVol29.Holstege01</a>; John Lumley,
+                     <div id="d3e128" class="footnote">
+                        <p><sup class="fn-label"><a href="#d3e128-ref" class="footnoteref">[1]</a></sup> Several papers in the Proceedings of Balisage:The Markup Conference vol. 29
+                           (2024) demonstrated exciting applications of invisible XML connected to careful
+                           document planning and analysis with exciting implications for interface design.
+                           See Joseph Michael Courtney and Michael Robert Gryk, <q>Pulse, Parse, and
+                              Ponder: Using Invisible XML to Dissect a Scientific Domain Specific
+                              Language</q>, <a href="https://doi.org/10.4242/BalisageVol29.Courtney01" class="link">https://doi.org/10.4242/BalisageVol29.Courtney01</a>; Mary Holstege,
+                           <q>Invisible Fish: API Experimentation with InvisibleXML</q>, <a href="https://doi.org/10.4242/BalisageVol29.Holstege01" class="link">https://doi.org/10.4242/BalisageVol29.Holstege01</a>; John Lumley,
                            <q>Variations on an Invisible Theme: Using iXML to produce XML to
-                              produce iXML to produce ....</q> <a href="https://doi.org/10.4242/BalisageVol29.Lumley01" class="link">https://doi.org/10.4242/BalisageVol29.Lumley01</a>; Ari Nordström,
+                              produce iXML to produce ....</q>
+                           <a href="https://doi.org/10.4242/BalisageVol29.Lumley01" class="link">https://doi.org/10.4242/BalisageVol29.Lumley01</a>; Ari Nordström,
                            <q>Adventures in Mainframes, Text-based Messaging, and iXML</q>
                            <a href="https://doi.org/10.4242/BalisageVol29.Nordstrom01" class="link">https://doi.org/10.4242/BalisageVol29.Nordstrom01</a>; C. M.
                            Sperberg-McQueen, <q>From Word to XML via iXML: a Word-first XML workflow in
-                              the TLRR 2e project</q> <a href="https://doi.org/10.4242/BalisageVol29.Sperberg-McQueen01" class="link">https://doi.org/10.4242/BalisageVol29.Sperberg-McQueen01</a>; Bethan
+                              the TLRR 2e project</q>
+                           <a href="https://doi.org/10.4242/BalisageVol29.Sperberg-McQueen01" class="link">https://doi.org/10.4242/BalisageVol29.Sperberg-McQueen01</a>; Bethan
                            Tovey-Walsh, <q>When women do algorithms: a semi-generative approach to
                               overlay crochet with iXML and XSLT</q>
                            <a href="https://doi.org/10.4242/BalisageVol29.Tovey-Walsh01" class="link">https://doi.org/10.4242/BalisageVol29.Tovey-Walsh01</a>.</p>
@@ -637,7 +848,7 @@
                   </div>
                </div>
                <div id="author-keywords">
-                  <h5 class="keywords">Author's keywords for this paper:</h5> <span class="keyword">invisible XML</span>; <span class="keyword">ixml</span>; <span class="keyword">XProc</span>; <span class="keyword">regular expressions</span>; <span class="keyword">grammar</span>; <span class="keyword">schema</span>; <span class="keyword">declarative markup</span>; <span class="keyword">declarative methods</span>; <span class="keyword">imperative methods</span>; <span class="keyword">Python</span>; <span class="keyword">XSLT</span></div>
+                  <h5 class="keywords">Author's keywords for this paper:</h5> <span class="keyword">invisible XML</span>; <span class="keyword">ixml</span>; <span class="keyword">XProc</span>; <span class="keyword">music encoding</span>; <span class="keyword">ChordPro</span>; <span class="keyword">MEI</span>; <span class="keyword">MusicXML</span>; <span class="keyword">perl</span>; <span class="keyword">regular expressions</span>; <span class="keyword">grammar</span>; <span class="keyword">schema</span>; <span class="keyword">declarative markup</span>; <span class="keyword">declarative methods</span>; <span class="keyword">imperative methods</span>; <span class="keyword">Python</span>; <span class="keyword">XSLT</span></div>
                <div id="balisage-footer">
                   <h3>Balisage Series on Markup Technologies</h3>
                </div>

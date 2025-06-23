@@ -6,7 +6,7 @@
     version="5.0-subset Balisage-1.5">
 
     <title>Is Invisible XML Ready for Undergraduates?</title>
-    <subtitle>Trying ixml and XProc with Regular Expressions, Relax NG, XSLT, and Python in an
+    <subtitle>Trying ixml and XProc on a Music Analysis Project in an
         Undergraduate Text Analysis Course</subtitle>
     <info>
         <abstract>
@@ -99,6 +99,11 @@
             <keyword>invisible XML</keyword>
             <keyword>ixml</keyword>
             <keyword>XProc</keyword>
+            <keyword>music encoding</keyword>
+            <keyword>ChordPro</keyword>
+            <keyword>MEI</keyword>
+            <keyword>MusicXML</keyword>
+            <keyword>perl</keyword>
             <keyword>regular expressions</keyword>
             <keyword>grammar</keyword>
             <keyword>schema</keyword>
@@ -207,9 +212,6 @@
             improved their command line fluency. and introduced them to software development in
             alpha stages. Was invisible XML ready for experimentation by undergraduates, and was the
             experience worth deferring their attention to Python processing?</para>
-    </section>
-    <section>
-        <title>The Learning Experiences</title>
         <para>This semester, everything was new and different, and here we break down the most
             challenging and learning-intensive experiences for students confronting invisible XML
             and XProc for the first time.</para>
@@ -218,7 +220,7 @@
             <title>Introducing the Battle-Testing Team</title>
             <subtitle>Preparing for a Cross-Platform educationl experiment</subtitle>
             <para>Hello world! I'm Michael Simons, and I was one of the
-                    <quote>battle-testers</quote> for the new iXML &amp; XProc unit in our DIGIT 210
+                <quote>battle-testers</quote> for the new iXML &amp; XProc unit in our DIGIT 210
                 class. I was one of three who signed up to assist Dr. Beshero-Bondar in trying out
                 some new exciting XML technologies to be taught to the rest of our class. I was
                 joined by Dannika, who was taking the course with me, and Caleb, who had taken the
@@ -244,7 +246,7 @@
                 through together, so that is something I value greatly about this experience.</para>
         </section>
         <section>
-            <title>Developing Command Line Fluency: Learning how to install software in alpha
+            <title>Developing Command Line Fluency: Learning how to install iXML and XProc software in alpha
                 development</title>
             <para><!-- To cover: The challenge of testing and working across platforms
         
@@ -252,15 +254,22 @@
             </para>
         </section>
         <section>
-            <title>Introducing Pipelines with XProc</title>
-            <para><!-- XProc pipelines  -->
+            <title>Introductory material on iXML and XProc</title>
+            <para><!-- XProc pipelines  --> <!-- Dr. B to develop -->
             </para>
         </section>
+    </section>
+    <section>
+        <title>Invisible XML and the Music Analysis Project</title>
+        <subtitle>The Optimally Motivated Student Experience</subtitle>
+        <para>What we hoped initially was that students would be inspired to try out these technologies on their
+        own projects. And some students did, but we learned some unexpected things about their potential application, 
+        especially to the field of music encoding. </para>
         <section>
 
-            <title>GretaVanZeppelin Chord Chart Analysis: what iXML looks like in a large-scale
+            <title>A Project on Chord Chart Analysis: what iXML looks like in a large-scale
                 student project</title>
-            <subtitle>The Optimally Motivated Student Experience</subtitle>
+           
             <!-- What Michael did and how well it succeeded. (Can include images / links to project etc) -->
             <para>Michael again! Dr. Beshero-Bondar deemed me an <quote>optimally motivated
                     student</quote> because I did the work (relatively on time) and was able to
@@ -268,7 +277,10 @@
                 attempted to do. The big question for me was: <quote>Are these technologies worth
                     incorporating into my group’s semester project?</quote>
             </para>
-            <para><programlisting><emphasis role="ital">My semester project's website is located <link xlink:href="https://afish2003.github.io/GretaVanZeppelin/">here</link></emphasis></programlisting></para>
+            
+          <section>  
+              <title>Introducing the GranVanZeppelin Project</title>
+              <para><programlisting><emphasis role="ital">My semester project's website is located <link xlink:href="https://afish2003.github.io/GretaVanZeppelin/">here</link></emphasis></programlisting></para>
             <!-- Develop this with a few more sentences. How would I introduce this project to potential employers in an elevator pitch if those potential employers understood XML?-->
             <para>The short-term answer, unfortunately, was <quote>no</quote>, because I held up my
                 team working on something that I actually completed with regular expressions
@@ -276,6 +288,9 @@
                 However, the big picture answer may in fact be <quote>yes</quote>, because here I
                 am, reflecting on my learning experience in a professional setting which is a great
                 honor.</para>
+            
+          
+            
             <para>The project goal for my team was to analyze the chord charts of two musical
                 artists and determine if there were any meaningful comparisons between them,
                 musically or lyrically. <emphasis role="ital">Spoiler alert: our findings were
@@ -289,9 +304,26 @@
                 on our website. This became my task largely because of my role as a battle-tester of
                 the new markup tools. Conversely, my battle-tester status motivated me further to
                 include iXML and XProc in our project because I felt a strong desire to implement
-                what I had learned.</para>
+                what I had learned.</para></section>
             <section>
-                <title>Implementation</title>
+                <title>Background on Music Encoding</title>
+                <subtitle>Including some things we wished we knew when we started the project</subtitle>
+                <!-- Here discuss 
+                     * MEI (which the project was aware of)
+                     * Our Digit program's past experience with MEI, but not for analysis so much as playing via MIDI: (Locke Analysis Project): 
+                     https://newtfire.github.io/locke-anthology2.0/music.html 
+                     * What to use for a project that provides only chord notation? 
+                     * MusicXML vs. MEI (possibly useful?): See the GitHub Issue resources 
+                     (We turned away from these because they seemed too intricate to adapt...? Lots of emphasis on staff notation etc. )
+                     * Chord Pro: would have been wonderful to know about back in February! Because . . . 
+                     We'll come back to ChordPro later.
+                     
+                     * What we ultimately decided was to make our own invented markup specifically for analysis.
+
+                -->
+            </section>
+            <section>
+                <title>Document analysis and invented markup</title>
                 <para>My implementation of raw text transformation began by sketching out what the
                     process would look like (a pipeline). After some basic XML structure, I knew
                     that I would first need to find the two blank lines that separated the
@@ -368,7 +400,7 @@ Outta sight</programlisting>
                     in the markup. My preliminary research into the <link
                         xlink:href="https://music-encoding.org/">Music Encoding Initiative
                         (MEI)</link> showed that they use an attribute <code>@dur</code> in their
-                        <code>&lt;chord&gt;</code> elements to indicate the duration of the chord.
+                    <code>&lt;chord&gt;</code> elements to indicate the duration of the chord.
                     This would allow for chord progressions to be analyzed more completely by our
                     Python analysis tools without having to preserve the spacing between the chords
                     and make the technology understand that each line is, say, one bar. This,
@@ -394,13 +426,18 @@ Outta sight</programlisting>
                      
                      AND where did this get to be too much for invisible XML to handle? 
                 -->
-
-                <!-- mrs7068: finally getting to ixml implementation here-->
+                
+                
             </section>
             <section>
-                <title>Reflection</title>
-                <!-- ebb: SOMEWHERE in this section (after you've presented the code blocks), 
-                    reflect a bit more on how the ixml was different from the regex? -->
+                <title>Implementation and reflection on iXML in the Project</title>
+               
+                <!-- mrs7068: finally getting to ixml implementation here-->
+                <!-- ebb: Reflect a bit more on how the ixml was different from the regex? -->
+            </section>
+            <section>
+                <title>What if we had used ChordPro?: The Potential of iXML</title>
+               
             </section>
         </section>
     </section>
