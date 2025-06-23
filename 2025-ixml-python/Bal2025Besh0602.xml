@@ -269,6 +269,7 @@
                     incorporating into my group’s semester project?</quote>
             </para>
             <para><programlisting><emphasis role="ital">My semester project's website is located <link xlink:href="https://afish2003.github.io/GretaVanZeppelin/">here</link></emphasis></programlisting></para>
+            <!-- Develop this with a few more sentences. How would I introduce this project to potential employers in an elevator pitch if those potential employers understood XML?-->
             <para>The short-term answer, unfortunately, was <quote>no</quote>, because I held up my
                 team working on something that I actually completed with regular expressions
                 search-and-replace operations in less than a quarter of the time I spent on iXML.
@@ -360,7 +361,9 @@ Outta sight</programlisting>
                     sometimes confusing line divisions, I made the decision that we would not make
                     the effort to preserve the chords' placement with the lyrics. There are likely
                     ways to accomplish this, but I personally can’t see the benefits of it in this
-                    project other than beautifully &amp; accurately displaying the final XML output. </para>
+                    project other than beautifully &amp; accurately displaying the final XML output.
+                    The objective of the project wasn't to improve the displaying of the chord
+                    charts but rather to analyze them.</para>
                 <para>There is, however, something to be said for noting the duration of the chords
                     in the markup. My preliminary research into the <link
                         xlink:href="https://music-encoding.org/">Music Encoding Initiative
@@ -391,7 +394,7 @@ Outta sight</programlisting>
                      
                      AND where did this get to be too much for invisible XML to handle? 
                 -->
-                
+
                 <!-- mrs7068: finally getting to ixml implementation here-->
             </section>
             <section>
