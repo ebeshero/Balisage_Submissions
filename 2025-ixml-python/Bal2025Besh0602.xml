@@ -6,8 +6,8 @@
     version="5.0-subset Balisage-1.5">
 
     <title>Is Invisible XML Ready for Undergraduates?</title>
-    <subtitle>Trying ixml and XProc on a Music Analysis Project in an
-        Undergraduate Text Analysis Course</subtitle>
+    <subtitle>Trying iXML and XProc on a Music Analysis Project in an Undergraduate Text Analysis
+        Course</subtitle>
     <info>
         <abstract>
             <para>Is invisible XML ready for teaching university undergraduates? Is it a good idea
@@ -30,8 +30,34 @@
                 professors alike, as well as suggestions on best practices in guiding people to
                 prepare processing pipelines (with XProc) that incorporate invisible XML. Further,
                 this paper will reflect on why this adventure was worthwhile.</para>
-
         </abstract>
+        <author>
+            <personname>
+                <firstname>Michael</firstname>
+                <othername>Roy</othername>
+                <surname>Simons</surname>
+            </personname>
+            <personblurb>
+                <para>Michael Simons is a Digital Media, Arts, and Technology (DIGIT) student at
+                    Penn State Behrend. After two years of studying Computer Science, he decided to
+                    pivot to Dr. Beshero-Bondar’s Digit program as it allows for greater creativity
+                    and a more focused path while still learning how to get the most out of today’s
+                    innovative technologies. In this program, he’s taken a deep dive into the XML
+                    stack where he enjoys using tools like XSLT—and more recently, ixml and XProc—to
+                    create rich markup that is both satisfyingly organized and able to be processed
+                    in interesting ways. Michael’s main passion is music, which he utilized to
+                    develop a <link xlink:href="https://afish2003.github.io/GretaVanZeppelin/"
+                        xlink:type="simple" xlink:show="new" xlink:actuate="onRequest">large-scale
+                        text analysis project</link> comparing the lyrics and chord progressions of
+                    seemingly similar artists.</para>
+            </personblurb>
+            <affiliation>
+                <jobtitle>Student</jobtitle>
+                <jobtitle>Reseearch Assistant / Coding Mentor</jobtitle>
+                <orgname>Penn State Erie, The Behrend College</orgname>
+            </affiliation>
+            <email>mrs7068@psu.edu</email>
+        </author>
 
         <author>
             <personname>
@@ -67,34 +93,6 @@
             </affiliation>
             <email>eeb4@psu.edu</email>
         </author>
-        <author>
-            <personname>
-                <firstname>Michael</firstname>
-                <othername>Roy</othername>
-                <surname>Simons</surname>
-            </personname>
-            <personblurb>
-                <para>Michael Simons is a Digital Media, Arts, and Technology (DIGIT) student at
-                    Penn State Behrend. After two years of studying Computer Science, he decided to
-                    pivot to Dr. Beshero-Bondar’s DIGIT program as it allows for greater creativity
-                    and a more focused path while still learning how to get the most out of today’s
-                    innovative technologies. In this program, he’s taken a deep dive into the XML
-                    stack where he enjoys using tools like XSLT—and more recently, ixml and XProc—to
-                    create rich markup that is both satisfyingly organized and able to be processed
-                    in interesting ways. Michael’s main passion is music, which he utilized to
-                    develop a <link xlink:href="https://afish2003.github.io/GretaVanZeppelin/"
-                        xlink:type="simple" xlink:show="new" xlink:actuate="onRequest">large-scale
-                        text analysis project</link> comparing the lyrics and chord progressions of
-                    seemingly similar artists.</para>
-            </personblurb>
-
-            <affiliation>
-                <jobtitle>Student</jobtitle>
-                <jobtitle>Reseearch Assistant / Coding Mentor</jobtitle>
-                <orgname>Penn State Erie, The Behrend College</orgname>
-            </affiliation>
-            <email>mrs7068@psu.edu</email>
-        </author>
         <keywordset role="author">
             <keyword>invisible XML</keyword>
             <keyword>ixml</keyword>
@@ -122,7 +120,7 @@
             course taught regularly each fall in text encoding with XML, transformation with XSLT,
             and web development with HTML and CSS. Our university semesters are 15 weeks long with
             three 50-minute classes per week, during which these classes involve daily homework and
-            a few tests with an emphasis on students' applying what they learn to develop semester
+            a few tests with an emphasis on students’ applying what they learn to develop semester
             projects in small teams.</para>
 
         <para>Digit 210 is usually understood to be <quote>the Python-and-Regex course</quote>. A
@@ -216,11 +214,11 @@
             challenging and learning-intensive experiences for students confronting invisible XML
             and XProc for the first time.</para>
         <section>
-            <!-- Michael -->
             <title>Introducing the Battle-Testing Team</title>
+            <!-- Michael -->
             <subtitle>Preparing for a Cross-Platform educationl experiment</subtitle>
-            <para>Hello world! I'm Michael Simons, and I was one of the
-                <quote>battle-testers</quote> for the new iXML &amp; XProc unit in our DIGIT 210
+            <para>Hello world! I’m Michael Simons, and I was one of the
+                    <quote>battle-testers</quote> for the new iXML &amp; XProc unit in our Digit 210
                 class. I was one of three who signed up to assist Dr. Beshero-Bondar in trying out
                 some new exciting XML technologies to be taught to the rest of our class. I was
                 joined by Dannika, who was taking the course with me, and Caleb, who had taken the
@@ -241,13 +239,13 @@
                     <listitem>
                         <para>Assist our peers when problems arose.</para>
                     </listitem>
-                </orderedlist> Like I mentioned about Dannika, we all gained more knowledge about
+                </orderedlist>Like I mentioned about Dannika, we all gained more knowledge about
                 iXML and XProc than we would have otherwise because of the problems we worked
                 through together, so that is something I value greatly about this experience.</para>
         </section>
         <section>
-            <title>Developing Command Line Fluency: Learning how to install iXML and XProc software in alpha
-                development</title>
+            <title>Developing Command Line Fluency: Learning how to install iXML and XProc software
+                in alpha development</title>
             <para><!-- To cover: The challenge of testing and working across platforms
         
         -->
@@ -255,75 +253,166 @@
         </section>
         <section>
             <title>Introductory material on iXML and XProc</title>
-            <para><!-- XProc pipelines  --> <!-- Dr. B to develop -->
+            <para><!-- XProc pipelines  -->
+                <!-- Dr. B to develop -->
             </para>
         </section>
     </section>
     <section>
         <title>Invisible XML and the Music Analysis Project</title>
-        <subtitle>The Optimally Motivated Student Experience</subtitle>
-        <para>What we hoped initially was that students would be inspired to try out these technologies on their
-        own projects. And some students did, but we learned some unexpected things about their potential application, 
-        especially to the field of music encoding. </para>
+        <para>What we hoped initially was that students would be inspired to try out these
+            technologies on their own projects. And some students did, but we learned some
+            unexpected things about their potential application, especially to the field of music
+            encoding. </para>
         <section>
-
-            <title>A Project on Chord Chart Analysis: what iXML looks like in a large-scale
-                student project</title>
-           
-            <!-- What Michael did and how well it succeeded. (Can include images / links to project etc) -->
+            <title>A Project on Chord Chart Analysis: what iXML looks like in a large-scale student
+                project</title>
+            <subtitle>The Optimally Motivated Student Experience</subtitle>
+            <!-- Michael -->
             <para>Michael again! Dr. Beshero-Bondar deemed me an <quote>optimally motivated
                     student</quote> because I did the work (relatively on time) and was able to
                 grasp iXML and XProc enough to take it further than what most other students
                 attempted to do. The big question for me was: <quote>Are these technologies worth
                     incorporating into my group’s semester project?</quote>
             </para>
-            
-          <section>  
-              <title>Introducing the GranVanZeppelin Project</title>
-              <para><programlisting><emphasis role="ital">My semester project's website is located <link xlink:href="https://afish2003.github.io/GretaVanZeppelin/">here</link></emphasis></programlisting></para>
-            <!-- Develop this with a few more sentences. How would I introduce this project to potential employers in an elevator pitch if those potential employers understood XML?-->
             <para>The short-term answer, unfortunately, was <quote>no</quote>, because I held up my
                 team working on something that I actually completed with regular expressions
                 search-and-replace operations in less than a quarter of the time I spent on iXML.
                 However, the big picture answer may in fact be <quote>yes</quote>, because here I
                 am, reflecting on my learning experience in a professional setting which is a great
                 honor.</para>
-            
-          
-            
-            <para>The project goal for my team was to analyze the chord charts of two musical
-                artists and determine if there were any meaningful comparisons between them,
-                musically or lyrically. <emphasis role="ital">Spoiler alert: our findings were
-                    inconclusive!</emphasis> The data we extracted from the documents resulted in
-                some nice data visualizations, but unfortunately, we didn’t take it far enough to
-                draw any of those conclusions between the two chosen artists. So, for me, the main
-                takeaway from this project was, unexpectedly, the process in which we obtained the
-                data, including of course, iXML and an XProc pipeline.</para>
-            <para>My main task for this project was the transformation of the raw text into
-                something the rest of the team could process with various Python tools and display
-                on our website. This became my task largely because of my role as a battle-tester of
-                the new markup tools. Conversely, my battle-tester status motivated me further to
-                include iXML and XProc in our project because I felt a strong desire to implement
-                what I had learned.</para></section>
-            <section>
-                <title>Background on Music Encoding</title>
-                <subtitle>Including some things we wished we knew when we started the project</subtitle>
-                <!-- Here discuss 
-                     * MEI (which the project was aware of)
-                     * Our Digit program's past experience with MEI, but not for analysis so much as playing via MIDI: (Locke Analysis Project): 
-                     https://newtfire.github.io/locke-anthology2.0/music.html 
-                     * What to use for a project that provides only chord notation? 
-                     * MusicXML vs. MEI (possibly useful?): See the GitHub Issue resources 
-                     (We turned away from these because they seemed too intricate to adapt...? Lots of emphasis on staff notation etc. )
-                     * Chord Pro: would have been wonderful to know about back in February! Because . . . 
-                     We'll come back to ChordPro later.
-                     
-                     * What we ultimately decided was to make our own invented markup specifically for analysis.
 
-                -->
+            <section>
+                <title>Introducing the GretaVanZeppelin Project</title>
+                <mediaobject>
+                    <imageobject>
+                        <imagedata format="png" fileref="GretaVanZeppelin-Logo.png" width="30%"/>
+                    </imageobject>
+                    <caption>
+                        <para>GretaVanZeppelin Project Logo</para>
+                    </caption>
+                </mediaobject>
+
+                <!-- Elevator pitch style introduction-->
+                <para>The <link xlink:href="https://afish2003.github.io/GretaVanZeppelin/"
+                        >GretaVanZeppelin Project</link> is an analysis of musical artists using
+                    collections of chord charts encoded in XML and analyzed with various Python
+                    tools <!--scripts-->. While the project is still in what could be considered its
+                    early stages, there were many valuable discoveries and triumphs made along the
+                    way, as well as a strong setup for future research possibilities. One of the
+                    discoveries was finding more efficient ways to encode and analyze chord charts.
+                    The main triumph was being able to implement iXML and XProc on a fairly large
+                    scale.</para>
+                <para>The project goal for my team was to analyze the chord charts of two artists
+                    and determine if there were any meaningful comparisons between them, musically
+                    or lyrically. <emphasis role="ital">Spoiler alert: our findings were
+                        inconclusive!</emphasis> The data we extracted from the documents resulted
+                    in some nice data visualizations, but unfortunately, we didn’t take it far
+                    enough to draw any of those conclusions between the two chosen artists. So, for
+                    me, the main takeaway from this project was, unexpectedly, the process in which
+                    we obtained the data, including of course, iXML and an XProc pipeline.</para>
+                <para>The future of the project was made aware to us (the project developers) during
+                    its showcase at our Digit program’s end-of-the-semester presentation day called
+                        <quote>DIGIT Works.</quote> We received valuable feedback from peers and
+                    industry professionals about incorporating additional data into the project to
+                    achieve a more thorough comparison, specifically, being able to analyze the
+                    artists’ influences and genre blending, and using our analysis processes to
+                    study more than just two artists.</para>
+                <para>My main task for this project was the transformation of the raw text into
+                    something the rest of the team could process with various Python tools and
+                    display on our website. This became my task largely because of my role as a
+                    battle-tester of the new markup tools. Conversely, my battle-tester status
+                    motivated me further to include iXML and XProc in our project because I felt a
+                    strong desire to implement what I had learned.</para>
+                <para>Before discussing my specific processes and work, I feel it is important to
+                    share a brief overview of our preliminary research into music encoding, as well
+                    as what further research revealed after the conclusion of the semester
+                    project.</para>
             </section>
             <section>
-                <title>Document analysis and invented markup</title>
+                <title>A Brief Background on Music Encoding</title>
+                <subtitle>As well as some things we wished we knew when we started the
+                    project</subtitle>
+                <para>Not knowing where to begin in the markup stages, Dr. Beshero-Bondar suggested
+                    that our team research the <link xlink:href="https://music-encoding.org">Music
+                        Encoding Initiative (MEI)</link>. <quote>The MEI is a community-driven,
+                        open-source effort to define a system for encoding musical documents in a
+                        machine-readable structure.</quote><footnote>
+                        <para>Music Encoding Initiative, <link
+                                xlink:href="https://music-encoding.org"
+                                >https://music-encoding.org</link></para>
+                    </footnote> In our research, we only saw examples of encoded sheet music (which
+                    is all the notes written down on the page on musical staffs). Sheet music is not
+                    conducive to rock music which, in my experience, is based on repeated grooves
+                    and phrases that are more effectively communicated verbally/audibly. A chord
+                    chart serves as a sufficient guide to show an outline of the structure of the
+                    song while displaying what chords need to be played based on what lyrics are
+                    being sung. This means there is a lot of implicit information about the song
+                        <quote>encoded</quote> in these chord charts, but what we were seeing of the
+                    MEI was that it was very much focused on explicitly encoding every note of a
+                    piece of music. That, combined with the limited amount of time we had for the
+                    project, steered us away from utilizing the MEI guidelines and schema in our
+                    project.</para>
+                <para>Dr. Beshero-Bondar’s Digit program has one past experience using the MEI: the
+                    Locke Anthology Project<footnote>
+                        <para>Locke Anthology Project, <link
+                                xlink:href="https://newtfire.github.io/locke-anthology2.0/music.html"
+                                >https://newtfire.github.io/locke-anthology2.0/music.html</link></para>
+                    </footnote>. This project conformed to TEI guidelines to preserve a digital
+                    version of Alain Locke’s anthology <emphasis role="ital">The New Negro: An
+                        Interpretation</emphasis> (1925). The work includes short snippets of music
+                    between its stories and poems, and the team used the MEI’s structure to encode
+                    those snippets so that they could be converted to MIDI<footnote>
+                        <para><!--Do I need a stronger source to explain MIDI? --><quote>MIDI</quote>,
+                                <link xlink:href="https://en.wikipedia.org/wiki/MIDI"
+                                >https://en.wikipedia.org/wiki/MIDI</link></para>
+                    </footnote> and played back as audio files on the website. This use of the MEI
+                    was practical, not analytical like the GretaVanZeppelin Project’s focus was. So,
+                    while very interesting, the Locke Anthology Project was not something we could
+                    have used to help us with our project.</para>
+                <para>So, what do we do for a project that utilizes solely chord notation? There are
+                    other formats for the digitization of music, most notably <link
+                        xlink:href="https://www.musicxml.com/">MusicXML</link> which we discovered
+                    after the semester’s conclusion. This markup language is used and supported in
+                    many popular music notation, recording, and other music-related software.<footnote>
+                        <para>List of software that utilizes MusicXML, <link
+                                xlink:href="https://www.musicxml.com/software/"
+                                >https://www.musicxml.com/software/</link></para>
+                    </footnote> Upon familiarizing myself with their tutorial<footnote>
+                        <para>MusicXML Tutorial on Chord Symbols and Diagrams, <link
+                                xlink:href="https://www.w3.org/2021/06/musicxml40/tutorial/chord-symbols-and-diagrams/"
+                                >https://www.w3.org/2021/06/musicxml40/tutorial/chord-symbols-and-diagrams/</link></para>
+                    </footnote>, I think we <emphasis role="ital">could</emphasis> have utilized it,
+                    but it would have still been a very large and time-consuming learning
+                    curve.</para>
+                <para><emphasis role="ital">Additional reading: <quote><link
+                                xlink:href="https://opensheetmusicdisplay.org/blog/blog-music-xml-introduction-comparison/"
+                                >Music XML Introduction and
+                    Comparison</link></quote></emphasis></para>
+                <para>We also discovered <link xlink:href="https://www.chordpro.org/"
+                        >ChordPro</link> after the project’s development. I actually knew about
+                    ChordPro existing as a way to write chord charts, but only in the context of my
+                    church’s music planning software<footnote>
+                        <para><emphasis role="bold">Planning Center Services</emphasis>, the
+                            industry-standard program for planning church worship services that
+                            includes the ability to easily make and format chord charts using
+                            ChordPro. <link xlink:href="https://www.planningcenter.com/services"
+                                >https://www.planningcenter.com/services</link></para>
+                    </footnote>. I was unaware of the scope of ChordPro as an in-development
+                    open-source program<footnote>
+                        <para>ChordPro on GitHub, <link
+                                xlink:href="https://github.com/ChordPro/chordpro"
+                                >https://github.com/ChordPro/chordpro</link></para>
+                    </footnote> aimed at the markup of chord charts. This could very well be the
+                    future of the GretaVanZeppelin project and could also more deeply incorporate
+                    iXML, but I’ll discuss that after I've explained what the project already
+                    accomplished. <emphasis role="ital">(It sure would have been nice to know about
+                        ChordPro back in February 2025!)</emphasis></para>
+                <para>All of this to say, we ultimately decided to make our own markup specifically
+                    for our analysis.</para>
+            </section>
+            <section>
+                <title>Document Analysis and Our Unique Markup</title>
                 <para>My implementation of raw text transformation began by sketching out what the
                     process would look like (a pipeline). After some basic XML structure, I knew
                     that I would first need to find the two blank lines that separated the
@@ -332,38 +421,41 @@
                     Finally, some additional processing would be needed to identify individual
                     chords for counting purposes and to extract either just the chords or just the
                     lyrics for analysis.</para>
-                <para><emphasis role="ital">Ideally, the raw text would have been proofread and
-                        fixed more thoroughly. It became apparent that lines were not separated
-                        logically as they would be if I or a professional made the chord charts.
-                        Instead of the lines being divided by musical phrases/chord progressions,
-                        they seemed to be divided by simply what looked the best on the page. This
-                        limited our ability to analyze actual chord progressions, so instead we
-                        focused on chord usage per song/artist.</emphasis></para>
-                <para><emphasis role="ital">An example of this inconsistent formatting is shown
-                        below. Each chord is 1 measure long, but the original formatting confusingly
-                        makes it seem more complex than that.</emphasis></para>
-                <para>
-                    <programlisting xml:space="preserve"><emphasis role="ital">(from Greta Van Fleet's song <quote><link xlink:href="https://github.com/afish2003/GretaVanZeppelin/blob/main/pipeline/raw-text/Greta/fromTheFires/song-03.txt">Flower Power</link></quote>)</emphasis>
-
-<emphasis role="bold">Original:</emphasis>
-[Chorus]
+                <para>Ideally, the raw text would have been proofread and fixed more thoroughly. It
+                    became apparent that lines were not separated logically as they would be if I or
+                    a professional made the chord charts. Instead of the lines being divided by
+                    musical phrases/chord progressions, they seemed to be divided by simply what
+                    looked the best on the page. This limited our ability to analyze actual chord
+                    progressions, so instead we focused on chord usage per song/artist.</para>
+                <para>An example of this inconsistent formatting is shown below in an exerpt from
+                    Greta Van Fleet’s song <quote><link
+                            xlink:href="https://github.com/afish2003/GretaVanZeppelin/blob/main/pipeline/raw-text/Greta/fromTheFires/song-03.txt"
+                            >Flower Power</link></quote>.
+                    <!--Link to the raw-text file. Should this be a footnote?--> Each chord is one
+                    measure long, so a logical way of dividing the lines of lyrics and chords would
+                    be to have each line correspond with one measure. But, the original formatting
+                    confusingly makes it seem more complex than that.</para>
+                <figure>
+                    <title>Original Sample</title>
+                    <programlisting xml:space="preserve">[Chorus]
 A
 Turn tonight, firelight
 D
 Star shines in her eye
 A                   D
- Makes me feel like I'm alive
+ Makes me feel like I’m alive
                    A
-She's outta sight, yeah
+She’s outta sight, yeah
 D
 Aw yeah
         A                             D
-She's alright, she's alright, she's alright
+She’s alright, she’s alright, she’s alright
                          F    G
-She's outta sight, outta sight
-
-<emphasis role="bold">Ideally edited (for the purpose of this example):</emphasis>
-[Chorus]
+She’s outta sight, outta sight</programlisting>
+                </figure>
+                <figure>
+                    <title>Ideally Edited Sample (for the purpose of this example)</title>
+                    <programlisting xml:space="preserve">[Chorus]
 A
 Turn tonight, firelight
 D
@@ -371,18 +463,18 @@ Star shines in her eye
 A
  Makes me feel like 
 D
-I'm alive, she's outta sight
+I’m alive, she’s outta sight
 A
 Yeah
 D
 Aw yeah
            A
-She's al - right, she's alright
+She’s al - right, she’s alright
            D
-She's al - right, she's outta sight
+She’s al - right, she’s outta sight
       F         G
 Outta sight</programlisting>
-                </para>
+                </figure>
                 <para>One more important note about the raw text: the chords are placed directly
                     over the word, or syllable of the word (example: al -
                     <emphasis>r</emphasis>ight), that is being sung when that chord is played. In
@@ -391,16 +483,16 @@ Outta sight</programlisting>
                     chord changes. In some of the chord charts, I noticed that less care was taken
                     to preserve the placement of the chords. For this reason, combined with the
                     sometimes confusing line divisions, I made the decision that we would not make
-                    the effort to preserve the chords' placement with the lyrics. There are likely
+                    the effort to preserve the chords’ placement with the lyrics. There are likely
                     ways to accomplish this, but I personally can’t see the benefits of it in this
                     project other than beautifully &amp; accurately displaying the final XML output.
-                    The objective of the project wasn't to improve the displaying of the chord
+                    The objective of the project wasn’t to improve the displaying of the chord
                     charts but rather to analyze them.</para>
                 <para>There is, however, something to be said for noting the duration of the chords
                     in the markup. My preliminary research into the <link
                         xlink:href="https://music-encoding.org/">Music Encoding Initiative
                         (MEI)</link> showed that they use an attribute <code>@dur</code> in their
-                    <code>&lt;chord&gt;</code> elements to indicate the duration of the chord.
+                        <code>&lt;chord&gt;</code> elements to indicate the duration of the chord.
                     This would allow for chord progressions to be analyzed more completely by our
                     Python analysis tools without having to preserve the spacing between the chords
                     and make the technology understand that each line is, say, one bar. This,
@@ -414,7 +506,7 @@ Outta sight</programlisting>
                     implicit attributes encoded into chord charts. Is it worth encoding chord charts
                     so that computers can understand them? MIDI files store musical notation data
                     that a computer can output as
-                    music.<!-- mrs7068: didn't finish this thought. Want to make sure it's worth finishing, not sure where I'm going or how to tie directly into iXML-->
+                    music.<!-- mrs7068: didn’t finish this thought. Want to make sure it’s worth finishing, not sure where I’m going or how to tie directly into iXML-->
                     But anyways, back to the iXML!</para>
                 <!-- ebb: FOOD FOR THOUGHT: 
                      Is there something about chord notation that *declares* itself to be markup in its own right,
@@ -426,18 +518,18 @@ Outta sight</programlisting>
                      
                      AND where did this get to be too much for invisible XML to handle? 
                 -->
-                
-                
+
+
             </section>
             <section>
-                <title>Implementation and reflection on iXML in the Project</title>
-               
+                <title>Implementation and Reflection on iXML in the Project</title>
+
                 <!-- mrs7068: finally getting to ixml implementation here-->
                 <!-- ebb: Reflect a bit more on how the ixml was different from the regex? -->
             </section>
             <section>
-                <title>What if we had used ChordPro?: The Potential of iXML</title>
-               
+                <title>What if We Had Used ChordPro?—The Potential of iXML</title>
+                <!-- ChordPro utilizes Perl modules, something Dr. B will probably have to help me explain so that the nerds fully appreciate it-->
             </section>
         </section>
     </section>
@@ -497,7 +589,7 @@ Outta sight</programlisting>
             for meaningful natural language processing, with findings expressed, visualized, and
             output on websites involves a round-trip adventure with text and code formats. Perhaps
             the most significant application of invisible XML is the agency it gives the student
-            coder in constructing one's own pattern recognition as XML. The experience of developing
+            coder in constructing one’s own pattern recognition as XML. The experience of developing
             and processing invisible XML in a text analysis course makes for a multi-dimensional
             experience of text, both as architectures and as streams. </para>
 
