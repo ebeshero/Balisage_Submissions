@@ -296,14 +296,14 @@
 
                 <!-- Elevator pitch style introduction-->
                 <para>The <link xlink:href="https://afish2003.github.io/GretaVanZeppelin/"
-                        >GretaVanZeppelin Project</link> is an analysis of musical artists using
-                    collections of chord charts encoded in XML and analyzed with various Python
-                    tools <!--scripts-->. While the project is still in what could be considered its
-                    early stages, there were many valuable discoveries and triumphs made along the
-                    way, as well as a strong setup for future research possibilities. One of the
-                    discoveries was finding more efficient ways to encode and analyze chord charts.
-                    The main triumph was being able to implement iXML and XProc on a fairly large
-                    scale.</para>
+                        >GretaVanZeppelin Project</link> is an analysis of musical artists, Greta
+                    Van Fleet and Led Zeppelin, using collections of chord charts encoded in XML and
+                    analyzed with various Python tools. While the project is still in what could be
+                    considered its early stages, there were many valuable discoveries and triumphs
+                    made along the way, as well as a strong setup for future research possibilities.
+                    One of the discoveries was finding more efficient ways to encode and analyze
+                    chord charts. The main triumph was being able to implement iXML and XProc on a
+                    fairly large scale.</para>
                 <para>The project goal for my team was to analyze the chord charts of two artists
                     and determine if there were any meaningful comparisons between them, musically
                     or lyrically. <emphasis role="ital">Spoiler alert: our findings were
@@ -373,8 +373,8 @@
                     was practical, not analytical like the GretaVanZeppelin Project’s focus was. So,
                     while very interesting, the Locke Anthology Project was not something we could
                     have used to help us with our project.</para>
-                <para>So, how do we approach a project that utilizes solely chord notation? There are
-                    other formats for the digitization of music, most notably <link
+                <para>So, how do we approach a project that utilizes solely chord notation? There
+                    are other formats for the digitization of music, most notably <link
                         xlink:href="https://www.musicxml.com/">MusicXML</link> which we discovered
                     after the semester’s conclusion. This markup language is used and supported in
                     many popular music notation, recording, and other music-related software.<footnote>
@@ -438,11 +438,10 @@
                 <para>An example of this inconsistent formatting is shown below in an exerpt from
                     Greta Van Fleet’s song <quote><link
                             xlink:href="https://github.com/afish2003/GretaVanZeppelin/blob/main/pipeline/raw-text/Greta/fromTheFires/song-03.txt"
-                            >Flower Power</link></quote>.
-                    <!--Link to the raw-text file. Should this be a footnote?--> Each chord is one
-                    measure long, so a logical way of dividing the lines of lyrics and chords would
-                    be to have each line correspond with one measure. But, the original formatting
-                    confusingly makes it seem more complex than that.</para>
+                            >Flower Power</link></quote>. Each chord is one measure long, so a
+                    logical way of dividing the lines of lyrics and chords would be to have each
+                    line correspond with one measure. But, the original formatting confusingly makes
+                    it seem more complex than that.</para>
                 <figure>
                     <title>Original Sample</title>
                     <programlisting xml:space="preserve">[Chorus]
@@ -539,7 +538,32 @@ Outta sight</programlisting>
             </section>
             <section>
                 <title>What if We Had Used ChordPro?—The Potential of iXML</title>
-                <!-- ChordPro utilizes Perl modules, something Dr. B will probably have to help me explain so that the nerds fully appreciate it-->
+                <para>Created in 1991, ChordPro predates MEI by almost a decade.<footnote>
+                        <para>History of Chord Pro, <link
+                                xlink:href="https://www.chordpro.org/chordpro/chordpro-history/"
+                                >https://www.chordpro.org/chordpro/chordpro-history/</link></para>
+                        <para>History of MEI, <link xlink:href="https://music-encoding.org/about"
+                                >https://music-encoding.org/about</link></para>
+                    </footnote> It began as a chord notation system and has become a fully
+                    functional program for creating chord charts, using Perl to produce output.<footnote>
+                        <para>A Perl Module file in ChordPro's library for producing chord chart
+                            output. <link
+                                xlink:href="https://github.com/ChordPro/chordpro/blob/master/lib/ChordPro/Output/HTML.pm"
+                                >https://github.com/ChordPro/chordpro/blob/master/lib/ChordPro/Output/HTML.pm</link></para>
+                    </footnote> Unlike human-readable chord charts place the chords in a separate
+                    line above the lyrics, ChordPro places chords inline, in square brackets,
+                    directly in front of the word or even syllable of the word so that their
+                    position is preserved no matter the font or spacing.</para>
+                <para>The nature of this inline style of chord placement can likely be interpreted
+                    by iXML more easily than separate lines of chords and lyrics. This would have
+                    allowed us to use iXML more extensively without subsequent processing steps.
+                    More notably, it seems unlikely that there are any creators or users of ChordPro
+                    aware currently of iXML and its potential to read ChordPro and turn it into XML?
+                    In our project, ChordPro could allow for both a more accurate preservation of
+                    the chord charts, and a more accurate representation of entire chord
+                    progressions. I certainly think it would be interesting to analyze something
+                    like the modern artist Greta Van Fleet directly copying a chord progression from
+                    a verse in a Led Zeppelin song.</para>
             </section>
         </section>
     </section>
