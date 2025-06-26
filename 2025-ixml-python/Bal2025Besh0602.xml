@@ -341,20 +341,20 @@
                         <para>Music Encoding Initiative, <link
                                 xlink:href="https://music-encoding.org"
                                 >https://music-encoding.org</link></para>
-                    </footnote> In our research, we only saw examples of encoded sheet music (which
-                    is all the notes written down on the page on musical staffs). Sheet music is not
-                    conducive to rock music which, in my experience, is based on repeated grooves
-                    and phrases that are more effectively communicated verbally/audibly. A chord
-                    chart serves as a sufficient guide to show an outline of the structure of the
-                    song while displaying what chords need to be played based on what lyrics are
+                    </footnote> In our research, we only saw examples of encoded sheet music in
+                    which all the notes are represented on the page on musical staffs. Sheet music
+                    is not conducive to rock music which, in my experience, is based on repeated
+                    grooves and phrases that are more effectively communicated verbally/audibly. A
+                    chord chart serves as a sufficient guide to show an outline of the structure of
+                    the song while displaying what chords need to be played based on what lyrics are
                     being sung. This means there is a lot of implicit information about the song
-                        <quote>encoded</quote> in these chord charts, but what we were seeing of the
-                    MEI was that it was very much focused on explicitly encoding every note of a
-                    piece of music. That, combined with the limited amount of time we had for the
-                    project, steered us away from utilizing the MEI guidelines and schema in our
+                    purposefully unmarked in these chord charts, but what we were seeing of the MEI
+                    was that it was very much focused on explicitly encoding every note of a piece
+                    of music. That, combined with the limited amount of time we had for the project,
+                    steered us away from utilizing the MEI guidelines and schema in our
                     project.</para>
-                <para>Dr. Beshero-Bondar’s Digit program has one past experience using the MEI: the
-                    Locke Anthology Project<footnote>
+                <!-- Image to compare a piece of sheet music to a chord chart. -->
+                <para>Our Digit program has one past experience using the MEI: the Locke Anthology Project<footnote>
                         <para>Locke Anthology Project, <link
                                 xlink:href="https://newtfire.github.io/locke-anthology2.0/music.html"
                                 >https://newtfire.github.io/locke-anthology2.0/music.html</link></para>
@@ -363,14 +363,16 @@
                         Interpretation</emphasis> (1925). The work includes short snippets of music
                     between its stories and poems, and the team used the MEI’s structure to encode
                     those snippets so that they could be converted to MIDI<footnote>
-                        <para><!--Do I need a stronger source to explain MIDI? --><quote>MIDI</quote>,
-                                <link xlink:href="https://en.wikipedia.org/wiki/MIDI"
-                                >https://en.wikipedia.org/wiki/MIDI</link></para>
+                        <para>For more information on MIDI, see <link
+                                xlink:href="https://midi.org/about-midi-part-1overview"
+                                >https://midi.org/about-midi-part-1overview</link>and <link
+                                xlink:href="https://midi.org/specs"
+                            >https://midi.org/specs</link></para>
                     </footnote> and played back as audio files on the website. This use of the MEI
                     was practical, not analytical like the GretaVanZeppelin Project’s focus was. So,
                     while very interesting, the Locke Anthology Project was not something we could
                     have used to help us with our project.</para>
-                <para>So, what do we do for a project that utilizes solely chord notation? There are
+                <para>So, how do we approach a project that utilizes solely chord notation? There are
                     other formats for the digitization of music, most notably <link
                         xlink:href="https://www.musicxml.com/">MusicXML</link> which we discovered
                     after the semester’s conclusion. This markup language is used and supported in
@@ -393,11 +395,15 @@
                         >ChordPro</link> after the project’s development. I actually knew about
                     ChordPro existing as a way to write chord charts, but only in the context of my
                     church’s music planning software<footnote>
-                        <para><emphasis role="bold">Planning Center Services</emphasis>, the
-                            industry-standard program for planning church worship services that
-                            includes the ability to easily make and format chord charts using
-                            ChordPro. <link xlink:href="https://www.planningcenter.com/services"
-                                >https://www.planningcenter.com/services</link></para>
+                        <para><quote>Planning Center Services</quote>, the industry-standard program
+                            for planning church worship services that includes the ability to easily
+                            make and format chord charts using ChordPro. See <link
+                                xlink:href="https://pcoservices.zendesk.com/hc/en-us/articles/204262594-Preventing-charts-from-shifting-using-Chord-Pro"
+                                >https://pcoservices.zendesk.com/hc/en-us/articles/204262594-Preventing-charts-from-shifting-using-Chord-Pro</link>
+                            to learn more about how they implement ChordPro, or watch someone
+                            utilize ChordPro within Planning Center: <link
+                                xlink:href="https://youtu.be/GS4GIw_0LQk?si=sZqMEZpqNl1JroGE"
+                                >https://youtu.be/GS4GIw_0LQk?si=sZqMEZpqNl1JroGE</link></para>
                     </footnote>. I was unaware of the scope of ChordPro as an in-development
                     open-source program<footnote>
                         <para>ChordPro on GitHub, <link
@@ -413,8 +419,9 @@
             </section>
             <section>
                 <title>Document Analysis and Our Unique Markup</title>
+                <!-- Develop this introduction possibly? -->
                 <para>My implementation of raw text transformation began by sketching out what the
-                    process would look like (a pipeline). After some basic XML structure, I knew
+                    process would look like as a pipeline. After some basic XML structure, I knew
                     that I would first need to find the two blank lines that separated the
                     beginnings and endings of each section (Verse, Chorus, etc.) in the song files.
                     Then, I would need to separate chords from lyrics within those sections.
@@ -481,13 +488,14 @@ Outta sight</programlisting>
                     the above example, the chords were placed properly above the words; the easiest
                     way for me to check this is to listen to the song and pay attention to when the
                     chord changes. In some of the chord charts, I noticed that less care was taken
-                    to preserve the placement of the chords. For this reason, combined with the
+                    to preserve the placement of the chords. For this reason, as well as the
                     sometimes confusing line divisions, I made the decision that we would not make
-                    the effort to preserve the chords’ placement with the lyrics. There are likely
-                    ways to accomplish this, but I personally can’t see the benefits of it in this
-                    project other than beautifully &amp; accurately displaying the final XML output.
-                    The objective of the project wasn’t to improve the displaying of the chord
-                    charts but rather to analyze them.</para>
+                    the effort to preserve the chords’ placement with the lyrics. We later
+                    discovered a way to accomplish this (see section below on ChordPro), but I
+                    personally can’t see the benefits of it in this project other than beautifully
+                    and accurately displaying the final XML output. The objective of the project
+                    wasn’t to improve the displaying of the chord charts but rather to analyze
+                    them.</para>
                 <para>There is, however, something to be said for noting the duration of the chords
                     in the markup. My preliminary research into the <link
                         xlink:href="https://music-encoding.org/">Music Encoding Initiative
@@ -503,11 +511,13 @@ Outta sight</programlisting>
                 <para>All of this begs the question: <quote>Is chord notation declaring itself to be
                         markup in its own right?</quote> What is an easier form of music for a lot
                     of musicians to read is not as easy for a computer to understand because of the
-                    implicit attributes encoded into chord charts. Is it worth encoding chord charts
-                    so that computers can understand them? MIDI files store musical notation data
-                    that a computer can output as
-                    music.<!-- mrs7068: didn’t finish this thought. Want to make sure it’s worth finishing, not sure where I’m going or how to tie directly into iXML-->
-                    But anyways, back to the iXML!</para>
+                    implicit information that is purposely not marked in chord charts. Is it worth
+                    encoding chord charts more deliberately to support research and analysis? MEI
+                    preserves music well in academia; MusicXML outputs MIDI to be played as music;
+                    and ChordPro allows humans to write chord charts and accurately place the chords
+                    with the words to support performers. Can chord charts allow for a deeper
+                    analysis and comparison of music? Our experience with iXML suggests there is
+                    hope for this work!</para>
                 <!-- ebb: FOOD FOR THOUGHT: 
                      Is there something about chord notation that *declares* itself to be markup in its own right,
                      that invites us to see it and declare it as nodes, in line with the idea of invisible XML?
@@ -523,7 +533,6 @@ Outta sight</programlisting>
             </section>
             <section>
                 <title>Implementation and Reflection on iXML in the Project</title>
-
                 <!-- mrs7068: finally getting to ixml implementation here-->
                 <!-- ebb: Reflect a bit more on how the ixml was different from the regex? -->
             </section>
