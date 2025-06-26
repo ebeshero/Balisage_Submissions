@@ -24,13 +24,14 @@
             <para>This year’s course tried a different approach. Students were taught iXML grammars
                 as a way to prepare XML for analysis and XProc for pipelining. Regular expression
                 matching involved working with XSLT, and the entire XML stack was used before
-                approaching Python. Students learned how to install software in alpha stages and they tested
-                how well it works across platforms. From this exploratory start, one student project team 
-                found a very practical use-case for applying invisible XML in a project pipeline for 
-                analyzing chord chart musical notation. In this paper, we discuss the potential we discovered 
-                for invisible XML in music analysis. We also share our recommendations for guiding people to
-                prepare processing pipelines that incorporate invisible XML, and we reflect on what
-                aspects of this risky teaching experiment were most worthwhile.</para>
+                approaching Python. Students learned how to install software in alpha stages and
+                they tested how well it works across platforms. From this exploratory start, one
+                student project team found a very practical use-case for applying invisible XML in a
+                project pipeline for analyzing chord chart musical notation. In this paper, we
+                discuss the potential we discovered for invisible XML in music analysis. We also
+                share our recommendations for guiding people to prepare processing pipelines that
+                incorporate invisible XML, and we reflect on what aspects of this risky teaching
+                experiment were most worthwhile.</para>
         </abstract>
         <author>
             <personname>
@@ -538,12 +539,18 @@ Outta sight</programlisting>
             </section>
             <section>
                 <title>What if We Had Used ChordPro?—The Potential of iXML</title>
-                <para>Created in 1991, ChordPro predates MEI by almost a decade.<footnote>
+                <para>Created in 1991, ChordPro predates MEI and MusicXML by almost a decade.<footnote>
                         <para>History of Chord Pro, <link
                                 xlink:href="https://www.chordpro.org/chordpro/chordpro-history/"
-                                >https://www.chordpro.org/chordpro/chordpro-history/</link></para>
-                        <para>History of MEI, <link xlink:href="https://music-encoding.org/about"
-                                >https://music-encoding.org/about</link></para>
+                                >https://www.chordpro.org/chordpro/chordpro-history/</link>. See
+                            also <quote>An introduction to MEI</quote> for a history of MEI: <link
+                                xlink:href="https://music-encoding.org/about"
+                                >https://music-encoding.org/about</link> and <quote>Music XML
+                                Introduction and comparison</quote> for a history of MusicXML: <link
+                                xlink:href="https://opensheetmusicdisplay.org/blog/blog-music-xml-introduction-comparison"
+                                >https://opensheetmusicdisplay.org/blog/blog-music-xml-introduction-comparison</link>.
+                            The authors find it disappointing that there seems to be no mention of
+                            ChordPro in the documentation of either MEI or MusicXML.</para>
                     </footnote> It began as a chord notation system and has become a fully
                     functional program for creating chord charts, using Perl to produce output.<footnote>
                         <para>A Perl Module file in ChordPro's library for producing chord chart
