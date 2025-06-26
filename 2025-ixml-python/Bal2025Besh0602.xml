@@ -24,12 +24,13 @@
             <para>This year’s course tried a different approach. Students were taught iXML grammars
                 as a way to prepare XML for analysis and XProc for pipelining. Regular expression
                 matching involved working with XSLT, and the entire XML stack was used before
-                approaching Python. This paper will share what students have to gain from learning
-                how to install and tinker with software in alpha stages and test how well it works
-                across platforms. It will also share some areas that challenged students and
-                professors alike, as well as suggestions on best practices in guiding people to
-                prepare processing pipelines (with XProc) that incorporate invisible XML. Further,
-                this paper will reflect on why this adventure was worthwhile.</para>
+                approaching Python. Students learned how to install software in alpha stages and they tested
+                how well it works across platforms. From this exploratory start, one student project team 
+                found a very practical use-case for applying invisible XML in a project pipeline for 
+                analyzing chord chart musical notation. In this paper we discuss the potential we discovered 
+                for invisible XML in music analysis and share our recommendations for guiding people to
+                prepare processing pipelines (with XProc) that incorporate invisible XML, and we reflect on what
+                aspects of this risky teaching experiment were most worthwhile.</para>
         </abstract>
         <author>
             <personname>

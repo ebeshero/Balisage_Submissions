@@ -301,12 +301,19 @@
                               <p id="d3e13">This year’s course tried a different approach. Students were taught iXML grammars
                                  as a way to prepare XML for analysis and XProc for pipelining. Regular expression
                                  matching involved working with XSLT, and the entire XML stack was used before
-                                 approaching Python. This paper will share what students have to gain from learning
-                                 how to install and tinker with software in alpha stages and test how well it works
-                                 across platforms. It will also share some areas that challenged students and
-                                 professors alike, as well as suggestions on best practices in guiding people to
-                                 prepare processing pipelines (with XProc) that incorporate invisible XML. Further,
-                                 this paper will reflect on why this adventure was worthwhile.</p>
+                                 approaching Python. Students learned how to install software in alpha stages and they
+                                 tested
+                                 how well it works across platforms. From this exploratory start, one student project
+                                 team 
+                                 found a very practical use-case for applying invisible XML in a project pipeline for
+                                 
+                                 analyzing chord chart musical notation. In this paper we discuss the potential we
+                                 discovered 
+                                 for invisible XML in music analysis and share our recommendations for guiding people
+                                 to
+                                 prepare processing pipelines (with XProc) that incorporate invisible XML, and we reflect
+                                 on what
+                                 aspects of this risky teaching experiment were most worthwhile.</p>
                            </details>
                            <details class="toc">
                               <summary>
@@ -331,7 +338,7 @@
                                           <dl>
                                              <dt><span class="section"><a href="#d3e252" class="toc">Introducing the GretaVanZeppelin Project</a></span></dt>
                                              <dt><span class="section"><a href="#d3e283" class="toc">A Brief Background on Music Encoding</a></span></dt>
-                                             <dt><span class="section"><a href="#d3e373" class="toc">Document Analysis and Our Unique Markup</a></span></dt>
+                                             <dt><span class="section"><a href="#d3e374" class="toc">Document Analysis and Our Unique Markup</a></span></dt>
                                              <dt><span class="section"><a href="#d3e422" class="toc">Implementation and Reflection on iXML in the Project</a></span></dt>
                                              <dt><span class="section"><a href="#d3e427" class="toc">What if We Had Used ChordPro?—The Potential of iXML</a></span></dt>
                                           </dl>
@@ -415,12 +422,19 @@
                      <p id="d3e13">This year’s course tried a different approach. Students were taught iXML grammars
                         as a way to prepare XML for analysis and XProc for pipelining. Regular expression
                         matching involved working with XSLT, and the entire XML stack was used before
-                        approaching Python. This paper will share what students have to gain from learning
-                        how to install and tinker with software in alpha stages and test how well it works
-                        across platforms. It will also share some areas that challenged students and
-                        professors alike, as well as suggestions on best practices in guiding people to
-                        prepare processing pipelines (with XProc) that incorporate invisible XML. Further,
-                        this paper will reflect on why this adventure was worthwhile.</p>
+                        approaching Python. Students learned how to install software in alpha stages and they
+                        tested
+                        how well it works across platforms. From this exploratory start, one student project
+                        team 
+                        found a very practical use-case for applying invisible XML in a project pipeline for
+                        
+                        analyzing chord chart musical notation. In this paper we discuss the potential we
+                        discovered 
+                        for invisible XML in music analysis and share our recommendations for guiding people
+                        to
+                        prepare processing pipelines (with XProc) that incorporate invisible XML, and we reflect
+                        on what
+                        aspects of this risky teaching experiment were most worthwhile.</p>
                   </details>
                   <details class="toc">
                      <summary>
@@ -445,7 +459,7 @@
                                  <dl>
                                     <dt><span class="section"><a href="#d3e252" class="toc">Introducing the GretaVanZeppelin Project</a></span></dt>
                                     <dt><span class="section"><a href="#d3e283" class="toc">A Brief Background on Music Encoding</a></span></dt>
-                                    <dt><span class="section"><a href="#d3e373" class="toc">Document Analysis and Our Unique Markup</a></span></dt>
+                                    <dt><span class="section"><a href="#d3e374" class="toc">Document Analysis and Our Unique Markup</a></span></dt>
                                     <dt><span class="section"><a href="#d3e422" class="toc">Implementation and Reflection on iXML in the Project</a></span></dt>
                                     <dt><span class="section"><a href="#d3e427" class="toc">What if We Had Used ChordPro?—The Potential of iXML</a></span></dt>
                                  </dl>
@@ -666,72 +680,71 @@
                               that our team research the <a href="https://music-encoding.org" class="link">Music
                                  Encoding Initiative (MEI)</a>. <q>The MEI is a community-driven,
                                  open-source effort to define a system for encoding musical documents in a
-                                 machine-readable structure.</q><sup class="fn-label"><a href="#d3e295" class="footnoteref" id="d3e295-ref">[2]</a></sup> In our research, we only saw examples of encoded sheet music (which
-                              is all the notes written down on the page on musical staffs). Sheet music is not
-                              conducive to rock music which, in my experience, is based on repeated grooves
-                              and phrases that are more effectively communicated verbally/audibly. A chord
-                              chart serves as a sufficient guide to show an outline of the structure of the
-                              song while displaying what chords need to be played based on what lyrics are
+                                 machine-readable structure.</q><sup class="fn-label"><a href="#d3e295" class="footnoteref" id="d3e295-ref">[2]</a></sup> In our research, we only saw examples of encoded sheet music in
+                              which all the notes are represented on the page on musical staffs. Sheet music
+                              is not conducive to rock music which, in my experience, is based on repeated
+                              grooves and phrases that are more effectively communicated verbally/audibly. A
+                              chord chart serves as a sufficient guide to show an outline of the structure of
+                              the song while displaying what chords need to be played based on what lyrics are
                               being sung. This means there is a lot of implicit information about the song
-                              <q>encoded</q> in these chord charts, but what we were seeing of the
-                              MEI was that it was very much focused on explicitly encoding every note of a
-                              piece of music. That, combined with the limited amount of time we had for the
-                              project, steered us away from utilizing the MEI guidelines and schema in our
+                              purposefully unmarked in these chord charts, but what we were seeing of the MEI
+                              was that it was very much focused on explicitly encoding every note of a piece
+                              of music. That, combined with the limited amount of time we had for the project,
+                              steered us away from utilizing the MEI guidelines and schema in our
                               project.</p>
-                           <p id="d3e304">Dr. Beshero-Bondar’s Digit program has one past experience using the MEI: the
-                              Locke Anthology Project<sup class="fn-label"><a href="#d3e306" class="footnoteref" id="d3e306-ref">[3]</a></sup>. This project conformed to TEI guidelines to preserve a digital
+                           <p id="d3e302">Our Digit program has one past experience using the MEI: the Locke Anthology Project<sup class="fn-label"><a href="#d3e304" class="footnoteref" id="d3e304-ref">[3]</a></sup>. This project conformed to TEI guidelines to preserve a digital
                               version of Alain Locke’s anthology <span class="ital">The New Negro: An
                                  Interpretation</span> (1925). The work includes short snippets of music
                               between its stories and poems, and the team used the MEI’s structure to encode
-                              those snippets so that they could be converted to MIDI<sup class="fn-label"><a href="#d3e315" class="footnoteref" id="d3e315-ref">[4]</a></sup> and played back as audio files on the website. This use of the MEI
+                              those snippets so that they could be converted to MIDI<sup class="fn-label"><a href="#d3e313" class="footnoteref" id="d3e313-ref">[4]</a></sup> and played back as audio files on the website. This use of the MEI
                               was practical, not analytical like the GretaVanZeppelin Project’s focus was. So,
                               while very interesting, the Locke Anthology Project was not something we could
                               have used to help us with our project.</p>
-                           <p id="d3e324">So, what do we do for a project that utilizes solely chord notation? There are
+                           <p id="d3e322">So, how do we approach a project that utilizes solely chord notation? There are
                               other formats for the digitization of music, most notably <a href="https://www.musicxml.com/" class="link">MusicXML</a> which we discovered
                               after the semester’s conclusion. This markup language is used and supported in
-                              many popular music notation, recording, and other music-related software.<sup class="fn-label"><a href="#d3e329" class="footnoteref" id="d3e329-ref">[5]</a></sup> Upon familiarizing myself with their tutorial<sup class="fn-label"><a href="#d3e335" class="footnoteref" id="d3e335-ref">[6]</a></sup>, I think we <span class="ital">could</span> have utilized it,
+                              many popular music notation, recording, and other music-related software.<sup class="fn-label"><a href="#d3e327" class="footnoteref" id="d3e327-ref">[5]</a></sup> Upon familiarizing myself with their tutorial<sup class="fn-label"><a href="#d3e333" class="footnoteref" id="d3e333-ref">[6]</a></sup>, I think we <span class="ital">could</span> have utilized it,
                               but it would have still been a very large and time-consuming learning
                               curve.</p>
-                           <p id="d3e344"><span class="ital">Additional reading: <q><a href="https://opensheetmusicdisplay.org/blog/blog-music-xml-introduction-comparison/" class="link">Music XML Introduction and
+                           <p id="d3e342"><span class="ital">Additional reading: <q><a href="https://opensheetmusicdisplay.org/blog/blog-music-xml-introduction-comparison/" class="link">Music XML Introduction and
                                        Comparison</a></q></span></p>
-                           <p id="d3e350">We also discovered <a href="https://www.chordpro.org/" class="link">ChordPro</a> after the project’s development. I actually knew about
+                           <p id="d3e348">We also discovered <a href="https://www.chordpro.org/" class="link">ChordPro</a> after the project’s development. I actually knew about
                               ChordPro existing as a way to write chord charts, but only in the context of my
-                              church’s music planning software<sup class="fn-label"><a href="#d3e355" class="footnoteref" id="d3e355-ref">[7]</a></sup>. I was unaware of the scope of ChordPro as an in-development
-                              open-source program<sup class="fn-label"><a href="#d3e363" class="footnoteref" id="d3e363-ref">[8]</a></sup> aimed at the markup of chord charts. This could very well be the
+                              church’s music planning software<sup class="fn-label"><a href="#d3e353" class="footnoteref" id="d3e353-ref">[7]</a></sup>. I was unaware of the scope of ChordPro as an in-development
+                              open-source program<sup class="fn-label"><a href="#d3e364" class="footnoteref" id="d3e364-ref">[8]</a></sup> aimed at the markup of chord charts. This could very well be the
                               future of the GretaVanZeppelin project and could also more deeply incorporate
                               iXML, but I’ll discuss that after I've explained what the project already
                               accomplished. <span class="ital">(It sure would have been nice to know about
                                  ChordPro back in February 2025!)</span></p>
-                           <p id="d3e371">All of this to say, we ultimately decided to make our own markup specifically
+                           <p id="d3e372">All of this to say, we ultimately decided to make our own markup specifically
                               for our analysis.</p>
                         </div>
-                        <div class="section" id="d3e373">
+                        <div class="section" id="d3e374">
                            <h4 class="title" style="clear: both">Document Analysis and Our Unique Markup</h4>
-                           <p id="d3e376">My implementation of raw text transformation began by sketching out what the
-                              process would look like (a pipeline). After some basic XML structure, I knew
+                           <p id="d3e378">My implementation of raw text transformation began by sketching out what the
+                              process would look like as a pipeline. After some basic XML structure, I knew
                               that I would first need to find the two blank lines that separated the
                               beginnings and endings of each section (Verse, Chorus, etc.) in the song files.
                               Then, I would need to separate chords from lyrics within those sections.
                               Finally, some additional processing would be needed to identify individual
                               chords for counting purposes and to extract either just the chords or just the
                               lyrics for analysis.</p>
-                           <p id="d3e378">Ideally, the raw text would have been proofread and fixed more thoroughly. It
+                           <p id="d3e380">Ideally, the raw text would have been proofread and fixed more thoroughly. It
                               became apparent that lines were not separated logically as they would be if I or
                               a professional made the chord charts. Instead of the lines being divided by
                               musical phrases/chord progressions, they seemed to be divided by simply what
                               looked the best on the page. This limited our ability to analyze actual chord
                               progressions, so instead we focused on chord usage per song/artist.</p>
-                           <p id="d3e380">An example of this inconsistent formatting is shown below in an exerpt from
+                           <p id="d3e382">An example of this inconsistent formatting is shown below in an exerpt from
                               Greta Van Fleet’s song <q><a href="https://github.com/afish2003/GretaVanZeppelin/blob/main/pipeline/raw-text/Greta/fromTheFires/song-03.txt" class="link">Flower Power</a></q>.
                                Each chord is one
                               measure long, so a logical way of dividing the lines of lyrics and chords would
                               be to have each line correspond with one measure. But, the original formatting
                               confusingly makes it seem more complex than that.</p>
-                           <figure id="d3e388">
+                           <figure id="d3e390">
                               <p class="title">Figure&nbsp;1: Original Sample</p>
                               <div class="figure-contents">
-                                 <pre class="programlisting" id="d3e391">[Chorus]
+                                 <pre class="programlisting" id="d3e393">[Chorus]
 A
 Turn tonight, firelight
 D
@@ -748,10 +761,10 @@ She’s alright, she’s alright, she’s alright
 She’s outta sight, outta sight</pre>
                               </div>
                            </figure>
-                           <figure id="d3e393">
+                           <figure id="d3e395">
                               <p class="title">Figure&nbsp;2: Ideally Edited Sample (for the purpose of this example)</p>
                               <div class="figure-contents">
-                                 <pre class="programlisting" id="d3e396">[Chorus]
+                                 <pre class="programlisting" id="d3e398">[Chorus]
 A
 Turn tonight, firelight
 D
@@ -772,20 +785,21 @@ She’s al - right, she’s outta sight
 Outta sight</pre>
                               </div>
                            </figure>
-                           <p id="d3e398">One more important note about the raw text: the chords are placed directly
+                           <p id="d3e400">One more important note about the raw text: the chords are placed directly
                               over the word, or syllable of the word (example: al -
                               <span class="ital">r</span>ight), that is being sung when that chord is played. In
                               the above example, the chords were placed properly above the words; the easiest
                               way for me to check this is to listen to the song and pay attention to when the
                               chord changes. In some of the chord charts, I noticed that less care was taken
-                              to preserve the placement of the chords. For this reason, combined with the
+                              to preserve the placement of the chords. For this reason, as well as the
                               sometimes confusing line divisions, I made the decision that we would not make
-                              the effort to preserve the chords’ placement with the lyrics. There are likely
-                              ways to accomplish this, but I personally can’t see the benefits of it in this
-                              project other than beautifully &amp; accurately displaying the final XML output.
-                              The objective of the project wasn’t to improve the displaying of the chord
-                              charts but rather to analyze them.</p>
-                           <p id="d3e403">There is, however, something to be said for noting the duration of the chords
+                              the effort to preserve the chords’ placement with the lyrics. We later
+                              discovered a way to accomplish this (see section below on ChordPro), but I
+                              personally can’t see the benefits of it in this project other than beautifully
+                              and accurately displaying the final XML output. The objective of the project
+                              wasn’t to improve the displaying of the chord charts but rather to analyze
+                              them.</p>
+                           <p id="d3e405">There is, however, something to be said for noting the duration of the chords
                               in the markup. My preliminary research into the <a href="https://music-encoding.org/" class="link">Music Encoding Initiative
                                  (MEI)</a> showed that they use an attribute <code class="code">@dur</code> in their
                               <code class="code">&lt;chord&gt;</code> elements to indicate the duration of the chord.
@@ -796,14 +810,16 @@ Outta sight</pre>
                               tool that can accurately listen to music and recognize chord changes, the
                               durations of the chords would have to be marked by hand for every chord in every
                               song. </p>
-                           <p id="d3e414">All of this begs the question: <q>Is chord notation declaring itself to be
+                           <p id="d3e416">All of this begs the question: <q>Is chord notation declaring itself to be
                                  markup in its own right?</q> What is an easier form of music for a lot
                               of musicians to read is not as easy for a computer to understand because of the
-                              implicit attributes encoded into chord charts. Is it worth encoding chord charts
-                              so that computers can understand them? MIDI files store musical notation data
-                              that a computer can output as
-                              music.
-                              But anyways, back to the iXML!</p>
+                              implicit information that is purposely not marked in chord charts. Is it worth
+                              encoding chord charts more deliberately to support research and analysis? MEI
+                              preserves music well in academia; MusicXML outputs MIDI to be played as music;
+                              and ChordPro allows humans to write chord charts and accurately place the chords
+                              with the words to support performers. Can chord charts allow for a deeper
+                              analysis and comparison of music? Our experience with iXML suggests there is
+                              hope for this work!</p>
                         </div>
                         <div class="section" id="d3e422">
                            <h4 class="title" style="clear: both">Implementation and Reflection on iXML in the Project</h4>
@@ -912,27 +928,27 @@ Outta sight</pre>
                      <div id="d3e295" class="footnote">
                         <p><sup class="fn-label"><a href="#d3e295-ref" class="footnoteref">[2]</a></sup> Music Encoding Initiative, <a href="https://music-encoding.org" class="link">https://music-encoding.org</a></p>
                      </div>
-                     <div id="d3e306" class="footnote">
-                        <p><sup class="fn-label"><a href="#d3e306-ref" class="footnoteref">[3]</a></sup> Locke Anthology Project, <a href="https://newtfire.github.io/locke-anthology2.0/music.html" class="link">https://newtfire.github.io/locke-anthology2.0/music.html</a></p>
+                     <div id="d3e304" class="footnote">
+                        <p><sup class="fn-label"><a href="#d3e304-ref" class="footnoteref">[3]</a></sup> Locke Anthology Project, <a href="https://newtfire.github.io/locke-anthology2.0/music.html" class="link">https://newtfire.github.io/locke-anthology2.0/music.html</a></p>
                      </div>
-                     <div id="d3e315" class="footnote">
-                        <p><sup class="fn-label"><a href="#d3e315-ref" class="footnoteref">[4]</a></sup> <q>MIDI</q>,
-                           <a href="https://en.wikipedia.org/wiki/MIDI" class="link">https://en.wikipedia.org/wiki/MIDI</a></p>
+                     <div id="d3e313" class="footnote">
+                        <p><sup class="fn-label"><a href="#d3e313-ref" class="footnoteref">[4]</a></sup> For more information on MIDI, see <a href="https://midi.org/about-midi-part-1overview" class="link">https://midi.org/about-midi-part-1overview</a>and <a href="https://midi.org/specs" class="link">https://midi.org/specs</a></p>
                      </div>
-                     <div id="d3e329" class="footnote">
-                        <p><sup class="fn-label"><a href="#d3e329-ref" class="footnoteref">[5]</a></sup> List of software that utilizes MusicXML, <a href="https://www.musicxml.com/software/" class="link">https://www.musicxml.com/software/</a></p>
+                     <div id="d3e327" class="footnote">
+                        <p><sup class="fn-label"><a href="#d3e327-ref" class="footnoteref">[5]</a></sup> List of software that utilizes MusicXML, <a href="https://www.musicxml.com/software/" class="link">https://www.musicxml.com/software/</a></p>
                      </div>
-                     <div id="d3e335" class="footnote">
-                        <p><sup class="fn-label"><a href="#d3e335-ref" class="footnoteref">[6]</a></sup> MusicXML Tutorial on Chord Symbols and Diagrams, <a href="https://www.w3.org/2021/06/musicxml40/tutorial/chord-symbols-and-diagrams/" class="link">https://www.w3.org/2021/06/musicxml40/tutorial/chord-symbols-and-diagrams/</a></p>
+                     <div id="d3e333" class="footnote">
+                        <p><sup class="fn-label"><a href="#d3e333-ref" class="footnoteref">[6]</a></sup> MusicXML Tutorial on Chord Symbols and Diagrams, <a href="https://www.w3.org/2021/06/musicxml40/tutorial/chord-symbols-and-diagrams/" class="link">https://www.w3.org/2021/06/musicxml40/tutorial/chord-symbols-and-diagrams/</a></p>
                      </div>
-                     <div id="d3e355" class="footnote">
-                        <p><sup class="fn-label"><a href="#d3e355-ref" class="footnoteref">[7]</a></sup> <span class="bold">Planning Center Services</span>, the
-                           industry-standard program for planning church worship services that
-                           includes the ability to easily make and format chord charts using
-                           ChordPro. <a href="https://www.planningcenter.com/services" class="link">https://www.planningcenter.com/services</a></p>
+                     <div id="d3e353" class="footnote">
+                        <p><sup class="fn-label"><a href="#d3e353-ref" class="footnoteref">[7]</a></sup> <q>Planning Center Services</q>, the industry-standard program
+                           for planning church worship services that includes the ability to easily
+                           make and format chord charts using ChordPro. See <a href="https://pcoservices.zendesk.com/hc/en-us/articles/204262594-Preventing-charts-from-shifting-using-Chord-Pro" class="link">https://pcoservices.zendesk.com/hc/en-us/articles/204262594-Preventing-charts-from-shifting-using-Chord-Pro</a>
+                           to learn more about how they implement ChordPro, or watch someone
+                           utilize ChordPro within Planning Center: <a href="https://youtu.be/GS4GIw_0LQk?si=sZqMEZpqNl1JroGE" class="link">https://youtu.be/GS4GIw_0LQk?si=sZqMEZpqNl1JroGE</a></p>
                      </div>
-                     <div id="d3e363" class="footnote">
-                        <p><sup class="fn-label"><a href="#d3e363-ref" class="footnoteref">[8]</a></sup> ChordPro on GitHub, <a href="https://github.com/ChordPro/chordpro" class="link">https://github.com/ChordPro/chordpro</a></p>
+                     <div id="d3e364" class="footnote">
+                        <p><sup class="fn-label"><a href="#d3e364-ref" class="footnoteref">[8]</a></sup> ChordPro on GitHub, <a href="https://github.com/ChordPro/chordpro" class="link">https://github.com/ChordPro/chordpro</a></p>
                      </div>
                   </div>
                </div>
