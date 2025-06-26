@@ -27,9 +27,9 @@
                 approaching Python. Students learned how to install software in alpha stages and they tested
                 how well it works across platforms. From this exploratory start, one student project team 
                 found a very practical use-case for applying invisible XML in a project pipeline for 
-                analyzing chord chart musical notation. In this paper we discuss the potential we discovered 
-                for invisible XML in music analysis and share our recommendations for guiding people to
-                prepare processing pipelines (with XProc) that incorporate invisible XML, and we reflect on what
+                analyzing chord chart musical notation. In this paper, we discuss the potential we discovered 
+                for invisible XML in music analysis. We also share our recommendations for guiding people to
+                prepare processing pipelines that incorporate invisible XML, and we reflect on what
                 aspects of this risky teaching experiment were most worthwhile.</para>
         </abstract>
         <author>
