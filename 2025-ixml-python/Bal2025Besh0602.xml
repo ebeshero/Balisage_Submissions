@@ -537,34 +537,32 @@ Outta sight</programlisting>
             </section>
             <section>
                 <title>What if We Had Used ChordPro?—The Potential of iXML</title>
-                <para>Created in 1991,<footnote>
+                <para>Created in 1991, ChordPro predates MEI by almost a decade.<footnote>
                         <para>History of Chord Pro, <link
                                 xlink:href="https://www.chordpro.org/chordpro/chordpro-history/"
                                 >https://www.chordpro.org/chordpro/chordpro-history/</link></para>
-                    </footnote> ChordPro predates MEI<footnote>
                         <para>History of MEI, <link xlink:href="https://music-encoding.org/about"
                                 >https://music-encoding.org/about</link></para>
-                    </footnote> by almost a decade. It began as a notation for chord charts and has
-                    become a fully functional program for creating chord charts, using Perl to
-                    produce output.<footnote>
+                    </footnote> It began as a chord notation system and has become a fully
+                    functional program for creating chord charts, using Perl to produce output.<footnote>
                         <para>A Perl Module file in ChordPro's library for producing chord chart
                             output. <link
                                 xlink:href="https://github.com/ChordPro/chordpro/blob/master/lib/ChordPro/Output/HTML.pm"
                                 >https://github.com/ChordPro/chordpro/blob/master/lib/ChordPro/Output/HTML.pm</link></para>
-                    </footnote> Human-readable chord charts place the chords in a separate line
-                    above the lyrics; ChordPro differs from this by placing chords inline, in square
-                    brackets, directly in front of the word or even syllable of the word so that
-                    their position is preserved no matter the font or spacing.</para>
+                    </footnote> Unlike human-readable chord charts place the chords in a separate
+                    line above the lyrics, ChordPro places chords inline, in square brackets,
+                    directly in front of the word or even syllable of the word so that their
+                    position is preserved no matter the font or spacing.</para>
                 <para>The nature of this inline style of chord placement can likely be interpreted
-                    by iXML much easier than separate lines of chords and lyrics. This would have
-                    allowed us to use iXML to accomplish even more of the pipeline’s goal and
-                    eliminate some extra steps. More notably, however, is the question, <quote>Are
-                        there any creators or users of ChordPro aware of iXML and its potential to
-                        read ChordPro and turn it into XML?</quote> In our project, ChordPro could
-                    allow for both a more accurate preservation of the chord charts, and a more
-                    accurate representation of entire chord progressions. I certainly think it would
-                    be interesting to analyze something like the modern artist Greta Van Fleet
-                    directly copying a chord progression from a verse in a Led Zeppelin song.</para>
+                    by iXML more easily than separate lines of chords and lyrics. This would have
+                    allowed us to use iXML more extensively without subsequent processing steps.
+                    More notably, it seems unlikely that there are any creators or users of ChordPro
+                    aware currently of iXML and its potential to read ChordPro and turn it into XML?
+                    In our project, ChordPro could allow for both a more accurate preservation of
+                    the chord charts, and a more accurate representation of entire chord
+                    progressions. I certainly think it would be interesting to analyze something
+                    like the modern artist Greta Van Fleet directly copying a chord progression from
+                    a verse in a Led Zeppelin song.</para>
             </section>
         </section>
     </section>
