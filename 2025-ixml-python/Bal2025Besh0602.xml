@@ -248,19 +248,23 @@
                 we figured out what documentation was needed to provide these technologies to a
                 group of undergraduates. While Dr. Birnbaum developed installation instructions, he
                 warned us that they were only for MacOS and for those with a purchased Saxon EE
-                license for use with XProc processing. So, in collaboration with Dr. Birnbaum, the
-                battle-testing team needed to work on preparing these for the cross-platform
-                environment of our class. As the number of differences grew rapidly, we realized we
-                would need separate sets of instructions for MacOS and Windows users. Our
-                instructions also taught the students many things that would be useful to them in
-                general as DIGIT majors, including how to install a package manager (Homebrew for
+                license for use with XProc processing. So, in collaboration with Dr. Birnbaum, and
+                knowing that our students would not be able to purchase a Saxon EE license and would
+                be using the HE (Home Edition) instead, the battle-testing team needed to work on
+                preparing these for the cross-platform environment of our class. As the number of
+                differences between Dr Birnbaum's instructions and our experiences grew rapidly, we
+                realized we would need separate sets of instructions for MacOS and Windows users.
+                Our instructions also taught the students many things that would be useful to them
+                in general as DIGIT majors, including how to install a package manager (Homebrew for
                 MacOS or Chocolatey for Windows) for the purpose of installing OpenJDK, creating
                 shell aliases and editing system dot-files, and smoke-testing their installations to
                 ensure proper configuration.</para>
-            <para>The class was likely capable of figuring this all out on their own with the
-                limited installation instructions given on each software's website, but having it
-                all thoroughly explained in one place allowed us to stay within the semester's time
-                constraints which is important when teaching iXML to undergraduates.</para>
+            <para>While individual members of the class might have been able to successfully prepare
+                their environments, without our work ahead of time, things would have likely been
+                very chaotic when Dr. Birnbaum arrived to guest-instruct our class on iXML and
+                XProc. Additionally, this was a condensed experiement, as Dr. Birnbaum was allotted
+                just three, 50 minute class periods. So, ensuring all students were ready to hit the
+                ground running at the time of his guest appearance was crucial.</para>
         </section>
         <section>
             <title>Developing Command Line Fluency: Learning how to install iXML and XProc software
