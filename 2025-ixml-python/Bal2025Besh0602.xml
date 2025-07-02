@@ -898,20 +898,20 @@ A G D A G D
 A G
 &lt;/mdiv&gt;&lt;/section&gt;&lt;/music&gt;&lt;/mei&gt;</programlisting>
                 </figure>
-                <para>The way I hear and see the iXML in my head is, <quote>[what’s on the left side of
-                        the colon] contains [what’s on the right side of the colon] followed by
+                <para>The way I hear and see the iXML in my head is, <quote>[what’s on the left side
+                        of the colon] contains [what’s on the right side of the colon] followed by
                         [anything else separated by a comma].</quote></para>
-                <para>Beginning at the first line, the root element named <code>&lt;mei&gt;</code> and the
-                    element following (<code>&lt;music&gt;</code>) are named as such simply for the purpose
-                    of being adaptable to MEI guidelines in the future. Of course now, we realize
-                    that may not be all that beneficial. All of the subsequent elements are
-                    contained in the secondary root element <code>&lt;music&gt;</code>. There are four lines
-                    of metadata which are there to identify the song. Our team added the
-                        <code>&lt;key&gt;</code> metadata to the original documents so that the chords could
-                    be identified in a number system<!--footnote!!!--> for more meaningful
-                    analysis.</para>
-                <para>Then, each <code>&lt;section&gt;</code> element is a different section of the song
-                    (Verse, Chorus, etc.). These section headings are noted by square brackets
+                <para>Beginning at the first line, the root element named <code>&lt;mei&gt;</code>
+                    and the element following (<code>&lt;music&gt;</code>) are named as such simply
+                    for the purpose of being adaptable to MEI guidelines in the future. Of course
+                    now, we realize that may not be all that beneficial. All of the subsequent
+                    elements are contained in the secondary root element <code>&lt;music&gt;</code>.
+                    There are four lines of metadata which are there to identify the song. Our team
+                    added the <code>&lt;key&gt;</code> metadata to the original documents so that
+                    the chords could be identified in a number system<!--footnote!!!--> for more
+                    meaningful analysis.</para>
+                <para>Then, each <code>&lt;section&gt;</code> element is a different section of the
+                    song (Verse, Chorus, etc.). These section headings are noted by square brackets
                         <code>[]</code> in the original documents. While the development of the iXML
                     was difficult as a beginner, it was nothing too challenging until the first
                     major setback: not recognizing the ends of sections. There were no square
@@ -921,7 +921,15 @@ A G
                     using regular expressions in a find-and-replace context. However, this concept
                     didn’t translate one-to-one with iXML, because we also had to account for the
                     two (rather, <emphasis role="ital">most of the time</emphasis> two) blank lines
-                    between sections. </para>
+                    between sections. Dr. Birnbaum’s study of ambiguity in iXML helped us solve this
+                    problem of parsing the sections, specifically his notes on the double plus sign (++).<footnote>
+                        <para>Dr. David J. Birnbaum, <quote>Invisible XML and ambiguity</quote>,
+                                <link xlink:href="http://dh.obdurodon.org/ixml-ambiguity.xhtml"
+                                >http://dh.obdurodon.org/ixml-ambiguity.xhtml</link> (2025). Last
+                            accessed 2025-07-02.</para>
+                    </footnote></para>
+                <para>To solve this problem, Dr. Beshero-Bondar developed a monster Regex line which
+                    we implimented in XSLT through our XProc pipeline.</para>
             </section>
             <section>
                 <title>What if We Had Used ChordPro?—The Potential of iXML</title>
