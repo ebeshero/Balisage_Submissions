@@ -333,12 +333,12 @@
                                              <dt><span class="section"><a href="#d3e353" class="toc">A Brief Background on Music Encoding</a></span></dt>
                                              <dt><span class="section"><a href="#d3e446" class="toc">Document Analysis and Our Unique Markup</a></span></dt>
                                              <dt><span class="section"><a href="#d3e495" class="toc">Implementation and Reflection on iXML in the Project</a></span></dt>
-                                             <dt><span class="section"><a href="#d3e597" class="toc">What if We Had Used ChordPro?—The Potential of iXML</a></span></dt>
+                                             <dt><span class="section"><a href="#d3e603" class="toc">What if We Had Used ChordPro?—The Potential of iXML</a></span></dt>
                                           </dl>
                                        </dd>
                                     </dl>
                                  </dd>
-                                 <dt><span class="section"><a href="#d3e629" class="toc">What do we gain from learning and teaching invisible XML?</a></span></dt>
+                                 <dt><span class="section"><a href="#d3e635" class="toc">What do we gain from learning and teaching invisible XML?</a></span></dt>
                               </dl>
                            </details>
                         </div>
@@ -447,12 +447,12 @@
                                     <dt><span class="section"><a href="#d3e353" class="toc">A Brief Background on Music Encoding</a></span></dt>
                                     <dt><span class="section"><a href="#d3e446" class="toc">Document Analysis and Our Unique Markup</a></span></dt>
                                     <dt><span class="section"><a href="#d3e495" class="toc">Implementation and Reflection on iXML in the Project</a></span></dt>
-                                    <dt><span class="section"><a href="#d3e597" class="toc">What if We Had Used ChordPro?—The Potential of iXML</a></span></dt>
+                                    <dt><span class="section"><a href="#d3e603" class="toc">What if We Had Used ChordPro?—The Potential of iXML</a></span></dt>
                                  </dl>
                               </dd>
                            </dl>
                         </dd>
-                        <dt><span class="section"><a href="#d3e629" class="toc">What do we gain from learning and teaching invisible XML?</a></span></dt>
+                        <dt><span class="section"><a href="#d3e635" class="toc">What do we gain from learning and teaching invisible XML?</a></span></dt>
                      </dl>
                   </details>
                </div>
@@ -1153,10 +1153,11 @@ A G
                            <p id="d3e564">We did, however, encounter an ambiguity problem that was beyond our capacity
                               to solve in iXML. This involved differentiating the multi-character chord
                               symbols from lyrics. These multi-character chords appear periodically in both
-                              artists’ songs, and they provide musicians who read chord charts with valuable
-                              information called <q>extensions</q>that make the chords more
-                              interesting and more accurately representative of how the artist originally
-                              played them. Below is an example of some of these chords:</p>
+                              artists’ songs (as well as throughout Ultimate Guitar), and they provide
+                              musicians who read chord charts with valuable information called
+                              <q>extensions</q> that make the chords more interesting and more
+                              accurately representative of how the artist originally played them. Below is a
+                              famous example of some of these chords:</p>
                            <figure id="d3e570">
                               <p class="title">Figure&nbsp;6: Snippet from Led Zeppelin's <q>Stairway to Heaven</q></p>
                               <div class="figure-contents">
@@ -1184,20 +1185,56 @@ And she's buying a stairway to heaven.</pre>
                               figure of Greta Van Fleet's <q>Flower Power</q>, there are sections that
                               contain exclusively chords. There is also the possibility for sections of lyrics
                               with no chords above them. To solve this problem, Dr. Beshero-Bondar developed a
-                              monster Regex line which we implemented in XSLT through our XProc
-                              pipeline.</p>
-                           <p id="d3e594">
-                              <pre class="programlisting" id="d3e595">\n(\s*([A-Z][#ba-z/0-9]*) *([A-Z][#ba-z/0-9]*)?)*\n</pre>
+                              <q>monsterous Regex line</q> which we implemented with
+                              <code class="code">xsl:analyze-string</code> in a single XSLT template through our XProc
+                              pipeline following the iXML stage:</p>
+                           <p id="d3e600">
+                              <pre class="programlisting" id="d3e601">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:math="http://www.w3.org/2005/xpath-functions/math"
+    exclude-result-prefixes="xs math"
+    version="3.0"&gt;
+    &lt;xsl:mode on-no-match="shallow-copy"/&gt;
+    &lt;xsl:output method="xml" indent="yes"/&gt;    
+    &lt;xsl:template match="/"&gt;
+        &lt;xsl:apply-templates/&gt;
+    &lt;/xsl:template&gt;
+    
+    &lt;xsl:template match="mdiv"&gt;
+        &lt;xsl:analyze-string select="." regex="\n(\s*([A-Z][#ba-z/0-9]*) *([A-Z][#ba-z/0-9]*)?)*\n"&gt;
+            &lt;xsl:matching-substring&gt;
+                &lt;chordLine&gt;
+                    &lt;xsl:for-each select="tokenize(., '\s+')"&gt;
+                        &lt;xsl:if test="current() ! matches(., '\S')"&gt;
+                            &lt;chord&gt;&lt;xsl:value-of select="current()"/&gt;&lt;/chord&gt;
+                        &lt;/xsl:if&gt;
+                    &lt;/xsl:for-each&gt;
+                &lt;/chordLine&gt;
+            &lt;/xsl:matching-substring&gt;
+            &lt;xsl:non-matching-substring&gt;
+                &lt;lyrics&gt;
+                    &lt;xsl:value-of select=". ! normalize-space()"/&gt;                
+                &lt;/lyrics&gt;
+            &lt;/xsl:non-matching-substring&gt;
+            
+        &lt;/xsl:analyze-string&gt;
+        
+        
+        
+    &lt;/xsl:template&gt;
+    
+&lt;/xsl:stylesheet&gt;</pre>
                            </p>
                         </div>
-                        <div class="section" id="d3e597">
+                        <div class="section" id="d3e603">
                            <h4 class="title" style="clear: both">What if We Had Used ChordPro?—The Potential of iXML</h4>
-                           <p id="d3e600">Created in 1991, ChordPro predates MEI and MusicXML by almost a decade.<sup class="fn-label"><a href="#d3e602" class="footnoteref" id="d3e602-ref">[17]</a></sup> It began as a chord notation system and has become a fully
-                              functional program for creating chord charts, using Perl to produce output.<sup class="fn-label"><a href="#d3e621" class="footnoteref" id="d3e621-ref">[18]</a></sup> Unlike human-readable chord charts place the chords in a separate
+                           <p id="d3e606">Created in 1991, ChordPro predates MEI and MusicXML by almost a decade.<sup class="fn-label"><a href="#d3e608" class="footnoteref" id="d3e608-ref">[17]</a></sup> It began as a chord notation system and has become a fully
+                              functional program for creating chord charts, using Perl to produce output.<sup class="fn-label"><a href="#d3e627" class="footnoteref" id="d3e627-ref">[18]</a></sup> Unlike human-readable chord charts that place the chords in a separate
                               line above the lyrics, ChordPro places chords inline, in square brackets,
                               directly in front of the word or even syllable of the word so that their
                               position is preserved no matter the font or spacing.</p>
-                           <p id="d3e627">The nature of this inline style of chord placement can likely be interpreted
+                           <p id="d3e633">The nature of this inline style of chord placement can likely be interpreted
                               by iXML more easily than separate lines of chords and lyrics. This would have
                               allowed us to use iXML more extensively without subsequent processing steps.
                               More notably, it seems unlikely that there are any creators or users of ChordPro
@@ -1210,9 +1247,9 @@ And she's buying a stairway to heaven.</pre>
                         </div>
                      </div>
                   </div>
-                  <div class="section" id="d3e629">
+                  <div class="section" id="d3e635">
                      <h2 class="title" style="clear: both">What do we gain from learning and teaching invisible XML?</h2>
-                     <p id="d3e632">Was this worth the effort, and was invisible XML ready for undergraduates in an
+                     <p id="d3e638">Was this worth the effort, and was invisible XML ready for undergraduates in an
                         algorithmic text analysis course? Most student project teams were not motivated to
                         apply
                         invisible XML in their projects and we did not require them to do so. (We only required
@@ -1248,7 +1285,7 @@ And she's buying a stairway to heaven.</pre>
                         to
                         more dimensions of expression for every meaningful and resonant word and punctuation
                         mark than prosaic instruction. </p>
-                     <p id="d3e653">Certainly for all its expressive power, invisible XML cannot replace the prosaic
+                     <p id="d3e659">Certainly for all its expressive power, invisible XML cannot replace the prosaic
                         versatility of regular expressions as a <q>Swiss-army knife</q> for many
                         different text analysis purposes. And we could have taught our course without it.
                         But
@@ -1270,7 +1307,7 @@ And she's buying a stairway to heaven.</pre>
                         moving between declarative and imperative methods of text handling, and helped them
                         to
                         reflect on a certain fluidity of methods.</p>
-                     <p id="d3e664">Our experience of this course helped to bridge distinct cultures in text analysis
+                     <p id="d3e670">Our experience of this course helped to bridge distinct cultures in text analysis
                         that
                         are perhaps better connected than experienced in isolation. Perhaps we have found
                         a
@@ -1371,15 +1408,15 @@ And she's buying a stairway to heaven.</pre>
                         <p><sup class="fn-label"><a href="#d3e555-ref" class="footnoteref">[16]</a></sup> David J. Birnbaum, <q>Invisible XML and ambiguity</q>, <a href="http://dh.obdurodon.org/ixml-ambiguity.xhtml" class="link">http://dh.obdurodon.org/ixml-ambiguity.xhtml</a> (2025). Last
                            accessed 2025-07-02.</p>
                      </div>
-                     <div id="d3e602" class="footnote">
-                        <p><sup class="fn-label"><a href="#d3e602-ref" class="footnoteref">[17]</a></sup> History of Chord Pro, <a href="https://www.chordpro.org/chordpro/chordpro-history/" class="link">https://www.chordpro.org/chordpro/chordpro-history/</a>. See
+                     <div id="d3e608" class="footnote">
+                        <p><sup class="fn-label"><a href="#d3e608-ref" class="footnoteref">[17]</a></sup> History of Chord Pro, <a href="https://www.chordpro.org/chordpro/chordpro-history/" class="link">https://www.chordpro.org/chordpro/chordpro-history/</a>. See
                            also <q>An introduction to MEI</q> for a history of MEI: <a href="https://music-encoding.org/about" class="link">https://music-encoding.org/about</a> and <q>Music XML
                               Introduction and comparison</q> for a history of MusicXML: <a href="https://opensheetmusicdisplay.org/blog/blog-music-xml-introduction-comparison" class="link">https://opensheetmusicdisplay.org/blog/blog-music-xml-introduction-comparison</a>.
                            The authors find it disappointing that there seems to be no mention of
                            ChordPro in the documentation of either MEI or MusicXML.</p>
                      </div>
-                     <div id="d3e621" class="footnote">
-                        <p><sup class="fn-label"><a href="#d3e621-ref" class="footnoteref">[18]</a></sup> A Perl Module file in ChordPro’s library for producing chord chart
+                     <div id="d3e627" class="footnote">
+                        <p><sup class="fn-label"><a href="#d3e627-ref" class="footnoteref">[18]</a></sup> A Perl Module file in ChordPro’s library for producing chord chart
                            output. <a href="https://github.com/ChordPro/chordpro/blob/master/lib/ChordPro/Output/HTML.pm" class="link">https://github.com/ChordPro/chordpro/blob/master/lib/ChordPro/Output/HTML.pm</a></p>
                      </div>
                   </div>
