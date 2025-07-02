@@ -116,14 +116,16 @@
     </info>
     <section>
         <title>Context: The Large-Scale Text Analysis Course at Penn State Behrend</title>
-        <para>The Large-Scale Text Analysis class (Digit 210) is taught (by me, Elisa Beshero-Bondar) in spring semesters as part
-            of a multiple-semester digital humanities core sequence in the Digital Media, Arts, and
-            Technology major: Students usually came to this class with previous experience from a
-            course taught regularly each fall in text encoding with XML, transformation with XSLT,
-            and web development with HTML and CSS. Our university semesters are 15 weeks long with
-            three 50-minute classes per week, during which these classes involve daily homework and
-            a few tests with an emphasis on students’ applying what they learn to develop semester
-            projects in small teams.</para>
+        <para>The Large-Scale Text Analysis class (Digit 210) is taught (by me, Elisa
+            Beshero-Bondar) in spring semesters in the Digital Media, Arts, and Technology major at
+            Penn State Behrend (affectionately known to us as the <quote>DIGIT</quote>program). The
+            course is part of a multiple-semester digital humanities core sequence that concentrates
+            on text encoding and processing. Students usually came to this class with previous
+            experience from a course taught regularly each fall in text encoding with XML,
+            transformation with XSLT, and web development with HTML and CSS. Our university
+            semesters are 15 weeks long with three 50-minute classes per week, during which these
+            classes involve daily homework and a few tests with an emphasis on students’ applying
+            what they learn to develop semester projects in small teams.</para>
 
         <para>Digit 210 is usually understood to be <quote>the Python-and-Regex course</quote>. A
             typical semester would involve orienting students to natural language processing in
@@ -154,7 +156,7 @@
             organizing of teaching syllabi. In Spring 2025, motivated greatly by the interesting
             opportunities of invisible XML and the creative affordances of SVG discussed in previous
             years at Balisage, we changed direction and put XML technologies much more in the foreground.<footnote>
-                <para>Several papers in the Proceedings of Balisage:The Markup Conference vol. 29
+                <para>Several papers in the Proceedings of Balisage: The Markup Conference vol. 29
                     (2024) demonstrated exciting applications of invisible XML connected to careful
                     document planning and analysis with exciting implications for interface design.
                     See Joseph Michael Courtney and Michael Robert Gryk, <quote>Pulse, Parse, and
@@ -220,17 +222,18 @@
             <!-- Michael -->
             <subtitle>Preparing for a Cross-Platform educational experiment</subtitle>
             <para>Hello world! I’m Michael Simons, and I was one of the
-                    <quote>battle-testers</quote> for the new iXML &amp; XProc unit in our Digit 210
-                class. I was one of three student who signed up to assist Dr. Beshero-Bondar and Dr.
-                David J. Birnbaum in trying out some new exciting XML technologies to be taught to
-                the rest of our class. I was joined by Dannika, who was taking the course with me,
-                and Caleb, who had taken the course the previous year in its previous form. Dannika
-                is a student who has attention to detail and great leadership qualities but likely
-                would have not gained as much from iXML and XProc if she had not been a
-                behind-the-scenes battle-tester. Caleb is also a highly motivated student and
-                leader, and one of his main contributions was working through the challenges of
-                installing iXML and XProc processors in a Windows environment, as Dr.
-                Beshero-Bondar, Dannika and myself are all MacOS users.</para>
+                    <quote>battle-testers</quote> for the new iXML and XProc unit in our Digit 210
+                class. I was one of three students who signed up to assist Dr. Beshero-Bondar and
+                Dr. David J. Birnbaum in trying out some new exciting XML technologies to be taught
+                to the rest of our class. Dr. Birnbaum was invited to teach a roughly one week long
+                unit on these technologies, but the preparation was long and intense. I was joined
+                by Dannika, who was taking the course with me, and Caleb, who had taken the course
+                the previous year in its previous form. Dannika is a student who has attention to
+                detail and great leadership qualities but likely would have not gained as much from
+                iXML and XProc if she had not been a behind-the-scenes battle-tester. Caleb is also
+                a highly motivated student and leader, and one of his main contributions was working
+                through the challenges of installing iXML and XProc processors in a Windows
+                environment, as Dr. Beshero-Bondar, Dannika and myself are all MacOS users.</para>
             <para>Our group of battle-testers was largely responsible for, most importantly, getting
                 ahead of the class and working our way through learning iXML and XProc before our
                 peers, so that we could <orderedlist>
@@ -241,28 +244,28 @@
                     <listitem>
                         <para>Assist our peers when problems arose.</para>
                     </listitem>
-                </orderedlist>Like I mentioned about Dannika, we all gained more knowledge about
-                iXML and XProc than we would have otherwise because of the problems we worked
-                through together, so that is something I value greatly about this experience.</para>
+                </orderedlist>We all gained more knowledge about iXML and XProc than we would have
+                otherwise because of the problems we worked through together, so that is something I
+                value greatly about this experience.</para>
             <para>We hope that our battle-testing was helpful to the developers of iXML and XProc as
                 we figured out what documentation was needed to provide these technologies to a
                 group of undergraduates. While Dr. Birnbaum developed installation instructions, he
                 warned us that they were only for MacOS and for those with a purchased Saxon EE
                 license for use with XProc processing.<footnote>
                     <para>Dr. Birnbaum's installation instructions, which he claimed were developed
-                        for his biggest audience: himself. <link
+                        for his primary audience: himself. <link
                             xlink:href="http://dh.obdurodon.org/ixml-and-xproc-configuration.xhtml"
                             >http://dh.obdurodon.org/ixml-and-xproc-configuration.xhtml</link>.</para>
-                </footnote> So, in collaboration with Dr. Birnbaum, and knowing that our students
-                would not be able to purchase a Saxon EE license and would be using the HE (Home
-                Edition) instead, the battle-testing team needed to work on preparing instructions
-                for the cross-platform environment of our class. As the number of differences
-                between Dr Birnbaum's instructions and our experiences grew rapidly, we realized we
-                would need separate sets of instructions for MacOS and Windows users.<footnote>
+                </footnote> Knowing that our students would not be able to purchase a Saxon EE
+                license and would be using the HE (Home Edition) instead, the battle-testing team
+                needed to work on preparing instructions for the cross-platform environment of our
+                class. As the number of differences between Dr Birnbaum's instructions and our
+                experiences grew rapidly, we realized we would need separate sets of instructions
+                for MacOS and Windows users.<footnote>
                     <para>Digit 210's set of installation instructions. Initially drafted by Dr.
                         Beshero-Bondar, the battle-testing students made contributions as they ran
-                        into their own issues, and the final documents were proofread and edited by
-                        Michael Simons. Version for MacOS: <link
+                        into their own issues, and the final documents were proofread and heavily
+                        edited by Michael Simons. Version for MacOS: <link
                             xlink:href="https://github.com/newtfire/textAnalysis-Hub/blob/main/Installations/InstallNotes-Mac.md"
                             >https://github.com/newtfire/textAnalysis-Hub/blob/main/Installations/InstallNotes-Mac.md</link>.
                         Version for Windows: <link
@@ -284,8 +287,10 @@
                         <link
                             xlink:href="https://newtfire.org/courses/tutorials/command-line-aliases.html"
                             >https://newtfire.org/courses/tutorials/command-line-aliases.html</link>.</para>
-                </footnote> and smoke-testing their installations to ensure proper
-                configuration.</para>
+                </footnote> and <quote>smoke-testing</quote> their installations to ensure proper
+                configuration. We are grateful for Dr. Birnbaum joining us over Zoom for
+                consultation sessions as we worked on this battle-testing phase, and we learned a
+                lot from his whimsical sidenotes and extraordinary yet accessible knowledge.</para>
             <para>While individual members of the class might have been able to successfully prepare
                 their environments, without our work ahead of time, things would have likely been
                 very chaotic when Dr. Birnbaum arrived to guest-instruct our class on iXML and
@@ -293,20 +298,6 @@
                 just three, 50 minute class periods for teaching us iXML and XProc. So, ensuring all
                 students were ready to hit the ground running at the time of his guest appearance
                 was crucial.</para>
-        </section>
-        <section>
-            <title>Developing Command Line Fluency: Learning how to install iXML and XProc software
-                in alpha development</title>
-            <para><!-- To cover: The challenge of testing and working across platforms
-        
-        -->
-            </para>
-        </section>
-        <section>
-            <title>Introductory material on iXML and XProc</title>
-            <para><!-- XProc pipelines  -->
-                <!-- Dr. B to develop -->
-            </para>
         </section>
     </section>
     <section>
