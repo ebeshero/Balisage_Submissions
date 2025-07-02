@@ -218,19 +218,19 @@
         <section>
             <title>Introducing the Battle-Testing Team</title>
             <!-- Michael -->
-            <subtitle>Preparing for a Cross-Platform educationl experiment</subtitle>
+            <subtitle>Preparing for a Cross-Platform educational experiment</subtitle>
             <para>Hello world! I’m Michael Simons, and I was one of the
                     <quote>battle-testers</quote> for the new iXML &amp; XProc unit in our Digit 210
-                class. I was one of three who signed up to assist Dr. Beshero-Bondar in trying out
-                some new exciting XML technologies to be taught to the rest of our class. I was
-                joined by Dannika, who was taking the course with me, and Caleb, who had taken the
-                course the previous year in its previous form. Dannika is a student who has
-                attention to detail and great leadership qualities but likely would have not gained
-                as much from iXML and XProc if she had not been a behind-the-scenes battle-tester.
-                Caleb is also a highly motivated student and leader, and one of his main
-                contributions was working through the challenges of installing iXML and XProc
-                processors in a Windows environment, as Dr. Beshero-Bondar, Dannika and myself are
-                all MacOS users.</para>
+                class. I was one of three student who signed up to assist Dr. Beshero-Bondar and Dr.
+                David J. Birnbaum in trying out some new exciting XML technologies to be taught to
+                the rest of our class. I was joined by Dannika, who was taking the course with me,
+                and Caleb, who had taken the course the previous year in its previous form. Dannika
+                is a student who has attention to detail and great leadership qualities but likely
+                would have not gained as much from iXML and XProc if she had not been a
+                behind-the-scenes battle-tester. Caleb is also a highly motivated student and
+                leader, and one of his main contributions was working through the challenges of
+                installing iXML and XProc processors in a Windows environment, as Dr.
+                Beshero-Bondar, Dannika and myself are all MacOS users.</para>
             <para>Our group of battle-testers was largely responsible for, most importantly, getting
                 ahead of the class and working our way through learning iXML and XProc before our
                 peers, so that we could <orderedlist>
@@ -244,6 +244,55 @@
                 </orderedlist>Like I mentioned about Dannika, we all gained more knowledge about
                 iXML and XProc than we would have otherwise because of the problems we worked
                 through together, so that is something I value greatly about this experience.</para>
+            <para>We hope that our battle-testing was helpful to the developers of iXML and XProc as
+                we figured out what documentation was needed to provide these technologies to a
+                group of undergraduates. While Dr. Birnbaum developed installation instructions, he
+                warned us that they were only for MacOS and for those with a purchased Saxon EE
+                license for use with XProc processing.<footnote>
+                    <para>Dr. Birnbaum's installation instructions, which he claimed were developed
+                        for his biggest audience: himself. <link
+                            xlink:href="http://dh.obdurodon.org/ixml-and-xproc-configuration.xhtml"
+                            >http://dh.obdurodon.org/ixml-and-xproc-configuration.xhtml</link>.</para>
+                </footnote> So, in collaboration with Dr. Birnbaum, and knowing that our students
+                would not be able to purchase a Saxon EE license and would be using the HE (Home
+                Edition) instead, the battle-testing team needed to work on preparing instructions
+                for the cross-platform environment of our class. As the number of differences
+                between Dr Birnbaum's instructions and our experiences grew rapidly, we realized we
+                would need separate sets of instructions for MacOS and Windows users.<footnote>
+                    <para>Digit 210's set of installation instructions. Initially drafted by Dr.
+                        Beshero-Bondar, the battle-testing students made contributions as they ran
+                        into their own issues, and the final documents were proofread and edited by
+                        Michael Simons. Version for MacOS: <link
+                            xlink:href="https://github.com/newtfire/textAnalysis-Hub/blob/main/Installations/InstallNotes-Mac.md"
+                            >https://github.com/newtfire/textAnalysis-Hub/blob/main/Installations/InstallNotes-Mac.md</link>.
+                        Version for Windows: <link
+                            xlink:href="https://github.com/newtfire/textAnalysis-Hub/blob/main/Installations/InstallNotes-Win.md"
+                            >https://github.com/newtfire/textAnalysis-Hub/blob/main/Installations/InstallNotes-Win.md</link>.</para>
+                </footnote> Our instructions also taught the students many things that would be
+                useful to them in general as DIGIT majors, including how to install a package
+                manager (Homebrew for MacOS or Chocolatey for Windows) for the purpose of installing OpenJDK,<footnote>
+                    <para>Preliminary set of student-developed instructions for installing OpenJDK
+                        via a package manager. Version for MacOS: <link
+                            xlink:href="https://github.com/newtfire/textAnalysis-Hub/blob/main/Installations/OpenJDK-mac.md"
+                            >https://github.com/newtfire/textAnalysis-Hub/blob/main/Installations/OpenJDK-mac.md</link>.
+                        Version for Windows: <link
+                            xlink:href="https://github.com/newtfire/textAnalysis-Hub/blob/main/Installations/InstallNotes-Win.md"
+                            >https://github.com/newtfire/textAnalysis-Hub/blob/main/Installations/InstallNotes-Win.md</link>.</para>
+                </footnote> creating shell aliases and editing system dot-files,<footnote>
+                    <para>Digit 210 assignment: <quote>Create Shell Aliases and System ‘Dot
+                            Files.’</quote>
+                        <link
+                            xlink:href="https://newtfire.org/courses/tutorials/command-line-aliases.html"
+                            >https://newtfire.org/courses/tutorials/command-line-aliases.html</link>.</para>
+                </footnote> and smoke-testing their installations to ensure proper
+                configuration.</para>
+            <para>While individual members of the class might have been able to successfully prepare
+                their environments, without our work ahead of time, things would have likely been
+                very chaotic when Dr. Birnbaum arrived to guest-instruct our class on iXML and
+                XProc. Additionally, this was a condensed experiement, as Dr. Birnbaum was allotted
+                just three, 50 minute class periods for teaching us iXML and XProc. So, ensuring all
+                students were ready to hit the ground running at the time of his guest appearance
+                was crucial.</para>
         </section>
         <section>
             <title>Developing Command Line Fluency: Learning how to install iXML and XProc software
@@ -536,6 +585,323 @@ Outta sight</programlisting>
                 <title>Implementation and Reflection on iXML in the Project</title>
                 <!-- mrs7068: finally getting to ixml implementation here-->
                 <!-- ebb: Reflect a bit more on how the ixml was different from the regex? -->
+                <para>As previously mentioned, this project began with the MEI in mind; the iXML
+                    reflects that. Below is an example of a song (as we saw it in oXygen Editor with
+                    visible space and newline characters), the full iXML grammar, and XML output
+                    after processing the song with the iXML grammar:</para>
+                <figure>
+                    <title>Raw Text Chord Chart for Greta Van Fleet's <quote>Flower
+                        Power</quote></title>
+                    <programlisting xml:space="preserve">Flower·Power↵
+From·the·Fires↵
+Greta·Van·Fleet↵
+A↵
+↵
+[Intro]↵
+A·D·A·D·A·D·A·D↵
+·↵
+·↵
+[Verse·1]↵
+A····················D↵
+·She·is·a·lady,·comes·from·all·around↵
+A····························D↵
+·She's·many·places,·but·she's·homeward·bound↵
+············A↵
+And·now·she·walks·kinda·funny↵
+I·think·she·knows↵
+D↵
+Day·by·day·by·day↵
+Our·love·grows↵
+A···················D↵
+·She's·a·lantern·in·the·night↵
+She's·outta·sight↵
+·↵
+·↵
+[Pre-Chorus]↵
+A·······················D↵
+·Ma·ma·ma·ma·ma·ma·ma·ma·ma·ma·ma·ma↵
+A·······························D↵
+Ma·ma·ma·ma·ma·ma·ma·ma·ma·ma·ma·ma↵
+Ma·ma↵
+Hey↵
+·↵
+·↵
+[Chorus]↵
+A↵
+Turn·tonight,·firelight↵
+D↵
+Star·shines·in·her·eye↵
+A···················D↵
+·Makes·me·feel·like·I'm·alive↵
+···················A↵
+She's·outta·sight,·yeah↵
+D↵
+Aw·yeah↵
+········A·····························D↵
+She's·alright,·she's·alright,·she's·alright↵
+·························F····G↵
+She's·outta·sight,·outta·sight↵
+·↵
+·↵
+[Bridge]↵
+A·D·A·D↵
+·↵
+·↵
+[Verse·2]↵
+A···························D↵
+·Electric·gold·our·love·with·tender·care↵
+A·····················D↵
+·Hills·of·satin·grass·and·maidens·fair↵
+········A↵
+Now·she·rides·through·the·night↵
+On·a·silver·storm↵
+D↵
+Sword·in·hand↵
+Our·fate's·torn↵
+A···················D↵
+·She's·a·sparrow·of·the·dawn↵
+Our·love·is·born↵
+·↵
+·↵
+[Pre-Chorus]↵
+A·······················D↵
+·Ma·ma·ma·ma·ma·ma·ma·ma·ma·ma·ma·ma↵
+A·······························D↵
+Ma·ma·ma·ma·ma·ma·ma·ma·ma·ma·ma·ma↵
+Ma·ma↵
+Hey↵
+·↵
+·↵
+[Chorus]↵
+A↵
+Turn·tonight,·firelight↵
+D↵
+Star·shines·in·her·eye↵
+A···················D↵
+·Makes·me·feel·like·I'm·alive↵
+···················A↵
+She's·outta·sight,·yeah↵
+D↵
+Aw·yeah↵
+········A·····························D↵
+She's·alright,·she's·alright,·she's·alright↵
+·························F····G↵
+She's·outta·sight,·outta·sight↵
+·↵
+·↵
+[Solo]↵
+A···D↵
+Yeah↵
+A↵
+Oh·yeah↵
+D·A↵
+···Oh·yeah↵
+Oh·yeah↵
+·······D·A·D·A······D↵
+Oh·yeah·······papapa↵
+A·D↵
+···Oh·yeah↵
+·↵
+·↵
+[Verse·3]↵
+A···········G···········D↵
+·As·the·days·pass·by·my·mind↵
+A··············G↵
+·Are·the·wrong,·the·right↵
+·······D↵
+You·are·my·sunshine↵
+A················G··········D↵
+·And·as·the·night·begins·to·die↵
+A··············G···················D↵
+·We·are·the·morning·birds·that·sing·against·the·sky↵
+·↵
+·↵
+[Interlude]↵
+A·G·D·A·G·D↵
+A·G·D·A·G·D↵
+A·G·D·A·G·D↵
+A·G·D·A·G·D↵
+A·G·D·A·G·D↵
+A·G·D·A·G·D↵
+A·G·D·A·G·D↵
+A·G↵
+</programlisting>
+                </figure>
+                <figure>
+                    <title>GretaVanZeppelin Project's iXML</title>
+                    <programlisting language="ixml" xml:space="preserve">mei: music.
+music: title, newline, album, newline, artist, newline, key, newline, newline*, section++newline.
+title: ~[#d;#a]+.
+album: ~[#d;#a]+.
+artist: ~[#d;#a]+.
+key: ~[#d;#a]+.
+section: type, mdiv.
+@type: -"[", ~[#22]+, -"]".
+mdiv: ~[#22]+.
+-newline: (#d?, #a).
+-space: " ".</programlisting>
+                </figure>
+                <figure>
+                    <title>iXML Output File for <quote>Flower Power</quote></title>
+                    <programlisting language="xml" xml:space="preserve">&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;mei ixml:state="ambiguous" xmlns:ixml="http://invisiblexml.org/NS"&gt;&lt;music&gt;&lt;title&gt;Flower Power&lt;/title&gt;
+&lt;album&gt;From the Fires&lt;/album&gt;
+&lt;artist&gt;Greta Van Fleet&lt;/artist&gt;
+&lt;key&gt;A&lt;/key&gt;
+
+&lt;section type="Intro"&gt;&lt;mdiv&gt;
+A D A D A D A D
+ 
+ &lt;/mdiv&gt;&lt;/section&gt;
+&lt;section type="Verse 1"&gt;&lt;mdiv&gt;
+A                    D
+ She is a lady, comes from all around
+A                            D
+ She's many places, but she's homeward bound
+            A
+And now she walks kinda funny
+I think she knows
+D
+Day by day by day
+Our love grows
+A                   D
+ She's a lantern in the night
+She's outta sight
+ 
+ &lt;/mdiv&gt;&lt;/section&gt;
+&lt;section type="Pre-Chorus"&gt;&lt;mdiv&gt;
+A                       D
+ Ma ma ma ma ma ma ma ma ma ma ma ma
+A                               D
+Ma ma ma ma ma ma ma ma ma ma ma ma
+Ma ma
+Hey
+ 
+ &lt;/mdiv&gt;&lt;/section&gt;
+&lt;section type="Chorus"&gt;&lt;mdiv&gt;
+A
+Turn tonight, firelight
+D
+Star shines in her eye
+A                   D
+ Makes me feel like I'm alive
+                   A
+She's outta sight, yeah
+D
+Aw yeah
+        A                             D
+She's alright, she's alright, she's alright
+                         F    G
+She's outta sight, outta sight
+ 
+ &lt;/mdiv&gt;&lt;/section&gt;
+&lt;section type="Bridge"&gt;&lt;mdiv&gt;
+A D A D
+ 
+ &lt;/mdiv&gt;&lt;/section&gt;
+&lt;section type="Verse 2"&gt;&lt;mdiv&gt;
+A                           D
+ Electric gold our love with tender care
+A                     D
+ Hills of satin grass and maidens fair
+        A
+Now she rides through the night
+On a silver storm
+D
+Sword in hand
+Our fate's torn
+A                   D
+ She's a sparrow of the dawn
+Our love is born
+ 
+ &lt;/mdiv&gt;&lt;/section&gt;
+&lt;section type="Pre-Chorus"&gt;&lt;mdiv&gt;
+A                       D
+ Ma ma ma ma ma ma ma ma ma ma ma ma
+A                               D
+Ma ma ma ma ma ma ma ma ma ma ma ma
+Ma ma
+Hey
+ 
+ &lt;/mdiv&gt;&lt;/section&gt;
+&lt;section type="Chorus"&gt;&lt;mdiv&gt;
+A
+Turn tonight, firelight
+D
+Star shines in her eye
+A                   D
+ Makes me feel like I'm alive
+                   A
+She's outta sight, yeah
+D
+Aw yeah
+        A                             D
+She's alright, she's alright, she's alright
+                         F    G
+She's outta sight, outta sight
+ 
+ &lt;/mdiv&gt;&lt;/section&gt;
+&lt;section type="Solo"&gt;&lt;mdiv&gt;
+A   D
+Yeah
+A
+Oh yeah
+D A
+   Oh yeah
+Oh yeah
+       D A D A      D
+Oh yeah       papapa
+A D
+   Oh yeah
+ 
+ &lt;/mdiv&gt;&lt;/section&gt;
+&lt;section type="Verse 3"&gt;&lt;mdiv&gt;
+A           G           D
+ As the days pass by my mind
+A              G
+ Are the wrong, the right
+       D
+You are my sunshine
+A                G          D
+ And as the night begins to die
+A              G                   D
+ We are the morning birds that sing against the sky
+ 
+ &lt;/mdiv&gt;&lt;/section&gt;
+&lt;section type="Interlude"&gt;&lt;mdiv&gt;
+A G D A G D
+A G D A G D
+A G D A G D
+A G D A G D
+A G D A G D
+A G D A G D
+A G D A G D
+A G
+&lt;/mdiv&gt;&lt;/section&gt;&lt;/music&gt;&lt;/mei&gt;</programlisting>
+                </figure>
+                <para>The way I hear and see it in my head is, <quote>[what’s on the left side of
+                        the colon] contains [what's on the right side of the colon] followed by
+                        [anything else separated by a comma].</quote></para>
+                <para>Beginning at the first line, the root element named <code>mei</code> and the
+                    element following (<code>music</code>) are named as such simply for the purpose
+                    of being adaptable to MEI guidelines in the future. Of course now, we realize
+                    that may not be all that beneficial. All of the subsequent elements are
+                    contained in the secondary root element <code>music</code>. There are four lines
+                    of metadata which are there to identify the song. Our team added the
+                        <code>key</code> metadata to the original documents so that the chords could
+                    be identified in a number system<!--footnote!!!--> for more meaningful
+                    analysis.</para>
+                <para>Then, each <code>section</code> element is a different section of the song
+                    (Verse, Chorus, etc.). These section headings are noted by square brackets
+                        <code>[]</code> in the original documents. While the development of the iXML
+                    was difficult as a beginner, it was nothing too challenging until the first
+                    major setback: not recognizing the ends of sections. There were no square
+                    brackets within the lyrics or the chords themselves—only the section
+                    headings—so, logically, a section ends and a new section begins when an opening
+                    square bracket <code>[</code> is found. This is a concept we practiced in class
+                    using regular expressions in a find-and-replace context. However, this concept
+                    didn’t translate one-to-one with iXML, because we also had to account for the
+                    two (rather, <emphasis role="ital">most of the time</emphasis> two) blank lines
+                    between sections. </para>
             </section>
             <section>
                 <title>What if We Had Used ChordPro?—The Potential of iXML</title>
