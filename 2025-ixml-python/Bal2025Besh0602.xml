@@ -248,23 +248,51 @@
                 we figured out what documentation was needed to provide these technologies to a
                 group of undergraduates. While Dr. Birnbaum developed installation instructions, he
                 warned us that they were only for MacOS and for those with a purchased Saxon EE
-                license for use with XProc processing. So, in collaboration with Dr. Birnbaum, and
-                knowing that our students would not be able to purchase a Saxon EE license and would
-                be using the HE (Home Edition) instead, the battle-testing team needed to work on
-                preparing these for the cross-platform environment of our class. As the number of
-                differences between Dr Birnbaum's instructions and our experiences grew rapidly, we
-                realized we would need separate sets of instructions for MacOS and Windows users.
-                Our instructions also taught the students many things that would be useful to them
-                in general as DIGIT majors, including how to install a package manager (Homebrew for
-                MacOS or Chocolatey for Windows) for the purpose of installing OpenJDK, creating
-                shell aliases and editing system dot-files, and smoke-testing their installations to
-                ensure proper configuration.</para>
+                license for use with XProc processing.<footnote>
+                    <para>Dr. Birnbaum's installation instructions, which he claimed were developed
+                        for his biggest audience: himself. <link
+                            xlink:href="http://dh.obdurodon.org/ixml-and-xproc-configuration.xhtml"
+                            >http://dh.obdurodon.org/ixml-and-xproc-configuration.xhtml</link>.</para>
+                </footnote> So, in collaboration with Dr. Birnbaum, and knowing that our students
+                would not be able to purchase a Saxon EE license and would be using the HE (Home
+                Edition) instead, the battle-testing team needed to work on preparing instructions
+                for the cross-platform environment of our class. As the number of differences
+                between Dr Birnbaum's instructions and our experiences grew rapidly, we realized we
+                would need separate sets of instructions for MacOS and Windows users.<footnote>
+                    <para>Digit 210's set of installation instructions. Initially drafted by Dr.
+                        Beshero-Bondar, the battle-testing students made contributions as they ran
+                        into their own issues, and the final documents were proofread and edited by
+                        Michael Simons. Version for MacOS: <link
+                            xlink:href="https://github.com/newtfire/textAnalysis-Hub/blob/main/Installations/InstallNotes-Mac.md"
+                            >https://github.com/newtfire/textAnalysis-Hub/blob/main/Installations/InstallNotes-Mac.md</link>.
+                        Version for Windows: <link
+                            xlink:href="https://github.com/newtfire/textAnalysis-Hub/blob/main/Installations/InstallNotes-Win.md"
+                            >https://github.com/newtfire/textAnalysis-Hub/blob/main/Installations/InstallNotes-Win.md</link>.</para>
+                </footnote> Our instructions also taught the students many things that would be
+                useful to them in general as DIGIT majors, including how to install a package
+                manager (Homebrew for MacOS or Chocolatey for Windows) for the purpose of installing OpenJDK,<footnote>
+                    <para>Preliminary set of student-developed instructions for installing OpenJDK
+                        via a package manager. Version for MacOS: <link
+                            xlink:href="https://github.com/newtfire/textAnalysis-Hub/blob/main/Installations/OpenJDK-mac.md"
+                            >https://github.com/newtfire/textAnalysis-Hub/blob/main/Installations/OpenJDK-mac.md</link>.
+                        Version for Windows: <link
+                            xlink:href="https://github.com/newtfire/textAnalysis-Hub/blob/main/Installations/InstallNotes-Win.md"
+                            >https://github.com/newtfire/textAnalysis-Hub/blob/main/Installations/InstallNotes-Win.md</link>.</para>
+                </footnote> creating shell aliases and editing system dot-files,<footnote>
+                    <para>Digit 210 assignment: <quote>Create Shell Aliases and System ‘Dot
+                            Files.’</quote>
+                        <link
+                            xlink:href="https://newtfire.org/courses/tutorials/command-line-aliases.html"
+                            >https://newtfire.org/courses/tutorials/command-line-aliases.html</link>.</para>
+                </footnote> and smoke-testing their installations to ensure proper
+                configuration.</para>
             <para>While individual members of the class might have been able to successfully prepare
                 their environments, without our work ahead of time, things would have likely been
                 very chaotic when Dr. Birnbaum arrived to guest-instruct our class on iXML and
                 XProc. Additionally, this was a condensed experiement, as Dr. Birnbaum was allotted
-                just three, 50 minute class periods. So, ensuring all students were ready to hit the
-                ground running at the time of his guest appearance was crucial.</para>
+                just three, 50 minute class periods for teaching us iXML and XProc. So, ensuring all
+                students were ready to hit the ground running at the time of his guest appearance
+                was crucial.</para>
         </section>
         <section>
             <title>Developing Command Line Fluency: Learning how to install iXML and XProc software
