@@ -246,15 +246,17 @@
                 through together, so that is something I value greatly about this experience.</para>
             <para>We hope that our battle-testing was helpful to the developers of iXML and XProc as
                 we figured out what documentation was needed to provide these technologies to a
-                group of undergraduates. Dr. Birnbaum developed installation instructions and
-                thorough tutorials<!--footnote-->, and the battle-testing team greatly expanded on
-                the installation instructions. We quickly realized we would need separates sets of
-                instructions for MacOS and Windows users, as there were some notable differences
-                in... <!--??? -->. Our instructions also taught the students many things that would
-                be useful to them in general as DIGIT majors, including how to install a package
-                manager (Homebrew for MacOS or Chocolatey for Windows) for the purpose of installing
-                OpenJDK, creating shell aliases and editing system dot-files, and smoke-testing
-                their installations to ensure proper configuration.</para>
+                group of undergraduates. While Dr. Birnbaum developed installation instructions, he
+                warned us that they were only for MacOS and for those with a purchased Saxon EE
+                license for use with XProc processing. So, in collaboration with Dr. Birnbaum, the
+                battle-testing team needed to work on preparing these for the cross-platform
+                environment of our class. As the number of differences grew rapidly, we realized we
+                would need separate sets of instructions for MacOS and Windows users. Our
+                instructions also taught the students many things that would be useful to them in
+                general as DIGIT majors, including how to install a package manager (Homebrew for
+                MacOS or Chocolatey for Windows) for the purpose of installing OpenJDK, creating
+                shell aliases and editing system dot-files, and smoke-testing their installations to
+                ensure proper configuration.</para>
             <para>The class was likely capable of figuring this all out on their own with the
                 limited installation instructions given on each software's website, but having it
                 all thoroughly explained in one place allowed us to stay within the semester's time
