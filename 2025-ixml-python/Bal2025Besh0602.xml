@@ -252,17 +252,17 @@
                 group of undergraduates. While Dr. Birnbaum developed installation instructions, he
                 warned us that they were only for MacOS and for those with a purchased Saxon EE
                 license for use with XProc processing.<footnote>
-                    <para>Dr. Birnbaum's installation instructions, which he claimed were developed
+                    <para>Dr. Birnbaum’s installation instructions, which he claimed were developed
                         for his primary audience: himself. <link
                             xlink:href="http://dh.obdurodon.org/ixml-and-xproc-configuration.xhtml"
                             >http://dh.obdurodon.org/ixml-and-xproc-configuration.xhtml</link>.</para>
                 </footnote> Knowing that our students would not be able to purchase a Saxon EE
                 license and would be using the HE (Home Edition) instead, the battle-testing team
                 needed to work on preparing instructions for the cross-platform environment of our
-                class. As the number of differences between Dr Birnbaum's instructions and our
+                class. As the number of differences between Dr Birnbaum’s instructions and our
                 experiences grew rapidly, we realized we would need separate sets of instructions
                 for MacOS and Windows users.<footnote>
-                    <para>Digit 210's set of installation instructions. Initially drafted by Dr.
+                    <para>Digit 210’s set of installation instructions. Initially drafted by Dr.
                         Beshero-Bondar, the battle-testing students made contributions as they ran
                         into their own issues, and the final documents were proofread and heavily
                         edited by Michael Simons. Version for MacOS: <link
@@ -288,16 +288,36 @@
                             xlink:href="https://newtfire.org/courses/tutorials/command-line-aliases.html"
                             >https://newtfire.org/courses/tutorials/command-line-aliases.html</link>.</para>
                 </footnote> and <quote>smoke-testing</quote> their installations to ensure proper
-                configuration. We are grateful for Dr. Birnbaum joining us over Zoom for
-                consultation sessions as we worked on this battle-testing phase, and we learned a
-                lot from his whimsical sidenotes and extraordinary yet accessible knowledge.</para>
-            <para>While individual members of the class might have been able to successfully prepare
-                their environments, without our work ahead of time, things would have likely been
-                very chaotic when Dr. Birnbaum arrived to guest-instruct our class on iXML and
-                XProc. Additionally, this was a condensed experiement, as Dr. Birnbaum was allotted
-                just three, 50 minute class periods for teaching us iXML and XProc. So, ensuring all
-                students were ready to hit the ground running at the time of his guest appearance
-                was crucial.</para>
+                configuration.</para>
+            <para>We are grateful for Dr. Birnbaum joining us over Zoom for consultation sessions as
+                we worked on this battle-testing phase, and we learned a lot from his whimsical
+                sidenotes and extraordinary yet accessible knowledge. While individual members of
+                the class might have been able to successfully prepare their environments, without
+                our work ahead of time, things would have likely been very chaotic when Dr. Birnbaum
+                arrived to guest-instruct our class on iXML and XProc. Additionally, this was a
+                condensed experiement, as Dr. Birnbaum was allotted just three, 50 minute class
+                periods for teaching us iXML and XProc. So, ensuring all students were ready to hit
+                the ground running at the time of his guest appearance was crucial. He created a
+                thorough lesson plan outlining this fast-tracked learning experience.<footnote>
+                    <para><quote>Lesson plan: Invisible XML and XProc</quote> hosted on <link
+                            xlink:href="http://dh.obdurodon.org/">obdurodon.org</link>. <link
+                            xlink:href="http://dh.obdurodon.org/ixml-and-xproc-lesson-plan.xhtml"
+                            >http://dh.obdurodon.org/ixml-and-xproc-lesson-plan.xhtml</link></para>
+                </footnote> His lesson plan shared very important introductory readings by Norm
+                Tovey-Walsh and Martin Kraetke, serving as an orientation to iXML and XProc respectively.<footnote>
+                    <para>Norm Tovey-Walsh, <quote>Writing Invisible XML grammars</quote>, <link
+                            xlink:href="https://www.xml.com/articles/2022/03/28/writing-invisible-xml-grammars/"
+                            >https://www.xml.com/articles/2022/03/28/writing-invisible-xml-grammars/</link>.
+                        Martin Kraetke, <quote>XProc 3.0 Tutorial</quote>, <link
+                            xlink:href="https://xporc.net/xproc-tutorial/"
+                            >https://xporc.net/xproc-tutorial/</link>.</para>
+                </footnote> He also introduced us to John Lumley’s iXML workbench as a helpful
+                resource to practice using iXML.<footnote>
+                    <para>John Lumley, <quote>jωiXML processor</quote>, an online resource for
+                        easily processing text with an iXML grammar. <link
+                            xlink:href="https://johnlumley.github.io/jwiXML.xhtml"
+                            >https://johnlumley.github.io/jwiXML.xhtml</link>.</para>
+                </footnote></para>
         </section>
     </section>
     <section>
@@ -453,7 +473,7 @@
                                 >https://github.com/ChordPro/chordpro</link></para>
                     </footnote> aimed at the markup of chord charts. This could very well be the
                     future of the GretaVanZeppelin project and could also more deeply incorporate
-                    iXML, but I’ll discuss that after I've explained what the project already
+                    iXML, but I’ll discuss that after I’ve explained what the project already
                     accomplished. <emphasis role="ital">(It sure would have been nice to know about
                         ChordPro back in February 2025!)</emphasis></para>
                 <para>All of this to say, we ultimately decided to make our own markup specifically
@@ -581,7 +601,7 @@ Outta sight</programlisting>
                     visible space and newline characters), the full iXML grammar, and XML output
                     after processing the song with the iXML grammar:</para>
                 <figure>
-                    <title>Raw Text Chord Chart for Greta Van Fleet's <quote>Flower
+                    <title>Raw Text Chord Chart for Greta Van Fleet’s <quote>Flower
                         Power</quote></title>
                     <programlisting xml:space="preserve">Flower·Power↵
 From·the·Fires↵
@@ -870,7 +890,7 @@ A G
 &lt;/mdiv&gt;&lt;/section&gt;&lt;/music&gt;&lt;/mei&gt;</programlisting>
                 </figure>
                 <para>The way I hear and see it in my head is, <quote>[what’s on the left side of
-                        the colon] contains [what's on the right side of the colon] followed by
+                        the colon] contains [what’s on the right side of the colon] followed by
                         [anything else separated by a comma].</quote></para>
                 <para>Beginning at the first line, the root element named <code>mei</code> and the
                     element following (<code>music</code>) are named as such simply for the purpose
@@ -910,7 +930,7 @@ A G
                             ChordPro in the documentation of either MEI or MusicXML.</para>
                     </footnote> It began as a chord notation system and has become a fully
                     functional program for creating chord charts, using Perl to produce output.<footnote>
-                        <para>A Perl Module file in ChordPro's library for producing chord chart
+                        <para>A Perl Module file in ChordPro’s library for producing chord chart
                             output. <link
                                 xlink:href="https://github.com/ChordPro/chordpro/blob/master/lib/ChordPro/Output/HTML.pm"
                                 >https://github.com/ChordPro/chordpro/blob/master/lib/ChordPro/Output/HTML.pm</link></para>
