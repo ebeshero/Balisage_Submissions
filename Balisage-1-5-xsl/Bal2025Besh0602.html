@@ -301,18 +301,15 @@
                               <p id="d3e13">This year’s course tried a different approach. Students were taught iXML grammars
                                  as a way to prepare XML for analysis and XProc for pipelining. Regular expression
                                  matching involved working with XSLT, and the entire XML stack was used before
-                                 approaching Python. Students learned how to install software in alpha stages and they
-                                 tested
-                                 how well it works across platforms. From this exploratory start, one student project
-                                 team 
-                                 found a very practical use-case for applying invisible XML in a project pipeline for
-                                 
-                                 analyzing chord chart musical notation. In this paper, we discuss the potential we
-                                 discovered 
-                                 for invisible XML in music analysis. We also share our recommendations for guiding
-                                 people to
-                                 prepare processing pipelines that incorporate invisible XML, and we reflect on what
-                                 aspects of this risky teaching experiment were most worthwhile.</p>
+                                 approaching Python. Students learned how to install software in alpha stages and
+                                 they tested how well it works across platforms. From this exploratory start, one
+                                 student project team found a very practical use-case for applying invisible XML in
+                                 a
+                                 project pipeline for analyzing chord chart musical notation. In this paper, we
+                                 discuss the potential we discovered for invisible XML in music analysis. We also
+                                 share our recommendations for guiding people to prepare processing pipelines that
+                                 incorporate invisible XML, and we reflect on what aspects of this risky teaching
+                                 experiment were most worthwhile.</p>
                            </details>
                            <details class="toc">
                               <summary>
@@ -339,12 +336,12 @@
                                              <dt><span class="section"><a href="#d3e281" class="toc">A Brief Background on Music Encoding</a></span></dt>
                                              <dt><span class="section"><a href="#d3e372" class="toc">Document Analysis and Our Unique Markup</a></span></dt>
                                              <dt><span class="section"><a href="#d3e418" class="toc">Implementation and Reflection on iXML in the Project</a></span></dt>
-                                             <dt><span class="section"><a href="#d3e423" class="toc">What if We Had Used ChordPro?—The Potential of iXML</a></span></dt>
+                                             <dt><span class="section"><a href="#d3e479" class="toc">What if We Had Used ChordPro?—The Potential of iXML</a></span></dt>
                                           </dl>
                                        </dd>
                                     </dl>
                                  </dd>
-                                 <dt><span class="section"><a href="#d3e446" class="toc">What do we gain from learning and teaching invisible XML?</a></span></dt>
+                                 <dt><span class="section"><a href="#d3e511" class="toc">What do we gain from learning and teaching invisible XML?</a></span></dt>
                               </dl>
                            </details>
                         </div>
@@ -421,18 +418,15 @@
                      <p id="d3e13">This year’s course tried a different approach. Students were taught iXML grammars
                         as a way to prepare XML for analysis and XProc for pipelining. Regular expression
                         matching involved working with XSLT, and the entire XML stack was used before
-                        approaching Python. Students learned how to install software in alpha stages and they
-                        tested
-                        how well it works across platforms. From this exploratory start, one student project
-                        team 
-                        found a very practical use-case for applying invisible XML in a project pipeline for
-                        
-                        analyzing chord chart musical notation. In this paper, we discuss the potential we
-                        discovered 
-                        for invisible XML in music analysis. We also share our recommendations for guiding
-                        people to
-                        prepare processing pipelines that incorporate invisible XML, and we reflect on what
-                        aspects of this risky teaching experiment were most worthwhile.</p>
+                        approaching Python. Students learned how to install software in alpha stages and
+                        they tested how well it works across platforms. From this exploratory start, one
+                        student project team found a very practical use-case for applying invisible XML in
+                        a
+                        project pipeline for analyzing chord chart musical notation. In this paper, we
+                        discuss the potential we discovered for invisible XML in music analysis. We also
+                        share our recommendations for guiding people to prepare processing pipelines that
+                        incorporate invisible XML, and we reflect on what aspects of this risky teaching
+                        experiment were most worthwhile.</p>
                   </details>
                   <details class="toc">
                      <summary>
@@ -459,12 +453,12 @@
                                     <dt><span class="section"><a href="#d3e281" class="toc">A Brief Background on Music Encoding</a></span></dt>
                                     <dt><span class="section"><a href="#d3e372" class="toc">Document Analysis and Our Unique Markup</a></span></dt>
                                     <dt><span class="section"><a href="#d3e418" class="toc">Implementation and Reflection on iXML in the Project</a></span></dt>
-                                    <dt><span class="section"><a href="#d3e423" class="toc">What if We Had Used ChordPro?—The Potential of iXML</a></span></dt>
+                                    <dt><span class="section"><a href="#d3e479" class="toc">What if We Had Used ChordPro?—The Potential of iXML</a></span></dt>
                                  </dl>
                               </dd>
                            </dl>
                         </dd>
-                        <dt><span class="section"><a href="#d3e446" class="toc">What do we gain from learning and teaching invisible XML?</a></span></dt>
+                        <dt><span class="section"><a href="#d3e511" class="toc">What do we gain from learning and teaching invisible XML?</a></span></dt>
                      </dl>
                   </details>
                </div>
@@ -820,15 +814,337 @@ Outta sight</pre>
                         </div>
                         <div class="section" id="d3e418">
                            <h4 class="title" style="clear: both">Implementation and Reflection on iXML in the Project</h4>
+                           <p id="d3e423">As previously mentioned, this project began with the MEI in mind; the iXML
+                              reflects that. Below is an example of a song (as we saw it in oXygen Editor with
+                              visible space and newline characters), the full iXML grammar, and XML output
+                              after processing the song with the iXML grammar:</p>
+                           <figure id="d3e426">
+                              <p class="title">Figure&nbsp;3: Raw Text Chord Chart for Greta Van Fleet's <q>Flower Power</q></p>
+                              <div class="figure-contents">
+                                 <pre class="programlisting" id="d3e431">Flower·Power↵
+From·the·Fires↵
+Greta·Van·Fleet↵
+A↵
+↵
+[Intro]↵
+A·D·A·D·A·D·A·D↵
+·↵
+·↵
+[Verse·1]↵
+A····················D↵
+·She·is·a·lady,·comes·from·all·around↵
+A····························D↵
+·She's·many·places,·but·she's·homeward·bound↵
+············A↵
+And·now·she·walks·kinda·funny↵
+I·think·she·knows↵
+D↵
+Day·by·day·by·day↵
+Our·love·grows↵
+A···················D↵
+·She's·a·lantern·in·the·night↵
+She's·outta·sight↵
+·↵
+·↵
+[Pre-Chorus]↵
+A·······················D↵
+·Ma·ma·ma·ma·ma·ma·ma·ma·ma·ma·ma·ma↵
+A·······························D↵
+Ma·ma·ma·ma·ma·ma·ma·ma·ma·ma·ma·ma↵
+Ma·ma↵
+Hey↵
+·↵
+·↵
+[Chorus]↵
+A↵
+Turn·tonight,·firelight↵
+D↵
+Star·shines·in·her·eye↵
+A···················D↵
+·Makes·me·feel·like·I'm·alive↵
+···················A↵
+She's·outta·sight,·yeah↵
+D↵
+Aw·yeah↵
+········A·····························D↵
+She's·alright,·she's·alright,·she's·alright↵
+·························F····G↵
+She's·outta·sight,·outta·sight↵
+·↵
+·↵
+[Bridge]↵
+A·D·A·D↵
+·↵
+·↵
+[Verse·2]↵
+A···························D↵
+·Electric·gold·our·love·with·tender·care↵
+A·····················D↵
+·Hills·of·satin·grass·and·maidens·fair↵
+········A↵
+Now·she·rides·through·the·night↵
+On·a·silver·storm↵
+D↵
+Sword·in·hand↵
+Our·fate's·torn↵
+A···················D↵
+·She's·a·sparrow·of·the·dawn↵
+Our·love·is·born↵
+·↵
+·↵
+[Pre-Chorus]↵
+A·······················D↵
+·Ma·ma·ma·ma·ma·ma·ma·ma·ma·ma·ma·ma↵
+A·······························D↵
+Ma·ma·ma·ma·ma·ma·ma·ma·ma·ma·ma·ma↵
+Ma·ma↵
+Hey↵
+·↵
+·↵
+[Chorus]↵
+A↵
+Turn·tonight,·firelight↵
+D↵
+Star·shines·in·her·eye↵
+A···················D↵
+·Makes·me·feel·like·I'm·alive↵
+···················A↵
+She's·outta·sight,·yeah↵
+D↵
+Aw·yeah↵
+········A·····························D↵
+She's·alright,·she's·alright,·she's·alright↵
+·························F····G↵
+She's·outta·sight,·outta·sight↵
+·↵
+·↵
+[Solo]↵
+A···D↵
+Yeah↵
+A↵
+Oh·yeah↵
+D·A↵
+···Oh·yeah↵
+Oh·yeah↵
+·······D·A·D·A······D↵
+Oh·yeah·······papapa↵
+A·D↵
+···Oh·yeah↵
+·↵
+·↵
+[Verse·3]↵
+A···········G···········D↵
+·As·the·days·pass·by·my·mind↵
+A··············G↵
+·Are·the·wrong,·the·right↵
+·······D↵
+You·are·my·sunshine↵
+A················G··········D↵
+·And·as·the·night·begins·to·die↵
+A··············G···················D↵
+·We·are·the·morning·birds·that·sing·against·the·sky↵
+·↵
+·↵
+[Interlude]↵
+A·G·D·A·G·D↵
+A·G·D·A·G·D↵
+A·G·D·A·G·D↵
+A·G·D·A·G·D↵
+A·G·D·A·G·D↵
+A·G·D·A·G·D↵
+A·G·D·A·G·D↵
+A·G↵
+</pre>
+                              </div>
+                           </figure>
+                           <figure id="d3e433">
+                              <p class="title">Figure&nbsp;4: GretaVanZeppelin Project's iXML</p>
+                              <div class="figure-contents">
+                                 <pre class="programlisting" id="d3e436"><!--language: ixml-->mei: music.
+music: title, newline, album, newline, artist, newline, key, newline, newline*, section++newline.
+title: ~[#d;#a]+.
+album: ~[#d;#a]+.
+artist: ~[#d;#a]+.
+key: ~[#d;#a]+.
+section: type, mdiv.
+@type: -"[", ~[#22]+, -"]".
+mdiv: ~[#22]+.
+-newline: (#d?, #a).
+-space: " ".</pre>
+                              </div>
+                           </figure>
+                           <figure id="d3e438">
+                              <p class="title">Figure&nbsp;5: iXML Output File for <q>Flower Power</q></p>
+                              <div class="figure-contents">
+                                 <pre class="programlisting" id="d3e443"><!--language: xml-->&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;mei ixml:state="ambiguous" xmlns:ixml="http://invisiblexml.org/NS"&gt;&lt;music&gt;&lt;title&gt;Flower Power&lt;/title&gt;
+&lt;album&gt;From the Fires&lt;/album&gt;
+&lt;artist&gt;Greta Van Fleet&lt;/artist&gt;
+&lt;key&gt;A&lt;/key&gt;
+
+&lt;section type="Intro"&gt;&lt;mdiv&gt;
+A D A D A D A D
+ 
+ &lt;/mdiv&gt;&lt;/section&gt;
+&lt;section type="Verse 1"&gt;&lt;mdiv&gt;
+A                    D
+ She is a lady, comes from all around
+A                            D
+ She's many places, but she's homeward bound
+            A
+And now she walks kinda funny
+I think she knows
+D
+Day by day by day
+Our love grows
+A                   D
+ She's a lantern in the night
+She's outta sight
+ 
+ &lt;/mdiv&gt;&lt;/section&gt;
+&lt;section type="Pre-Chorus"&gt;&lt;mdiv&gt;
+A                       D
+ Ma ma ma ma ma ma ma ma ma ma ma ma
+A                               D
+Ma ma ma ma ma ma ma ma ma ma ma ma
+Ma ma
+Hey
+ 
+ &lt;/mdiv&gt;&lt;/section&gt;
+&lt;section type="Chorus"&gt;&lt;mdiv&gt;
+A
+Turn tonight, firelight
+D
+Star shines in her eye
+A                   D
+ Makes me feel like I'm alive
+                   A
+She's outta sight, yeah
+D
+Aw yeah
+        A                             D
+She's alright, she's alright, she's alright
+                         F    G
+She's outta sight, outta sight
+ 
+ &lt;/mdiv&gt;&lt;/section&gt;
+&lt;section type="Bridge"&gt;&lt;mdiv&gt;
+A D A D
+ 
+ &lt;/mdiv&gt;&lt;/section&gt;
+&lt;section type="Verse 2"&gt;&lt;mdiv&gt;
+A                           D
+ Electric gold our love with tender care
+A                     D
+ Hills of satin grass and maidens fair
+        A
+Now she rides through the night
+On a silver storm
+D
+Sword in hand
+Our fate's torn
+A                   D
+ She's a sparrow of the dawn
+Our love is born
+ 
+ &lt;/mdiv&gt;&lt;/section&gt;
+&lt;section type="Pre-Chorus"&gt;&lt;mdiv&gt;
+A                       D
+ Ma ma ma ma ma ma ma ma ma ma ma ma
+A                               D
+Ma ma ma ma ma ma ma ma ma ma ma ma
+Ma ma
+Hey
+ 
+ &lt;/mdiv&gt;&lt;/section&gt;
+&lt;section type="Chorus"&gt;&lt;mdiv&gt;
+A
+Turn tonight, firelight
+D
+Star shines in her eye
+A                   D
+ Makes me feel like I'm alive
+                   A
+She's outta sight, yeah
+D
+Aw yeah
+        A                             D
+She's alright, she's alright, she's alright
+                         F    G
+She's outta sight, outta sight
+ 
+ &lt;/mdiv&gt;&lt;/section&gt;
+&lt;section type="Solo"&gt;&lt;mdiv&gt;
+A   D
+Yeah
+A
+Oh yeah
+D A
+   Oh yeah
+Oh yeah
+       D A D A      D
+Oh yeah       papapa
+A D
+   Oh yeah
+ 
+ &lt;/mdiv&gt;&lt;/section&gt;
+&lt;section type="Verse 3"&gt;&lt;mdiv&gt;
+A           G           D
+ As the days pass by my mind
+A              G
+ Are the wrong, the right
+       D
+You are my sunshine
+A                G          D
+ And as the night begins to die
+A              G                   D
+ We are the morning birds that sing against the sky
+ 
+ &lt;/mdiv&gt;&lt;/section&gt;
+&lt;section type="Interlude"&gt;&lt;mdiv&gt;
+A G D A G D
+A G D A G D
+A G D A G D
+A G D A G D
+A G D A G D
+A G D A G D
+A G D A G D
+A G
+&lt;/mdiv&gt;&lt;/section&gt;&lt;/music&gt;&lt;/mei&gt;</pre>
+                              </div>
+                           </figure>
+                           <p id="d3e445">The way I hear and see it in my head is, <q>[what’s on the left side of
+                                 the colon] contains [what's on the right side of the colon] followed by
+                                 [anything else separated by a comma].</q></p>
+                           <p id="d3e449">Beginning at the first line, the root element named <code class="code">mei</code> and the
+                              element following (<code class="code">music</code>) are named as such simply for the purpose
+                              of being adaptable to MEI guidelines in the future. Of course now, we realize
+                              that may not be all that beneficial. All of the subsequent elements are
+                              contained in the secondary root element <code class="code">music</code>. There are four lines
+                              of metadata which are there to identify the song. Our team added the
+                              <code class="code">key</code> metadata to the original documents so that the chords could
+                              be identified in a number system for more meaningful
+                              analysis.</p>
+                           <p id="d3e465">Then, each <code class="code">section</code> element is a different section of the song
+                              (Verse, Chorus, etc.). These section headings are noted by square brackets
+                              <code class="code">[]</code> in the original documents. While the development of the iXML
+                              was difficult as a beginner, it was nothing too challenging until the first
+                              major setback: not recognizing the ends of sections. There were no square
+                              brackets within the lyrics or the chords themselves—only the section
+                              headings—so, logically, a section ends and a new section begins when an opening
+                              square bracket <code class="code">[</code> is found. This is a concept we practiced in class
+                              using regular expressions in a find-and-replace context. However, this concept
+                              didn’t translate one-to-one with iXML, because we also had to account for the
+                              two (rather, <span class="ital">most of the time</span> two) blank lines
+                              between sections. </p>
                         </div>
-                        <div class="section" id="d3e423">
+                        <div class="section" id="d3e479">
                            <h4 class="title" style="clear: both">What if We Had Used ChordPro?—The Potential of iXML</h4>
-                           <p id="d3e426">Created in 1991, ChordPro predates MEI by almost a decade.<sup class="fn-label"><a href="#d3e428" class="footnoteref" id="d3e428-ref">[9]</a></sup> It began as a chord notation system and has become a fully
-                              functional program for creating chord charts, using Perl to produce output.<sup class="fn-label"><a href="#d3e438" class="footnoteref" id="d3e438-ref">[10]</a></sup> Unlike human-readable chord charts place the chords in a separate
+                           <p id="d3e482">Created in 1991, ChordPro predates MEI and MusicXML by almost a decade.<sup class="fn-label"><a href="#d3e484" class="footnoteref" id="d3e484-ref">[9]</a></sup> It began as a chord notation system and has become a fully
+                              functional program for creating chord charts, using Perl to produce output.<sup class="fn-label"><a href="#d3e503" class="footnoteref" id="d3e503-ref">[10]</a></sup> Unlike human-readable chord charts place the chords in a separate
                               line above the lyrics, ChordPro places chords inline, in square brackets,
                               directly in front of the word or even syllable of the word so that their
                               position is preserved no matter the font or spacing.</p>
-                           <p id="d3e444">The nature of this inline style of chord placement can likely be interpreted
+                           <p id="d3e509">The nature of this inline style of chord placement can likely be interpreted
                               by iXML more easily than separate lines of chords and lyrics. This would have
                               allowed us to use iXML more extensively without subsequent processing steps.
                               More notably, it seems unlikely that there are any creators or users of ChordPro
@@ -841,9 +1157,9 @@ Outta sight</pre>
                         </div>
                      </div>
                   </div>
-                  <div class="section" id="d3e446">
+                  <div class="section" id="d3e511">
                      <h2 class="title" style="clear: both">What do we gain from learning and teaching invisible XML?</h2>
-                     <p id="d3e449">Was this worth the effort, and was invisible XML ready for undergraduates in an
+                     <p id="d3e514">Was this worth the effort, and was invisible XML ready for undergraduates in an
                         algorithmic text analysis course? Most student project teams were not motivated to
                         apply
                         invisible XML in their projects and we did not require them to do so. (We only required
@@ -879,7 +1195,7 @@ Outta sight</pre>
                         to
                         more dimensions of expression for every meaningful and resonant word and punctuation
                         mark than prosaic instruction. </p>
-                     <p id="d3e470">Certainly for all its expressive power, invisible XML cannot replace the prosaic
+                     <p id="d3e535">Certainly for all its expressive power, invisible XML cannot replace the prosaic
                         versatility of regular expressions as a <q>Swiss-army knife</q> for many
                         different text analysis purposes. And we could have taught our course without it.
                         But
@@ -901,7 +1217,7 @@ Outta sight</pre>
                         moving between declarative and imperative methods of text handling, and helped them
                         to
                         reflect on a certain fluidity of methods.</p>
-                     <p id="d3e481">Our experience of this course helped to bridge distinct cultures in text analysis
+                     <p id="d3e546">Our experience of this course helped to bridge distinct cultures in text analysis
                         that
                         are perhaps better connected than experienced in isolation. Perhaps we have found
                         a
@@ -962,12 +1278,15 @@ Outta sight</pre>
                      <div id="d3e362" class="footnote">
                         <p><sup class="fn-label"><a href="#d3e362-ref" class="footnoteref">[8]</a></sup> ChordPro on GitHub, <a href="https://github.com/ChordPro/chordpro" class="link">https://github.com/ChordPro/chordpro</a></p>
                      </div>
-                     <div id="d3e428" class="footnote">
-                        <p><sup class="fn-label"><a href="#d3e428-ref" class="footnoteref">[9]</a></sup> History of Chord Pro, <a href="https://www.chordpro.org/chordpro/chordpro-history/" class="link">https://www.chordpro.org/chordpro/chordpro-history/</a></p>
-                        <p id="d3e433">History of MEI, <a href="https://music-encoding.org/about" class="link">https://music-encoding.org/about</a></p>
+                     <div id="d3e484" class="footnote">
+                        <p><sup class="fn-label"><a href="#d3e484-ref" class="footnoteref">[9]</a></sup> History of Chord Pro, <a href="https://www.chordpro.org/chordpro/chordpro-history/" class="link">https://www.chordpro.org/chordpro/chordpro-history/</a>. See
+                           also <q>An introduction to MEI</q> for a history of MEI: <a href="https://music-encoding.org/about" class="link">https://music-encoding.org/about</a> and <q>Music XML
+                              Introduction and comparison</q> for a history of MusicXML: <a href="https://opensheetmusicdisplay.org/blog/blog-music-xml-introduction-comparison" class="link">https://opensheetmusicdisplay.org/blog/blog-music-xml-introduction-comparison</a>.
+                           The authors find it disappointing that there seems to be no mention of
+                           ChordPro in the documentation of either MEI or MusicXML.</p>
                      </div>
-                     <div id="d3e438" class="footnote">
-                        <p><sup class="fn-label"><a href="#d3e438-ref" class="footnoteref">[10]</a></sup> A Perl Module file in ChordPro's library for producing chord chart
+                     <div id="d3e503" class="footnote">
+                        <p><sup class="fn-label"><a href="#d3e503-ref" class="footnoteref">[10]</a></sup> A Perl Module file in ChordPro's library for producing chord chart
                            output. <a href="https://github.com/ChordPro/chordpro/blob/master/lib/ChordPro/Output/HTML.pm" class="link">https://github.com/ChordPro/chordpro/blob/master/lib/ChordPro/Output/HTML.pm</a></p>
                      </div>
                   </div>

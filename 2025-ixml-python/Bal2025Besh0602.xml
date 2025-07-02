@@ -537,12 +537,149 @@ Outta sight</programlisting>
                 <!-- mrs7068: finally getting to ixml implementation here-->
                 <!-- ebb: Reflect a bit more on how the ixml was different from the regex? -->
                 <para>As previously mentioned, this project began with the MEI in mind; the iXML
-                    reflects that. Below is the full iXML grammar:</para>
+                    reflects that. Below is an example of a song (as we saw it in oXygen Editor with
+                    visible space and newline characters), the full iXML grammar, and XML output
+                    after processing the song with the iXML grammar:</para>
+                <figure>
+                    <title>Raw Text Chord Chart for Greta Van Fleet's <quote>Flower Power</quote></title>
+                    <programlisting xml:space="preserve">Flower·Power↵
+From·the·Fires↵
+Greta·Van·Fleet↵
+A↵
+↵
+[Intro]↵
+A·D·A·D·A·D·A·D↵
+·↵
+·↵
+[Verse·1]↵
+A····················D↵
+·She·is·a·lady,·comes·from·all·around↵
+A····························D↵
+·She's·many·places,·but·she's·homeward·bound↵
+············A↵
+And·now·she·walks·kinda·funny↵
+I·think·she·knows↵
+D↵
+Day·by·day·by·day↵
+Our·love·grows↵
+A···················D↵
+·She's·a·lantern·in·the·night↵
+She's·outta·sight↵
+·↵
+·↵
+[Pre-Chorus]↵
+A·······················D↵
+·Ma·ma·ma·ma·ma·ma·ma·ma·ma·ma·ma·ma↵
+A·······························D↵
+Ma·ma·ma·ma·ma·ma·ma·ma·ma·ma·ma·ma↵
+Ma·ma↵
+Hey↵
+·↵
+·↵
+[Chorus]↵
+A↵
+Turn·tonight,·firelight↵
+D↵
+Star·shines·in·her·eye↵
+A···················D↵
+·Makes·me·feel·like·I'm·alive↵
+···················A↵
+She's·outta·sight,·yeah↵
+D↵
+Aw·yeah↵
+········A·····························D↵
+She's·alright,·she's·alright,·she's·alright↵
+·························F····G↵
+She's·outta·sight,·outta·sight↵
+·↵
+·↵
+[Bridge]↵
+A·D·A·D↵
+·↵
+·↵
+[Verse·2]↵
+A···························D↵
+·Electric·gold·our·love·with·tender·care↵
+A·····················D↵
+·Hills·of·satin·grass·and·maidens·fair↵
+········A↵
+Now·she·rides·through·the·night↵
+On·a·silver·storm↵
+D↵
+Sword·in·hand↵
+Our·fate's·torn↵
+A···················D↵
+·She's·a·sparrow·of·the·dawn↵
+Our·love·is·born↵
+·↵
+·↵
+[Pre-Chorus]↵
+A·······················D↵
+·Ma·ma·ma·ma·ma·ma·ma·ma·ma·ma·ma·ma↵
+A·······························D↵
+Ma·ma·ma·ma·ma·ma·ma·ma·ma·ma·ma·ma↵
+Ma·ma↵
+Hey↵
+·↵
+·↵
+[Chorus]↵
+A↵
+Turn·tonight,·firelight↵
+D↵
+Star·shines·in·her·eye↵
+A···················D↵
+·Makes·me·feel·like·I'm·alive↵
+···················A↵
+She's·outta·sight,·yeah↵
+D↵
+Aw·yeah↵
+········A·····························D↵
+She's·alright,·she's·alright,·she's·alright↵
+·························F····G↵
+She's·outta·sight,·outta·sight↵
+·↵
+·↵
+[Solo]↵
+A···D↵
+Yeah↵
+A↵
+Oh·yeah↵
+D·A↵
+···Oh·yeah↵
+Oh·yeah↵
+·······D·A·D·A······D↵
+Oh·yeah·······papapa↵
+A·D↵
+···Oh·yeah↵
+·↵
+·↵
+[Verse·3]↵
+A···········G···········D↵
+·As·the·days·pass·by·my·mind↵
+A··············G↵
+·Are·the·wrong,·the·right↵
+·······D↵
+You·are·my·sunshine↵
+A················G··········D↵
+·And·as·the·night·begins·to·die↵
+A··············G···················D↵
+·We·are·the·morning·birds·that·sing·against·the·sky↵
+·↵
+·↵
+[Interlude]↵
+A·G·D·A·G·D↵
+A·G·D·A·G·D↵
+A·G·D·A·G·D↵
+A·G·D·A·G·D↵
+A·G·D·A·G·D↵
+A·G·D·A·G·D↵
+A·G·D·A·G·D↵
+A·G↵
+</programlisting>
+                </figure>
                 <figure>
                     <title>GretaVanZeppelin Project's iXML</title>
-                    <!-- potentially a side-by-side image of 3 screenshots: original text showing
-                        spaces and newline characters, iXML, and XML output-->
-                    <programlisting xml:space="preserve">mei: music.
+                    <programlisting language="ixml" xml:space="preserve">mei: music.
 music: title, newline, album, newline, artist, newline, key, newline, newline*, section++newline.
 title: ~[#d;#a]+.
 album: ~[#d;#a]+.
@@ -554,6 +691,142 @@ mdiv: ~[#22]+.
 -newline: (#d?, #a).
 -space: " ".</programlisting>
                 </figure>
+                <figure>
+                <title>iXML Output File for <quote>Flower Power</quote></title>
+                <programlisting language="xml" xml:space="preserve">&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;mei ixml:state="ambiguous" xmlns:ixml="http://invisiblexml.org/NS"&gt;&lt;music&gt;&lt;title&gt;Flower Power&lt;/title&gt;
+&lt;album&gt;From the Fires&lt;/album&gt;
+&lt;artist&gt;Greta Van Fleet&lt;/artist&gt;
+&lt;key&gt;A&lt;/key&gt;
+
+&lt;section type="Intro"&gt;&lt;mdiv&gt;
+A D A D A D A D
+ 
+ &lt;/mdiv&gt;&lt;/section&gt;
+&lt;section type="Verse 1"&gt;&lt;mdiv&gt;
+A                    D
+ She is a lady, comes from all around
+A                            D
+ She's many places, but she's homeward bound
+            A
+And now she walks kinda funny
+I think she knows
+D
+Day by day by day
+Our love grows
+A                   D
+ She's a lantern in the night
+She's outta sight
+ 
+ &lt;/mdiv&gt;&lt;/section&gt;
+&lt;section type="Pre-Chorus"&gt;&lt;mdiv&gt;
+A                       D
+ Ma ma ma ma ma ma ma ma ma ma ma ma
+A                               D
+Ma ma ma ma ma ma ma ma ma ma ma ma
+Ma ma
+Hey
+ 
+ &lt;/mdiv&gt;&lt;/section&gt;
+&lt;section type="Chorus"&gt;&lt;mdiv&gt;
+A
+Turn tonight, firelight
+D
+Star shines in her eye
+A                   D
+ Makes me feel like I'm alive
+                   A
+She's outta sight, yeah
+D
+Aw yeah
+        A                             D
+She's alright, she's alright, she's alright
+                         F    G
+She's outta sight, outta sight
+ 
+ &lt;/mdiv&gt;&lt;/section&gt;
+&lt;section type="Bridge"&gt;&lt;mdiv&gt;
+A D A D
+ 
+ &lt;/mdiv&gt;&lt;/section&gt;
+&lt;section type="Verse 2"&gt;&lt;mdiv&gt;
+A                           D
+ Electric gold our love with tender care
+A                     D
+ Hills of satin grass and maidens fair
+        A
+Now she rides through the night
+On a silver storm
+D
+Sword in hand
+Our fate's torn
+A                   D
+ She's a sparrow of the dawn
+Our love is born
+ 
+ &lt;/mdiv&gt;&lt;/section&gt;
+&lt;section type="Pre-Chorus"&gt;&lt;mdiv&gt;
+A                       D
+ Ma ma ma ma ma ma ma ma ma ma ma ma
+A                               D
+Ma ma ma ma ma ma ma ma ma ma ma ma
+Ma ma
+Hey
+ 
+ &lt;/mdiv&gt;&lt;/section&gt;
+&lt;section type="Chorus"&gt;&lt;mdiv&gt;
+A
+Turn tonight, firelight
+D
+Star shines in her eye
+A                   D
+ Makes me feel like I'm alive
+                   A
+She's outta sight, yeah
+D
+Aw yeah
+        A                             D
+She's alright, she's alright, she's alright
+                         F    G
+She's outta sight, outta sight
+ 
+ &lt;/mdiv&gt;&lt;/section&gt;
+&lt;section type="Solo"&gt;&lt;mdiv&gt;
+A   D
+Yeah
+A
+Oh yeah
+D A
+   Oh yeah
+Oh yeah
+       D A D A      D
+Oh yeah       papapa
+A D
+   Oh yeah
+ 
+ &lt;/mdiv&gt;&lt;/section&gt;
+&lt;section type="Verse 3"&gt;&lt;mdiv&gt;
+A           G           D
+ As the days pass by my mind
+A              G
+ Are the wrong, the right
+       D
+You are my sunshine
+A                G          D
+ And as the night begins to die
+A              G                   D
+ We are the morning birds that sing against the sky
+ 
+ &lt;/mdiv&gt;&lt;/section&gt;
+&lt;section type="Interlude"&gt;&lt;mdiv&gt;
+A G D A G D
+A G D A G D
+A G D A G D
+A G D A G D
+A G D A G D
+A G D A G D
+A G D A G D
+A G
+&lt;/mdiv&gt;&lt;/section&gt;&lt;/music&gt;&lt;/mei&gt;</programlisting></figure>
                 <para>The way I hear and see it in my head is, <quote>[what’s on the left side of
                         the colon] contains [what's on the right side of the colon] followed by
                         [anything else separated by a comma].</quote></para>
@@ -564,8 +837,9 @@ mdiv: ~[#22]+.
                     contained in the secondary root element <code>music</code>. There are four lines
                     of metadata which are there to identify the song. Our team added the
                         <code>key</code> metadata to the original documents so that the chords could
-                    be identified in a number system<!--footnote!!!--> for more meaningful analysis.
-                    Then, each <code>section</code> element is a different section of the song
+                    be identified in a number system<!--footnote!!!--> for more meaningful
+                    analysis.</para>
+                <para>Then, each <code>section</code> element is a different section of the song
                     (Verse, Chorus, etc.). These section headings are noted by square brackets
                         <code>[]</code> in the original documents. While the development of the iXML
                     was difficult as a beginner, it was nothing too challenging until the first
