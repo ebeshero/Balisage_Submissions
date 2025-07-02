@@ -5,13 +5,14 @@
     exclude-result-prefixes="xs math"
     version="3.0"&gt;
     &lt;xsl:mode on-no-match="shallow-copy"/&gt;
-    &lt;xsl:output method="xml" indent="yes"/&gt;    
+    &lt;xsl:output method="xml" indent="yes"/&gt;
     &lt;xsl:template match="/"&gt;
         &lt;xsl:apply-templates/&gt;
     &lt;/xsl:template&gt;
     
     &lt;xsl:template match="mdiv"&gt;
-        &lt;xsl:analyze-string select="." regex="\n(\s*([A-Z][#ba-z/0-9]*) *([A-Z][#ba-z/0-9]*)?)*\n"&gt;
+        &lt;xsl:analyze-string select="." 
+             regex="\n(\s*([A-Z][#ba-z/0-9]*) *([A-Z][#ba-z/0-9]*)?)*\n"&gt;
             &lt;xsl:matching-substring&gt;
                 &lt;chordLine&gt;
                     &lt;xsl:for-each select="tokenize(., '\s+')"&gt;
@@ -23,14 +24,9 @@
             &lt;/xsl:matching-substring&gt;
             &lt;xsl:non-matching-substring&gt;
                 &lt;lyrics&gt;
-                    &lt;xsl:value-of select=". ! normalize-space()"/&gt;                
+                    &lt;xsl:value-of select=". ! normalize-space()"/&gt;
                 &lt;/lyrics&gt;
             &lt;/xsl:non-matching-substring&gt;
-            
         &lt;/xsl:analyze-string&gt;
-        
-        
-        
     &lt;/xsl:template&gt;
-    
 &lt;/xsl:stylesheet&gt;

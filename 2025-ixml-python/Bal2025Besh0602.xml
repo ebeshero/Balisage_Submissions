@@ -908,8 +908,8 @@ A G
                     elements are contained in the secondary root element <code>&lt;music&gt;</code>.
                     There are four lines of metadata which are there to identify the song. Our team
                     added the <code>&lt;key&gt;</code> metadata to the original documents so that
-                    the chords could be identified in a number system<!--footnote!!!--> for more
-                    meaningful analysis.</para>
+                    the chords could eventually be identified in a number system for more meaningful
+                    analysis.</para>
                 <para>Then, each <code>&lt;section&gt;</code> element is a different section of the
                     song (Verse, Chorus, etc.). These section headings are noted by square brackets
                         <code>[]</code> in the original documents. While the development of the iXML
@@ -970,13 +970,14 @@ And she's buying a stairway to heaven.</programlisting></para>
     exclude-result-prefixes="xs math"
     version="3.0"&gt;
     &lt;xsl:mode on-no-match="shallow-copy"/&gt;
-    &lt;xsl:output method="xml" indent="yes"/&gt;    
+    &lt;xsl:output method="xml" indent="yes"/&gt;
     &lt;xsl:template match="/"&gt;
         &lt;xsl:apply-templates/&gt;
     &lt;/xsl:template&gt;
     
     &lt;xsl:template match="mdiv"&gt;
-        &lt;xsl:analyze-string select="." regex="\n(\s*([A-Z][#ba-z/0-9]*) *([A-Z][#ba-z/0-9]*)?)*\n"&gt;
+        &lt;xsl:analyze-string select="." 
+             regex="\n(\s*([A-Z][#ba-z/0-9]*) *([A-Z][#ba-z/0-9]*)?)*\n"&gt;
             &lt;xsl:matching-substring&gt;
                 &lt;chordLine&gt;
                     &lt;xsl:for-each select="tokenize(., '\s+')"&gt;
@@ -988,21 +989,26 @@ And she's buying a stairway to heaven.</programlisting></para>
             &lt;/xsl:matching-substring&gt;
             &lt;xsl:non-matching-substring&gt;
                 &lt;lyrics&gt;
-                    &lt;xsl:value-of select=". ! normalize-space()"/&gt;                
+                    &lt;xsl:value-of select=". ! normalize-space()"/&gt;
                 &lt;/lyrics&gt;
             &lt;/xsl:non-matching-substring&gt;
-            
         &lt;/xsl:analyze-string&gt;
-        
-        
-        
     &lt;/xsl:template&gt;
-    
 &lt;/xsl:stylesheet&gt;</programlisting></para>
+                <para>The reason this worked is because there would be one or more capitalized
+                        <quote>constructions</quote> in a row that could combine letters and
+                    numbers. That said, this single XSLT template was all we needed to complete our
+                    transformation into full XML and represented a successful markup pipeline in our
+                    project. I continued by adding some additional attributes to the chords for
+                    further processing. To learn more about this, see my <quote>Methods</quote> page
+                    which was perhaps our most significant development from this semester’s
+                    project.<footnote><para><link xlink:href="https://afish2003.github.io/GretaVanZeppelin/methods.html">https://afish2003.github.io/GretaVanZeppelin/methods.html</link></para></footnote></para>
             </section>
             <section>
                 <title>What if We Had Used ChordPro?—The Potential of iXML</title>
-                <para>Created in 1991, ChordPro predates MEI and MusicXML by almost a decade.<footnote>
+                <para>That last step of separating lyrics and chord lines <emphasis role="ital"
+                        >may</emphasis> have been unncessary had we used ChordPro. Created in 1991,
+                    ChordPro predates MEI and MusicXML by almost a decade.<footnote>
                         <para>History of Chord Pro, <link
                                 xlink:href="https://www.chordpro.org/chordpro/chordpro-history/"
                                 >https://www.chordpro.org/chordpro/chordpro-history/</link>. See
@@ -1020,10 +1026,10 @@ And she's buying a stairway to heaven.</programlisting></para>
                             output. <link
                                 xlink:href="https://github.com/ChordPro/chordpro/blob/master/lib/ChordPro/Output/HTML.pm"
                                 >https://github.com/ChordPro/chordpro/blob/master/lib/ChordPro/Output/HTML.pm</link></para>
-                    </footnote> Unlike human-readable chord charts that place the chords in a separate
-                    line above the lyrics, ChordPro places chords inline, in square brackets,
-                    directly in front of the word or even syllable of the word so that their
-                    position is preserved no matter the font or spacing.</para>
+                    </footnote> Unlike human-readable chord charts that place the chords in a
+                    separate line above the lyrics, ChordPro places chords inline, in square
+                    brackets, directly in front of the word or even syllable of the word so that
+                    their position is preserved no matter the font or spacing.</para>
                 <para>The nature of this inline style of chord placement can likely be interpreted
                     by iXML more easily than separate lines of chords and lyrics. This would have
                     allowed us to use iXML more extensively without subsequent processing steps.
