@@ -536,6 +536,45 @@ Outta sight</programlisting>
                 <title>Implementation and Reflection on iXML in the Project</title>
                 <!-- mrs7068: finally getting to ixml implementation here-->
                 <!-- ebb: Reflect a bit more on how the ixml was different from the regex? -->
+                <para>As previously mentioned, this project began with the MEI in mind; the iXML
+                    reflects that. Below is the full iXML grammar:</para>
+                <figure>
+                    <title>GretaVanZeppelin Project's iXML</title>
+                    <programlisting xml:space="preserve">mei: music.
+music: title, newline, album, newline, artist, newline, key, newline, newline*, section++newline.
+title: ~[#d;#a]+.
+album: ~[#d;#a]+.
+artist: ~[#d;#a]+.
+key: ~[#d;#a]+.
+section: type, mdiv.
+@type: -"[", ~[#22]+, -"]".
+mdiv: ~[#22]+.
+-newline: (#d?, #a).
+-space: " ".</programlisting>
+                </figure>
+                <para>The way I hear it in my head is, <quote>[what’s on the left side of the colon]
+                        contains [what's on the right side of the colon] followed by [anything else
+                        separated by a comma].</quote></para>
+                <para>Beginning at the first line, the root element named <code>mei</code> and the
+                    element following (<code>music</code>) are named as such simply for the purpose
+                    of being able to be adapted to MEI guidelines in the future. Although now, we
+                    realize that may not be all that beneficial. All of the subsequent elements are
+                    contained in the secondary root element <code>music</code>. There are four lines
+                    of metadata which are there to identify the song. Our team added the
+                        <code>key</code> metadata to the original documents so that the chords could
+                    be identified in a number system<!--footnote!!!--> for more meaningful analysis.
+                    Then, each <code>section</code> element is a different section of the song
+                    (Verse, Chorus, etc.). These section headings are noted by square brackets
+                        <code>[]</code> in the original documents. While the development of the iXML
+                    was difficult as a beginner, it was nothing too challenging until the first
+                    major setback: not recognizing the ends of sections. There were no square
+                    brackets within the lyrics or the chords themselves—only the section
+                    headings—so, logically, a section ends and a new section begins when an opening
+                    square bracket <code>[</code> is found. This is a concept we practiced in class
+                    using regular expressions in a find-and-replace context. However, this concept
+                    didn’t translate one-to-one with iXML, because we also had to account for the
+                    two (rather, <emphasis role="ital">most of the time</emphasis> two) blank lines
+                    between sections.</para>
             </section>
             <section>
                 <title>What if We Had Used ChordPro?—The Potential of iXML</title>
