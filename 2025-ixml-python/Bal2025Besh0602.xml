@@ -540,6 +540,8 @@ Outta sight</programlisting>
                     reflects that. Below is the full iXML grammar:</para>
                 <figure>
                     <title>GretaVanZeppelin Project's iXML</title>
+                    <!-- potentially a side-by-side image of 3 screenshots: original text showing
+                        spaces and newline characters, iXML, and XML output-->
                     <programlisting xml:space="preserve">mei: music.
 music: title, newline, album, newline, artist, newline, key, newline, newline*, section++newline.
 title: ~[#d;#a]+.
@@ -552,13 +554,13 @@ mdiv: ~[#22]+.
 -newline: (#d?, #a).
 -space: " ".</programlisting>
                 </figure>
-                <para>The way I hear it in my head is, <quote>[what’s on the left side of the colon]
-                        contains [what's on the right side of the colon] followed by [anything else
-                        separated by a comma].</quote></para>
+                <para>The way I hear and see it in my head is, <quote>[what’s on the left side of
+                        the colon] contains [what's on the right side of the colon] followed by
+                        [anything else separated by a comma].</quote></para>
                 <para>Beginning at the first line, the root element named <code>mei</code> and the
                     element following (<code>music</code>) are named as such simply for the purpose
-                    of being able to be adapted to MEI guidelines in the future. Although now, we
-                    realize that may not be all that beneficial. All of the subsequent elements are
+                    of being adaptable to MEI guidelines in the future. Of course now, we realize
+                    that may not be all that beneficial. All of the subsequent elements are
                     contained in the secondary root element <code>music</code>. There are four lines
                     of metadata which are there to identify the song. Our team added the
                         <code>key</code> metadata to the original documents so that the chords could
@@ -574,7 +576,7 @@ mdiv: ~[#22]+.
                     using regular expressions in a find-and-replace context. However, this concept
                     didn’t translate one-to-one with iXML, because we also had to account for the
                     two (rather, <emphasis role="ital">most of the time</emphasis> two) blank lines
-                    between sections.</para>
+                    between sections. </para>
             </section>
             <section>
                 <title>What if We Had Used ChordPro?—The Potential of iXML</title>
