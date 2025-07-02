@@ -253,9 +253,9 @@
                 warned us that they were only for MacOS and for those with a purchased Saxon EE
                 license for use with XProc processing.<footnote>
                     <para>Dr. Birnbaum’s installation instructions, which he claimed were developed
-                        for his primary audience: himself. <link
+                        for his primary audience: himself: <quote>Configuring XProc and ixml processors</quote>, <link
                             xlink:href="http://dh.obdurodon.org/ixml-and-xproc-configuration.xhtml"
-                            >http://dh.obdurodon.org/ixml-and-xproc-configuration.xhtml</link>.</para>
+                            >http://dh.obdurodon.org/ixml-and-xproc-configuration.xhtml</link> (2025). Last accessed 2025-07-02.</para>
                 </footnote> Knowing that our students would not be able to purchase a Saxon EE
                 license and would be using the HE (Home Edition) instead, the battle-testing team
                 needed to work on preparing instructions for the cross-platform environment of our
