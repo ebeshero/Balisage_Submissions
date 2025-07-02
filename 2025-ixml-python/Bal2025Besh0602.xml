@@ -219,7 +219,6 @@
             and XProc for the first time.</para>
         <section>
             <title>Introducing the Battle-Testing Team</title>
-            <!-- Michael -->
             <subtitle>Preparing for a Cross-Platform educational experiment</subtitle>
             <para>Hello world! I’m Michael Simons, and I was one of the
                     <quote>battle-testers</quote> for the new iXML and XProc unit in our Digit 210
@@ -332,7 +331,6 @@
             <title>A Project on Chord Chart Analysis: what iXML looks like in a large-scale student
                 project</title>
             <subtitle>The Optimally Motivated Student Experience</subtitle>
-            <!-- Michael -->
             <para>Michael again! Dr. Beshero-Bondar deemed me an <quote>optimally motivated
                     student</quote> because I did the work (relatively on time) and was able to
                 grasp iXML and XProc enough to take it further than what most other students
@@ -356,9 +354,7 @@
                     <caption>
                         <para>GretaVanZeppelin Project Logo</para>
                     </caption>
-                </mediaobject>
-
-                <!-- Elevator pitch style introduction-->
+                </mediaobject> 
                 <para>The <link xlink:href="https://afish2003.github.io/GretaVanZeppelin/"
                         >GretaVanZeppelin Project</link> is an analysis of musical artists, Greta
                     Van Fleet and Led Zeppelin, using collections of chord charts encoded in XML and
@@ -488,7 +484,6 @@
             </section>
             <section>
                 <title>Document Analysis and Our Unique Markup</title>
-                <!-- Develop this introduction possibly? -->
                 <para>My implementation of raw text transformation began by sketching out what the
                     process would look like as a pipeline. After some basic XML structure, I knew
                     that I would first need to find the two blank lines that separated the
@@ -588,23 +583,9 @@ Outta sight</programlisting>
                     with the words to support performers. Can chord charts allow for a deeper
                     analysis and comparison of music? Our experience with iXML suggests there is
                     hope for this work!</para>
-                <!-- ebb: FOOD FOR THOUGHT: 
-                     Is there something about chord notation that *declares* itself to be markup in its own right,
-                     that invites us to see it and declare it as nodes, in line with the idea of invisible XML?
-                     (Maybe this is a good moment to review and cite Norm Tovey-Walsh (or others) on the purpose/idea
-                     of invisible XML.) 
-                     How is the treatment of chord notation as invisible XML different from treating it as raw strings for
-                     regex patterns-matching? 
-                     
-                     AND where did this get to be too much for invisible XML to handle? 
-                -->
-
-
             </section>
             <section>
                 <title>Implementation and Reflection on iXML in the Project</title>
-                <!-- mrs7068: finally getting to ixml implementation here-->
-                <!-- ebb: Reflect a bit more on how the ixml was different from the regex? -->
                 <para>As previously mentioned, this project began with the MEI in mind; the iXML
                     reflects that. Below is an example of a song (as we saw it in oXygen Editor with
                     visible space and newline characters), the full iXML grammar, and XML output
@@ -1000,13 +981,13 @@ And she's buying a stairway to heaven.</programlisting></para>
                     numbers. That said, this single XSLT template was all we needed to complete our
                     transformation into full XML and represented a successful markup pipeline in our
                     project. I continued by adding some additional attributes to the chords for
-                    further processing. To learn more about this, see my <quote>Methods</quote> page
+                    further processing. To learn more about this, see my <link xlink:href="https://afish2003.github.io/GretaVanZeppelin/methods.html"><quote>Methods</quote> page</link>
                     which was perhaps our most significant development from this semester’s
-                    project.<footnote><para><link xlink:href="https://afish2003.github.io/GretaVanZeppelin/methods.html">https://afish2003.github.io/GretaVanZeppelin/methods.html</link></para></footnote></para>
+                    project.</para>
             </section>
             <section>
-                <title>What if We Had Used ChordPro?—The Potential of iXML</title>
-                <para>That last step of separating lyrics and chord lines <emphasis role="ital"
+                <title>What if We Had Used ChordPro? The Potential of iXML</title>
+                <para>That last step of separating lyrics and chord lines with XSLT and regular expressions <emphasis role="ital"
                         >may</emphasis> have been unncessary had we used ChordPro. Created in 1991,
                     ChordPro predates MEI and MusicXML by almost a decade.<footnote>
                         <para>History of Chord Pro, <link
@@ -1072,7 +1053,7 @@ And she's buying a stairway to heaven.</programlisting></para>
             invisible XML might be different from writing sequential regular expression recipes in
             the way that writing poetry differs from prose. Poetry, like invisible XML, attends to
             more dimensions of expression for every meaningful and resonant word and punctuation
-            mark than prosaic instruction. </para>
+            mark, by contrast with prose and step-by-step search and replace operations.</para>
         <para>Certainly for all its expressive power, invisible XML cannot replace the prosaic
             versatility of regular expressions as a <quote>Swiss-army knife</quote> for many
             different text analysis purposes. And we could have taught our course without it. But
