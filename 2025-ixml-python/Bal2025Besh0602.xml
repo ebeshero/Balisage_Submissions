@@ -253,9 +253,11 @@
                 warned us that they were only for MacOS and for those with a purchased Saxon EE
                 license for use with XProc processing.<footnote>
                     <para>Dr. Birnbaum’s installation instructions, which he claimed were developed
-                        for his primary audience: himself: <quote>Configuring XProc and ixml processors</quote>, <link
+                        for his primary audience: himself: <quote>Configuring XProc and ixml
+                            processors</quote>, <link
                             xlink:href="http://dh.obdurodon.org/ixml-and-xproc-configuration.xhtml"
-                            >http://dh.obdurodon.org/ixml-and-xproc-configuration.xhtml</link> (2025). Last accessed 2025-07-02.</para>
+                            >http://dh.obdurodon.org/ixml-and-xproc-configuration.xhtml</link>
+                        (2025). Last accessed 2025-07-02.</para>
                 </footnote> Knowing that our students would not be able to purchase a Saxon EE
                 license and would be using the HE (Home Edition) instead, the battle-testing team
                 needed to work on preparing instructions for the cross-platform environment of our
@@ -342,7 +344,8 @@
                 search-and-replace operations in less than a quarter of the time I spent on iXML.
                 However, the big picture answer may in fact be <quote>yes</quote>, because here I
                 am, reflecting on my learning experience in a professional setting which is a great
-                honor.</para>
+                honor. I’m walking away from the semester with a larger perspective on the potential
+                of iXML and a greater hopefulness for completing and expanding the project.</para>
 
             <section>
                 <title>Introducing the GretaVanZeppelin Project</title>
@@ -395,33 +398,37 @@
                 <title>A Brief Background on Music Encoding</title>
                 <subtitle>As well as some things we wished we knew when we started the
                     project</subtitle>
-                <para>Not knowing where to begin in the markup stages, Dr. Beshero-Bondar suggested
-                    that our team research the <link xlink:href="https://music-encoding.org">Music
-                        Encoding Initiative (MEI)</link>. <quote>The MEI is a community-driven,
+                <para>None of us knew where to begin in the markup stages, so Dr. Beshero-Bondar
+                    suggested that our team research the <link
+                        xlink:href="https://music-encoding.org">Music Encoding Initiative
+                        (MEI)</link>. We discovered that <quote>the MEI is a community-driven,
                         open-source effort to define a system for encoding musical documents in a
-                        machine-readable structure.</quote><footnote>
+                        machine-readable structure,</quote><footnote>
                         <para>Music Encoding Initiative, <link
                                 xlink:href="https://music-encoding.org"
                                 >https://music-encoding.org</link></para>
-                    </footnote> In our research, we only saw examples of encoded sheet music in
-                    which all the notes are represented on the page on musical staffs. Sheet music
-                    is not conducive to rock music which, in my experience, is based on repeated
-                    grooves and phrases that are more effectively communicated verbally/audibly. A
-                    chord chart serves as a sufficient guide to show an outline of the structure of
-                    the song while displaying what chords need to be played based on what lyrics are
-                    being sung. This means there is a lot of implicit information about the song
-                    purposefully unmarked in these chord charts, but what we were seeing of the MEI
-                    was that it was very much focused on explicitly encoding every note of a piece
-                    of music. That, combined with the limited amount of time we had for the project,
-                    steered us away from utilizing the MEI guidelines and schema in our
-                    project.</para>
+                    </footnote> but we possibly should have kept looking for other options for
+                    encoding chord charts at that time. In our research, we only saw examples of
+                    encoded sheet music in which all the notes are represented on the page on
+                    musical staffs. Sheet music is not conducive to rock music which, in my
+                    experience, is based on repeated grooves and phrases that are more effectively
+                    communicated verbally/audibly. A chord chart serves as a sufficient guide to
+                    show an outline of the structure of the song while displaying what chords need
+                    to be played based on what lyrics are being sung. This means there is a lot of
+                    implicit information about the song purposefully unmarked in these chord charts,
+                    but what we were seeing of the MEI was that it was very much focused on
+                    explicitly encoding every note of a piece of music. That, combined with the
+                    limited amount of time we had for the project, steered us away from utilizing
+                    the MEI guidelines and schema in our project.</para>
                 <!-- Image to compare a piece of sheet music to a chord chart. -->
                 <para>Our Digit program has one past experience using the MEI: the Locke Anthology Project<footnote>
                         <para>Locke Anthology Project, <link
                                 xlink:href="https://newtfire.github.io/locke-anthology2.0/music.html"
                                 >https://newtfire.github.io/locke-anthology2.0/music.html</link></para>
-                    </footnote>. This project conformed to TEI guidelines to preserve a digital
-                    version of Alain Locke’s anthology <emphasis role="ital">The New Negro: An
+                    </footnote>. This project conformed to MEI and <link
+                        xlink:href="https://tei-c.org/release/doc/tei-p5-doc/en/html/index.html">TEI
+                        guidelines</link> to preserve a digital version of the poetry and music in
+                    Alain Locke’s anthology <emphasis role="ital">The New Negro: An
                         Interpretation</emphasis> (1925). The work includes short snippets of music
                     between its stories and poems, and the team used the MEI’s structure to encode
                     those snippets so that they could be converted to MIDI<footnote>
@@ -441,7 +448,11 @@
                     many popular music notation, recording, and other music-related software.<footnote>
                         <para>List of software that utilizes MusicXML, <link
                                 xlink:href="https://www.musicxml.com/software/"
-                                >https://www.musicxml.com/software/</link></para>
+                                >https://www.musicxml.com/software/</link>. For more information on
+                            how MusicXML compares to MEI, see <quote><link
+                                    xlink:href="https://opensheetmusicdisplay.org/blog/blog-music-xml-introduction-comparison/"
+                                    >Music XML Introduction and Comparison</link></quote>
+                            (OpenSheetMusicDisplay.org, 2025).</para>
                     </footnote> Upon familiarizing myself with their tutorial<footnote>
                         <para>MusicXML Tutorial on Chord Symbols and Diagrams, <link
                                 xlink:href="https://www.w3.org/2021/06/musicxml40/tutorial/chord-symbols-and-diagrams/"
@@ -449,11 +460,7 @@
                     </footnote>, I think we <emphasis role="ital">could</emphasis> have utilized it,
                     but it would have still been a very large and time-consuming learning
                     curve.</para>
-                <para><emphasis role="ital">Additional reading: <quote><link
-                                xlink:href="https://opensheetmusicdisplay.org/blog/blog-music-xml-introduction-comparison/"
-                                >Music XML Introduction and
-                    Comparison</link></quote></emphasis></para>
-                <para>We also discovered <link xlink:href="https://www.chordpro.org/"
+                <para>We only discovered <link xlink:href="https://www.chordpro.org/"
                         >ChordPro</link> after the project’s development. I actually knew about
                     ChordPro existing as a way to write chord charts, but only in the context of my
                     church’s music planning software<footnote>
@@ -490,12 +497,14 @@
                     Finally, some additional processing would be needed to identify individual
                     chords for counting purposes and to extract either just the chords or just the
                     lyrics for analysis.</para>
-                <para>Ideally, the raw text would have been proofread and fixed more thoroughly. It
-                    became apparent that lines were not separated logically as they would be if I or
-                    a professional made the chord charts. Instead of the lines being divided by
-                    musical phrases/chord progressions, they seemed to be divided by simply what
-                    looked the best on the page. This limited our ability to analyze actual chord
-                    progressions, so instead we focused on chord usage per song/artist.</para>
+                <para>The source of our files was <link
+                        xlink:href="https://www.ultimate-guitar.com/">Ultimate Guitar</link>. It’s a
+                    community resource, so the proofreading process is uncertain. It became apparent
+                    that lines were not separated logically as they would be if I or a professional
+                    made the chord charts. Instead of the lines being divided by musical
+                    phrases/chord progressions, they seemed to be divided by simply what looked the
+                    best on the page. This limited our ability to analyze actual chord progressions,
+                    so instead we focused on chord usage per song/artist.</para>
                 <para>An example of this inconsistent formatting is shown below in an exerpt from
                     Greta Van Fleet’s song <quote><link
                             xlink:href="https://github.com/afish2003/GretaVanZeppelin/blob/main/pipeline/raw-text/Greta/fromTheFires/song-03.txt"
@@ -889,19 +898,19 @@ A G D A G D
 A G
 &lt;/mdiv&gt;&lt;/section&gt;&lt;/music&gt;&lt;/mei&gt;</programlisting>
                 </figure>
-                <para>The way I hear and see it in my head is, <quote>[what’s on the left side of
+                <para>The way I hear and see the iXML in my head is, <quote>[what’s on the left side of
                         the colon] contains [what’s on the right side of the colon] followed by
                         [anything else separated by a comma].</quote></para>
-                <para>Beginning at the first line, the root element named <code>mei</code> and the
-                    element following (<code>music</code>) are named as such simply for the purpose
+                <para>Beginning at the first line, the root element named <code>&lt;mei&gt;</code> and the
+                    element following (<code>&lt;music&gt;</code>) are named as such simply for the purpose
                     of being adaptable to MEI guidelines in the future. Of course now, we realize
                     that may not be all that beneficial. All of the subsequent elements are
-                    contained in the secondary root element <code>music</code>. There are four lines
+                    contained in the secondary root element <code>&lt;music&gt;</code>. There are four lines
                     of metadata which are there to identify the song. Our team added the
-                        <code>key</code> metadata to the original documents so that the chords could
+                        <code>&lt;key&gt;</code> metadata to the original documents so that the chords could
                     be identified in a number system<!--footnote!!!--> for more meaningful
                     analysis.</para>
-                <para>Then, each <code>section</code> element is a different section of the song
+                <para>Then, each <code>&lt;section&gt;</code> element is a different section of the song
                     (Verse, Chorus, etc.). These section headings are noted by square brackets
                         <code>[]</code> in the original documents. While the development of the iXML
                     was difficult as a beginner, it was nothing too challenging until the first
