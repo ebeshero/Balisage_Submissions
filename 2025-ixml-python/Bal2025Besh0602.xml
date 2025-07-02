@@ -5,7 +5,7 @@
 <article xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink"
     version="5.0-subset Balisage-1.5">
 
-    <title>Is Invisible XML Ready for Undergraduates?</title>
+    <title>Is Invisible XML Ready for College Students?</title>
     <subtitle>Trying iXML and XProc on a Music Analysis Project in an Undergraduate Text Analysis
         Course</subtitle>
     <info>
@@ -922,14 +922,46 @@ A G
                     didn’t translate one-to-one with iXML, because we also had to account for the
                     two (rather, <emphasis role="ital">most of the time</emphasis> two) blank lines
                     between sections. Dr. Birnbaum’s study of ambiguity in iXML helped us solve this
-                    problem of parsing the sections, specifically his notes on the double plus sign (++).<footnote>
-                        <para>Dr. David J. Birnbaum, <quote>Invisible XML and ambiguity</quote>,
-                                <link xlink:href="http://dh.obdurodon.org/ixml-ambiguity.xhtml"
+                    problem of parsing the sections, specifically his notes on the double plus sign
+                    (++) used to help us define the separation between sections.<footnote>
+                        <para>David J. Birnbaum, <quote>Invisible XML and ambiguity</quote>, <link
+                                xlink:href="http://dh.obdurodon.org/ixml-ambiguity.xhtml"
                                 >http://dh.obdurodon.org/ixml-ambiguity.xhtml</link> (2025). Last
                             accessed 2025-07-02.</para>
                     </footnote></para>
-                <para>To solve this problem, Dr. Beshero-Bondar developed a monster Regex line which
-                    we implimented in XSLT through our XProc pipeline.</para>
+                <para>We did, however, encounter an ambiguity problem that was beyond our capacity
+                    to solve in iXML. This involved differentiating the multi-character chord
+                    symbols from lyrics. These multi-character chords appear periodically in both
+                    artists’ songs, and they provide musicians who read chord charts with valuable
+                    information called <quote>extensions</quote>that make the chords more
+                    interesting and more accurately representative of how the artist originally
+                    played them. Below is an example of some of these chords:</para>
+                <figure>
+                    <title>Snippet from Led Zeppelin's <quote>Stairway to Heaven</quote></title>
+                    <para><programlisting xml:space="preserve">[Verse 1]
+
+There's
+  Am         Ammaj9
+a lady who's sure  
+         Am7         D/F#
+All that glitters is gold
+          Fmaj7                G  Am
+And she's buying a stairway to heaven.</programlisting></para>
+                    <para>This example contains a good variety of the different possible chord
+                        extensions: a lowercase <quote>m</quote> for minor, <quote>mmaj9</quote> for
+                        a minor chord with a major 9th, and <quote>D/F#</quote> to indicate a D
+                        chord with an F# as the bass note of the chord.</para>
+                </figure>
+                <para>It would be one thing if all the chords were one letter, but the complexity of
+                    the chords was too much for us to figure out how to represent in an iXML
+                    grammar. There is also the fact that the chord charts do not strictly follow the
+                    form of one line of chords followed by one line of lyrics. As seen in a previous
+                    figure of Greta Van Fleet's <quote>Flower Power</quote>, there are sections that
+                    contain exclusively chords. There is also the possibility for sections of lyrics
+                    with no chords above them. To solve this problem, Dr. Beshero-Bondar developed a
+                    monster Regex line which we implemented in XSLT through our XProc
+                    pipeline.</para>
+                <para><programlisting xml:space="preserve">\n(\s*([A-Z][#ba-z/0-9]*) *([A-Z][#ba-z/0-9]*)?)*\n</programlisting></para>
             </section>
             <section>
                 <title>What if We Had Used ChordPro?—The Potential of iXML</title>
