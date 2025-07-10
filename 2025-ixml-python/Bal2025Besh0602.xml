@@ -16,7 +16,7 @@
                 a course in “Large-Scale Text Analysis”. Going into this course, students have
                 experience in encoding text with XML, transforming XML with XSLT, and web
                 development with HTML and CSS. In the past, the Text Analysis course has been a
-                procedural “Python-and-Regex course”: preparing text corpora by generating simple
+                procedural “Regex-and-Python course”: preparing text corpora by generating simple
                 XML from regularly-patterned files using regular expression search-and-replace
                 operations, using XQuery to extract the portions of the texts to analyze, and
                 producing plain-text inputs to provide to Python. Python has dominated the
@@ -24,7 +24,7 @@
             <para>This year’s course tried a different approach. Students were taught iXML grammars
                 as a way to prepare XML for analysis and XProc for pipelining. Regular expression
                 matching involved working with XSLT, and the entire XML stack was used before
-                approaching Python. Students learned how to install software in alpha stages and
+                approaching Python. Students learned how to install software in alpha stages, and
                 they tested how well it works across platforms. From this exploratory start, one
                 student project team found a very practical use-case for applying invisible XML in a
                 project pipeline for analyzing chord chart musical notation. In this paper, we
@@ -97,7 +97,7 @@
         </author>
         <keywordset role="author">
             <keyword>invisible XML</keyword>
-            <keyword>ixml</keyword>
+            <keyword>iXML</keyword>
             <keyword>XProc</keyword>
             <keyword>music encoding</keyword>
             <keyword>ChordPro</keyword>
@@ -118,7 +118,7 @@
         <title>Context: The Large-Scale Text Analysis Course at Penn State Behrend</title>
         <para>The Large-Scale Text Analysis class (Digit 210) is taught (by me, Elisa
             Beshero-Bondar) in spring semesters in the Digital Media, Arts, and Technology major at
-            Penn State Behrend (affectionately known to us as the <quote>DIGIT</quote>program). The
+            Penn State Behrend (affectionately known to us as the <quote>DIGIT</quote> program). The
             course is part of a multiple-semester digital humanities core sequence that concentrates
             on text encoding and processing. Students usually came to this class with previous
             experience from a course taught regularly each fall in text encoding with XML,
@@ -127,31 +127,32 @@
             classes involve daily homework and a few tests with an emphasis on students’ applying
             what they learn to develop semester projects in small teams.</para>
 
-        <para>Digit 210 is usually understood to be <quote>the Python-and-Regex course</quote>. A
+        <para>Digit 210 is usually understood to be <quote>the Regex-and-Python course</quote>. A
             typical semester would involve orienting students to natural language processing in
             Python and preparing text corpora for analysis. In this context, XML was a helpful (but
             not completely necessary) option that contributed to more precise text curation and
             analysis, and the expectation to prepare XML provided a good means for students to learn
-            regular expression search and replace operations in order to generate simply but
+            regular expression search-and-replace operations in order to generate simply but
             meaningfully structured XML from regular patterns in text corpora. Students would then
             learn to write XQuery to output portions of the texts to analyze using natural language
-            processing libraries (spaCy or NLTK). For an exemplary semester project, a team of
-            students <quote>scraped</quote> collections of popular game script files. On performing
-            careful document analysis, they applied regular expression search and replace operations
-            to create a simple XML structure that helped them to isolate (and mark off) spoken
-            conversation between NPC characters from passages about game items and optional actions.
-            The team prepared XML and wrote XQuery to output the texts that described decision
-            making forks, in order to find out how frequently certain characters and items are
-            mentioned at specific locations in the game. In other projects, students developed text
-            corpora from many seasons of available TV series like <emphasis>The Simpsons</emphasis>.
-            They prepared simple XML to identify dialogue, speakers, and non-spoken descriptive
-            passages, applied XQuery to separate out just the portions of the texts they wished to
-            analyze (just the spoken text) to separate out just the portions of the texts they
-            wished to analyze in plain-text inputs to provide to Python. In previous semesters we
-            would have student teams import the Saxon-C package into their Python scripts to have
-            students apply XPath and XQuery directly as a pipeline process within their Python.
-            Thus, Python has traditionally come first in this course and dominated the class
-            experience of developing a pipeline algorithm for analyzing text corpora.</para>
+            processing libraries (<link xlink:href="https://spacy.io/usage/spacy-101">spaCy</link>
+            or <link xlink:href="https://www.nltk.org/">NLTK</link>). For an exemplary semester
+            project, a team of students <quote>scraped</quote> collections of popular game script
+            files. On performing careful document analysis, they applied regular expression
+            search-and-replace operations to create a simple XML structure that helped them to
+            isolate (and mark off) spoken conversation between NPC characters from passages about
+            game items and optional actions. The team prepared XML and wrote XQuery to output the
+            texts that described decision making forks, in order to find out how frequently certain
+            characters and items are mentioned at specific locations in the game. In other projects,
+            students developed text corpora from many seasons of available TV series like
+                <emphasis>The Simpsons</emphasis>. They prepared simple XML to identify dialogue,
+            speakers, and non-spoken descriptive passages, then applied XQuery to separate out just
+            the portions of the texts they wished to analyze (just the spoken text) in plain-text
+            inputs to provide to Python. In previous semesters, we would have student teams import
+            the Saxon-C package into their Python scripts to have students apply XPath and XQuery
+            directly as a pipeline process within their Python. Thus, Python has traditionally come
+            first in this course and dominated the class experience of developing a pipeline
+            algorithm for analyzing text corpora.</para>
         <para>Perhaps the 2020s are a decade inviting us to resist complacency, particularly in the
             organizing of teaching syllabi. In Spring 2025, motivated greatly by the interesting
             opportunities of invisible XML and the creative affordances of SVG discussed in previous
@@ -182,11 +183,10 @@
                         overlay crochet with iXML and XSLT</quote>
                     <link xlink:href="https://doi.org/10.4242/BalisageVol29.Tovey-Walsh01"
                         >https://doi.org/10.4242/BalisageVol29.Tovey-Walsh01</link>.</para>
-
             </footnote> This year, our students began the course by learning to write SVG and think
             about creative ways to visualize data by programmatically scripting SVG with XSLT. The
             SVG data visualization unit previously came at the end of the Python-dominated course,
-            as a consequence of preparing the XML and writing XQuery: Students were prepared to
+            as a consequence of preparing the XML and writing XQuery: students were prepared to
             script SVG with XQuery with an emphasis on extracting data and providing an alternative
             to visualization libraries available in the Python ecosystem. In the new experimental
             course, we decided to <emphasis>begin</emphasis> with hand-encoding SVG as a rewarding
@@ -206,9 +206,9 @@
             The new priority on XML not only helped students review and develop XSLT skills
             introduced in the previous semester, but it also gave students an unusual experience
             with writing grammars and seeing the relationships and differences between regular
-            expression matching, grammars, and schemas. Putting these XML, XSLT, and ixml
+            expression matching, grammars, and schemas. Putting these XML, XSLT, and iXML
             experiences first, before introducing Python for natural language processing, changed
-            the course experience significantly. Even though not all students applied ixml or XProc
+            the course experience significantly. Even though not all students applied iXML or XProc
             pipelines in their semester projects, the common experience of encountering these
             technologies certainly changed the way students encountered pipeline processing,
             improved their command line fluency. and introduced them to software development in
@@ -219,7 +219,7 @@
             and XProc for the first time.</para>
         <section>
             <title>Introducing the Battle-Testing Team</title>
-            <subtitle>Preparing for a Cross-Platform educational experiment</subtitle>
+            <subtitle>Preparing for a Cross-Platform Educational Experiment</subtitle>
             <para>Hello world! I’m Michael Simons, and I was one of the
                     <quote>battle-testers</quote> for the new iXML and XProc unit in our Digit 210
                 class. I was one of three students who signed up to assist Dr. Beshero-Bondar and
@@ -258,11 +258,12 @@
                             >http://dh.obdurodon.org/ixml-and-xproc-configuration.xhtml</link>
                         (2025). Last accessed 2025-07-02.</para>
                 </footnote> Knowing that our students would not be able to purchase a Saxon EE
-                license and would be using the HE (Home Edition) instead, the battle-testing team
-                needed to work on preparing instructions for the cross-platform environment of our
-                class. As the number of differences between Dr Birnbaum’s instructions and our
-                experiences grew rapidly, we realized we would need separate sets of instructions
-                for MacOS and Windows users.<footnote>
+                license and would be using the HE (Home Edition) instead, this was one difference
+                that the battle-testing team needed to work on incorporating into our instructions.
+                As the number of differences between Dr. Birnbaum’s instructions and our experiences
+                grew rapidly, including the many differences between MacOS and Windows as discovered
+                by Caleb and Dr. Beshero-Bondar, we realized we would need separate sets of
+                instructions for each platform as well.<footnote>
                     <para>Digit 210’s set of installation instructions. Initially drafted by Dr.
                         Beshero-Bondar, the battle-testing students made contributions as they ran
                         into their own issues, and the final documents were proofread and heavily
@@ -274,7 +275,9 @@
                             >https://github.com/newtfire/textAnalysis-Hub/blob/main/Installations/InstallNotes-Win.md</link>.</para>
                 </footnote> Our instructions also taught the students many things that would be
                 useful to them in general as DIGIT majors, including how to install a package
-                manager (Homebrew for MacOS or Chocolatey for Windows) for the purpose of installing OpenJDK,<footnote>
+                manager (<link xlink:href="https://brew.sh/">Homebrew</link> for MacOS or <link
+                    xlink:href="https://chocolatey.org/">Chocolatey</link> for Windows) for the
+                purpose of installing OpenJDK,<footnote>
                     <para>Preliminary set of student-developed instructions for installing OpenJDK
                         via a package manager. Version for MacOS: <link
                             xlink:href="https://github.com/newtfire/textAnalysis-Hub/blob/main/Installations/OpenJDK-mac.md"
@@ -295,11 +298,11 @@
                 sidenotes and extraordinary yet accessible knowledge. While individual members of
                 the class might have been able to successfully prepare their environments, without
                 our work ahead of time, things would have likely been very chaotic when Dr. Birnbaum
-                arrived to guest-instruct our class on iXML and XProc. Additionally, this was a
-                condensed experiement, as Dr. Birnbaum was allotted just three, 50 minute class
-                periods for teaching us iXML and XProc. So, ensuring all students were ready to hit
-                the ground running at the time of his guest appearance was crucial. He created a
-                thorough lesson plan outlining this fast-tracked learning experience.<footnote>
+                arrived to guest-instruct our class. Additionally, this was a condensed experiement,
+                as Dr. Birnbaum was allotted just three, 50 minute class periods for teaching us
+                both iXML and XProc. So, ensuring all students were ready to hit the ground running
+                at the time of his guest appearance was crucial. He created a thorough lesson plan
+                outlining this fast-tracked learning experience.<footnote>
                     <para><quote>Lesson plan: Invisible XML and XProc</quote> hosted on <link
                             xlink:href="http://dh.obdurodon.org/">obdurodon.org</link>. <link
                             xlink:href="http://dh.obdurodon.org/ixml-and-xproc-lesson-plan.xhtml"
@@ -328,8 +331,8 @@
             unexpected things about their potential application, especially to the field of music
             encoding. </para>
         <section>
-            <title>A Project on Chord Chart Analysis: what iXML looks like in a large-scale student
-                project</title>
+            <title>A Project on Chord Chart Analysis: What iXML Looks Like in a Large-Scale Student
+                Project</title>
             <subtitle>The Optimally Motivated Student Experience</subtitle>
             <para>Michael again! Dr. Beshero-Bondar deemed me an <quote>optimally motivated
                     student</quote> because I did the work (relatively on time) and was able to
@@ -354,7 +357,7 @@
                     <caption>
                         <para>GretaVanZeppelin Project Logo</para>
                     </caption>
-                </mediaobject> 
+                </mediaobject>
                 <para>The <link xlink:href="https://afish2003.github.io/GretaVanZeppelin/"
                         >GretaVanZeppelin Project</link> is an analysis of musical artists, Greta
                     Van Fleet and Led Zeppelin, using collections of chord charts encoded in XML and
@@ -374,7 +377,7 @@
                     we obtained the data, including of course, iXML and an XProc pipeline.</para>
                 <para>The future of the project was made aware to us (the project developers) during
                     its showcase at our Digit program’s end-of-the-semester presentation day called
-                        <quote>DIGIT Works.</quote> We received valuable feedback from peers and
+                        <quote>DIGIT Works</quote>. We received valuable feedback from peers and
                     industry professionals about incorporating additional data into the project to
                     achieve a more thorough comparison, specifically, being able to analyze the
                     artists’ influences and genre blending, and using our analysis processes to
@@ -548,10 +551,10 @@ She’s al - right, she’s outta sight
 Outta sight</programlisting>
                 </figure>
                 <para>One more important note about the raw text: the chords are placed directly
-                    over the word, or syllable of the word (example: al -
-                    <emphasis>r</emphasis>ight), that is being sung when that chord is played. In
-                    the above example, the chords were placed properly above the words; the easiest
-                    way for me to check this is to listen to the song and pay attention to when the
+                    over the word, or syllable of the word (e.g. al - <emphasis role="bital"
+                        >r</emphasis>ight), that is being sung when that chord is played. In the
+                    above example, the chords were placed properly above the words; the easiest way
+                    for me to check this is to listen to the song and pay attention to when the
                     chord changes. In some of the chord charts, I noticed that less care was taken
                     to preserve the placement of the chords. For this reason, as well as the
                     sometimes confusing line divisions, I made the decision that we would not make
@@ -563,16 +566,15 @@ Outta sight</programlisting>
                     them.</para>
                 <para>There is, however, something to be said for noting the duration of the chords
                     in the markup. My preliminary research into the <link
-                        xlink:href="https://music-encoding.org/">Music Encoding Initiative
-                        (MEI)</link> showed that they use an attribute <code>@dur</code> in their
-                        <code>&lt;chord&gt;</code> elements to indicate the duration of the chord.
-                    This would allow for chord progressions to be analyzed more completely by our
-                    Python analysis tools without having to preserve the spacing between the chords
-                    and make the technology understand that each line is, say, one bar. This,
-                    however, was not within the scope of this project, because unless there is an AI
-                    tool that can accurately listen to music and recognize chord changes, the
-                    durations of the chords would have to be marked by hand for every chord in every
-                    song. </para>
+                        xlink:href="https://music-encoding.org/">MEI</link> showed that they use an
+                    attribute <code>@dur</code> in their <code>&lt;chord&gt;</code> elements to
+                    indicate the musical duration of the chord. This would allow for chord
+                    progressions to be analyzed more completely by our Python analysis tools without
+                    having to preserve the spacing between the chords and make the technology
+                    understand that each line is, say, one bar. This, however, was not within the
+                    scope of this project, because unless there is an AI tool that can accurately
+                    listen to music and recognize chord changes, the durations of the chords would
+                    have to be marked by hand for every chord in every song. </para>
                 <para>All of this begs the question: <quote>Is chord notation declaring itself to be
                         markup in its own right?</quote> What is an easier form of music for a lot
                     of musicians to read is not as easy for a computer to understand because of the
@@ -881,7 +883,7 @@ A G
                 </figure>
                 <para>The way I hear and see the iXML in my head is, <quote>[what’s on the left side
                         of the colon] contains [what’s on the right side of the colon] followed by
-                        [anything else separated by a comma].</quote></para>
+                        [anything else, separated by a comma].</quote></para>
                 <para>Beginning at the first line, the root element named <code>&lt;mei&gt;</code>
                     and the element following (<code>&lt;music&gt;</code>) are named as such simply
                     for the purpose of being adaptable to MEI guidelines in the future. Of course
@@ -890,7 +892,12 @@ A G
                     There are four lines of metadata which are there to identify the song. Our team
                     added the <code>&lt;key&gt;</code> metadata to the original documents so that
                     the chords could eventually be identified in a number system for more meaningful
-                    analysis.</para>
+                            analysis.<footnote><para>See <quote>Converting Chords to Nashville
+                                Numbers</quote> on the GretaVanFleet Project's Methods page for more
+                            information on this numbering system. <link
+                                xlink:href="https://afish2003.github.io/GretaVanZeppelin/methods.html"
+                                >https://afish2003.github.io/GretaVanZeppelin/methods.html</link>
+                            (2025).</para></footnote></para>
                 <para>Then, each <code>&lt;section&gt;</code> element is a different section of the
                     song (Verse, Chorus, etc.). These section headings are noted by square brackets
                         <code>[]</code> in the original documents. While the development of the iXML
@@ -899,7 +906,7 @@ A G
                     brackets within the lyrics or the chords themselves—only the section
                     headings—so, logically, a section ends and a new section begins when an opening
                     square bracket <code>[</code> is found. This is a concept we practiced in class
-                    using regular expressions in a find-and-replace context. However, this concept
+                    using regular expressions in a search-and-replace context. However, this concept
                     didn’t translate one-to-one with iXML, because we also had to account for the
                     two (rather, <emphasis role="ital">most of the time</emphasis> two) blank lines
                     between sections. Dr. Birnbaum’s study of ambiguity in iXML helped us solve this
@@ -920,7 +927,8 @@ A G
                     famous example of some of these chords:</para>
                 <figure>
                     <title>Snippet from Led Zeppelin's <quote>Stairway to Heaven</quote></title>
-                    <para><programlisting xml:space="preserve">[Verse 1]
+                    <para>
+                        <programlisting xml:space="preserve">[Verse 1]
 
 There's
   Am         Ammaj9
@@ -928,7 +936,8 @@ a lady who's sure
          Am7         D/F#
 All that glitters is gold
           Fmaj7                G  Am
-And she's buying a stairway to heaven.</programlisting></para>
+And she's buying a stairway to heaven.</programlisting>
+                    </para>
                     <para>This example contains a good variety of the different possible chord
                         extensions: a lowercase <quote>m</quote> for minor, <quote>mmaj9</quote> for
                         a minor chord with a major 9th, and <quote>D/F#</quote> to indicate a D
@@ -944,7 +953,8 @@ And she's buying a stairway to heaven.</programlisting></para>
                         <quote>monsterous Regex line</quote> which we implemented with
                         <code>xsl:analyze-string</code> in a single XSLT template through our XProc
                     pipeline following the iXML stage:</para>
-                <para><programlisting xml:space="preserve">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+                <para>
+                    <programlisting xml:space="preserve">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
     xmlns:math="http://www.w3.org/2005/xpath-functions/math"
@@ -975,21 +985,24 @@ And she's buying a stairway to heaven.</programlisting></para>
             &lt;/xsl:non-matching-substring&gt;
         &lt;/xsl:analyze-string&gt;
     &lt;/xsl:template&gt;
-&lt;/xsl:stylesheet&gt;</programlisting></para>
+&lt;/xsl:stylesheet&gt;</programlisting>
+                </para>
                 <para>The reason this worked is because there would be one or more capitalized
-                        <quote>constructions</quote> in a row that could combine letters and
-                    numbers. That said, this single XSLT template was all we needed to complete our
-                    transformation into full XML and represented a successful markup pipeline in our
-                    project. I continued by adding some additional attributes to the chords for
-                    further processing. To learn more about this, see my <link xlink:href="https://afish2003.github.io/GretaVanZeppelin/methods.html"><quote>Methods</quote> page</link>
-                    which was perhaps our most significant development from this semester’s
-                    project.</para>
+                        <quote>constructions</quote> (chords) in a row that could combine letters
+                    and numbers. That said, this single XSLT template was all we needed to complete
+                    our transformation into full XML and represented a successful markup pipeline in
+                    our project. I continued by adding some additional attributes to the chords for
+                    further processing. To learn more about this, or the entire process including
+                    the XProc pipeline, see my <link
+                        xlink:href="https://afish2003.github.io/GretaVanZeppelin/methods.html"
+                            ><quote>Methods</quote> page</link> which was perhaps our most
+                    significant development from this semester’s project.</para>
             </section>
             <section>
                 <title>What if We Had Used ChordPro? The Potential of iXML</title>
-                <para>That last step of separating lyrics and chord lines with XSLT and regular expressions <emphasis role="ital"
-                        >may</emphasis> have been unncessary had we used ChordPro. Created in 1991,
-                    ChordPro predates MEI and MusicXML by almost a decade.<footnote>
+                <para>That last step of separating lyrics and chord lines with XSLT and regular
+                    expressions <emphasis role="ital">may</emphasis> have been unncessary had we
+                    used ChordPro. Created in 1991, ChordPro predates MEI and MusicXML by almost a decade.<footnote>
                         <para>History of Chord Pro, <link
                                 xlink:href="https://www.chordpro.org/chordpro/chordpro-history/"
                                 >https://www.chordpro.org/chordpro/chordpro-history/</link>. See
@@ -1026,11 +1039,11 @@ And she's buying a stairway to heaven.</programlisting></para>
     </section>
 
     <section>
-        <title>What do we gain from learning and teaching invisible XML?</title>
+        <title>What Do We Gain From Learning and Teaching Invisible XML?</title>
 
         <para>Was this worth the effort, and was invisible XML ready for undergraduates in an
             algorithmic text analysis course? Most student project teams were not motivated to apply
-            invisible XML in their projects and we did not require them to do so. (We only required
+            invisible XML in their projects, and we did not require them to do so. (We only required
             that students give the technologies a try in their homework assignments). For those that
             were motivated (particularly the authors of this paper), there was an interest in the
             technologies themselves cultivated by drafting new documentation and training resources
@@ -1040,20 +1053,21 @@ And she's buying a stairway to heaven.</programlisting></para>
             documentation, as well. Invisible XML <emphasis>declares</emphasis> the patterns of a
             text document to be the defining grammar of XML nodes, and this is both <emphasis>less
                 and more</emphasis> compared to scripting a process with a sequential set of regular
-            expression search and replace operations. It is <emphasis>more</emphasis> in the sense
+            expression search-and-replace operations. It is <emphasis>more</emphasis> in the sense
             of sheer effort to ensure the operations work, and also <emphasis>more</emphasis>
             definitive as a grammar than a convenient string-match, and perhaps
                 <emphasis>more</emphasis> in the sense of requiring the installation of CoffeePot or
             Markup Blitz to process it rather than built-in regular expression search features in a
-            coding IDE like oXygen or the re library in Python. But it is <emphasis>less</emphasis>
-            in the precise elegance of a grammar that expresses an expectation of its source
-            documents, and (in our experience) fewer lines of code, though each line scripted with
-            exacting care. Each approach puts students in the position of writing declaratively what
-            needs to become their data structure, and perhaps the thinking process required of
-            invisible XML might be different from writing sequential regular expression recipes in
-            the way that writing poetry differs from prose. Poetry, like invisible XML, attends to
-            more dimensions of expression for every meaningful and resonant word and punctuation
-            mark, by contrast with prose and step-by-step search and replace operations.</para>
+            coding IDE like oXygen or the <code>re</code> library in Python. But it is
+                <emphasis>less</emphasis> in the precise elegance of a grammar that expresses an
+            expectation of its source documents, and (in our experience) fewer lines of code, though
+            each line scripted with exacting care. Each approach puts students in the position of
+            writing declaratively what needs to become their data structure, and perhaps the
+            thinking process required of invisible XML might be different from writing sequential
+            regular expression recipes in the way that writing poetry differs from prose. Poetry,
+            like invisible XML, attends to more dimensions of expression for every meaningful and
+            resonant word and punctuation mark, by contrast with prose and step-by-step
+            search-and-replace operations.</para>
         <para>Certainly for all its expressive power, invisible XML cannot replace the prosaic
             versatility of regular expressions as a <quote>Swiss-army knife</quote> for many
             different text analysis purposes. And we could have taught our course without it. But
@@ -1064,7 +1078,7 @@ And she's buying a stairway to heaven.</programlisting></para>
             appreciation of <emphasis role="ital">declarative methods</emphasis> this year was
             balanced differently with the <emphasis role="ital">imperative</emphasis> programming of
             Python. Are students understanding the formatting and processing of text differently
-            when encountering Invisible XML? In making Invisible XML a topic for homework and
+            when encountering invisible XML? In making invisible XML a topic for homework and
             demonstration, students encountered the concept of grammars, in context with schema
             validation and regular expression matching—related to these but fundamentally different.
             The declaration of patterns, and the experience of writing grammars explicitly to work
