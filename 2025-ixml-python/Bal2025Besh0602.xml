@@ -100,10 +100,10 @@
             <keyword>iXML</keyword>
             <keyword>XProc</keyword>
             <keyword>music encoding</keyword>
-            <keyword>ChordPro</keyword>
             <keyword>MEI</keyword>
             <keyword>MusicXML</keyword>
-            <keyword>perl</keyword>
+            <keyword>Perl</keyword>
+            <keyword>ChordPro</keyword>
             <keyword>regular expressions</keyword>
             <keyword>grammar</keyword>
             <keyword>schema</keyword>
@@ -252,7 +252,7 @@
                 warned us that they were only for MacOS and for those with a purchased Saxon EE
                 license for use with XProc processing.<footnote>
                     <para>Dr. Birnbaum’s installation instructions, which he claimed were developed
-                        for his primary audience: himself: <quote>Configuring XProc and ixml
+                        for his primary audience: himself, <quote>Configuring XProc and ixml
                             processors</quote>, <link
                             xlink:href="http://dh.obdurodon.org/ixml-and-xproc-configuration.xhtml"
                             >http://dh.obdurodon.org/ixml-and-xproc-configuration.xhtml</link>
@@ -269,10 +269,11 @@
                         into their own issues, and the final documents were proofread and heavily
                         edited by Michael Simons. Version for MacOS: <link
                             xlink:href="https://github.com/newtfire/textAnalysis-Hub/blob/main/Installations/InstallNotes-Mac.md"
-                            >https://github.com/newtfire/textAnalysis-Hub/blob/main/Installations/InstallNotes-Mac.md</link>.
-                        Version for Windows: <link
+                            >https://github.com/newtfire/textAnalysis-Hub/blob/main/Installations/InstallNotes-Mac.md</link>
+                        (2025). Version for Windows: <link
                             xlink:href="https://github.com/newtfire/textAnalysis-Hub/blob/main/Installations/InstallNotes-Win.md"
-                            >https://github.com/newtfire/textAnalysis-Hub/blob/main/Installations/InstallNotes-Win.md</link>.</para>
+                            >https://github.com/newtfire/textAnalysis-Hub/blob/main/Installations/InstallNotes-Win.md</link>
+                        (2025).</para>
                 </footnote> Our instructions also taught the students many things that would be
                 useful to them in general as DIGIT majors, including how to install a package
                 manager (<link xlink:href="https://brew.sh/">Homebrew</link> for MacOS or <link
@@ -281,16 +282,18 @@
                     <para>Preliminary set of student-developed instructions for installing OpenJDK
                         via a package manager. Version for MacOS: <link
                             xlink:href="https://github.com/newtfire/textAnalysis-Hub/blob/main/Installations/OpenJDK-mac.md"
-                            >https://github.com/newtfire/textAnalysis-Hub/blob/main/Installations/OpenJDK-mac.md</link>.
-                        Version for Windows: <link
+                            >https://github.com/newtfire/textAnalysis-Hub/blob/main/Installations/OpenJDK-mac.md</link>
+                        (2025). Version for Windows: <link
                             xlink:href="https://github.com/newtfire/textAnalysis-Hub/blob/main/Installations/InstallNotes-Win.md"
-                            >https://github.com/newtfire/textAnalysis-Hub/blob/main/Installations/InstallNotes-Win.md</link>.</para>
+                            >https://github.com/newtfire/textAnalysis-Hub/blob/main/Installations/InstallNotes-Win.md</link>
+                        (2025).</para>
                 </footnote> creating shell aliases and editing system dot-files,<footnote>
                     <para>Digit 210 assignment: <quote>Create Shell Aliases and System ‘Dot
                             Files.’</quote>
                         <link
                             xlink:href="https://newtfire.org/courses/tutorials/command-line-aliases.html"
-                            >https://newtfire.org/courses/tutorials/command-line-aliases.html</link>.</para>
+                            >https://newtfire.org/courses/tutorials/command-line-aliases.html</link>
+                        (2025). Last accessed 2025-07-02.</para>
                 </footnote> and <quote>smoke-testing</quote> their installations to ensure proper
                 configuration.</para>
             <para>We are grateful for Dr. Birnbaum joining us over Zoom for consultation sessions as
@@ -303,24 +306,28 @@
                 both iXML and XProc. So, ensuring all students were ready to hit the ground running
                 at the time of his guest appearance was crucial. He created a thorough lesson plan
                 outlining this fast-tracked learning experience.<footnote>
-                    <para><quote>Lesson plan: Invisible XML and XProc</quote> hosted on <link
-                            xlink:href="http://dh.obdurodon.org/">obdurodon.org</link>. <link
+                    <para>David J. Birnbaum, <quote>Lesson plan: Invisible XML and XProc</quote>
+                        <emphasis role="ital">(hosted on <link xlink:href="http://dh.obdurodon.org/"
+                                >obdurodon.org</link>)</emphasis>, <link
                             xlink:href="http://dh.obdurodon.org/ixml-and-xproc-lesson-plan.xhtml"
-                            >http://dh.obdurodon.org/ixml-and-xproc-lesson-plan.xhtml</link></para>
+                            >http://dh.obdurodon.org/ixml-and-xproc-lesson-plan.xhtml</link> (2025).
+                        Last accessed 2025-07-02.</para>
                 </footnote> His lesson plan shared very important introductory readings by Norm
                 Tovey-Walsh and Martin Kraetke, serving as an orientation to iXML and XProc respectively.<footnote>
                     <para>Norm Tovey-Walsh, <quote>Writing Invisible XML grammars</quote>, <link
                             xlink:href="https://www.xml.com/articles/2022/03/28/writing-invisible-xml-grammars/"
-                            >https://www.xml.com/articles/2022/03/28/writing-invisible-xml-grammars/</link>.
-                        Martin Kraetke, <quote>XProc 3.0 Tutorial</quote>, <link
+                            >https://www.xml.com/articles/2022/03/28/writing-invisible-xml-grammars/</link>
+                        (2022). Martin Kraetke, <quote>XProc 3.0 Tutorial</quote>, <link
                             xlink:href="https://xporc.net/xproc-tutorial/"
-                            >https://xporc.net/xproc-tutorial/</link>.</para>
+                            >https://xporc.net/xproc-tutorial/</link>. Last accessed
+                        2025-07-02.</para>
                 </footnote> He also introduced us to John Lumley’s iXML workbench as a helpful
                 resource to practice using iXML.<footnote>
-                    <para>John Lumley, <quote>jωiXML processor</quote>, an online resource for
-                        easily processing text with an iXML grammar. <link
+                    <para>John Lumley, <quote>jωiXML processor</quote> (an online resource for
+                        easily processing text with an iXML grammar), <link
                             xlink:href="https://johnlumley.github.io/jwiXML.xhtml"
-                            >https://johnlumley.github.io/jwiXML.xhtml</link>.</para>
+                            >https://johnlumley.github.io/jwiXML.xhtml</link> (2024). Last accessed
+                        2025-07-02.</para>
                 </footnote></para>
         </section>
     </section>
@@ -403,9 +410,10 @@
                         (MEI)</link>. We discovered that <quote>the MEI is a community-driven,
                         open-source effort to define a system for encoding musical documents in a
                         machine-readable structure,</quote><footnote>
-                        <para>Music Encoding Initiative, <link
-                                xlink:href="https://music-encoding.org"
-                                >https://music-encoding.org</link></para>
+                        <para>Music Encoding Initiative, <quote>An introduction to MEI</quote>,
+                                <link xlink:href="https://music-encoding.org"
+                                >https://music-encoding.org/about/</link> (2025). Last accessed
+                            2025-07-02.</para>
                     </footnote> but we possibly should have kept looking for other options for
                     encoding chord charts at that time. In our research, we only saw examples of
                     encoded sheet music in which all the notes are represented on the page on
@@ -423,7 +431,8 @@
                 <para>Our Digit program has one past experience using the MEI: the Locke Anthology Project<footnote>
                         <para>Locke Anthology Project, <link
                                 xlink:href="https://newtfire.github.io/locke-anthology2.0/music.html"
-                                >https://newtfire.github.io/locke-anthology2.0/music.html</link></para>
+                                >https://newtfire.github.io/locke-anthology2.0/music.html</link>
+                            (2024). Last accessed 2025-07-02.</para>
                     </footnote>. This project conformed to MEI and <link
                         xlink:href="https://tei-c.org/release/doc/tei-p5-doc/en/html/index.html">TEI
                         guidelines</link> to preserve a digital version of the poetry and music in
@@ -433,9 +442,9 @@
                     those snippets so that they could be converted to MIDI<footnote>
                         <para>For more information on MIDI, see <link
                                 xlink:href="https://midi.org/about-midi-part-1overview"
-                                >https://midi.org/about-midi-part-1overview</link>and <link
-                                xlink:href="https://midi.org/specs"
-                            >https://midi.org/specs</link></para>
+                                >https://midi.org/about-midi-part-1overview</link> and <link
+                                xlink:href="https://midi.org/specs">https://midi.org/specs</link>.
+                            Last accessed 2025-07-02.</para>
                     </footnote> and played back as audio files on the website. This use of the MEI
                     was practical, not analytical like the GretaVanZeppelin Project’s focus was. So,
                     while very interesting, the Locke Anthology Project was not something we could
@@ -445,17 +454,19 @@
                         xlink:href="https://www.musicxml.com/">MusicXML</link> which we discovered
                     after the semester’s conclusion. This markup language is used and supported in
                     many popular music notation, recording, and other music-related software.<footnote>
-                        <para>List of software that utilizes MusicXML, <link
+                        <para>MusicXML, <quote>MusicXML Software</quote>, <link
                                 xlink:href="https://www.musicxml.com/software/"
                                 >https://www.musicxml.com/software/</link>. For more information on
                             how MusicXML compares to MEI, see <quote><link
                                     xlink:href="https://opensheetmusicdisplay.org/blog/blog-music-xml-introduction-comparison/"
                                     >Music XML Introduction and Comparison</link></quote>
-                            (OpenSheetMusicDisplay.org, 2025).</para>
+                            (OpenSheetMusicDisplay.org, 2025). Last accessed 2025-07-02.</para>
                     </footnote> Upon familiarizing myself with their tutorial<footnote>
-                        <para>MusicXML Tutorial on Chord Symbols and Diagrams, <link
+                        <para><link xlink:href="https://www.w3.org/">W3C</link>, <quote>MusicXML 4.0
+                                Tutorial: Chord Symbols and Diagrams</quote>, <link
                                 xlink:href="https://www.w3.org/2021/06/musicxml40/tutorial/chord-symbols-and-diagrams/"
-                                >https://www.w3.org/2021/06/musicxml40/tutorial/chord-symbols-and-diagrams/</link></para>
+                                >https://www.w3.org/2021/06/musicxml40/tutorial/chord-symbols-and-diagrams/</link>
+                            (2021). Last accessed 2025-07-02.</para>
                     </footnote>, I think we <emphasis role="ital">could</emphasis> have utilized it,
                     but it would have still been a very large and time-consuming learning
                     curve.</para>
@@ -463,20 +474,23 @@
                         >ChordPro</link> after the project’s development. I actually knew about
                     ChordPro existing as a way to write chord charts, but only in the context of my
                     church’s music planning software<footnote>
-                        <para><quote>Planning Center Services</quote>, the industry-standard program
-                            for planning church worship services that includes the ability to easily
-                            make and format chord charts using ChordPro. See <link
-                                xlink:href="https://pcoservices.zendesk.com/hc/en-us/articles/204262594-Preventing-charts-from-shifting-using-Chord-Pro"
-                                >https://pcoservices.zendesk.com/hc/en-us/articles/204262594-Preventing-charts-from-shifting-using-Chord-Pro</link>
-                            to learn more about how they implement ChordPro, or watch someone
-                            utilize ChordPro within Planning Center: <link
-                                xlink:href="https://youtu.be/GS4GIw_0LQk?si=sZqMEZpqNl1JroGE"
-                                >https://youtu.be/GS4GIw_0LQk?si=sZqMEZpqNl1JroGE</link></para>
+                        <para><emphasis role="ital">Planning Center Services</emphasis>, the
+                            industry-standard program for planning church worship services that
+                            includes the ability to easily make and format chord charts using
+                            ChordPro. See <quote><link
+                                    xlink:href="https://pcoservices.zendesk.com/hc/en-us/articles/204262594-Preventing-charts-from-shifting-using-Chord-Pro"
+                                    >Preventing charts from shifting using Chord Pro</link></quote>
+                            (updated 2025) to learn more about how they implement ChordPro, or watch
+                            someone utilize ChordPro within Planning Center: <link
+                                xlink:href="https://www.youtube.com/watch?v=GS4GIw_0LQk"
+                                >https://www.youtube.com/watch?v=GS4GIw_0LQk</link> (2018). Last
+                            accessed 2025-07-02.</para>
                     </footnote>. I was unaware of the scope of ChordPro as an in-development
                     open-source program<footnote>
                         <para>ChordPro on GitHub, <link
                                 xlink:href="https://github.com/ChordPro/chordpro"
-                                >https://github.com/ChordPro/chordpro</link></para>
+                                >https://github.com/ChordPro/chordpro</link>. Last accessed
+                            2025-07-02.</para>
                     </footnote> aimed at the markup of chord charts. This could very well be the
                     future of the GretaVanZeppelin project and could also more deeply incorporate
                     iXML, but I’ll discuss that after I’ve explained what the project already
@@ -894,7 +908,7 @@ A G
                     the chords could eventually be identified in a number system for more meaningful
                             analysis.<footnote><para>See <quote>Converting Chords to Nashville
                                 Numbers</quote> on the GretaVanFleet Project's Methods page for more
-                            information on this numbering system. <link
+                            information on this numbering system: <link
                                 xlink:href="https://afish2003.github.io/GretaVanZeppelin/methods.html"
                                 >https://afish2003.github.io/GretaVanZeppelin/methods.html</link>
                             (2025).</para></footnote></para>
@@ -1003,23 +1017,25 @@ And she's buying a stairway to heaven.</programlisting>
                 <para>That last step of separating lyrics and chord lines with XSLT and regular
                     expressions <emphasis role="ital">may</emphasis> have been unncessary had we
                     used ChordPro. Created in 1991, ChordPro predates MEI and MusicXML by almost a decade.<footnote>
-                        <para>History of Chord Pro, <link
+                        <para><quote>History of Chord Pro</quote>, <link
                                 xlink:href="https://www.chordpro.org/chordpro/chordpro-history/"
-                                >https://www.chordpro.org/chordpro/chordpro-history/</link>. See
-                            also <quote>An introduction to MEI</quote> for a history of MEI: <link
-                                xlink:href="https://music-encoding.org/about"
-                                >https://music-encoding.org/about</link> and <quote>Music XML
-                                Introduction and comparison</quote> for a history of MusicXML: <link
-                                xlink:href="https://opensheetmusicdisplay.org/blog/blog-music-xml-introduction-comparison"
-                                >https://opensheetmusicdisplay.org/blog/blog-music-xml-introduction-comparison</link>.
-                            The authors find it disappointing that there seems to be no mention of
-                            ChordPro in the documentation of either MEI or MusicXML.</para>
+                                >https://www.chordpro.org/chordpro/chordpro-history/</link>.
+                                <emphasis role="bold">The authors find it disappointing that there
+                                seems to be no mention of ChordPro in the documentation of either
+                                MEI or MusicXML. </emphasis><emphasis role="ital">(See also
+                                        <quote><link xlink:href="https://music-encoding.org/about"
+                                        >An introduction to MEI</link></quote> for a history of MEI
+                                and <quote><link
+                                        xlink:href="https://opensheetmusicdisplay.org/blog/blog-music-xml-introduction-comparison"
+                                        >Music XML Introduction and comparison</link></quote> for a
+                                history of MusicXML).</emphasis></para>
                     </footnote> It began as a chord notation system and has become a fully
                     functional program for creating chord charts, using Perl to produce output.<footnote>
                         <para>A Perl Module file in ChordPro’s library for producing chord chart
-                            output. <link
+                            output, <link
                                 xlink:href="https://github.com/ChordPro/chordpro/blob/master/lib/ChordPro/Output/HTML.pm"
-                                >https://github.com/ChordPro/chordpro/blob/master/lib/ChordPro/Output/HTML.pm</link></para>
+                                >https://github.com/ChordPro/chordpro/blob/master/lib/ChordPro/Output/HTML.pm</link>.
+                            Last accessed 2025-07-02.</para>
                     </footnote> Unlike human-readable chord charts that place the chords in a
                     separate line above the lyrics, ChordPro places chords inline, in square
                     brackets, directly in front of the word or even syllable of the word so that
