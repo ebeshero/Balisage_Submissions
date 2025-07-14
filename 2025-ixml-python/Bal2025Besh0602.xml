@@ -120,9 +120,9 @@
             Beshero-Bondar) in spring semesters in the Digital Media, Arts, and Technology major at
             Penn State Behrend (affectionately known to us as the <quote>DIGIT</quote> program). The
             course is part of a multiple-semester digital humanities core sequence that concentrates
-            on text encoding and processing. Students usually came to this class with previous
-            experience from a course taught regularly each fall in text encoding with XML,
-            transformation with XSLT, and web development with HTML and CSS. Our university
+            on text encoding and processing. Students usually come to this class with previous
+            experience in text encoding with XML, transformation with XSLT, and web development with HTML and CSS from 
+            previous coursework in text encoding. Our university
             semesters are 15 weeks long with three 50-minute classes per week, during which these
             classes involve daily homework and a few tests with an emphasis on students’ applying
             what they learn to develop semester projects in small teams.</para>
@@ -131,7 +131,7 @@
             typical semester would involve orienting students to natural language processing in
             Python and preparing text corpora for analysis. In this context, XML was a helpful (but
             not completely necessary) option that contributed to more precise text curation and
-            analysis, and the expectation to prepare XML provided a good means for students to learn
+            analysis, and the expectation to prepare XML has provided a good means for students to learn
             regular expression search-and-replace operations in order to generate simply but
             meaningfully structured XML from regular patterns in text corpora. Students would then
             learn to write XQuery to output portions of the texts to analyze using natural language
@@ -147,7 +147,7 @@
             students developed text corpora from many seasons of available TV series like
                 <emphasis>The Simpsons</emphasis>. They prepared simple XML to identify dialogue,
             speakers, and non-spoken descriptive passages, then applied XQuery to separate out just
-            the portions of the texts they wished to analyze (just the spoken text) in plain-text
+            the portions of the texts they wished to analyze (e.g. just the spoken text) in plain-text
             inputs to provide to Python. In previous semesters, we would have student teams import
             the Saxon-C package into their Python scripts to have students apply XPath and XQuery
             directly as a pipeline process within their Python. Thus, Python has traditionally come
@@ -191,10 +191,10 @@
             to visualization libraries available in the Python ecosystem. In the new experimental
             course, we decided to <emphasis>begin</emphasis> with hand-encoding SVG as a rewarding
             starting point for our digital creative students, and then review what they had learned
-            of XSLT in their Text Encoding course by this time pulling data from texts they had
-            encoded in order to make their own data visualizations. This moved XSLT <quote>front and
-                center</quote> in this year’s course, though also caused us not to cover XQuery,
-            given the time we would now have to give to new processing technologies. We then covered
+            of XSLT in their Text Encoding course. In this version of our course, they reviewed XSLT by 
+            pulling data from texts they had encoded in order to make their own data visualizations. 
+            This moved XSLT <quote>front and center</quote>, but also prevented us from covering XQuery,
+            given the time we would now have to devote to new processing technologies. We introduced
             the regular expressions unit much as usual with the same goals of preparing XML files
             from so-called <quote>plain text</quote> using search-and-replace operations in the
             oXygen XML Editor. However, <emphasis>this time</emphasis> we found opportunity to
@@ -214,9 +214,10 @@
             improved their command line fluency. and introduced them to software development in
             alpha stages. Was invisible XML ready for experimentation by undergraduates, and was the
             experience worth deferring their attention to Python processing?</para>
-        <para>This semester, everything was new and different, and here we break down the most
-            challenging and learning-intensive experiences for students confronting invisible XML
-            and XProc for the first time.</para>
+        <para>We found that perhaps iXML was <emphasis>just</emphasis>ready enough, but it will surely be 
+            more ready for student experimentation next year! This semester everything was new and different, 
+            and here we break down the most challenging and learning-intensive experiences for students 
+            confronting invisible XML and XProc for the first time.</para>
         <section>
             <title>Introducing the Battle-Testing Team</title>
             <subtitle>Preparing for a Cross-Platform Educational Experiment</subtitle>
@@ -227,9 +228,9 @@
                 to the rest of our class. Dr. Birnbaum was invited to teach a roughly one week long
                 unit on these technologies, but the preparation was long and intense. I was joined
                 by Dannika, who was taking the course with me, and Caleb, who had taken the course
-                the previous year in its previous form. Dannika is a student who has attention to
-                detail and great leadership qualities but likely would have not gained as much from
-                iXML and XProc if she had not been a behind-the-scenes battle-tester. Caleb is also
+                the previous year in its previous form. Dannika is a student with careful attention to
+                detail and strong leadership qualities but likely would have not gained as much from
+                iXML and XProc on her own if she had not been a behind-the-scenes battle-tester. Caleb is also
                 a highly motivated student and leader, and one of his main contributions was working
                 through the challenges of installing iXML and XProc processors in a Windows
                 environment, as Dr. Beshero-Bondar, Dannika and myself are all MacOS users.</para>
@@ -264,10 +265,10 @@
                 grew rapidly, including the many differences between MacOS and Windows as discovered
                 by Caleb and Dr. Beshero-Bondar, we realized we would need separate sets of
                 instructions for each platform as well.<footnote>
-                    <para>Digit 210’s set of installation instructions. Initially drafted by Dr.
+                    <para>Digit 210’s set of installation instructions, initially drafted by Dr.
                         Beshero-Bondar, the battle-testing students made contributions as they ran
                         into their own issues, and the final documents were proofread and heavily
-                        edited by Michael Simons. Version for MacOS: <link
+                        edited by Michael Simons: Version for MacOS: <link
                             xlink:href="https://github.com/newtfire/textAnalysis-Hub/blob/main/Installations/InstallNotes-Mac.md"
                             >https://github.com/newtfire/textAnalysis-Hub/blob/main/Installations/InstallNotes-Mac.md</link>
                         (2025). Version for Windows: <link
@@ -296,7 +297,7 @@
                         (2025). Last accessed 2025-07-02.</para>
                 </footnote> and <quote>smoke-testing</quote> their installations to ensure proper
                 configuration.</para>
-            <para>We are grateful for Dr. Birnbaum joining us over Zoom for consultation sessions as
+            <para>We are grateful to Dr. Birnbaum for joining us over Zoom for consultation sessions as
                 we worked on this battle-testing phase, and we learned a lot from his whimsical
                 sidenotes and extraordinary yet accessible knowledge. While individual members of
                 the class might have been able to successfully prepare their environments, without
@@ -307,8 +308,8 @@
                 at the time of his guest appearance was crucial. He created a thorough lesson plan
                 outlining this fast-tracked learning experience.<footnote>
                     <para>David J. Birnbaum, <quote>Lesson plan: Invisible XML and XProc</quote>
-                        <emphasis role="ital">(hosted on <link xlink:href="http://dh.obdurodon.org/"
-                                >obdurodon.org</link>)</emphasis>, <link
+                     (hosted on <link xlink:href="http://dh.obdurodon.org/"
+                                >Obdurodon.org</link>), <link
                             xlink:href="http://dh.obdurodon.org/ixml-and-xproc-lesson-plan.xhtml"
                             >http://dh.obdurodon.org/ixml-and-xproc-lesson-plan.xhtml</link> (2025).
                         Last accessed 2025-07-02.</para>
@@ -384,7 +385,8 @@
                     we obtained the data, including of course, iXML and an XProc pipeline.</para>
                 <para>The future of the project was made aware to us (the project developers) during
                     its showcase at our Digit program’s end-of-the-semester presentation day called
-                        <quote>DIGIT Works</quote>. We received valuable feedback from peers and
+                    <quote><link xlink:href="https://digit-psb.github.io/DIGIT-Works/">DIGIT Works</link></quote>. 
+                    We received valuable feedback from peers and
                     industry professionals about incorporating additional data into the project to
                     achieve a more thorough comparison, specifically, being able to analyze the
                     artists’ influences and genre blending, and using our analysis processes to
@@ -435,7 +437,7 @@
                             (2024). Last accessed 2025-07-02.</para>
                     </footnote>. This project conformed to MEI and <link
                         xlink:href="https://tei-c.org/release/doc/tei-p5-doc/en/html/index.html">TEI
-                        guidelines</link> to preserve a digital version of the poetry and music in
+                        Guidelines</link> to preserve a digital version of the poetry and music in
                     Alain Locke’s anthology <emphasis role="ital">The New Negro: An
                         Interpretation</emphasis> (1925). The work includes short snippets of music
                     between its stories and poems, and the team used the MEI’s structure to encode
@@ -964,7 +966,7 @@ And she's buying a stairway to heaven.</programlisting>
                     figure of Greta Van Fleet's <quote>Flower Power</quote>, there are sections that
                     contain exclusively chords. There is also the possibility for sections of lyrics
                     with no chords above them. To solve this problem, Dr. Beshero-Bondar developed a
-                        <quote>monsterous Regex line</quote> which we implemented with
+                        <quote>monstrous Regex line</quote> which we implemented with
                         <code>xsl:analyze-string</code> in a single XSLT template through our XProc
                     pipeline following the iXML stage:</para>
                 <para>
@@ -1110,9 +1112,9 @@ And she's buying a stairway to heaven.</programlisting>
             for meaningful natural language processing, with findings expressed, visualized, and
             output on websites involves a round-trip adventure with text and code formats. Perhaps
             the most significant application of invisible XML is the agency it gives the student
-            coder in constructing one’s own pattern recognition as XML. The experience of developing
+            coder in constructing their own pattern recognition as XML. The experience of developing
             and processing invisible XML in a text analysis course makes for a multi-dimensional
-            experience of text, both as architectures and as streams. </para>
+            experience of texts, finding value in applying different methods to structured and unstructured forms.</para>
 
     </section>
 
