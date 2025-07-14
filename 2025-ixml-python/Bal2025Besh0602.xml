@@ -1022,15 +1022,15 @@ And she's buying a stairway to heaven.</programlisting>
                         <para><quote>History of Chord Pro</quote>, <link
                                 xlink:href="https://www.chordpro.org/chordpro/chordpro-history/"
                                 >https://www.chordpro.org/chordpro/chordpro-history/</link>.
-                                <emphasis role="bold">The authors find it disappointing that there
+                                The authors find it disappointing that there
                                 seems to be no mention of ChordPro in the documentation of either
-                                MEI or MusicXML. </emphasis><emphasis role="ital">(See also
+                                MEI or MusicXML. (See also
                                         <quote><link xlink:href="https://music-encoding.org/about"
                                         >An introduction to MEI</link></quote> for a history of MEI
                                 and <quote><link
                                         xlink:href="https://opensheetmusicdisplay.org/blog/blog-music-xml-introduction-comparison"
                                         >Music XML Introduction and comparison</link></quote> for a
-                                history of MusicXML).</emphasis></para>
+                                history of MusicXML).</para>
                     </footnote> It began as a chord notation system and has become a fully
                     functional program for creating chord charts, using Perl to produce output.<footnote>
                         <para>A Perl Module file in ChordPro’s library for producing chord chart
