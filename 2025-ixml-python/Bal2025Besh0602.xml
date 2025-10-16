@@ -1080,7 +1080,9 @@ A
                     over chord charts in ChordPro format processes lines, chords, and lyrics with no
                     ambiguity. </para>
                 <figure>
-                    <title>iXML for Songs in ChordPro</title>
+                    <title><link
+                            xlink:href="https://github.com/afish2003/GretaVanZeppelin/blob/main/pipeline/phase-2-ChordPro/InvisibleXML.ixml"
+                            >iXML for Songs in ChordPro</link></title>
                     <para>
                         <programlisting xml:space="preserve">xml: metadata, music.
 metadata: title, newline, album, newline, artist, newline, key, newline, newline+.
@@ -1143,11 +1145,42 @@ chord: -"[", ~["]"]+, -"]".
 &lt;/xml&gt;</programlisting>
                     </para>
                 </figure>
-                <para>With this breakthrough, the next steps for the project are to set up and run
-                    this new iXML via XProc over the selected texts. More notably, it seems unlikely
-                    that there are any creators or users of ChordPro aware currently of iXML and its
-                    potential to read ChordPro and turn it into XML. In our project, ChordPro allows
-                    for both a more accurate preservation of the chord charts, and a more accurate
+                <para>With this breakthrough, the next steps for the project were to set up and run
+                    this new iXML via XProc over the selected texts. The setup was simple:
+                    reorganize the project’s GitHub repository into <link
+                        xlink:href="https://github.com/afish2003/GretaVanZeppelin/tree/main/pipeline/phase-1"
+                            ><code>phase-1</code></link> and <link
+                        xlink:href="https://github.com/afish2003/GretaVanZeppelin/tree/main/pipeline/phase-2-ChordPro"
+                            ><code>phase-2-ChordPro</code></link> and start the process from scratch
+                    again, beginning with new raw-text files in ChordPro format. This step had an
+                    unforseen issue: there was no proper ChordPro chord chart resource known to us.
+                    The best solution we had discovered was <link
+                        xlink:href="https://ultimate.ftes.de/">this converter webpage</link>, which
+                    is designed to input chord charts from Ultimate Guitar and output them in
+                    ChordPro format. Sounds perfect! However, besides the fact that the converter
+                    only recognized <code>Verse</code> and <code>Chorus</code> and considered all
+                    other section names <quote>comments,</quote> it appears they also struggle with
+                    the inherent ambiguity of chord charts! It works successfully when the input is
+                    as follow: Section Title, line of chords, line of lyrics, line of chords, line
+                    of lyrics, etc. But, it struggles when the chart deviates from this pattern
+                    (which 99% of our charts do). So, perhaps with our newfound logic for deciding
+                    whether a line contains chords, lyrics, or both; we could create our own system
+                    for accurately converting chord charts to ChordPro format which then prepares
+                    them for use with our iXML. But, for now, I simply converted, then manually
+                    edited, <link
+                        xlink:href="https://github.com/afish2003/GretaVanZeppelin/tree/main/pipeline/phase-2-ChordPro/raw-text/Greta/anthemOfThePeacefulArmy"
+                        >one album</link> (eight songs) for the purpose of testing our new iXML on a
+                    larger collection in our pipeline. After learning to add the
+                        <code>@serialization</code> attribute to the <code>&lt;p:store&gt;</code> step in the
+                    XProc pipeline so that we could properly indent and read each of the outputted
+                    XML files, we successfully ran our new iXML on a collection of resources! This
+                    also means that we elimintated one of the XSLT transformations from the original
+                    pipeline, as well as more accurately preserved the chords’ placement with the
+                    lyrics which means more, and more accurate, data to analyze.</para>
+                <para>More notably than our project’s recent breakthrough: it seems unlikely that
+                    there are any creators or users of ChordPro aware currently of iXML and its
+                    ability to read ChordPro and turn it into XML. In our project, ChordPro allows
+                    for both a more accurate preservation of the chord charts and a more accurate
                     representation of entire chord progressions. I certainly think it would be
                     interesting to analyze something like the modern artist Greta Van Fleet directly
                     copying a chord progression from a verse in a Led Zeppelin song.</para>
