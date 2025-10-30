@@ -48,7 +48,7 @@
                     stack where he enjoys using tools like XSLT—and more recently, ixml and XProc—to
                     create rich markup that is both satisfyingly organized and able to be processed
                     in interesting ways. Michael’s main passion is music, which he utilized to
-                    develop a <link xlink:href="https://afish2003.github.io/GretaVanZeppelin/"
+                    develop a <link xlink:href="https://newtfire.github.io/GretaVanZeppelin/"
                         xlink:type="simple" xlink:show="new" xlink:actuate="onRequest">large-scale
                         text analysis project</link> comparing the lyrics and chord progressions of
                     seemingly similar artists.</para>
@@ -214,7 +214,7 @@
             improved their command line fluency. and introduced them to software development in
             alpha stages. Was invisible XML ready for experimentation by undergraduates, and was the
             experience worth deferring their attention to Python processing?</para>
-        <para>We found that perhaps iXML was <emphasis>just</emphasis>ready enough, but it will
+        <para>We found that perhaps iXML was <emphasis>just</emphasis> ready enough, but it will
             surely be more ready for student experimentation next year! This semester everything was
             new and different, and here we break down the most challenging and learning-intensive
             experiences for students confronting invisible XML and XProc for the first time.</para>
@@ -227,10 +227,10 @@
                 Dr. David J. Birnbaum in trying out some new exciting XML technologies to be taught
                 to the rest of our class. Dr. Birnbaum was invited to teach a roughly one week long
                 unit on these technologies, but the preparation was long and intense. I was joined
-                by Dannika, who was taking the course with me, and Caleb, who had taken the course
-                the previous year in its previous form. Dannika is a student with careful attention
-                to detail and strong leadership qualities but likely would have not gained as much
-                from iXML and XProc on her own if she had not been a behind-the-scenes
+                by Dannika Love, who was taking the course with me, and Caleb King, who had taken
+                the course the previous year in its previous form. Dannika is a student with careful
+                attention to detail and strong leadership qualities but likely would have not gained
+                as much from iXML and XProc on her own if she had not been a behind-the-scenes
                 battle-tester. Caleb is also a highly motivated student and leader, and one of his
                 main contributions was working through the challenges of installing iXML and XProc
                 processors in a Windows environment, as Dr. Beshero-Bondar, Dannika and myself are
@@ -335,10 +335,9 @@
     </section>
     <section>
         <title>Invisible XML and the Music Analysis Project</title>
-        <para>What we hoped initially was that students would be inspired to try out these
-            technologies on their own projects. And some students did, but we learned some
-            unexpected things about their potential application, especially to the field of music
-            encoding. </para>
+        <para>We hoped initially that students would be inspired to try out these technologies on
+            their own projects. And some students did, but we learned some unexpected things about
+            their potential application, especially to the field of music encoding. </para>
         <section>
             <title>A Project on Chord Chart Analysis: What iXML Looks Like in a Large-Scale Student
                 Project</title>
@@ -367,7 +366,7 @@
                         <para>GretaVanZeppelin Project Logo</para>
                     </caption>
                 </mediaobject>
-                <para>The <link xlink:href="https://afish2003.github.io/GretaVanZeppelin/"
+                <para>The <link xlink:href="https://newtfire.github.io/GretaVanZeppelin/"
                         >GretaVanZeppelin Project</link> is an analysis of musical artists, Greta
                     Van Fleet and Led Zeppelin, using collections of chord charts encoded in XML and
                     analyzed with various Python tools. While the project is still in what could be
@@ -522,7 +521,7 @@
                     so instead we focused on chord usage per song/artist.</para>
                 <para>An example of this inconsistent formatting is shown below in an exerpt from
                     Greta Van Fleet’s song <quote><link
-                            xlink:href="https://github.com/afish2003/GretaVanZeppelin/blob/main/pipeline/raw-text/Greta/fromTheFires/song-03.txt"
+                            xlink:href="https://github.com/newtfire/GretaVanZeppelin/blob/d4fc47decd73de3fc04f3d394efa9563be737f8e/pipeline/phase-1/raw-text/Greta/fromTheFires/song-03.txt"
                             >Flower Power</link></quote>. Each chord is one measure long, so a
                     logical way of dividing the lines of lyrics and chords would be to have each
                     line correspond with one measure. But, the original formatting confusingly makes
@@ -569,18 +568,17 @@ Outta sight</programlisting>
                 </figure>
                 <para>One more important note about the raw text: the chords are placed directly
                     over the word, or syllable of the word (e.g. al - <emphasis role="bital"
-                        >r</emphasis>ight), that is being sung when that chord is played. In the
+                        >right</emphasis>), that is being sung when that chord is played. In the
                     above example, the chords were placed properly above the words; the easiest way
                     for me to check this is to listen to the song and pay attention to when the
                     chord changes. In some of the chord charts, I noticed that less care was taken
                     to preserve the placement of the chords. For this reason, as well as the
                     sometimes confusing line divisions, I made the decision that we would not make
                     the effort to preserve the chords’ placement with the lyrics. We later
-                    discovered a way to accomplish this (see section below on ChordPro), but I
-                    personally can’t see the benefits of it in this project other than beautifully
-                    and accurately displaying the final XML output. The objective of the project
-                    wasn’t to improve the displaying of the chord charts but rather to analyze
-                    them.</para>
+                    discovered a way to accomplish this (see section below on ChordPro), but we
+                    cannot see the benefits of it in this project other than beautifully and
+                    accurately displaying the final XML output. The objective of the project was not
+                    to improve the displaying of the chord charts but rather to analyze them.</para>
                 <para>There is, however, something to be said for noting the duration of the chords
                     in the markup. My preliminary research into the <link
                         xlink:href="https://music-encoding.org/">MEI</link> showed that they use an
@@ -912,8 +910,8 @@ A G
                         <para>See <quote>Converting Chords to Nashville Numbers</quote> on the
                             GretaVanFleet Project's Methods page for more information on this
                             numbering system: <link
-                                xlink:href="https://afish2003.github.io/GretaVanZeppelin/methods.html"
-                                >https://afish2003.github.io/GretaVanZeppelin/methods.html</link>
+                                xlink:href="https://newtfire.github.io/GretaVanZeppelin/methods.html"
+                                >https://newtfire.github.io/GretaVanZeppelin/methods.html</link>
                             (2025).</para>
                     </footnote></para>
                 <para>Then, each <code>&lt;section&gt;</code> element is a different section of the
@@ -1012,7 +1010,7 @@ And she's buying a stairway to heaven.</programlisting>
                     our project. I continued by adding some additional attributes to the chords for
                     further processing. To learn more about this, or the entire process including
                     the XProc pipeline, see my <link
-                        xlink:href="https://afish2003.github.io/GretaVanZeppelin/methods.html"
+                        xlink:href="https://newtfire.github.io/GretaVanZeppelin/methods.html"
                             ><quote>Methods</quote> page</link> which was perhaps our most
                     significant development from this semester’s project.</para>
             </section>
@@ -1081,7 +1079,7 @@ A
                     ambiguity. </para>
                 <figure>
                     <title><link
-                            xlink:href="https://github.com/afish2003/GretaVanZeppelin/blob/main/pipeline/phase-2-ChordPro/InvisibleXML.ixml"
+                            xlink:href="https://github.com/newtfire/GretaVanZeppelin/blob/main/pipeline/phase-2-ChordPro/InvisibleXML.ixml"
                             >iXML for Songs in ChordPro</link></title>
                     <para>
                         <programlisting xml:space="preserve">xml: metadata, music.
@@ -1148,9 +1146,9 @@ chord: -"[", ~["]"]+, -"]".
                 <para>With this breakthrough, the next steps for the project were to set up and run
                     this new iXML via XProc over the selected texts. The setup was simple:
                     reorganize the project’s GitHub repository into <link
-                        xlink:href="https://github.com/afish2003/GretaVanZeppelin/tree/main/pipeline/phase-1"
+                        xlink:href="https://github.com/newtfire/GretaVanZeppelin/tree/main/pipeline/phase-1"
                             ><code>phase-1</code></link> and <link
-                        xlink:href="https://github.com/afish2003/GretaVanZeppelin/tree/main/pipeline/phase-2-ChordPro"
+                        xlink:href="https://github.com/newtfire/GretaVanZeppelin/tree/main/pipeline/phase-2-ChordPro"
                             ><code>phase-2-ChordPro</code></link> and start the process from scratch
                     again, beginning with new raw-text files in ChordPro format. This step had an
                     unforseen issue: there was no proper ChordPro chord chart resource known to us.
@@ -1168,15 +1166,16 @@ chord: -"[", ~["]"]+, -"]".
                     for accurately converting chord charts to ChordPro format which then prepares
                     them for use with our iXML. But, for now, I simply converted, then manually
                     edited, <link
-                        xlink:href="https://github.com/afish2003/GretaVanZeppelin/tree/main/pipeline/phase-2-ChordPro/raw-text/Greta/anthemOfThePeacefulArmy"
+                        xlink:href="https://github.com/newtfire/GretaVanZeppelin/tree/main/pipeline/phase-2-ChordPro/raw-text/Greta/anthemOfThePeacefulArmy"
                         >one album</link> (eight songs) for the purpose of testing our new iXML on a
                     larger collection in our pipeline. After learning to add the
-                        <code>@serialization</code> attribute to the <code>&lt;p:store&gt;</code> step in the
-                    XProc pipeline so that we could properly indent and read each of the outputted
-                    XML files, we successfully ran our new iXML on a collection of resources! This
-                    also means that we elimintated one of the XSLT transformations from the original
-                    pipeline, as well as more accurately preserved the chords’ placement with the
-                    lyrics which means more, and more accurate, data to analyze.</para>
+                        <code>@serialization</code> attribute to the <code>&lt;p:store&gt;</code>
+                    step in the XProc pipeline so that we could properly indent and read each of the
+                    outputted XML files, we successfully ran our new iXML on a collection of
+                    resources! This also means that we elimintated one of the XSLT transformations
+                    from the original pipeline, as well as more accurately preserved the chords’
+                    placement with the lyrics which means more, and more accurate, data to
+                    analyze.</para>
                 <para>More notably than our project’s recent breakthrough: it seems unlikely that
                     there are any creators or users of ChordPro aware currently of iXML and its
                     ability to read ChordPro and turn it into XML. In our project, ChordPro allows
