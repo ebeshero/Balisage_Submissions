@@ -6,11 +6,11 @@
     version="5.0-subset Balisage-1.5">
 
     <title>Is Invisible XML Ready for College Students?</title>
-    <subtitle>Trying iXML and XProc on a Music Analysis Project in an Undergraduate Text Analysis
+    <subtitle>Trying ixml and XProc on a Music Analysis Project in an Undergraduate Text Analysis
         Course</subtitle>
     <info>
         <abstract>
-            <para>Is invisible XML ready for teaching university undergraduates? Is it a good idea
+            <para>Is Invisible XML ready for teaching university undergraduates? Is it a good idea
                 to try this? This paper will attempt to address these questions. University students
                 in the Digital Media, Arts, and Technology program at Penn State Behrend are offered
                 a course in “Large-Scale Text Analysis”. Going into this course, students have
@@ -21,16 +21,16 @@
                 operations, using XQuery to extract the portions of the texts to analyze, and
                 producing plain-text inputs to provide to Python. Python has dominated the
                 experience of the pipeline.</para>
-            <para>This year’s course tried a different approach. Students were taught iXML grammars
+            <para>This year’s course tried a different approach. Students were taught ixml grammars
                 as a way to prepare XML for analysis and XProc for pipelining. Regular expression
                 matching involved working with XSLT, and the entire XML stack was used before
                 approaching Python. Students learned how to install software in alpha stages, and
                 they tested how well it works across platforms. From this exploratory start, one
-                student project team found a very practical use-case for applying invisible XML in a
+                student project team found a very practical use-case for applying Invisible XML in a
                 project pipeline for analyzing chord chart musical notation. In this paper, we
-                discuss the potential we discovered for invisible XML in music analysis. We also
+                discuss the potential we discovered for Invisible XML in music analysis. We also
                 share our recommendations for guiding people to prepare processing pipelines that
-                incorporate invisible XML, and we reflect on what aspects of this risky teaching
+                incorporate Invisible XML, and we reflect on what aspects of this risky teaching
                 experiment were most worthwhile.</para>
         </abstract>
         <author>
@@ -96,8 +96,8 @@
             <email>eeb4@psu.edu</email>
         </author>
         <keywordset role="author">
-            <keyword>invisible XML</keyword>
-            <keyword>iXML</keyword>
+            <keyword>Invisible XML</keyword>
+            <keyword>ixml</keyword>
             <keyword>XProc</keyword>
             <keyword>music encoding</keyword>
             <keyword>MEI</keyword>
@@ -155,10 +155,10 @@
             a pipeline algorithm for analyzing text corpora.</para>
         <para>Perhaps the 2020s are a decade inviting us to resist complacency, particularly in the
             organizing of teaching syllabi. In Spring 2025, motivated greatly by the interesting
-            opportunities of invisible XML and the creative affordances of SVG discussed in previous
+            opportunities of Invisible XML and the creative affordances of SVG discussed in previous
             years at Balisage, we changed direction and put XML technologies much more in the foreground.<footnote>
                 <para>Several papers in the Proceedings of Balisage: The Markup Conference vol. 29
-                    (2024) demonstrated exciting applications of invisible XML connected to careful
+                    (2024) demonstrated exciting applications of Invisible XML connected to careful
                     document planning and analysis with exciting implications for interface design.
                     See Joseph Michael Courtney and Michael Robert Gryk, <quote>Pulse, Parse, and
                         Ponder: Using Invisible XML to Dissect a Scientific Domain Specific
@@ -201,28 +201,28 @@
                 time</emphasis> we found opportunity to return again to XSLT to introduce stages of
             conversion from text to XML using <code>xsl:analyze-string</code> to refine their
             processing and create new element nodes based on regular expression matches and
-            non-matches. This set the stage for the new unit on invisible XML and XProc.</para>
+            non-matches. This set the stage for the new unit on Invisible XML and XProc.</para>
         <para>All this activity concentrated on XML processing before the students wrote any Python.
             The new priority on XML not only helped students review and develop XSLT skills
             introduced in the previous semester, but it also gave students an unusual experience
             with writing grammars and seeing the relationships and differences between regular
-            expression matching, grammars, and schemas. Putting these XML, XSLT, and iXML
+            expression matching, grammars, and schemas. Putting these XML, XSLT, and ixml
             experiences first, before introducing Python for natural language processing, changed
-            the course experience significantly. Even though not all students applied iXML or XProc
+            the course experience significantly. Even though not all students applied ixml or XProc
             pipelines in their semester projects, the common experience of encountering these
             technologies certainly changed the way students encountered pipeline processing,
             improved their command line fluency. and introduced them to software development in
-            alpha stages. Was invisible XML ready for experimentation by undergraduates, and was the
+            alpha stages. Was Invisible XML ready for experimentation by undergraduates, and was the
             experience worth deferring their attention to Python processing?</para>
-        <para>We found that perhaps iXML was <emphasis>just</emphasis> ready enough, but it will
+        <para>We found that perhaps ixml was <emphasis>just</emphasis> ready enough, but it will
             surely be more ready for student experimentation next year! This semester everything was
             new and different, and here we break down the most challenging and learning-intensive
-            experiences for students confronting invisible XML and XProc for the first time.</para>
+            experiences for students confronting Invisible XML and XProc for the first time.</para>
         <section>
             <title>Introducing the Battle-Testing Team</title>
             <subtitle>Preparing for a Cross-Platform Educational Experiment</subtitle>
             <para>Hello world! I’m Michael Simons, and I was one of the
-                    <quote>battle-testers</quote> for the new iXML and XProc unit in our Digit 210
+                    <quote>battle-testers</quote> for the new ixml and XProc unit in our Digit 210
                 class. I was one of three students who signed up to assist Dr. Beshero-Bondar and
                 Dr. David J. Birnbaum in trying out some new exciting XML technologies to be taught
                 to the rest of our class. Dr. Birnbaum was invited to teach a roughly one week long
@@ -230,13 +230,13 @@
                 by Dannika Love, who was taking the course with me, and Caleb King, who had taken
                 the course the previous year in its previous form. Dannika is a student with careful
                 attention to detail and strong leadership qualities but likely would have not gained
-                as much from iXML and XProc on her own if she had not been a behind-the-scenes
+                as much from ixml and XProc on her own if she had not been a behind-the-scenes
                 battle-tester. Caleb is also a highly motivated student and leader, and one of his
-                main contributions was working through the challenges of installing iXML and XProc
+                main contributions was working through the challenges of installing ixml and XProc
                 processors in a Windows environment, as Dr. Beshero-Bondar, Dannika and myself are
                 all MacOS users.</para>
             <para>Our group of battle-testers was largely responsible for, most importantly, getting
-                ahead of the class and working our way through learning iXML and XProc before our
+                ahead of the class and working our way through learning ixml and XProc before our
                 peers, so that we could <orderedlist>
                     <listitem>
                         <para>Write instructions for installation and configuration that we felt our
@@ -245,10 +245,10 @@
                     <listitem>
                         <para>Assist our peers when problems arose.</para>
                     </listitem>
-                </orderedlist>We all gained more knowledge about iXML and XProc than we would have
+                </orderedlist>We all gained more knowledge about ixml and XProc than we would have
                 otherwise because of the problems we worked through together, so that is something I
                 value greatly about this experience.</para>
-            <para>We hope that our battle-testing was helpful to the developers of iXML and XProc as
+            <para>We hope that our battle-testing was helpful to the developers of ixml and XProc as
                 we figured out what documentation was needed to provide these technologies to a
                 group of undergraduates. While Dr. Birnbaum developed installation instructions, he
                 warned us that they were only for MacOS and for those with a purchased Saxon EE
@@ -305,7 +305,7 @@
                 our work ahead of time, things would have likely been very chaotic when Dr. Birnbaum
                 arrived to guest-instruct our class. Additionally, this was a condensed experiement,
                 as Dr. Birnbaum was allotted just three, 50 minute class periods for teaching us
-                both iXML and XProc. So, ensuring all students were ready to hit the ground running
+                both ixml and XProc. So, ensuring all students were ready to hit the ground running
                 at the time of his guest appearance was crucial. He created a thorough lesson plan
                 outlining this fast-tracked learning experience.<footnote>
                     <para>David J. Birnbaum, <quote>Lesson plan: Invisible XML and XProc</quote>
@@ -315,7 +315,7 @@
                             >http://dh.obdurodon.org/ixml-and-xproc-lesson-plan.xhtml</link> (2025).
                         Last accessed 2025-07-02.</para>
                 </footnote> His lesson plan shared very important introductory readings by Norm
-                Tovey-Walsh and Martin Kraetke, serving as an orientation to iXML and XProc respectively.<footnote>
+                Tovey-Walsh and Martin Kraetke, serving as an orientation to ixml and XProc respectively.<footnote>
                     <para>Norm Tovey-Walsh, <quote>Writing Invisible XML grammars</quote>, <link
                             xlink:href="https://www.xml.com/articles/2022/03/28/writing-invisible-xml-grammars/"
                             >https://www.xml.com/articles/2022/03/28/writing-invisible-xml-grammars/</link>
@@ -323,8 +323,8 @@
                             xlink:href="https://xporc.net/xproc-tutorial/"
                             >https://xporc.net/xproc-tutorial/</link>. Last accessed
                         2025-07-02.</para>
-                </footnote> He also introduced us to John Lumley’s iXML workbench as a helpful
-                resource to practice using iXML.<footnote>
+                </footnote> He also introduced us to John Lumley’s ixml workbench as a helpful
+                resource to practice using ixml.<footnote>
                     <para>John Lumley, <quote>jωiXML processor</quote> (an online resource for
                         easily processing text with an iXML grammar), <link
                             xlink:href="https://johnlumley.github.io/jwiXML.xhtml"
@@ -339,22 +339,22 @@
             their own projects. And some students did, but we learned some unexpected things about
             their potential application, especially to the field of music encoding. </para>
         <section>
-            <title>A Project on Chord Chart Analysis: What iXML Looks Like in a Large-Scale Student
+            <title>A Project on Chord Chart Analysis: What ixml Looks Like in a Large-Scale Student
                 Project</title>
             <subtitle>The Optimally Motivated Student Experience</subtitle>
             <para>Michael again! Dr. Beshero-Bondar deemed me an <quote>optimally motivated
                     student</quote> because I did the work (relatively on time) and was able to
-                grasp iXML and XProc enough to take it further than what most other students
+                grasp ixml and XProc enough to take it further than what most other students
                 attempted to do. The big question for me was: <quote>Are these technologies worth
                     incorporating into my group’s semester project?</quote>
             </para>
             <para>The short-term answer, unfortunately, was <quote>no</quote>, because I held up my
                 team working on something that I actually completed with regular expressions
-                search-and-replace operations in less than a quarter of the time I spent on iXML.
+                search-and-replace operations in less than a quarter of the time I spent on ixml.
                 However, the big picture answer may in fact be <quote>yes</quote>, because here I
                 am, reflecting on my learning experience in a professional setting which is a great
                 honor. I’m walking away from the semester with a larger perspective on the potential
-                of iXML and a greater hopefulness for completing and expanding the project.</para>
+                of ixml and a greater hopefulness for completing and expanding the project.</para>
 
             <section>
                 <title>Introducing the GretaVanZeppelin Project</title>
@@ -373,7 +373,7 @@
                     considered its early stages, there were many valuable discoveries and triumphs
                     made along the way, as well as a strong setup for future research possibilities.
                     One of the discoveries was finding more efficient ways to encode and analyze
-                    chord charts. The main triumph was being able to implement iXML and XProc on a
+                    chord charts. The main triumph was being able to implement ixml and XProc on a
                     fairly large scale.</para>
                 <para>The project goal for my team was to analyze the chord charts of two artists
                     and determine if there were any meaningful comparisons between them, musically
@@ -382,7 +382,7 @@
                     in some nice data visualizations, but unfortunately, we didn’t take it far
                     enough to draw any of those conclusions between the two chosen artists. So, for
                     me, the main takeaway from this project was, unexpectedly, the process in which
-                    we obtained the data, including of course, iXML and an XProc pipeline.</para>
+                    we obtained the data, including of course, ixml and an XProc pipeline.</para>
                 <para>The future of the project was made aware to us (the project developers) during
                     its showcase at our Digit program’s end-of-the-semester presentation day called
                             <quote><link xlink:href="https://digit-psb.github.io/DIGIT-Works/">DIGIT
@@ -395,7 +395,7 @@
                     something the rest of the team could process with various Python tools and
                     display on our website. This became my task largely because of my role as a
                     battle-tester of the new markup tools. Conversely, my battle-tester status
-                    motivated me further to include iXML and XProc in our project because I felt a
+                    motivated me further to include ixml and XProc in our project because I felt a
                     strong desire to implement what I had learned.</para>
                 <para>Before discussing my specific processes and work, I feel it is important to
                     share a brief overview of our preliminary research into music encoding, as well
@@ -495,7 +495,7 @@
                             2025-07-02.</para>
                     </footnote> aimed at the markup of chord charts. This could very well be the
                     future of the GretaVanZeppelin project and could also more deeply incorporate
-                    iXML, but I’ll discuss that after I’ve explained what the project already
+                    ixml, but I’ll discuss that after I’ve explained what the project already
                     accomplished. <emphasis role="ital">(It sure would have been nice to know about
                         ChordPro back in February 2025!)</emphasis></para>
                 <para>All of this to say, we ultimately decided to make our own markup specifically
@@ -598,15 +598,15 @@ Outta sight</programlisting>
                     preserves music well in academia; MusicXML outputs MIDI to be played as music;
                     and ChordPro allows humans to write chord charts and accurately place the chords
                     with the words to support performers. Can chord charts allow for a deeper
-                    analysis and comparison of music? Our experience with iXML suggests there is
+                    analysis and comparison of music? Our experience with ixml suggests there is
                     hope for this work!</para>
             </section>
             <section>
-                <title>Implementation and Reflection on iXML in the Project</title>
-                <para>As previously mentioned, this project began with the MEI in mind; the iXML
+                <title>Implementation and Reflection on ixml in the Project</title>
+                <para>As previously mentioned, this project began with the MEI in mind; the ixml
                     reflects that. Below is an example of a song (as we saw it in oXygen Editor with
-                    visible space and newline characters), the full iXML grammar, and XML output
-                    after processing the song with the iXML grammar:</para>
+                    visible space and newline characters), the full ixml grammar, and XML output
+                    after processing the song with the ixml grammar:</para>
                 <figure>
                     <title>Raw Text Chord Chart for Greta Van Fleet’s <quote>Flower
                         Power</quote></title>
@@ -746,7 +746,7 @@ A·G↵
 </programlisting>
                 </figure>
                 <figure>
-                    <title>GretaVanZeppelin Project's iXML</title>
+                    <title>GretaVanZeppelin Project's ixml</title>
                     <programlisting language="ixml" xml:space="preserve">mei: music.
 music: title, newline, album, newline, artist, newline, key, newline, newline*, section++newline.
 title: ~[#d;#a]+.
@@ -760,7 +760,7 @@ mdiv: ~[#22]+.
 -space: " ".</programlisting>
                 </figure>
                 <figure>
-                    <title>iXML Output File for <quote>Flower Power</quote></title>
+                    <title>ixml Output File for <quote>Flower Power</quote></title>
                     <programlisting language="xml" xml:space="preserve">&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;mei ixml:state="ambiguous" xmlns:ixml="http://invisiblexml.org/NS"&gt;&lt;music&gt;&lt;title&gt;Flower Power&lt;/title&gt;
 &lt;album&gt;From the Fires&lt;/album&gt;
 &lt;artist&gt;Greta Van Fleet&lt;/artist&gt;
@@ -896,7 +896,7 @@ A G D A G D
 A G
 &lt;/mdiv&gt;&lt;/section&gt;&lt;/music&gt;&lt;/mei&gt;</programlisting>
                 </figure>
-                <para>The way I hear and see the iXML in my head is, <quote>[what’s on the left side
+                <para>The way I hear and see the ixml in my head is, <quote>[what’s on the left side
                         of the colon] contains [what’s on the right side of the colon] followed by
                         [anything else, separated by a comma].</quote></para>
                 <para>Beginning at the first line, the root element named <code>&lt;mei&gt;</code>
@@ -916,25 +916,27 @@ A G
                     </footnote></para>
                 <para>Then, each <code>&lt;section&gt;</code> element is a different section of the
                     song (Verse, Chorus, etc.). These section headings are noted by square brackets
-                        <code>[]</code> in the original documents. While the development of the iXML
+                        <code>[]</code> in the original documents. While the development of the ixml
                     was difficult as a beginner, it was nothing too challenging until the first
                     major setback: not recognizing the ends of sections. There were no square
                     brackets within the lyrics or the chords themselves—only the section
                     headings—so, logically, a section ends and a new section begins when an opening
                     square bracket <code>[</code> is found. This is a concept we practiced in class
                     using regular expressions in a search-and-replace context. However, this concept
-                    didn’t translate one-to-one with iXML, because we also had to account for the
+                    didn’t translate one-to-one with ixml, because we also had to account for the
                     two (rather, <emphasis role="ital">most of the time</emphasis> two) blank lines
-                    between sections. Dr. Birnbaum’s study of ambiguity in iXML helped us solve this
-                    problem of parsing the sections, specifically his notes on the double plus sign
-                    (++) used to help us define the separation between sections.<footnote>
+                    between sections. <link
+                        xlink:href="http://dh.obdurodon.org/ixml-ambiguity.xhtml">Dr. Birnbaum’s
+                        study of ambiguity</link> in ixml helped us solve this problem of parsing
+                    the sections, specifically his notes on the double plus sign (++) used to help
+                    us define the separation between sections.<footnote>
                         <para>David J. Birnbaum, <quote>Invisible XML and ambiguity</quote>, <link
                                 xlink:href="http://dh.obdurodon.org/ixml-ambiguity.xhtml"
                                 >http://dh.obdurodon.org/ixml-ambiguity.xhtml</link> (2025). Last
                             accessed 2025-07-02.</para>
                     </footnote></para>
                 <para>We did, however, encounter an ambiguity problem that was beyond our capacity
-                    to solve in iXML. This involved differentiating the multi-character chord
+                    to solve in ixml. This involved differentiating the multi-character chord
                     symbols from lyrics. These multi-character chords appear periodically in both
                     artists’ songs (as well as throughout Ultimate Guitar), and they provide
                     musicians who read chord charts with valuable information called
@@ -960,7 +962,7 @@ And she's buying a stairway to heaven.</programlisting>
                         chord with an F# as the bass note of the chord.</para>
                 </figure>
                 <para>It would be one thing if all the chords were one letter, but the complexity of
-                    the chords was too much for us to figure out how to represent in an iXML
+                    the chords was too much for us to figure out how to represent in an ixml
                     grammar. There is also the fact that the chord charts do not strictly follow the
                     form of one line of chords followed by one line of lyrics. As seen in a previous
                     figure of Greta Van Fleet's <quote>Flower Power</quote>, there are sections that
@@ -968,7 +970,7 @@ And she's buying a stairway to heaven.</programlisting>
                     with no chords above them. To solve this problem, Dr. Beshero-Bondar developed a
                         <quote>monstrous Regex line</quote> which we implemented with
                         <code>xsl:analyze-string</code> in a single XSLT template through our XProc
-                    pipeline following the iXML stage:</para>
+                    pipeline following the ixml stage:</para>
                 <para>
                     <programlisting xml:space="preserve">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
@@ -1015,7 +1017,7 @@ And she's buying a stairway to heaven.</programlisting>
                     significant development from this semester’s project.</para>
             </section>
             <section>
-                <title>What if We Had Used ChordPro? The Potential of iXML</title>
+                <title>What if We Had Used ChordPro? The Potential of ixml</title>
                 <para>That last step of separating lyrics and chord lines with XSLT and regular
                     expressions <emphasis role="ital">may</emphasis> have been unncessary had we
                     used ChordPro. Created in 1991, ChordPro predates MEI and MusicXML by almost a decade.<footnote>
@@ -1067,20 +1069,20 @@ A
                 </figure>
                 <para>During the week of Balisage 2025, the writers of this paper, along with Dr.
                     Birnbaum, were determined to see if a chord chart written in ChordPro would
-                    indeed allow iXML to process it entirely (meaning chords were also put in markup
+                    indeed allow ixml to process it entirely (meaning chords were also put in markup
                     separated from the lyrics), taking it further than I originally did in the
-                    project's initial stages. I can confirm that the development of this version of
-                    iXML was not any faster than the time it took to develop XSLT to do the same
-                    thing (an initial concern with using iXML in the project at all). However, it
-                    does, in fact, work! Where the previous iXML was only able to distinguish
+                    project’s initial stages. I can confirm that the development of this version of
+                    ixml was not any faster than the time it took to develop XSLT to do the same
+                    thing (an initial concern with using ixml in the project at all). However, it
+                    does, in fact, work! Where the previous ixml was only able to distinguish
                     metadata and song sections (leaving lines, chords, and lyrics as unmarked
-                        <quote>blobs</quote> of text), the newly developed iXML that is to be run
+                        <quote>blobs</quote> of text), the newly developed ixml that is to be run
                     over chord charts in ChordPro format processes lines, chords, and lyrics with no
                     ambiguity. </para>
                 <figure>
                     <title><link
                             xlink:href="https://github.com/newtfire/GretaVanZeppelin/blob/main/pipeline/phase-2-ChordPro/InvisibleXML.ixml"
-                            >iXML for Songs in ChordPro</link></title>
+                            >ixml for Songs in ChordPro</link></title>
                     <para>
                         <programlisting xml:space="preserve">xml: metadata, music.
 metadata: title, newline, album, newline, artist, newline, key, newline, newline+.
@@ -1099,15 +1101,15 @@ chord: -"[", ~["]"]+, -"]".
 -nullableText: ~["[]{}";#a;#d]*.
 -newline: (-#d?, -#a).</programlisting>
                     </para>
-                    <para>Many thanks to djbpitt for figuring out how to make the mixed text content
-                        of a ChordPro line be unambiguous. The definition of
+                    <para>Many thanks to Dr. Birnbaum for figuring out how to make the mixed text
+                        content of a ChordPro line be unambiguous. The definition of
                             <code>-lineContent</code> and <code>-nullableText</code> was the secret:
                             <code>(chord++nullableText, nullableText)?.</code> It means text may or
                         may not be present at all, and when it is, it might or might not have chords
                         bounded by text (which might not be there at all).</para>
                 </figure>
                 <figure>
-                    <title>Output of a Song Written in ChordPro Processed by Our New iXML</title>
+                    <title>Output of a Song Written in ChordPro Processed by Our New ixml</title>
                     <para>
                         <programlisting xml:space="preserve">&lt;xml&gt;
    &lt;metadata&gt;
@@ -1144,14 +1146,14 @@ chord: -"[", ~["]"]+, -"]".
                     </para>
                 </figure>
                 <para>With this breakthrough, the next steps for the project were to set up and run
-                    this new iXML via XProc over the selected texts. The setup was simple:
+                    this new ixml via XProc over the selected texts. The setup was simple:
                     reorganize the project’s GitHub repository into <link
                         xlink:href="https://github.com/newtfire/GretaVanZeppelin/tree/main/pipeline/phase-1"
                             ><code>phase-1</code></link> and <link
                         xlink:href="https://github.com/newtfire/GretaVanZeppelin/tree/main/pipeline/phase-2-ChordPro"
                             ><code>phase-2-ChordPro</code></link> and start the process from scratch
                     again, beginning with new raw-text files in ChordPro format. This step had an
-                    unforseen issue: there was no proper ChordPro chord chart resource known to us.
+                    unforeseen issue: there was no proper ChordPro chord chart resource known to us.
                     The best solution we had discovered was <link
                         xlink:href="https://ultimate.ftes.de/">this converter webpage</link>, which
                     is designed to input chord charts from Ultimate Guitar and output them in
@@ -1159,30 +1161,30 @@ chord: -"[", ~["]"]+, -"]".
                     only recognized <code>Verse</code> and <code>Chorus</code> and considered all
                     other section names <quote>comments,</quote> it appears they also struggle with
                     the inherent ambiguity of chord charts! It works successfully when the input is
-                    as follow: Section Title, line of chords, line of lyrics, line of chords, line
+                    as follows: Section Title, line of chords, line of lyrics, line of chords, line
                     of lyrics, etc. But, it struggles when the chart deviates from this pattern
                     (which 99% of our charts do). So, perhaps with our newfound logic for deciding
                     whether a line contains chords, lyrics, or both; we could create our own system
-                    for accurately converting chord charts to ChordPro format which then prepares
-                    them for use with our iXML. But, for now, I simply converted, then manually
+                    for accurately converting chord charts to ChordPro format, which then prepares
+                    them for use with our ixml. But, for now, I simply converted, then manually
                     edited, <link
                         xlink:href="https://github.com/newtfire/GretaVanZeppelin/tree/main/pipeline/phase-2-ChordPro/raw-text/Greta/anthemOfThePeacefulArmy"
-                        >one album</link> (eight songs) for the purpose of testing our new iXML on a
+                        >one album</link> (eight songs) for the purpose of testing our new ixml on a
                     larger collection in our pipeline. After learning to add the
                         <code>@serialization</code> attribute to the <code>&lt;p:store&gt;</code>
                     step in the XProc pipeline so that we could properly indent and read each of the
-                    outputted XML files, we successfully ran our new iXML on a collection of
+                    outputted XML files, we successfully ran our new ixml on a collection of
                     resources! This also means that we elimintated one of the XSLT transformations
                     from the original pipeline, as well as more accurately preserved the chords’
                     placement with the lyrics which means more, and more accurate, data to
                     analyze.</para>
-                <para>More notably than our project’s recent breakthrough: it seems unlikely that
-                    there are any creators or users of ChordPro aware currently of iXML and its
-                    ability to read ChordPro and turn it into XML. In our project, ChordPro allows
-                    for both a more accurate preservation of the chord charts and a more accurate
-                    representation of entire chord progressions. I certainly think it would be
-                    interesting to analyze something like the modern artist Greta Van Fleet directly
-                    copying a chord progression from a verse in a Led Zeppelin song.</para>
+                <para>Most significantly, it seems unlikely that there are any creators or users of
+                    ChordPro aware currently of ixml and its ability to read ChordPro and turn it
+                    into XML. In our project, ChordPro allows for both a more accurate preservation
+                    of the chord charts and a more accurate representation of entire chord
+                    progressions. I certainly think it would be interesting to analyze something
+                    like the modern artist Greta Van Fleet directly copying a chord progression from
+                    a verse in a Led Zeppelin song.</para>
             </section>
         </section>
     </section>
@@ -1190,13 +1192,13 @@ chord: -"[", ~["]"]+, -"]".
     <section>
         <title>What Do We Gain From Learning and Teaching Invisible XML?</title>
 
-        <para>Was this worth the effort, and was invisible XML ready for undergraduates in an
+        <para>Was this worth the effort, and was Invisible XML ready for undergraduates in an
             algorithmic text analysis course? Most student project teams were not motivated to apply
-            invisible XML in their projects, and we did not require them to do so. (We only required
+            Invisible XML in their projects, and we did not require them to do so. (We only required
             that students give the technologies a try in their homework assignments). For those that
             were motivated (particularly the authors of this paper), there was an interest in the
             technologies themselves cultivated by drafting new documentation and training resources
-            for the class, but also an awareness that invisible XML was not strictly necessary to
+            for the class, but also an awareness that Invisible XML was not strictly necessary to
             their projects: regular expression matching and XSLT could have sufficed more quickly.
             Yet there is satisfaction in writing a successful grammar and a simplification in the
             documentation, as well. Invisible XML <emphasis>declares</emphasis> the patterns of a
@@ -1212,12 +1214,12 @@ chord: -"[", ~["]"]+, -"]".
             expectation of its source documents, and (in our experience) fewer lines of code, though
             each line scripted with exacting care. Each approach puts students in the position of
             writing declaratively what needs to become their data structure, and perhaps the
-            thinking process required of invisible XML might be different from writing sequential
+            thinking process required of Invisible XML might be different from writing sequential
             regular expression recipes in the way that writing poetry differs from prose. Poetry,
-            like invisible XML, attends to more dimensions of expression for every meaningful and
+            like Invisible XML, attends to more dimensions of expression for every meaningful and
             resonant word and punctuation mark, by contrast with prose and step-by-step
             search-and-replace operations.</para>
-        <para>Certainly for all its expressive power, invisible XML cannot replace the prosaic
+        <para>Certainly for all its expressive power, Invisible XML cannot replace the prosaic
             versatility of regular expressions as a <quote>Swiss-army knife</quote> for many
             different text analysis purposes. And we could have taught our course without it. But
             the experience may have enhanced other kinds of learning in the course. For example, we
@@ -1227,7 +1229,7 @@ chord: -"[", ~["]"]+, -"]".
             appreciation of <emphasis role="ital">declarative methods</emphasis> this year was
             balanced differently with the <emphasis role="ital">imperative</emphasis> programming of
             Python. Are students understanding the formatting and processing of text differently
-            when encountering invisible XML? In making invisible XML a topic for homework and
+            when encountering Invisible XML? In making Invisible XML a topic for homework and
             demonstration, students encountered the concept of grammars, in context with schema
             validation and regular expression matching—related to these but fundamentally different.
             The declaration of patterns, and the experience of writing grammars explicitly to work
@@ -1242,9 +1244,9 @@ chord: -"[", ~["]"]+, -"]".
                 text</quote> to identifying structures as nodes, and then extracting text from nodes
             for meaningful natural language processing, with findings expressed, visualized, and
             output on websites involves a round-trip adventure with text and code formats. Perhaps
-            the most significant application of invisible XML is the agency it gives the student
+            the most significant application of Invisible XML is the agency it gives the student
             coder in constructing their own pattern recognition as XML. The experience of developing
-            and processing invisible XML in a text analysis course makes for a multi-dimensional
+            and processing Invisible XML in a text analysis course makes for a multi-dimensional
             experience of texts, finding value in applying different methods to structured
             architectures and unstructured sequences. Thus we find Invisible XML a worthwhile
             experience for our digital humanities students and look forward to experimenting with it
