@@ -87,8 +87,13 @@
         </keywordset>
     </info>
     <section>
-        <title>What is XML to a Language Model?</title>
+        <title>MCP and Langauge Models: An Orientation for Markup People</title>
+        <para>....</para> 
         <para>....</para>
+    </section>
+    <section>
+        <title>What is XML to a Language Model?</title>
+        <para>....</para> 
         <para>....</para>
     </section>
     <section>
@@ -97,13 +102,21 @@
         <para>....</para>
         </section>
     <section>
+        <title>How might Invisible XML be Helpful for AI training on Document Data?</title>
+        <para>Our AI systems are about humans-in-the-loop, Molly's point: ixml is very human-readable as well as machine-readable! This is what declarative markup is for. 
+         It should be beneficial too for LLMs working in "natural language".</para> 
+        <para>....</para>
+    </section>
+    <section>
         <title>Dialogues about Markup with an Small Language Model</title>
         <para>....</para>
         <para>....</para>
     </section>
     <section>
-        <title>A separation of concerns</title>
-        <para>The same textual data can be modeled in many ways in XML. The best approach will depend on the context and scope of a project, whether you encode the page by page graphical layout, 
+        <title>Towards a Declarative Method for Working with Language Models: A separation of concerns</title>
+        <para>DECLARING YOUR INTENTIONS is important for LLMs AND humans: writing schemas, grammars, AND MCP scripts can all be considered declarations together. 
+            
+            The same textual data can be modeled in many ways in XML. The best approach will depend on the context and scope of a project, whether you encode the page by page graphical layout, 
         the relationship between an illustration and surrounding text.  </para>
         <para>There is also tremendous variability in the possible responses of a generative language model to prompts. 
             Does giving them access to tools produce anything like a singular, reproducible approach?</para>
