@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="balisage-1-5.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="balisage-1-5.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-stylesheet type="text/xsl" href="balisage-proceedings-html.xsl"?>
+<article xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink"
+    version="5.0-subset Balisage-1.5">
+
+    <title>XML, MCP, and Language Models</title>
+    <subtitle>A Separation of Concerns</subtitle>
+    <info>
+        <abstract>
+            <para></para>
+            <para></para>
+        </abstract>
+        <author>
+            <personname>
+                <firstname>Michael</firstname>
+                <othername>Roy</othername>
+                <surname>Simons</surname>
+            </personname>
+            <personblurb>
+                <para>Michael Simons is a Digital Media, Arts, and Technology (DIGIT) student at
+                    Penn State Behrend. After two years of studying Computer Science, he decided to
+                    pivot to Dr. Beshero-Bondar’s Digit program as it allows for greater creativity
+                    and a more focused path while still learning how to get the most out of today’s
+                    innovative technologies. In this program, he’s taken a deep dive into the XML
+                    stack where he enjoys using tools like XSLT—and more recently, ixml and XProc—to
+                    create rich markup that is both satisfyingly organized and able to be processed
+                    in interesting ways. Michael’s main passion is music, which he utilized to
+                    develop a <link xlink:href="https://newtfire.github.io/GretaVanZeppelin/"
+                        xlink:type="simple" xlink:show="new" xlink:actuate="onRequest">large-scale
+                        text analysis project</link> comparing the lyrics and chord progressions of
+                    seemingly similar artists.</para>
+            </personblurb>
+            <affiliation>
+                <jobtitle>Student</jobtitle>
+                <jobtitle>Research Assistant / Coding Mentor</jobtitle>
+                <orgname>Penn State Erie, The Behrend College</orgname>
+            </affiliation>
+            <email>mrs7068@psu.edu</email>
+        </author>
+
+        <author>
+            <personname>
+                <firstname>Elisa</firstname>
+                <othername>E.</othername>
+                <surname>Beshero-Bondar</surname>
+            </personname>
+            <personblurb>
+                <para>Elisa Beshero-Bondar explores and teaches document data modeling with the XML
+                    family of languages. She serves on the TEI Technical Council and is the founder
+                    and organizer of the <link xlink:href="https://digitalmitford.org"
+                        xlink:type="simple" xlink:show="new" xlink:actuate="onRequest">Digital
+                        Mitford project</link> and <link
+                        xlink:href="https://digitalmitford.github.io/DigMitCS/" xlink:type="simple"
+                        xlink:show="new" xlink:actuate="onRequest">its usually annual coding
+                        school</link>. She experiments with visualizing data from complex document
+                    structures like epic poems and with computer-assisted collation of differently
+                    encoded editions of <link xlink:href="https://frankensteinvariorum.github.io/"
+                        xlink:type="simple" xlink:show="new" xlink:actuate="onRequest"><emphasis
+                            role="ital">Frankenstein</emphasis></link>. Her ongoing adventures with
+                    markup technologies are documented on <link xlink:href="https://newtfire.org"
+                        xlink:type="simple" xlink:show="new" xlink:actuate="onRequest">her
+                        development site at newtfire.org</link>. </para>
+            </personblurb>
+            <affiliation>
+                <jobtitle>Chair</jobtitle>
+                <orgname>TEI Technical Council</orgname>
+            </affiliation>
+            <affiliation>
+                <jobtitle>Professor of Digital Humanities</jobtitle>
+                <jobtitle>Program Chair of Digital Media, Arts, and Technology</jobtitle>
+                <orgname>Penn State Erie, The Behrend College</orgname>
+            </affiliation>
+            <email>eeb4@psu.edu</email>
+        </author>
+        <keywordset role="author">
+            <keyword>Small Language Model</keyword>
+            <keyword>SLM</keyword>
+            <keyword>schema</keyword>
+            <keyword>declarative markup</keyword>
+            <keyword>declarative methods</keyword>
+            <keyword>JSON-L</keyword>
+            <keyword>XSLT</keyword>
+            <keyword>XQuery</keyword>
+            <keyword>XPath</keyword>
+        </keywordset>
+    </info>
+    <section>
+        <title></title>
+        <para>....</para>
+        <para>....</para>
+        </section>
+    </section>
+    <section>
+        <title></title>
+        <para>....</para>
+        <para>....</para>
+    </section>
+    </section>
+    
+    </section>
+
+</article>
