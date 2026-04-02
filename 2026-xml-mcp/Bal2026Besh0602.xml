@@ -87,18 +87,28 @@
         </keywordset>
     </info>
     <section>
-        <title></title>
+        <title>What is XML to a Language Model?</title>
+        <para>....</para>
+        <para>....</para>
+    </section>
+    <section>
+        <title>When less is more: How much does an agent need?</title>
         <para>....</para>
         <para>....</para>
         </section>
+    <section>
+        <title>Dialogues about Markup with an Small Language Model</title>
+        <para>....</para>
+        <para>....</para>
     </section>
     <section>
-        <title></title>
-        <para>....</para>
-        <para>....</para>
+        <title>A separation of concerns</title>
+        <para>The same textual data can be modeled in many ways in XML. The best approach will depend on the context and scope of a project, whether you encode the page by page graphical layout, 
+        the relationship between an illustration and surrounding text.  </para>
+        <para>There is also tremendous variability in the possible responses of a generative language model to prompts. 
+            Does giving them access to tools produce anything like a singular, reproducible approach?</para>
     </section>
-    </section>
-    
-    </section>
+
+
 
 </article>
