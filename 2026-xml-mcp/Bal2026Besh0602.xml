@@ -9,37 +9,9 @@
     <subtitle>A Separation of Concerns</subtitle>
     <info>
         <abstract>
-            <para></para>
-            <para></para>
+            <para/>
+            <para/>
         </abstract>
-        <author>
-            <personname>
-                <firstname>Michael</firstname>
-                <othername>Roy</othername>
-                <surname>Simons</surname>
-            </personname>
-            <personblurb>
-                <para>Michael Simons is a Digital Media, Arts, and Technology (DIGIT) student at
-                    Penn State Behrend. After two years of studying Computer Science, he decided to
-                    pivot to Dr. Beshero-Bondar’s Digit program as it allows for greater creativity
-                    and a more focused path while still learning how to get the most out of today’s
-                    innovative technologies. In this program, he’s taken a deep dive into the XML
-                    stack where he enjoys using tools like XSLT—and more recently, ixml and XProc—to
-                    create rich markup that is both satisfyingly organized and able to be processed
-                    in interesting ways. Michael’s main passion is music, which he utilized to
-                    develop a <link xlink:href="https://newtfire.github.io/GretaVanZeppelin/"
-                        xlink:type="simple" xlink:show="new" xlink:actuate="onRequest">large-scale
-                        text analysis project</link> comparing the lyrics and chord progressions of
-                    seemingly similar artists.</para>
-            </personblurb>
-            <affiliation>
-                <jobtitle>Student</jobtitle>
-                <jobtitle>Research Assistant / Coding Mentor</jobtitle>
-                <orgname>Penn State Erie, The Behrend College</orgname>
-            </affiliation>
-            <email>mrs7068@psu.edu</email>
-        </author>
-
         <author>
             <personname>
                 <firstname>Elisa</firstname>
@@ -74,6 +46,39 @@
             </affiliation>
             <email>eeb4@psu.edu</email>
         </author>
+        
+        <author>
+            <personname>
+                <firstname>Michael</firstname>
+                <othername>Roy</othername>
+                <surname>Simons</surname>
+            </personname>
+            <personblurb>
+                <para>Michael Simons graduated in May 2026 with a degree in Digital Media, Arts, and
+                    Technology (DIGIT) from Penn State Behrend. After two years of studying Computer
+                    Science, he decided to pivot to Dr. Beshero-Bondar’s Digit program as it allowed
+                    for greater creativity and a more focused path while still learning how to get
+                    the most out of today’s innovative technologies. In this program, he’s taken a
+                    deep dive into the XML stack where he enjoys using tools like XSLT, ixml, and
+                    XProc to create rich markup that is both satisfyingly organized and able to be
+                    processed in interesting ways. Michael’s main passion is music, which he's
+                    utilized to develop a <link
+                        xlink:href="https://newtfire.github.io/GretaVanZeppelin/"
+                        xlink:type="simple" xlink:show="new" xlink:actuate="onRequest">large-scale
+                        text analysis project</link> comparing the lyrics and chord progressions of
+                    seemingly similar artists; he presented this project at <link
+                        xlink:href="https://doi.org/10.4242/BalisageVol30.Beshero-Bondar01"
+                        xlink:type="simple" xlink:show="new" xlink:actuate="onRequest">Balisage
+                        2025</link>.</para>
+            </personblurb>
+            <affiliation>
+                <jobtitle>Recent Graduate</jobtitle>
+                <jobtitle>Research Assistant / Coding Mentor</jobtitle>
+                <orgname>Penn State Erie, The Behrend College</orgname>
+            </affiliation>
+            <email>michaelsimons624@gmail.com</email>
+        </author>
+        
         <keywordset role="author">
             <keyword>Small Language Model</keyword>
             <keyword>SLM</keyword>
@@ -88,24 +93,25 @@
     </info>
     <section>
         <title>MCP and Langauge Models: An Orientation for Markup People</title>
-        <para>....</para> 
+        <para>....</para>
         <para>....</para>
     </section>
     <section>
         <title>What is XML to a Language Model?</title>
-        <para>....</para> 
         <para>....</para>
-        
+        <para>....</para>
+
     </section>
     <section>
         <title>When less is more: How much does an agent need?</title>
         <para>....</para>
         <para>....</para>
-        </section>
+    </section>
     <section>
         <title>How might Invisible XML be Helpful for AI training on Document Data?</title>
-        <para>Our AI systems are about humans-in-the-loop, Molly's point: ixml is very human-readable as well as machine-readable! This is what declarative markup is for. 
-         It should be beneficial too for LLMs working in "natural language".</para> 
+        <para>Our AI systems are about humans-in-the-loop, Molly's point: ixml is very
+            human-readable as well as machine-readable! This is what declarative markup is for. It
+            should be beneficial too for LLMs working in "natural language".</para>
         <para>....</para>
     </section>
     <section>
@@ -114,13 +120,16 @@
         <para>....</para>
     </section>
     <section>
-        <title>Towards a Declarative Method for Working with Language Models: A separation of concerns</title>
-        <para>DECLARING YOUR INTENTIONS is important for LLMs AND humans: writing schemas, grammars, AND MCP scripts can all be considered declarations together. 
-            
-            The same textual data can be modeled in many ways in XML. The best approach will depend on the context and scope of a project, whether you encode the page by page graphical layout, 
-        the relationship between an illustration and surrounding text.  </para>
-        <para>There is also tremendous variability in the possible responses of a generative language model to prompts. 
-            Does giving them access to tools produce anything like a singular, reproducible approach?</para>
+        <title>Towards a Declarative Method for Working with Language Models: A separation of
+            concerns</title>
+        <para>DECLARING YOUR INTENTIONS is important for LLMs AND humans: writing schemas, grammars,
+            AND MCP scripts can all be considered declarations together. The same textual data can
+            be modeled in many ways in XML. The best approach will depend on the context and scope
+            of a project, whether you encode the page by page graphical layout, the relationship
+            between an illustration and surrounding text. </para>
+        <para>There is also tremendous variability in the possible responses of a generative
+            language model to prompts. Does giving them access to tools produce anything like a
+            singular, reproducible approach?</para>
     </section>
 
 
