@@ -97,14 +97,20 @@
         <para>....</para>
     </section>
     <section>
-        <title>What is XML to a Language Model?</title>
-        <para>....</para>
+        <title>Context Windows and Dimensionality: What is XML to a Language Model?</title>
+        <para><!-- Reflect on the capacity to model textual data with ixml and remix and traverse information from nodes.
+        The ordinary way of chunking tokens based on sequence and the calculations of next-token prediction via vector embeddings
+        (cite the Cohen readings) is both impressive for the dimensional possibilies: we can't think in terms of those dimensions. By comparison,
+        traversing node trees fits more easily in a finite human imagination than hundreds and thousands of dimensions. And yet, we have
+        capacity to express and define relationships with XML, and with structured markup, we can deliver meaningful node packages when a project
+        like a scholarly edition requires precision and quality control.
+        --></para>
         <para>....</para>
 
     </section>
     <section>
-        <title>When less is more: How much does an agent need?</title>
-        <para>....</para>
+        <title>How much does an agent need?</title>
+        <para></para>
         <para>....</para>
     </section>
     <section>
