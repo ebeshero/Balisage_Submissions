@@ -92,30 +92,33 @@
         </keywordset>
     </info>
     <section>
-        <title>MCP and Langauge Models: An Orientation for Markup People</title>
-        <para>For the past year and half, our small Digital Humanities lab team has been investigating small language models and how we can work with them on 
-        projects involving XML technologies. We find small language models important to investigate in university and academic contexts for two primary objectives:
+        <title>MCP and Language Models: An Orientation for Markup People</title>
+        <para>For the past year and a half, our small Digital Humanities lab team has been investigating Small Language Models (SLMs) and how we can work with them on 
+        projects involving XML technologies. We find SLMs important to investigate in academic contexts for two primary objectives:
         <orderedlist>
             <listitem><para><emphasis>Education:</emphasis> To design <quote>explainable AI</quote> systems that help us to practically understand how language models 
                     process, retrieve, and generate text;</para></listitem>
             <listitem><para><emphasis>Economy:</emphasis> To design customized AI systems that can improve projects that require accurate 
                     data representation and quality control validation.</para></listitem>
         </orderedlist>
-        
         </para>
-        <para>The first objective (Education) is daunting, especially in a humanities or digital humanities context. AI systems are not readily comprehensible 
+        <para>The first objective (Education) is daunting, especially in a humanities or Digital Humanities context. AI systems are not readily comprehensible 
             by humans without some level of abstraction and analogy, or without learning by testing and applying the systems to a research project.
-            Digital Humanities (a field or <quote>umbrella term</quote> term that encompasses widely varying practices of computational methods for curation and analysis of 
-            media and cultural analysis of human interactions with computational technologies), does generally unite around the critical practices of learning
-            by doing and sharing tutorials openly. For example, <emphasis role="ital">The Programming Historian</emphasis> provides an excellent example of a peer-reviewed Digital Humanities community resource that 
-            supplying learning resources for humanities scholars seeking support, usually with Python and R applications that orient humanities scholars to statistical libraries and methods for 
-            linguistic analysis, regular expressions, and applications of TEI XML encoding and processing.<footnote><para>As of April 2026, the search listing of tutorials involving <quote>Artificial Intelligence</quote> at  
-                    <link xlink:href="https://programminghistorian.org/en/lessons/?search=artificial+intelligence"><emphasis role="ital">The Programming Historian</emphasis></link> 
+            Digital Humanities is an <quote>umbrella term</quote> that encompasses widely varying practices of computational methods for curation and analysis of 
+            media and cultural analysis of human interactions with computational technologies, and usually it is practiced in research and teaching 
+            in higher educational contexts around the world. Digital humanists do generally unite around the critical practices of learning
+            by doing and sharing tutorials openly. For example, <emphasis role="ital">The Programming Historian</emphasis> provides an excellent example of a 
+            peer-reviewed Digital Humanities community resource that 
+            supplies learning resources for humanities scholars seeking support, usually with Python and R applications that orient humanities scholars to statistical libraries and methods for 
+            linguistic analysis, regular expressions, and applications of TEI XML encoding and processing.<footnote><para>As of April 2026, 
+                    the search listing of tutorials involving <quote>Artificial Intelligence</quote> at  
+                    <link xlink:href="https://programminghistorian.org/en/lessons/?search=artificial+intelligence">
+                        <emphasis role="ital">The Programming Historian</emphasis></link> 
                     includes several published 2024 or earlier on 
           image classification, face and pattern recognition in historical photos, and manuscript text recognition.</para></footnote>.</para>
             <para>To understand the way language models process text in particles requires some perspective on the mathematical and statistical computations 
             and embedding structures that provide the basis for next-token prediction in generative AI systems. For decades, introductory
-            Digital Humanities courses provide students hands-on experience with tools like Voyant Tools and Antconc that provide a basis for understanding 
+            Digital Humanities courses have provided students hands-on experience with free software like Voyant Tools and Antconc that provide a basis for understanding 
             how computer software divides text into <quote>grams</quote> or meaningful particles and aggregate them into measurable clusters for n-gram analysis 
                 and concordance searching for keywords in context. That foundation is helpful now as we need to learn about how large language models work with 
                 text tokens in generative contexts, and how different these are from the classification methods that we are more familiar with.
@@ -133,7 +136,8 @@
                 opportunity to see and apply available functions within LLM models to visualize the scale of vector embedding layers, to flatten the thousands of dimensions of 
                 language model vector space to two dimensions and visualize in real time the position of the next token that is the most certain match in autocompleting a sentence, 
                 to create <quote>hooks</quote> that manipulate how confidence and certainty are calculated, and to see that the system is after all a technology that can be explored and manipulated
-                even if we humans cannot see all its dimensional possibilities at once.<footnote><para>Mike X. Cohen’s six-part <quote>LLM breakdown</quote> series is
+                even if we humans cannot see all its dimensional possibilities at once.<footnote><para>Mike X. Cohen’s six-part <quote>LLM breakdown</quote> series (about large language models
+                        or LLMs) is
                 publicly posted on Substack with accompanying Jupyter Notebooks that he strongly encourages people to run as they read. 
                 See Mike X. Cohen, <quote>LLM breakdown 1/6: Tokenization (words to integers)</quote> (August 26, 2025), 
                         <link xlink:href="https://mikexcohen.substack.com/p/llm-breakdown-16-tokenization-words">https://mikexcohen.substack.com/p/llm-breakdown-16-tokenization-words</link>;
@@ -143,14 +147,16 @@
                         <quote>LLM breakdown 5/6: Attention</quote> (September 2, 2025) <link xlink:href="https://mikexcohen.substack.com/p/llm-breakdown-56-attention">https://mikexcohen.substack.com/p/llm-breakdown-56-attention</link>;
                         <quote>LLM breakdown 6/6: MLP</quote> (September 3, 2025) <link xlink:href="https://mikexcohen.substack.com/p/llm-breakdown-66-mlp">https://mikexcohen.substack.com/p/llm-breakdown-66-mlp</link>.
                 </para></footnote>
-            It should be emphasized that Cohen himself is a neuroscientist and former academic but not in the humanities space; yet his public social media release of the <quote>LLM breakdown</quote> series
-               helps emphasis the recognition that the complex math of LLMs can be made more generally accessible. Within our Digital Humanities program and lab, where we prioritize being able to apply coding to <emphasis>visualize</emphasis> and <emphasis>communicate</emphasis>
-                complex technologies in the ways supported in Cohen’s series, being able to study systems by working within them directly provides a vital basis for applied education.
+            It should be emphasized that Cohen himself is a neuroscientist and former academic but not in the humanities; yet his public social media release of the <quote>LLM breakdown</quote> 
+                series helps demonstrate a recognition that the complex math of LLMs can be made more generally accessible. Within our Digital Humanities program and lab, 
+                where we prioritize coding as a means to <emphasis>visualize</emphasis> and <emphasis>communicate</emphasis>
+                complex ideas and technologies, Cohen's notebooks help us to learn by working directly with the code and give us ideas for projects that involve testing the models.
             </para>
         <para>Regarding the second objective (Economy), universities, especially the humanities, are faced with considerably reduced resources, 
             yet, paradoxically, increasing reliance on AI has resulted in the upscaling of <quote>compute</quote> GPU resources, 
             and dependencies on datacenters impact our environment and human labor. 
             There is much concern that emerging technologies threaten the human labor of the academy.
+            <!-- MOVE TO INTRODUCE MCP + SLMs -->
         </para>
     </section>
     <section>
@@ -175,7 +181,9 @@
     </section>
     <section>
         <title>How much does an agent need?</title>
-        <para></para>
+        <para><!-- Block out the MCP script and functions that show examples of XPath, XQuery, and XSLT. --> 
+            <!-- Discuss what it does in context with our tests so far.  -->
+        </para>
         <para>....</para>
     </section>
     <section>
