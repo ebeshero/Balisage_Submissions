@@ -93,8 +93,63 @@
     </info>
     <section>
         <title>MCP and Langauge Models: An Orientation for Markup People</title>
-        <para>....</para>
-        <para>....</para>
+        <para>For the past year and half, our small Digital Humanities lab team has been investigating small language models and how we can work with them on 
+        projects involving XML technologies. We find small language models important to investigate in university and academic contexts for two primary objectives:
+        <orderedlist>
+            <listitem><para><emphasis>Education:</emphasis> To design <quote>explainable AI</quote> systems that help us to practically understand how language models 
+                    process, retrieve, and generate text;</para></listitem>
+            <listitem><para><emphasis>Economy:</emphasis> To design customized AI systems that can improve projects that require accurate 
+                    data representation and quality control validation.</para></listitem>
+        </orderedlist>
+        
+        </para>
+        <para>The first objective (Education) is daunting, especially in a humanities or digital humanities context. AI systems are not readily comprehensible 
+            by humans without some level of abstraction and analogy, or without learning by testing and applying the systems to a research project.
+            Digital Humanities (a field or <quote>umbrella term</quote> term that encompasses widely varying practices of computational methods for curation and analysis of 
+            media and cultural analysis of human interactions with computational technologies), does generally unite around the critical practices of learning
+            by doing and sharing tutorials openly. For example, <emphasis role="ital">The Programming Historian</emphasis> provides an excellent example of a peer-reviewed Digital Humanities community resource that 
+            supplying learning resources for humanities scholars seeking support, usually with Python and R applications that orient humanities scholars to statistical libraries and methods for 
+            linguistic analysis, regular expressions, and applications of TEI XML encoding and processing.<footnote><para>As of April 2026, the search listing of tutorials involving <quote>Artificial Intelligence</quote> at  
+                    <link xlink:href="https://programminghistorian.org/en/lessons/?search=artificial+intelligence"><emphasis role="ital">The Programming Historian</emphasis></link> 
+                    includes several published 2024 or earlier on 
+          image classification, face and pattern recognition in historical photos, and manuscript text recognition.</para></footnote>.</para>
+            <para>To understand the way language models process text in particles requires some perspective on the mathematical and statistical computations 
+            and embedding structures that provide the basis for next-token prediction in generative AI systems. For decades, introductory
+            Digital Humanities courses provide students hands-on experience with tools like Voyant Tools and Antconc that provide a basis for understanding 
+            how computer software divides text into <quote>grams</quote> or meaningful particles and aggregate them into measurable clusters for n-gram analysis 
+                and concordance searching for keywords in context. That foundation is helpful now as we need to learn about how large language models work with 
+                text tokens in generative contexts, and how different these are from the classification methods that we are more familiar with.
+            In the context of Digital Humanities students learning about <quote>Large-Scale Text Analysis</quote> in the year 2026, we find ourselves trying to
+                connect with our foundations (in this case teaching with markup languages and Python) and expanding horizons still with <quote>hands-on</quote>
+                applications.
+            <footnote><para><quote>Large-Scale Text Analysis</quote> is the title of a 
+            Digital Humanities course for second- or third-year university students in the Digital Media, Arts, and Technology program at Penn State Behrend</para></footnote>, the 
+            Tutorials that aim to demonstrate how language models <quote>work under the hood</quote> are either too simplistic about vector word embeddings (offering
+                sometimes embarrassing nonsense formulae like <quote>King - Man + Woman = Queen</quote> as an explanation of how a language model calculates
+                relative semantic positions of one token in relation to another) or overly complex, requiring advanced computer science and matrix math to approach. 
+                A few resources offer some challenging math-forward but nevertheless accessible hands-on applications with models like GPT-2 that can be installed and 
+                explored on a personal computer. Mike X. Cohen’s six-part <quote>LLM breakdown</quote>series can support students who are learning Python 
+        and working with Jupyter Notebooks following his motto, <quote>You can learn a lot of math with a bit of code</quote>, and it provides a rare, gently-guided
+                opportunity to see and apply available functions within LLM models to visualize the scale of vector embedding layers, to flatten the thousands of dimensions of 
+                language model vector space to two dimensions and visualize in real time the position of the next token that is the most certain match in autocompleting a sentence, 
+                to create <quote>hooks</quote> that manipulate how confidence and certainty are calculated, and to see that the system is after all a technology that can be explored and manipulated
+                even if we humans cannot see all its dimensional possibilities at once.<footnote><para>Mike X. Cohen’s six-part <quote>LLM breakdown</quote> series is
+                publicly posted on Substack with accompanying Jupyter Notebooks that he strongly encourages people to run as they read. 
+                See Mike X. Cohen, <quote>LLM breakdown 1/6: Tokenization (words to integers)</quote> (August 26, 2025), 
+                        <link xlink:href="https://mikexcohen.substack.com/p/llm-breakdown-16-tokenization-words">https://mikexcohen.substack.com/p/llm-breakdown-16-tokenization-words</link>;
+                        <quote>LLM breakdown 2/6: Logits and next-token prediction</quote> (August 27, 2025) <link xlink:href="https://mikexcohen.substack.com/p/llm-breakdown-26-logits-and-next">https://mikexcohen.substack.com/p/llm-breakdown-26-logits-and-next</link>;
+                        <quote>LLM breakdown 3/6: Embeddings</quote> (August 29, 2025) <link xlink:href="https://mikexcohen.substack.com/p/llm-breakdown-36-embeddings">https://mikexcohen.substack.com/p/llm-breakdown-36-embeddings</link>;
+                        <quote>LLM breakdown 4/6: Transformer outputs (hidden states)</quote> (September 1, 2025) <link xlink:href="https://mikexcohen.substack.com/p/llm-breakdown-46-transformer-outputs">https://mikexcohen.substack.com/p/llm-breakdown-46-transformer-outputs</link>;
+                        <quote>LLM breakdown 5/6: Attention</quote> (September 2, 2025) <link xlink:href="https://mikexcohen.substack.com/p/llm-breakdown-56-attention">https://mikexcohen.substack.com/p/llm-breakdown-56-attention</link>;
+                        <quote>LLM breakdown 6/6: MLP</quote> (September 3, 2025) <link xlink:href="https://mikexcohen.substack.com/p/llm-breakdown-66-mlp">https://mikexcohen.substack.com/p/llm-breakdown-66-mlp</link>.
+                </para></footnote>
+            Within our Digital Humanities program and lab, where we prioritize being able to apply coding to <emphasis>visualize</emphasis> and <emphasis>communicate</emphasis>
+                complex technologies in the ways supported in Cohen’s series, being able to study systems by working within them directly provides a vital basis for applied education.
+            </para>
+        <para>Regarding the second objective (Economy), universities, especially the humanities, are faced with considerably reduced resources, 
+            yet, paradoxically, increasing reliance on AI has resulted in the upscaling of <quote>compute</quote> GPU resources, 
+            and dependencies on datacenters impact our environment and human labor. There is much concern that emerging technologies threaten the human labor of the academy.
+        </para>
     </section>
     <section>
         <title>Context Windows and Dimensionality: What is XML to a Language Model?</title>
