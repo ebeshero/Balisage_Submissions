@@ -149,12 +149,21 @@
             </para>
         <para>Regarding the second objective (Economy), universities, especially the humanities, are faced with considerably reduced resources, 
             yet, paradoxically, increasing reliance on AI has resulted in the upscaling of <quote>compute</quote> GPU resources, 
-            and dependencies on datacenters impact our environment and human labor. There is much concern that emerging technologies threaten the human labor of the academy.
+            and dependencies on datacenters impact our environment and human labor. 
+            There is much concern that emerging technologies threaten the human labor of the academy.
         </para>
     </section>
     <section>
         <title>Context Windows and Dimensionality: What is XML to a Language Model?</title>
-        <para><!-- Reflect on the capacity to model textual data with ixml and remix and traverse information from nodes.
+        <para>
+            <!--Beshero-Bondar previous Balisage paper on LLMs failing to be able to measure or even accurately represent differences in variant strings:
+            this was a first step in recognizing that LLMs don't work with texts as fixed objects: the fluidity of generative prediction interferes with 
+            reading strings as strings. Yet we apply LLMs as vigilant debuggers, correctors of encoding errors when a program fails to run. 
+            The ability to recognize common errors is separate from the precise methods of measuring 
+            -->
+            
+            
+            <!-- Reflect on the capacity to model textual data with ixml and remix and traverse information from nodes.
         The ordinary way of chunking tokens based on sequence and the calculations of next-token prediction via vector embeddings
         (cite the Cohen readings) is both impressive for the dimensional possibilies: we can't think in terms of those dimensions. By comparison,
         traversing node trees fits more easily in a finite human imagination than hundreds and thousands of dimensions. And yet, we have
