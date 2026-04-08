@@ -1,0 +1,600 @@
+<!DOCTYPE HTML>
+<html lang="en">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>Balisage: XML, MCP, and Language Models</title>
+      <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow&amp;display=swap" rel="stylesheet">
+      <meta name="viewport" content="width=device-width, initial-scale=1"><script type="text/JavaScript">
+      var detailsElement = document.createElement("details");
+      if (!("open" in detailsElement)) {
+          document.write('<script src="..//js/bower_components/better-dom/dist/better-dom.js"><\/script>');
+          document.write('<script src="..//js/bower_components/better-details-polyfill/dist/better-details-polyfill.js"><\/script>');
+          document.write('<script src="..//js/classname.js"><\/script>');
+      }
+      /* Enable CSS styling of figure elements in IE:
+       * https://xopus.com/devblog/2008/style-unknown-elements.html
+       */
+      var IEfix = document.createElement('figure');
+    </script><style type="text/css" id="inverter" media="none">
+      html {
+        filter: invert(100%);
+      }
+
+      * {
+        background-color: inherit;
+      }
+
+      /* do not invert SVG images */
+      img:not([src*=".svg"]),
+      [style*="url("] {
+        filter: invert(100%);
+      }
+    </style>
+      <link rel="stylesheet" href="balisage-proceedings.css" type="text/css">
+      <meta name="keywords" content="Small Language Model, SLM, schema, declarative markup, declarative methods, JSON-L, XSLT, XQuery, XPath">
+      <link id="favicon" rel="shortcut icon" type="image/png" href="http://balisage.net/favicon.ico">
+      <!--balisage-html.xsl--></head>
+   <body>
+      <div class="skipnav"><a href="#main">Skip to contents.</a></div>
+      <div id="balisage-header" role="banner">
+         <h1><!--* balisage-html.xsl 519.38 *--><i>Balisage:</i>&nbsp;<small>The Markup Conference</small></h1>
+      </div>
+      <html lang="en">
+         <head>
+            <title>Balisage: XML, MCP, and Language Models</title>
+            <link rel="stylesheet" href="balisage-proceedings.css" type="text/css">
+            <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow&amp;display=swap" rel="stylesheet">
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1"><script type="text/JavaScript">
+      var detailsElement = document.createElement("details");
+      if (!("open" in detailsElement)) {
+          document.write('<script src="..//js/bower_components/better-dom/dist/better-dom.js"><\/script>');
+          document.write('<script src="..//js/bower_components/better-details-polyfill/dist/better-details-polyfill.js"><\/script>');
+          document.write('<script src="..//js/classname.js"><\/script>');
+      }
+      /* Enable CSS styling of figure elements in IE:
+       * https://xopus.com/devblog/2008/style-unknown-elements.html
+       */
+      var IEfix = document.createElement('figure');
+    </script><style type="text/css" id="inverter" media="none">
+      html {
+        filter: invert(100%);
+      }
+
+      * {
+        background-color: inherit;
+      }
+
+      /* do not invert SVG images */
+      img:not([src*=".svg"]),
+      [style*="url("] {
+        filter: invert(100%);
+      }
+    </style>
+            <!--balisage-proceedings.xsl-->
+            <meta name="generator" content="Balisage Conference Proceedings XSLT (v1.2)">
+            <link id="favicon" rel="shortcut icon" type="image/png" href="http://balisage.net/favicon.ico"><script type="text/javascript">
+
+   function hidecite(citeID) {
+     cite = document.getElementById(citeID);
+     cite.style.display = "none";
+     return;
+   }
+   
+   function showcite(citeID,anchorID) {
+     cite = document.getElementById(citeID);
+
+     citeLeft = cite.style.left;
+     citeTop = cite.style.top;
+     
+     if (citeLeft != (getLeft(anchorID)+"px") ||
+         citeTop != (getTop(anchorID)+"px")) {
+       cite.style.display = "none";
+     }
+     
+     if (cite.style.display != "table-cell") {
+        movebox(citeID, anchorID);
+        cite.style.display = "table-cell";
+     }
+     else {
+       cite.style.display = "none";
+     };
+     return;
+   }
+
+   function movebox(citeID, anchorID) {
+
+     cite = document.getElementById(citeID);
+     
+     // alert(cite.offsetWidth + " by " + cite.offsetHeight)
+     
+     horizontalOffset = getLeft(anchorID);
+     // horizontalOffset = (inMain(anchorID)) ?
+     // (horizontalOffset - 260) : (horizontalOffset + 20)
+     // (horizontalOffset - (20 + cite.offsetWidth)) : (horizontalOffset + 20)
+
+     verticalOffset = getTop(anchorID);
+     // verticalOffset = (inMain(anchorID)) ?
+     // (verticalOffset - 20) : (verticalOffset + 20)
+     // (verticalOffset - (20 + cite.offsetHeight)) : (verticalOffset + 20)
+
+     /*
+     horizontalOffset = getAbsoluteLeft(anchorID) - getScrollLeft(anchorID) + 20;
+     if (inMain(anchorID)) {
+       horizontalOffset = horizontalOffset - 300;
+     }
+     verticalOffset = getAbsoluteTop(anchorID) - getScrollTop(anchorID) - 40;
+     if (inMain(anchorID)) {
+       verticalOffset = verticalOffset - 300;
+     }
+     */
+     
+     cite.style.left = horizontalOffset + "px";
+     cite.style.top = verticalOffset + "px";
+   }
+   
+   function getLeft(objectID) {
+     var left = getAbsoluteLeft(objectID) - getScrollLeft(objectID);
+     left = (inMain(objectID)) ? (left - 260) : (left + 20)    
+     return left;
+   }
+   
+   function getTop(objectID) {
+     var top = getAbsoluteTop(objectID) - getScrollTop(objectID);
+     top = (inMain(objectID)) ? (top - 50) : (top + 20)
+     return top;     
+   }
+   
+   function getAbsoluteLeft(objectId) {
+   // Get an object left position from the upper left viewport corner
+     o = document.getElementById(objectId)
+     oLeft = o.offsetLeft            // Get left position from the parent object
+     while(o.offsetParent!=null) {   // Parse the parent hierarchy up to the document element
+       oParent = o.offsetParent    // Get parent object reference
+       oLeft += oParent.offsetLeft // Add parent left position
+       o = oParent
+      }
+    return oLeft
+    }
+
+    function getAbsoluteTop(objectId) {
+    // Get an object top position from the upper left viewport corner
+      o = document.getElementById(objectId)
+      oTop = o.offsetTop            // Get top position from the parent object
+      while(o.offsetParent!=null) { // Parse the parent hierarchy up to the document element
+        oParent = o.offsetParent  // Get parent object reference
+        oTop += oParent.offsetTop // Add parent top position
+        o = oParent
+      }
+    return oTop
+    }
+
+   function getScrollLeft(objectId) {
+     // Get a left scroll position
+     o = document.getElementById(objectId)
+     oLeft = o.scrollLeft            // Get left position from the parent object
+     while(o.offsetParent!=null) {   // Parse the parent hierarchy up to the document element
+       oParent = o.offsetParent    // Get parent object reference
+       oLeft += oParent.scrollLeft // Add parent left position
+       o = oParent
+      }
+    return oLeft
+    }
+
+    function getScrollTop(objectId) {
+    // Get a right scroll position
+      o = document.getElementById(objectId)
+      oTop = o.scrollTop            // Get top position from the parent object
+      while(o.offsetParent!=null) { // Parse the parent hierarchy up to the document element
+        oParent = o.offsetParent  // Get parent object reference
+        oTop += oParent.scrollTop // Add parent top position
+        o = oParent
+      }
+    return oTop
+    }
+
+    function inMain(objectId) {
+    // returns true if in div#main
+      o = document.getElementById(objectId)
+      while(o.parentNode != null) { // Parse the parent hierarchy up to div#main
+        oParent = o.parentNode
+        if (o.id == "main") { return true; }
+        o = oParent;
+      }
+    return false;
+    }
+
+
+   /*
+   function showcite(citeID) {
+      cite = document.getElementById(citeID);
+      if (cite.style.display != "table-cell") {
+        cite.style.display = "table-cell";
+      }
+      else {
+        cite.style.display = "none";
+      };
+      return;
+    }
+    */
+
+      </script></head>
+         <body>
+            <div class="skipnav"><a href="#main">Skip to contents.</a></div>
+            <div id="balisage-header" role="banner" aria-label="Logo and breadcrumb links"><a class="quiet" href="http://www.balisage.net"><img style="float:right;border:none" alt="Balisage logo" height="130" src="icons/BalisageSeries-logo.png"></a><h2 class="page-header">Balisage: The Markup Conference</h2>
+               <h1 class="page-header">Proceedings preview</h1>
+            </div>
+            <nav id="main-menu" role="navigation">
+               <details>
+                  <summary tabindex="0"><svg role="img" viewBox="0 0 20 20" height="20" width="20">
+                        <title>Menu</title>
+                        <path d="m0-0v4h20v-4h-20zm0 8v4h20v-4h-20zm0 8v4h20v-4h-20z" fill="currentColor"></path></svg> Menu
+                     </summary>
+                  <div class="menu">
+                     <div id="navbar"></div>
+                     <div id="index-mast">
+                        <div class="content">
+                           <h1 class="article-title" id="d3e5">Balisage Paper: XML, MCP, and Language Models</h1>
+                           <h2 class="subtitle">A Separation of Concerns</h2>
+                           <details class="mast-box">
+                              <summary class="title">Elisa E. Beshero-Bondar</summary>
+                              <div class="affiliation">
+                                 <p class="jobtitle">Chair</p>
+                                 <p class="orgname">TEI Technical Council</p>
+                              </div>
+                              <div class="affiliation">
+                                 <p class="jobtitle">Professor of Digital Humanities</p>
+                                 <p class="jobtitle">Program Chair of Digital Media, Arts, and Technology</p>
+                                 <p class="orgname">Penn State Erie, The Behrend College</p>
+                              </div>
+                              <h5 class="author-email"><code class="email">&lt;<a class="email" href="mailto:eeb4@psu.edu">eeb4@psu.edu</a>&gt;</code></h5>
+                              <div class="personblurb">
+                                 <p id="d3e22">Elisa Beshero-Bondar explores and teaches document data modeling with the XML
+                                    family of languages. She serves on the TEI Technical Council and is the founder
+                                    and organizer of the <a href="https://digitalmitford.org" class="link">Digital
+                                       Mitford project</a> and <a href="https://digitalmitford.github.io/DigMitCS/" class="link">its usually annual coding
+                                       school</a>. She experiments with visualizing data from complex document
+                                    structures like epic poems and with computer-assisted collation of differently
+                                    encoded editions of <a href="https://frankensteinvariorum.github.io/" class="link"><span class="ital">Frankenstein</span></a>. Her ongoing adventures with
+                                    markup technologies are documented on <a href="https://newtfire.org" class="link">her
+                                       development site at newtfire.org</a>. </p>
+                              </div>
+                           </details>
+                           <details class="mast-box">
+                              <summary class="title">Michael Roy Simons</summary>
+                              <div class="affiliation">
+                                 <p class="jobtitle">Recent Graduate</p>
+                                 <p class="jobtitle">Research Assistant / Coding Mentor</p>
+                                 <p class="orgname">Penn State Erie, The Behrend College</p>
+                              </div>
+                              <h5 class="author-email"><code class="email">&lt;<a class="email" href="mailto:michaelsimons624@gmail.com">michaelsimons624@gmail.com</a>&gt;</code></h5>
+                              <div class="personblurb">
+                                 <p id="d3e60">Michael Simons graduated in May 2026 with a degree in Digital Media, Arts, and
+                                    Technology (DIGIT) from Penn State Behrend. After two years of studying Computer
+                                    Science, he decided to pivot to Dr. Beshero-Bondar’s Digit program as it allowed
+                                    for greater creativity and a more focused path while still learning how to get
+                                    the most out of today’s innovative technologies. In this program, he’s taken a
+                                    deep dive into the XML stack where he enjoys using tools like XSLT, ixml, and
+                                    XProc to create rich markup that is both satisfyingly organized and able to be
+                                    processed in interesting ways. Michael’s main passion is music, which he's
+                                    utilized to develop a <a href="https://newtfire.github.io/GretaVanZeppelin/" class="link">large-scale
+                                       text analysis project</a> comparing the lyrics and chord progressions of
+                                    seemingly similar artists; he presented this project at <a href="https://doi.org/10.4242/BalisageVol30.Beshero-Bondar01" class="link">Balisage
+                                       2025</a>.</p>
+                              </div>
+                           </details>
+                           <details class="abstract">
+                              <summary>
+                                 <h2 class="inline-heading">Abstract</h2>
+                              </summary>
+                              <p id="d3e11"></p>
+                              <p id="d3e12"></p>
+                           </details>
+                           <details class="toc">
+                              <summary>
+                                 <h2 class="inline-heading">Table of Contents</h2>
+                              </summary>
+                              <dl>
+                                 <dt><span class="section"><a href="#d3e96" class="toc">Our Context: Studying Language Models in Digital Humanities</a></span></dt>
+                                 <dt><span class="section"><a href="#d3e289" class="toc">MCP and Language Models: An Orientation for Markup People</a></span></dt>
+                                 <dt><span class="section"><a href="#d3e292" class="toc">Context Windows and Dimensionality: What is XML to a Language Model?</a></span></dt>
+                                 <dt><span class="section"><a href="#d3e302" class="toc">How much does an agent need?</a></span></dt>
+                                 <dt><span class="section"><a href="#d3e312" class="toc">How might Invisible XML be Helpful for AI training on Document Data?</a></span></dt>
+                                 <dt><span class="section"><a href="#d3e319" class="toc">Dialogues about Markup with an Small Language Model</a></span></dt>
+                                 <dt><span class="section"><a href="#d3e326" class="toc">Towards a Declarative Method for Working with Language Models: A separation of
+                                          concerns</a></span></dt>
+                              </dl>
+                           </details>
+                        </div>
+                     </div>
+                  </div>
+               </details>
+            </nav>
+            <nav id="index-mast" class="wide-mode" role="navigation">
+               <div class="content">
+                  <h1 class="article-title" id="d3e5">Balisage Paper: XML, MCP, and Language Models</h1>
+                  <h2 class="subtitle">A Separation of Concerns</h2>
+                  <details class="mast-box">
+                     <summary class="title">Elisa E. Beshero-Bondar</summary>
+                     <div class="affiliation">
+                        <p class="jobtitle">Chair</p>
+                        <p class="orgname">TEI Technical Council</p>
+                     </div>
+                     <div class="affiliation">
+                        <p class="jobtitle">Professor of Digital Humanities</p>
+                        <p class="jobtitle">Program Chair of Digital Media, Arts, and Technology</p>
+                        <p class="orgname">Penn State Erie, The Behrend College</p>
+                     </div>
+                     <h5 class="author-email"><code class="email">&lt;<a class="email" href="mailto:eeb4@psu.edu">eeb4@psu.edu</a>&gt;</code></h5>
+                     <div class="personblurb">
+                        <p id="d3e22">Elisa Beshero-Bondar explores and teaches document data modeling with the XML
+                           family of languages. She serves on the TEI Technical Council and is the founder
+                           and organizer of the <a href="https://digitalmitford.org" class="link">Digital
+                              Mitford project</a> and <a href="https://digitalmitford.github.io/DigMitCS/" class="link">its usually annual coding
+                              school</a>. She experiments with visualizing data from complex document
+                           structures like epic poems and with computer-assisted collation of differently
+                           encoded editions of <a href="https://frankensteinvariorum.github.io/" class="link"><span class="ital">Frankenstein</span></a>. Her ongoing adventures with
+                           markup technologies are documented on <a href="https://newtfire.org" class="link">her
+                              development site at newtfire.org</a>. </p>
+                     </div>
+                  </details>
+                  <details class="mast-box">
+                     <summary class="title">Michael Roy Simons</summary>
+                     <div class="affiliation">
+                        <p class="jobtitle">Recent Graduate</p>
+                        <p class="jobtitle">Research Assistant / Coding Mentor</p>
+                        <p class="orgname">Penn State Erie, The Behrend College</p>
+                     </div>
+                     <h5 class="author-email"><code class="email">&lt;<a class="email" href="mailto:michaelsimons624@gmail.com">michaelsimons624@gmail.com</a>&gt;</code></h5>
+                     <div class="personblurb">
+                        <p id="d3e60">Michael Simons graduated in May 2026 with a degree in Digital Media, Arts, and
+                           Technology (DIGIT) from Penn State Behrend. After two years of studying Computer
+                           Science, he decided to pivot to Dr. Beshero-Bondar’s Digit program as it allowed
+                           for greater creativity and a more focused path while still learning how to get
+                           the most out of today’s innovative technologies. In this program, he’s taken a
+                           deep dive into the XML stack where he enjoys using tools like XSLT, ixml, and
+                           XProc to create rich markup that is both satisfyingly organized and able to be
+                           processed in interesting ways. Michael’s main passion is music, which he's
+                           utilized to develop a <a href="https://newtfire.github.io/GretaVanZeppelin/" class="link">large-scale
+                              text analysis project</a> comparing the lyrics and chord progressions of
+                           seemingly similar artists; he presented this project at <a href="https://doi.org/10.4242/BalisageVol30.Beshero-Bondar01" class="link">Balisage
+                              2025</a>.</p>
+                     </div>
+                  </details>
+                  <details class="abstract">
+                     <summary>
+                        <h2 class="inline-heading">Abstract</h2>
+                     </summary>
+                     <p id="d3e11"></p>
+                     <p id="d3e12"></p>
+                  </details>
+                  <details class="toc">
+                     <summary>
+                        <h2 class="inline-heading">Table of Contents</h2>
+                     </summary>
+                     <dl>
+                        <dt><span class="section"><a href="#d3e96" class="toc">Our Context: Studying Language Models in Digital Humanities</a></span></dt>
+                        <dt><span class="section"><a href="#d3e289" class="toc">MCP and Language Models: An Orientation for Markup People</a></span></dt>
+                        <dt><span class="section"><a href="#d3e292" class="toc">Context Windows and Dimensionality: What is XML to a Language Model?</a></span></dt>
+                        <dt><span class="section"><a href="#d3e302" class="toc">How much does an agent need?</a></span></dt>
+                        <dt><span class="section"><a href="#d3e312" class="toc">How might Invisible XML be Helpful for AI training on Document Data?</a></span></dt>
+                        <dt><span class="section"><a href="#d3e319" class="toc">Dialogues about Markup with an Small Language Model</a></span></dt>
+                        <dt><span class="section"><a href="#d3e326" class="toc">Towards a Declarative Method for Working with Language Models: A separation of
+                                 concerns</a></span></dt>
+                     </dl>
+                  </details>
+               </div>
+            </nav>
+            <main id="main" role="main" aria-label="Main Content">
+               <div class="article">
+                  <h1 class="article-title" id="d3e5">Balisage Paper: XML, MCP, and Language Models</h1>
+                  <h2 class="subtitle">A Separation of Concerns</h2>
+                  <div class="section" id="d3e96">
+                     <h2 class="title" style="clear: both">Our Context: Studying Language Models in Digital Humanities</h2>
+                     <p id="d3e99">For the past year and a half, our small Digital Humanities lab team has been investigating
+                        Small Language Models (SLMs) and how we can work with them on 
+                        projects involving XML technologies. We find SLMs important to investigate in academic
+                        contexts for two primary objectives:
+                        
+                        <div class="orderedlist" id="d3e101">
+                           <ol style="list-style-type: decimal;">
+                              <li id="d3e102">
+                                 <p id="d3e103"><span class="ital">Education:</span> To design <q>explainable AI</q> systems that help us to practically understand how language models 
+                                    process, retrieve, and generate text;</p>
+                              </li>
+                              <li id="d3e110">
+                                 <p id="d3e111"><span class="ital">Economy:</span> To design customized AI systems that can improve projects that require accurate 
+                                    data representation and quality control validation.</p>
+                              </li>
+                           </ol>
+                        </div>
+                        </p>
+                     <p id="d3e116">The first objective (Education) is daunting, especially in a humanities or Digital
+                        Humanities context. AI systems are not readily comprehensible 
+                        by humans without some level of abstraction and analogy, or without learning by testing
+                        and applying the systems to a research project.
+                        Digital Humanities is an <q>umbrella term</q> that encompasses widely varying practices of computational methods for curation and
+                        analysis of 
+                        media and cultural analysis of human interactions with computational technologies,
+                        and usually it is practiced in research and teaching 
+                        in higher educational contexts around the world. Digital humanists do generally unite
+                        around the critical practices of learning
+                        by doing and sharing tutorials openly. For example, <span class="ital">The Programming Historian</span> provides an excellent example of a 
+                        peer-reviewed Digital Humanities community resource that 
+                        supplies learning resources for humanities scholars seeking support, usually with
+                        Python and R applications that orient humanities scholars to statistical libraries
+                        and methods for 
+                        linguistic analysis, regular expressions, and applications of TEI XML encoding and
+                        processing.<sup class="fn-label"><a href="#d3e124" class="footnoteref" id="d3e124-ref">[1]</a></sup>.</p>
+                     <p id="d3e136">To understand the way language models process text in particles requires some perspective
+                        on the mathematical and statistical computations 
+                        and embedding structures that provide the basis for next-token prediction in generative
+                        AI systems. For decades, introductory
+                        Digital Humanities courses have provided students hands-on experience with free software
+                        like Voyant Tools and Antconc that provide a basis for understanding 
+                        how computer software divides text into <q>grams</q> or meaningful particles and aggregate them into measurable clusters for n-gram analysis
+                        
+                        and concordance searching for keywords in context. That foundation is helpful now
+                        as we need to learn about how large language models work with 
+                        text tokens in generative contexts, and how different these are from the classification
+                        methods that we are more familiar with.</p>
+                     <p id="d3e141">In the context of Digital Humanities students learning about <q>Large-Scale Text Analysis</q> in the year 2026, we find ourselves trying to
+                        connect with our foundations (in this case teaching with markup languages and Python)
+                        and expanding horizons still with <q>hands-on</q>
+                        applications.
+                        <sup class="fn-label"><a href="#d3e149" class="footnoteref" id="d3e149-ref">[2]</a></sup>
+                        Tutorials that aim to demonstrate how language models <q>work under the hood</q> are often not very helpful: They can be 
+                        overly complex, requiring advanced computer science and matrix math to approach, or
+                        too simplistic about vector embeddings (offering
+                        sometimes embarrassing nonsense formulae like <q>King - Man + Woman = Queen</q> as an explanation of how a language model calculates
+                        relative semantic positions of one token in relation to another). A few resources
+                        offer some challenging math-forward but nevertheless accessible 
+                        hands-on applications with models like GPT-2 that can be installed and 
+                        explored on a personal computer. Mike X. Cohen’s six-part <q>LLM breakdown</q>series can support students who are learning Python 
+                        and working with Jupyter Notebooks following his motto, <q>You can learn a lot of math with a bit of code</q>, and it provides a rare, gently-guided
+                        opportunity to see and apply available functions within LLM models to visualize the
+                        scale of vector embedding layers, to flatten the thousands of dimensions of 
+                        language model vector space to two dimensions and visualize in real time the position
+                        of the next token that is the most certain match in autocompleting a sentence, 
+                        to create <q>hooks</q> that manipulate how confidence and certainty are calculated, and to see that the
+                        system is after all a technology that can be explored and manipulated
+                        even if we humans cannot see all its dimensional possibilities at once.<sup class="fn-label"><a href="#d3e171" class="footnoteref" id="d3e171-ref">[3]</a></sup>
+                        It should be emphasized that Cohen himself is a neuroscientist and former academic
+                        but not in the humanities; yet his public social media release of the <q>LLM breakdown</q> 
+                        series helps demonstrate a recognition that the complex math of LLMs can be made more
+                        generally accessible. Within our Digital Humanities program and lab, 
+                        where we prioritize coding as a means to <span class="ital">visualize</span> and <span class="ital">communicate</span>
+                        complex ideas and technologies, Cohen's notebooks help us to learn by working directly
+                        with the code and give us ideas for projects that involve testing the models.
+                        </p>
+                     <p id="d3e235">Regarding the second objective (Economy), universities and cultural heritage organizations
+                        face severe budget constraints in the 2020s 
+                        yet, paradoxically, increasing reliance on AI has resulted in the upscaling of <q>compute</q> GPU resources, 
+                        and dependencies on datacenters impact our environment and human labor. When contracts
+                        with AI tech companies are heavily promoted at universities, and the 
+                        <q>cognitive offloading</q> of thinking, writing, and assessment to chatbots risks 
+                        eroding rather than enhancing critical thinking and problem-solving skills, AI threatens
+                        the human labor of the academy and the efficacy of education, .<sup class="fn-label"><a href="#d3e243" class="footnoteref" id="d3e243-ref">[4]</a></sup></p>
+                     <p id="d3e265">Looking at this grim picture from the vantage point of a small Digital Humanities
+                        lab, we nevertheless recognize in AI an emerging technology that calls for serious
+                        scholarly work, and 
+                        we are researching language models as a powerful technology that can be tuned and
+                        adapted for local computer systems.
+                        We hope our work demonstrates some ways to minimize the resource footprint of generative
+                        AI models, finding ways to work with them on small-scale systems without manufactured
+                        dependencies on
+                        data centers and water supplies.<sup class="fn-label"><a href="#d3e267" class="footnoteref" id="d3e267-ref">[5]</a></sup> We also hope our research helps to pry open 
+                        the proverbial <q>black box</q> software built on unknowable assemblages of text and media. We are finding that our
+                        familiarity with concepts like <q>declarative programming</q> and 
+                        a <q>separation of concerns</q> help us to find a way to work with AI as one technology balanced with the precision
+                        tools of the XML stack.
+                        </p>
+                  </div>
+                  <div class="section" id="d3e289">
+                     <h2 class="title" style="clear: both">MCP and Language Models: An Orientation for Markup People</h2>
+                  </div>
+                  <div class="section" id="d3e292">
+                     <h2 class="title" style="clear: both">Context Windows and Dimensionality: What is XML to a Language Model?</h2>
+                     <p id="d3e295">
+                        
+                        
+                        
+                        </p>
+                     <p id="d3e300">....</p>
+                  </div>
+                  <div class="section" id="d3e302">
+                     <h2 class="title" style="clear: both">How much does an agent need?</h2>
+                     <p id="d3e305"> 
+                        
+                        </p>
+                     <p id="d3e310">....</p>
+                  </div>
+                  <div class="section" id="d3e312">
+                     <h2 class="title" style="clear: both">How might Invisible XML be Helpful for AI training on Document Data?</h2>
+                     <p id="d3e315">Our AI systems are about humans-in-the-loop, Molly's point: ixml is very
+                        human-readable as well as machine-readable! This is what declarative markup is for.
+                        It
+                        should be beneficial too for LLMs working in "natural language".</p>
+                     <p id="d3e317">....</p>
+                  </div>
+                  <div class="section" id="d3e319">
+                     <h2 class="title" style="clear: both">Dialogues about Markup with an Small Language Model</h2>
+                     <p id="d3e322">....</p>
+                     <p id="d3e324">....</p>
+                  </div>
+                  <div class="section" id="d3e326">
+                     <h2 class="title" style="clear: both">Towards a Declarative Method for Working with Language Models: A separation of
+                        concerns</h2>
+                     <p id="d3e329">DECLARING YOUR INTENTIONS is important for LLMs AND humans: writing schemas, grammars,
+                        AND MCP scripts can all be considered declarations together. The same textual data
+                        can
+                        be modeled in many ways in XML. The best approach will depend on the context and scope
+                        of a project, whether you encode the page by page graphical layout, the relationship
+                        between an illustration and surrounding text. </p>
+                     <p id="d3e331">There is also tremendous variability in the possible responses of a generative
+                        language model to prompts. Does giving them access to tools produce anything like
+                        a
+                        singular, reproducible approach?</p>
+                  </div>
+                  <div class="footnotes"><br><hr width="100" align="left">
+                     <div id="d3e124" class="footnote">
+                        <p><sup class="fn-label"><a href="#d3e124-ref" class="footnoteref">[1]</a></sup> As of April 2026, 
+                           the search listing of tutorials involving <q>Artificial Intelligence</q> at  
+                           <a href="https://programminghistorian.org/en/lessons/?search=artificial+intelligence" class="link">
+                              <span class="ital">The Programming Historian</span></a> 
+                           includes several published 2024 or earlier on 
+                           image classification, face and pattern recognition in historical photos, and manuscript
+                           text recognition.</p>
+                     </div>
+                     <div id="d3e149" class="footnote">
+                        <p><sup class="fn-label"><a href="#d3e149-ref" class="footnoteref">[2]</a></sup> <q>Large-Scale Text Analysis</q> is the title of a 
+                           Digital Humanities course for second- or third-year university students in the Digital
+                           Media, Arts, and Technology program at Penn State Behrend</p>
+                     </div>
+                     <div id="d3e171" class="footnote">
+                        <p><sup class="fn-label"><a href="#d3e171-ref" class="footnoteref">[3]</a></sup> Mike X. Cohen’s six-part <q>LLM breakdown</q> series (about large language models
+                           or LLMs) is
+                           publicly posted on Substack with accompanying Jupyter Notebooks that he strongly encourages
+                           people to run as they read. 
+                           See Mike X. Cohen, <q>LLM breakdown 1/6: Tokenization (words to integers)</q> (August 26, 2025), 
+                           <a href="https://mikexcohen.substack.com/p/llm-breakdown-16-tokenization-words" class="link">https://mikexcohen.substack.com/p/llm-breakdown-16-tokenization-words</a>;
+                           <q>LLM breakdown 2/6: Logits and next-token prediction</q> (August 27, 2025) <a href="https://mikexcohen.substack.com/p/llm-breakdown-26-logits-and-next" class="link">https://mikexcohen.substack.com/p/llm-breakdown-26-logits-and-next</a>;
+                           <q>LLM breakdown 3/6: Embeddings</q> (August 29, 2025) <a href="https://mikexcohen.substack.com/p/llm-breakdown-36-embeddings" class="link">https://mikexcohen.substack.com/p/llm-breakdown-36-embeddings</a>;
+                           <q>LLM breakdown 4/6: Transformer outputs (hidden states)</q> (September 1, 2025) <a href="https://mikexcohen.substack.com/p/llm-breakdown-46-transformer-outputs" class="link">https://mikexcohen.substack.com/p/llm-breakdown-46-transformer-outputs</a>;
+                           <q>LLM breakdown 5/6: Attention</q> (September 2, 2025) <a href="https://mikexcohen.substack.com/p/llm-breakdown-56-attention" class="link">https://mikexcohen.substack.com/p/llm-breakdown-56-attention</a>;
+                           <q>LLM breakdown 6/6: MLP</q> (September 3, 2025) <a href="https://mikexcohen.substack.com/p/llm-breakdown-66-mlp" class="link">https://mikexcohen.substack.com/p/llm-breakdown-66-mlp</a>.
+                           For Jupyter Notebooks, used for teaching, learning, sharing, and documenting code
+                           in Python and over a 100 other programming languages, see Lorena A. Barber et. al.,
+                           
+                           <span class="ital">Teaching and Learning with Jupyter</span> (2019) <a href="https://jupyter4edu.github.io/jupyter-edu-book/" class="link">https://jupyter4edu.github.io/jupyter-edu-book/</a> 
+                           and <a href="https://jupyter.org/" class="link">https://jupyter.org/</a>.</p>
+                     </div>
+                     <div id="d3e243" class="footnote">
+                        <p><sup class="fn-label"><a href="#d3e243-ref" class="footnoteref">[4]</a></sup> Michael Gerlich, <q>AI Tools in Society: Impacts on Cognitive Offloading and the Future of Critical Thinking,</q> 
+                           <span class="ital">Societies</span> 2025, 15(1), 6, <a href="https://doi.org/10.3390/soc15010006" class="link">https://doi.org/10.3390/soc15010006</a>; and Ulises A. Mejias, 
+                           <q>Artificial Intelligence as a Threat to Academic Labor: Who benefits when AI is introduced
+                              into higher education?</q> 
+                           <span class="ital">AAUP Academe Magazine</span> Winter 2026, 
+                           <a href="https://www.aaup.org/issue/winter-2026/artificial-intelligence-threat-academic-labor" class="link">https://www.aaup.org/issue/winter-2026/artificial-intelligence-threat-academic-labor</a>.</p>
+                     </div>
+                     <div id="d3e267" class="footnote">
+                        <p><sup class="fn-label"><a href="#d3e267-ref" class="footnoteref">[5]</a></sup> Regilme, Salvador Santino F, <q>Artificial Intelligence Colonialism: Environmental Damage, Labor Exploitation, and
+                              Human Rights Crises in the Global South</q>,
+                           <span class="ital">SAIS Review of International Affairs</span> 44:2 (2024), 75-92 
+                           <a href="https://dx.doi.org/10.1353/sais.2024.a950958" class="link">https://dx.doi.org/10.1353/sais.2024.a950958</a>.</p>
+                     </div>
+                  </div>
+               </div>
+               <div id="author-keywords">
+                  <h5 class="keywords">Author's keywords for this paper:</h5> <span class="keyword">Small Language Model</span>; <span class="keyword">SLM</span>; <span class="keyword">schema</span>; <span class="keyword">declarative markup</span>; <span class="keyword">declarative methods</span>; <span class="keyword">JSON-L</span>; <span class="keyword">XSLT</span>; <span class="keyword">XQuery</span>; <span class="keyword">XPath</span></div>
+               <div id="balisage-footer">
+                  <h3>Balisage Series on Markup Technologies</h3>
+               </div>
+            </main>
+         </body>
+      </html>
+      <div id="balisage-footer">
+         <h3><!--* balisage-html.xsl 519.38 *--><i>Balisage:</i>&nbsp;<small>The Markup Conference</small></h3>
+      </div>
+   </body>
+</html>

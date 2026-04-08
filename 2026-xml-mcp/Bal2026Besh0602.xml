@@ -92,7 +92,7 @@
         </keywordset>
     </info>
     <section>
-        <title>MCP and Language Models: An Orientation for Markup People</title>
+        <title>Our Context: Studying Language Models in Digital Humanities</title>
         <para>For the past year and a half, our small Digital Humanities lab team has been investigating Small Language Models (SLMs) and how we can work with them on 
         projects involving XML technologies. We find SLMs important to investigate in academic contexts for two primary objectives:
         <orderedlist>
@@ -121,16 +121,17 @@
             Digital Humanities courses have provided students hands-on experience with free software like Voyant Tools and Antconc that provide a basis for understanding 
             how computer software divides text into <quote>grams</quote> or meaningful particles and aggregate them into measurable clusters for n-gram analysis 
                 and concordance searching for keywords in context. That foundation is helpful now as we need to learn about how large language models work with 
-                text tokens in generative contexts, and how different these are from the classification methods that we are more familiar with.
-            In the context of Digital Humanities students learning about <quote>Large-Scale Text Analysis</quote> in the year 2026, we find ourselves trying to
+                text tokens in generative contexts, and how different these are from the classification methods that we are more familiar with.</para>
+            <para>In the context of Digital Humanities students learning about <quote>Large-Scale Text Analysis</quote> in the year 2026, we find ourselves trying to
                 connect with our foundations (in this case teaching with markup languages and Python) and expanding horizons still with <quote>hands-on</quote>
                 applications.
             <footnote><para><quote>Large-Scale Text Analysis</quote> is the title of a 
-            Digital Humanities course for second- or third-year university students in the Digital Media, Arts, and Technology program at Penn State Behrend</para></footnote>, the 
-            Tutorials that aim to demonstrate how language models <quote>work under the hood</quote> are either too simplistic about vector word embeddings (offering
+            Digital Humanities course for second- or third-year university students in the Digital Media, Arts, and Technology program at Penn State Behrend</para></footnote>
+                Tutorials that aim to demonstrate how language models <quote>work under the hood</quote> are often not very helpful: They can be 
+                overly complex, requiring advanced computer science and matrix math to approach, or too simplistic about vector embeddings (offering
                 sometimes embarrassing nonsense formulae like <quote>King - Man + Woman = Queen</quote> as an explanation of how a language model calculates
-                relative semantic positions of one token in relation to another) or overly complex, requiring advanced computer science and matrix math to approach. 
-                A few resources offer some challenging math-forward but nevertheless accessible hands-on applications with models like GPT-2 that can be installed and 
+                relative semantic positions of one token in relation to another). A few resources offer some challenging math-forward but nevertheless accessible 
+                hands-on applications with models like GPT-2 that can be installed and 
                 explored on a personal computer. Mike X. Cohen’s six-part <quote>LLM breakdown</quote>series can support students who are learning Python 
         and working with Jupyter Notebooks following his motto, <quote>You can learn a lot of math with a bit of code</quote>, and it provides a rare, gently-guided
                 opportunity to see and apply available functions within LLM models to visualize the scale of vector embedding layers, to flatten the thousands of dimensions of 
@@ -146,18 +147,36 @@
                         <quote>LLM breakdown 4/6: Transformer outputs (hidden states)</quote> (September 1, 2025) <link xlink:href="https://mikexcohen.substack.com/p/llm-breakdown-46-transformer-outputs">https://mikexcohen.substack.com/p/llm-breakdown-46-transformer-outputs</link>;
                         <quote>LLM breakdown 5/6: Attention</quote> (September 2, 2025) <link xlink:href="https://mikexcohen.substack.com/p/llm-breakdown-56-attention">https://mikexcohen.substack.com/p/llm-breakdown-56-attention</link>;
                         <quote>LLM breakdown 6/6: MLP</quote> (September 3, 2025) <link xlink:href="https://mikexcohen.substack.com/p/llm-breakdown-66-mlp">https://mikexcohen.substack.com/p/llm-breakdown-66-mlp</link>.
-                </para></footnote>
+                        For Jupyter Notebooks, used for teaching, learning, sharing, and documenting code in Python and over a 100 other programming languages, see Lorena A. Barber et. al., 
+                        <emphasis role="ital">Teaching and Learning with Jupyter</emphasis> (2019) <link xlink:href="https://jupyter4edu.github.io/jupyter-edu-book/">https://jupyter4edu.github.io/jupyter-edu-book/</link> 
+                        and <link xlink:href="https://jupyter.org/">https://jupyter.org/</link>.</para></footnote>
             It should be emphasized that Cohen himself is a neuroscientist and former academic but not in the humanities; yet his public social media release of the <quote>LLM breakdown</quote> 
                 series helps demonstrate a recognition that the complex math of LLMs can be made more generally accessible. Within our Digital Humanities program and lab, 
                 where we prioritize coding as a means to <emphasis>visualize</emphasis> and <emphasis>communicate</emphasis>
                 complex ideas and technologies, Cohen's notebooks help us to learn by working directly with the code and give us ideas for projects that involve testing the models.
             </para>
-        <para>Regarding the second objective (Economy), universities, especially the humanities, are faced with considerably reduced resources, 
+        <para>Regarding the second objective (Economy), universities and cultural heritage organizations face severe budget constraints in the 2020s 
             yet, paradoxically, increasing reliance on AI has resulted in the upscaling of <quote>compute</quote> GPU resources, 
-            and dependencies on datacenters impact our environment and human labor. 
-            There is much concern that emerging technologies threaten the human labor of the academy.
-            <!-- MOVE TO INTRODUCE MCP + SLMs -->
+            and dependencies on datacenters impact our environment and human labor. When contracts with AI tech companies are heavily promoted at universities, and the 
+            <quote>cognitive offloading</quote> of thinking, writing, and assessment to chatbots risks 
+            eroding rather than enhancing critical thinking and problem-solving skills, AI threatens the human labor of the academy and the efficacy of education, .<footnote><para>Michael Gerlich, <quote>AI Tools in Society: Impacts on Cognitive Offloading and the Future of Critical Thinking,</quote> 
+                    <emphasis role="ital">Societies</emphasis> 2025, 15(1), 6, <link xlink:href="https://doi.org/10.3390/soc15010006">https://doi.org/10.3390/soc15010006</link>; and Ulises A. Mejias, 
+                    <quote>Artificial Intelligence as a Threat to Academic Labor: Who benefits when AI is introduced into higher education?</quote> 
+                    <emphasis role="ital">AAUP Academe Magazine</emphasis> Winter 2026, 
+                    <link xlink:href="https://www.aaup.org/issue/winter-2026/artificial-intelligence-threat-academic-labor">https://www.aaup.org/issue/winter-2026/artificial-intelligence-threat-academic-labor</link>.</para></footnote></para>
+           <para>Looking at this grim picture from the vantage point of a small Digital Humanities lab, we nevertheless recognize in AI an emerging technology that calls for serious scholarly work, and 
+           we are researching language models as a powerful technology that can be tuned and adapted for local computer systems.
+           We hope our work demonstrates some ways to minimize the resource footprint of generative AI models, finding ways to work with them on small-scale systems without manufactured dependencies on
+           data centers and water supplies.<footnote><para>Regilme, Salvador Santino F, <quote>Artificial Intelligence Colonialism: Environmental Damage, Labor Exploitation, and Human Rights Crises in the Global South</quote>,
+                   <emphasis role="ital">SAIS Review of International Affairs</emphasis> 44:2 (2024), 75-92 
+                   <link xlink:href="https://dx.doi.org/10.1353/sais.2024.a950958">https://dx.doi.org/10.1353/sais.2024.a950958</link>.</para></footnote> We also hope our research helps to pry open 
+               the proverbial <quote>black box</quote> software built on unknowable assemblages of text and media. We are finding that our familiarity with concepts like <quote>declarative programming</quote> and 
+               a <quote>separation of concerns</quote> help us to find a way to work with AI as one technology balanced with the precision tools of the XML stack.
         </para>
+    </section>
+    <section>
+        <title>MCP and Language Models: An Orientation for Markup People</title>
+        
     </section>
     <section>
         <title>Context Windows and Dimensionality: What is XML to a Language Model?</title>
