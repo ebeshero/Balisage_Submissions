@@ -132,7 +132,7 @@
                 sometimes embarrassing nonsense formulae like <quote>King - Man + Woman = Queen</quote> as an explanation of how a language model calculates
                 relative semantic positions of one token in relation to another). A few resources offer some challenging math-forward but nevertheless accessible 
                 hands-on applications with models like GPT-2 that can be installed and 
-                explored on a personal computer. Mike X. Cohen’s six-part <quote>LLM breakdown</quote>series can support students who are learning Python 
+                explored on a personal computer. Mike X. Cohen’s six-part <quote>LLM breakdown</quote> series can support students who are learning Python 
         and working with Jupyter Notebooks following his motto, <quote>You can learn a lot of math with a bit of code</quote>, and it provides a rare, gently-guided
                 opportunity to see and apply available functions within LLM models to visualize the scale of vector embedding layers, to flatten the thousands of dimensions of 
                 language model vector space to two dimensions and visualize in real time the position of the next token that is the most certain match in autocompleting a sentence, 
@@ -166,7 +166,7 @@
                     <link xlink:href="https://www.aaup.org/issue/winter-2026/artificial-intelligence-threat-academic-labor">https://www.aaup.org/issue/winter-2026/artificial-intelligence-threat-academic-labor</link>.</para></footnote></para>
            <para>Looking at this grim picture from the vantage point of a small Digital Humanities lab, we nevertheless recognize in AI an emerging technology that calls for serious scholarly work, and 
            we are researching language models as a powerful technology that can be tuned and adapted for local computer systems.
-           We hope our work demonstrates some ways to minimize the resource footprint of generative AI models, finding ways to work with them on small-scale systems without manufactured dependencies on
+           We hope our work with SLMs rather than LLMs demonstrates some ways to minimize the resource footprint of generative AI models, finding ways to work with them on small-scale systems without manufactured dependencies on
            data centers and water supplies.<footnote><para>Regilme, Salvador Santino F, <quote>Artificial Intelligence Colonialism: Environmental Damage, Labor Exploitation, and Human Rights Crises in the Global South</quote>,
                    <emphasis role="ital">SAIS Review of International Affairs</emphasis> 44:2 (2024), 75-92 
                    <link xlink:href="https://dx.doi.org/10.1353/sais.2024.a950958">https://dx.doi.org/10.1353/sais.2024.a950958</link>.</para></footnote> We also hope our research helps to pry open 
@@ -175,7 +175,84 @@
         </para>
     </section>
     <section>
-        <title>MCP and Language Models: An Orientation for Markup People</title>
+        <title>The <quote>DigitAI</quote> project with MCP: An Orientation for Markup People</title>
+        <para>As <quote>markup people</quote> ourselves, we are accustomed to a certain mystery in the underlying technologies that support 
+            processing declarative markup (e.g. how our own operating systems decide to execute the template processing in our XSLT scripts).
+            But also as <quote>markup people</quote>, we find ourselves uncomfortable with the opacity of operations in language models,
+            and the fact that we cannot reproduce the exact same results twice when we deliver them the same prompt. We are learning that
+            we can inspect the operations of a language model, retrieve the data on how tokens are retrieved, and even begin to comprehend something of how the system
+            works. But we also know that we cannot expect a language model to handle the things we call <quote>text</quote> in the same way that we are used to
+            when we encode a markup tree, query it to retrieve, sort, conduct <quote>string-surgery</quote>, and make calculations with nodes.</para> 
+            <para>The mystery in the operations of a language model has everything to with its embeddings of word-particles in thousands of dimensions, and even
+                the idea that two language models trained on the same word data with the same number of parameters and embeddings do not share the same
+                vectors. This suggests something of an internal cosmos beyond human reckoning, yet nevertheless formulated to work in a consistent way
+                as a predictive model. One interfaces with it, and retrieves back something that perhaps might be said to resonate in response
+                to the prompt and the internal <quote>warp and woof</quote> of the intricately layered model of language. 
+                It seems intricate in its potential for variation, and unpredictable in its predictive functioning. Certainly language models
+                are known for their tone of overconfidence that thinly veils their unreliability. To convert them into helpful retrieval engines 
+                necessitates some kind of augmentation and alternative access to data. Boosting reliability involves supplying access to 
+                something more definitely structured and validated for quality control, structures outside the resonant machinery of 
+                token prediction subject to temperature and impenetrable embedding layers with word-particles
+                shrouded in logarithmic numbers and clustered by cosine similarities.</para>
+        <para>Encountering language models as marvelously speedy and profound yet vapid, mercurial, and dangerous, we want to at least try to  customize
+            <quote>black box</quote> technology to apply to difficult and time-consuming aspects of markup-based projects. We want an AI assistant to help with 
+            finishing old projects from community volunteers with inconsistent markup, and to aid students and colleagues with challenging questions like 
+            how best to apply the many possibilities of TEI encoding from the TEI Guidelines.<footnote><para>TEI Consortium, eds. 
+                    <emphasis role="ital">TEI P5: Guidelines for Electronic Text Encoding and Interchange</emphasis>, 4.11.0 18 February 2026, 
+                    TEI Consortium, <link xlink:href="http://www.tei-c.org/Guidelines/P5/">http://www.tei-c.org/Guidelines/P5/</link>.</para></footnote>
+            We are trying to create a small langauge model system that we can deploy with a multi-core personal computer that might 
+            help with many different XML projects, to assist in finding information about each project, discovering inconsistencies (beyond schema validation checks),
+            and answering questions in natural language about the data, enhanced by the ability to execute XPath.</para>
+           <para>So our Digital Humanities lab began a project in 2025 called <quote>DigitAI</quote> (named for our <quote>Digit</quote> program at Penn State Behrend). 
+            DigitAI began as an experiment to supply a small-scale language model with Retrieval Augmented Generation (RAG)–giving it query access to a structured 
+            "<quote>ground truth</quote>" knowledge base derived from the XML structure of the TEI P5 Guidelines. 
+            Preparing our RAG involved parsing the TEI Guidelines (available as a complete XML document in P5.xml from the TEI Guidelines repository
+            and updated with each new release of the Guidelines) in a context-aware manner, stored and accessed in information <quote>chunks</quote>
+            based on the text content of XML element nodes. We shared our first attempts at preparing an immense and complex XML-node-based RAG from the TEI 
+           Guidelines at the 2025 DH2025 conference and TEI conference (as well as in an open-mike presentation at Balisage 2025), but we knew at the time of those conferences 
+           that our work was incomplete.<footnote><para>Alexander C. Fisher, Hadleigh Jae Bills, and Elisa Beshero-Bondar, 
+                   <quote>DigitAI for Localized TEI / XML Assistance: An experiment with Small-Scale AI,</quote> presented at DH2025, Lisbon, 16 July 2025
+                   <link xlink:href="https://slides.com/elisabeshero-bondar/digitai-dh25">https://slides.com/elisabeshero-bondar/digitai-dh25</link>. 
+                   The GitHub repository for the early stage of the project including our preliminary Jupyter Notebooks remain available on GitHub at 
+                   <link xlink:href="https://github.com/newtfire/digitai-2025/">https://github.com/newtfire/digitai-2025/</link>. 
+                   New work in 2026 continues at <link xlink:href="https://github.com/newtfire/digitai">https://github.com/newtfire/digitai</link> 
+                   which stores the original repo as a submodule.</para></footnote> The RAG included only the chapters and paragraphs and 
+           element nodes with glosses and descriptions, and to be complete to our vision should have included the Schematron constraints and model and attribute class relationships.
+           Preparing the TEI as a graph structure has been done before (citation needed), but preparing it so very thoroughly was perhaps overkill that was not yet improving the
+           reliability of our Qwen model very much.</para>
+        <para>Our first effort with preparing a RAG from the TEI Guidelines posed a serious problem of <quote>code bloat</quote>. 
+            We had prepared a knowledge graph in neo4j to store our carefully parsed content from the TEI Guidelines.<footnote><para>neo4J on knowledge graphs: 
+                    <link xlink:href="https://neo4j.com/use-cases/knowledge-graph/">https://neo4j.com/use-cases/knowledge-graph/</link></para></footnote> 
+            The preparation of the ideal RAG resource for us involved a complex XSLT transformation of the TEI P5.xml document into neo4j's graph structure–converting 
+            every possible relationship of the paragraphs of the 
+            TEI Guidelines chapters and their associated encoding schema definitions of elements, model classes, and attribute definitions. 
+            Our team had prepared an incomplete RAG resource storing relationships of chapter paragraphs to elements and attributes and encoding examples discussed, 
+            but lacking detail from the element and attribute specifications. Our attempt made an abstracted and bloated version of the original XML document 
+            because we were writing XSLT to
+            <orderedlist>
+                <listitem><para>Output the neo4j graph nodes and edge relationships of elements networked by paragraph and chapter position across the TEI Guidelines, and</para></listitem>
+                <listitem><para>Output a means for the neo4j graph to be queried by the LLM.</para></listitem>
+            </orderedlist>
+          Worse yet, for all the painstaking effort with prepare the data with XSLT, our preliminary RAG did not provide very much improvement on an unaided Qwen model when
+          prompted with questions about the TEI Guidelines: we would still see hallucinated elements. We had serious concerns about whether and how reliably information was pulled 
+          from our RAG resource. We realized a very serious problem: the model was relying on word embeddings to translate the information it received from the graph RAG, and the conversion to word embeddings
+          did not improve on the database or the XML data structure. We planned to complete the RAG Graph anyway as a resource in its own right (and we may yet do so to assist with 
+          reviewing the TEI Guidelines). But by autumn 2025 we found a better method to address XML <emphasis>as</emphasis> XML and keeping it out of reach of the inner workings
+        of langauge models.</para>
+         <para>The MCP protocol introduced by Anthropic is now widely available in the open source community,
+             we can now design a new model infrastructure that allows an LLM to deploy a Model Control Protocol (MCP) server, 
+             which permits it to address the TEI XML tree data structure directly with direct XPath queries to XML nodes. 
+             When our team began reading about MCP, we realized that XML data need not be restructured to be available to an AI system.
+             But holding the XML data apart from the SLM also required a change to the SLM: We would need to give it agency to execute and adapt the sample 
+             code scripts we would provide its MCP server. We would need to make it an agent, and this involved a new level of risk, and a necessity to learn how 
+             to safely contain the model, restricting its local access to specific directories, or ideally to containerize it and separate it from sensitive data on our
+             computers. </para>
+        <para>Our new challenge is determining how to provide a map of the TEI P5.xml tree structure and enough example XPath scripts 
+            to retrieve relevant information about an element, attribute, or model class in the TEI. As this is an area of expertise in our team and program, 
+             we are confident that if we can teach humans to write XPath, we can script what is needed for an agentic AI system to access an XPath MCPservice (e.g. Skywork AI 2025). 
+            We are now working to create an agentic system that may read XML directly with XPath rather than having to translate intricate XML data structures into a graph database. 
+            Developing an agentic localized model also facilitates reporting about when and what RAG resources the model is consulting as well as what XPath expressions it deploys to retrieve the information. 
+     </para>
         
     </section>
     <section>
