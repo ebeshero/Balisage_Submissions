@@ -9,19 +9,21 @@
     <subtitle>A Separation of Concerns</subtitle>
     <info>
         <abstract>
-            <para>
-                
-                This paper reflects on experiments to integrate Small Language Models (SLMs) with XML technologies
-                in academic Digital Humanities work, and discusses the <quote>DigitAI</quote> project. The project is motivated by two goals, 
-                making AI systems 1) more educationally transparent and 20 more economically and environmentally sustainable.
-                We first attempted to make a small local Qwen model serve as an assistant for questions about applying the TEI P5 Guidelines. We provided 
-                Qwen with a Retrieval Augmented Generation (RAG) system built from the TEI P5 Guidelines, 
-                using XSLT to transform the guidelines into a neo4j knowledge graph. This approach proved both bloated and disappointing: 
-                the model's conversion of structured XML data into word embeddings eroded the precision of the original markup, 
-                and the outpus of promts reflected <quote>hallucination</quote> and inaccuracy. Learning from this failure, we
-                we came to realize that XML should be kept as XML, held apart from the language model's internal machinery, 
-                and made accessible instead through a Model Context Protocol (MCP) server that allows the SLM to 
-                query the TEI document tree directly using XPath.</para>
+            <para> This paper reflects on experiments to integrate Small Language Models (SLMs) with
+                XML technologies in academic Digital Humanities work, and discusses the
+                    <quote>DigitAI</quote> project. The project is motivated by two goals, making AI
+                systems 1) more educationally transparent and 20 more economically and
+                environmentally sustainable. We first attempted to make a small local Qwen model
+                serve as an assistant for questions about applying the TEI P5 Guidelines. We
+                provided Qwen with a Retrieval Augmented Generation (RAG) system built from the TEI
+                P5 Guidelines, using XSLT to transform the guidelines into a neo4j knowledge graph.
+                This approach proved both bloated and disappointing: the model's conversion of
+                structured XML data into word embeddings eroded the precision of the original
+                markup, and the outpus of promts reflected <quote>hallucination</quote> and
+                inaccuracy. Learning from this failure, we we came to realize that XML should be
+                kept as XML, held apart from the language model's internal machinery, and made
+                accessible instead through a Model Context Protocol (MCP) server that allows the SLM
+                to query the TEI document tree directly using XPath.</para>
                <para>This <quote>separation of concerns</quote> between the generative model and the structured data 
                 it consults is framed as a principled, declarative approach to AI-assisted XML work, 
                 with the paper also gesturing toward Invisible XML (ixml) as a further avenue for human- and machine-readable grammar. 
@@ -212,15 +214,21 @@
                 something more definitely structured and validated for quality control, structures outside the resonant machinery of 
                 token prediction subject to temperature and impenetrable embedding layers with word-particles
                 shrouded in logarithmic numbers and clustered by cosine similarities.</para>
-        <para>Encountering language models as marvelously speedy and profound yet vapid, mercurial, and dangerous, we want to at least try to  customize
-            <quote>black box</quote> technology to apply to difficult and time-consuming aspects of markup-based projects. We want an AI assistant to help with 
-            finishing old projects from community volunteers with inconsistent markup, and to aid students and colleagues with challenging questions like 
-            how best to apply the many possibilities of TEI encoding from the TEI Guidelines.<footnote><para>TEI Consortium, eds. 
-                    <emphasis role="ital">TEI P5: Guidelines for Electronic Text Encoding and Interchange</emphasis>, 4.11.0 18 February 2026, 
-                    TEI Consortium, <link xlink:href="http://www.tei-c.org/Guidelines/P5/">http://www.tei-c.org/Guidelines/P5/</link>.</para></footnote>
-            We are trying to create a small language model system that we can deploy with a multi-core personal computer that might 
-            help with many different XML projects, to assist in finding information about each project, discovering inconsistencies (beyond schema validation checks),
-            and answering questions in natural language about the data, enhanced by the ability to execute XPath.</para>
+        <para>Encountering language models as marvelously speedy and profound yet vapid, mercurial,
+            and dangerous, we want to at least try to customize <quote>black box</quote> technology
+            to apply to difficult and time-consuming aspects of markup-based projects. We want an AI
+            assistant to help with finishing old projects from community volunteers with
+            inconsistent markup, and to aid students and colleagues with challenging questions like
+            how best to apply the many possibilities of TEI encoding from the TEI Guidelines.<footnote>
+                <para>TEI Consortium, eds. <emphasis role="ital">TEI P5: Guidelines for Electronic
+                        Text Encoding and Interchange</emphasis>, 4.11.0 18 February 2026, TEI
+                    Consortium, <link xlink:href="http://www.tei-c.org/Guidelines/P5/"
+                        >http://www.tei-c.org/Guidelines/P5/</link>.</para>
+            </footnote> We are trying to create a small language model system that we can deploy
+            with a multi-core personal computer that might help with many different XML projects, to
+            assist in finding information about each project, discovering inconsistencies (beyond
+            schema validation checks), and answering questions in natural language about the data,
+            enhanced by the ability to execute XPath.</para>
            <para>So our Digital Humanities lab began a project in 2025 called <quote>DigitAI</quote> (named for our <quote>Digit</quote> program at Penn State Behrend). 
             DigitAI began as an experiment to supply a small-scale language model with Retrieval Augmented Generation (RAG)–giving it query access to a structured 
             "<quote>ground truth</quote>" knowledge base derived from the XML structure of the TEI P5 Guidelines. 
@@ -323,6 +331,24 @@
         <para>There is also tremendous variability in the possible responses of a generative
             language model to prompts. Does giving them access to tools produce anything like a
             singular, reproducible approach?</para>
+        <para>One perspective that emerges from working in the Digit program is that learning to use
+            AI effectively is understanding its limits regarding structured systems like XML. In my
+            own experience contributing to DigitAI, I approached the project as someone who
+            understood very little about AI but a lot about XML. It is still puzzling to me that AI
+            can’t always inherently understand the beautiful tree structure of an XML document. But,
+            we found that when we constrained the AI model with specific tasks and then gave it the
+            XML-processing tools to complete those tasks, it showed some promise. We also have a
+            constant emphasis on gathering log data from the AI model, as well as its processes.
+            This helps ensure that not only is it doing the processing correctly (i.e. how we want
+            it to) but that we are able to learn how it “thinks” which then helps us better equip
+            it...to help us! This aligns closely with the declarative mindset we have in Digit
+            working with XML technologies, where clarity of structure and intention leads to more
+            reliable and reproducible outcomes. This possibly leads us to the conclusion that AI in
+            Digital Humanities education doesn’t have to be as much about understanding model
+            architectures, but instead should emphasize hands-on experimentation, critical
+            evaluation of outputs, and an awareness of when <emphasis>not</emphasis> to rely on AI.
+            Instead of replacing our existing workflows, we see how AI can responsibly and
+            effectively operate within them.</para>
     </section>
 
 
