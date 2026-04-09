@@ -249,7 +249,7 @@
                               </div>
                               <h5 class="author-email"><code class="email">&lt;<a class="email" href="mailto:eeb4@psu.edu">eeb4@psu.edu</a>&gt;</code></h5>
                               <div class="personblurb">
-                                 <p id="d3e22">Elisa Beshero-Bondar explores and teaches document data modeling with the XML
+                                 <p id="d3e37">Elisa Beshero-Bondar explores and teaches document data modeling with the XML
                                     family of languages. She serves on the TEI Technical Council and is the founder
                                     and organizer of the <a href="https://digitalmitford.org" class="link">Digital
                                        Mitford project</a> and <a href="https://digitalmitford.github.io/DigMitCS/" class="link">its usually annual coding
@@ -269,7 +269,7 @@
                               </div>
                               <h5 class="author-email"><code class="email">&lt;<a class="email" href="mailto:michaelsimons624@gmail.com">michaelsimons624@gmail.com</a>&gt;</code></h5>
                               <div class="personblurb">
-                                 <p id="d3e60">Michael Simons graduated in May 2026 with a degree in Digital Media, Arts, and
+                                 <p id="d3e75">Michael Simons graduated in May 2026 with a degree in Digital Media, Arts, and
                                     Technology (DIGIT) from Penn State Behrend. After two years of studying Computer
                                     Science, he decided to pivot to Dr. Beshero-Bondar’s Digit program as it allowed
                                     for greater creativity and a more focused path while still learning how to get
@@ -287,21 +287,49 @@
                               <summary>
                                  <h2 class="inline-heading">Abstract</h2>
                               </summary>
-                              <p id="d3e11"></p>
-                              <p id="d3e12"></p>
+                              <p id="d3e11">
+                                 
+                                 This paper reflects on experiments to integrate Small Language Models (SLMs) with
+                                 XML technologies
+                                 in academic Digital Humanities work, and discusses the <q>DigitAI</q> project. The project is motivated by two goals, 
+                                 making AI systems 1) more educationally transparent and 20 more economically and environmentally
+                                 sustainable.
+                                 We first attempted to make a small local Qwen model serve as an assistant for questions
+                                 about applying the TEI P5 Guidelines. We provided 
+                                 Qwen with a Retrieval Augmented Generation (RAG) system built from the TEI P5 Guidelines,
+                                 
+                                 using XSLT to transform the guidelines into a neo4j knowledge graph. This approach
+                                 proved both bloated and disappointing: 
+                                 the model's conversion of structured XML data into word embeddings eroded the precision
+                                 of the original markup, 
+                                 and the outpus of promts reflected <q>hallucination</q> and inaccuracy. Learning from this failure, we
+                                 we came to realize that XML should be kept as XML, held apart from the language model's
+                                 internal machinery, 
+                                 and made accessible instead through a Model Context Protocol (MCP) server that allows
+                                 the SLM to 
+                                 query the TEI document tree directly using XPath.</p>
+                              <p id="d3e19">This <q>separation of concerns</q> between the generative model and the structured data 
+                                 it consults is framed as a principled, declarative approach to AI-assisted XML work,
+                                 
+                                 with the paper also gesturing toward Invisible XML (ixml) as a further avenue for
+                                 human- and machine-readable grammar. 
+                                 The later sections (still in progress) promise to detail the MCP scripting, reflect
+                                 on what an agentic model actually needs 
+                                 to function effectively, and explore what it means for a language model to <q>understand </q> XML at all.</p>
+                              <p id="d3e27"></p>
                            </details>
                            <details class="toc">
                               <summary>
                                  <h2 class="inline-heading">Table of Contents</h2>
                               </summary>
                               <dl>
-                                 <dt><span class="section"><a href="#d3e96" class="toc">Our Context: Studying Language Models in Digital Humanities</a></span></dt>
-                                 <dt><span class="section"><a href="#d3e289" class="toc">The <q>DigitAI</q> project with MCP: An Orientation for Markup People</a></span></dt>
-                                 <dt><span class="section"><a href="#d3e385" class="toc">Context Windows and Dimensionality: What is XML to a Language Model?</a></span></dt>
-                                 <dt><span class="section"><a href="#d3e395" class="toc">How much does an agent need?</a></span></dt>
-                                 <dt><span class="section"><a href="#d3e405" class="toc">How might Invisible XML be Helpful for AI training on Document Data?</a></span></dt>
-                                 <dt><span class="section"><a href="#d3e412" class="toc">Dialogues about Markup with an Small Language Model</a></span></dt>
-                                 <dt><span class="section"><a href="#d3e419" class="toc">Towards a Declarative Method for Working with Language Models: A separation of
+                                 <dt><span class="section"><a href="#d3e111" class="toc">Our Context: Studying Language Models in Digital Humanities</a></span></dt>
+                                 <dt><span class="section"><a href="#d3e304" class="toc">The <q>DigitAI</q> project with MCP: An Orientation for Markup People</a></span></dt>
+                                 <dt><span class="section"><a href="#d3e400" class="toc">Context Windows and Dimensionality: What is XML to a Language Model?</a></span></dt>
+                                 <dt><span class="section"><a href="#d3e410" class="toc">How much does an agent need?</a></span></dt>
+                                 <dt><span class="section"><a href="#d3e420" class="toc">How might Invisible XML be Helpful for AI training on Document Data?</a></span></dt>
+                                 <dt><span class="section"><a href="#d3e427" class="toc">Dialogues about Markup with an Small Language Model</a></span></dt>
+                                 <dt><span class="section"><a href="#d3e434" class="toc">Towards a Declarative Method for Working with Language Models: A separation of
                                           concerns</a></span></dt>
                               </dl>
                            </details>
@@ -327,7 +355,7 @@
                      </div>
                      <h5 class="author-email"><code class="email">&lt;<a class="email" href="mailto:eeb4@psu.edu">eeb4@psu.edu</a>&gt;</code></h5>
                      <div class="personblurb">
-                        <p id="d3e22">Elisa Beshero-Bondar explores and teaches document data modeling with the XML
+                        <p id="d3e37">Elisa Beshero-Bondar explores and teaches document data modeling with the XML
                            family of languages. She serves on the TEI Technical Council and is the founder
                            and organizer of the <a href="https://digitalmitford.org" class="link">Digital
                               Mitford project</a> and <a href="https://digitalmitford.github.io/DigMitCS/" class="link">its usually annual coding
@@ -347,7 +375,7 @@
                      </div>
                      <h5 class="author-email"><code class="email">&lt;<a class="email" href="mailto:michaelsimons624@gmail.com">michaelsimons624@gmail.com</a>&gt;</code></h5>
                      <div class="personblurb">
-                        <p id="d3e60">Michael Simons graduated in May 2026 with a degree in Digital Media, Arts, and
+                        <p id="d3e75">Michael Simons graduated in May 2026 with a degree in Digital Media, Arts, and
                            Technology (DIGIT) from Penn State Behrend. After two years of studying Computer
                            Science, he decided to pivot to Dr. Beshero-Bondar’s Digit program as it allowed
                            for greater creativity and a more focused path while still learning how to get
@@ -365,21 +393,49 @@
                      <summary>
                         <h2 class="inline-heading">Abstract</h2>
                      </summary>
-                     <p id="d3e11"></p>
-                     <p id="d3e12"></p>
+                     <p id="d3e11">
+                        
+                        This paper reflects on experiments to integrate Small Language Models (SLMs) with
+                        XML technologies
+                        in academic Digital Humanities work, and discusses the <q>DigitAI</q> project. The project is motivated by two goals, 
+                        making AI systems 1) more educationally transparent and 20 more economically and environmentally
+                        sustainable.
+                        We first attempted to make a small local Qwen model serve as an assistant for questions
+                        about applying the TEI P5 Guidelines. We provided 
+                        Qwen with a Retrieval Augmented Generation (RAG) system built from the TEI P5 Guidelines,
+                        
+                        using XSLT to transform the guidelines into a neo4j knowledge graph. This approach
+                        proved both bloated and disappointing: 
+                        the model's conversion of structured XML data into word embeddings eroded the precision
+                        of the original markup, 
+                        and the outpus of promts reflected <q>hallucination</q> and inaccuracy. Learning from this failure, we
+                        we came to realize that XML should be kept as XML, held apart from the language model's
+                        internal machinery, 
+                        and made accessible instead through a Model Context Protocol (MCP) server that allows
+                        the SLM to 
+                        query the TEI document tree directly using XPath.</p>
+                     <p id="d3e19">This <q>separation of concerns</q> between the generative model and the structured data 
+                        it consults is framed as a principled, declarative approach to AI-assisted XML work,
+                        
+                        with the paper also gesturing toward Invisible XML (ixml) as a further avenue for
+                        human- and machine-readable grammar. 
+                        The later sections (still in progress) promise to detail the MCP scripting, reflect
+                        on what an agentic model actually needs 
+                        to function effectively, and explore what it means for a language model to <q>understand </q> XML at all.</p>
+                     <p id="d3e27"></p>
                   </details>
                   <details class="toc">
                      <summary>
                         <h2 class="inline-heading">Table of Contents</h2>
                      </summary>
                      <dl>
-                        <dt><span class="section"><a href="#d3e96" class="toc">Our Context: Studying Language Models in Digital Humanities</a></span></dt>
-                        <dt><span class="section"><a href="#d3e289" class="toc">The <q>DigitAI</q> project with MCP: An Orientation for Markup People</a></span></dt>
-                        <dt><span class="section"><a href="#d3e385" class="toc">Context Windows and Dimensionality: What is XML to a Language Model?</a></span></dt>
-                        <dt><span class="section"><a href="#d3e395" class="toc">How much does an agent need?</a></span></dt>
-                        <dt><span class="section"><a href="#d3e405" class="toc">How might Invisible XML be Helpful for AI training on Document Data?</a></span></dt>
-                        <dt><span class="section"><a href="#d3e412" class="toc">Dialogues about Markup with an Small Language Model</a></span></dt>
-                        <dt><span class="section"><a href="#d3e419" class="toc">Towards a Declarative Method for Working with Language Models: A separation of
+                        <dt><span class="section"><a href="#d3e111" class="toc">Our Context: Studying Language Models in Digital Humanities</a></span></dt>
+                        <dt><span class="section"><a href="#d3e304" class="toc">The <q>DigitAI</q> project with MCP: An Orientation for Markup People</a></span></dt>
+                        <dt><span class="section"><a href="#d3e400" class="toc">Context Windows and Dimensionality: What is XML to a Language Model?</a></span></dt>
+                        <dt><span class="section"><a href="#d3e410" class="toc">How much does an agent need?</a></span></dt>
+                        <dt><span class="section"><a href="#d3e420" class="toc">How might Invisible XML be Helpful for AI training on Document Data?</a></span></dt>
+                        <dt><span class="section"><a href="#d3e427" class="toc">Dialogues about Markup with an Small Language Model</a></span></dt>
+                        <dt><span class="section"><a href="#d3e434" class="toc">Towards a Declarative Method for Working with Language Models: A separation of
                                  concerns</a></span></dt>
                      </dl>
                   </details>
@@ -389,27 +445,27 @@
                <div class="article">
                   <h1 class="article-title" id="d3e5">Balisage Paper: XML, MCP, and Language Models</h1>
                   <h2 class="subtitle">A Separation of Concerns</h2>
-                  <div class="section" id="d3e96">
+                  <div class="section" id="d3e111">
                      <h2 class="title" style="clear: both">Our Context: Studying Language Models in Digital Humanities</h2>
-                     <p id="d3e99">For the past year and a half, our small Digital Humanities lab team has been investigating
+                     <p id="d3e114">For the past year and a half, our small Digital Humanities lab team has been investigating
                         Small Language Models (SLMs) and how we can work with them on 
                         projects involving XML technologies. We find SLMs important to investigate in academic
                         contexts for two primary objectives:
                         
-                        <div class="orderedlist" id="d3e101">
+                        <div class="orderedlist" id="d3e116">
                            <ol style="list-style-type: decimal;">
-                              <li id="d3e102">
-                                 <p id="d3e103"><span class="ital">Education:</span> To design <q>explainable AI</q> systems that help us to practically understand how language models 
+                              <li id="d3e117">
+                                 <p id="d3e118"><span class="ital">Education:</span> To design <q>explainable AI</q> systems that help us to practically understand how language models 
                                     process, retrieve, and generate text;</p>
                               </li>
-                              <li id="d3e110">
-                                 <p id="d3e111"><span class="ital">Economy:</span> To design customized AI systems that can improve projects that require accurate 
+                              <li id="d3e125">
+                                 <p id="d3e126"><span class="ital">Economy:</span> To design customized AI systems that can improve projects that require accurate 
                                     data representation and quality control validation.</p>
                               </li>
                            </ol>
                         </div>
                         </p>
-                     <p id="d3e116">The first objective (Education) is daunting, especially in a humanities or Digital
+                     <p id="d3e131">The first objective (Education) is daunting, especially in a humanities or Digital
                         Humanities context. AI systems are not readily comprehensible 
                         by humans without some level of abstraction and analogy, or without learning by testing
                         and applying the systems to a research project.
@@ -425,8 +481,8 @@
                         Python and R applications that orient humanities scholars to statistical libraries
                         and methods for 
                         linguistic analysis, regular expressions, and applications of TEI XML encoding and
-                        processing.<sup class="fn-label"><a href="#d3e124" class="footnoteref" id="d3e124-ref">[1]</a></sup>.</p>
-                     <p id="d3e136">To understand the way language models process text in particles requires some perspective
+                        processing.<sup class="fn-label"><a href="#d3e139" class="footnoteref" id="d3e139-ref">[1]</a></sup>.</p>
+                     <p id="d3e151">To understand the way language models process text in particles requires some perspective
                         on the mathematical and statistical computations 
                         and embedding structures that provide the basis for next-token prediction in generative
                         AI systems. For decades, introductory
@@ -438,11 +494,11 @@
                         as we need to learn about how large language models work with 
                         text tokens in generative contexts, and how different these are from the classification
                         methods that we are more familiar with.</p>
-                     <p id="d3e141">In the context of Digital Humanities students learning about <q>Large-Scale Text Analysis</q> in the year 2026, we find ourselves trying to
+                     <p id="d3e156">In the context of Digital Humanities students learning about <q>Large-Scale Text Analysis</q> in the year 2026, we find ourselves trying to
                         connect with our foundations (in this case teaching with markup languages and Python)
                         and expanding horizons still with <q>hands-on</q>
                         applications.
-                        <sup class="fn-label"><a href="#d3e149" class="footnoteref" id="d3e149-ref">[2]</a></sup>
+                        <sup class="fn-label"><a href="#d3e164" class="footnoteref" id="d3e164-ref">[2]</a></sup>
                         Tutorials that aim to demonstrate how language models <q>work under the hood</q> are often not very helpful: They can be 
                         overly complex, requiring advanced computer science and matrix math to approach, or
                         too simplistic about vector embeddings (offering
@@ -458,7 +514,7 @@
                         of the next token that is the most certain match in autocompleting a sentence, 
                         to create <q>hooks</q> that manipulate how confidence and certainty are calculated, and to see that the
                         system is after all a technology that can be explored and manipulated
-                        even if we humans cannot see all its dimensional possibilities at once.<sup class="fn-label"><a href="#d3e171" class="footnoteref" id="d3e171-ref">[3]</a></sup>
+                        even if we humans cannot see all its dimensional possibilities at once.<sup class="fn-label"><a href="#d3e186" class="footnoteref" id="d3e186-ref">[3]</a></sup>
                         It should be emphasized that Cohen himself is a neuroscientist and former academic
                         but not in the humanities; yet his public social media release of the <q>LLM breakdown</q> 
                         series helps demonstrate a recognition that the complex math of LLMs can be made more
@@ -467,15 +523,15 @@
                         complex ideas and technologies, Cohen's notebooks help us to learn by working directly
                         with the code and give us ideas for projects that involve testing the models.
                         </p>
-                     <p id="d3e235">Regarding the second objective (Economy), universities and cultural heritage organizations
+                     <p id="d3e250">Regarding the second objective (Economy), universities and cultural heritage organizations
                         face severe budget constraints in the 2020s 
                         yet, paradoxically, increasing reliance on AI has resulted in the upscaling of <q>compute</q> GPU resources, 
                         and dependencies on datacenters impact our environment and human labor. When contracts
                         with AI tech companies are heavily promoted at universities, and the 
                         <q>cognitive offloading</q> of thinking, writing, and assessment to chatbots risks 
                         eroding rather than enhancing critical thinking and problem-solving skills, AI threatens
-                        the human labor of the academy and the efficacy of education.<sup class="fn-label"><a href="#d3e243" class="footnoteref" id="d3e243-ref">[4]</a></sup></p>
-                     <p id="d3e265">Looking at this grim picture from the vantage point of a small Digital Humanities
+                        the human labor of the academy and the efficacy of education.<sup class="fn-label"><a href="#d3e258" class="footnoteref" id="d3e258-ref">[4]</a></sup></p>
+                     <p id="d3e280">Looking at this grim picture from the vantage point of a small Digital Humanities
                         lab, we nevertheless recognize in AI an emerging technology that calls for serious
                         scholarly work, and 
                         we are researching language models as a powerful technology that can be tuned and
@@ -483,16 +539,16 @@
                         We hope our work with SLMs rather than LLMs demonstrates some ways to minimize the
                         resource footprint of generative AI models, finding ways to work with them on small-scale
                         systems without manufactured dependencies on
-                        data centers and water supplies.<sup class="fn-label"><a href="#d3e267" class="footnoteref" id="d3e267-ref">[5]</a></sup> We also hope our research helps to pry open 
+                        data centers and water supplies.<sup class="fn-label"><a href="#d3e282" class="footnoteref" id="d3e282-ref">[5]</a></sup> We also hope our research helps to pry open 
                         the proverbial <q>black box</q> software built on unknowable assemblages of text and media. We are finding that our
                         familiarity with concepts like <q>declarative programming</q> and 
                         a <q>separation of concerns</q> help us to find a way to work with AI as one technology balanced with the precision
                         tools of the XML stack.
                         </p>
                   </div>
-                  <div class="section" id="d3e289">
+                  <div class="section" id="d3e304">
                      <h2 class="title" style="clear: both">The <q>DigitAI</q> project with MCP: An Orientation for Markup People</h2>
-                     <p id="d3e295">As <q>markup people</q> ourselves, we are accustomed to a certain mystery in the underlying technologies
+                     <p id="d3e310">As <q>markup people</q> ourselves, we are accustomed to a certain mystery in the underlying technologies
                         that support 
                         processing declarative markup (e.g. how our own operating systems decide to execute
                         the template processing in our XSLT scripts).
@@ -504,7 +560,7 @@
                         works. But we also know that we cannot expect a language model to handle the things
                         we call <q>text</q> in the same way that we are used to
                         when we encode a markup tree, query it to retrieve, sort, conduct <q>string-surgery</q>, and make calculations with nodes.</p>
-                     <p id="d3e309">The mystery in the operations of a language model has everything to with its embeddings
+                     <p id="d3e324">The mystery in the operations of a language model has everything to with its embeddings
                         of word-particles in thousands of dimensions, and even
                         the idea that two language models trained on the same word data with the same number
                         of parameters and embeddings do not share the same
@@ -523,20 +579,20 @@
                         outside the resonant machinery of 
                         token prediction subject to temperature and impenetrable embedding layers with word-particles
                         shrouded in logarithmic numbers and clustered by cosine similarities.</p>
-                     <p id="d3e314">Encountering language models as marvelously speedy and profound yet vapid, mercurial,
+                     <p id="d3e329">Encountering language models as marvelously speedy and profound yet vapid, mercurial,
                         and dangerous, we want to at least try to  customize
                         <q>black box</q> technology to apply to difficult and time-consuming aspects of markup-based projects.
                         We want an AI assistant to help with 
                         finishing old projects from community volunteers with inconsistent markup, and to
                         aid students and colleagues with challenging questions like 
-                        how best to apply the many possibilities of TEI encoding from the TEI Guidelines.<sup class="fn-label"><a href="#d3e319" class="footnoteref" id="d3e319-ref">[6]</a></sup>
-                        We are trying to create a small langauge model system that we can deploy with a multi-core
+                        how best to apply the many possibilities of TEI encoding from the TEI Guidelines.<sup class="fn-label"><a href="#d3e334" class="footnoteref" id="d3e334-ref">[6]</a></sup>
+                        We are trying to create a small language model system that we can deploy with a multi-core
                         personal computer that might 
                         help with many different XML projects, to assist in finding information about each
                         project, discovering inconsistencies (beyond schema validation checks),
                         and answering questions in natural language about the data, enhanced by the ability
                         to execute XPath.</p>
-                     <p id="d3e329">So our Digital Humanities lab began a project in 2025 called <q>DigitAI</q> (named for our <q>Digit</q> program at Penn State Behrend). 
+                     <p id="d3e344">So our Digital Humanities lab began a project in 2025 called <q>DigitAI</q> (named for our <q>Digit</q> program at Penn State Behrend). 
                         DigitAI began as an experiment to supply a small-scale language model with Retrieval
                         Augmented Generation (RAG)–giving it query access to a structured 
                         "<q>ground truth</q>" knowledge base derived from the XML structure of the TEI P5 Guidelines. 
@@ -548,16 +604,16 @@
                         an immense and complex XML-node-based RAG from the TEI 
                         Guidelines at the 2025 DH2025 conference and TEI conference (as well as in an open-mike
                         presentation at Balisage 2025), but we knew at the time of those conferences 
-                        that our work was incomplete.<sup class="fn-label"><a href="#d3e343" class="footnoteref" id="d3e343-ref">[7]</a></sup> The RAG included only the chapters and paragraphs and 
+                        that our work was incomplete.<sup class="fn-label"><a href="#d3e358" class="footnoteref" id="d3e358-ref">[7]</a></sup> The RAG included only the chapters and paragraphs and 
                         element nodes with glosses and descriptions, and to be complete to our vision should
                         have included the Schematron constraints and model and attribute class relationships.
                         Preparing the TEI as a graph structure has been done before (citation needed), but
                         preparing it so very thoroughly was perhaps overkill that was not yet improving the
                         reliability of our Qwen model very much.</p>
-                     <p id="d3e359">Our first effort with preparing a RAG from the TEI Guidelines posed a serious problem
+                     <p id="d3e374">Our first effort with preparing a RAG from the TEI Guidelines posed a serious problem
                         of <q>code bloat</q>. 
                         We had prepared a knowledge graph in neo4j to store our carefully parsed content from
-                        the TEI Guidelines.<sup class="fn-label"><a href="#d3e364" class="footnoteref" id="d3e364-ref">[8]</a></sup> 
+                        the TEI Guidelines.<sup class="fn-label"><a href="#d3e379" class="footnoteref" id="d3e379-ref">[8]</a></sup> 
                         The preparation of the ideal RAG resource for us involved a complex XSLT transformation
                         of the TEI P5.xml document into neo4j's graph structure–converting 
                         every possible relationship of the paragraphs of the 
@@ -569,14 +625,14 @@
                         an abstracted and bloated version of the original XML document 
                         because we were writing XSLT to
                         
-                        <div class="orderedlist" id="d3e370">
+                        <div class="orderedlist" id="d3e385">
                            <ol style="list-style-type: decimal;">
-                              <li id="d3e371">
-                                 <p id="d3e372">Output the neo4j graph nodes and edge relationships of elements networked by paragraph
+                              <li id="d3e386">
+                                 <p id="d3e387">Output the neo4j graph nodes and edge relationships of elements networked by paragraph
                                     and chapter position across the TEI Guidelines, and</p>
                               </li>
-                              <li id="d3e374">
-                                 <p id="d3e375">Output a means for the neo4j graph to be queried by the LLM.</p>
+                              <li id="d3e389">
+                                 <p id="d3e390">Output a means for the neo4j graph to be queried by the LLM.</p>
                               </li>
                            </ol>
                         </div>
@@ -593,8 +649,8 @@
                         with 
                         reviewing the TEI Guidelines). But by autumn 2025 we found a better method to address
                         XML <span class="ital">as</span> XML and keeping it out of reach of the inner workings
-                        of langauge models.</p>
-                     <p id="d3e381">The MCP protocol introduced by Anthropic is now widely available in the open source
+                        of language models.</p>
+                     <p id="d3e396">The MCP protocol introduced by Anthropic is now widely available in the open source
                         community,
                         we can now design a new model infrastructure that allows an LLM to deploy a Model
                         Control Protocol (MCP) server, 
@@ -609,7 +665,7 @@
                         to safely contain the model, restricting its local access to specific directories,
                         or ideally to containerize it and separate it from sensitive data on our
                         computers. </p>
-                     <p id="d3e383">Our new challenge is determining how to provide a map of the TEI P5.xml tree structure
+                     <p id="d3e398">Our new challenge is determining how to provide a map of the TEI P5.xml tree structure
                         and enough example XPath scripts 
                         to retrieve relevant information about an element, attribute, or model class in the
                         TEI. As this is an area of expertise in our team and program, 
@@ -624,52 +680,52 @@
                         to retrieve the information. 
                         </p>
                   </div>
-                  <div class="section" id="d3e385">
+                  <div class="section" id="d3e400">
                      <h2 class="title" style="clear: both">Context Windows and Dimensionality: What is XML to a Language Model?</h2>
-                     <p id="d3e388">
+                     <p id="d3e403">
                         
                         
                         
                         </p>
-                     <p id="d3e393">....</p>
+                     <p id="d3e408">....</p>
                   </div>
-                  <div class="section" id="d3e395">
+                  <div class="section" id="d3e410">
                      <h2 class="title" style="clear: both">How much does an agent need?</h2>
-                     <p id="d3e398"> 
+                     <p id="d3e413"> 
                         
                         </p>
-                     <p id="d3e403">....</p>
+                     <p id="d3e418">....</p>
                   </div>
-                  <div class="section" id="d3e405">
+                  <div class="section" id="d3e420">
                      <h2 class="title" style="clear: both">How might Invisible XML be Helpful for AI training on Document Data?</h2>
-                     <p id="d3e408">Our AI systems are about humans-in-the-loop, Molly's point: ixml is very
+                     <p id="d3e423">Our AI systems are about humans-in-the-loop, Molly's point: ixml is very
                         human-readable as well as machine-readable! This is what declarative markup is for.
                         It
                         should be beneficial too for LLMs working in "natural language".</p>
-                     <p id="d3e410">....</p>
+                     <p id="d3e425">....</p>
                   </div>
-                  <div class="section" id="d3e412">
+                  <div class="section" id="d3e427">
                      <h2 class="title" style="clear: both">Dialogues about Markup with an Small Language Model</h2>
-                     <p id="d3e415">....</p>
-                     <p id="d3e417">....</p>
+                     <p id="d3e430">....</p>
+                     <p id="d3e432">....</p>
                   </div>
-                  <div class="section" id="d3e419">
+                  <div class="section" id="d3e434">
                      <h2 class="title" style="clear: both">Towards a Declarative Method for Working with Language Models: A separation of
                         concerns</h2>
-                     <p id="d3e422">DECLARING YOUR INTENTIONS is important for LLMs AND humans: writing schemas, grammars,
+                     <p id="d3e437">DECLARING YOUR INTENTIONS is important for LLMs AND humans: writing schemas, grammars,
                         AND MCP scripts can all be considered declarations together. The same textual data
                         can
                         be modeled in many ways in XML. The best approach will depend on the context and scope
                         of a project, whether you encode the page by page graphical layout, the relationship
                         between an illustration and surrounding text. </p>
-                     <p id="d3e424">There is also tremendous variability in the possible responses of a generative
+                     <p id="d3e439">There is also tremendous variability in the possible responses of a generative
                         language model to prompts. Does giving them access to tools produce anything like
                         a
                         singular, reproducible approach?</p>
                   </div>
                   <div class="footnotes"><br><hr width="100" align="left">
-                     <div id="d3e124" class="footnote">
-                        <p><sup class="fn-label"><a href="#d3e124-ref" class="footnoteref">[1]</a></sup> As of April 2026, 
+                     <div id="d3e139" class="footnote">
+                        <p><sup class="fn-label"><a href="#d3e139-ref" class="footnoteref">[1]</a></sup> As of April 2026, 
                            the search listing of tutorials involving <q>Artificial Intelligence</q> at  
                            <a href="https://programminghistorian.org/en/lessons/?search=artificial+intelligence" class="link">
                               <span class="ital">The Programming Historian</span></a> 
@@ -677,13 +733,13 @@
                            image classification, face and pattern recognition in historical photos, and manuscript
                            text recognition.</p>
                      </div>
-                     <div id="d3e149" class="footnote">
-                        <p><sup class="fn-label"><a href="#d3e149-ref" class="footnoteref">[2]</a></sup> <q>Large-Scale Text Analysis</q> is the title of a 
+                     <div id="d3e164" class="footnote">
+                        <p><sup class="fn-label"><a href="#d3e164-ref" class="footnoteref">[2]</a></sup> <q>Large-Scale Text Analysis</q> is the title of a 
                            Digital Humanities course for second- or third-year university students in the Digital
                            Media, Arts, and Technology program at Penn State Behrend</p>
                      </div>
-                     <div id="d3e171" class="footnote">
-                        <p><sup class="fn-label"><a href="#d3e171-ref" class="footnoteref">[3]</a></sup> Mike X. Cohen’s six-part <q>LLM breakdown</q> series (about large language models
+                     <div id="d3e186" class="footnote">
+                        <p><sup class="fn-label"><a href="#d3e186-ref" class="footnoteref">[3]</a></sup> Mike X. Cohen’s six-part <q>LLM breakdown</q> series (about large language models
                            or LLMs) is
                            publicly posted on Substack with accompanying Jupyter Notebooks that he strongly encourages
                            people to run as they read. 
@@ -700,27 +756,27 @@
                            <span class="ital">Teaching and Learning with Jupyter</span> (2019) <a href="https://jupyter4edu.github.io/jupyter-edu-book/" class="link">https://jupyter4edu.github.io/jupyter-edu-book/</a> 
                            and <a href="https://jupyter.org/" class="link">https://jupyter.org/</a>.</p>
                      </div>
-                     <div id="d3e243" class="footnote">
-                        <p><sup class="fn-label"><a href="#d3e243-ref" class="footnoteref">[4]</a></sup> Michael Gerlich, <q>AI Tools in Society: Impacts on Cognitive Offloading and the Future of Critical Thinking,</q> 
+                     <div id="d3e258" class="footnote">
+                        <p><sup class="fn-label"><a href="#d3e258-ref" class="footnoteref">[4]</a></sup> Michael Gerlich, <q>AI Tools in Society: Impacts on Cognitive Offloading and the Future of Critical Thinking,</q> 
                            <span class="ital">Societies</span> 2025, 15(1), 6, <a href="https://doi.org/10.3390/soc15010006" class="link">https://doi.org/10.3390/soc15010006</a>; and Ulises A. Mejias, 
                            <q>Artificial Intelligence as a Threat to Academic Labor: Who benefits when AI is introduced
                               into higher education?</q> 
                            <span class="ital">AAUP Academe Magazine</span> Winter 2026, 
                            <a href="https://www.aaup.org/issue/winter-2026/artificial-intelligence-threat-academic-labor" class="link">https://www.aaup.org/issue/winter-2026/artificial-intelligence-threat-academic-labor</a>.</p>
                      </div>
-                     <div id="d3e267" class="footnote">
-                        <p><sup class="fn-label"><a href="#d3e267-ref" class="footnoteref">[5]</a></sup> Regilme, Salvador Santino F, <q>Artificial Intelligence Colonialism: Environmental Damage, Labor Exploitation, and
+                     <div id="d3e282" class="footnote">
+                        <p><sup class="fn-label"><a href="#d3e282-ref" class="footnoteref">[5]</a></sup> Regilme, Salvador Santino F, <q>Artificial Intelligence Colonialism: Environmental Damage, Labor Exploitation, and
                               Human Rights Crises in the Global South</q>,
                            <span class="ital">SAIS Review of International Affairs</span> 44:2 (2024), 75-92 
                            <a href="https://dx.doi.org/10.1353/sais.2024.a950958" class="link">https://dx.doi.org/10.1353/sais.2024.a950958</a>.</p>
                      </div>
-                     <div id="d3e319" class="footnote">
-                        <p><sup class="fn-label"><a href="#d3e319-ref" class="footnoteref">[6]</a></sup> TEI Consortium, eds. 
+                     <div id="d3e334" class="footnote">
+                        <p><sup class="fn-label"><a href="#d3e334-ref" class="footnoteref">[6]</a></sup> TEI Consortium, eds. 
                            <span class="ital">TEI P5: Guidelines for Electronic Text Encoding and Interchange</span>, 4.11.0 18 February 2026, 
                            TEI Consortium, <a href="http://www.tei-c.org/Guidelines/P5/" class="link">http://www.tei-c.org/Guidelines/P5/</a>.</p>
                      </div>
-                     <div id="d3e343" class="footnote">
-                        <p><sup class="fn-label"><a href="#d3e343-ref" class="footnoteref">[7]</a></sup> Alexander C. Fisher, Hadleigh Jae Bills, and Elisa Beshero-Bondar, 
+                     <div id="d3e358" class="footnote">
+                        <p><sup class="fn-label"><a href="#d3e358-ref" class="footnoteref">[7]</a></sup> Alexander C. Fisher, Hadleigh Jae Bills, and Elisa Beshero-Bondar, 
                            <q>DigitAI for Localized TEI / XML Assistance: An experiment with Small-Scale AI,</q> presented at DH2025, Lisbon, 16 July 2025
                            <a href="https://slides.com/elisabeshero-bondar/digitai-dh25" class="link">https://slides.com/elisabeshero-bondar/digitai-dh25</a>. 
                            The GitHub repository for the early stage of the project including our preliminary
@@ -729,8 +785,8 @@
                            New work in 2026 continues at <a href="https://github.com/newtfire/digitai" class="link">https://github.com/newtfire/digitai</a> 
                            which stores the original repo as a submodule.</p>
                      </div>
-                     <div id="d3e364" class="footnote">
-                        <p><sup class="fn-label"><a href="#d3e364-ref" class="footnoteref">[8]</a></sup> neo4J on knowledge graphs: 
+                     <div id="d3e379" class="footnote">
+                        <p><sup class="fn-label"><a href="#d3e379-ref" class="footnoteref">[8]</a></sup> neo4J on knowledge graphs: 
                            <a href="https://neo4j.com/use-cases/knowledge-graph/" class="link">https://neo4j.com/use-cases/knowledge-graph/</a></p>
                      </div>
                   </div>
