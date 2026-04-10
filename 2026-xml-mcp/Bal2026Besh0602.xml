@@ -236,8 +236,8 @@
                    New work in 2026 continues at <link xlink:href="https://github.com/newtfire/digitai">https://github.com/newtfire/digitai</link> 
                    which stores the original repo as a submodule.</para></footnote> The RAG included only the chapters and paragraphs and 
            element nodes with glosses and descriptions, and to be complete to our vision should have included the Schematron constraints and model and attribute class relationships.
-           Preparing the TEI as a graph structure has been done before [CITATION NEEDED], but preparing it so very thoroughly was perhaps overkill that was not yet improving the
-           reliability of our Qwen model very much.</para>
+           But the idea to prepare the TEI P5.xml as a graph structure so very thoroughly was perhaps overkill that would not improve the
+           reliability of our local language model in addressing questions about TEI XML encoding.</para>
         <para>Our first effort with preparing a RAG from the TEI Guidelines posed a serious problem of <quote>code bloat</quote>. 
             We had prepared a knowledge graph in neo4j to store our carefully parsed content from the TEI Guidelines.<footnote><para>neo4J on knowledge graphs: 
                     <link xlink:href="https://neo4j.com/use-cases/knowledge-graph/">https://neo4j.com/use-cases/knowledge-graph/</link></para></footnote> 
@@ -251,13 +251,13 @@
                 <listitem><para>Output the neo4j graph nodes and edge relationships of elements networked by paragraph and chapter position across the TEI Guidelines, and</para></listitem>
                 <listitem><para>Output a means for the neo4j graph to be queried by the LLM.</para></listitem>
             </orderedlist>
-          Worse yet, for all the painstaking effort of preparing the data with XSLT, our preliminary RAG did not provide very much improvement on an unaided Qwen model when
-          prompted with questions about the TEI Guidelines: we would still see hallucinated elements. We had serious concerns about whether and how reliably information was pulled 
-          from our RAG resource. We realized a very serious problem: the model was relying on word embeddings to translate the information it received from the graph RAG, and the conversion to word embeddings
-          did not improve on the neo4j database or the XML data structure. We planned to complete the RAG graph of the TEI P5 anyway as a resource in its own right (and we may yet do so to assist with 
-          reviewing the TEI Guidelines). But by autumn 2025 we found a better method to address XML <emphasis>as</emphasis> XML and keeping it out of reach of the inner workings
-        of language models.</para>
-         <para>The Model Context Protocol (MCP) introduced by Anthropic is now widely available in the open source community,
+          Worse yet, for all the painstaking effort of preparing the data with XSLT, our preliminary RAG did not provide very much improvement on an unaided Qwen model. When
+          prompted with questions about the TEI Guidelines, the model would still deliver hallucinated elements. We had serious concerns about whether and how reliably information was pulled 
+          from our RAG resource. We realized a very serious problem: the model was relying on word embeddings to translate the information it received from the graph RAG, 
+          and the conversion to word embeddings did not improve on the neo4j database or the XML data structure. We planned to complete the RAG graph of the TEI P5 anyway as a resource 
+          in its own right (and we may yet do so to assist with reviewing the TEI Guidelines).</para>
+        <para>By autumn 2025 we found a better method to address XML <emphasis>as</emphasis> XML and keeping it out of reach of the inner workings
+            of language models. The Model Context Protocol (MCP) introduced by Anthropic is now widely available in the open source community,
              we can now design a new model infrastructure that allows an LLM to deploy an MCP server, 
              which permits it to address the TEI XML tree data structure directly with XPath queries to XML nodes. 
              When our team began reading about MCP, we realized that XML data need not be restructured to be available to an AI system.
@@ -265,100 +265,223 @@
              code scripts we would provide its MCP server. We would need to make it an agent, and this involved a new level of risk, and a necessity to learn how 
              to safely contain the model, restricting its local access to specific directories, or ideally to containerize it and separate it from sensitive data on our
              computers. </para>
-        <para>Our new challenge is determining how to provide a map of the TEI P5.xml tree structure and enough example XPath scripts 
+        <para>Our current challenge is determining how to provide a map of the TEI P5.xml tree structure and enough example XPath scripts 
             to retrieve relevant information about an element, attribute, or model class in the TEI. As this is an area of expertise in our team and program, 
              we are confident that if we can teach humans to write XPath, we can script what is needed for an agentic AI system to access an XPath MCP service (e.g. Skywork AI 2025). 
             We are now working to create an agentic system that may read XML directly with XPath rather than having to translate intricate XML data structures into a graph database. 
-            Developing an agentic localized model also facilitates reporting about when and what resources the model is consulting as well as what XPath expressions it deploys to retrieve the information. 
+            Developing an agentic localized model also facilitates reporting about when and what resources the model is consulting as well as what XPath expressions
+            it deploys to retrieve the information and what XSLT scripts it devises to transform it on request. 
      </para>
         
     </section>
 
     <section>
         <title>What is XML to a Language Model and how much does an agent need?</title>
-        <!--Beshero-Bondar previous Balisage paper on LLMs failing to be able to measure or even accurately represent differences in variant strings:
-            this was a first step in recognizing that LLMs don't work with texts as fixed objects: the fluidity of generative prediction interferes with 
-            reading strings as strings. Yet we apply LLMs as vigilant debuggers, correctors of encoding errors when a program fails to run. 
-            The ability to recognize common errors is separate from the precise methods of measuring 
-            -->
-        <para>Our experiments with preparing an MCP script are still preliminary at the time of this writing, but we have prepared a Python-based server with some
-            assistance from Claude, which is apparently executing transformations correctly but also (at this stage) troubling us because it is relying minimally on our
-            example scripts. Apparently giving code execution tools and simple instructions to the MCP is working for performing transformations of the kind we exemplify here.
-            
-            <!-- SCRIPT THE BACK-AND-FORTH WITH LOCAL DESKTOP CLAUDE, and SHOW TRANSFORMATIONS -->
-            
-            
-           <!-- HIGHLIGHT THE EXECUITVE FUNCTIONING PARTS OF THE MCP> -->
-            
-        </para>
-        
         <para>Perhaps learning to use
             AI effectively is understanding its limits regarding structured systems like XML. In our experience as a 
             lab with primarily declarative markup expertise, we approached this project as people who
-            understood very little about AI but a lot about XML. It is still puzzling to us that AI
-            cannot always inherently understand the beautiful tree structure of an XML document. When the foundation of meaningful understanding 
+            understood very little about AI but a lot about XML. It is still puzzling to us that a language model with all its
+            internal dimensionality cannot inherently understand the tree structure of an XML document. When the foundation of meaningful understanding 
             is based on sequential <quote>chunks</quote> of tokenized text, we cannot forget that tags are just tokens to internal 
-            workings of a language model.</para>
+            workings of a language model. Nevertheless, when asked to act upon element nodes, and given agency and software to do so,
+        a language model demonstrates competence in scripting code and suggesting improvements.</para>
+        <para>Since we were entirely new to MCP, we switched from our SLM Qwen to the much larger Claude Desktop application to start our learning process. 
+        Partly in this we were learning about MCP via Anthropic through Claude. We began by following Claude's suggestions for a starting
+        MCP Server Protocol delivered by a Python script that supplies access to Saxon processing tools and 
+        jingtrang for RelaxNG schema validation.</para>
         
-        <para>Nevertheless, we found that when we constrained the AI model with specific tasks and then gave it the
-            XML-processing tools to complete those tasks, it shows promise.</para> 
-        
-        <para>We also have a
-            constant emphasis on gathering log data from the AI model, as well as its processes.
+        <para>We established a protocol of gathering log data from the desktop SLM, as well as its processes.
             This helps ensure that not only is it doing the processing correctly (i.e. how we want
             it to) but that we are able to learn how it <quote>thinks</quote> which then helps us better equip
             it...to help us! This aligns closely with the declarative mindset we have in Digit
             working with XML technologies, where clarity of structure and intention leads to more
             reliable and reproducible outcomes.</para>
-        <para><!-- Block out the MCP script and functions that show examples of XPath, XQuery, and XSLT. --> 
-            <!-- Discuss what it does in context with our tests so far.  -->
-            
-            
-          
-            
-            
-    
+        <para>We decided to begin with some inconsistent XML markup for a recipe, purposefully made invalid to its schema, in order
+        to test the capacities of our desktop agent to discover validation errors and recommend, and then process corrections.
+        At first we struggled with the field containment systems of our agentic language model: It could not read relative filepaths and could 
+        not locate the schema. We watched the agent rapidly attempt many strange things, including attempt to access the Chrome browser developer tools trying to read filepaths outside its internal mounted system, and refused
+        to upload files into its chat interface. Eventually we learned that the problem with its reading filepaths had to do with a certain
+        Python assumption of how to open and read files, one that we are familiar with from reading and opening Python files conventionally
+        with lines like these:
+            <programlisting xml:space="preserve">
+with open(self.xml_path, 'r', encoding='utf-8') as f:
+    xml_text = f.read()
+self.xml_node = self.saxon_proc.parse_xml(xml_text=xml_text)
+            </programlisting>
+        f.read() would pass the XML as a text string rather than a document tree. 
+        Changing that to:
+        
+        <programlisting xml:space="preserve">
+self.xml_node = self.saxon_proc.parse_xml(xml_file_name=str(self.xml_path))
+        </programlisting>
+        neatly resolved a serious pathing problem by delivering the file directly to the Saxon processors.
+       Ensuring the agentic model can read filepaths and access only the files and software you intend seems a matter of 
+       security, as the model seems motivated to try and try and try again when faced with failure. The capacity to continue 
+       attempting related kinds of actions, exceeding prescripted bounds, may be part of the 
+       natural language processing powers: not just hallucinating speculative responses but acting on speculations in one's 
+       file system. Seeing this behavior firsthand urges caution: we are moving to contain the agentic SLM in Docker instead of
+       treating it like most other software whose passivity we take for granted.
         </para>
-        <para>....</para>
-    </section>
-    <section>
-        <title>Dialogues about Markup with an Small Language Model</title>
-        <para>....</para>
-        <para>....</para>
-    </section>
-    <section>
-        <title>How might Invisible XML be Helpful for AI training on Document Data?</title>
-        <para>Our AI systems are about humans-in-the-loop, Molly's point: ixml is very
-            human-readable as well as machine-readable! This is what declarative markup is for. It
-            should be beneficial too for LLMs working in "natural language".</para>
-        <para> </para>
+      <para>Establishing the means to read local filepaths, find the schema, and execute jingtrang for schema validation 
+          made for a more tranquil and less surprising and impulsive experience with the SLM. When asked to correct and inconsistency,
+          it will run the XSLT identity transforamtion tool, and follow up by validating the results with Relax NG and continuing to 
+          repair. We log its transformation scripts and find that it is now building on our example identity transformations, scripting
+          in our style of applying <code>&lt;xsl:mode on-no-match="shallow-copy"/></code> without inserting the old-fashioned
+          identity transformation by copy of elements and attributes and processing instructions from XSLT 2.0 
+          that it had used when it was not properly reading the MCP examples we provided.
+      </para>
+        <figure>
+            <title>MCP Python Function to Generate Correction with XSLT</title>
+            <para>
+                <programlisting>
+ def _generate_correction_xslt(self, corrections: list[dict]) -&gt; str:
+        """Generate XSLT 3.0 stylesheet from correction operations"""
+        templates = []
+
+        for i, correction in enumerate(corrections):
+            op = correction.get("operation")
+
+            if op == "update":
+                xpath = correction["xpath"]
+                updates = correction["updates"]
+
+                # Generate template for update
+                template = f"""
+    &lt;xsl:template match="{xpath}" priority="{i + 10}"&gt;
+        &lt;xsl:copy&gt;
+            &lt;xsl:copy-of select="@*"/&gt;
+"""
+                if "attributes" in updates:
+                    for attr, value in updates["attributes"].items():
+                        template += f'&lt;xsl:attribute name="{attr}"&gt;{value}&lt;/xsl:attribute&gt;\n'
+
+                if "text" in updates:
+                    template += f'&lt;xsl:text&gt;{updates["text"]}&lt;/xsl:text&gt;\n'
+                else:
+                    template += '&lt;xsl:apply-templates select="node()"/&gt;\n'
+
+                template += """&lt;/xsl:copy&gt;
+    &lt;/xsl:template&gt;
+"""
+                templates.append(template)
+
+            elif op == "delete":
+                xpath = correction["xpath"]
+                templates.append(f'    &lt;xsl:template match="{xpath}"/&gt;\n')
+
+        # Build complete stylesheet
+        xslt = f"""&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;xsl:stylesheet version="3.0" 
+xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
+     &lt;xsl:mode on-no-match="shallow copy"/&gt;
+    &lt;xsl:template match="/"&gt;
+       &lt;xsl:apply-templates/&gt;
+    &lt;/xsl:template&gt;
+
+    &lt;!-- Correction templates --&gt;
+{''.join(templates)}
+&lt;/xsl:stylesheet&gt;
+"""
+        return xslt                    
+                </programlisting>
+            </para>
+        </figure>
+        <para>There is something perverse about seeing XSLT written into formatted strings as shown in the 
+            preceding code block. We asked ourselves during a project meeting in April whether the Python template
+            provided us by Claude might be unnecessary. Why not just deliver the XSLT as XSLT? The professor among us
+            asked as much to a Claude Opus 4.6 Extended session on the internet (not to the desktop SLM, because we have
+            been thinking of the agentic AI as a system we are designing, while we treat the internet manifestation of a large language
+            model as a distanct guide, tutor, and manifester of starter scripts for our adaptation. 
+            
+           <figure>
+               <title>April 2026 Conversation about MCP with Claude Opus 4.6 Extended</title>
+               <blockquote><para><emphasis>Elisa:</emphasis> Here's maybe a silly question, 
+                       coming from an XML processing context. I wonder whether serving XML processing
+                       and validating tools really requires Python for delivery to the desktop agent?</para>
+               </blockquote>
+               <blockquote>
+                   <para><emphasis>Claude Opus:</emphasis> 
+                       <emphasis role="ital">Examined whether Python intermediary was necessary for XML tool delivery</emphasis>
+                       Not a silly question at all — it's a really good architectural observation. 
+                       You're essentially running two Java tools (Saxon-HE and Jing) through Python wrappers 
+                       (saxonche via GraalVM, pyjing via subprocess), and then wrapping that in a Python MCP server. 
+                       That's a lot of layers, and each one has introduced friction — the venv activation issue, 
+                       pyjing not being on PATH, the base-uri problem from how saxonche was being called.</para>
+                       
+                       <para>MCP is just JSON-RPC over stdio. The server can be written in any language. So your options are roughly:</para>
+                       
+                       <para><emphasis>Java/Kotlin</emphasis> would be the most natural fit. Saxon-HE and Jing are both Java libraries
+                           natively — no wrappers, no subprocess calls, no GraalVM bridge. You'd call net.sf.saxon.s9api and 
+                           com.thaiopensource.validate directly. The tradeoff is that there isn't an official MCP SDK for Java yet,
+                           so you'd be implementing the stdio JSON-RPC protocol yourself (which is straightforward but some boilerplate).</para>
+                       
+                       <para><emphasis>TypeScript/Node.js</emphasis> has a mature MCP SDK and is well-supported by Claude Desktop. 
+                       Saxon-JS exists for this environment, though it's not feature-identical to Saxon-HE (it handles XSLT 3.0 and XPath 3.1 well,
+                       but XQuery support is limited). Jing would still need to be called as a subprocess.</para>
+                       
+                       <para><emphasis>Python</emphasis> (what you have now) has the advantage of being done — the server works. 
+                       The pain points have been environment plumbing, not fundamental design problems.</para>
+                       
+                       <para>If I were starting fresh with your stack, I'd seriously consider Java. Both your core tools are native Java, 
+                       and the MCP protocol is simple enough that the lack of an SDK isn't a big hurdle. 
+                       But given that you have a working Python server now, the pragmatic call depends on 
+                       how much the wrapper friction is going to keep biting you versus the cost of a rewrite. What's your comfort level with Java?
+                       </para>
+               
+               </blockquote></figure>
+        </para>    
+        <para>The authors’ low comfort level with Java notwithstanding, the idea of preventing the annoying
+            <quote>biting</quote> of <quote>wrapper friction</quote> seems like an invitation to attempt this with some guidance.
+           Claude’s review of my recent flummoxing problems over paths and activation of scripts was apt, but up to this point we had presumed
+      that one trains, refines, augments, and supplies tools to a language model through the lingua franca of Python. Choosing the programming idiom by which to
+      implement XML stack validation, search, and transformation is opening new learning paths for us in our lab.
+        </para>
+        <para>While testing the freshly revised Python MCP with Claude Desktop, as soon as it was able to follow filepaths (dangerously),
+        we found it capable and willing to update its own configuration script, storing in JSON instructions to itself that reinforced
+        our prompt to save both outputs and transformation scripts in set locations. We became aware that the puppet we thought 
+        we were controlling was now pulling its own strings.</para>
+        <para>Interacting with Claude has been a compelling invitation to learn more about how MCP can work, and we find ourselves
+        wondering about the declarative experience: We declare we want a system with certain capacities and using specific libraries 
+        (saxonche, jingtrang), and we continue thinking aloud about how it could be improved, and the AI's responses, reflecting our
+        interests, open new avenues of exploration. We need to remember that one of our next steps is to test Qwen with MCP or try other language models,
+        perhaps the PleIAs models trained on the open source common_corpus data. Will a local SLM perform as smoothly as 
+        Claude Desktop with XML stack processing? And how will it work to containerize the project and share it with others via Docker?</para>
+        <para>TO BE CONTINUED! These are research questions our DH lab intends to investigate in the next months and hopes to share at the 
+        Balisage 2026 conference (and present in updated form in this paper. For now, we move swiftly to our conclusion, reflecting about 
+        what we are learning of a <quote>separation of concerns</quote> in bringing language models in contact with XML.</para>
     </section>
    
     <section>
         <title>Towards a Declarative Method for Working with Language Models: A separation of
             concerns</title>
-        <para>DECLARING YOUR INTENTIONS is important for LLMs AND humans: writing schemas, grammars,
-            AND MCP scripts can all be considered declarations together. The same textual data can
-            be modeled in many ways in XML. The best approach will depend on the context and scope
+        <para>Declaring one's intentions is important for langugage models and humans alike. 
+            Writing schemas, grammars, and MCP scripts may perhaps all be considered declarations together. 
+            Declaring intentions leads to specific formulations that depend on the context and scope
             of a project, whether you encode the page by page graphical layout, the relationship
-            between an illustration and surrounding text. </para>
-        <!-- Reflect on the capacity to model textual data with ixml and remix and traverse information from nodes.
-        The ordinary way of chunking tokens based on sequence and the calculations of next-token prediction via vector embeddings
-        (cite the Cohen readings) is impressive for the dimensional possibilies: we can't think in terms of those dimensions. By comparison,
-        traversing node trees fits more easily in a finite human imagination than hundreds and thousands of dimensions. And yet, we have
-        capacity to express and define relationships with XML, and with structured markup, we can deliver meaningful node packages when a project
-        like a scholarly edition requires precision and quality control.
-        -->
+            between an illustration and surrounding text.</para>
+     
+        <para>The ordinary way of chunking tokens based on sequence and the calculations of next-token prediction via vector embeddings
+        is impressive for its endless variety of dimensional possibilies. By contrast,
+        traversing XML node trees fits more easily in a finite human imagination than hundreds and thousands of dimensions. And yet, we have
+        powerful capacity to express and define relationships with structured markup, so we can deliver meaningful node packages when a project
+        like a scholarly edition requires precision and quality control.</para>
         <para>There is also tremendous variability in the possible responses of a generative
             language model to prompts. Does giving them access to tools produce anything like a
             singular, reproducible approach?</para>
             <para>Perhaps AI in
             Digital Humanities education doesn’t have to be as much about understanding model
             architectures, but instead should emphasize hands-on experimentation, critical
-            evaluation of outputs, and an awareness of when <emphasis>not</emphasis> to rely on AI.
-            Instead of replacing our existing workflows, we see how AI can responsibly and
-            effectively operate within them.
-        
+            evaluation of outputs, and an awareness of when <emphasis>not</emphasis> to rely on AI, and when its formidable powers
+                to seek associations and define new methods and pathways put us and our computers at risk of security hazards.
+            Instead of replacing our existing workflows, perhaps with an appropriate separation of concers, 
+            we can see how AI can responsibly and effectively operate within the scopes we set.
+        </para>
+        <para>In course of developing this paper, we have recognized that the old programming concept of a <quote>separation of concerns</quote>
+        familiar to us from functional programming can guide the structures we design and enhance with language models.
+        Giving the model access, yet keeping the XML apart from its internal tokenized embedding layers is one separation of concerns, and 
+        limiting the need and capacity of a language model to access one's operating system is another. Perhaps the most important separation of concerns for us
+        to keep in view is the education of our  scholars and lab assistants in refining the tools to fit our tasks, rather than
+        letting the tools shape those tasks for us on the terms by which they were originally designed.
         </para>
        
     </section>
