@@ -621,14 +621,6 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
         <para>There is also tremendous variability in the possible responses of a generative
             language model to prompts. Does giving them access to tools produce anything like a
             singular, reproducible approach?</para>
-        <para>Perhaps AI in Digital Humanities education doesn’t have to be as much about
-            understanding model architectures, but instead should emphasize hands-on
-            experimentation, critical evaluation of outputs, and an awareness of when
-                <emphasis>not</emphasis> to rely on AI, and when its formidable powers to seek
-            associations and define new methods and pathways put us and our computers at risk of
-            security hazards. Instead of replacing our existing workflows, perhaps with an
-            appropriate separation of concerns, we can see how AI can responsibly and effectively
-            operate within the scopes we set. </para>
         <para>In course of developing this paper, we have recognized that the old programming
             concept of a <quote>separation of concerns</quote> familiar to us from functional
             programming can guide the structures we design and enhance with language models. Giving
