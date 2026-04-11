@@ -26,11 +26,13 @@
                 using XPath and related XML stack technologies.</para>
             <para>In this paper, we propose a <quote>separation of concerns</quote> (between the
                 generative model and the structured data it consults) as a principled, declarative
-                approach to AI-assisted XML work. The paper also gestures toward Invisible XML
-                (ixml) as a further avenue for human- and machine-readable grammar. The later
-                sections (still in progress) promise to detail the MCP scripting, reflect on what an
-                agentic model actually needs to function effectively, and explore what it means for
-                a language model to <quote>understand </quote> XML at all.</para>
+                approach to AI-assisted XML work. Over the next months, we expect to develop more
+                about the the MCP scripting and containerizing process and discuss our work on
+                testing and modifing our system with TEI XML projects, preparing a containerized
+                system for our project to run safely in controlled conditions on personal computers,
+                and a possible incorporation of invisible XML grammars in preparing and testing
+                material for our XML-MCP system. This work continues in the summer before the
+                Balisage 2026 conference.</para>
             <para/>
 
         </abstract>
@@ -610,28 +612,37 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
             Declaring intentions leads to specific formulations that depend on the context and scope
             of a project, whether you encode the page by page graphical layout, the relationship
             between an illustration and surrounding text.</para>
-
-        <para>The ordinary way of chunking tokens based on sequence and the calculations of
-            next-token prediction via vector embeddings is impressive for its endless variety of
-            dimensional possibilies. By contrast, traversing XML node trees fits more easily in a
-            finite human imagination than hundreds and thousands of dimensions. And yet, we have
-            powerful capacity to express and define relationships with structured markup, so we can
-            deliver meaningful node packages when a project like a scholarly edition requires
-            precision and quality control.</para>
-        <para>There is also tremendous variability in the possible responses of a generative
-            language model to prompts. Does giving them access to tools produce anything like a
-            singular, reproducible approach?</para>
+        <para>Our DH lab has been working between two different cultures of digital text: the
+            documentary markup culture and the natural language processing culture. The operations
+            of language models are fascinating for ther endless variety of dimensional possibilities
+            working over hundreds or thousands of vectors even in an SLM. Yet the availability of
+            all those possibilities makes them generate irreproducible results when applied to
+            projects where reliability and accuracy are expected. By contrast, traversing XML node
+            trees fits more easily in a finite human imagination than hundreds and thousands of
+            dimensions. We have powerful capacity to express and define relationships with
+            structured markup, so we can deliver meaningful node packages when a project like a
+            scholarly edition requires precision and quality control.</para>
+        <para>When we bring these two cultures together, declarative markup technologies may be
+            helping us to define our terms for controlling and customizing systems for specialized
+            projects. Our work with modeling grammars and schemas is definitional, and when we
+            instruct an AI agent to apply a validation step and inspect the results before making a
+            recommendation, we are then bringing it into a culture whose rules we have carefully
+            defined. When the AI works within those parameters, it may then apply its considerable
+            powers of generative natural language processing to suggest what is incomplete, or even
+            help us to refine our scripts to improve and complete our projects. Our role in
+            declaring our parameters is defining the boundaries within which we want AI to work. We
+            are defining the terms by which the language model system will function most efficiently
+            and reliably within the rule-based architecture that we have declared. from </para>
         <para>In course of developing this paper, we have recognized that the old programming
             concept of a <quote>separation of concerns</quote> familiar to us from functional
             programming can guide the structures we design and enhance with language models. Giving
             the model access, yet keeping the XML apart from its internal tokenized embedding layers
             is one separation of concerns, and limiting the need and capacity of a language model to
-            access one's operating system is another. Perhaps the most important separation of
-            concerns for us to keep in view is the education of our scholars and lab assistants in
-            refining the tools to fit our tasks, rather than letting the tools shape those tasks for
-            us on the terms by which they were originally designed. </para>
-        <para>Perhaps AI in Digital Humanities education doesn’t have to be as much about
-            understanding model architectures, but instead should emphasize hands-on
+            access one's operating system is another.</para>
+        <para>Perhaps the most important separation of concerns for us to keep in view is the
+            education of our scholars and lab assistants in refining the tools to fit our tasks,
+            rather than letting the tools shape those tasks for us on the terms by which they were
+            originally designed. AI in Digital Humanities education should emphasize hands-on
             experimentation, critical evaluation of outputs, and an awareness of when
                 <emphasis>not</emphasis> to rely on AI, and when its formidable powers to seek
             associations and define new methods and pathways put us and our computers at risk of
