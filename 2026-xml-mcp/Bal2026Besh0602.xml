@@ -19,20 +19,19 @@
                 transform the guidelines into a neo4j knowledge graph. This approach proved both
                 bloated and disappointing: the model's conversion of structured XML data into word
                 embeddings eroded the precision of the original markup, and the outputs of prompts
-                reflected <quote>hallucination</quote> and inaccuracy. Learning from this failure,
-                we came to realize that XML should be kept as XML, held apart from the language
+                reflected <quote>hallucination</quote> and inaccuracy.</para>
+            <para>Learning from this failure, we came to realize that XML should be kept as XML, held apart from the language
                 model's internal machinery, and made accessible instead through a Model Context
                 Protocol (MCP) server that allows the SLM to query the TEI document tree directly
-                using XPath and related XML stack technologies.</para>
-            <para>In this paper, we propose a <quote>separation of concerns</quote> (between the
+                using XPath and related XML stack technologies. We have been experimenting with 
+                MCP scripting and evaluating how well different language
+                models apply XPath, XSLT, and XQuery parsers, giving them agency to evaluate and 
+                contribute to XML and TEI XML projects. Much of our learning process has
+                been in preparing containerized system with Docker for our project to run safely in 
+                controlled conditions on personal computers, and to share with others across platforms.
+                Reflecting on our experience, we propose a <quote>separation of concerns</quote> (between the
                 generative model and the structured data it consults) as a principled, declarative
-                approach to AI-assisted XML work. Over the next months, we expect to develop more
-                about the the MCP scripting and containerizing process and discuss our work on
-                testing and modifing our system with TEI XML projects, preparing a containerized
-                system for our project to run safely in controlled conditions on personal computers,
-                and a possible incorporation of invisible XML grammars in preparing and testing
-                material for our XML-MCP system. This work continues in the summer before the
-                Balisage 2026 conference.</para>
+                approach to AI-assisted XML work. </para>
             <para/>
 
         </abstract>
