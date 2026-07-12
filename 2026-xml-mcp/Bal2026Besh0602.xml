@@ -175,9 +175,15 @@
             </footnote> Tutorials that aim to demonstrate how language models <quote>work under the
                 hood</quote> are often not very helpful: They can be overly complex, requiring
             advanced computer science and matrix math to approach, or too simplistic about vector
-            embeddings (offering sometimes embarrassing nonsense formulae like <quote>King - Man +
+            embeddings (offering problematic nonsense formulae like <quote>King - Man +
                 Woman = Queen</quote> as an explanation of how a language model calculates relative
-            semantic positions of one token in relation to another).</para>
+            semantic positions of one token in relation to another).<footnote>
+                <para>On the limitations of this popular formula see Aleksandr Drozd, Anna Gladkova, and Satoshi Matsuoka, <quote>Word Embeddings, Analogies, and Machine Learning:
+                        Beyond King - Man + Woman = Queen</quote>, <emphasis role="ital">Proceedings of COLING 2016, 
+                            the 26th International Conference on Computational Linguistics: Technical Papers</emphasis> (Osaka, Japan, December 11-17 2016)
+                    pages 3519–3530, 
+                    <link xlink:href="https://aclanthology.org/C16-1332.pdf">https://aclanthology.org/C16-1332.pdf</link>.</para>
+            </footnote></para>
         <para>A few resources offer some
             challenging math-forward but nevertheless accessible hands-on applications with models
             like GPT-2 that can be installed and explored on a personal computer. Mike X. Cohen’s
