@@ -320,9 +320,10 @@
                               </summary>
                               <dl>
                                  <dt><span class="section"><a href="#d3e108" class="toc">Our Context: Studying Language Models in Digital Humanities</a></span></dt>
-                                 <dt><span class="section"><a href="#d3e301" class="toc">The <q>DigitAI</q> project with MCP: An Orientation for Markup People</a></span></dt>
-                                 <dt><span class="section"><a href="#d3e397" class="toc">What is XML to a Language Model and how much does an agent need?</a></span></dt>
-                                 <dt><span class="section"><a href="#d3e486" class="toc">Towards a Declarative Method for Working with Language Models: A separation of
+                                 <dt><span class="section"><a href="#d3e315" class="toc">The <q>DigitAI</q> project with MCP: An Orientation for Markup People</a></span></dt>
+                                 <dt><span class="section"><a href="#d3e411" class="toc">What is XML to a Language Model and how much does an agent need?</a></span></dt>
+                                 <dt><span class="section"><a href="#d3e494" class="toc">Containing and staging the MCP system</a></span></dt>
+                                 <dt><span class="section"><a href="#d3e501" class="toc">Towards a Declarative Method for Working with Language Models: A separation of
                                           concerns</a></span></dt>
                               </dl>
                            </details>
@@ -419,9 +420,10 @@
                      </summary>
                      <dl>
                         <dt><span class="section"><a href="#d3e108" class="toc">Our Context: Studying Language Models in Digital Humanities</a></span></dt>
-                        <dt><span class="section"><a href="#d3e301" class="toc">The <q>DigitAI</q> project with MCP: An Orientation for Markup People</a></span></dt>
-                        <dt><span class="section"><a href="#d3e397" class="toc">What is XML to a Language Model and how much does an agent need?</a></span></dt>
-                        <dt><span class="section"><a href="#d3e486" class="toc">Towards a Declarative Method for Working with Language Models: A separation of
+                        <dt><span class="section"><a href="#d3e315" class="toc">The <q>DigitAI</q> project with MCP: An Orientation for Markup People</a></span></dt>
+                        <dt><span class="section"><a href="#d3e411" class="toc">What is XML to a Language Model and how much does an agent need?</a></span></dt>
+                        <dt><span class="section"><a href="#d3e494" class="toc">Containing and staging the MCP system</a></span></dt>
+                        <dt><span class="section"><a href="#d3e501" class="toc">Towards a Declarative Method for Working with Language Models: A separation of
                                  concerns</a></span></dt>
                      </dl>
                   </details>
@@ -490,7 +492,8 @@
                         advanced computer science and matrix math to approach, or too simplistic about vector
                         embeddings (offering sometimes embarrassing nonsense formulae like <q>King - Man +
                            Woman = Queen</q> as an explanation of how a language model calculates relative
-                        semantic positions of one token in relation to another). A few resources offer some
+                        semantic positions of one token in relation to another).</p>
+                     <p id="d3e173">A few resources offer some
                         challenging math-forward but nevertheless accessible hands-on applications with models
                         like GPT-2 that can be installed and explored on a personal computer. Mike X. Cohen’s
                         six-part <q>LLM breakdown</q> series can support students who are learning
@@ -505,25 +508,26 @@
                         and certainty are calculated, and to see that the system is after all a technology
                         that
                         can be explored and manipulated even if we humans cannot see all its dimensional
-                        possibilities at once.<sup class="fn-label"><a href="#d3e183" class="footnoteref" id="d3e183-ref">[3]</a></sup> It should be emphasized that Cohen himself is a neuroscientist and former
+                        possibilities at once.<sup class="fn-label"><a href="#d3e184" class="footnoteref" id="d3e184-ref">[3]</a></sup> Cohen himself is a neuroscientist and former
                         academic but not in the humanities; yet his public social media release of the
-                        <q>LLM breakdown</q> series helps demonstrate a recognition that the complex
+                        <q>LLM breakdown</q> series helps substantiate that the complex
                         math of LLMs can be made more generally accessible. Within our DH program and lab,
                         where
                         we prioritize coding as a means to <span class="ital">visualize</span> and
-                        <span class="ital">communicate</span> complex ideas and technologies, Cohen's notebooks
-                        help us to learn by working directly with the code and give us ideas for projects
+                        <span class="ital">communicate</span> complex ideas and technologies, Cohen’s notebooks
+                        help us to learn by working directly with the code and giving us ideas for projects
                         that
-                        involve testing the models. </p>
-                     <p id="d3e247">Regarding the second objective (Economy), universities and cultural heritage
+                        involve testing the models and visualizing how they work.<sup class="fn-label"><a href="#d3e248" class="footnoteref" id="d3e248-ref">[4]</a></sup>
+                        </p>
+                     <p id="d3e261">Regarding the second objective (Economy), universities and cultural heritage
                         organizations face severe budget constraints in the 2020s yet, paradoxically, increasing
                         reliance on AI has resulted in the upscaling of <q>compute</q> GPU resources,
                         and dependencies on datacenters impact our environment and human labor. When contracts
                         with AI tech companies are heavily promoted at universities, and the <q>cognitive
                            offloading</q> of thinking, writing, and assessment to chatbots risks eroding
                         rather than enhancing critical thinking and problem-solving skills, AI threatens the
-                        human labor of the academy and the efficacy of education.<sup class="fn-label"><a href="#d3e255" class="footnoteref" id="d3e255-ref">[4]</a></sup></p>
-                     <p id="d3e277">Looking at this grim picture from the vantage point of a small DH lab, we nevertheless
+                        human labor of the academy and the efficacy of education.<sup class="fn-label"><a href="#d3e269" class="footnoteref" id="d3e269-ref">[5]</a></sup></p>
+                     <p id="d3e291">Looking at this grim picture from the vantage point of a small DH lab, we nevertheless
                         recognize in AI an emerging technology that calls for serious scholarly work, and
                         we are
                         researching language models as a powerful technology that can be tuned and adapted
@@ -532,15 +536,15 @@
                         ways to minimize the resource footprint of generative AI models, finding ways to work
                         with them on small-scale systems without manufactured dependencies on data centers
                         and
-                        water supplies.<sup class="fn-label"><a href="#d3e279" class="footnoteref" id="d3e279-ref">[5]</a></sup> We also hope our research helps to pry open the proverbial <q>black
+                        water supplies.<sup class="fn-label"><a href="#d3e293" class="footnoteref" id="d3e293-ref">[6]</a></sup> We also hope our research helps to pry open the proverbial <q>black
                            box</q> software built on unknowable assemblages of text and media. We are
                         finding that our familiarity with concepts like <q>declarative programming</q>
                         and a <q>separation of concerns</q> help us to find a way to work with AI as one
                         technology balanced with the precision tools of the XML stack. </p>
                   </div>
-                  <div class="section" id="d3e301">
+                  <div class="section" id="d3e315">
                      <h2 class="title" style="clear: both">The <q>DigitAI</q> project with MCP: An Orientation for Markup People</h2>
-                     <p id="d3e307">As <q>markup people</q> ourselves, we are accustomed to a certain mystery in
+                     <p id="d3e321">As <q>markup people</q> ourselves, we are accustomed to a certain mystery in
                         the underlying technologies that support processing declarative markup (e.g. how our
                         own
                         operating systems decide to execute the template processing in our XSLT scripts).
@@ -556,7 +560,7 @@
                         cannot expect a language model to handle the things we call <q>text</q> in the
                         same way that we are used to when we encode a markup tree, query it to retrieve, sort,
                         conduct <q>string-surgery</q>, and make calculations with nodes.</p>
-                     <p id="d3e321">The mystery in the operations of a language model has everything to with its
+                     <p id="d3e335">The mystery in the operations of a language model has everything to with its
                         embeddings of word-particles in thousands of dimensions, and even the idea that two
                         language models trained on the same word data with the same number of parameters and
                         embeddings do not share the same vectors. This suggests something of an internal cosmos
@@ -576,20 +580,20 @@
                         impenetrable embedding layers with word-particles shrouded in logarithmic numbers
                         and
                         clustered by cosine similarities.</p>
-                     <p id="d3e326">Encountering language models as marvelously speedy and profound yet vapid, mercurial,
+                     <p id="d3e340">Encountering language models as marvelously speedy and profound yet vapid, mercurial,
                         and dangerous, we want to at least try to customize <q>black box</q> technology
                         to apply to difficult and time-consuming aspects of markup-based projects. We want
                         an AI
                         assistant to help with finishing old projects from community volunteers with
                         inconsistent markup, and to aid students and colleagues with challenging questions
                         like
-                        how best to apply the many possibilities of TEI encoding from the TEI Guidelines.<sup class="fn-label"><a href="#d3e331" class="footnoteref" id="d3e331-ref">[6]</a></sup> We are trying to create a small language model system that we can deploy
+                        how best to apply the many possibilities of TEI encoding from the TEI Guidelines.<sup class="fn-label"><a href="#d3e345" class="footnoteref" id="d3e345-ref">[7]</a></sup> We are trying to create a small language model system that we can deploy
                         with a multi-core personal computer that might help with many different XML projects,
                         to
                         assist in finding information about each project, to discover inconsistencies (beyond
                         schema validation checks), and to answer questions in natural language about the data,
                         enhanced by the ability to execute XPath.</p>
-                     <p id="d3e341">So our DH lab began a project in 2025 called <q>DigitAI</q> (named for our
+                     <p id="d3e355">So our DH lab began a project in 2025 called <q>DigitAI</q> (named for our
                         <q>Digit</q> program at Penn State Behrend). DigitAI began as an experiment
                         to supply a small-scale language model with Retrieval Augmented Generation (RAG)–giving
                         it query access to a structured <q>ground truth</q> knowledge base derived from
@@ -604,16 +608,16 @@
                         the TEI Guidelines at the DH2025 conference and the 2025 TEI conference (as well as
                         in
                         an open-mike presentation at Balisage 2025), but we knew at the time of those
-                        conferences that our work was incomplete.<sup class="fn-label"><a href="#d3e355" class="footnoteref" id="d3e355-ref">[7]</a></sup> The RAG included only the chapters and paragraphs and element nodes with
+                        conferences that our work was incomplete.<sup class="fn-label"><a href="#d3e369" class="footnoteref" id="d3e369-ref">[8]</a></sup> The RAG included only the chapters and paragraphs and element nodes with
                         glosses and descriptions, and to be complete to our vision should have included the
                         Schematron constraints and model and attribute class relationships. But the idea to
                         prepare the TEI P5.xml as a graph structure so very thoroughly was perhaps overkill
                         that
                         would not improve the reliability of our local language model in addressing questions
                         about TEI XML encoding.</p>
-                     <p id="d3e371">Our first effort with preparing a RAG from the TEI Guidelines posed a serious problem
+                     <p id="d3e385">Our first effort with preparing a RAG from the TEI Guidelines posed a serious problem
                         of <q>code bloat</q>. We had prepared a knowledge graph in neo4j to store our
-                        carefully parsed content from the TEI Guidelines.<sup class="fn-label"><a href="#d3e376" class="footnoteref" id="d3e376-ref">[8]</a></sup> The preparation of the ideal RAG resource for us involved a complex XSLT
+                        carefully parsed content from the TEI Guidelines.<sup class="fn-label"><a href="#d3e390" class="footnoteref" id="d3e390-ref">[9]</a></sup> The preparation of the ideal RAG resource for us involved a complex XSLT
                         transformation of the TEI P5.xml document into neo4j's graph structure–converting
                         every
                         possible relationship of the paragraphs of the TEI Guidelines chapters and their
@@ -625,14 +629,14 @@
                         abstracted and bloated version of the original XML document because we were writing
                         XSLT
                         to 
-                        <div class="orderedlist" id="d3e382">
+                        <div class="orderedlist" id="d3e396">
                            <ol style="list-style-type: decimal;">
-                              <li id="d3e383">
-                                 <p id="d3e384">Output the neo4j graph nodes and edge relationships of elements networked
+                              <li id="d3e397">
+                                 <p id="d3e398">Output the neo4j graph nodes and edge relationships of elements networked
                                     by paragraph and chapter position across the TEI Guidelines, and</p>
                               </li>
-                              <li id="d3e386">
-                                 <p id="d3e387">Output a means for the neo4j graph to be queried by the LLM.</p>
+                              <li id="d3e400">
+                                 <p id="d3e401">Output a means for the neo4j graph to be queried by the LLM.</p>
                               </li>
                            </ol>
                         </div> Worse yet, for all the painstaking effort of preparing the data with
@@ -648,7 +652,7 @@
                         as
                         a resource in its own right (and we may yet do so to assist with reviewing the TEI
                         Guidelines).</p>
-                     <p id="d3e390">By autumn 2025 we found a better method to address XML <span class="ital">as</span> XML and
+                     <p id="d3e404">By autumn 2025 we found a better method to address XML <span class="ital">as</span> XML and
                         keeping it out of reach of the inner workings of language models. The Model Context
                         Protocol (MCP) introduced by Anthropic is now widely available in the open source
                         community, we can now design a new model infrastructure that allows an LLM to deploy
@@ -666,7 +670,7 @@
                         specific directories, or ideally to containerize it and separate it from sensitive
                         data
                         on our computers. </p>
-                     <p id="d3e395">Our current challenge is determining how to provide a map of the TEI P5.xml tree
+                     <p id="d3e409">Our current challenge is determining how to provide a map of the TEI P5.xml tree
                         structure and enough example XPath scripts to retrieve relevant information about
                         an
                         element, attribute, or model class in the TEI. As this is an area of expertise in
@@ -684,9 +688,9 @@
                         it on
                         request. </p>
                   </div>
-                  <div class="section" id="d3e397">
+                  <div class="section" id="d3e411">
                      <h2 class="title" style="clear: both">What is XML to a Language Model and how much does an agent need?</h2>
-                     <p id="d3e400">Perhaps learning to use AI effectively is understanding its limits regarding
+                     <p id="d3e414">Perhaps learning to use AI effectively is understanding its limits regarding
                         structured systems like XML. In our experience as a lab with primarily declarative
                         markup expertise, we approached this project as people who understood very little
                         about
@@ -698,19 +702,20 @@
                         to internal workings of a language model. Nevertheless, when asked to act upon element
                         nodes, and given agency and software to do so, a language model demonstrates competence
                         in scripting code and suggesting improvements.</p>
-                     <p id="d3e405">Since we were entirely new to MCP, we switched from our SLM Qwen to the much larger
+                     <p id="d3e419">Since we were entirely new to MCP, we switched from our SLM Qwen to the much larger
                         Claude Desktop application to start our learning process. Partly in this we were
                         learning about MCP via Anthropic through Claude. We began by following Claude's
                         suggestions for a starting MCP Server Protocol delivered by a Python script that
                         supplies access to Saxon processing tools and jingtrang for RelaxNG schema
                         validation.</p>
-                     <p id="d3e407">We established a protocol of gathering log data from the desktop SLM, as well as its
+                     <p id="d3e421">We established a protocol of gathering log data from the desktop language model, as
+                        well as its
                         processes. This helps ensure that not only is it doing the processing correctly (i.e.
                         how we want it to) but that we are able to learn how it <q>thinks</q> which then
                         helps us better equip it...to help us! This aligns closely with the declarative mindset
                         we have in Digit working with XML technologies, where clarity of structure and intention
                         leads to more reliable and reproducible outcomes.</p>
-                     <p id="d3e412">We decided to begin with some inconsistent XML markup for a recipe, purposefully made
+                     <p id="d3e426">We decided to begin with some inconsistent XML markup for a recipe, purposefully made
                         invalid to its schema, in order to test the capacities of our desktop agent to discover
                         validation errors and recommend, and then process corrections. At first we struggled
                         with the field containment systems of our agentic language model: It could not read
@@ -722,13 +727,13 @@
                         one
                         that we are familiar with from reading and opening Python files conventionally with
                         lines like these: 
-                        <pre class="programlisting" id="d3e414">
+                        <pre class="programlisting" id="d3e428">
 with open(self.xml_path, 'r', encoding='utf-8') as f:
     xml_text = f.read()
 self.xml_node = self.saxon_proc.parse_xml(xml_text=xml_text)
             </pre> f.read() would pass the XML as a text string rather than a
                         document tree. Changing that to: 
-                        <pre class="programlisting" id="d3e417">
+                        <pre class="programlisting" id="d3e431">
 self.xml_node = self.saxon_proc.parse_xml(xml_file_name=str(self.xml_path))
         </pre> neatly resolved a serious pathing problem by delivering the
                         file directly to the Saxon processors. Ensuring the agentic model can read filepaths
@@ -743,7 +748,7 @@ self.xml_node = self.saxon_proc.parse_xml(xml_file_name=str(self.xml_path))
                         caution: we are moving to contain the agentic SLM in Docker instead of treating it
                         like
                         most other software whose passivity we take for granted. </p>
-                     <p id="d3e420">Establishing the means to read local filepaths, find the schema, and execute jingtrang
+                     <p id="d3e434">Establishing the means to read local filepaths, find the schema, and execute jingtrang
                         for schema validation made for a more tranquil and less surprising and impulsive
                         experience with the SLM. When asked to correct and inconsistency, it will run the
                         XSLT
@@ -755,12 +760,12 @@ self.xml_node = self.saxon_proc.parse_xml(xml_file_name=str(self.xml_path))
                         old-fashioned identity transformation by copy of elements and attributes and processing
                         instructions from XSLT 2.0 that it had used when it was not properly reading the MCP
                         examples we provided. </p>
-                     <figure id="d3e425">
+                     <figure id="d3e439">
                         <p class="title">Figure&nbsp;1: MCP Python Function to Generate Correction with XSLT</p>
                         <div class="figure-contents">
-                           <p id="d3e428">
+                           <p id="d3e442">
                               
-                              <pre class="programlisting" id="d3e430">
+                              <pre class="programlisting" id="d3e444">
  def _generate_correction_xslt(self, corrections: list[dict]) -&gt; str:
         """Generate XSLT 3.0 stylesheet from correction operations"""
         templates = []
@@ -814,21 +819,17 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
                               </p>
                         </div>
                      </figure>
-                     <p id="d3e433">There is something perverse about seeing XSLT written into formatted strings as shown
+                     <p id="d3e447">There is something perverse about seeing XSLT written into formatted strings as shown
                         in the preceding code block. We asked ourselves during a project meeting in April
                         whether the Python template provided us by Claude might be unnecessary. Why not just
                         deliver the XSLT as XSLT? The professor among us asked as much to a Claude Opus 4.6
-                        Extended session on the internet (not to the desktop SLM, because we have been thinking
-                        of the agentic AI as a system we are designing, while we treat the internet
-                        manifestation of a large language model as a distanct guide, tutor, and manifester
-                        of
-                        starter scripts for our adaptation. 
-                        <figure id="d3e435">
+                        Extended session on the internet. 
+                        <figure id="d3e449">
                            <p class="title">Figure&nbsp;2: April 2026 Conversation about MCP with Claude Opus 4.6 Extended</p>
                            <div class="figure-contents">
                               <div class="blockquote">
                                  <blockquote class="blockquote">
-                                    <p id="d3e439"><span class="ital">Elisa:</span> Here's maybe a silly question, coming from an
+                                    <p id="d3e453"><span class="ital">Elisa:</span> Here's maybe a silly question, coming from an
                                        XML processing context. I wonder whether serving XML processing and
                                        validating tools really requires Python for delivery to the desktop
                                        agent?</p>
@@ -836,7 +837,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
                               </div>
                               <div class="blockquote">
                                  <blockquote class="blockquote">
-                                    <p id="d3e444"><span class="ital">Claude Opus:</span>
+                                    <p id="d3e458"><span class="ital">Claude Opus:</span>
                                        <span class="ital">Examined whether Python intermediary was necessary for
                                           XML tool delivery</span> Not a silly question at all — it's a really
                                        good architectural observation. You're essentially running two Java tools
@@ -845,23 +846,23 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
                                        of layers, and each one has introduced friction — the venv activation issue,
                                        pyjing not being on PATH, the base-uri problem from how saxonche was being
                                        called.</p>
-                                    <p id="d3e451">MCP is just JSON-RPC over stdio. The server can be written in any
+                                    <p id="d3e465">MCP is just JSON-RPC over stdio. The server can be written in any
                                        language. So your options are roughly:</p>
-                                    <p id="d3e453"><span class="ital">Java/Kotlin</span> would be the most natural fit. Saxon-HE
+                                    <p id="d3e467"><span class="ital">Java/Kotlin</span> would be the most natural fit. Saxon-HE
                                        and Jing are both Java libraries natively — no wrappers, no subprocess
                                        calls, no GraalVM bridge. You'd call net.sf.saxon.s9api and
                                        com.thaiopensource.validate directly. The tradeoff is that there isn't an
                                        official MCP SDK for Java yet, so you'd be implementing the stdio JSON-RPC
                                        protocol yourself (which is straightforward but some boilerplate).</p>
-                                    <p id="d3e457"><span class="ital">TypeScript/Node.js</span> has a mature MCP SDK and is
+                                    <p id="d3e471"><span class="ital">TypeScript/Node.js</span> has a mature MCP SDK and is
                                        well-supported by Claude Desktop. Saxon-JS exists for this environment,
                                        though it's not feature-identical to Saxon-HE (it handles XSLT 3.0 and XPath
                                        3.1 well, but XQuery support is limited). Jing would still need to be called
                                        as a subprocess.</p>
-                                    <p id="d3e461"><span class="ital">Python</span> (what you have now) has the advantage of being
+                                    <p id="d3e475"><span class="ital">Python</span> (what you have now) has the advantage of being
                                        done — the server works. The pain points have been environment plumbing, not
                                        fundamental design problems.</p>
-                                    <p id="d3e465">If I were starting fresh with your stack, I'd seriously consider Java.
+                                    <p id="d3e479">If I were starting fresh with your stack, I'd seriously consider Java.
                                        Both your core tools are native Java, and the MCP protocol is simple enough
                                        that the lack of an SDK isn't a big hurdle. But given that you have a
                                        working Python server now, the pragmatic call depends on how much the
@@ -872,52 +873,44 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
                            </div>
                         </figure>
                         </p>
-                     <p id="d3e468">The authors’ low comfort level with Java notwithstanding, the idea of preventing the
+                     <p id="d3e482">The authors’ low comfort level with Java notwithstanding, the idea of preventing the
                         annoying <q>biting</q> of <q>wrapper friction</q> seems like an
-                        invitation to attempt this with some guidance. Claude’s review of my recent flummoxing
-                        problems over paths and activation of scripts was apt, but up to this point we had
+                        invitation to attempt this with some guidance. Up to this point we had
                         presumed that one trains, refines, augments, and supplies tools to a language model
                         through the lingua franca of Python. Choosing the programming idiom by which to
                         implement XML stack validation, search, and transformation is opening new learning
                         paths
                         for us in our lab. </p>
-                     <p id="d3e476">While testing the freshly revised Python MCP with Claude Desktop, as soon as it was
+                     <p id="d3e490">While testing the freshly revised Python MCP with Claude Desktop, as soon as it was
                         able to follow filepaths (dangerously), we found it capable and willing to update
                         its
-                        own configuration script, storing in JSON instructions to itself that reinforced our
+                        own configuration script, as the logs  stored JSON instructions from the model to
+                        itself that reinforced our
                         prompt to save both outputs and transformation scripts in set locations. We became
                         aware
                         that the puppet we thought we were controlling was now pulling its own strings.</p>
-                     <p id="d3e478">Interacting with Claude has been a compelling invitation to learn more about how MCP
-                        can work, and we find ourselves wondering about the declarative experience: We declare
-                        we want a system with certain capacities and using specific libraries (saxonche,
-                        jingtrang), and we continue thinking aloud about how it could be improved, and the
-                        AI's
-                        responses, reflecting our interests, open new avenues of exploration. We need to
-                        remember that one of our next steps is to test Qwen with MCP or try other language
+                     <p id="d3e492">Our next step was to test Qwen with MCP or try other language
                         models, perhaps the PleIAs models trained on the open source common_corpus data. Will
                         a
                         local SLM perform as smoothly as Claude Desktop with XML stack processing? And how
                         will
                         it work to containerize the project and share it with others via Docker?</p>
-                     <p id="d3e481">TO BE CONTINUED! These are research questions our DH lab intends to investigate in
-                        the
-                        next months and hopes to share at the Balisage 2026 conference (and present in updated
-                        form in this paper. For now, we move swiftly to our conclusion, reflecting about what
-                        we
-                        are learning of a <q>separation of concerns</q> in bringing language models in
-                        contact with XML.</p>
                   </div>
-                  <div class="section" id="d3e486">
+                  <div class="section" id="d3e494">
+                     <h2 class="title" style="clear: both">Containing and staging the MCP system</h2>
+                     <p id="d3e497">Developing within and for a container</p>
+                     <p id="d3e499">Moving the project to share Docker from Codeberg and Forgejo.</p>
+                  </div>
+                  <div class="section" id="d3e501">
                      <h2 class="title" style="clear: both">Towards a Declarative Method for Working with Language Models: A separation of
                         concerns</h2>
-                     <p id="d3e489">Declaring one's intentions is important for langugage models and humans alike. Writing
+                     <p id="d3e504">Declaring one's intentions is important for langugage models and humans alike. Writing
                         schemas, grammars, and MCP scripts may perhaps all be considered declarations together.
                         Declaring intentions leads to specific formulations that depend on the context and
                         scope
                         of a project, whether you encode the page by page graphical layout, the relationship
                         between an illustration and surrounding text.</p>
-                     <p id="d3e491">Our DH lab has been working between two different cultures of digital text: the
+                     <p id="d3e506">Our DH lab has been working between two different cultures of digital text: the
                         documentary markup culture and the natural language processing culture. The operations
                         of language models are fascinating for ther endless variety of dimensional possibilities
                         working over hundreds or thousands of vectors even in an SLM. Yet the availability
@@ -930,7 +923,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
                         structured markup, so we can deliver meaningful node packages when a project like
                         a
                         scholarly edition requires precision and quality control.</p>
-                     <p id="d3e493">When we bring these two cultures together, declarative markup technologies may be
+                     <p id="d3e508">When we bring these two cultures together, declarative markup technologies may be
                         helping us to define our terms for controlling and customizing systems for specialized
                         projects. Our work with modeling grammars and schemas is definitional, and when we
                         instruct an AI agent to apply a validation step and inspect the results before making
@@ -944,7 +937,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
                         We
                         are defining the terms by which the language model system will function most efficiently
                         and reliably within the rule-based architecture that we have declared. from </p>
-                     <p id="d3e495">In course of developing this paper, we have recognized that the old programming
+                     <p id="d3e510">In course of developing this paper, we have recognized that the old programming
                         concept of a <q>separation of concerns</q> familiar to us from functional
                         programming can guide the structures we design and enhance with language models. Giving
                         the model access, yet keeping the XML apart from its internal tokenized embedding
@@ -952,7 +945,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
                         is one separation of concerns, and limiting the need and capacity of a language model
                         to
                         access one's operating system is another.</p>
-                     <p id="d3e500">Perhaps the most important separation of concerns for us to keep in view is the
+                     <p id="d3e515">Perhaps the most important separation of concerns for us to keep in view is the
                         education of our scholars and lab assistants in refining the tools to fit our tasks,
                         rather than letting the tools shape those tasks for us on the terms by which they
                         were
@@ -978,8 +971,8 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
                            second- or third-year university students in the Digital Media, Arts, and
                            Technology program at Penn State Behrend</p>
                      </div>
-                     <div id="d3e183" class="footnote">
-                        <p><sup class="fn-label"><a href="#d3e183-ref" class="footnoteref">[3]</a></sup> Mike X. Cohen’s six-part <q>LLM breakdown</q> series (about large
+                     <div id="d3e184" class="footnote">
+                        <p><sup class="fn-label"><a href="#d3e184-ref" class="footnoteref">[3]</a></sup> Mike X. Cohen’s six-part <q>LLM breakdown</q> series (about large
                            language models or LLMs) is publicly posted on Substack with accompanying
                            Jupyter Notebooks that he strongly encourages people to run as they read. See
                            Mike X. Cohen, <q>LLM breakdown 1/6: Tokenization (words to
@@ -996,27 +989,42 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
                            <span class="ital">Teaching and Learning with Jupyter</span> (2019)
                            <a href="https://jupyter4edu.github.io/jupyter-edu-book/" class="link">https://jupyter4edu.github.io/jupyter-edu-book/</a> and <a href="https://jupyter.org/" class="link">https://jupyter.org/</a>.</p>
                      </div>
-                     <div id="d3e255" class="footnote">
-                        <p><sup class="fn-label"><a href="#d3e255-ref" class="footnoteref">[4]</a></sup> Michael Gerlich, <q>AI Tools in Society: Impacts on Cognitive Offloading
+                     <div id="d3e248" class="footnote">
+                        <p><sup class="fn-label"><a href="#d3e248-ref" class="footnoteref">[4]</a></sup> One such project is our AI Uncertainty Monitor, to dramatically slow down, visualize
+                           and sonify
+                           the processing of a language model. The user selects a small language model from our
+                           interface, inputs a prompt designed to evoke many possible
+                           responses, such as <q>Describe the feeling of standing on the edge of the ocean at night.</q>
+                           The model slowly produces a response, with lag introduced based on uncertainty data
+                           pulled from 
+                           each prediction of a new token, and each token is color-coded and given musical tones
+                           relating to properties
+                           pulled from the language model. Find the project on Codeberg at <a href="https://codeberg.org/newtfire/ai-artsound" class="link">https://codeberg.org/newtfire/ai-artsound</a> 
+                           and install with Docker from 
+                           <a href="https://codeberg.org/newtfire/-/packages/container/ai-artsound-container/latest" class="link">https://codeberg.org/newtfire/-/packages/container/ai-artsound-container/latest</a>.
+                           </p>
+                     </div>
+                     <div id="d3e269" class="footnote">
+                        <p><sup class="fn-label"><a href="#d3e269-ref" class="footnoteref">[5]</a></sup> Michael Gerlich, <q>AI Tools in Society: Impacts on Cognitive Offloading
                               and the Future of Critical Thinking,</q>
                            <span class="ital">Societies</span> 2025, 15(1), 6, <a href="https://doi.org/10.3390/soc15010006" class="link">https://doi.org/10.3390/soc15010006</a>; and Ulises A. Mejias,
                            <q>Artificial Intelligence as a Threat to Academic Labor: Who benefits
                               when AI is introduced into higher education?</q>
                            <span class="ital">AAUP Academe Magazine</span> Winter 2026, <a href="https://www.aaup.org/issue/winter-2026/artificial-intelligence-threat-academic-labor" class="link">https://www.aaup.org/issue/winter-2026/artificial-intelligence-threat-academic-labor</a>.</p>
                      </div>
-                     <div id="d3e279" class="footnote">
-                        <p><sup class="fn-label"><a href="#d3e279-ref" class="footnoteref">[5]</a></sup> Regilme, Salvador Santino F, <q>Artificial Intelligence Colonialism:
+                     <div id="d3e293" class="footnote">
+                        <p><sup class="fn-label"><a href="#d3e293-ref" class="footnoteref">[6]</a></sup> Regilme, Salvador Santino F, <q>Artificial Intelligence Colonialism:
                               Environmental Damage, Labor Exploitation, and Human Rights Crises in the
                               Global South</q>, <span class="ital">SAIS Review of International
                               Affairs</span> 44:2 (2024), 75-92 <a href="https://dx.doi.org/10.1353/sais.2024.a950958" class="link">https://dx.doi.org/10.1353/sais.2024.a950958</a>.</p>
                      </div>
-                     <div id="d3e331" class="footnote">
-                        <p><sup class="fn-label"><a href="#d3e331-ref" class="footnoteref">[6]</a></sup> TEI Consortium, eds. <span class="ital">TEI P5: Guidelines for Electronic
+                     <div id="d3e345" class="footnote">
+                        <p><sup class="fn-label"><a href="#d3e345-ref" class="footnoteref">[7]</a></sup> TEI Consortium, eds. <span class="ital">TEI P5: Guidelines for Electronic
                               Text Encoding and Interchange</span>, 4.11.0 18 February 2026, TEI
                            Consortium, <a href="http://www.tei-c.org/Guidelines/P5/" class="link">http://www.tei-c.org/Guidelines/P5/</a>.</p>
                      </div>
-                     <div id="d3e355" class="footnote">
-                        <p><sup class="fn-label"><a href="#d3e355-ref" class="footnoteref">[7]</a></sup> Alexander C. Fisher, Hadleigh Jae Bills, and Elisa Beshero-Bondar,
+                     <div id="d3e369" class="footnote">
+                        <p><sup class="fn-label"><a href="#d3e369-ref" class="footnoteref">[8]</a></sup> Alexander C. Fisher, Hadleigh Jae Bills, and Elisa Beshero-Bondar,
                            <q>DigitAI for Localized TEI / XML Assistance: An experiment with
                               Small-Scale AI,</q> presented at DH2025, Lisbon, 16 July 2025 <a href="https://slides.com/elisabeshero-bondar/digitai-dh25" class="link">https://slides.com/elisabeshero-bondar/digitai-dh25</a>. The GitHub
                            repository for the early stage of the project including our preliminary Jupyter
@@ -1024,8 +1032,8 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
                            continues at <a href="https://github.com/newtfire/digitai" class="link">https://github.com/newtfire/digitai</a> which stores the original repo
                            as a submodule.</p>
                      </div>
-                     <div id="d3e376" class="footnote">
-                        <p><sup class="fn-label"><a href="#d3e376-ref" class="footnoteref">[8]</a></sup> neo4J on knowledge graphs: <a href="https://neo4j.com/use-cases/knowledge-graph/" class="link">https://neo4j.com/use-cases/knowledge-graph/</a></p>
+                     <div id="d3e390" class="footnote">
+                        <p><sup class="fn-label"><a href="#d3e390-ref" class="footnoteref">[9]</a></sup> neo4J on knowledge graphs: <a href="https://neo4j.com/use-cases/knowledge-graph/" class="link">https://neo4j.com/use-cases/knowledge-graph/</a></p>
                      </div>
                   </div>
                </div>

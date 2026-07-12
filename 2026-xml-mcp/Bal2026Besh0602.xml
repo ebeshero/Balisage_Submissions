@@ -177,7 +177,8 @@
             advanced computer science and matrix math to approach, or too simplistic about vector
             embeddings (offering sometimes embarrassing nonsense formulae like <quote>King - Man +
                 Woman = Queen</quote> as an explanation of how a language model calculates relative
-            semantic positions of one token in relation to another). A few resources offer some
+            semantic positions of one token in relation to another).</para>
+        <para>A few resources offer some
             challenging math-forward but nevertheless accessible hands-on applications with models
             like GPT-2 that can be installed and explored on a personal computer. Mike X. Cohen’s
             six-part <quote>LLM breakdown</quote> series can support students who are learning
@@ -221,14 +222,25 @@
                         <link xlink:href="https://jupyter4edu.github.io/jupyter-edu-book/"
                         >https://jupyter4edu.github.io/jupyter-edu-book/</link> and <link
                         xlink:href="https://jupyter.org/">https://jupyter.org/</link>.</para>
-            </footnote> It should be emphasized that Cohen himself is a neuroscientist and former
+            </footnote> Cohen himself is a neuroscientist and former
             academic but not in the humanities; yet his public social media release of the
-                <quote>LLM breakdown</quote> series helps demonstrate a recognition that the complex
+                <quote>LLM breakdown</quote> series helps substantiate that the complex
             math of LLMs can be made more generally accessible. Within our DH program and lab, where
             we prioritize coding as a means to <emphasis>visualize</emphasis> and
-                <emphasis>communicate</emphasis> complex ideas and technologies, Cohen's notebooks
-            help us to learn by working directly with the code and give us ideas for projects that
-            involve testing the models. </para>
+                <emphasis>communicate</emphasis> complex ideas and technologies, Cohen’s notebooks
+            help us to learn by working directly with the code and giving us ideas for projects that
+            involve testing the models and visualizing how they work.<footnote>
+                <para>One such project is our AI Uncertainty Monitor, to dramatically slow down, visualize and sonify
+                    the processing of a language model. The user selects a small language model from our interface, inputs a prompt designed to evoke many possible
+                    responses, such as <quote>Describe the feeling of standing on the edge of the ocean at night.</quote>
+                   The model slowly produces a response, with lag introduced based on uncertainty data pulled from 
+                   each prediction of a new token, and each token is color-coded and given musical tones relating to properties
+                   pulled from the language model. Find the project on Codeberg at <link xlink:href="https://codeberg.org/newtfire/ai-artsound">https://codeberg.org/newtfire/ai-artsound</link> 
+                    and install with Docker from 
+                    <link xlink:href="https://codeberg.org/newtfire/-/packages/container/ai-artsound-container/latest">https://codeberg.org/newtfire/-/packages/container/ai-artsound-container/latest</link>.
+                </para>
+            </footnote>
+        </para>
         <para>Regarding the second objective (Economy), universities and cultural heritage
             organizations face severe budget constraints in the 2020s yet, paradoxically, increasing
             reliance on AI has resulted in the upscaling of <quote>compute</quote> GPU resources,
@@ -420,7 +432,7 @@
             supplies access to Saxon processing tools and jingtrang for RelaxNG schema
             validation.</para>
 
-        <para>We established a protocol of gathering log data from the desktop SLM, as well as its
+        <para>We established a protocol of gathering log data from the desktop language model, as well as its
             processes. This helps ensure that not only is it doing the processing correctly (i.e.
             how we want it to) but that we are able to learn how it <quote>thinks</quote> which then
             helps us better equip it...to help us! This aligns closely with the declarative mindset
@@ -522,10 +534,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
             in the preceding code block. We asked ourselves during a project meeting in April
             whether the Python template provided us by Claude might be unnecessary. Why not just
             deliver the XSLT as XSLT? The professor among us asked as much to a Claude Opus 4.6
-            Extended session on the internet (not to the desktop SLM, because we have been thinking
-            of the agentic AI as a system we are designing, while we treat the internet
-            manifestation of a large language model as a distanct guide, tutor, and manifester of
-            starter scripts for our adaptation. <figure>
+            Extended session on the internet. <figure>
                 <title>April 2026 Conversation about MCP with Claude Opus 4.6 Extended</title>
                 <blockquote>
                     <para><emphasis>Elisa:</emphasis> Here's maybe a silly question, coming from an
@@ -576,31 +585,25 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
         </para>
         <para>The authors’ low comfort level with Java notwithstanding, the idea of preventing the
             annoying <quote>biting</quote> of <quote>wrapper friction</quote> seems like an
-            invitation to attempt this with some guidance. Claude’s review of my recent flummoxing
-            problems over paths and activation of scripts was apt, but up to this point we had
+            invitation to attempt this with some guidance. Up to this point we had
             presumed that one trains, refines, augments, and supplies tools to a language model
             through the lingua franca of Python. Choosing the programming idiom by which to
             implement XML stack validation, search, and transformation is opening new learning paths
             for us in our lab. </para>
         <para>While testing the freshly revised Python MCP with Claude Desktop, as soon as it was
             able to follow filepaths (dangerously), we found it capable and willing to update its
-            own configuration script, storing in JSON instructions to itself that reinforced our
+            own configuration script, as the logs  stored JSON instructions from the model to itself that reinforced our
             prompt to save both outputs and transformation scripts in set locations. We became aware
             that the puppet we thought we were controlling was now pulling its own strings.</para>
-        <para>Interacting with Claude has been a compelling invitation to learn more about how MCP
-            can work, and we find ourselves wondering about the declarative experience: We declare
-            we want a system with certain capacities and using specific libraries (saxonche,
-            jingtrang), and we continue thinking aloud about how it could be improved, and the AI's
-            responses, reflecting our interests, open new avenues of exploration. We need to
-            remember that one of our next steps is to test Qwen with MCP or try other language
+        <para>Our next step was to test Qwen with MCP or try other language
             models, perhaps the PleIAs models trained on the open source common_corpus data. Will a
             local SLM perform as smoothly as Claude Desktop with XML stack processing? And how will
             it work to containerize the project and share it with others via Docker?</para>
-        <para>TO BE CONTINUED! These are research questions our DH lab intends to investigate in the
-            next months and hopes to share at the Balisage 2026 conference (and present in updated
-            form in this paper. For now, we move swiftly to our conclusion, reflecting about what we
-            are learning of a <quote>separation of concerns</quote> in bringing language models in
-            contact with XML.</para>
+    </section>
+    <section>
+        <title>Containing and staging the MCP system</title>
+        <para>Developing within and for a container</para>
+        <para>Moving the project to share Docker from Codeberg and Forgejo.</para>
     </section>
 
     <section>
