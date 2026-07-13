@@ -236,7 +236,7 @@
                 <emphasis>communicate</emphasis> complex ideas and technologies, Cohen’s notebooks
             help us to learn by working directly with the code and giving us ideas for projects that
             involve testing the models and visualizing how they work.<footnote>
-                <para>One such project is our AI Uncertainty Monitor, to dramatically slow down, visualize and sonify
+                <para>One such project is our AI Uncertainty Monitor, designed to dramatically slow down, visualize and sonify
                     the processing of a language model. The user selects a small language model from our interface, inputs a prompt designed to evoke many possible
                     responses, such as <quote>Describe the feeling of standing on the edge of the ocean at night.</quote>
                    The model slowly produces a response, with lag introduced based on uncertainty data pulled from 
@@ -487,7 +487,7 @@ self.xml_node = self.saxon_proc.parse_xml(xml_file_name=str(self.xml_path))
             instructions from XSLT 2.0 that it had used when it was not properly reading the MCP
             examples we provided. </para>
         <figure>
-            <title>MCP Python Function to Generate Correction with XSLT</title>
+            <title>MCP Python function to generate corrections with XSLT</title>
             <para>
                 <programlisting>
  def _generate_correction_xslt(self, corrections: list[dict]) -&gt; str:
@@ -543,7 +543,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
             </para>
         </figure>
         <para>There is something perverse about seeing XSLT written into formatted strings as shown
-            in the preceding code block. We asked ourselves during a project meeting in April
+            in the preceding code block. We asked ourselves during a project meeting in April 2026
             whether the Python template provided us by Claude might be unnecessary. Why not just
             deliver the XSLT as XSLT? The professor among us asked as much to a Claude Opus 4.6
             Extended session on the internet. <figure>
@@ -613,64 +613,38 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
         </para>
     </section>
     <section>
-        <title>Containing and staging the MCP system</title>
-        <para>
-            
-            Developing within and for a container: WHY this is important:
-        
-        via Claude:
-        
-        Here's the relevant passage from §5.3.2 (Sandbox Escape), 
-        paraphrased for you to work with — 
-        direct quotes should stay minimal per fair use, so I'd recommend paraphrasing most of this in your paper rather than quoting long stretches:
-        
-        **The core claim (useful as your thesis sentence):**
-        The paper states plainly that MCP's protocol design covers structured 
-        data exchange and parameter validation, but does not build in any mechanism 
-        for runtime isolation or privilege control — so the security boundary of an MCP server 
-        is entirely a function of what environment it happens to be running in.
-        
-        **Why this matters for local/file-based agents specifically:**
-        The authors note this is especially serious for MCP servers because 
-        they typically run *inside* AI-integrated hosts that already have 
-        broad standing access to files, networks, and user context. If the host 
-        already holds high system privileges, a poorly configured server can effectively 
-        create the same exposure as a sandbox escape, even without any actual escape occurring.
-        
-        **The filesystem-specific case (most directly citable for your XML project framing):**
-        They give file-access servers as one of several worked examples: a file-system server 
-        that lacks directory restrictions may enable access to sensitive areas such as
-        configuration folders or system files. 
-        That's the exact mechanism you'd want to cite — an ungoverned MCP server, 
-        run natively rather than in a container, has no structural reason to stay 
-        confined to your XML source directory; it inherits whatever filesystem reach the host process has.
-        
-        **The recommended mitigation, stated directly:**
-        Their proposed defenses include restricting file-system access to a specific directory, 
-        validating and sanitizing all input parameters, and — the line most relevant to your 
-        containerization argument — using containers or process-level isolation to confine tool 
-        execution, paired with continuous runtime monitoring.
-        
-        **Suggested citation for your paper:**
-        
-        > Hou, X., Zhao, Y., Wang, S., &amp; Wang, H. (2025). *Model Context Protocol (MCP): 
-        Landscape, Security Threats, and Future Research Directions*. arXiv:2503.23278.
-        
-        This gives you a clean line of argument: MCP has no native isolation 
-        guarantees → the server's file-access boundary is whatever the host happens to grant it → 
-        without containment, a file-oriented MCP server has no structural reason to stay inside your 
-        intended XML directory → containerization (with a directory explicitly mounted in) is what 
-        actually enforces that boundary, rather than trusting the server's own logic to behave.
-        
-        
-        
+        <title>Containing and staging the agentic MCP system</title>
+        <para>After the risky behaviors we witnessed from a misconfigured environment, we found it urgent
+            to develop the project in a more secure environment. As of 2026, Xinyi Hou et al. provide one of the few thorough academic
+            articles thoroughly explaining MCP architecture and surveying its risks and potential for research. 
+            As they discuss, MCP is powerful for giving models direct access to pull, examine, exchange, and validate data, 
+            but does not provide in itself any way to control for runtime isolation or security privileges.
+            Those of us developing agentic models with MCP need to carefully restrict the environment 
+            in which the MCP runs. For our project, working with XML corpora in file directory systems, 
+            this is especially serious. If MCP servers operate with language models that already have
+            broad, high-privilege access to user file drives and networks, Hou et. al. point out that they 
+            threaten something like a <quote>sandbox escape</quote> to gain control of the host’s operating system, 
+            though not literally the same thing because the MCP server does not break out of a container since it 
+            had no real containment in the first place. Further, even if an MCP agent does not 
+            itself execute a hostile takeover of the host operating system, it exposes that system to 
+            possible security compromises from other sources. Effectively, an unrestricted MCP server, 
+            run natively rather than in a container, has no structural reason to stay 
+            confined to an XML source directory, because it inherits the filesystem access of its host.
+            Wary developers will learn from this to run agentic systems in containers like Docker, which also 
+            make the dependencies and tools secure and convenient for distribution.<footnote>
+                <para>Xinyi Hou,Yanjie Zhou, Shenao Wang, and Haoyu Wang, <quote>Model Context Protocol (MCP): 
+                        Landscape, security threats, and future research directions</quote>, 
+                    <emphasis role="ital">ACM Transactions on Software Engineering and Methodology</emphasis>
+                    16 February 2026, 
+                    <link xlink:href="https://dl.acm.org/doi/epdf/10.1145/3796519">https://dl.acm.org/doi/epdf/10.1145/3796519</link>.
+                </para>
+            </footnote>
         </para>
         <para>Moving the project to share Docker from Codeberg and Forgejo.</para>
     </section>
 
     <section>
-        <title>Towards a Declarative Method for Working with Language Models: A separation of
-            concerns</title>
+        <title>Towards a declarative method for working with language models: A separation of concerns</title>
         <para>Declaring one's intentions is important for langugage models and humans alike. Writing
             schemas, grammars, and MCP scripts may perhaps all be considered declarations together.
             Declaring intentions leads to specific formulations that depend on the context and scope
