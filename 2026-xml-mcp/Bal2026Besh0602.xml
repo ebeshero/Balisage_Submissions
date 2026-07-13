@@ -739,7 +739,25 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
             where we are reconfiguring the MCP server to work with Ollama rather than Claude, and where we are currently experimenting with 
             Qwen 3.6:27b and other open source SLMs to wield XML stack tooling. 
             
-            <!-- CONTINUE on the DOCKER SETUP! HOW IS RUNNING / DEPLOYING DIFFERENT NOW?-->
+            <!-- For Molly:
+                CONTINUE on the DOCKER SETUP:
+                How is the ollama MCP bridge different from working with Claude Desktop?
+                Current Qwen model is not small: but smaller models aren't working so well? 
+                (Can you summarize what's wrong with them,
+                or go back and review?)
+                * Which SLMs seem most promising as code MCP agents?
+                
+                
+                What are we doing differently using Docker?
+                * with interacting with the model(s): what will change for us and our users
+                    * installing docker
+                    * mounting filepaths for project directories
+                * choosing models (because we learned how to do this on our other project)
+                * How will logging on projects assist us and anyone who customizes the project? Maybe these become 
+                a resource for the model as well as developers to access?)
+                * Reviewing logs may be critical for project fine-tuning: what are its weaknesses, if any?
+               
+            -->
         
         </para>
     </section>
