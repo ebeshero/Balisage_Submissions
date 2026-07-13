@@ -32,8 +32,6 @@
                 Reflecting on our experience, we propose a <quote>separation of concerns</quote> (between the
                 generative model and the structured data it consults) as a principled, declarative
                 approach to AI-assisted XML work. </para>
-            <para/>
-
         </abstract>
         <author>
             <personname>
@@ -393,12 +391,12 @@
             a resource in its own right (and we may yet do so to assist with reviewing the TEI
             Guidelines).</para>
         <para>By autumn 2025 we found a better method to address XML <emphasis>as</emphasis> XML and
-            keeping it out of reach of the inner workings of language models. The Model Context
+            keep it out of reach of the inner workings of language models. The Model Context
             Protocol (MCP) introduced by Anthropic is now widely available in the open source
             community, we can now design a new model infrastructure that allows a language model to deploy an
             MCP server, which permits it to address the TEI XML tree data structure directly with
             XPath queries to XML nodes. When our team began reading about MCP, we realized that XML
-            data need not be restructured to be available to an AI system. <footnote>
+            data need not be restructured to be available to an AI system.<footnote>
                 <para>Model Context Protocol was released as an open specification in November 2024, and its current
                     version at the time of this writing is 
                     <link xlink:href="https://modelcontextprotocol.io/specification/2025-11-25">https://modelcontextprotocol.io/specification/2025-11-25</link>.
@@ -547,7 +545,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
             whether the Python template provided us by Claude might be unnecessary. Why not just
             deliver the XSLT as XSLT? The professor among us asked as much to a Claude Opus 4.6
             Extended session on the internet. <figure>
-                <title>April 2026 Conversation about MCP with Claude Opus 4.6 Extended</title>
+                <title>April 2026 conversation about MCP with Claude Opus 4.6 Extended</title>
                 <blockquote>
                     <para><emphasis>Elisa:</emphasis> Here's maybe a silly question, coming from an
                         XML processing context. I wonder whether serving XML processing and
@@ -629,10 +627,8 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
             itself execute a hostile takeover of the host operating system, it exposes that system to 
             possible security compromises from other sources. Effectively, an unrestricted MCP server, 
             run natively rather than in a container, has no structural reason to stay 
-            confined to an XML source directory, because it inherits the filesystem access of its host.
-            Wary developers will learn from this to run agentic systems in containers like Docker, which also 
-            make the dependencies and tools secure and convenient for distribution.<footnote>
-                <para>Xinyi Hou,Yanjie Zhou, Shenao Wang, and Haoyu Wang, <quote>Model Context Protocol (MCP): 
+            confined to an XML source directory, because it inherits the filesystem access of its host.<footnote>
+                <para>Xinyi Hou,Yanjie Zhao, Shenao Wang, and Haoyu Wang, <quote>Model Context Protocol (MCP): 
                         Landscape, security threats, and future research directions</quote>, 
                     <emphasis role="ital">ACM Transactions on Software Engineering and Methodology</emphasis>
                     16 February 2026, 
@@ -640,19 +636,38 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
                 </para>
             </footnote>
         </para>
-        <para>Moving the project to share Docker from Codeberg and Forgejo.</para>
+        <para> Wary developers will learn from this to run agentic systems in containers like Docker 
+            (<link xlink:href="https://www.docker.com/">https://www.docker.com/</link>), which also 
+            make the dependencies and tools secure and convenient for distribution. We began reworking the project
+            in a Docker environment, working with Ollama MCP Bridge to permit Ollama models to serve as agents and keeping them
+            in a secure sandbox for processing mounted file directories for XML corpora and schemas. Our MCP script runs 
+            in the container to execute jingtrang validation and to access, adapt, and apply saxon parsing and programming scripts.
+            In the process of developing the Docker version of the project, we migrated the codebase from GitHub to Codeberg, permitting us to
+            register and serve the Docker container on the non-profit Codeberg platform running the 
+            open-source Forgejo software, rather than DockerHub's proprietary, commercially licensed registry.<footnote>
+                <para>Forgejo is an open-source Git forge forked from Gitea in 2022 after Gitea transferred to a for-profit company.
+                    Codeberg e.V., a registered non-profit, now maintains the Forgejo source and container distribution, 
+                    providing both source hosting and container registry functionality without commercial fees.</para>
+            </footnote>
+            Our project development continues at <link xlink:href="https://codeberg.org/newtfire">https://codeberg.org/newtfire</link>
+            where we are reconfiguring the MCP server to work with Ollama rather than Claude, and where we are currently experimenting with 
+            Qwen and other open source SLMs to wield XML stack tooling. 
+            
+            <!-- CONTINUE on the DOCKER SETUP! HOW IS RUNNING / DEPLOYING DIFFERENT NOW?-->
+        
+        </para>
     </section>
 
     <section>
         <title>Towards a declarative method for working with language models: A separation of concerns</title>
-        <para>Declaring one's intentions is important for langugage models and humans alike. Writing
+        <para>Declaring one's intentions is important for language models and humans alike. Writing
             schemas, grammars, and MCP scripts may perhaps all be considered declarations together.
             Declaring intentions leads to specific formulations that depend on the context and scope
             of a project, whether you encode the page by page graphical layout, the relationship
             between an illustration and surrounding text.</para>
         <para>Our DH lab has been working between two different cultures of digital text: the
             documentary markup culture and the natural language processing culture. The operations
-            of language models are fascinating for ther endless variety of dimensional possibilities
+            of language models are fascinating for their endless variety of dimensional possibilities
             working over hundreds or thousands of vectors even in an SLM. Yet the availability of
             all those possibilities makes them generate irreproducible results when applied to
             projects where reliability and accuracy are expected. By contrast, traversing XML node
@@ -670,10 +685,9 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
             help us to refine our scripts to improve and complete our projects. Our role in
             declaring our parameters is defining the boundaries within which we want AI to work. We
             are defining the terms by which the language model system will function most efficiently
-            and reliably within the rule-based architecture that we have declared. from </para>
-        <para>In course of developing this paper, we have recognized that the old programming
-            concept of a <quote>separation of concerns</quote> familiar to us from functional
-            programming can guide the structures we design and enhance with language models. Giving
+            and reliably within the rule-based architecture that we have declared.</para>
+        <para>In course of developing this paper, we have recognized that the old, familiar functional programming
+            concept of a <quote>separation of concerns</quote> can guide how we work with language models. Giving
             the model access, yet keeping the XML apart from its internal tokenized embedding layers
             is one separation of concerns, and limiting the need and capacity of a language model to
             access one's operating system is another.</para>
