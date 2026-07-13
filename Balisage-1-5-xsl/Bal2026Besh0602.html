@@ -319,11 +319,11 @@
                                  <h2 class="inline-heading">Table of Contents</h2>
                               </summary>
                               <dl>
-                                 <dt><span class="section"><a href="#d3e108" class="toc">Our Context: Studying Language Models in Digital Humanities</a></span></dt>
-                                 <dt><span class="section"><a href="#d3e328" class="toc">The <q>DigitAI</q> project with MCP: An Orientation for Markup People</a></span></dt>
-                                 <dt><span class="section"><a href="#d3e424" class="toc">What is XML to a Language Model and how much does an agent need?</a></span></dt>
-                                 <dt><span class="section"><a href="#d3e507" class="toc">Containing and staging the MCP system</a></span></dt>
-                                 <dt><span class="section"><a href="#d3e514" class="toc">Towards a Declarative Method for Working with Language Models: A separation of
+                                 <dt><span class="section"><a href="#d3e108" class="toc">Our context: Studying language models in Digital Humanities</a></span></dt>
+                                 <dt><span class="section"><a href="#d3e328" class="toc">The <q>DigitAI</q> project with MCP: An orientation for markup people</a></span></dt>
+                                 <dt><span class="section"><a href="#d3e436" class="toc">Some risky business with MCP</a></span></dt>
+                                 <dt><span class="section"><a href="#d3e520" class="toc">Containing and staging the MCP system</a></span></dt>
+                                 <dt><span class="section"><a href="#d3e527" class="toc">Towards a Declarative Method for Working with Language Models: A separation of
                                           concerns</a></span></dt>
                               </dl>
                            </details>
@@ -419,11 +419,11 @@
                         <h2 class="inline-heading">Table of Contents</h2>
                      </summary>
                      <dl>
-                        <dt><span class="section"><a href="#d3e108" class="toc">Our Context: Studying Language Models in Digital Humanities</a></span></dt>
-                        <dt><span class="section"><a href="#d3e328" class="toc">The <q>DigitAI</q> project with MCP: An Orientation for Markup People</a></span></dt>
-                        <dt><span class="section"><a href="#d3e424" class="toc">What is XML to a Language Model and how much does an agent need?</a></span></dt>
-                        <dt><span class="section"><a href="#d3e507" class="toc">Containing and staging the MCP system</a></span></dt>
-                        <dt><span class="section"><a href="#d3e514" class="toc">Towards a Declarative Method for Working with Language Models: A separation of
+                        <dt><span class="section"><a href="#d3e108" class="toc">Our context: Studying language models in Digital Humanities</a></span></dt>
+                        <dt><span class="section"><a href="#d3e328" class="toc">The <q>DigitAI</q> project with MCP: An orientation for markup people</a></span></dt>
+                        <dt><span class="section"><a href="#d3e436" class="toc">Some risky business with MCP</a></span></dt>
+                        <dt><span class="section"><a href="#d3e520" class="toc">Containing and staging the MCP system</a></span></dt>
+                        <dt><span class="section"><a href="#d3e527" class="toc">Towards a Declarative Method for Working with Language Models: A separation of
                                  concerns</a></span></dt>
                      </dl>
                   </details>
@@ -434,7 +434,7 @@
                   <h1 class="article-title" id="d3e5">Balisage Paper: XML, MCP, and Language Models</h1>
                   <h2 class="subtitle">A Separation of Concerns</h2>
                   <div class="section" id="d3e108">
-                     <h2 class="title" style="clear: both">Our Context: Studying Language Models in Digital Humanities</h2>
+                     <h2 class="title" style="clear: both">Our context: Studying language models in Digital Humanities</h2>
                      <p id="d3e111">For the past year and a half, our small Digital Humanities (DH) lab team has been
                         investigating Small Language Models (SLMs) and how we can work with them on projects
                         involving XML technologies. We find SLMs important to investigate in academic contexts
@@ -543,7 +543,7 @@
                         technology balanced with the precision tools of the XML stack. </p>
                   </div>
                   <div class="section" id="d3e328">
-                     <h2 class="title" style="clear: both">The <q>DigitAI</q> project with MCP: An Orientation for Markup People</h2>
+                     <h2 class="title" style="clear: both">The <q>DigitAI</q> project with MCP: An orientation for markup people</h2>
                      <p id="d3e334">As <q>markup people</q> ourselves, we are accustomed to a certain mystery in
                         the underlying technologies that support processing declarative markup (e.g. how our
                         own
@@ -655,42 +655,46 @@
                      <p id="d3e417">By autumn 2025 we found a better method to address XML <span class="ital">as</span> XML and
                         keeping it out of reach of the inner workings of language models. The Model Context
                         Protocol (MCP) introduced by Anthropic is now widely available in the open source
-                        community, we can now design a new model infrastructure that allows an LLM to deploy
-                        an
+                        community, we can now design a new model infrastructure that allows a language model
+                        to deploy an
                         MCP server, which permits it to address the TEI XML tree data structure directly with
                         XPath queries to XML nodes. When our team began reading about MCP, we realized that
                         XML
-                        data need not be restructured to be available to an AI system. But holding the XML
-                        data
-                        apart from the language model also required a change to the SLM: We would need to
-                        give
-                        it agency to execute and adapt the sample code scripts we would provide its MCP server.
-                        We would need to make it an agent, and this involved a new level of risk, and a
-                        necessity to learn how to safely contain the model, restricting its local access to
-                        specific directories, or ideally to containerize it and separate it from sensitive
-                        data
-                        on our computers. </p>
-                     <p id="d3e422">Our current challenge is determining how to provide a map of the TEI P5.xml tree
-                        structure and enough example XPath scripts to retrieve relevant information about
-                        an
-                        element, attribute, or model class in the TEI. As this is an area of expertise in
-                        our
-                        team and program, we are confident that if we can teach humans to write XPath, we
-                        can
-                        script what is needed for an agentic AI system to access an XPath MCP service (e.g.
-                        Skywork AI 2025). We are now working to create an agentic system that may read XML
-                        directly with XPath rather than having to translate intricate XML data structures
-                        into a
-                        graph database. Developing an agentic localized model also facilitates reporting about
-                        when and what resources the model is consulting as well as what XPath expressions
-                        it
-                        deploys to retrieve the information and what XSLT scripts it devises to transform
+                        data need not be restructured to be available to an AI system. <sup class="fn-label"><a href="#d3e422" class="footnoteref" id="d3e422-ref">[11]</a></sup></p>
+                     <p id="d3e428">We have found that with MCP scripts, we no longer have to provide parsed information
+                        
+                        from the TEI Guidelines or information drawn from documents and <q>spoonfed</q> to
+                        the language model in JSON lines for embeddings. Instead, we give the language model
+                        agency
+                        to access and adapt parsing scripts. In this environment, a Python script with Saxon
+                        parsers
+                        provides a much more efficient pathway to improve the language model’s capacity to
+                        review 
+                        XML documents, <span class="ital">any</span> well-formed XML document for its structured data.
+                        The agentic MCP workflow allows our project to expand: We can test it by providing
+                        it purposefully 
+                        inconsistent code and request assistance with identifying and actively patching problems
+                        if asked to do
+                        so. MCP provides starter scripts for the model to access and apply XPath, XSLT, and
+                        XQuery, and
+                        we can observe how the language model retrieves and modifies these to pull data, evaluate
+                        it, and, if 
+                        requested, transform it. The MCP workflow helpfully facilitates logging which resources
+                        the model is consulting as well as what XPath expressions it
+                        deploys to retrieve the information, and what XSLT scripts it devises to transform
                         it on
-                        request. </p>
+                        request. Giving the language model agency to execute and adapt the sample code scripts
+                        that we supply to its MCP server.
+                        This involved confronting new level of risk. Giving AI models access to code execution
+                        scripts necessitated
+                        learning how to secure our systems to operate only within controlled parameters and
+                        restricting its local access to
+                        specific directories and to separate it from sensitive data
+                        on our computers, as we will discuss in the next section.</p>
                   </div>
-                  <div class="section" id="d3e424">
-                     <h2 class="title" style="clear: both">What is XML to a Language Model and how much does an agent need?</h2>
-                     <p id="d3e427">Perhaps learning to use AI effectively is understanding its limits regarding
+                  <div class="section" id="d3e436">
+                     <h2 class="title" style="clear: both">Some risky business with MCP</h2>
+                     <p id="d3e439">Perhaps learning to use AI effectively is understanding its limits regarding
                         structured systems like XML. In our experience as a lab with primarily declarative
                         markup expertise, we approached this project as people who understood very little
                         about
@@ -702,20 +706,23 @@
                         to internal workings of a language model. Nevertheless, when asked to act upon element
                         nodes, and given agency and software to do so, a language model demonstrates competence
                         in scripting code and suggesting improvements.</p>
-                     <p id="d3e432">Since we were entirely new to MCP, we switched from our SLM Qwen to the much larger
-                        Claude Desktop application to start our learning process. Partly in this we were
-                        learning about MCP via Anthropic through Claude. We began by following Claude's
+                     <p id="d3e444">Since we were entirely new to MCP, we switched temporarily from Qwen to deploying
+                        the much larger
+                        Claude Desktop application as our language model agent to start our learning process.
+                        
+                        Because we were learning about MCP via Anthropic, it seemed convenient to deploy
+                        MCP through Anthropic’s Claude as an agent. We also began by following Claude's
                         suggestions for a starting MCP Server Protocol delivered by a Python script that
                         supplies access to Saxon processing tools and jingtrang for RelaxNG schema
                         validation.</p>
-                     <p id="d3e434">We established a protocol of gathering log data from the desktop language model, as
+                     <p id="d3e446">We established a protocol of gathering log data from the desktop language model, as
                         well as its
                         processes. This helps ensure that not only is it doing the processing correctly (i.e.
                         how we want it to) but that we are able to learn how it <q>thinks</q> which then
                         helps us better equip it...to help us! This aligns closely with the declarative mindset
                         we have in Digit working with XML technologies, where clarity of structure and intention
                         leads to more reliable and reproducible outcomes.</p>
-                     <p id="d3e439">We decided to begin with some inconsistent XML markup for a recipe, purposefully made
+                     <p id="d3e451">We decided to begin with some inconsistent XML markup for a recipe, purposefully made
                         invalid to its schema, in order to test the capacities of our desktop agent to discover
                         validation errors and recommend, and then process corrections. At first we struggled
                         with the field containment systems of our agentic language model: It could not read
@@ -727,45 +734,48 @@
                         one
                         that we are familiar with from reading and opening Python files conventionally with
                         lines like these: 
-                        <pre class="programlisting" id="d3e441">
+                        <pre class="programlisting" id="d3e453">
 with open(self.xml_path, 'r', encoding='utf-8') as f:
     xml_text = f.read()
 self.xml_node = self.saxon_proc.parse_xml(xml_text=xml_text)
             </pre> f.read() would pass the XML as a text string rather than a
                         document tree. Changing that to: 
-                        <pre class="programlisting" id="d3e444">
+                        <pre class="programlisting" id="d3e456">
 self.xml_node = self.saxon_proc.parse_xml(xml_file_name=str(self.xml_path))
         </pre> neatly resolved a serious pathing problem by delivering the
-                        file directly to the Saxon processors. Ensuring the agentic model can read filepaths
-                        and
-                        access only the files and software you intend seems a matter of security, as the model
-                        seems motivated to try and try and try again when faced with failure. The capacity
-                        to
-                        continue attempting related kinds of actions, exceeding prescripted bounds, may be
-                        part
-                        of the natural language processing powers: not just hallucinating speculative responses
-                        but acting on speculations in one's file system. Seeing this behavior firsthand urges
-                        caution: we are moving to contain the agentic SLM in Docker instead of treating it
-                        like
-                        most other software whose passivity we take for granted. </p>
-                     <p id="d3e447">Establishing the means to read local filepaths, find the schema, and execute jingtrang
+                        file directly to the Saxon processors. From this experience we learned firsthand the
+                        
+                        security risks of a misconfigured and uncontained agentic model, as it
+                        seems motivated to try and try and try again when faced with failure, seeking access
+                        far beyond one’s project directories. The capacity to continue attempting related
+                        kinds of actions, 
+                        exceeding prescripted bounds, may be part of the natural language processing powers:
+                        
+                        not just hallucinating speculative responses but acting on speculations in one's file
+                        system. 
+                        Seeing this behavior urged us to the next stage of our project, to learn how to set
+                        up the MCP 
+                        system inside a secure Docker container instead of treating it like most other software
+                        whose 
+                        passivity we take for granted.</p>
+                     <p id="d3e459">Establishing the means to read local filepaths, find the schema, and execute jingtrang
                         for schema validation made for a more tranquil and less surprising and impulsive
-                        experience with the SLM. When asked to correct and inconsistency, it will run the
-                        XSLT
-                        identity transformation tool, and follow up by validating the results with Relax NG
-                        and
+                        experience with the desktop agent. When asked to correct an inconsistency, it now
+                        finds and runs 
+                        the XSLT identity transformation tool, and follows up by validating the results with
+                        Relax NG and
                         continuing to repair. We log its transformation scripts and find that it is now building
                         on our example identity transformations, scripting in our style of applying
                         <code class="code">&lt;xsl:mode on-no-match="shallow-copy"/&gt;</code> without inserting the
                         old-fashioned identity transformation by copy of elements and attributes and processing
                         instructions from XSLT 2.0 that it had used when it was not properly reading the MCP
                         examples we provided. </p>
-                     <figure id="d3e452">
+                     <figure id="d3e464">
                         <p class="title">Figure&nbsp;1: MCP Python Function to Generate Correction with XSLT</p>
                         <div class="figure-contents">
-                           <p id="d3e455">
+                           <p id="d3e467">
                               
-                              <pre class="programlisting" id="d3e457">
+                              <pre class="programlisting" id="d3e469">
  def _generate_correction_xslt(self, corrections: list[dict]) -&gt; str:
         """Generate XSLT 3.0 stylesheet from correction operations"""
         templates = []
@@ -819,17 +829,17 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
                               </p>
                         </div>
                      </figure>
-                     <p id="d3e460">There is something perverse about seeing XSLT written into formatted strings as shown
+                     <p id="d3e472">There is something perverse about seeing XSLT written into formatted strings as shown
                         in the preceding code block. We asked ourselves during a project meeting in April
                         whether the Python template provided us by Claude might be unnecessary. Why not just
                         deliver the XSLT as XSLT? The professor among us asked as much to a Claude Opus 4.6
                         Extended session on the internet. 
-                        <figure id="d3e462">
+                        <figure id="d3e474">
                            <p class="title">Figure&nbsp;2: April 2026 Conversation about MCP with Claude Opus 4.6 Extended</p>
                            <div class="figure-contents">
                               <div class="blockquote">
                                  <blockquote class="blockquote">
-                                    <p id="d3e466"><span class="ital">Elisa:</span> Here's maybe a silly question, coming from an
+                                    <p id="d3e478"><span class="ital">Elisa:</span> Here's maybe a silly question, coming from an
                                        XML processing context. I wonder whether serving XML processing and
                                        validating tools really requires Python for delivery to the desktop
                                        agent?</p>
@@ -837,7 +847,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
                               </div>
                               <div class="blockquote">
                                  <blockquote class="blockquote">
-                                    <p id="d3e471"><span class="ital">Claude Opus:</span>
+                                    <p id="d3e483"><span class="ital">Claude Opus:</span>
                                        <span class="ital">Examined whether Python intermediary was necessary for
                                           XML tool delivery</span> Not a silly question at all — it's a really
                                        good architectural observation. You're essentially running two Java tools
@@ -846,23 +856,23 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
                                        of layers, and each one has introduced friction — the venv activation issue,
                                        pyjing not being on PATH, the base-uri problem from how saxonche was being
                                        called.</p>
-                                    <p id="d3e478">MCP is just JSON-RPC over stdio. The server can be written in any
+                                    <p id="d3e490">MCP is just JSON-RPC over stdio. The server can be written in any
                                        language. So your options are roughly:</p>
-                                    <p id="d3e480"><span class="ital">Java/Kotlin</span> would be the most natural fit. Saxon-HE
+                                    <p id="d3e492"><span class="ital">Java/Kotlin</span> would be the most natural fit. Saxon-HE
                                        and Jing are both Java libraries natively — no wrappers, no subprocess
                                        calls, no GraalVM bridge. You'd call net.sf.saxon.s9api and
                                        com.thaiopensource.validate directly. The tradeoff is that there isn't an
                                        official MCP SDK for Java yet, so you'd be implementing the stdio JSON-RPC
                                        protocol yourself (which is straightforward but some boilerplate).</p>
-                                    <p id="d3e484"><span class="ital">TypeScript/Node.js</span> has a mature MCP SDK and is
+                                    <p id="d3e496"><span class="ital">TypeScript/Node.js</span> has a mature MCP SDK and is
                                        well-supported by Claude Desktop. Saxon-JS exists for this environment,
                                        though it's not feature-identical to Saxon-HE (it handles XSLT 3.0 and XPath
                                        3.1 well, but XQuery support is limited). Jing would still need to be called
                                        as a subprocess.</p>
-                                    <p id="d3e488"><span class="ital">Python</span> (what you have now) has the advantage of being
+                                    <p id="d3e500"><span class="ital">Python</span> (what you have now) has the advantage of being
                                        done — the server works. The pain points have been environment plumbing, not
                                        fundamental design problems.</p>
-                                    <p id="d3e492">If I were starting fresh with your stack, I'd seriously consider Java.
+                                    <p id="d3e504">If I were starting fresh with your stack, I'd seriously consider Java.
                                        Both your core tools are native Java, and the MCP protocol is simple enough
                                        that the lack of an SDK isn't a big hurdle. But given that you have a
                                        working Python server now, the pragmatic call depends on how much the
@@ -873,7 +883,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
                            </div>
                         </figure>
                         </p>
-                     <p id="d3e495">The authors’ low comfort level with Java notwithstanding, the idea of preventing the
+                     <p id="d3e507">The authors’ low comfort level with Java notwithstanding, the idea of preventing the
                         annoying <q>biting</q> of <q>wrapper friction</q> seems like an
                         invitation to attempt this with some guidance. Up to this point we had
                         presumed that one trains, refines, augments, and supplies tools to a language model
@@ -881,36 +891,95 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
                         implement XML stack validation, search, and transformation is opening new learning
                         paths
                         for us in our lab. </p>
-                     <p id="d3e503">While testing the freshly revised Python MCP with Claude Desktop, as soon as it was
+                     <p id="d3e515">While testing the freshly revised Python MCP with Claude Desktop, as soon as it was
                         able to follow filepaths (dangerously), we found it capable and willing to update
                         its
                         own configuration script, as the logs  stored JSON instructions from the model to
                         itself that reinforced our
                         prompt to save both outputs and transformation scripts in set locations. We became
                         aware
-                        that the puppet we thought we were controlling was now pulling its own strings.</p>
-                     <p id="d3e505">Our next step was to test Qwen with MCP or try other language
-                        models, perhaps the PleIAs models trained on the open source common_corpus data. Will
-                        a
-                        local SLM perform as smoothly as Claude Desktop with XML stack processing? And how
-                        will
-                        it work to containerize the project and share it with others via Docker?</p>
+                        that the puppet we thought we were controlling was now pulling its own strings. The
+                        project with
+                        its MCP script from this stage of development is now archived on GitHub at 
+                        <a href="https://github.com/newtfire/digitxml-mcp" class="link">https://github.com/newtfire/digitxml-mcp</a>.
+                        After this stage, we moved the project to Codeberg to continue development.
+                        </p>
                   </div>
-                  <div class="section" id="d3e507">
+                  <div class="section" id="d3e520">
                      <h2 class="title" style="clear: both">Containing and staging the MCP system</h2>
-                     <p id="d3e510">Developing within and for a container</p>
-                     <p id="d3e512">Moving the project to share Docker from Codeberg and Forgejo.</p>
+                     <p id="d3e523">
+                        
+                        Developing within and for a container: WHY this is important:
+                        
+                        via Claude:
+                        
+                        Here's the relevant passage from §5.3.2 (Sandbox Escape), 
+                        paraphrased for you to work with — 
+                        direct quotes should stay minimal per fair use, so I'd recommend paraphrasing most
+                        of this in your paper rather than quoting long stretches:
+                        
+                        **The core claim (useful as your thesis sentence):**
+                        The paper states plainly that MCP's protocol design covers structured 
+                        data exchange and parameter validation, but does not build in any mechanism 
+                        for runtime isolation or privilege control — so the security boundary of an MCP server
+                        
+                        is entirely a function of what environment it happens to be running in.
+                        
+                        **Why this matters for local/file-based agents specifically:**
+                        The authors note this is especially serious for MCP servers because 
+                        they typically run *inside* AI-integrated hosts that already have 
+                        broad standing access to files, networks, and user context. If the host 
+                        already holds high system privileges, a poorly configured server can effectively 
+                        create the same exposure as a sandbox escape, even without any actual escape occurring.
+                        
+                        **The filesystem-specific case (most directly citable for your XML project framing):**
+                        They give file-access servers as one of several worked examples: a file-system server
+                        
+                        that lacks directory restrictions may enable access to sensitive areas such as
+                        configuration folders or system files. 
+                        That's the exact mechanism you'd want to cite — an ungoverned MCP server, 
+                        run natively rather than in a container, has no structural reason to stay 
+                        confined to your XML source directory; it inherits whatever filesystem reach the host
+                        process has.
+                        
+                        **The recommended mitigation, stated directly:**
+                        Their proposed defenses include restricting file-system access to a specific directory,
+                        
+                        validating and sanitizing all input parameters, and — the line most relevant to your
+                        
+                        containerization argument — using containers or process-level isolation to confine
+                        tool 
+                        execution, paired with continuous runtime monitoring.
+                        
+                        **Suggested citation for your paper:**
+                        
+                        &gt; Hou, X., Zhao, Y., Wang, S., &amp; Wang, H. (2025). *Model Context Protocol (MCP): 
+                        Landscape, Security Threats, and Future Research Directions*. arXiv:2503.23278.
+                        
+                        This gives you a clean line of argument: MCP has no native isolation 
+                        guarantees → the server's file-access boundary is whatever the host happens to grant
+                        it → 
+                        without containment, a file-oriented MCP server has no structural reason to stay inside
+                        your 
+                        intended XML directory → containerization (with a directory explicitly mounted in)
+                        is what 
+                        actually enforces that boundary, rather than trusting the server's own logic to behave.
+                        
+                        
+                        
+                        </p>
+                     <p id="d3e525">Moving the project to share Docker from Codeberg and Forgejo.</p>
                   </div>
-                  <div class="section" id="d3e514">
+                  <div class="section" id="d3e527">
                      <h2 class="title" style="clear: both">Towards a Declarative Method for Working with Language Models: A separation of
                         concerns</h2>
-                     <p id="d3e517">Declaring one's intentions is important for langugage models and humans alike. Writing
+                     <p id="d3e530">Declaring one's intentions is important for langugage models and humans alike. Writing
                         schemas, grammars, and MCP scripts may perhaps all be considered declarations together.
                         Declaring intentions leads to specific formulations that depend on the context and
                         scope
                         of a project, whether you encode the page by page graphical layout, the relationship
                         between an illustration and surrounding text.</p>
-                     <p id="d3e519">Our DH lab has been working between two different cultures of digital text: the
+                     <p id="d3e532">Our DH lab has been working between two different cultures of digital text: the
                         documentary markup culture and the natural language processing culture. The operations
                         of language models are fascinating for ther endless variety of dimensional possibilities
                         working over hundreds or thousands of vectors even in an SLM. Yet the availability
@@ -923,7 +992,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
                         structured markup, so we can deliver meaningful node packages when a project like
                         a
                         scholarly edition requires precision and quality control.</p>
-                     <p id="d3e521">When we bring these two cultures together, declarative markup technologies may be
+                     <p id="d3e534">When we bring these two cultures together, declarative markup technologies may be
                         helping us to define our terms for controlling and customizing systems for specialized
                         projects. Our work with modeling grammars and schemas is definitional, and when we
                         instruct an AI agent to apply a validation step and inspect the results before making
@@ -937,7 +1006,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
                         We
                         are defining the terms by which the language model system will function most efficiently
                         and reliably within the rule-based architecture that we have declared. from </p>
-                     <p id="d3e523">In course of developing this paper, we have recognized that the old programming
+                     <p id="d3e536">In course of developing this paper, we have recognized that the old programming
                         concept of a <q>separation of concerns</q> familiar to us from functional
                         programming can guide the structures we design and enhance with language models. Giving
                         the model access, yet keeping the XML apart from its internal tokenized embedding
@@ -945,7 +1014,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
                         is one separation of concerns, and limiting the need and capacity of a language model
                         to
                         access one's operating system is another.</p>
-                     <p id="d3e528">Perhaps the most important separation of concerns for us to keep in view is the
+                     <p id="d3e541">Perhaps the most important separation of concerns for us to keep in view is the
                         education of our scholars and lab assistants in refining the tools to fit our tasks,
                         rather than letting the tools shape those tasks for us on the terms by which they
                         were
@@ -1042,6 +1111,13 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
                      </div>
                      <div id="d3e403" class="footnote">
                         <p><sup class="fn-label"><a href="#d3e403-ref" class="footnoteref">[10]</a></sup> neo4J on knowledge graphs: <a href="https://neo4j.com/use-cases/knowledge-graph/" class="link">https://neo4j.com/use-cases/knowledge-graph/</a></p>
+                     </div>
+                     <div id="d3e422" class="footnote">
+                        <p><sup class="fn-label"><a href="#d3e422-ref" class="footnoteref">[11]</a></sup> Model Context Protocol was released as an open specification in November 2024, and
+                           its current
+                           version at the time of this writing is 
+                           <a href="https://modelcontextprotocol.io/specification/2025-11-25" class="link">https://modelcontextprotocol.io/specification/2025-11-25</a>.
+                           </p>
                      </div>
                   </div>
                </div>
