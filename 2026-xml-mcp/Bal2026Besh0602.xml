@@ -767,13 +767,12 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
             </para></footnote> In addition, our intention to log results systematically may create a valuable resource for fine-tuning and training future variants
             of these local models. They may highlight logical weaknesses and points where the user has to <quote>guide</quote> the model, if any come up.</para>
             
-            <para>There are a few technological hiccups when developing Dockerized agents. Use after deployment requires the installation of and 
-            some technological know-how of Docker and its functions. This can be unintuitive for those without software development backgrounds.
-            For instance, upon composition of an image, Docker creates a sort of interior file system that isn't readily accessable by the user through
-            a GUI. We depend on mounting directories: essentially transferring a folder on the user's system into the container so that the files they 
-            wish to work with are available to the agent. This requires a knowledge of filesystems and building compose.yml files that can be obtuse for 
+            <para>We expect a few hiccups for developing and deploying Dockerized agents. To work with the MCP agent after deployment requires some technological know-how of Docker and its functions. This can be unintuitive for those in the Digital Humanities community without software development backgrounds.
+            For instance, upon composition of an image, Docker creates a sort of interior file system that is not readily accessible by the user through
+            a GUI. Customizing the docker agent depends on learning how to mount directories: essentially transferring a folder on the user’s system into the container so that the files they 
+            wish to work with are available to the agent. This requires a knowledge of filesystems and building or customizing compose.yml files that can be obtuse for 
             many users. Put bluntly: it may seem far easier to load up an LLM service like Claude Desktop and point it where to go. We intend to circumvent
-            this by including extensive set-up documentation, noting how to establish command line aliases for mounting.
+            this by including extensive set-up documentation, noting how to establish command line aliases for mounting. For this reason, contemplate the importance of providing easy <quote>on-ramps</quote> through simple, impatient-user-friendly dccumentation, perhaps with interactive web interface guidance to help guide customizations of the system. We have prepared such an interactive local web interface designed for users unfamiliar with the command line for our Uncertainty Monitor project, and contemplate something similar for the DigitAI XML-MCP project.
         </para>
     </section>
 
