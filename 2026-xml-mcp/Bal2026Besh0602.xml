@@ -738,9 +738,9 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
             </footnote>
             Our project development continues at <link xlink:href="https://codeberg.org/newtfire">https://codeberg.org/newtfire</link>
             where we are reconfiguring the MCP server to work with Ollama rather than Claude, and where we are currently experimenting with 
-            Qwen 3.6:27b and other open source SLMs to wield XML stack tooling. 
+            Qwen 3.6:27b and other open source SLMs to wield XML stack tooling. </para>
             
-            We selected Qwen3.6:27b as our baseline model for testing our MCP server's capabilities because, 
+            <para>We selected Qwen3.6:27b as our baseline model for testing our MCP server's capabilities because, 
             as of July 2026, it is the most recent open-weight <!--Is a definition of open-weight needed? Footnote?-->
             and locally downloadable version of Qwen released by Alibaba Cloud. Notably, this model is substantially larger than the models we've 
             implemented both in previous iterations of this project and in other SLM-based projects. There are a few reasons for this shift, but
@@ -749,9 +749,10 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
             on a depricated package warning that was completely irrelevant to the XML docuent. It would repeatedly ask to read and reread the file,
             not doing anything with the information it retrieved from it. <!-- Could put saved example here--> The user was often required to "hand-hold" 
             the model and walk it through which commands it should run. Even with incredibly particular language, the user was outright ignored much of 
-            the time, defeating the purpose of an agent entirely. 
+            the time, defeating the purpose of an agent entirely. </para>
             
-            Selecting a model for use with our MCP server is likely to become a search for the potentially nonexistent "sweet spot" of reasoning 
+            
+            <para>Selecting a model for use with our MCP server is likely to become a search for the potentially nonexistent "sweet spot" of reasoning 
             ability versus required computing power. What can give the most while using the least? Despite our current preferece towards it, we recognize 
             that Qwen3.6:27b might not fit neatly into the definition of a <emphasis>small</emphasis> language model. It can be run locally, but it is more
             resource-intensive than previous Qwen models, requiring ~18GB of memory quantized <!-- quantized: definition? --> compared to 3.5:7b's ~5.5GB.
@@ -761,9 +762,9 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
             Gastón Löwenstern's Ollama MCP Bridge serves as this gateway.] We intend to adapt code used for our Uncertainty Monitor project to allow for model
             switching as a form of customization and future-proofing. As agentic AI becomes more popular, we may see capable, local models at smaller sizes become 
             widely available. In addition to that, our intention to log results may create a valuable resource for fine-tuning and training future variants
-            of these local models. They may highlight logical weaknesses and points where the user has to 'guide' the model, if any come up.
+            of these local models. They may highlight logical weaknesses and points where the user has to 'guide' the model, if any come up.</para>
             
-            There are a few technological hiccups when developing Dockerized agents. Use after deployment requires the installation of and 
+            <para>There are a few technological hiccups when developing Dockerized agents. Use after deployment requires the installation of and 
             some technological know-how of Docker and its functions. This can be unintuitive for those without software development backgrounds.
             For instance, upon composition of an image, Docker creates a sort of interior file system that isn't readily accessable by the user through
             a GUI. We depend on mounting directories: essentially transferring a folder on the user's system into the container so that the files they 
