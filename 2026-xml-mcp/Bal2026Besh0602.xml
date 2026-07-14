@@ -740,14 +740,14 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
             where we are reconfiguring the MCP server to work with Ollama rather than Claude, and where we are currently experimenting with 
             Qwen 3.6:27b and other open source SLMs to wield XML stack tooling. </para>
             
-            <para>We selected Qwen3.6:27b as our baseline model for testing our MCP server's capabilities because, 
+            <para>We selected Qwen3.6:27b as our baseline model for testing our MCP server’s capabilities because, 
             as of July 2026, it is the most recent open-weight <!--Is a definition of open-weight needed? Footnote?-->
-            and locally downloadable version of Qwen released by Alibaba Cloud. Notably, this model is substantially larger than the models we've 
+            and locally downloadable version of Qwen released by Alibaba Cloud. Notably, this model is substantially larger than the models we have 
             implemented both in previous iterations of this project and in other SLM-based projects. There are a few reasons for this shift, but
-            generally: smaller, older versions of Qwen tend to lack the long-term reasoning necessary to be an effective agent. During preliminary 
+            generally we have found smaller, older versions of Qwen tend to lack the long-term reasoning necessary to be an effective agent. During preliminary 
             testing,  we found that both Qwen2.5:1.5b and Qwen2.5:7b tended to get caught in logical loops. In one instance, Qwen2.5:7b would get stuck 
-            on a depricated package warning that was completely irrelevant to the XML docuent. It would repeatedly ask to read and reread the file,
-            not doing anything with the information it retrieved from it. <!-- Could put saved example here--> The user was often required to "hand-hold" 
+            on a deprecated package warning that was completely irrelevant to the XML document. It would repeatedly ask to read and reread the file,
+            not doing anything with the information it retrieved from it. See Appendix [BCDF] below for the logged chat. <!-- Could put saved example here--> The user was often required to “hand-hold” 
             the model and walk it through which commands it should run. Even with incredibly particular language, the user was outright ignored much of 
             the time, defeating the purpose of an agent entirely. </para>
             
@@ -818,6 +818,12 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
             appropriate separation of concerns, we can see how AI can responsibly and effectively
             operate within the scopes we set. </para>
 
+    </section>
+    <section>
+        <title>Appendix [BCDF]: Agent Qwen 2.5:7b stuck in a loop</title>
+        
+        
+        
     </section>
 
 
