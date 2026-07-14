@@ -755,11 +755,16 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
             <para>Selecting a model for use with our MCP server is likely to become a search for the potentially nonexistent "sweet spot" of reasoning 
             ability versus required computing power. What can give the most while using the least? Despite our current preferece towards it, we recognize 
             that Qwen3.6:27b might not fit neatly into the definition of a <emphasis>small</emphasis> language model. It can be run locally, but it is more
-            resource-intensive than previous Qwen models, requiring ~18GB of memory quantized <!-- quantized: definition? --> compared to 3.5:7b's ~5.5GB.
-            Even with a capable machine, response times with 3.6 noticeably slow with complex tasks, indicating that it may not be ideal for
+            resource-intensive than previous Qwen models, requiring ~18GB of memory quantized compared to 3.5:7b's ~5.5GB.
+            Even with a capable machine, response times with Qwen3.6 noticeably slow with complex tasks, indicating that it may not be ideal for
             all users. It is for this reason that we wish to keep the possibility of switching out models at the user's behest open. Luckily, a key strength
             of MCP is that scripts written with it are compatible with virtually any model with the right communication tool. [For our purposes, Jonathan 
-            Gastón Löwenstern's Ollama MCP Bridge serves as this gateway.] We intend to adapt code used for our Uncertainty Monitor project to allow for model
+            Gastón Löwenstern's Ollama MCP Bridge serves as this gateway.]
+                <footnote>
+                <para>Löwenstern's tools for Ollama and MCP communication include both the Ollama MCP Bridge at <link xlink:href="https://github.com/jonigl/ollama-mcp-bridge">https://github.com/jonigl/ollama-mcp-bridge</link> and a terminal interface at 
+                    <link xlink:href="https://github.com/jonigl/mcp-client-for-ollama">https://github.com/jonigl/mcp-client-for-ollama</link>.</para>
+            </footnote>
+                We intend to adapt code used for our Uncertainty Monitor project to allow for model
             switching as a form of customization and future-proofing. As agentic AI becomes more popular, we may see capable, local models at smaller sizes become 
             widely available. In addition to that, our intention to log results may create a valuable resource for fine-tuning and training future variants
             of these local models. They may highlight logical weaknesses and points where the user has to 'guide' the model, if any come up.</para>
