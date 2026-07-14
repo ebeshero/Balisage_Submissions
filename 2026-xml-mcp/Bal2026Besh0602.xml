@@ -826,7 +826,9 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
 
     </section>
     <section>
-        <title>Appendix [BCDF]: Some examples of Qwen2.5 models poor performance as solo agents</title></title>
+        <title>Appendix [BCDF]: Some examples of Qwen2.5 models poor performance as solo agents</title>
+  <para>Here are some examples of poor performance from our smaller Qwen2.5 models. We speculate that perhaps the problem was asking these models to <quote>walk and chew gum at the same time</quote>, 
+    that is, in asking the same small Qwen model to engage in conversation and work as code processing agents.</para>
         <programlisting>
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │                   Welcome to the MCP Client for Ollama �                   │
@@ -3577,10 +3579,7 @@ transformations, feel free to let me know!
 qwen2.5/10-tools❯
 Exiting...
 </programlisting>
-       
-        
-        
-        
+         
     </section>
 
 
