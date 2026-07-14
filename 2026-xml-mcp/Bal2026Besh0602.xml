@@ -827,7 +827,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
         <title>Appendix B: Some examples of Qwen2.5 models poor performance as solo agents</title>
   <para>Here are some examples of poor performance from our smaller Qwen2.5 models. We speculate that perhaps the problem was asking these models to <quote>walk and chew gum at the same time</quote>, 
     that is, in asking the same small Qwen model to engage in conversation and work as code processing agents.</para>
-        <section><title>B1</title><programlisting>
+        <section><title>B. 1. Qwen2.5:1b Conversation Segment</title><programlisting>
 
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │                   Welcome to the MCP Client for Ollama �                   │
@@ -1237,7 +1237,7 @@ hecks, just expand the array accordingly.
         <para>Above, Qwen2.5:1b hallucinates its own Syllabub recipe file based on the schema, and attempts to change the MCP function call itself instead of 
             the recipe file as requested.</para></section>
         <section>
-            <title>B2</title>
+            <title>B. 2. Qwen2.5:7b Conversation Segment</title>
             <programlisting>
 
 ┌────────────────────────────────────────────────────────────────────────────────────────────────────┐
