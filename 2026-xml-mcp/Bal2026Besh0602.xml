@@ -760,8 +760,8 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
             of MCP is that scripts written with it are compatible with virtually any model with the right communication tool. [For our purposes, Jonathan 
             Gastón Löwenstern's Ollama MCP Bridge serves as this gateway.] We intend to adapt code used for our Uncertainty Monitor project to allow for model
             switching as a form of customization and future-proofing. As agentic AI becomes more popular, we may see capable, local models at smaller sizes become 
-            widely available. In addition to that, our intention to log results may create a valuable resource for fine-tuning and training future local models. 
-            They may highlight logical weaknesses and points where the user has to 'guide' the model, if any come up.
+            widely available. In addition to that, our intention to log results may create a valuable resource for fine-tuning and training future variants
+            of these local models. They may highlight logical weaknesses and points where the user has to 'guide' the model, if any come up.
             
             There are a few technological hiccups when developing Dockerized agents. Use after deployment requires the installation of and 
             some technological know-how of Docker and its functions. This can be unintuitive for those without software development backgrounds.
