@@ -245,8 +245,8 @@
             we prioritize coding as a means to <emphasis>visualize</emphasis> and
                 <emphasis>communicate</emphasis> complex ideas and technologies, Cohen’s notebooks
             help us to learn by working directly with the code and giving us ideas for projects that
-            involve testing the models and visualizing how they work.<footnote>
-                <para>One such project is our AI Uncertainty Monitor, designed to dramatically slow down, visualize and sonify
+            involve testing the models and visualizing how they work.</para>                
+        <para>One such project is our AI Uncertainty Monitor, designed to dramatically slow down, visualize and sonify
                     the processing of a language model. The user selects a small language model from our interface, inputs a prompt designed to evoke many possible
                     responses, such as <quote>Describe the feeling of standing on the edge of the ocean at night.</quote>
                    The model slowly produces a response, with lag introduced based on uncertainty data pulled from 
@@ -254,9 +254,9 @@
                    pulled from the language model. Find the project on Codeberg at <link xlink:href="https://codeberg.org/newtfire/ai-artsound">https://codeberg.org/newtfire/ai-artsound</link> 
                     and install with Docker from 
                     <link xlink:href="https://codeberg.org/newtfire/-/packages/container/ai-artsound-container/latest">https://codeberg.org/newtfire/-/packages/container/ai-artsound-container/latest</link>.
-                </para>
-            </footnote>
-        </para>
+                  Developing this Uncertainty Monitor project has been invaluable to the DigitAI project, especially 
+                  in providing capacity to select from a library of SLMs and learning how to serve it with a Docker container, as we will
+                  discuss later in this paper.</para>
         <para>Regarding the second objective (Economy), universities and cultural heritage
             organizations face severe budget constraints in the 2020s yet, paradoxically, increasing
             reliance on AI has resulted in the upscaling of <quote>compute</quote> GPU resources,
@@ -533,10 +533,14 @@ self.xml_node = self.saxon_proc.parse_xml(xml_file_name=str(self.xml_path))
                 <code>&lt;xsl:mode on-no-match="shallow-copy"/></code> without inserting the
             old-fashioned identity transformation by copy of elements and attributes and processing
             instructions from XSLT 2.0 that it had used when it was not properly reading the MCP
-            examples we provided. The model also helpfully documents each new template in XML comments. 
-        Below we provide our problematic recipe XML file and its Relax NG scheam, our MCP function provided for generating 
-        an identify transformation for patch corrections, and one of the XSLT transformations that our model provided in transforming 
-        the recipe file.</para>
+            examples we provided. The model also helpfully documents each new template in XML comments.</para>
+           <para>To evaluate how well Claude Desktop performance as an agent and simply to ensure it was working with our MCP tools,
+               we began by supplying it just the problematic recipe XML file and its Relax NG schema, which we provide in Appendix A.
+               Here we wish to foreground our MCP function as we supplied as a model for generating 
+        an identify transformation for patch corrections in XSLT 3.0 with a starter stylesheet setting the use of 
+               <code>&lt;xsl:mode:on-no-match="shallow-copy"/&gt;</code>.
+               Following this we provide one of the XSLT transformations that the Claude Desktop model provided in transforming 
+        the recipe file, evidently applying and adapting our MCP tool to its task.</para>
         <figure>
             <title>MCP Python function to generate corrections with XSLT</title>
             <para>
