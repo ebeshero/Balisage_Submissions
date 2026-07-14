@@ -343,13 +343,13 @@
                                  <dd>
                                     <dl>
                                        <dt><span class="section"><a href="#d3e499" class="toc">Trying out MCP with some troublesome XML</a></span></dt>
-                                       <dt><span class="section"><a href="#d3e523" class="toc">Logging interactions and processes</a></span></dt>
-                                       <dt><span class="section"><a href="#d3e550" class="toc">How could we improve the MCP?</a></span></dt>
+                                       <dt><span class="section"><a href="#d3e537" class="toc">Logging interactions and processes</a></span></dt>
+                                       <dt><span class="section"><a href="#d3e564" class="toc">How could we improve the MCP?</a></span></dt>
                                     </dl>
                                  </dd>
-                                 <dt><span class="section"><a href="#d3e601" class="toc">Containing and staging the agentic MCP system</a></span></dt>
-                                 <dt><span class="section"><a href="#d3e681" class="toc">Towards a declarative method for working with language models: A separation of concerns</a></span></dt>
-                                 <dt><span class="section"><a href="#d3e700" class="toc">Appendix [BCDF]: Some examples of Qwen2.5 models poor performance as solo agents</a></span></dt>
+                                 <dt><span class="section"><a href="#d3e615" class="toc">Containing and staging the agentic MCP system</a></span></dt>
+                                 <dt><span class="section"><a href="#d3e695" class="toc">Towards a declarative method for working with language models: A separation of concerns</a></span></dt>
+                                 <dt><span class="section"><a href="#d3e714" class="toc">Appendix [BCDF]: Some examples of Qwen2.5 models poor performance as solo agents</a></span></dt>
                               </dl>
                            </details>
                         </div>
@@ -468,13 +468,13 @@
                         <dd>
                            <dl>
                               <dt><span class="section"><a href="#d3e499" class="toc">Trying out MCP with some troublesome XML</a></span></dt>
-                              <dt><span class="section"><a href="#d3e523" class="toc">Logging interactions and processes</a></span></dt>
-                              <dt><span class="section"><a href="#d3e550" class="toc">How could we improve the MCP?</a></span></dt>
+                              <dt><span class="section"><a href="#d3e537" class="toc">Logging interactions and processes</a></span></dt>
+                              <dt><span class="section"><a href="#d3e564" class="toc">How could we improve the MCP?</a></span></dt>
                            </dl>
                         </dd>
-                        <dt><span class="section"><a href="#d3e601" class="toc">Containing and staging the agentic MCP system</a></span></dt>
-                        <dt><span class="section"><a href="#d3e681" class="toc">Towards a declarative method for working with language models: A separation of concerns</a></span></dt>
-                        <dt><span class="section"><a href="#d3e700" class="toc">Appendix [BCDF]: Some examples of Qwen2.5 models poor performance as solo agents</a></span></dt>
+                        <dt><span class="section"><a href="#d3e615" class="toc">Containing and staging the agentic MCP system</a></span></dt>
+                        <dt><span class="section"><a href="#d3e695" class="toc">Towards a declarative method for working with language models: A separation of concerns</a></span></dt>
+                        <dt><span class="section"><a href="#d3e714" class="toc">Appendix [BCDF]: Some examples of Qwen2.5 models poor performance as solo agents</a></span></dt>
                      </dl>
                   </details>
                </div>
@@ -833,10 +833,11 @@
                         <p id="d3e502">To try out MCP, we began with a simple example of inconsistent XML markup for a recipe,
                            used
                            as teaching material for students in our introduction to text encoding. We purposefully
-                           made
-                           the XML invalid to its schema, in order to test the capacities of our desktop agent
-                           to discover
-                           validation errors and recommend, and then process corrections. At first we struggled
+                           <q>munged</q>
+                           the XML to make it invalid to its schema in order to test the capacities of our desktop
+                           agent to discover
+                           validation errors plus inconsistencies in the markup, recommend improvements,
+                           and then process corrections. At first we struggled
                            with the field containment systems of our agentic language model: It could not read
                            relative filepaths and could not locate the schema. We watched the agent rapidly attempt
                            many strange things, including an attempt to access the Chrome browser developer tools
@@ -846,13 +847,13 @@
                            one
                            that we are familiar with from reading and opening Python files conventionally with
                            lines like these: 
-                           <pre class="programlisting" id="d3e504">
+                           <pre class="programlisting" id="d3e507">
 with open(self.xml_path, 'r', encoding='utf-8') as f:
     xml_text = f.read()
 self.xml_node = self.saxon_proc.parse_xml(xml_text=xml_text)
             </pre> f.read() would pass the XML as a text string rather than a
                            document tree. Changing that to: 
-                           <pre class="programlisting" id="d3e507">
+                           <pre class="programlisting" id="d3e510">
 self.xml_node = self.saxon_proc.parse_xml(xml_file_name=str(self.xml_path))
         </pre> neatly resolved a serious pathing problem by delivering the
                            file directly to the Saxon processors. From this experience we learned firsthand the
@@ -870,7 +871,7 @@ self.xml_node = self.saxon_proc.parse_xml(xml_file_name=str(self.xml_path))
                            system inside a secure Docker container instead of treating it like most other software
                            whose 
                            passivity we take for granted.</p>
-                        <p id="d3e510">Establishing the means to read local filepaths, find the schema, and execute jingtrang
+                        <p id="d3e513">Establishing the means to read local filepaths, find the schema, and execute jingtrang
                            for schema validation made for a more tranquil and less surprising and impulsive
                            experience with the desktop agent. When asked to correct an inconsistency, it now
                            finds and runs 
@@ -884,18 +885,25 @@ self.xml_node = self.saxon_proc.parse_xml(xml_file_name=str(self.xml_path))
                            old-fashioned identity transformation by copy of elements and attributes and processing
                            instructions from XSLT 2.0 that it had used when it was not properly reading the MCP
                            examples we provided. The model also helpfully documents each new template in XML
-                           comments. 
-                           Below we provide our problematic recipe XML file and its Relax NG scheam, our MCP
-                           function provided for generating 
-                           an identify transformation for patch corrections, and one of the XSLT transformations
-                           that our model provided in transforming 
-                           the recipe file.</p>
-                        <figure id="d3e515">
+                           comments.</p>
+                        <p id="d3e518">To evaluate how well Claude Desktop performance as an agent and simply to ensure it
+                           was working with our MCP tools,
+                           we began by supplying it just the problematic recipe XML file and its Relax NG schema,
+                           which we provide in Appendix A.
+                           Here we wish to foreground our MCP function as we supplied as a model for generating
+                           
+                           an identify transformation for patch corrections in XSLT 3.0 with a starter stylesheet
+                           setting the use of 
+                           <code class="code">&lt;xsl:mode:on-no-match="shallow-copy"/&gt;</code>.
+                           Following this we provide one of the XSLT transformations that the Claude Desktop
+                           model provided in transforming 
+                           the recipe file, evidently applying and adapting our MCP tool to its task.</p>
+                        <figure id="d3e523">
                            <p class="title">Figure&nbsp;1: MCP Python function to generate corrections with XSLT</p>
                            <div class="figure-contents">
-                              <p id="d3e518">
+                              <p id="d3e526">
                                  
-                                 <pre class="programlisting" id="d3e520">
+                                 <pre class="programlisting" id="d3e528">
  def _generate_correction_xslt(self, corrections: list[dict]) -&gt; str:
         """Generate XSLT 3.0 stylesheet from correction operations"""
         templates = []
@@ -946,13 +954,57 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
 """
         return xslt                    
                 </pre>
+                                 
+                                 
+                                 <figure id="d3e531">
+                                    <p class="title">Figure&nbsp;2: Claude Desktop’s XSLT for transforming the problematic recipe XML</p>
+                                    <div class="figure-contents">
+                                       <pre class="programlisting" id="d3e534">
+        &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!-- 
+    2026-04-09 syllabubFix.xsl
+    Authored by: ebb + Claude (Anthropic)
+    Purpose: Corrects four schema validation errors in syllabubRecipe.xml:
+      1. Renames &lt;it&gt; element to &lt;item&gt; (lines 29x2)
+      2. Renames misspelled attribute qant to quant (line 31)
+      3. Adds missing required num="7" attribute to the Decorate &lt;step&gt; (line 63)
+    Input:  data/syllabubRecipe.xml
+    Output: outputs/syllabubRecipe.xml
+--&gt;
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="3.0"&gt;
+
+    &lt;!-- Identity transform: copy everything through unchanged by default --&gt;
+    &lt;xsl:mode on-no-match="shallow-copy"/&gt;
+
+    &lt;!-- Fix 1: Rename &lt;it&gt; to &lt;item&gt; --&gt;
+    &lt;xsl:template match="it"&gt;
+        &lt;item&gt;
+            &lt;xsl:apply-templates select="@* | node()"/&gt;
+        &lt;/item&gt;
+    &lt;/xsl:template&gt;
+
+    &lt;!-- Fix 2: Rename attribute qant to quant --&gt;
+    &lt;xsl:template match="@qant"&gt;
+        &lt;xsl:attribute name="quant" select="."/&gt;
+    &lt;/xsl:template&gt;
+
+    &lt;!-- Fix 3: Add missing num="7" to the unnumbered step --&gt;
+    &lt;xsl:template match="step[not(@num)]"&gt;
+        &lt;step num="7"&gt;
+            &lt;xsl:apply-templates select="@* | node()"/&gt;
+        &lt;/step&gt;
+    &lt;/xsl:template&gt;
+&lt;/xsl:stylesheet&gt;  
+    </pre>
+                                    </div>
+                                 </figure>                
                                  </p>
                            </div>
                         </figure>
                      </div>
-                     <div class="section" id="d3e523">
+                     <div class="section" id="d3e537">
                         <h3 class="title" style="clear: both">Logging interactions and processes</h3>
-                        <p id="d3e526">We are devising a protocol for collecting log data from the desktop language model
+                        <p id="d3e540">We are devising a protocol for collecting log data from the desktop language model
                            to document its
                            processes. Log tracking will help us to review whether the model is doing the processing
                            correctly (i.e.
@@ -960,28 +1012,28 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
                            helps us better equip it...to help us! This aligns closely with the declarative mindset
                            we share in working with XML technologies, where clarity of structure and intention
                            leads to more reliable and reproducible outcomes.</p>
-                        <p id="d3e531">As we move from testing to deployment to assist with real XML projects, we plan to
+                        <p id="d3e545">As we move from testing to deployment to assist with real XML projects, we plan to
                            devise a logging 
                            system that will record and store a log file for each interaction with the DigitAI
                            XML-MCP agent. 
                            A log file could be recorded plain text or XML, and include:
                            
-                           <div class="itemizedlist" id="d3e533">
+                           <div class="itemizedlist" id="d3e547">
                               <ul>
-                                 <li id="d3e534">
-                                    <p id="d3e535">date and time of the interaction,</p>
+                                 <li id="d3e548">
+                                    <p id="d3e549">date and time of the interaction,</p>
                                  </li>
-                                 <li id="d3e537">
-                                    <p id="d3e538">which file resources the language model is accessing,</p>
+                                 <li id="d3e551">
+                                    <p id="d3e552">which file resources the language model is accessing,</p>
                                  </li>
-                                 <li id="d3e540">
-                                    <p id="d3e541">dialogue with user and thought-process,</p>
+                                 <li id="d3e554">
+                                    <p id="d3e555">dialogue with user and thought-process,</p>
                                  </li>
-                                 <li id="d3e543">
-                                    <p id="d3e544">the specific XPath, XQuery, or XSLT scripts it is applying,</p>
+                                 <li id="d3e557">
+                                    <p id="d3e558">the specific XPath, XQuery, or XSLT scripts it is applying,</p>
                                  </li>
-                                 <li id="d3e546">
-                                    <p id="d3e547">directory location of any stored outputs.</p>
+                                 <li id="d3e560">
+                                    <p id="d3e561">directory location of any stored outputs.</p>
                                  </li>
                               </ul>
                            </div>
@@ -991,20 +1043,20 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
                            yet to be developed.
                            </p>
                      </div>
-                     <div class="section" id="d3e550">
+                     <div class="section" id="d3e564">
                         <h3 class="title" style="clear: both">How could we improve the MCP?</h3>
-                        <p id="d3e553">There is something perverse about seeing XSLT written into formatted strings as shown
+                        <p id="d3e567">There is something perverse about seeing XSLT written into formatted strings as shown
                            in the preceding code block. We asked ourselves during a project meeting in April
                            2026
                            whether the Python template provided us by Claude might be unnecessary. Why not just
                            deliver the XSLT as XSLT? The professor among us asked as much to a Claude Opus 4.6
                            Extended session on the internet. 
-                           <figure id="d3e555">
-                              <p class="title">Figure&nbsp;2: April 2026 conversation about MCP with Claude Opus 4.6 Extended</p>
+                           <figure id="d3e569">
+                              <p class="title">Figure&nbsp;3: April 2026 conversation about MCP with Claude Opus 4.6 Extended</p>
                               <div class="figure-contents">
                                  <div class="blockquote">
                                     <blockquote class="blockquote">
-                                       <p id="d3e559"><span class="ital">Elisa:</span> Here's maybe a silly question, coming from an
+                                       <p id="d3e573"><span class="ital">Elisa:</span> Here's maybe a silly question, coming from an
                                           XML processing context. I wonder whether serving XML processing and
                                           validating tools really requires Python for delivery to the desktop
                                           agent?</p>
@@ -1012,7 +1064,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
                                  </div>
                                  <div class="blockquote">
                                     <blockquote class="blockquote">
-                                       <p id="d3e564"><span class="ital">Claude Opus:</span>
+                                       <p id="d3e578"><span class="ital">Claude Opus:</span>
                                           <span class="ital">Examined whether Python intermediary was necessary for
                                              XML tool delivery</span> Not a silly question at all — it's a really
                                           good architectural observation. You're essentially running two Java tools
@@ -1021,23 +1073,23 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
                                           of layers, and each one has introduced friction — the venv activation issue,
                                           pyjing not being on PATH, the base-uri problem from how saxonche was being
                                           called.</p>
-                                       <p id="d3e571">MCP is just JSON-RPC over stdio. The server can be written in any
+                                       <p id="d3e585">MCP is just JSON-RPC over stdio. The server can be written in any
                                           language. So your options are roughly:</p>
-                                       <p id="d3e573"><span class="ital">Java/Kotlin</span> would be the most natural fit. Saxon-HE
+                                       <p id="d3e587"><span class="ital">Java/Kotlin</span> would be the most natural fit. Saxon-HE
                                           and Jing are both Java libraries natively — no wrappers, no subprocess
                                           calls, no GraalVM bridge. You'd call net.sf.saxon.s9api and
                                           com.thaiopensource.validate directly. The tradeoff is that there isn't an
                                           official MCP SDK for Java yet, so you'd be implementing the stdio JSON-RPC
                                           protocol yourself (which is straightforward but some boilerplate).</p>
-                                       <p id="d3e577"><span class="ital">TypeScript/Node.js</span> has a mature MCP SDK and is
+                                       <p id="d3e591"><span class="ital">TypeScript/Node.js</span> has a mature MCP SDK and is
                                           well-supported by Claude Desktop. Saxon-JS exists for this environment,
                                           though it's not feature-identical to Saxon-HE (it handles XSLT 3.0 and XPath
                                           3.1 well, but XQuery support is limited). Jing would still need to be called
                                           as a subprocess.</p>
-                                       <p id="d3e581"><span class="ital">Python</span> (what you have now) has the advantage of being
+                                       <p id="d3e595"><span class="ital">Python</span> (what you have now) has the advantage of being
                                           done — the server works. The pain points have been environment plumbing, not
                                           fundamental design problems.</p>
-                                       <p id="d3e585">If I were starting fresh with your stack, I'd seriously consider Java.
+                                       <p id="d3e599">If I were starting fresh with your stack, I'd seriously consider Java.
                                           Both your core tools are native Java, and the MCP protocol is simple enough
                                           that the lack of an SDK isn't a big hurdle. But given that you have a
                                           working Python server now, the pragmatic call depends on how much the
@@ -1048,7 +1100,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
                               </div>
                            </figure>
                            </p>
-                        <p id="d3e588">The authors’ low comfort level with Java notwithstanding, the idea of preventing the
+                        <p id="d3e602">The authors’ low comfort level with Java notwithstanding, the idea of preventing the
                            annoying <q>biting</q> of <q>wrapper friction</q> seems like an
                            invitation to attempt this with some guidance. Up to this point we had
                            presumed that one trains, refines, augments, and supplies tools to a language model
@@ -1056,7 +1108,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
                            implement XML stack validation, search, and transformation is opening new learning
                            paths
                            for us in our lab. </p>
-                        <p id="d3e596">While testing the freshly revised Python MCP with Claude Desktop, as soon as it was
+                        <p id="d3e610">While testing the freshly revised Python MCP with Claude Desktop, as soon as it was
                            able to follow filepaths (dangerously), we found it capable and willing to update
                            its
                            own configuration script, as the logs  stored JSON instructions from the model to
@@ -1071,9 +1123,9 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
                            </p>
                      </div>
                   </div>
-                  <div class="section" id="d3e601">
+                  <div class="section" id="d3e615">
                      <h2 class="title" style="clear: both">Containing and staging the agentic MCP system</h2>
-                     <p id="d3e604">After the risky behaviors we witnessed from a misconfigured environment, we found
+                     <p id="d3e618">After the risky behaviors we witnessed from a misconfigured environment, we found
                         it urgent
                         to develop the project in a more secure environment. As of 2026, Xinyi Hou et al.
                         provide one of the few thorough academic
@@ -1102,9 +1154,9 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
                         server, 
                         run natively rather than in a container, has no structural reason to stay 
                         confined to an XML source directory, because it inherits the filesystem access of
-                        its host.<sup class="fn-label"><a href="#d3e609" class="footnoteref" id="d3e609-ref">[12]</a></sup>
+                        its host.<sup class="fn-label"><a href="#d3e623" class="footnoteref" id="d3e623-ref">[12]</a></sup>
                         </p>
-                     <p id="d3e622"> Wary developers will learn from this to run agentic systems in containers like Docker
+                     <p id="d3e636"> Wary developers will learn from this to run agentic systems in containers like Docker
                         
                         (<a href="https://www.docker.com/" class="link">https://www.docker.com/</a>), which also 
                         make the dependencies and tools secure and convenient for distribution. We began reworking
@@ -1120,12 +1172,12 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
                         register so that we can eventually serve our Docker container from the non-profit
                         Codeberg platform running the 
                         open-source Forgejo software, rather than DockerHub's proprietary, commercially licensed
-                        registry.<sup class="fn-label"><a href="#d3e627" class="footnoteref" id="d3e627-ref">[13]</a></sup>
+                        registry.<sup class="fn-label"><a href="#d3e641" class="footnoteref" id="d3e641-ref">[13]</a></sup>
                         Our project development continues at <a href="https://codeberg.org/newtfire" class="link">https://codeberg.org/newtfire</a>
                         where we are reconfiguring the MCP server to work with Ollama rather than Claude,
                         and where we are currently experimenting with 
                         Qwen 3.6:27b and other open source SLMs to wield XML stack tooling. </p>
-                     <p id="d3e634">We selected Qwen3.6:27b as our baseline model for testing our MCP server’s capabilities
+                     <p id="d3e648">We selected Qwen3.6:27b as our baseline model for testing our MCP server’s capabilities
                         because, 
                         as of July 2026, it is the most recent open-weight 
                         and locally downloadable version of Qwen released by Alibaba Cloud. Notably, this
@@ -1143,7 +1195,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
                         the model and walk it through which commands it should run. Even with incredibly particular
                         language, the user was outright ignored much of 
                         the time, defeating the purpose of an agent entirely. </p>
-                     <p id="d3e640">Selecting a model for use with our MCP server is likely to become a search for the
+                     <p id="d3e654">Selecting a model for use with our MCP server is likely to become a search for the
                         potentially nonexistent <q>sweet spot</q> of reasoning 
                         ability versus required computing power. What can give the most, while using the least?
                         Despite our tendency to rely Qwen throughout this project, we recognize 
@@ -1158,18 +1210,18 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
                         of MCP is that scripts written with it are compatible with virtually any model with
                         the right communication tool. For our purposes, Jonathan 
                         Gastón Löwenstern's Ollama MCP Bridge serves as this gateway.
-                        <sup class="fn-label"><a href="#d3e648" class="footnoteref" id="d3e648-ref">[14]</a></sup>
+                        <sup class="fn-label"><a href="#d3e662" class="footnoteref" id="d3e662-ref">[14]</a></sup>
                         We intend to adapt code used for our Uncertainty Monitor project to allow for model
-                        switching as a form of customization and future-proofing.<sup class="fn-label"><a href="#d3e658" class="footnoteref" id="d3e658-ref">[15]</a></sup> As agentic AI becomes more popular, we may see capable, local models at smaller sizes
+                        switching as a form of customization and future-proofing.<sup class="fn-label"><a href="#d3e672" class="footnoteref" id="d3e672-ref">[15]</a></sup> As agentic AI becomes more popular, we may see capable, local models at smaller sizes
                         become 
                         widely available. Based on current literature on the high potential of SLMs as agents
                         when operating in tandem, we also expect that we can improve performance significantly
                         by pairing an SLM for chat interaction with a second SLM that works as its agent in
-                        applying XML stack tools.<sup class="fn-label"><a href="#d3e665" class="footnoteref" id="d3e665-ref">[16]</a></sup> In addition, our intention to log results systematically may create a valuable resource
+                        applying XML stack tools.<sup class="fn-label"><a href="#d3e679" class="footnoteref" id="d3e679-ref">[16]</a></sup> In addition, our intention to log results systematically may create a valuable resource
                         for fine-tuning and training future variants
                         of these local models. They may highlight logical weaknesses and points where the
                         user has to <q>guide</q> the model, if any come up.</p>
-                     <p id="d3e679">There are a few technological hiccups when developing Dockerized agents. Use after
+                     <p id="d3e693">There are a few technological hiccups when developing Dockerized agents. Use after
                         deployment requires the installation of and 
                         some technological know-how of Docker and its functions. This can be unintuitive for
                         those without software development backgrounds.
@@ -1185,15 +1237,15 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
                         line aliases for mounting.
                         </p>
                   </div>
-                  <div class="section" id="d3e681">
+                  <div class="section" id="d3e695">
                      <h2 class="title" style="clear: both">Towards a declarative method for working with language models: A separation of concerns</h2>
-                     <p id="d3e684">Declaring one’s intentions is important for language models and humans alike. Writing
+                     <p id="d3e698">Declaring one’s intentions is important for language models and humans alike. Writing
                         schemas, grammars, and MCP scripts may perhaps all be considered declarations together.
                         Declaring intentions leads to specific formulations that depend on the context and
                         scope
                         of a project, whether you encode the page by page graphical layout, the relationship
                         between an illustration and surrounding text.</p>
-                     <p id="d3e686">Our DH lab has been working between two different cultures of digital text: the
+                     <p id="d3e700">Our DH lab has been working between two different cultures of digital text: the
                         documentary markup culture and the natural language processing culture. The operations
                         of language models are fascinating for their endless variety of dimensional possibilities
                         working over hundreds or thousands of vectors even in an SLM. Yet the availability
@@ -1206,7 +1258,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
                         structured markup, so we can deliver meaningful node packages when a project like
                         a
                         scholarly edition requires precision and quality control.</p>
-                     <p id="d3e688">When we bring these two cultures together, declarative markup technologies may be
+                     <p id="d3e702">When we bring these two cultures together, declarative markup technologies may be
                         helping us to define our terms for controlling and customizing systems for specialized
                         projects. Our work with modeling grammars and schemas is definitional, and when we
                         instruct an AI agent to apply a validation step and inspect the results before making
@@ -1220,14 +1272,14 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
                         We
                         are defining the terms by which the language model system will function most efficiently
                         and reliably within the rule-based architecture that we have declared.</p>
-                     <p id="d3e690">In course of developing this paper, we have recognized that the old, familiar functional
+                     <p id="d3e704">In course of developing this paper, we have recognized that the old, familiar functional
                         programming
                         concept of a <q>separation of concerns</q> can guide how we work with language models. Giving a model access to XML, yet keeping
                         the editing of that XML away from that language model’s internal tokenized embedding
                         layers is one separation of processing concerns. Limiting the need and capacity of
                         a language model to
                         access one’s operating system is another.</p>
-                     <p id="d3e695">Perhaps the most important separation of concerns for us to keep in view is the
+                     <p id="d3e709">Perhaps the most important separation of concerns for us to keep in view is the
                         education of our scholars and lab assistants in refining the tools to fit our tasks,
                         rather than letting the tools shape those tasks for us on the terms by which they
                         were
@@ -1240,13 +1292,13 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
                         appropriate separation of concerns, we can see how AI can responsibly and effectively
                         operate within the scopes we set. </p>
                   </div>
-                  <div class="section" id="d3e700">
+                  <div class="section" id="d3e714">
                      <h2 class="title" style="clear: both">Appendix [BCDF]: Some examples of Qwen2.5 models poor performance as solo agents</h2>
-                     <p id="d3e703">Here are some examples of poor performance from our smaller Qwen2.5 models. We speculate
+                     <p id="d3e717">Here are some examples of poor performance from our smaller Qwen2.5 models. We speculate
                         that perhaps the problem was asking these models to <q>walk and chew gum at the same time</q>, 
                         that is, in asking the same small Qwen model to engage in conversation and work as
                         code processing agents.</p>
-                     <pre class="programlisting" id="d3e708">
+                     <pre class="programlisting" id="d3e722">
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │                   Welcome to the MCP Client for Ollama �                   │
 └─────────────────────────────────────────────────────────────────────────────┘
@@ -4082,33 +4134,33 @@ Exiting...
                            XML, but we 
                            do not think it could work on documents that XPath cannot address.</p>
                      </div>
-                     <div id="d3e609" class="footnote">
-                        <p><sup class="fn-label"><a href="#d3e609-ref" class="footnoteref">[12]</a></sup> Xinyi Hou,Yanjie Zhao, Shenao Wang, and Haoyu Wang, <q>Model Context Protocol (MCP): 
+                     <div id="d3e623" class="footnote">
+                        <p><sup class="fn-label"><a href="#d3e623-ref" class="footnoteref">[12]</a></sup> Xinyi Hou,Yanjie Zhao, Shenao Wang, and Haoyu Wang, <q>Model Context Protocol (MCP): 
                               Landscape, security threats, and future research directions</q>, 
                            <span class="ital">ACM Transactions on Software Engineering and Methodology</span>
                            16 February 2026, 
                            <a href="https://dl.acm.org/doi/epdf/10.1145/3796519" class="link">https://dl.acm.org/doi/epdf/10.1145/3796519</a>.
                            </p>
                      </div>
-                     <div id="d3e627" class="footnote">
-                        <p><sup class="fn-label"><a href="#d3e627-ref" class="footnoteref">[13]</a></sup> Forgejo is an open-source Git forge forked from Gitea in 2022 after Gitea transferred
+                     <div id="d3e641" class="footnote">
+                        <p><sup class="fn-label"><a href="#d3e641-ref" class="footnoteref">[13]</a></sup> Forgejo is an open-source Git forge forked from Gitea in 2022 after Gitea transferred
                            to a for-profit company.
                            Codeberg e.V., a registered non-profit, now maintains the Forgejo source and container
                            distribution, 
                            providing both source hosting and container registry functionality without commercial
                            fees.</p>
                      </div>
-                     <div id="d3e648" class="footnote">
-                        <p><sup class="fn-label"><a href="#d3e648-ref" class="footnoteref">[14]</a></sup> Löwenstern's tools for Ollama and MCP communication include both the Ollama MCP Bridge
+                     <div id="d3e662" class="footnote">
+                        <p><sup class="fn-label"><a href="#d3e662-ref" class="footnoteref">[14]</a></sup> Löwenstern's tools for Ollama and MCP communication include both the Ollama MCP Bridge
                            at <a href="https://github.com/jonigl/ollama-mcp-bridge" class="link">https://github.com/jonigl/ollama-mcp-bridge</a> and a terminal interface at 
                            <a href="https://github.com/jonigl/mcp-client-for-ollama" class="link">https://github.com/jonigl/mcp-client-for-ollama</a>.</p>
                      </div>
-                     <div id="d3e658" class="footnote">
-                        <p><sup class="fn-label"><a href="#d3e658-ref" class="footnoteref">[15]</a></sup> See the Model Registry library python dictionary for our AI Uncertainty Monitor project
+                     <div id="d3e672" class="footnote">
+                        <p><sup class="fn-label"><a href="#d3e672-ref" class="footnoteref">[15]</a></sup> See the Model Registry library python dictionary for our AI Uncertainty Monitor project
                            on at <a href="https://codeberg.org/newtfire/ai-artsound/src/branch/main/uncertainty-monitor.py#L106" class="link">https://codeberg.org/newtfire/ai-artsound/src/branch/main/uncertainty-monitor.py#L106</a>.</p>
                      </div>
-                     <div id="d3e665" class="footnote">
-                        <p><sup class="fn-label"><a href="#d3e665-ref" class="footnoteref">[16]</a></sup> See, for example this helpful article discussing the high potential for SLMs in project
+                     <div id="d3e679" class="footnote">
+                        <p><sup class="fn-label"><a href="#d3e679-ref" class="footnoteref">[16]</a></sup> See, for example this helpful article discussing the high potential for SLMs in project
                            workflows: Peter Belcak, Greg Heinrich, Shizhe Diao, Yonggan Fu, Xin Dong, 
                            Saurav Muralidharan, Yingyan Celine Lin, and Pavlo Molchanov, <q>Small Language Models are the Future of Agentic AI</q>, Arxiv preprint, under review, September 2025. <a href="https://arxiv.org/pdf/2506.02153" class="link">https://arxiv.org/pdf/2506.02153</a>.
                            

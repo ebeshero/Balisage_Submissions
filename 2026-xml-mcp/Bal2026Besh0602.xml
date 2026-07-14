@@ -496,9 +496,10 @@
        <section>
            <title>Trying out MCP with some troublesome XML</title>
                <para>To try out MCP, we began with a simple example of inconsistent XML markup for a recipe, used
-            as teaching material for students in our introduction to text encoding. We purposefully made
-            the XML invalid to its schema, in order to test the capacities of our desktop agent to discover
-            validation errors and recommend, and then process corrections. At first we struggled
+            as teaching material for students in our introduction to text encoding. We purposefully <quote>munged</quote>
+            the XML to make it invalid to its schema in order to test the capacities of our desktop agent to discover
+            validation errors plus inconsistencies in the markup, recommend improvements,
+            and then process corrections. At first we struggled
             with the field containment systems of our agentic language model: It could not read
             relative filepaths and could not locate the schema. We watched the agent rapidly attempt
             many strange things, including an attempt to access the Chrome browser developer tools
@@ -595,6 +596,47 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
 """
         return xslt                    
                 </programlisting>
+                
+<figure>
+    <title>Claude Desktop’s XSLT for transforming the problematic recipe XML</title>
+    <programlisting>
+        &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!-- 
+    2026-04-09 syllabubFix.xsl
+    Authored by: ebb + Claude (Anthropic)
+    Purpose: Corrects four schema validation errors in syllabubRecipe.xml:
+      1. Renames &lt;it&gt; element to &lt;item&gt; (lines 29x2)
+      2. Renames misspelled attribute qant to quant (line 31)
+      3. Adds missing required num="7" attribute to the Decorate &lt;step&gt; (line 63)
+    Input:  data/syllabubRecipe.xml
+    Output: outputs/syllabubRecipe.xml
+--&gt;
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="3.0"&gt;
+
+    &lt;!-- Identity transform: copy everything through unchanged by default --&gt;
+    &lt;xsl:mode on-no-match="shallow-copy"/&gt;
+
+    &lt;!-- Fix 1: Rename &lt;it&gt; to &lt;item&gt; --&gt;
+    &lt;xsl:template match="it"&gt;
+        &lt;item&gt;
+            &lt;xsl:apply-templates select="@* | node()"/&gt;
+        &lt;/item&gt;
+    &lt;/xsl:template&gt;
+
+    &lt;!-- Fix 2: Rename attribute qant to quant --&gt;
+    &lt;xsl:template match="@qant"&gt;
+        &lt;xsl:attribute name="quant" select="."/&gt;
+    &lt;/xsl:template&gt;
+
+    &lt;!-- Fix 3: Add missing num="7" to the unnumbered step --&gt;
+    &lt;xsl:template match="step[not(@num)]"&gt;
+        &lt;step num="7"&gt;
+            &lt;xsl:apply-templates select="@* | node()"/&gt;
+        &lt;/step&gt;
+    &lt;/xsl:template&gt;
+&lt;/xsl:stylesheet&gt;  
+    </programlisting>
+</figure>                
             </para>
         </figure></section>
         <section>
@@ -828,6 +870,81 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
             appropriate separation of concerns, we can see how AI can responsibly and effectively
             operate within the scopes we set. </para>
 
+    </section>
+    <section>
+        <title>Appendix A: A poorly encoded recipe for Syllabub and its Relax NG schema</title>
+        <section>
+            <title>A. 1. The Syllabub recipe XML</title>
+            <para>This began as a student homework exercise, and represents an amalgamation of </para>
+            <programlisting>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;?xml-model href="../schemas/recipe.rnc" type="application/relax-ng-compact-syntax"?&gt;
+&lt;recipe&gt;&lt;healthData&gt;About this recipe Healthiness : (71 votes)&lt;/healthData&gt;
+    &lt;!--ebb: Hi This is a comment --&gt;
+    &lt;!--ebb 2020-08-27: I like putting initials on my comments, and sometimes the date, 
+             especially if multiple people are writing comments on a code file. --&gt;
+    &lt;para&gt;The &lt;culture ref="England" monarch="George_III"&gt;Georgians&lt;/culture&gt; loved rich, sweet food. Sugar had become much
+        more easily available (mostly because of the Transatlantic Slave Trade) and was fast
+        replacing honey as the main food sweetener.&lt;/para&gt;
+    &lt;para&gt;This version of the syllabub recipe was by &lt;name type="person"&gt;Eliza Acton&lt;/name&gt;, who
+        lived in &lt;timePeriod&gt;18th century&lt;/timePeriod&gt;. There are &lt;altRecipe&gt;plenty of earlier
+            versions but they are more likely to curdle as they contain cider&lt;/altRecipe&gt;. This
+        version was very modern and fashionable in its day and is easy to manage: &lt;blockQuote&gt;Take a
+            quart of cream, a pint of sack, juice of a lemon, whip it, as the froth flies take it
+            off with a spoon and lay it in glasses: but first you must sweeten and stir some white
+            wine into your glasses, and gently lay on your froth. Set them by and do not make them
+            long before you use them.&lt;/blockQuote&gt;
+    &lt;/para&gt;
+    &lt;para&gt;Sugar and sherry (known as sack) were still expensive ingredients and dishes like this
+        would have been eaten in the houses of the richer merchants who would be able to afford
+        sugar, lemons, new salad vegetables and sack.&lt;/para&gt;
+    &lt;para&gt;We have added a non-alcoholic lemon syllabub for you to try too.&lt;/para&gt;
+    &lt;para&gt;For images of the cooking process see our Syllabub Pictures.&lt;/para&gt;
+    &lt;para type="credits"&gt;With thanks to &lt;name type="person"&gt;Ian Pycroft&lt;/name&gt; of &lt;name type="organization"&gt;Black Knight Historical&lt;/name&gt; and to &lt;name type="organization"&gt;The
+            Georgian House, &lt;name type="place"&gt;Bristol&lt;/name&gt;&lt;/name&gt;.&lt;/para&gt;
+    &lt;section kind="ingred"&gt;
+        &lt;heading&gt;Ingredients&lt;/heading&gt;
+        &lt;list&gt;&lt;item quant="1" unit="fruit"&gt;1 &lt;ingred&gt;lemon&lt;/ingred&gt;&lt;/item&gt;
+            &lt;item quant=".25" unit="pint"&gt;1/4 pint &lt;ingred&gt;sack&lt;/ingred&gt; (pale or dark)&lt;/item&gt;
+            &lt;item quant="2 3" unit="ounce"&gt;2-3 oz &lt;ingred&gt;caster
+                sugar&lt;/ingred&gt;&lt;/item&gt;&lt;!-- This is one way to handle multiple good values in an attribugte,
+                with quant="2 3": It means quant can be 2 or 3.--&gt;
+            &lt;item quant=".5" unit="pint"&gt;1/2 pint &lt;ingred&gt;double cream&lt;/ingred&gt;&lt;/item&gt;
+            &lt;item quantLow="4" quantHigh="6" unit="Tb"&gt;4-6 tablespoons &lt;ingred&gt;sweet/dessert white
+                    wine&lt;/ingred&gt;
+            &lt;/item&gt;
+        &lt;/list&gt;
+    &lt;/section&gt;
+    &lt;section kind="equip"&gt;
+        &lt;heading&gt;Equipment&lt;/heading&gt;
+        &lt;list&gt;
+            &lt;item&gt;Knife&lt;/item&gt;
+            &lt;item&gt;Grater&lt;/item&gt;
+            &lt;item&gt;Chopping board&lt;/item&gt;
+            &lt;item&gt;Mixing bowl&lt;/item&gt;
+            &lt;item&gt;Jug&lt;/item&gt;
+            &lt;item&gt;Tablespoon&lt;/item&gt;
+        &lt;/list&gt;
+    &lt;/section&gt;
+    &lt;section kind="process"&gt;
+        &lt;heading&gt;Making and cooking it&lt;/heading&gt;
+        &lt;listStep&gt;
+            &lt;step num="1"&gt;Always &lt;action&gt;wash&lt;/action&gt; your hands before preparing food&lt;/step&gt;
+            &lt;step num="2"&gt;&lt;action&gt;Grate&lt;/action&gt; half the peel, &lt;action&gt;pare off&lt;/action&gt; the rest
+                in fine strips&lt;/step&gt;
+            &lt;step num="3"&gt;Place sherry, grated peel, lemon juice and sugar in bowl and
+                    &lt;action&gt;soak&lt;/action&gt; for 2 hours&lt;/step&gt;
+            &lt;step num="4"&gt;&lt;action&gt;Whip&lt;/action&gt; the cream until semi-stiff&lt;/step&gt;
+            &lt;step num="5"&gt;&lt;action&gt;Add&lt;/action&gt; sherry gradually&lt;/step&gt;
+            &lt;step num="6"&gt;&lt;action&gt;Spoon&lt;/action&gt; a little wine into glass and spoon on whipped
+                cream&lt;/step&gt;
+            &lt;step num="7"&gt;&lt;action&gt;Decorate&lt;/action&gt; the top with lemon peel sticks&lt;/step&gt;
+            &lt;step num="8"&gt;&lt;action&gt;Serve&lt;/action&gt; with Shrewsberry cakes&lt;/step&gt;
+        &lt;/listStep&gt;
+    &lt;/section&gt;
+&lt;/recipe&gt;  
+            </programlisting>
+         </section>
+        
     </section>
     <section>
         <title>Appendix [BCDF]: Some examples of Qwen2.5 models poor performance as solo agents</title>
