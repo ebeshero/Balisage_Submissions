@@ -747,13 +747,13 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
             generally we have found smaller, older versions of Qwen tend to lack the long-term reasoning necessary to be an effective agent. During preliminary 
             testing,  we found that both Qwen2.5:1.5b and Qwen2.5:7b tended to get caught in logical loops. In one instance, Qwen2.5:7b would get stuck 
             on a deprecated package warning that was completely irrelevant to the XML document. It would repeatedly ask to read and reread the file,
-            not doing anything with the information it retrieved from it. See Appendix [BCDF] below for the logged chat. <!-- Could put saved example here--> The user was often required to “hand-hold” 
-            the model and walk it through which commands it should run. Even with incredibly particular language, the user was outright ignored much of 
-            the time, defeating the purpose of an agent entirely. </para>
+            not doing anything with the information it retrieved from it. See Appendix [BCDF] below for the logged chat. <!-- Could put saved example here--> The user was often required to <quote>hand-hold</quote> 
+            the model and walk it through which commands it should run. Even with very particular prompting language, the user was outright ignored much of 
+            the time, defeating the purpose of an agent entirely. We did not see such problems with the Claude Desktop agent.</para>
             
             
-            <para>Selecting a model for use with our MCP server is likely to become a search for the potentially nonexistent "sweet spot" of reasoning 
-            ability versus required computing power. What can give the most while using the least? Despite our current preferece towards it, we recognize 
+            <para>Selecting a model for use with our MCP server is likely to become a search for the potentially nonexistent <quote>sweet spot</quote> of reasoning 
+            ability versus required computing power. What can give the most, while using the least? Despite our current preference towards it, we recognize 
             that Qwen3.6:27b might not fit neatly into the definition of a <emphasis>small</emphasis> language model. It can be run locally, but it is more
             resource-intensive than previous Qwen models, requiring ~18GB of memory quantized <!-- quantized: definition? --> compared to 3.5:7b's ~5.5GB.
             Even with a capable machine, response times with 3.6 noticeably slow with complex tasks, indicating that it may not be ideal for
@@ -761,8 +761,11 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
             of MCP is that scripts written with it are compatible with virtually any model with the right communication tool. [For our purposes, Jonathan 
             Gastón Löwenstern's Ollama MCP Bridge serves as this gateway.] We intend to adapt code used for our Uncertainty Monitor project to allow for model
             switching as a form of customization and future-proofing. As agentic AI becomes more popular, we may see capable, local models at smaller sizes become 
-            widely available. In addition to that, our intention to log results may create a valuable resource for fine-tuning and training future variants
-            of these local models. They may highlight logical weaknesses and points where the user has to 'guide' the model, if any come up.</para>
+            widely available.<footnote><para>See, for example this helpful article discussing the high potential for SLMs in project workflows: Peter Belcak, Greg Heinrich, Shizhe Diao, Yonggan Fu, Xin Dong, 
+                    Saurav Muralidharan, Yingyan Celine Lin, and Pavlo Molchanov, <quote>Small Language Models are the Future of Agentic AI</quote>, Arxiv preprint, under review, September 2025. <link xlink:href="https://arxiv.org/pdf/2506.02153">https://arxiv.org/pdf/2506.02153</link>.
+                    
+            </para></footnote> We also expect that we can improve performance significantly by pairing an SLM for chat interaction with a second SLM that works as its agent in applying XML stack tools. In addition, our intention to log results systematically may create a valuable resource for fine-tuning and training future variants
+            of these local models. They may highlight logical weaknesses and points where the user has to <quote>guide</quote> the model, if any come up.</para>
             
             <para>There are a few technological hiccups when developing Dockerized agents. Use after deployment requires the installation of and 
             some technological know-how of Docker and its functions. This can be unintuitive for those without software development backgrounds.
