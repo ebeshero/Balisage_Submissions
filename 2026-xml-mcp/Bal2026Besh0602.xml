@@ -72,13 +72,20 @@
                 <othername>Scott</othername>
                 <surname>Wright</surname>
             </personname>
-            <personblurb><!-- Write your blurb here (nside their block <para> elements and link to stuff! This is your conference debut! :-) -->
+            <personblurb>
                 <para>
                     Molly Wright is a current Penn State Behrend student, pursuing a degree in Digital Media, Arts, and Technology (DIGIT) and a minor
-                    in Game Development.
+                    in Game Development. She entered the DIGIT program to satisfy a fascination in the intersection between technology and interaction with the arts.
+                    Of particular interest to her is natural language processing, especially in the cultural analysis of media, and ethical uses of AI.
+                    As a student, she has assisted in writing guides for fellow undergraduates to understand emergent XML stack tools such as ixml.
                 </para>
                 
             </personblurb>
+            <affiliation>
+                <jobtitle>Research Assistant / Coding Mentor</jobtitle>
+                <orgname>Penn State Erie, The Behrend College</orgname>
+            </affiliation>
+            <email>msw5763@psu.edu</email>
         </author>
 
         <author>
@@ -357,7 +364,7 @@
            <title>Early stage RAG experiment</title>
            <para>We launched a project in 2025 called <quote>DigitAI</quote> (named for our
                 <quote>Digit</quote> program at Penn State Behrend). DigitAI began as an experiment
-               to supply a small-scale language model, Qwen2.5-3B-Instruct, with Retrieval Augmented Generation (RAG)–giving
+               to supply a small-scale language model, Qwen2.5:3B-Instruct, with Retrieval Augmented Generation (RAG)–giving
             it query access to a structured <quote>ground truth</quote> knowledge base derived from
             the XML structure of the TEI P5 Guidelines. The TEI P5 Guidelines are available as a
             complete XML document in P5.xml from the TEI Guidelines GitHub repository and are
@@ -382,8 +389,8 @@
                     as a submodule.</para>
             </footnote> The RAG included only the chapters and paragraphs and element nodes with
             glosses and descriptions, and to be complete to our vision should have included the
-            Schematron constraints and model and attribute class relationships. But the idea to
-            prepare the TEI P5.xml as a graph structure so very thoroughly was perhaps overkill that
+            Schematron constraints and model and attribute class relationships. But perhaps the idea to
+            prepare the TEI P5.xml as a graph structure so thoroughly was overkill, and
             would not improve the reliability of our local language model in addressing questions
             about TEI XML encoding.</para>
         <para>Our first effort with preparing a RAG from the TEI Guidelines posed a serious problem
@@ -485,7 +492,7 @@
             to the internal workings of a language model. Nevertheless, when asked to act upon element
             nodes, and given agency and software to do so, a language model demonstrates competence
             in scripting code and suggesting improvements.</para>
-        <para>Since we were entirely new to MCP, we switched temporarily from the Qwen2.5-3B-Instruct model we 
+        <para>Since we were entirely new to MCP, we switched temporarily from the Qwen2.5:3B-Instruct model we 
             had been working with to deploy the much larger
             Claude Desktop application as our language model agent. 
             Because we were learning about MCP via Anthropic, it seemed convenient to deploy
@@ -750,7 +757,7 @@ was helpful for us as a calibration test of our MCP system.
         <title>Containing and staging the agentic MCP system</title>
         <para>After the risky behaviors we witnessed from a misconfigured environment, we found it urgent
             to develop the project in a more secure environment. As of 2026, Xinyi Hou et al. provide one of the few thorough academic
-            articles thoroughly explaining MCP architecture and surveying its risks and potential for research. 
+            articles explaining MCP architecture and surveying its risks and potential for research. 
             As they discuss, MCP is powerful for giving models direct access to pull, examine, exchange, and validate data, 
             but does not provide in itself any way to control for runtime isolation or security privileges.
             Those of us developing agentic models with MCP need to carefully restrict the environment 
@@ -795,7 +802,7 @@ was helpful for us as a calibration test of our MCP system.
             implemented both in previous iterations of this project and in other SLM-based projects. There are a few reasons for this shift, but
             generally we have found that smaller, older versions of Qwen tend to lack the long-term reasoning necessary to be an effective agent. During preliminary 
             testing,  we found that both Qwen2.5:1.5b and Qwen2.5:7b tended to make logical leaps. Both models would repeatedly try to revise the document based on assumed information. 
-            See Appendix B below for the logged chat. The user was often required to “hand-hold” the model and walk it through which commands it should run. Even with incredibly particular language, the user was outright ignored much of 
+            See Appendix B below for selections from logged chats. The user was often required to <quote>hand-hold</quote> the model and walk it through which commands it should run. Even with incredibly particular language, the user was outright ignored much of 
             the time, defeating the purpose of an agent entirely. </para>
             
             
@@ -819,13 +826,12 @@ was helpful for us as a calibration test of our MCP system.
             </para></footnote> In addition, our intention to log results systematically may create a valuable resource for fine-tuning and training future variants
             of these local models. They may highlight logical weaknesses and points where the user has to <quote>guide</quote> the model, if any come up.</para>
             
-            <para>There are a few technological hiccups when developing Dockerized agents. Use after deployment requires the installation of and 
-            some technological know-how of Docker and its functions. This can be unintuitive for those without software development backgrounds.
-            For instance, upon composition of an image, Docker creates a sort of interior file system that isn't readily accessable by the user through
-            a GUI. We depend on mounting directories: essentially transferring a folder on the user's system into the container so that the files they 
-            wish to work with are available to the agent. This requires a knowledge of filesystems and building compose.yml files that can be obtuse for 
-            many users. Put bluntly: it may seem far easier to load up an LLM service like Claude Desktop and point it where to go. We intend to circumvent
-            this by including extensive set-up documentation, noting how to establish command line aliases for mounting.
+        <para>We expect a few hiccups for developing and deploying Dockerized agents. To work with the MCP agent after deployment requires some technological know-how of Docker and its functions. This can be unintuitive for those in the Digital Humanities community without software development backgrounds.
+                For instance, upon composition of an image, Docker creates a sort of interior file system that is not readily accessible by the user through
+                a GUI. Customizing the docker agent depends on learning how to mount directories: essentially transferring a folder on the user’s system into the container so that the files they 
+                wish to work with are available to the agent. This requires a knowledge of filesystems and building or customizing compose.yml files that can be obtuse for 
+                many users. Put bluntly: it may seem far easier to load up an LLM service like Claude Desktop and point it where to go. We intend to circumvent
+                this by including extensive set-up documentation, noting how to establish command line aliases for mounting. For this reason, contemplate the importance of providing easy <quote>on-ramps</quote> through simple, impatient-user-friendly dccumentation, perhaps with interactive web interface guidance to help guide customizations of the system. We have prepared such an interactive local web interface designed for users unfamiliar with the command line for our Uncertainty Monitor project, and contemplate something similar for the DigitAI XML-MCP project.
         </para>
     </section>
 
@@ -1825,7 +1831,7 @@ es/>\n        &lt;/xsl:copy>\n    &lt;/xsl:template>\n\n    &lt;!-- Add more spe
 
 
 </programlisting>
-        <para>Qwen2.5:7b, despite not receiving any workable feedback on what is wrong with the recipe, suggests running (incomplete) XSLT.</para></section>
+        <para>Qwen2.5:7b, despite not receiving any workable feedback on what is wrong with the recipe file, suggests running (incomplete) XSLT.</para></section>
     </section>
 
 </article>
