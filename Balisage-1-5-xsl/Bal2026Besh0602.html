@@ -348,8 +348,8 @@
                                     </dl>
                                  </dd>
                                  <dt><span class="section"><a href="#d3e603" class="toc">Containing and staging the agentic MCP system</a></span></dt>
-                                 <dt><span class="section"><a href="#d3e657" class="toc">Towards a declarative method for working with language models: A separation of concerns</a></span></dt>
-                                 <dt><span class="section"><a href="#d3e676" class="toc">Appendix [BCDF]: Agent Qwen 2.5:7b stuck in a loop</a></span></dt>
+                                 <dt><span class="section"><a href="#d3e670" class="toc">Towards a declarative method for working with language models: A separation of concerns</a></span></dt>
+                                 <dt><span class="section"><a href="#d3e689" class="toc">Appendix [BCDF]: Agent Qwen 2.5:7b stuck in a loop</a></span></dt>
                               </dl>
                            </details>
                         </div>
@@ -473,8 +473,8 @@
                            </dl>
                         </dd>
                         <dt><span class="section"><a href="#d3e603" class="toc">Containing and staging the agentic MCP system</a></span></dt>
-                        <dt><span class="section"><a href="#d3e657" class="toc">Towards a declarative method for working with language models: A separation of concerns</a></span></dt>
-                        <dt><span class="section"><a href="#d3e676" class="toc">Appendix [BCDF]: Agent Qwen 2.5:7b stuck in a loop</a></span></dt>
+                        <dt><span class="section"><a href="#d3e670" class="toc">Towards a declarative method for working with language models: A separation of concerns</a></span></dt>
+                        <dt><span class="section"><a href="#d3e689" class="toc">Appendix [BCDF]: Agent Qwen 2.5:7b stuck in a loop</a></span></dt>
                      </dl>
                   </details>
                </div>
@@ -1145,11 +1145,14 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
                         code used for our Uncertainty Monitor project to allow for model
                         switching as a form of customization and future-proofing. As agentic AI becomes more
                         popular, we may see capable, local models at smaller sizes become 
-                        widely available. In addition to that, our intention to log results may create a valuable
-                        resource for fine-tuning and training future variants
+                        widely available. Based on current literature on the high potential of SLMs as agents
+                        when operating in tandem, we also expect that we can improve performance significantly
+                        by pairing an SLM for chat interaction with a second SLM that works as its agent in
+                        applying XML stack tools.<sup class="fn-label"><a href="#d3e655" class="footnoteref" id="d3e655-ref">[15]</a></sup> In addition, our intention to log results systematically may create a valuable resource
+                        for fine-tuning and training future variants
                         of these local models. They may highlight logical weaknesses and points where the
-                        user has to 'guide' the model, if any come up.</p>
-                     <p id="d3e655">There are a few technological hiccups when developing Dockerized agents. Use after
+                        user has to <q>guide</q> the model, if any come up.</p>
+                     <p id="d3e668">There are a few technological hiccups when developing Dockerized agents. Use after
                         deployment requires the installation of and 
                         some technological know-how of Docker and its functions. This can be unintuitive for
                         those without software development backgrounds.
@@ -1165,15 +1168,15 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
                         line aliases for mounting.
                         </p>
                   </div>
-                  <div class="section" id="d3e657">
+                  <div class="section" id="d3e670">
                      <h2 class="title" style="clear: both">Towards a declarative method for working with language models: A separation of concerns</h2>
-                     <p id="d3e660">Declaring one's intentions is important for language models and humans alike. Writing
+                     <p id="d3e673">Declaring one's intentions is important for language models and humans alike. Writing
                         schemas, grammars, and MCP scripts may perhaps all be considered declarations together.
                         Declaring intentions leads to specific formulations that depend on the context and
                         scope
                         of a project, whether you encode the page by page graphical layout, the relationship
                         between an illustration and surrounding text.</p>
-                     <p id="d3e662">Our DH lab has been working between two different cultures of digital text: the
+                     <p id="d3e675">Our DH lab has been working between two different cultures of digital text: the
                         documentary markup culture and the natural language processing culture. The operations
                         of language models are fascinating for their endless variety of dimensional possibilities
                         working over hundreds or thousands of vectors even in an SLM. Yet the availability
@@ -1186,7 +1189,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
                         structured markup, so we can deliver meaningful node packages when a project like
                         a
                         scholarly edition requires precision and quality control.</p>
-                     <p id="d3e664">When we bring these two cultures together, declarative markup technologies may be
+                     <p id="d3e677">When we bring these two cultures together, declarative markup technologies may be
                         helping us to define our terms for controlling and customizing systems for specialized
                         projects. Our work with modeling grammars and schemas is definitional, and when we
                         instruct an AI agent to apply a validation step and inspect the results before making
@@ -1200,7 +1203,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
                         We
                         are defining the terms by which the language model system will function most efficiently
                         and reliably within the rule-based architecture that we have declared.</p>
-                     <p id="d3e666">In course of developing this paper, we have recognized that the old, familiar functional
+                     <p id="d3e679">In course of developing this paper, we have recognized that the old, familiar functional
                         programming
                         concept of a <q>separation of concerns</q> can guide how we work with language models. Giving
                         the model access, yet keeping the XML apart from its internal tokenized embedding
@@ -1208,7 +1211,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
                         is one separation of concerns, and limiting the need and capacity of a language model
                         to
                         access one's operating system is another.</p>
-                     <p id="d3e671">Perhaps the most important separation of concerns for us to keep in view is the
+                     <p id="d3e684">Perhaps the most important separation of concerns for us to keep in view is the
                         education of our scholars and lab assistants in refining the tools to fit our tasks,
                         rather than letting the tools shape those tasks for us on the terms by which they
                         were
@@ -1221,7 +1224,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
                         appropriate separation of concerns, we can see how AI can responsibly and effectively
                         operate within the scopes we set. </p>
                   </div>
-                  <div class="section" id="d3e676">
+                  <div class="section" id="d3e689">
                      <h2 class="title" style="clear: both">Appendix [BCDF]: Agent Qwen 2.5:7b stuck in a loop</h2>
                   </div>
                   <div class="footnotes"><br><hr width="100" align="left">
@@ -1339,6 +1342,13 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
                            distribution, 
                            providing both source hosting and container registry functionality without commercial
                            fees.</p>
+                     </div>
+                     <div id="d3e655" class="footnote">
+                        <p><sup class="fn-label"><a href="#d3e655-ref" class="footnoteref">[15]</a></sup> See, for example this helpful article discussing the high potential for SLMs in project
+                           workflows: Peter Belcak, Greg Heinrich, Shizhe Diao, Yonggan Fu, Xin Dong, 
+                           Saurav Muralidharan, Yingyan Celine Lin, and Pavlo Molchanov, <q>Small Language Models are the Future of Agentic AI</q>, Arxiv preprint, under review, September 2025. <a href="https://arxiv.org/pdf/2506.02153" class="link">https://arxiv.org/pdf/2506.02153</a>.
+                           
+                           </p>
                      </div>
                   </div>
                </div>

@@ -761,10 +761,10 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
             of MCP is that scripts written with it are compatible with virtually any model with the right communication tool. [For our purposes, Jonathan 
             Gastón Löwenstern's Ollama MCP Bridge serves as this gateway.] We intend to adapt code used for our Uncertainty Monitor project to allow for model
             switching as a form of customization and future-proofing. As agentic AI becomes more popular, we may see capable, local models at smaller sizes become 
-            widely available.<footnote><para>See, for example this helpful article discussing the high potential for SLMs in project workflows: Peter Belcak, Greg Heinrich, Shizhe Diao, Yonggan Fu, Xin Dong, 
+            widely available. Based on current literature on the high potential of SLMs as agents when operating in tandem, we also expect that we can improve performance significantly by pairing an SLM for chat interaction with a second SLM that works as its agent in applying XML stack tools.<footnote><para>See, for example this helpful article discussing the high potential for SLMs in project workflows: Peter Belcak, Greg Heinrich, Shizhe Diao, Yonggan Fu, Xin Dong, 
                     Saurav Muralidharan, Yingyan Celine Lin, and Pavlo Molchanov, <quote>Small Language Models are the Future of Agentic AI</quote>, Arxiv preprint, under review, September 2025. <link xlink:href="https://arxiv.org/pdf/2506.02153">https://arxiv.org/pdf/2506.02153</link>.
                     
-            </para></footnote> We also expect that we can improve performance significantly by pairing an SLM for chat interaction with a second SLM that works as its agent in applying XML stack tools. In addition, our intention to log results systematically may create a valuable resource for fine-tuning and training future variants
+            </para></footnote> In addition, our intention to log results systematically may create a valuable resource for fine-tuning and training future variants
             of these local models. They may highlight logical weaknesses and points where the user has to <quote>guide</quote> the model, if any come up.</para>
             
             <para>There are a few technological hiccups when developing Dockerized agents. Use after deployment requires the installation of and 
