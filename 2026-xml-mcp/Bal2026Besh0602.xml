@@ -744,7 +744,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
             as of July 2026, it is the most recent open-weight <!--Is a definition of open-weight needed? Footnote?-->
             and locally downloadable version of Qwen released by Alibaba Cloud. Notably, this model is substantially larger than the models we have 
             implemented both in previous iterations of this project and in other SLM-based projects. There are a few reasons for this shift, but
-            generally we have found smaller, older versions of Qwen tend to lack the long-term reasoning necessary to be an effective agent. During preliminary 
+            generally we have found that smaller, older versions of Qwen tend to lack the long-term reasoning necessary to be an effective agent. During preliminary 
             testing,  we found that both Qwen2.5:1.5b and Qwen2.5:7b tended to get caught in logical loops. In one instance, Qwen2.5:7b would get stuck 
             on a deprecated package warning that was completely irrelevant to the XML document. It would repeatedly ask to read and reread the file,
             not doing anything with the information it retrieved from it. See Appendix [BCDF] below for the logged chat. <!-- Could put saved example here--> The user was often required to <quote>hand-hold</quote> 
@@ -753,19 +753,19 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
             
             
             <para>Selecting a model for use with our MCP server is likely to become a search for the potentially nonexistent <quote>sweet spot</quote> of reasoning 
-            ability versus required computing power. What can give the most, while using the least? Despite our current preference towards it, we recognize 
-            that Qwen3.6:27b might not fit neatly into the definition of a <emphasis>small</emphasis> language model. It can be run locally, but it is more
+            ability versus required computing power. What can give the most, while using the least? Despite our tendency to rely Qwen throughout this project, we recognize 
+            that the current Qwen3.6:27b might not fit neatly for some users into the definition of a <emphasis>small</emphasis> language model. It can be run locally, but it is more
             resource-intensive than previous Qwen models, requiring ~18GB of memory quantized compared to 3.5:7b's ~5.5GB.
             Even with a capable machine, response times with Qwen3.6 noticeably slow with complex tasks, indicating that it may not be ideal for
             all users. It is for this reason that we wish to keep the possibility of switching out models at the user's behest open. Luckily, a key strength
-            of MCP is that scripts written with it are compatible with virtually any model with the right communication tool. [For our purposes, Jonathan 
-            Gastón Löwenstern's Ollama MCP Bridge serves as this gateway.]
+            of MCP is that scripts written with it are compatible with virtually any model with the right communication tool. For our purposes, Jonathan 
+            Gastón Löwenstern's Ollama MCP Bridge serves as this gateway.
                 <footnote>
                 <para>Löwenstern's tools for Ollama and MCP communication include both the Ollama MCP Bridge at <link xlink:href="https://github.com/jonigl/ollama-mcp-bridge">https://github.com/jonigl/ollama-mcp-bridge</link> and a terminal interface at 
                     <link xlink:href="https://github.com/jonigl/mcp-client-for-ollama">https://github.com/jonigl/mcp-client-for-ollama</link>.</para>
             </footnote>
                 We intend to adapt code used for our Uncertainty Monitor project to allow for model
-            switching as a form of customization and future-proofing. As agentic AI becomes more popular, we may see capable, local models at smaller sizes become 
+                switching as a form of customization and future-proofing.<footnote><para>See the Model Registry library python dictionary for our AI Uncertainty Monitor project on at <link xlink:href="https://codeberg.org/newtfire/ai-artsound/src/branch/main/uncertainty-monitor.py#L106">https://codeberg.org/newtfire/ai-artsound/src/branch/main/uncertainty-monitor.py#L106</link>.</para></footnote> As agentic AI becomes more popular, we may see capable, local models at smaller sizes become 
             widely available. Based on current literature on the high potential of SLMs as agents when operating in tandem, we also expect that we can improve performance significantly by pairing an SLM for chat interaction with a second SLM that works as its agent in applying XML stack tools.<footnote><para>See, for example this helpful article discussing the high potential for SLMs in project workflows: Peter Belcak, Greg Heinrich, Shizhe Diao, Yonggan Fu, Xin Dong, 
                     Saurav Muralidharan, Yingyan Celine Lin, and Pavlo Molchanov, <quote>Small Language Models are the Future of Agentic AI</quote>, Arxiv preprint, under review, September 2025. <link xlink:href="https://arxiv.org/pdf/2506.02153">https://arxiv.org/pdf/2506.02153</link>.
                     
@@ -783,7 +783,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
 
     <section>
         <title>Towards a declarative method for working with language models: A separation of concerns</title>
-        <para>Declaring one's intentions is important for language models and humans alike. Writing
+        <para>Declaring one’s intentions is important for language models and humans alike. Writing
             schemas, grammars, and MCP scripts may perhaps all be considered declarations together.
             Declaring intentions leads to specific formulations that depend on the context and scope
             of a project, whether you encode the page by page graphical layout, the relationship
@@ -810,10 +810,8 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
             are defining the terms by which the language model system will function most efficiently
             and reliably within the rule-based architecture that we have declared.</para>
         <para>In course of developing this paper, we have recognized that the old, familiar functional programming
-            concept of a <quote>separation of concerns</quote> can guide how we work with language models. Giving
-            the model access, yet keeping the XML apart from its internal tokenized embedding layers
-            is one separation of concerns, and limiting the need and capacity of a language model to
-            access one's operating system is another.</para>
+            concept of a <quote>separation of concerns</quote> can guide how we work with language models. Giving a model access to XML, yet keeping the editing of that XML away from that language model’s internal tokenized embedding layers is one separation of processing concerns. Limiting the need and capacity of a language model to
+            access one’s operating system is another.</para>
         <para>Perhaps the most important separation of concerns for us to keep in view is the
             education of our scholars and lab assistants in refining the tools to fit our tasks,
             rather than letting the tools shape those tasks for us on the terms by which they were
@@ -827,7 +825,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
 
     </section>
     <section>
-        <title>Appendix [BCDF]: Agent Qwen 2.5:7b stuck in a loop</title>
+        <title>Appendix [BCDF]: Some examples of Qwen2.5 models poor performance as solo agents</title>
         
         
         
