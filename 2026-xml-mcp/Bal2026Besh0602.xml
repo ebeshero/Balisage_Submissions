@@ -636,7 +636,10 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
     &lt;/xsl:template&gt;
 &lt;/xsl:stylesheet&gt;  
     </programlisting>
-</figure>                
+</figure>  
+For us, the generation of this well-documented XSLT (and others like it) in response to requests to review validation errors and introduce corrections 
+was a sign that our agent was working with the MCP tools we had provided it for validation and helpful code transformations. Reaching this point
+was helpful for us as a calibration test of our MCP system. 
             </para>
         </figure></section>
         <section>
@@ -944,6 +947,37 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
 &lt;/recipe&gt;  
             </programlisting>
          </section>
+        <section>
+            <title>A. 2. Relax NG Compact schema for the recipe XML</title>
+            <programlisting>
+start = recipe 
+recipe = element recipe {healthData, para+, section+}
+healthData = element healthData {text}
+para = element para {type?, mixed{ (culture | name | timePeriod | altRecipe | blockQuote )*}}
+culture = element culture {ref?, monarch?, text }
+ref = attribute ref {text}
+monarch = attribute monarch {text}
+name = element name {type, mixed{name*}}
+type= attribute type {"person" | "place" | "organization" | "credits"}
+timePeriod = element timePeriod {text}
+altRecipe = element altRecipe {text}
+blockQuote = element blockQuote {text}
+section = element section {kind, heading, (\list | listStep) }
+kind = attribute kind { "ingred" | "equip" | "process"}
+heading = element heading {text}
+\list = element list {item+}
+listStep = element listStep {step+}
+item = element item {quant?, quantLow?, quantHigh?, unit?, mixed{(ingred)*}}
+ingred = element ingred {text}
+quant = attribute quant {list{xsd:float+}}
+quantLow = attribute quantLow {xsd:float}
+quantHigh = attribute quantHigh {xsd:float}
+unit = attribute unit {"fruit" | "pint" | "ounce" | "Tb" | "t" | text}
+step = element step {num, mixed{(action | ingred)*}}
+num = attribute num {xsd:int}
+action = element action { text}               
+            </programlisting>
+        </section>
         
     </section>
     <section>

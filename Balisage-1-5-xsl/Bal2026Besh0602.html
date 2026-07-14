@@ -349,7 +349,14 @@
                                  </dd>
                                  <dt><span class="section"><a href="#d3e615" class="toc">Containing and staging the agentic MCP system</a></span></dt>
                                  <dt><span class="section"><a href="#d3e695" class="toc">Towards a declarative method for working with language models: A separation of concerns</a></span></dt>
-                                 <dt><span class="section"><a href="#d3e714" class="toc">Appendix [BCDF]: Some examples of Qwen2.5 models poor performance as solo agents</a></span></dt>
+                                 <dt><span class="section"><a href="#d3e714" class="toc">Appendix A: A poorly encoded recipe for Syllabub and its Relax NG schema</a></span></dt>
+                                 <dd>
+                                    <dl>
+                                       <dt><span class="section"><a href="#d3e717" class="toc">A. 1. The Syllabub recipe XML</a></span></dt>
+                                       <dt><span class="section"><a href="#d3e724" class="toc">A. 2. Relax NG Compact schema for the recipe XML</a></span></dt>
+                                    </dl>
+                                 </dd>
+                                 <dt><span class="section"><a href="#d3e729" class="toc">Appendix [BCDF]: Some examples of Qwen2.5 models poor performance as solo agents</a></span></dt>
                               </dl>
                            </details>
                         </div>
@@ -474,7 +481,14 @@
                         </dd>
                         <dt><span class="section"><a href="#d3e615" class="toc">Containing and staging the agentic MCP system</a></span></dt>
                         <dt><span class="section"><a href="#d3e695" class="toc">Towards a declarative method for working with language models: A separation of concerns</a></span></dt>
-                        <dt><span class="section"><a href="#d3e714" class="toc">Appendix [BCDF]: Some examples of Qwen2.5 models poor performance as solo agents</a></span></dt>
+                        <dt><span class="section"><a href="#d3e714" class="toc">Appendix A: A poorly encoded recipe for Syllabub and its Relax NG schema</a></span></dt>
+                        <dd>
+                           <dl>
+                              <dt><span class="section"><a href="#d3e717" class="toc">A. 1. The Syllabub recipe XML</a></span></dt>
+                              <dt><span class="section"><a href="#d3e724" class="toc">A. 2. Relax NG Compact schema for the recipe XML</a></span></dt>
+                           </dl>
+                        </dd>
+                        <dt><span class="section"><a href="#d3e729" class="toc">Appendix [BCDF]: Some examples of Qwen2.5 models poor performance as solo agents</a></span></dt>
                      </dl>
                   </details>
                </div>
@@ -997,7 +1011,12 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
 &lt;/xsl:stylesheet&gt;  
     </pre>
                                     </div>
-                                 </figure>                
+                                 </figure>  
+                                 For us, the generation of this well-documented XSLT (and others like it) in response
+                                 to requests to review validation errors and introduce corrections 
+                                 was a sign that our agent was working with the MCP tools we had provided it for validation
+                                 and helpful code transformations. Reaching this point
+                                 was helpful for us as a calibration test of our MCP system. 
                                  </p>
                            </div>
                         </figure>
@@ -1293,12 +1312,117 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
                         operate within the scopes we set. </p>
                   </div>
                   <div class="section" id="d3e714">
+                     <h2 class="title" style="clear: both">Appendix A: A poorly encoded recipe for Syllabub and its Relax NG schema</h2>
+                     <div class="section" id="d3e717">
+                        <h3 class="title" style="clear: both">A. 1. The Syllabub recipe XML</h3>
+                        <p id="d3e720">This began as a student homework exercise, and represents an amalgamation of </p>
+                        <pre class="programlisting" id="d3e722">
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;?xml-model href="../schemas/recipe.rnc" type="application/relax-ng-compact-syntax"?&gt;
+&lt;recipe&gt;&lt;healthData&gt;About this recipe Healthiness : (71 votes)&lt;/healthData&gt;
+    &lt;!--ebb: Hi This is a comment --&gt;
+    &lt;!--ebb 2020-08-27: I like putting initials on my comments, and sometimes the date, 
+             especially if multiple people are writing comments on a code file. --&gt;
+    &lt;para&gt;The &lt;culture ref="England" monarch="George_III"&gt;Georgians&lt;/culture&gt; loved rich, sweet food. Sugar had become much
+        more easily available (mostly because of the Transatlantic Slave Trade) and was fast
+        replacing honey as the main food sweetener.&lt;/para&gt;
+    &lt;para&gt;This version of the syllabub recipe was by &lt;name type="person"&gt;Eliza Acton&lt;/name&gt;, who
+        lived in &lt;timePeriod&gt;18th century&lt;/timePeriod&gt;. There are &lt;altRecipe&gt;plenty of earlier
+            versions but they are more likely to curdle as they contain cider&lt;/altRecipe&gt;. This
+        version was very modern and fashionable in its day and is easy to manage: &lt;blockQuote&gt;Take a
+            quart of cream, a pint of sack, juice of a lemon, whip it, as the froth flies take it
+            off with a spoon and lay it in glasses: but first you must sweeten and stir some white
+            wine into your glasses, and gently lay on your froth. Set them by and do not make them
+            long before you use them.&lt;/blockQuote&gt;
+    &lt;/para&gt;
+    &lt;para&gt;Sugar and sherry (known as sack) were still expensive ingredients and dishes like this
+        would have been eaten in the houses of the richer merchants who would be able to afford
+        sugar, lemons, new salad vegetables and sack.&lt;/para&gt;
+    &lt;para&gt;We have added a non-alcoholic lemon syllabub for you to try too.&lt;/para&gt;
+    &lt;para&gt;For images of the cooking process see our Syllabub Pictures.&lt;/para&gt;
+    &lt;para type="credits"&gt;With thanks to &lt;name type="person"&gt;Ian Pycroft&lt;/name&gt; of &lt;name type="organization"&gt;Black Knight Historical&lt;/name&gt; and to &lt;name type="organization"&gt;The
+            Georgian House, &lt;name type="place"&gt;Bristol&lt;/name&gt;&lt;/name&gt;.&lt;/para&gt;
+    &lt;section kind="ingred"&gt;
+        &lt;heading&gt;Ingredients&lt;/heading&gt;
+        &lt;list&gt;&lt;item quant="1" unit="fruit"&gt;1 &lt;ingred&gt;lemon&lt;/ingred&gt;&lt;/item&gt;
+            &lt;item quant=".25" unit="pint"&gt;1/4 pint &lt;ingred&gt;sack&lt;/ingred&gt; (pale or dark)&lt;/item&gt;
+            &lt;item quant="2 3" unit="ounce"&gt;2-3 oz &lt;ingred&gt;caster
+                sugar&lt;/ingred&gt;&lt;/item&gt;&lt;!-- This is one way to handle multiple good values in an attribugte,
+                with quant="2 3": It means quant can be 2 or 3.--&gt;
+            &lt;item quant=".5" unit="pint"&gt;1/2 pint &lt;ingred&gt;double cream&lt;/ingred&gt;&lt;/item&gt;
+            &lt;item quantLow="4" quantHigh="6" unit="Tb"&gt;4-6 tablespoons &lt;ingred&gt;sweet/dessert white
+                    wine&lt;/ingred&gt;
+            &lt;/item&gt;
+        &lt;/list&gt;
+    &lt;/section&gt;
+    &lt;section kind="equip"&gt;
+        &lt;heading&gt;Equipment&lt;/heading&gt;
+        &lt;list&gt;
+            &lt;item&gt;Knife&lt;/item&gt;
+            &lt;item&gt;Grater&lt;/item&gt;
+            &lt;item&gt;Chopping board&lt;/item&gt;
+            &lt;item&gt;Mixing bowl&lt;/item&gt;
+            &lt;item&gt;Jug&lt;/item&gt;
+            &lt;item&gt;Tablespoon&lt;/item&gt;
+        &lt;/list&gt;
+    &lt;/section&gt;
+    &lt;section kind="process"&gt;
+        &lt;heading&gt;Making and cooking it&lt;/heading&gt;
+        &lt;listStep&gt;
+            &lt;step num="1"&gt;Always &lt;action&gt;wash&lt;/action&gt; your hands before preparing food&lt;/step&gt;
+            &lt;step num="2"&gt;&lt;action&gt;Grate&lt;/action&gt; half the peel, &lt;action&gt;pare off&lt;/action&gt; the rest
+                in fine strips&lt;/step&gt;
+            &lt;step num="3"&gt;Place sherry, grated peel, lemon juice and sugar in bowl and
+                    &lt;action&gt;soak&lt;/action&gt; for 2 hours&lt;/step&gt;
+            &lt;step num="4"&gt;&lt;action&gt;Whip&lt;/action&gt; the cream until semi-stiff&lt;/step&gt;
+            &lt;step num="5"&gt;&lt;action&gt;Add&lt;/action&gt; sherry gradually&lt;/step&gt;
+            &lt;step num="6"&gt;&lt;action&gt;Spoon&lt;/action&gt; a little wine into glass and spoon on whipped
+                cream&lt;/step&gt;
+            &lt;step num="7"&gt;&lt;action&gt;Decorate&lt;/action&gt; the top with lemon peel sticks&lt;/step&gt;
+            &lt;step num="8"&gt;&lt;action&gt;Serve&lt;/action&gt; with Shrewsberry cakes&lt;/step&gt;
+        &lt;/listStep&gt;
+    &lt;/section&gt;
+&lt;/recipe&gt;  
+            </pre>
+                     </div>
+                     <div class="section" id="d3e724">
+                        <h3 class="title" style="clear: both">A. 2. Relax NG Compact schema for the recipe XML</h3>
+                        <pre class="programlisting" id="d3e727">
+start = recipe 
+recipe = element recipe {healthData, para+, section+}
+healthData = element healthData {text}
+para = element para {type?, mixed{ (culture | name | timePeriod | altRecipe | blockQuote )*}}
+culture = element culture {ref?, monarch?, text }
+ref = attribute ref {text}
+monarch = attribute monarch {text}
+name = element name {type, mixed{name*}}
+type= attribute type {"person" | "place" | "organization" | "credits"}
+timePeriod = element timePeriod {text}
+altRecipe = element altRecipe {text}
+blockQuote = element blockQuote {text}
+section = element section {kind, heading, (\list | listStep) }
+kind = attribute kind { "ingred" | "equip" | "process"}
+heading = element heading {text}
+\list = element list {item+}
+listStep = element listStep {step+}
+item = element item {quant?, quantLow?, quantHigh?, unit?, mixed{(ingred)*}}
+ingred = element ingred {text}
+quant = attribute quant {list{xsd:float+}}
+quantLow = attribute quantLow {xsd:float}
+quantHigh = attribute quantHigh {xsd:float}
+unit = attribute unit {"fruit" | "pint" | "ounce" | "Tb" | "t" | text}
+step = element step {num, mixed{(action | ingred)*}}
+num = attribute num {xsd:int}
+action = element action { text}               
+            </pre>
+                     </div>
+                  </div>
+                  <div class="section" id="d3e729">
                      <h2 class="title" style="clear: both">Appendix [BCDF]: Some examples of Qwen2.5 models poor performance as solo agents</h2>
-                     <p id="d3e717">Here are some examples of poor performance from our smaller Qwen2.5 models. We speculate
+                     <p id="d3e732">Here are some examples of poor performance from our smaller Qwen2.5 models. We speculate
                         that perhaps the problem was asking these models to <q>walk and chew gum at the same time</q>, 
                         that is, in asking the same small Qwen model to engage in conversation and work as
                         code processing agents.</p>
-                     <pre class="programlisting" id="d3e722">
+                     <pre class="programlisting" id="d3e737">
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │                   Welcome to the MCP Client for Ollama �                   │
 └─────────────────────────────────────────────────────────────────────────────┘
