@@ -375,8 +375,8 @@
                 <quote>Digit</quote> program at Penn State Behrend). DigitAI began as an experiment
                to supply a small-scale language model, Qwen2.5:3B-Instruct, with Retrieval Augmented Generation (RAG)–giving
             it query access to a structured <quote>ground truth</quote> knowledge base derived from
-            the XML structure of the TEI P5 Guidelines. The TEI P5 Guidelines are available as a
-            complete XML document in P5.xml from the TEI Guidelines GitHub repository and are
+            the XML structure of the TEI P5 Guidelines. The TEI P5 Guidelines can be built as a single
+            complete XML document from the TEI Guidelines GitHub repository and are
             updated with each new release of the Guidelines. This highly structured document seemed
             ideal as a RAG resource if developed in a context-aware manner, stored and accessed in
             information <quote>chunks</quote> based on the text content of XML element nodes. We
@@ -437,7 +437,7 @@
        <section>
            <title>Turning to MCP</title>
            <para>By autumn 2025 we found a better method to address XML <emphasis>as</emphasis> XML and
-            keep it out of reach of the inner workings of language models. By this time the Model Context
+            keep it out of reach of the unreliable inner workings of language models. By this time the Model Context
             Protocol (MCP) introduced by Anthropic was widely available in the open source
             community, so we could now consider how to design a new system that would deploy a language model as 
             an <emphasis role="ital">agent</emphasis>. Instead of trying to augment the stores and reach of its
@@ -478,7 +478,7 @@
                     <para>XSLT to perform identity transformations to patch XML data.</para>
                 </listitem>
             </itemizedlist>
-          As of spring 2026, we devised a working MCP prototype that addresses XML file inputs with each of these
+          As of spring 2026, we have devised a working MCP prototype that addresses XML file inputs with each of these
           technologies.
             </para>    
    <para>
@@ -551,14 +551,14 @@ self.xml_node = self.saxon_proc.parse_xml(xml_file_name=str(self.xml_path))
             old-fashioned identity transformation by copy of elements and attributes and processing
             instructions from XSLT 2.0 that it had used when it was not properly reading the MCP
             examples we provided. The model also helpfully documents each new template in XML comments.</para>
-           <para>To evaluate how well Claude Desktop performance as an agent and simply to ensure it was working with our MCP tools,
+           <para>To evaluate Claude Desktop (Sonnet or Opus) as an agent and simply to ensure it was working with our MCP tools,
                we began by supplying it just the problematic recipe XML file and its Relax NG schema, which we provide in Appendix A.
                Here we wish to foreground our MCP function as we supplied as a model for generating 
         an identify transformation for patch corrections in XSLT 3.0 with a starter stylesheet setting the use of 
                <code>&lt;xsl:mode:on-no-match="shallow-copy"/&gt;</code>.
                Following this we provide one of the XSLT transformations that the Claude Desktop model provided in transforming 
         the recipe file, evidently applying and adapting our MCP tool to its task.</para>
-        <figure>
+           <figure xml:id="xmlmcp-fig1" xreflabel="Figure 1">
             <title>MCP Python function to generate corrections with XSLT</title>
             <para>
                 <programlisting>
@@ -613,7 +613,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
         return xslt                    
                 </programlisting>
                 
-<figure>
+<figure xml:id="xmlmcp-fig2" xreflabel="Figure 2">
     <title>Claude Desktop’s XSLT for transforming the problematic recipe XML</title>
     <programlisting>
         &lt;?xml version="1.0" encoding="UTF-8"?&gt;
@@ -693,10 +693,10 @@ was helpful for us as a calibration test of our MCP system.
         <section>
             <title>How could we improve the MCP?</title>
             <para>There is something perverse about seeing XSLT written into formatted strings as shown
-            in the preceding code block. We asked ourselves during a project meeting in April 2026
+            in <xref linkend="xmlmcp-fig1"/>. We asked ourselves during a project meeting in April 2026
             whether the Python template provided us by Claude might be unnecessary. Why not just
             deliver the XSLT as XSLT? The professor among us asked as much to a Claude Opus 4.6
-            Extended session on the internet. <figure>
+            Extended session on the internet. <figure xml:id="xmlmcp-figure3" xreflabel="Figure 3">
                 <title>April 2026 conversation about MCP with Claude Opus 4.6 Extended</title>
                 <blockquote>
                     <para><emphasis>Elisa:</emphasis> Here's maybe a silly question, coming from an
@@ -811,8 +811,8 @@ was helpful for us as a calibration test of our MCP system.
             implemented both in previous iterations of this project and in other SLM-based projects. There are a few reasons for this shift, but
             generally we have found that smaller, older versions of Qwen tend to lack the long-term reasoning necessary to be an effective agent. During preliminary 
             testing,  we found that both Qwen2.5:1.5b and Qwen2.5:7b tended to make logical leaps. Both models would repeatedly try to revise the document based on assumed information. 
-            See Appendix B below for selections from logged chats. The user was often required to <quote>hand-hold</quote> the model and walk it through which commands it should run. Even with incredibly particular language, the user was outright ignored much of 
-            the time, defeating the purpose of an agent entirely. </para>
+            See <xref linkend="xmlmcp-appB"/> for selections from logged chats. The user was often required to <quote>hand-hold</quote> the model and walk it through which commands it should run. 
+            Even with extremely particular language, the user was outright ignored much of the time, defeating the purpose of an agent entirely.</para>
             
             
             <para>Selecting a model for use with our MCP server is likely to become a search for the potentially nonexistent <quote>sweet spot</quote> of reasoning 
@@ -820,7 +820,7 @@ was helpful for us as a calibration test of our MCP system.
             that the current Qwen3.6:27b might not fit neatly for some users into the definition of a <emphasis>small</emphasis> language model. It can be run locally, but it is more
             resource-intensive than previous Qwen models, requiring ~18GB of memory quantized compared to 3.5:7b's ~5.5GB.
             Even with a capable machine, response times with Qwen3.6 noticeably slow with complex tasks, indicating that it may not be ideal for
-            all users. It is for this reason that we wish to keep the possibility of switching out models at the user's behest open. Luckily, a key strength
+            all users. It is for this reason that we wish to keep the possibility of switching out models at the user’s behest open. Luckily, a key strength
             of MCP is that scripts written with it are compatible with virtually any model with the right communication tool. For our purposes, Jonathan 
             Gastón Löwenstern's Ollama MCP Bridge serves as this gateway.
                 <footnote>
@@ -837,10 +837,10 @@ was helpful for us as a calibration test of our MCP system.
             
         <para>We expect a few hiccups for developing and deploying Dockerized agents. To work with the MCP agent after deployment requires some technological know-how of Docker and its functions. This can be unintuitive for those in the Digital Humanities community without software development backgrounds.
                 For instance, upon composition of an image, Docker creates a sort of interior file system that is not readily accessible by the user through
-                a GUI. Customizing the docker agent depends on learning how to mount directories: essentially transferring a folder on the user’s system into the container so that the files they 
+                a GUI. Customizing the agent within Docker depends on learning how to mount directories: essentially transferring a folder on the user’s system into the container so that the files they 
                 wish to work with are available to the agent. This requires a knowledge of filesystems and building or customizing compose.yml files that can be obtuse for 
                 many users. Put bluntly: it may seem far easier to load up an LLM service like Claude Desktop and point it where to go. We intend to circumvent
-                this by including extensive set-up documentation, noting how to establish command line aliases for mounting. For this reason, contemplate the importance of providing easy <quote>on-ramps</quote> through simple, impatient-user-friendly dccumentation, perhaps with interactive web interface guidance to help guide customizations of the system. We have prepared such an interactive local web interface designed for users unfamiliar with the command line for our Uncertainty Monitor project, and contemplate something similar for the DigitAI XML-MCP project.
+                this by including clear set-up documentation, noting how to establish command line aliases for mounting. For this reason, contemplate the importance of providing easy <quote>on-ramps</quote> through simple, impatient-user-friendly dccumentation, perhaps with interactive web interface guidance to help guide customizations of the system. We have prepared such an interactive local web interface designed for users unfamiliar with the command line for our Uncertainty Monitor project, and contemplate something similar for the DigitAI XML-MCP project.
         </para>
     </section>
 
@@ -876,7 +876,7 @@ was helpful for us as a calibration test of our MCP system.
             concept of a <quote>separation of concerns</quote> can guide how we work with language models. Giving a model access to XML, yet keeping the editing of that XML away from that language model’s internal tokenized embedding layers is one separation of processing concerns. Limiting the need and capacity of a language model to
             access one’s operating system is another.</para>
         <para>Perhaps the most important separation of concerns for us to keep in view is the
-            education of our scholars and lab assistants in refining the tools to fit our tasks,
+            education of our communities of practice in refining AI tools to fit our XML tasks,
             rather than letting the tools shape those tasks for us on the terms by which they were
             originally designed. AI in Digital Humanities education should emphasize hands-on
             experimentation, critical evaluation of outputs, and an awareness of when
@@ -887,9 +887,9 @@ was helpful for us as a calibration test of our MCP system.
             operate within the scopes we set. </para>
 
     </section>
-    <section>
+    <section xml:id="xmlmcp-appA" xreflabel="Appendix A">
         <title>Appendix A: A poorly encoded recipe for Syllabub and its Relax NG schema</title>
-        <section>
+        <section xml:id="xmlmcp-appA1" xreflabel="Appendix A. 1.">
             <title>A. 1. The Syllabub recipe XML</title>
             <para>This began as a student homework exercise, and represents an amalgamation of </para>
             <programlisting>
@@ -960,7 +960,7 @@ was helpful for us as a calibration test of our MCP system.
 &lt;/recipe&gt;  
             </programlisting>
          </section>
-        <section>
+        <section xml:id="xmlmcp-appA2" xreflabel="Appendix A. 2.">
             <title>A. 2. Relax NG Compact schema for the recipe XML</title>
             <programlisting>
 start = recipe 
@@ -993,11 +993,11 @@ action = element action { text}
         </section>
         
     </section>
-    <section>
+    <section xml:id="xmlmcp-appB" xreflabel="Appendix B">
         <title>Appendix B: Some examples of Qwen2.5 models poor performance as solo agents</title>
   <para>Here are some examples of poor performance from our smaller Qwen2.5 models. We speculate that perhaps the problem was asking these models to <quote>walk and chew gum at the same time</quote>, 
     that is, in asking the same small Qwen model to engage in conversation and work as code processing agents.</para>
-        <section><title>B. 1. Qwen2.5:1b Conversation Segment</title><programlisting>
+        <section xml:id="xmlmcp-appB1" xreflabel="Appendix B. 1."><title>B. 1. Qwen2.5:1b Conversation Segment</title><programlisting>
 
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │                   Welcome to the MCP Client for Ollama �                   │
@@ -1406,7 +1406,7 @@ hecks, just expand the array accordingly.
         </programlisting>
         <para>Above, Qwen2.5:1b hallucinates its own Syllabub recipe file based on the schema, and attempts to change the MCP function call itself instead of 
             the recipe file as requested.</para></section>
-        <section>
+        <section xml:id="xmlmcp-appB2" xreflabel="Appendix B. 2.">
             <title>B. 2. Qwen2.5:7b Conversation Segment</title>
             <programlisting>
 
