@@ -45,8 +45,11 @@
                         xlink:type="simple" xlink:show="new" xlink:actuate="onRequest">Digital
                         Mitford project</link> and <link
                         xlink:href="https://digitalmitford.github.io/DigMitCS/" xlink:type="simple"
-                        xlink:show="new" xlink:actuate="onRequest">its usually annual coding
-                        school</link>. She experiments with visualizing data from complex document
+                        xlink:show="new" xlink:actuate="onRequest">its erstwhile annual (and sometime to be revived)
+                            coding school</link>. She and David J. Birnbaum have designed and co-taught a course in 
+                    XPath, XSLT, XQuery and Schematron at the <link xlink:href="https://dhsi.org/" xlink:type="simple"
+                        xlink:show="new" xlink:actuate="onRequest">Digital Humanities Summer Institute</link>. 
+                    She experiments with visualizing data from complex document
                     structures like epic poems and with computer-assisted collation of differently
                     encoded editions of <link xlink:href="https://frankensteinvariorum.github.io/"
                         xlink:type="simple" xlink:show="new" xlink:actuate="onRequest"><emphasis
