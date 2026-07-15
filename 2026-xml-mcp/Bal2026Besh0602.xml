@@ -144,7 +144,13 @@
                 <listitem>
                     <para><emphasis>Education:</emphasis> To design <quote>explainable AI</quote>
                         systems that help us to practically understand how language models process,
-                        retrieve, and generate text;</para>
+                        retrieve, and generate text;<footnote><para>
+                                Hassan El-Hajj, Oliver Eberle, et. al., <quote>Explainability and transparency
+                                in the realm of digital humanities: toward a historian XAI</quote>,  
+                                <emphasis role="ital">International Journal of Digital Humanities (IJDH)</emphasis> 
+                                (2023) 5:299-331 
+                                <link xlink:href="https://link.springer.com/article/10.1007/s42803-023-00070-1">https://link.springer.com/article/10.1007/s42803-023-00070-1</link>. 
+                        </para></footnote></para>
                 </listitem>
                 <listitem>
                     <para><emphasis>Economy:</emphasis> To design customized AI systems that can
@@ -161,9 +167,9 @@
             Usually it is practiced in research and teaching in higher educational contexts around the world. 
             Digital humanists do generally unite around the critical practices of <quote>learning by doing</quote> 
             and sharing tutorials openly. For example, <emphasis role="ital">The Programming
-                Historian</emphasis> provides an excellent example of a peer-reviewed DH community
-            resource that supplies tutorials for humanities scholars seeking support, usually with
-            Python and R applications that orient humanities scholars to statistical libraries and
+                Historian</emphasis> serves as a peer-reviewed DH community
+            resource that supplies tutorials for humanities scholars seeking support for hands-on learning, 
+            usually with Python and R applications that orient humanities scholars to statistical libraries and
             methods for linguistic analysis, regular expressions, and applications of TEI XML
             encoding and processing. As of 2026, we do not find much available specifically for
             digital humanists to learn about the internal processes of language models, literally
@@ -179,22 +185,22 @@
             perspective on the statistical computations and embedding structures
             that support next-token prediction in generative AI systems. For decades,
             introductory DH courses have delivered hands-on experiences with free software
-            like Voyant Tools and Antconc that provide a basis for understanding how computer
-            software divides text into <quote>grams</quote> or meaningful particles and aggregate
+            like Voyant Tools and Antconc to demonstrate how computer software divides text into 
+            <quote>grams</quote> or meaningful particles and aggregate
             them into measurable clusters for n-gram analysis and concordance searching for keywords
-            in context. That foundation is helpful now as we need to learn about how large language
-            models work with text tokens in generative contexts, and how different these are from
+            in context. That foundation is helpful now as we need to learn how large language
+            models work with text tokens in generative contexts, and also how different these are from
             the classification methods that we are more familiar with.</para>
-        <para>In the context of DH students learning about <quote>Large-Scale Text Analysis</quote>
+        <para>In the context of DH students learning about <quote>Large Scale Text Analysis</quote>
             in the year 2026, we find ourselves trying to connect with our foundations (in this case
             teaching with markup languages and Python) and still expanding horizons with
-                <quote>hands-on</quote> applications. <footnote>
-                <para><quote>Large-Scale Text Analysis</quote> is the title of a DH course for
-                    second- or third-year university students in the Digital Media, Arts, and
-                    Technology program at Penn State Behrend</para>
+                <quote>hands-on</quote> applications.<footnote>
+                    <para><link xlink:href="https://newtfire.org/courses/textAnalysis/"><quote>Large Scale Text Analysis</quote></link> 
+                      is the title of a DH course for second- or third-year university students in the 
+                      Digital Media, Arts, and Technology program at Penn State Behrend</para>
             </footnote> Tutorials that aim to demonstrate how language models <quote>work under the
-                hood</quote> are often not very helpful: They can be overly complex, requiring
-            advanced computer science and matrix math to approach, or too simplistic about vector
+                hood</quote> are often not very helpful: They can be overly complex, requiring a background in
+            advanced computer science and matrix mathematics to approach, or too simplistic about vector
             embeddings (offering problematic nonsense formulae like <quote>King - Man +
                 Woman = Queen</quote> as an explanation of how a language model calculates relative
             semantic positions of one token in relation to another).<footnote>
@@ -250,7 +256,7 @@
                         xlink:href="https://jupyter.org/">https://jupyter.org/</link>.</para>
             </footnote> Cohen himself is a neuroscientist and former
             academic but not in the humanities; yet his public social media release of the
-                <quote>LLM breakdown</quote> series helps substantiate that the complex
+                <quote>LLM breakdown</quote> series helps to substantiate that the complex
             math of LLMs can be made more generally accessible. Within our DH program and lab, where
             we prioritize coding as a means to <emphasis>visualize</emphasis> and
                 <emphasis>communicate</emphasis> complex ideas and technologies, Cohen’s notebooks
@@ -270,7 +276,7 @@
         <para>Regarding the second objective (Economy), universities and cultural heritage
             organizations face severe budget constraints in the 2020s yet, paradoxically, increasing
             reliance on AI has resulted in the upscaling of <quote>compute</quote> GPU resources,
-            and dependencies on datacenters impact our environment and human labor. When contracts
+            and dependencies on data centers impact our environment and human labor. When contracts
             with AI tech companies are heavily promoted at universities, and the <quote>cognitive
                 offloading</quote> of thinking, writing, and assessment to chatbots risks eroding
             rather than enhancing critical thinking and problem-solving skills, AI threatens the
